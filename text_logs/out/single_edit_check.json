@@ -1,0 +1,681 @@
+{
+ "written": "2026-11-11 09:21:08 UTC",
+ "run_dir": "[redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/public_results/ROME_single/run_000",
+ "n_case_files": 1000,
+ "n_planned": 1000,
+ "complete": true,
+ "tolerance_points": 3.0,
+ "paper": {
+  "arxiv": "2202.05262v5",
+  "file": "[redacted: local path]/02_research/ext/data/paper_rome/src/tables/cf-results.tex",
+  "n_records_gpt2xl": 7500,
+  "sha256": "f5d72cd5adcf74d4be5aa32195a74888066b00981f55e02011b6fab3cad5c583",
+  "rows": {
+   "GPT-2 XL": {
+    "S": [
+     30.5,
+     null
+    ],
+    "ES": [
+     22.2,
+     0.9
+    ],
+    "EM": [
+     -4.8,
+     0.3
+    ],
+    "PS": [
+     24.7,
+     0.8
+    ],
+    "PM": [
+     -5.0,
+     0.3
+    ],
+    "NS": [
+     78.1,
+     0.6
+    ],
+    "NM": [
+     5.0,
+     0.2
+    ],
+    "GE": [
+     626.6,
+     0.3
+    ],
+    "RS": [
+     31.9,
+     0.2
+    ]
+   },
+   "FT": {
+    "S": [
+     65.1,
+     null
+    ],
+    "ES": [
+     100.0,
+     0.0
+    ],
+    "EM": [
+     98.8,
+     0.1
+    ],
+    "PS": [
+     87.9,
+     0.6
+    ],
+    "PM": [
+     46.6,
+     0.8
+    ],
+    "NS": [
+     40.4,
+     0.7
+    ],
+    "NM": [
+     -6.2,
+     0.4
+    ],
+    "GE": [
+     607.1,
+     1.1
+    ],
+    "RS": [
+     40.5,
+     0.3
+    ]
+   },
+   "FT+L": {
+    "S": [
+     66.9,
+     null
+    ],
+    "ES": [
+     99.1,
+     0.2
+    ],
+    "EM": [
+     91.5,
+     0.5
+    ],
+    "PS": [
+     48.7,
+     1.0
+    ],
+    "PM": [
+     28.9,
+     0.8
+    ],
+    "NS": [
+     70.3,
+     0.7
+    ],
+    "NM": [
+     3.5,
+     0.3
+    ],
+    "GE": [
+     621.4,
+     1.0
+    ],
+    "RS": [
+     37.4,
+     0.3
+    ]
+   },
+   "KN": {
+    "S": [
+     35.6,
+     null
+    ],
+    "ES": [
+     28.7,
+     1.0
+    ],
+    "EM": [
+     -3.4,
+     0.3
+    ],
+    "PS": [
+     28.0,
+     0.9
+    ],
+    "PM": [
+     -3.3,
+     0.2
+    ],
+    "NS": [
+     72.9,
+     0.7
+    ],
+    "NM": [
+     3.7,
+     0.2
+    ],
+    "GE": [
+     570.4,
+     2.3
+    ],
+    "RS": [
+     30.3,
+     0.3
+    ]
+   },
+   "KE": {
+    "S": [
+     52.2,
+     null
+    ],
+    "ES": [
+     84.3,
+     0.8
+    ],
+    "EM": [
+     33.9,
+     0.9
+    ],
+    "PS": [
+     75.4,
+     0.8
+    ],
+    "PM": [
+     14.6,
+     0.6
+    ],
+    "NS": [
+     30.9,
+     0.7
+    ],
+    "NM": [
+     -11.0,
+     0.5
+    ],
+    "GE": [
+     586.6,
+     2.1
+    ],
+    "RS": [
+     31.2,
+     0.3
+    ]
+   },
+   "KE-CF": {
+    "S": [
+     18.1,
+     null
+    ],
+    "ES": [
+     99.9,
+     0.1
+    ],
+    "EM": [
+     97.0,
+     0.2
+    ],
+    "PS": [
+     95.8,
+     0.4
+    ],
+    "PM": [
+     59.2,
+     0.8
+    ],
+    "NS": [
+     6.9,
+     0.3
+    ],
+    "NM": [
+     -63.2,
+     0.7
+    ],
+    "GE": [
+     383.0,
+     4.1
+    ],
+    "RS": [
+     24.5,
+     0.4
+    ]
+   },
+   "MEND": {
+    "S": [
+     57.9,
+     null
+    ],
+    "ES": [
+     99.1,
+     0.2
+    ],
+    "EM": [
+     70.9,
+     0.8
+    ],
+    "PS": [
+     65.4,
+     0.9
+    ],
+    "PM": [
+     12.2,
+     0.6
+    ],
+    "NS": [
+     37.9,
+     0.7
+    ],
+    "NM": [
+     -11.6,
+     0.5
+    ],
+    "GE": [
+     624.2,
+     0.4
+    ],
+    "RS": [
+     34.8,
+     0.3
+    ]
+   },
+   "MEND-CF": {
+    "S": [
+     14.9,
+     null
+    ],
+    "ES": [
+     100.0,
+     0.0
+    ],
+    "EM": [
+     99.2,
+     0.1
+    ],
+    "PS": [
+     97.0,
+     0.3
+    ],
+    "PM": [
+     65.6,
+     0.7
+    ],
+    "NS": [
+     5.5,
+     0.3
+    ],
+    "NM": [
+     -69.9,
+     0.6
+    ],
+    "GE": [
+     570.0,
+     2.1
+    ],
+    "RS": [
+     33.2,
+     0.3
+    ]
+   },
+   "ROME": {
+    "S": [
+     89.2,
+     null
+    ],
+    "ES": [
+     100.0,
+     0.1
+    ],
+    "EM": [
+     97.9,
+     0.2
+    ],
+    "PS": [
+     96.4,
+     0.3
+    ],
+    "PM": [
+     62.7,
+     0.8
+    ],
+    "NS": [
+     75.4,
+     0.7
+    ],
+    "NM": [
+     4.2,
+     0.2
+    ],
+    "GE": [
+     621.9,
+     0.5
+    ],
+    "RS": [
+     41.9,
+     0.3
+    ]
+   }
+  }
+ },
+ "run_meta": {
+  "what": "single-edit check, public protocol (weight restored after each record)",
+  "seed": 0,
+  "w0": {
+   "sha256": "bd483af64b575f9dbd9330262b555d8bb4a74eb36e55b13ccbb0a0b9c9ef22a3",
+   "dtype": "float32",
+   "shape": [
+    6400,
+    1600
+   ]
+  },
+  "weight_name": "transformer.h.17.mlp.c_proj.weight",
+  "hparams_file": "[redacted: local path]/02_research/ext/third_party/rome/hparams/ROME/gpt2-xl.json",
+  "hparams": {
+   "layers": [
+    17
+   ],
+   "fact_token": "subject_last",
+   "v_num_grad_steps": 20,
+   "v_lr": 0.5,
+   "v_loss_layer": 47,
+   "v_weight_decay": 0.5,
+   "clamp_norm_factor": 4,
+   "kl_factor": 0.0625,
+   "mom2_adjustment": true,
+   "context_template_length_params": [
+    [
+     5,
+     10
+    ],
+    [
+     10,
+     10
+    ]
+   ],
+   "rewrite_module_tmp": "transformer.h.{}.mlp.c_proj",
+   "layer_module_tmp": "transformer.h.{}",
+   "mlp_module_tmp": "transformer.h.{}.mlp",
+   "attn_module_tmp": "transformer.h.{}.attn",
+   "ln_f_module": "transformer.ln_f",
+   "lm_head_module": "transformer.wte",
+   "mom2_dataset": "wikipedia",
+   "mom2_n_samples": 100000,
+   "mom2_dtype": "float32"
+  },
+  "versions": {
+   "python": "3.11.16",
+   "torch": "2.8.0+cu128",
+   "transformers": "4.23.1",
+   "tokenizers": "0.13.3",
+   "numpy": "2.4.6",
+   "nltk": "3.10.4",
+   "scipy": "1.17.1",
+   "sklearn": "1.9.1",
+   "gpu": "NVIDIA GeForce RTX 5090",
+   "cuda": "12.8"
+  },
+  "started": "2026-11-11 05:36:01 UTC",
+  "context_templates": [
+   "{}",
+   "In the last few. {}",
+   "The following is a. {}",
+   "I have been working. {}",
+   "A man was arrested. {}",
+   "The U.S. {}",
+   "I have been working. {}",
+   "I've been working. {}",
+   "\"I have to. {}",
+   "In this week's. {}",
+   "I've been working. {}",
+   "The U.S. government's National Ocean. {}",
+   "\"The best way to describe it would be. {}",
+   "A man in the US who has been living. {}",
+   "A new study has found a link between the. {}",
+   "In the past few decades, a growing number. {}",
+   "I've seen a lot of people complaining about. {}",
+   "I'm trying to get my hands on an. {}",
+   "The first thing that comes to mind when hearing. {}",
+   "The first day of the 2016 season has officially. {}",
+   "A man was killed when he was struck by. {}"
+  ],
+  "cap_bytes": 13002342400,
+  "skip_generation_tests": true,
+  "finished": "2026-11-11 06:31:26 UTC",
+  "n_case_files": 1000,
+  "peak_alloc_MiB": 9784.966796875,
+  "peak_reserved_MiB": 11972.0
+ },
+ "public_summary": {
+  "time": [
+   2.988195009469986,
+   0.2011127305449517
+  ],
+  "pre_rewrite_success": [
+   20.8,
+   40.59
+  ],
+  "pre_rewrite_diff": [
+   -5.34,
+   13.86
+  ],
+  "pre_paraphrase_success": [
+   23.7,
+   36.92
+  ],
+  "pre_paraphrase_diff": [
+   -4.17,
+   10.18
+  ],
+  "pre_neighborhood_success": [
+   78.13,
+   28.11
+  ],
+  "pre_neighborhood_diff": [
+   5.4,
+   9.34
+  ],
+  "post_rewrite_success": [
+   100.0,
+   0.0
+  ],
+  "post_rewrite_diff": [
+   97.59,
+   8.35
+  ],
+  "post_paraphrase_success": [
+   96.7,
+   14.8
+  ],
+  "post_paraphrase_diff": [
+   61.31,
+   36.04
+  ],
+  "post_neighborhood_success": [
+   75.41,
+   29.02
+  ],
+  "post_neighborhood_diff": [
+   4.56,
+   10.18
+  ],
+  "pre_score": [
+   29.11,
+   NaN
+  ],
+  "post_score": [
+   89.28,
+   NaN
+  ],
+  "run_dir": "[redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/public_results/ROME_single/run_000",
+  "num_cases": 1000
+ },
+ "n_records": 1000,
+ "comparison": {
+  "post": {
+   "ES": {
+    "ours": 100.0,
+    "published": 100.0,
+    "published_ci95": 0.1,
+    "diff": 0.0,
+    "ours_se": 0.0,
+    "ours_ci95": [
+     100.0,
+     100.0
+    ],
+    "z_diff": 0.0,
+    "within_tolerance": true
+   },
+   "PS": {
+    "ours": 96.7,
+    "published": 96.4,
+    "published_ci95": 0.3,
+    "diff": 0.29999999999999716,
+    "ours_se": 0.4683260929409436,
+    "ours_ci95": [
+     95.75,
+     97.6
+    ],
+    "z_diff": 0.6088850531752985,
+    "within_tolerance": true
+   },
+   "NS": {
+    "ours": 75.41,
+    "published": 75.4,
+    "published_ci95": 0.7,
+    "diff": 0.009999999999990905,
+    "ours_se": 0.918082117664196,
+    "ours_ci95": [
+     73.64975000000001,
+     77.24024999999999
+    ],
+    "z_diff": 0.010151233882124263,
+    "within_tolerance": true
+   },
+   "EM": {
+    "ours": 97.59,
+    "published": 97.9,
+    "published_ci95": 0.2,
+    "diff": -0.3100000000000023,
+    "ours_se": 0.26414295034565044,
+    "ours_ci95": [
+     97.01579013182514,
+     98.07198539321979
+    ],
+    "z_diff": -1.0947584480566135
+   },
+   "PM": {
+    "ours": 61.31,
+    "published": 62.7,
+    "published_ci95": 0.8,
+    "diff": -1.3900000000000006,
+    "ours_se": 1.1401233010688163,
+    "ours_ci95": [
+     58.949684496423686,
+     63.45769351228556
+    ],
+    "z_diff": -1.147828400045474
+   },
+   "NM": {
+    "ours": 4.56,
+    "published": 4.2,
+    "published_ci95": 0.2,
+    "diff": 0.35999999999999943,
+    "ours_se": 0.32203789408053307,
+    "ours_ci95": [
+     3.933355985685047,
+     5.191561341060128
+    ],
+    "z_diff": 1.0656638256174897
+   },
+   "S": {
+    "ours": 89.28,
+    "published": 89.2,
+    "published_ci95": null,
+    "diff": 0.0799999999999983
+   }
+  },
+  "pre": {
+   "ES": {
+    "ours": 20.8,
+    "published": 22.2,
+    "published_ci95": 0.9,
+    "diff": -1.3999999999999986,
+    "ours_se": 1.2841374572097057,
+    "ours_ci95": [
+     18.3,
+     23.3
+    ],
+    "z_diff": -1.0265688113687683,
+    "within_tolerance": true
+   },
+   "PS": {
+    "ours": 23.7,
+    "published": 24.7,
+    "published_ci95": 0.8,
+    "diff": -1.0,
+    "ours_se": 1.1681929098717705,
+    "ours_ci95": [
+     21.5,
+     26.0
+    ],
+    "z_diff": -0.808116249993431,
+    "within_tolerance": true
+   },
+   "NS": {
+    "ours": 78.13,
+    "published": 78.1,
+    "published_ci95": 0.6,
+    "diff": 0.030000000000001137,
+    "ours_se": 0.8893784875372768,
+    "ours_ci95": [
+     76.33975000000001,
+     79.87
+    ],
+    "z_diff": 0.03189495561353073,
+    "within_tolerance": true
+   },
+   "EM": {
+    "ours": -5.34,
+    "published": -4.8,
+    "published_ci95": 0.3,
+    "diff": -0.54,
+    "ours_se": 0.4385059082941328,
+    "ours_ci95": [
+     -6.153261583072065,
+     -4.470827212503074
+    ],
+    "z_diff": -1.162661832923187
+   },
+   "PM": {
+    "ours": -4.17,
+    "published": -5.0,
+    "published_ci95": 0.3,
+    "diff": 0.8300000000000001,
+    "ours_se": 0.3219436394112522,
+    "ours_ci95": [
+     -4.772022583936291,
+     -3.5572165949326
+    ],
+    "z_diff": 2.328344679534795
+   },
+   "NM": {
+    "ours": 5.4,
+    "published": 5.0,
+    "published_ci95": 0.2,
+    "diff": 0.40000000000000036,
+    "ours_se": 0.2953861986102156,
+    "ours_ci95": [
+     4.811882224323305,
+     5.946377507525289
+    ],
+    "z_diff": 1.2799404678040276
+   },
+   "S": {
+    "ours": 29.11,
+    "published": 30.5,
+    "published_ci95": null,
+    "diff": -1.3900000000000006
+   }
+  }
+ },
+ "condition_2_pass": true,
+ "note": "published: 7,500 records; ours: the first 1000 records.  'pre' = the unedited model on the same records (depends on the model, the data and the public evaluation code only)."
+}

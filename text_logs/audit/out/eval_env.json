@@ -1,0 +1,74 @@
+{
+ "stack": "env",
+ "transformers": "5.17.0",
+ "torch": "2.8.0+cu128",
+ "n_dec": 10,
+ "gpu": "NVIDIA GeForce RTX 5090",
+ "tokenizer": {
+  "padding_side": "right",
+  "bos_added_by_tok()": false,
+  "pad_token_id": 50256,
+  "eos_token_id": 50256
+ },
+ "pre_edit_weight_equals_builder_W0_file": true,
+ "A": {
+  "n": 100,
+  "sample_rule": "default_rng(20261112).choice(n_texts, 100, replace=False)",
+  "n_token_ids_equal_stored": 100,
+  "n_y0_equal_stored": 100,
+  "n_tokens_equal_of_1000": 1000,
+  "n_audit_y0_reproduced_under_teacher_forcing": 100,
+  "n_valid_flag_equal": 100,
+  "degenerate": {
+   "empty_or_whitespace": 0,
+   "starts_with_newline": 0,
+   "has_eos": 1,
+   "eos_first": 0,
+   "le3_distinct": 0,
+   "run_ge4": 0,
+   "le2_words": 0,
+   "one_token_cycle2": 0
+  },
+  "differences": []
+ },
+ "C": {
+  "n_prompts": 50,
+  "token_lengths": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   16,
+   17,
+   18,
+   19,
+   22,
+   24,
+   56
+  ],
+  "pre_edit": {
+   "n_builder_stored_batched_equal_audit_single": 50,
+   "n_audit_left_padded_batched_equal_single": 50,
+   "n_audit_right_padded_naive_equal_single": 6,
+   "n_prompts_that_needed_no_padding": 6,
+   "n_right_padded_naive_equal_single_among_padded": 0,
+   "left_padded_differences": []
+  },
+  "dev100_deployed": {
+   "n_builder_stored_batched_equal_audit_single": 50,
+   "n_audit_left_padded_batched_equal_single": 50,
+   "n_audit_right_padded_naive_equal_single": 6,
+   "n_prompts_that_needed_no_padding": 6,
+   "n_right_padded_naive_equal_single_among_padded": 0,
+   "left_padded_differences": []
+  }
+ },
+ "peak_alloc_MiB": 6415.85498046875,
+ "finished": "2026-11-11 10:14:18 UTC"
+}

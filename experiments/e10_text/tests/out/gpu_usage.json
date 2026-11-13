@@ -1,0 +1,63 @@
+{
+ "name": "g_usage",
+ "pass": true,
+ "what": "the example of every metric in USAGE.txt runs as written (development log; substitutions in the test's docstring) and has at most ten lines",
+ "detail": {
+  "setup": {
+   "n_lines": 7,
+   "seconds": 1.7805187702178955,
+   "n_printed_lines": 0,
+   "first_printed_line": null
+  },
+  "i": {
+   "n_lines": 4,
+   "seconds": 26.74671745300293,
+   "n_printed_lines": 3,
+   "first_printed_line": "deployed 98.0 75.5 75.5"
+  },
+  "ii": {
+   "n_lines": 3,
+   "seconds": 61.33426308631897,
+   "n_printed_lines": 3,
+   "first_printed_line": "deployed 100.0 98.0 72.9 96.5 66.85 3.28 88.44 {'rewrite': None, 'paraphrase': None, 'neighborhood': None, 'attribute': None}"
+  },
+  "iii": {
+   "n_lines": 4,
+   "seconds": 100.6380832195282,
+   "n_printed_lines": 3,
+   "first_printed_line": "deployed 95.43333333333334 95.43333333333334 95.44846050870147 64.69666666666667 94.0 94.0"
+  },
+  "iv": {
+   "n_lines": 6,
+   "seconds": 11.346318006515503,
+   "n_printed_lines": 1,
+   "first_printed_line": "{'rescope': [4.216666666666667, 98.75, 5.95], 'rescope_shared': [4.933333333333334, 99.0, 6.050000000000001], 'rescope_null': [3.7666666666666666, 98.5, 5.35], 'cosine': [3.816666666666667, 94.5, 5.65"
+  },
+  "v": {
+   "n_lines": 7,
+   "seconds": 16.764636039733887,
+   "n_printed_lines": 3,
+   "first_printed_line": "preedit 621.4385100310933 2.5 None"
+  },
+  "vi": {
+   "n_lines": 7,
+   "seconds": 20.768707513809204,
+   "n_printed_lines": 9,
+   "first_printed_line": "20 deployed 100.0 72.5 100.0 97.5 83.0"
+  },
+  "hook_mismatch": 0
+ },
+ "error": null,
+ "seconds": 239.40476822853088,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "peak_alloc_MiB": 8507.8779296875,
+ "peak_reserved_MiB": 9572.0,
+ "written": "2026-11-11 12:29:58 UTC"
+}

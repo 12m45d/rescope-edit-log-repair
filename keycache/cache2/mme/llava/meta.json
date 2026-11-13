@@ -1,0 +1,93 @@
+{
+ "backbone": "llava",
+ "layer": 16,
+ "module": "input of model.language_model.layers.16.mlp.down_proj",
+ "module_dtype": "torch.float16",
+ "d_in": 11008,
+ "families": {
+  "MME": {
+   "master_log": "TB-L1000-ae-l2_3",
+   "dataset": "MME",
+   "capture_family": "L"
+  }
+ },
+ "what": "MME benchmark, out-of-benchmark benign workload (PROTOCOL.md section 6, R17), captured under the PRE-EDIT model like the benign pool",
+ "model_state": "pre-edit weight W_0 of the edited module for the whole capture (Evaluator.applied(H.W0) of the handle of master_log)",
+ "complete": true,
+ "n_missing_sequences": 0,
+ "n_sequences": 2374,
+ "seed": 20261111,
+ "by_family_kind": {
+  "MME|benign": 2374
+ },
+ "by_part": {
+  "MME-C": 1188,
+  "MME-T": 1186
+ },
+ "keys_tf": {
+  "shape": [
+   2374,
+   11008
+  ],
+  "n_main_rows": 2374,
+  "n_shifted_extra_rows": 0,
+  "md5": "abede2cd7a72be5f8757b9846bf842e7"
+ },
+ "keys_decode": {
+  "shape": [
+   2374,
+   11008
+  ],
+  "md5": "3488e8579cabd9889ba49bea0f0e0d12"
+ },
+ "keys_decode_steps": {
+  "shape": [
+   2374,
+   11008
+  ],
+  "md5": "2022c73a059026a2ffa6204ea3240598",
+  "distinct_keys_per_sequence_hist": {
+   "1": 2374
+  }
+ },
+ "index_md5": "2ded346b1909e09dcf5c6d9c1679a6bc",
+ "rows_md5": "03745d5d5fb43299d8a84c57891a11d4",
+ "selection": {
+  "selection.jsonl": "aff4f75c869890c642fdf5d9d44f6dba",
+  "manifest_llava.jsonl": "eb5bdee6dd33c903d9b503ee7ad95c7a"
+ },
+ "capture": {
+  "n_parts": 48,
+  "gpu_seconds": 2135.1,
+  "gpus": [
+   "NVIDIA GeForce RTX 5090"
+  ],
+  "torch": [
+   "2.8.0+cu128"
+  ],
+  "cuda_visible_devices": [
+   "0"
+  ],
+  "first": "2026-11-11 07:04:52",
+  "last": "2026-11-11 07:39:36",
+  "batch_size": 1
+ },
+ "rescope_at_capture": {
+  "evaluate_py_sha1": "1d0862a33db2",
+  "evaluate_py_mtime": "2026-11-10 21:25:16",
+  "evaluate_py_older_than_first_capture_part": true
+ },
+ "code_now": {
+  "rescope/evaluate.py": "1d0862a33db2",
+  "rescope/scoped.py": "049827450bbd",
+  "06_testbed_v3/code/tb_common.py": "f3adc53a44f3",
+  "vendor_v7/vlm.py": "6041e4a604da",
+  "07_repair_v3/harness/hlog.py": "93e7158bfa22",
+  "07_repair_v3/harness/evaluation.py": "392b773d6235",
+  "cache/code/fc_capture.py": "a9d5c6742cbc",
+  "cache/code/fc_common.py": "43bf1f632a58",
+  "cache2/mme/code/mme_capture.py": "73f0de7029f0"
+ },
+ "assembled": "2026-11-11 07:39:40",
+ "code": "02_research/experiments/10_final/cache2/mme/code/{mme_extract,mme_select,mme_capture,mme_assemble,mme_verify,mme_finish}.py; capture = 10_final/cache/code/fc_capture.main()"
+}

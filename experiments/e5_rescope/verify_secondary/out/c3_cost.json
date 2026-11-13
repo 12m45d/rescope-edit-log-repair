@@ -1,0 +1,82 @@
+{
+ "storage": {
+  "TB-Q100-ae-l2_3": {
+   "parts": {
+    "detectors": 1100800,
+    "values": 204800,
+    "scales": 100,
+    "thresholds": 100,
+    "ranking_baselines": 100
+   },
+   "mine": {
+    "storage_numbers": 1305900,
+    "storage_mb": 9.963226318359375,
+    "storage_mb_module_dtype": 2.4908065795898438,
+    "storage_share_of_module_numbers_pct": 5.792573440906613,
+    "T_at_module_size": 1726.3484187150625,
+    "guard_keys_not_counted": 2201600
+   },
+   "stored": {
+    "storage_numbers": 1305900,
+    "storage_mb": 9.963226318359375,
+    "storage_mb_module_dtype": 2.4908065795898438,
+    "storage_share_of_module_numbers_pct": 5.792573440906613
+   },
+   "ok": true
+  },
+  "TB-L100-ae-l2_3": {
+   "parts": {
+    "detectors": 1100800,
+    "values": 409600,
+    "scales": 100,
+    "thresholds": 100,
+    "ranking_baselines": 100
+   },
+   "mine": {
+    "storage_numbers": 1510700,
+    "storage_mb": 11.525726318359375,
+    "storage_mb_module_dtype": 2.8814315795898438,
+    "storage_share_of_module_numbers_pct": 3.3505018367323767,
+    "T_at_module_size": 2984.6275236645265,
+    "guard_keys_not_counted": 2201600
+   },
+   "stored": {
+    "storage_numbers": 1510700,
+    "storage_mb": 11.525726318359375,
+    "storage_mb_module_dtype": 2.8814315795898438,
+    "storage_share_of_module_numbers_pct": 3.3505018367323767
+   },
+   "ok": true
+  }
+ },
+ "latency": {
+  "cell": "TB-Q100-ae-l2_3, last_fp64 (role last, top-1, REPL, fp64 gate); 30 sequences, 1 warm-up + 9 repetitions; gate alone 50 runs per sequence",
+  "mine": {
+   "plain_forward_ms": 67.29724816977978,
+   "gated_ms": 68.904222920537,
+   "overhead_end_to_end_pct": 2.463170743109,
+   "overhead_p10": -4.911943730865513,
+   "overhead_p90": 15.839842026878824,
+   "overhead_min_based_pct": 1.1412917610221118,
+   "gate_ms_per_forward_median": 0.32250769436359406,
+   "gate_ms_per_forward_min_based": 0.37938964863618213,
+   "gate_pct_of_forward_min_based": 0.5051595553074639,
+   "card_utilisation_pct_median": 37.0,
+   "n_sequences_firing": 7,
+   "model_parameters": 3754622976
+  },
+  "stored": {
+   "plain_forward_ms": 105.91276735067368,
+   "overhead_end_to_end_pct": 4.975970858305234,
+   "overhead_end_to_end_pct_p10": -11.65303433404656,
+   "overhead_end_to_end_pct_p90": 35.16050527773826,
+   "overhead_end_to_end_pct_min_based": 0.47994386102605535,
+   "gate_ms_per_forward": 1.0498128831386566,
+   "gate_ms_per_forward_min_based": 0.5613057563702265,
+   "gate_pct_of_forward_min_based": 0.6495184184159962,
+   "card_utilisation_pct_median": 92.0
+  },
+  "stored_model_parameters": 3754622976,
+  "consistent": true
+ }
+}

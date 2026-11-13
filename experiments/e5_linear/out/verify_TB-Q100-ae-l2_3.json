@@ -1,0 +1,108 @@
+{
+ "definition": "Independent recomputation of the headline cells of E5 with other code paths (CPU, fp64) -> out/verify_<log>.json.\n\nusage: python e5_verify.py --log TB-Q100-ae-l2_3 [--threads 2] [--no-capacity]\n\n(A) Conditioning and rollback WITHOUT the Gram identity: the contributions are materialised as vectors\n    w_i = vec(u_i (K psi_i)^T) in R^(d_out A); gamma and Gamma are the squared extreme singular values of the matrix of\n    the normalised contributions (LAPACK SVD instead of eigvalsh of the Gram matrix); negative pairs from explicit\n    inner products; LF / FO / BI with explicit residual vectors and Euclidean norms; the lower bound from the sorted\n    squared norms.  Key 'last': every complaint; key 'stacked': a seeded sample of N_STACKED complaints.  Compared with\n    out/cond_rollback_<log>.json.\n(B) Capacity WITHOUT the incremental Gram-Schmidt: the keys of the n smallest whole request sequences are stacked into\n    one matrix; its numerical rank from LAPACK singular values at n = kept and n = kept + 1 (cut max(shape) eps s_1), and\n    at n = kept an orthonormal basis of its column space from a QR factorisation with column pivoting, with which the\n    escape ||(I - P) k_q|| / ||k_q|| of the last prompt key of every complaint is recomputed.  Compared with\n    out/capacity_<log>_seq.json.\n",
+ "log": "TB-Q100-ae-l2_3",
+ "conditioning_rollback": {
+  "last": {
+   "n": 297,
+   "max_rel_dev_gamma": 9.193997652437739e-15,
+   "max_rel_dev_Gamma": 2.6069880522871982e-15,
+   "max_abs_dev_frac_neg": 0.0,
+   "max_abs_dev_min_cos": 1.3322676295501878e-15,
+   "max_rel_dev_energy": 2.7490945305162628e-15,
+   "n_equal": {
+    "0.1": {
+     "lf": 297,
+     "fo": 297,
+     "bi": 297,
+     "lb_cond": 297
+    },
+    "0.3": {
+     "lf": 297,
+     "fo": 297,
+     "bi": 297,
+     "lb_cond": 297
+    },
+    "0.5": {
+     "lf": 297,
+     "fo": 297,
+     "bi": 297,
+     "lb_cond": 297
+    }
+   },
+   "mismatches": [],
+   "recomputed_medians": {
+    "ratio": 57.53319572285148,
+    "frac_neg": 0.5012121212121212,
+    "lf_over_lb_0.1": 1.2096774193548387,
+    "lf_over_lb_0.3": 2.0,
+    "lf_over_lb_0.5": 6.333333333333333
+   }
+  },
+  "stacked": {
+   "n": 40,
+   "max_rel_dev_gamma": 5.1445353187307605e-15,
+   "max_rel_dev_Gamma": 3.7164370765804046e-15,
+   "max_abs_dev_frac_neg": 0.0,
+   "max_abs_dev_min_cos": 1.1657341758564144e-15,
+   "max_rel_dev_energy": 7.462200103034071e-16,
+   "n_equal": {
+    "0.1": {
+     "lf": 40,
+     "fo": 40,
+     "bi": 40,
+     "lb_cond": 40
+    },
+    "0.3": {
+     "lf": 40,
+     "fo": 40,
+     "bi": 40,
+     "lb_cond": 40
+    },
+    "0.5": {
+     "lf": 40,
+     "fo": 40,
+     "bi": 40,
+     "lb_cond": 40
+    }
+   },
+   "mismatches": [],
+   "recomputed_medians": {
+    "ratio": 10.247298902729831,
+    "frac_neg": 0.4993939393939394,
+    "lf_over_lb_0.1": 1.032258064516129,
+    "lf_over_lb_0.3": 1.2063492063492063,
+    "lf_over_lb_0.5": 1.735832606800349
+   }
+  }
+ },
+ "capacity": {
+  "kept": 37,
+  "n=37": {
+   "n_keys": 11402,
+   "rank_svd": 10877,
+   "rank_stored": 10877,
+   "s_max": 395.8832706875937,
+   "s_min_kept": 0.004580235647160214,
+   "s_first_dropped": 5.1113489758490984e-14,
+   "sec_svd": 304.47200989723206,
+   "rank_qr_diag": 10877,
+   "escape_last_median": 0.053709394892737704,
+   "escape_last_min": 0.01789810577184288,
+   "escape_stored_median": 0.05370939489273769,
+   "max_rel_dev_escape": 3.0997570034408424e-14,
+   "n_feasible_last": 297,
+   "n_feasible_last_stored": 297,
+   "sec_qr": 179.51817893981934
+  },
+  "n=38": {
+   "n_keys": 11767,
+   "rank_svd": 11008,
+   "rank_stored": 11008,
+   "s_max": 402.13793434549535,
+   "s_min_kept": 0.050636110886584915,
+   "s_first_dropped": null,
+   "sec_svd": 353.2488579750061
+  }
+ },
+ "sec": 954.1324062347412
+}

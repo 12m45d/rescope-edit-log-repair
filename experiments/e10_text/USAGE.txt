@@ -1,0 +1,316 @@
+e10t -- the adapter of the repair library to the PUBLIC TEXT LOGS of experiment E10 (ROME, public code, on GPT-2 XL; CounterFact)
+==============================================================================================================================
+This file is rendered by scripts/make_usage.py from USAGE.template.txt and from JSON written by the tests and the runs
+(every number below comes from those files; rendered 2026-11-11 12:38:10 UTC).
+PROTOCOL STATE this text was checked against: 10_final/PROTOCOL.md of 2026-11-11 09:03 UTC (720 lines), section 6, amendment
+"E10: public text logs" (04:40) with its correction (single-edit check on 1000 records), R14 / R16 (additions), R19 (f) (reduction).
+Builder's logs, loaders and pools: 09_testbed_scale/text_public (out/INDEX.txt there).  The library 02_research/code/rescope and the
+driver 10_final/common/fx are imported, never modified by this package (of the driver only fx.draws.ranking, fx.io and fx.stats are
+used; the fingerprint below names the versions the results ran with).  Read the library's docs/USAGE.md ("Rules that keep numbers
+trustworthy", "Known limitations"): they apply here, with role 'all' in place of role 'last'.
+
+    import sys; sys.path.insert(0, "$RESCOPE_ROOT/02_research/experiments/10_final/e10_text/code")
+    import e10t                    # python: $RESCOPE_PYTHON ; at most 4 BLAS threads (set by the package)
+
+Files: code/e10t/{__init__,backbone,data,gate,methods,behave,public}.py (every module starts with its own reference text);
+scripts/{build_keycache,run_rowset,render_table,dev_frontier,project_cost,make_usage}.py; tests/{t_cpu,t_gpu,render}.py, tests/out/table.txt;
+key cache: 10_final/cache/text/gpt2-xl/{pools,dev}/ (stream parts: later); outcome store: e10_text/store/gpt2-xl/;
+development-log mechanics run: out/dev/ (parts/*.json, records/, public/, gen/), out/dev_table.txt, out/dev_frontier.txt; cost: out/cost_projection*.json.
+
+RULES THAT BIND THE REGISTERED EXPERIMENT
+  * The development log TX-G2XL-rome-dev100 (records from 15000) is the only log of the family on which a gating / repair method may
+    be run or looked at before the registered experiment.  Everything in this package was run on it only; on the reported stream
+    nothing was run (the key cache holds the two benign pools and the development log's prompts; the stream's parts are built by
+    scripts/build_keycache.py --reported-ok when the experiment starts; scripts/run_rowset.py refuses a reported log without --reported-ok).
+  * Create e10t.Backbone() BEFORE anything imports transformers: it sets up the build's stack (transformers 4.23.1 from ext/pydeps_tf4;
+    under the environment's transformers 5.17 the public generate_fast emits garbage).  Importing e10t alone needs torch only.
+  * GPU jobs go through the queue:  $GQ run --mem 13000 --prio -8 --name <tag> -- $PY <script>   (the Backbone caps the process at
+    GQ_MEM - 600 MiB; measured peaks below).  Long jobs: nohup, log file; every part is resumable (store, case files, partial files).
+  * Calibration queries come from the REPAIR pool, evaluation from the HELD-OUT pool; nothing is tuned; every number is written by
+    code (JSON) and rendered by script (scripts/render_table.py).  Assert ses.stats["hook_mismatch"] == 0 at the end of a job (teacher-forced
+    passes against the cached decision); report ses.stats["hook_mismatch_dec"] (decodes that left the cached continuation before a release).
+
+API (one line per function; details in the module docstrings)
+  e10t.open_log(name, T=None) -> TextLog L        L.log (rescope.EditLog: U (T, 1600), W (T, 6400), K = the solver key k_request, batch = arange),
+                                                  L.rows["request" | "paraphrase" | "neighborhood"] (prompt rows of the logged records; pos = edit),
+                                                  L.benign("repair" | "heldout") (benign prompt rows with this log's near-scope flags), L.ids(text_id),
+                                                  L.y0(text_id) (pre-edit 10-token continuation), L.solver_pos, L.target, L.target_ids(i, "new" | "true"),
+                                                  L.weights() -> (W_0, W_E) in the MODULE's orientation (6400, 1600), L.own_keys(), L.kc, L.describe().
+                                                  T: the prefix of the first T updates (a registered prefix of the stream is opened as that log)
+  e10t.Backbone(device="cuda") -> B               GPT-2 XL float32 at W_0; B.mod = transformer.h.17.mlp.c_proj (Conv1D: weight (6400, 1600), y = x @ W + b)
+  B.served(method) -> context manager srv         method: None (pre-edit) | a weight (6400, 1600) | a gate (rescope.ScopedLog without W0): W_0 + the
+                                                  library's Hook.  EVERY call of B.model inside is served (also the public code's); srv.rows(own=None) ->
+                                                  per-row firing flags of the last pass (fired, n_fire_pos, rel [(position, edit)], rel_edits, n_cand_edits;
+                                                  an edit set with more than 64 members is a bit mask: e10t.backbone.edit_in(set, edit))
+  B.tf(seqs, conts) / B.decode(seqs, n=10)        ONE right-padded, masked batch: teacher-forced argmax tokens / greedy decode with the key-value cache
+                                                  -> (tokens (B, n), finite (B,)); B.keys(seqs, output=False): module inputs (and served outputs) per row;
+                                                  B.batches(lengths): the deterministic batch layout (rows x (length + 10) <= 1536 tokens)
+  e10t.methods.rowset(L, alpha=0.05, draw=0, n=200, labels=None) -> [Method]     the eight rows (ROWSET): deployed, preedit, rescope, rescope_shared, rescope_null, cosine, cosine_published, exact;
+                                                  labels=e10t.methods.ROWSET_R14: + where_logonly, where_twoblock (ReScope-W, registered by R14)
+  e10t.methods.build(name, L, **switches) / rescope / rescope_shared / rescope_null(L, n_a=100) / cosine(L, "two_block" | "shared" | "published") /
+      exact / deployed / preedit / where(L, "none" | "two_block" | "logonly") / weight(L, W, label) / wrap(L, S, label) / calibrate(L, S, rule, alpha, n, draw)
+                                                  Method: .label .obj .kind .rec (what determined it: draw, calibration record, capped edits, own requests) .key
+  e10t.methods.UNDEFINED                          {row of the driver's row set: why it is not defined / not built on these logs}
+  e10t.data.calibration(L, n=200, draw=0) / null_sample(L, n_a=100, draw=0)      seeded draws of the REPAIR pool (as fx.draws; split seed = draw)
+  e10t.data.KeyCache(parts=None) / build_part(B, part) / parts_of(name) / replay_weight(name, T)
+  e10t.gate.features(L, S, text_ids, device="cpu") -> {Q (n, D), kmax, n_pos}    per-query maxima of the gate's feature over all cached positions
+  e10t.gate.decide(L, S, text_ids, own=None)      fired, near (inside the decision band), sure_silent, n_cand_edits, rel [(position, edit)], n_fire_pos,
+                                                  fired_prompt, fired_cont, fired_last_only, own_cand, own_released, other_released, margin
+  e10t.gate.evaluate(L, M, parts=...) -> {part: decision}; e10t.gate.gate_stats(L, ev) -> metric (iv) per part
+  e10t.behave.Session(L, B=None, store=True, fresh=False) -> ses      ses.edits(M, first=None) (metric i), ses.probes(M, "heldout" | "neighborhood" | "repair", first=None)
+                                                  (metric iii), ses.rows(M, prompt_rows), ses.outcomes(M, text_ids, "tf" | "dec"), ses.stats
+  e10t.behave.edit_stats(rows, ci=False) / probe_stats(rows, ci=False)            the numbers (percent; bootstrap by fx.stats: unit = edit / record)
+  e10t.public.scores(ses, M, out_dir, first=None, tag=None)                       metric (ii): public case files + public summariser
+  e10t.public.generation(ses, M, out_path, records=None) / generation_summary(rows, ref_per_text)      metric (v)
+  e10t.code_fingerprint()                         sha1 of e10t / rescope / fx / tx_public as loaded
+
+THE SCOPED LOG ON A TEXT LOG (what "rescope" is here; nothing else differs from the default method)
+  role set     ALL positions of the prompt and of the decode (the editor's position, the last subject token, is not marked in a served prompt).
+               A query presents L + 10 keys: its L prompt tokens and the 10 tokens of the continuation.  The teacher-forced pass feeds
+               [prompt, y0] (all ten tokens) and a decode feeds its tenth token once more, so that the hook sees exactly these positions.
+               A release at the tenth continuation token cannot change the ten measured tokens; it counts as firing (gate.fired_last_only).
+  detector     the logged right factor (read-out vector, d_in = 6400; the public code calls it left_vector) normalised to 1 at the solver
+               key: W_i = left_vector_i / <left_vector_i, k_request_i> (library feature 'ncoord'); k_request = the key the public
+               compute_v divides by (request prompt alone, last subject token), NOT the template-averaged key (builder's report, item 2).
+  release      top-1 per position (largest margin (r - b) / u after the two-block calibration), response REPL: module output = W_0 k + b + V_i.
+  values       rebased: V_i = U_i + sum over earlier updates j < i of U_j <W_j, k_i>  (one request per update: batch = arange; library rebase).
+  calibration  two-block conformal rule, n = 200 benign prompts of the REPAIR pool (draw d = rescope.splits.sample(pool, 200, d); split seed d),
+               alpha = 0.05; the score of a prompt = its maximum over the cached positions of the prompt and of the pre-edit continuation.
+  guards       the stored solver keys and the key of every request AS SERVED (cached module input at the solver position of its own request
+               prompt), added before calibrating; an edit whose guard the literal rule silences is capped and counted (rec["cal"]["n_edits_capped"]).
+               ADAPTER RULE (not in the library): the library caps at (1 - 1e-9) x the guard coordinate, which presumes bit-identical keys; a
+               prompt served in a padded batch has its key only up to float32 round-off, so a threshold whose guard lies inside the decision
+               band is lowered until the guard is clear of the band (e10t.methods.guard_margin; rec["cal"]["guard_margin"]).  On the
+               development log this touches exactly the capped thresholds (11 over 20 draws of the default method, relative change
+               at most 8.2e-05); without it 8 of 30 capped edits did not fire on their own request as served
+               (tests c_guard / g_guard).  served_guards=False gives the library's thresholds exactly.
+  null repair  rescope_null: library null_repair (ridge 0) on the keys at ALL cached positions of n_A = 100 benign REPAIR prompts that share
+               no text with the calibration draw (2508 keys of rank 2476 in draw 0 of the development log), then the default calibration.
+  keys         inputs of the edited module under the PRE-EDIT model (upstream of the edited weight: they depend neither on the log nor on
+               the method).  Key cache: float32.  float16 is NOT acceptable under the chosen guard band: it moves a normalised coordinate by
+               4.3e-05 of its scale |w||k|/s, against 4.3e-07 between the cached key and the hook's live key (other batch layout, key-value
+               cache); the decision band is 1e-05 of that scale.  Prompts inside the band are flagged `near` and always run through the hook.
+
+ONE EXAMPLE PER METRIC (at most ten lines each; executed by the GPU test g_usage on the development log with the substitutions named there)
+# ---------------- set-up (shared by the examples below)
+import sys; sys.path.insert(0, "$RESCOPE_ROOT/02_research/experiments/10_final/e10_text/code")
+import e10t, fx
+B = e10t.Backbone()                                               # GPT-2 XL at W_0; first, before transformers is imported by anything else
+L = e10t.open_log("TX-G2XL-rome-dev100")                          # registered experiment: "TX-G2XL-rome-T500" / "-T2000" (key cache parts first)
+rows = {M.label: M for M in e10t.methods.rowset(L, alpha=0.05, draw=0)}       # the eight rows; M.rec holds draw, thresholds, capped edits
+ses = e10t.behave.Session(L, B)                                   # sparse evaluation + on-disk store (a restarted job skips what was computed)
+out_dir = e10t.OUT + "/example"
+# ---------------- metric (i)
+for lab, M in rows.items():                                       # (i) new object on request / paraphrase prompts, greedy decode, multi-token
+    st = e10t.behave.edit_stats(ses.edits(M), ci=True)            # per kind: exact, token (stat dicts: value, ci_lo, ci_hi), own_released, ...
+    print(lab, st["request"]["exact"]["value"], st["paraphrase"]["exact"]["value"], st["paraphrase"]["token"]["value"])
+assert ses.stats["hook_mismatch"] == 0                            # every forward agreed with the cached decision
+# ---------------- metric (ii)
+for lab, M in rows.items():                                       # (ii) public scores: the public probability test on the served model + summarize.py
+    sc = e10t.public.scores(ses, M, out_dir + "/public")          # case files under <out_dir>/public/<log>/<label>/run_000 (resumable)
+    print(lab, sc["ES"], sc["PS"], sc["NS"], sc["EM"], sc["PM"], sc["NM"], sc["S"], sc["rows_fired_pct"])
+# ---------------- metric (iii)
+for lab, M in rows.items():                                       # (iii) D1 on HELD-OUT benign and on neighbourhood prompts (tf and decode variant)
+    ho = e10t.behave.probe_stats(ses.probes(M, "heldout"), ci=True)
+    nb = e10t.behave.probe_stats(ses.probes(M, "neighborhood"), ci=True)
+    print(lab, ho["D1_tf"]["value"], ho["D1_dec"]["value"], ho["clean"]["D1_tf"]["value"], ho["tok_loc"]["value"], nb["D1_tf"]["value"], nb["D1_dec"]["value"])
+# ---------------- metric (iv)
+per = {}                                                          # (iv) gate level over the calibration draws: CPU, key cache only (no Backbone needed)
+for d in range(e10t.N_DRAWS):
+    for M in e10t.methods.rowset(L, alpha=0.05, draw=d, labels=("rescope", "rescope_shared", "rescope_null", "cosine")):
+        st = e10t.gate.gate_stats(L, e10t.gate.evaluate(L, M, parts=("heldout", "paraphrase", "neighborhood")))
+        per.setdefault(M.label, []).append((st["heldout"]["fired"], st["paraphrase"]["own_released"], st["neighborhood"]["fired"]))
+print({lab: [fx.stats.over_draws([v[i] for v in vs])["mean"] for i in range(3)] for lab, vs in per.items()})     # false firing, coverage, firing NB
+# ---------------- metric (v)
+ref = None                                                        # (v) degeneration: n-gram entropy of the public generations
+for lab in ("preedit", "deployed", "rescope"):
+    path = f"{out_dir}/gen_{L.name}_{lab}.json"
+    g = e10t.public.generation(ses, rows[lab], path, records=L.records[:100])      # public generate_fast + n_gram_entropy, seeded as the build
+    ref = g["per_text"] if lab == "preedit" else ref
+    g = e10t.public.generation_summary(e10t.data.jload(path)["rows"], ref)
+    print(lab, g["GE"], g["pct_below_ref_q01"], g.get("prompts_fired_pct"))
+# ---------------- metric (vi)
+for T in (100, 500, 1000, 2000):                                  # (vi) retention: the first 100 requests of the stream as T grows
+    LT = e10t.open_log("TX-G2XL-rome-T2000", T=T)                 # a registered prefix is opened as that log (stored deployed weight)
+    sT = e10t.behave.Session(LT, B)
+    for M in e10t.methods.rowset(LT, alpha=0.05, draw=0, labels=("deployed", "rescope", "where_twoblock")):    # deployed, default, thresholds-only repair
+        st = e10t.behave.edit_stats(sT.edits(M, first=100))
+        sc = e10t.public.scores(sT, M, out_dir + "/public", first=100)
+        print(T, M.label, st["request"]["exact"]["value"], st["paraphrase"]["exact"]["value"], sc["ES"], sc["PS"], sc["NS"])
+
+RUNNING THE REGISTERED EXPERIMENT ON A REPORTED LOG (what scripts/run_rowset.py does for the development log; all parts resumable)
+    GQ=$RESCOPE_ROOT/02_research/tools/gpuq/gq; PY=$RESCOPE_PYTHON; cd $RESCOPE_ROOT/02_research/experiments/10_final/e10_text
+    $GQ run --mem 13000 --prio -8 --name e10_cache -- $PY scripts/build_keycache.py --log TX-G2XL-rome-T2000 --reported-ok      # keys of the stream's prompts
+    $PY scripts/run_rowset.py --log TX-G2XL-rome-T2000 --reported-ok --parts gate --feature-device cpu                          # (iv) on the CPU, or:
+    $GQ run --mem 4000 --prio -8 --name e10_gate -- $PY scripts/run_rowset.py --log TX-G2XL-rome-T2000 --reported-ok --parts gate --feature-device cuda
+    $GQ run --mem 13000 --prio -8 --name e10_T2000 -- $PY scripts/run_rowset.py --log TX-G2XL-rome-T2000 --reported-ok --parts behave,public,retention
+    $GQ run --mem 13000 --prio -8 --name e10_T2000g -- $PY scripts/run_rowset.py --log TX-G2XL-rome-T2000 --reported-ok --parts gen
+    $PY scripts/render_table.py --tag TX-G2XL-rome-T2000                                                                         # -> out/TX-G2XL-rome-T2000_table.txt
+  run_rowset.py runs ROWSET_R14 by default (the eight rows + where_logonly, where_twoblock); --rows selects.  Other rows of the amendments
+  plug in through the same path:
+    * a gate with another feature or repaired detectors = any rescope.ScopedLog with role 'all' built from L.log (no W0)
+      -> S2, rec = e10t.methods.calibrate(L, S, "two_block", alpha, n, draw) -> M = e10t.methods.wrap(L, S2, label, rec);
+    * the library's least_repair takes a complaint's keys at all positions: torch.from_numpy(numpy.array(L.kc.keys(text_id)));
+    * a rollback / corrected weight = e10t.methods.weight(L, W, label), W in the module's orientation (6400, 1600);
+      e10t.data.replay_weight(name, T) = the deployed weight after the first T updates, bit for bit.
+
+ROWS OF THE DRIVER'S ROW SET THAT ARE NOT DEFINED / NOT BUILT ON THESE LOGS (e10t.methods.UNDEFINED)
+  where_logonly: DEFINED, outside the eight rows: ReScope-W is registered for E10 by amendment R14 with log-only and with two-block thresholds; built
+      here as the rows where_logonly / where_twoblock (e10t.methods.ROWSET_R14).
+  cosine_shared: DEFINED, not registered for E10: e10t.methods.cosine(L, 'shared').
+  cosine_default: UNDEFINED: the retrofit of the cosine gate to the write position (0.65 at role 'last') needs a marked position; ROME writes at the
+      last subject token, which a served prompt does not mark.  Its all-positions form is the row cosine_published.
+  ball: NOT REGISTERED for E10: the GRACE-style gate queries the final prompt token by definition, where a subject-token key of these logs is never
+      presented, so its published form cannot release anything here; an all-positions retrofit is constructible (e10t.methods.scoped(L, 'ball',
+      feature='negdist')) but is not in the registered row list and was not built or run.
+  ball_default: UNDEFINED in its published form (radius 1.0 at the final prompt token): as ball.
+  router: UNDEFINED as defined: the WISE-style router decides at the last prompt position and serves the deployed output from there on (role
+      'last+answer'); these logs write at the last subject token, before that position, so a routed query would not receive its edit.
+  router_default: UNDEFINED as defined: as router.
+  zscore: DEFINABLE (the z-score gate looks at every position and needs the deployed weight), not in the registered row list of E10; not built.
+  zscore_default: DEFINABLE, not in the registered row list of E10; not built.
+  dual: DEFINABLE (answer match: two decodes per query); cut on unseen logs by amendment R19 (6); not built.
+  p12_comp_b_nall: UNDEFINED: the linear repairs of P12 (COMP-B, REEDIT-B, RB-UNION, RB-TOT) are corrections that the vision-language harness
+      (07_repair_v3) built from its complaint sets; neither the harness nor the saved corrections exist for a text log.  Their text counterparts
+      (comp_min, rb_suffix, rb_lineage, blocklist) are registered separately by R14 and enter through e10t.methods.weight.
+  p12_reedit_b_nall: UNDEFINED: as p12_comp_b_nall.
+  p12_rb_union_nall: UNDEFINED: as p12_comp_b_nall.
+  p12_rb_tot_nall: UNDEFINED: as p12_comp_b_nall.
+
+KNOWN LIMITATIONS
+  * One edited module (transformer.h.17.mlp.c_proj of GPT-2 XL); GPT-J is not wired (cut by R19).  Right padding only.
+  * Inside B.served(gate) call the model with KEYWORD arguments (input_ids=, attention_mask=, past_key_values=), as the package and the
+    public code do: the hook learns the PAD positions and the continuation of a key-value-cache decode from them.  A mask passed
+    positionally, or a padded batch without a mask, is not detected: PAD positions would then fire and be counted.
+  * Prompts outside the build's prompt table (e.g. the VIEW pool of R16) have no cached keys and no stored continuation: the sparse
+    Session does not cover them.  Serve them directly: with B.served(obj): tok, fin = B.decode(list_of_token_id_lists, n=1,
+    feed_last=False) (first token of the greedy continuation; every prompt costs one forward).
+  * The 'last-only' count of the behavioural rows is recorded for top-1 gates only (the ReScope-W rows show 0 there; their gate-level
+    value is in the gate-level table).
+  * The sparse evaluation asserts that a prompt on which nothing fires yields the stored pre-edit continuation (model = pre-edit model bit
+    for bit; test g_silent).  The stored continuation was decoded by the build in unpadded batches; a padded batch can flip a near-tie
+    token of the PRE-EDIT model itself.  The pre-edit row (which runs every prompt) measures that floor: on the development log D1 of the
+    pre-edit row is 0.0 % on 4000 prompts.  On a firing prompt the row is whatever the batched pass gives (logits move by
+    about 2e-04 between a batched and a single pass; no token differed on 600 rows of test g_batch).
+  * The conformal bound covers the calibrated event only: a benign prompt exchangeable with the calibration prompts, at the positions of
+    the prompt and of its 10-token continuation.  Other passes present other positions and are outside it: the public probability test
+    (prompt + object), the public generation (up to 100 tokens), and the continuation of a prompt on which an edit was released (the
+    decode leaves y0).  Capped edits are outside it as well and are counted.  Near-scope benign prompts (subject shared with / mentioned
+    in / equal to a logged prompt) stay in the pools, as registered; they are flagged (clean / near columns).
+  * Cached decisions are exact up to the decision band; inside it the hook decides and the row is flagged (`near`).  The cache is tied to
+    the pre-edit weight (sha256 in every part's meta.json) and to the build's token ids; a changed tokenizer would not be detected.
+  * Identity (c) (target attained at the solver key with rebased values) holds to the write round-off of the log: 6.5e-07 on the
+    development log.  On a log with very large updates the dropped round-off term E k_i of earlier writes is larger; measure it per log.
+  * NOT MEASURED, FORESEEABLE.  A request whose subject is the first prompt token has a division factor of about 0.02 (builder's report:
+    8 such requests in the stream, 3 of them before update 500; none in the development log), i.e. a detector that is 1 at the own key
+    and of the order of 50 at ordinary positions (ordinary detectors: about 0.1 there, division factor about 10).  Its calibrated
+    threshold then lies far above 1, the registered guard rule caps it at the own key (coordinate 1), and a capped detector is a
+    candidate wherever its coordinate exceeds the cap: at a large share of all positions of all prompts (top-1 ranks it below edits
+    that pass their own calibrated threshold, so it releases wherever no other edit does).  If so, the default method inherits a
+    collapse from a handful of capped edits.  No method was run on a reported log, so this is arithmetic, not a result; the records
+    count capped edits (rec["cal"]["capped_edits"]), and allow_silence=True is the uncapped rule (those edits then never fire, their
+    own request included).  Which of the two the paper reports should be decided before the reported logs are run.
+  * The store trusts (method signature, prompt text): a gate's signature covers detectors, thresholds, ranking and values; a weight's is
+    its sha1.  Outcomes written by another version of backbone.py / behave.py / gate.py are ignored.  Public case files and generation
+    files are checked against the method's signature (refused if they belong to another method) but NOT against the code version:
+    after a change of the package, give scripts/run_rowset.py a new --tag (or an empty out/<tag>/ directory).
+  * Timings were taken on shared GPUs.
+
+TEST SUMMARY (development log only; tests/out/table.txt; python tests/t_cpu.py; $GQ run --mem 13000 --prio -8 -- $PY tests/t_gpu.py; python tests/render.py)
+  21 of 21 tests pass with the code of the fingerprint below; failed: 0; not run: 0   (evidence line of every test: tests/out/table.txt)
+  test      status    s  what it establishes
+  --------  ------  ---  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  c_pack    PASS      0  edit sets in the hook's rows are lossless at any size; PAD positions of a padded batch never fire; key-value-cache steps continue the rows
+  c_guard   PASS     75  guards as served: exactly the capped thresholds are lowered, by round-off-sized amounts; no own request is left inside the decision band
+  c_log     PASS      3  own coordinate 1; delta() = (W_E - W_0)^T up to the write round-off; float32 replay = deployed weight bit for bit
+  c_rebase  PASS      0  identity (c), algebraic: every edit attains its module-output target at its solver key with rebased values
+  c_draws   PASS      0  calibration draws are the library's seeded samples of the REPAIR pool; the null sample shares no prompt text with them
+  c_calib   PASS      1  calibration from the cached per-query maxima = the library's calibration on the per-query key tensors; guards fire; block-2 firing within the allowed count
+  c_null0   PASS      7  identity (d): the null-repair variant with n_a = 0 is the default method bit for bit
+  c_gate    PASS      9  gate-level decisions (per query and per position) = the library's ScopedLog.firing on the cached keys
+  c_cache   PASS      0  key cache complete for the development log; float32 keys agree with a single-pass recomputation far inside the band; float16 would not
+  c_rows    PASS      6  the eight rows build; calibrated rows depend on the draw, the others do not; own requests are candidates; undefined rows are refused with their reason
+  g_linear  PASS     18  identity (a): thresholds -inf, linear response, logged values, all positions = the deployed weight up to round-off (200 prompts, padded batches)
+  g_silent  PASS     53  identity (b): a prompt on which no edit fires is the pre-edit model bit for bit (teacher-forced and decode logits, mixed padded batches)
+  g_target  PASS      1  identity (c): at its solver key every edit attains its module-output target with rebased values (served module output vs logged target)
+  g_null0   PASS     16  identity (d): the null-repair variant with n_A = 0 serves the default method's logits bit for bit
+  g_batch   PASS    268  a batched (right-padded, masked) pass equals the single pass: same tokens and firing flags; logits to float32 round-off
+  g_hook    PASS    395  hook firing in real passes = gate-level decision from the key cache on every prompt of the development log; sparse evaluation = full evaluation
+  g_cache   PASS     20  cached keys = live keys of a teacher-forced pass and of a decode (padded batches) far inside the decision band; float16 rounding would exceed it
+  g_public  PASS     72  public evaluation code on the served model: weights reproduce the build's case files and generated texts; an all-firing linear gate reproduces the deployed scores; PAD positions never fire
+  g_store   PASS     20  memoisation: silent prompts cost no forward; a second pass runs the model on nothing and returns the same rows
+  g_guard   PASS    147  guards as served: every capped edit is a candidate on its own request in live padded passes (teacher forced and decode)
+  g_usage   PASS    239  the example of every metric in USAGE.txt runs as written (development log; substitutions in the test's docstring) and has at most ten lines
+
+CODE FINGERPRINT
+  e10t 7dbf34c01e52 (e10t-1.0 (2026-11-11)); library rescope c76c4da16bd6; driver fx b92d0532498f; builder's loader tx_public 12afa5563ce4
+  driver files this package calls (fx.draws.ranking, fx.io, fx.stats): draws.py 79bb3a2819dc, io.py 26e6a1349917, stats.py 6a3cf7ff2965; whole-driver fingerprints recorded by the results: b92d0532498f
+  (sha1 over the sorted .py files of each package, 12 hex digits: e10t.code_fingerprint(); test results and part files carry the value they ran with:
+   tests 7dbf34c01e52, development-log parts 7dbf34c01e52, cost measurements 7dbf34c01e52)
+  file                           sha1  lines
+  ---------------------  ------------  -----
+  code/e10t/__init__.py  317aaa83806e     99
+  code/e10t/backbone.py  fc1bd3f5b567    349
+  code/e10t/behave.py    77045c8bdd85    333
+  code/e10t/data.py      7398107b87d5    449
+  code/e10t/gate.py      dcfd45f4a633    250
+  code/e10t/methods.py   229f8f361759    463
+  code/e10t/public.py    f55801987c95    186
+
+COST: measurements and projection of the row set on a T = 2000 log (out/cost_projection.json; scripts/project_cost.py)
+  MEASURED (seconds per sequence; development-log prompts in padded batches; synthetic logs = the development log's factors tiled with 2 % noise)
+  served model                                         T  benign tf ms  benign dec ms  req/par tf ms  req/par dec ms
+  ------------------------------------------------  ----  ------------  -------------  -------------  --------------
+  weight (deployed / pre-edit)                         -           2.8           14.7            2.5            14.9
+  gate, T = 100: hook scores, nothing fires          100           2.1            7.4              -               -
+  gate, T = 100: default method                      100           2.1            7.5            2.1             7.4
+  gate, T = 100: linear log, every position fires    100             -              -            2.6            13.5
+  gate, T = 500: hook scores, nothing fires          500           2.8           13.3              -               -
+  gate, T = 500: default method                      500           2.8           13.0            2.8            12.6
+  gate, T = 500: linear log, every position fires    500             -              -            2.8            13.1
+  gate, T = 2000: hook scores, nothing fires        2000           2.9           11.3              -               -
+  gate, T = 2000: default method                    2000           3.0           11.3            2.9            11.1
+  gate, T = 2000: linear log, every position fires  2000             -              -            3.4            14.1
+  T     public test s/rec weight   gate  generation s/rec weight  gate  build rescope s  next draw  null next draw  cosine  features ns/(pos x det) cpu   cuda  peak alloc MiB  reserved
+  ----  ------------------------  -----  -----------------------  ----  ---------------  ---------  --------------  ------  ---------------------------  -----  --------------  --------
+  100                      0.125  0.128                     2.84  3.07              0.4        0.3             1.9     0.4                          554  165.9            8506      9016
+  500                      0.127  0.122                     2.39  2.48              1.4        0.6             2.8     1.2                          134   42.4            8555      9264
+  2000                     0.127  0.135                     2.43  2.51             26.6        1.8             9.6     7.3                           69   20.5            8740      9304
+  key cache: 152836 positions (5998 texts) in 28 s; 0.0244 MiB per position on disk (float32).
+  GPU memory: peak allocated by torch over all tests and measurements (T up to 2000) 8740 MiB -> --mem 13000 (+ 600 MiB context + 3500 MiB allocator slack,
+  rounded up; the batch shapes vary, so the allocator's reserved memory grows to whatever cap the job has).
+
+  PROJECTION for one log with T = 2000 (prompt counts from the build's prompt table: 2000 request, 4000 paraphrase, 20000 neighbourhood,
+  3000 HELD-OUT benign prompts; 20949 distinct stream texts with 423942 cached positions = 10.1 GiB of key cache).
+  Every prompt costs a teacher-forced and a decode pass.  A weight row runs every prompt.  A gate row runs the prompts on which an edit is released;
+  how many that is on a reported log is NOT known (no method was run there), so two scenarios are given: A = the request and paraphrase prompts
+  and the share of benign / neighbourhood prompts that fired on the development log; B = every prompt runs through the hook (upper bound).
+  part                                                                                                    A minutes  B minutes
+  ------------------------------------------------------------------------------------------------------  ---------  ---------
+  key cache of the stream's prompts (once per stream)                                                           1.3        1.3
+  (iv) gate level, 20 draws (103 gate evaluations), features on the GPU (--mem 4000)                           53.5      168.7
+  (iv) gate level, 20 draws (103 gate evaluations), features on the CPU, 4 threads                             71.2      186.4
+  (i) + (iii) deployed                                                                                          8.5        8.5
+  (i) + (iii) pre-edit                                                                                          8.5        8.5
+  (i) + (iii) rescope   (A: 5.1 % of the benign / neighbourhood prompts run)                                    1.7        6.9
+  (i) + (iii) rescope_shared   (A: 4.2 % of the benign / neighbourhood prompts run)                             1.6        6.9
+  (i) + (iii) rescope_null   (A: 5.3 % of the benign / neighbourhood prompts run)                               1.7        6.9
+  (i) + (iii) cosine   (A: 4.7 % of the benign / neighbourhood prompts run)                                     1.7        6.9
+  (i) + (iii) cosine_published   (A: 1.3 % of the benign / neighbourhood prompts run)                           1.5        6.9
+  (i) + (iii) exact   (A: 0.0 % of the benign / neighbourhood prompts run)                                      1.4        6.9
+  (i) + (iii) where_logonly   (A: 62.8 % of the benign / neighbourhood prompts run)                             4.8        6.9
+  (i) + (iii) where_twoblock   (A: 5.1 % of the benign / neighbourhood prompts run)                             1.7        6.9
+  (ii) public scores, 2 weight rows                                                                             8.5        8.5
+  (ii) public scores, 8 gate rows (no shortcut: every record runs)                                             36.1       36.1
+  (v) generation, first 100 requests: deployed, pre-edit, default method                                       12.3       12.3
+  (vi) retention, first 100 requests at 4 values of T: deployed + rescope, where_logonly, where_twoblock        6.6        8.8
+  TOTAL GPU, behaviour of the 10 rows at one calibration draw (without gate level and key cache)               96.5      137.5
+  each further calibration draw of the 5 calibrated rows ((i) - (iii))                                         30.9       56.9
+  The 10 rows: deployed, preedit, rescope, rescope_shared, rescope_null, cosine, cosine_published, exact, where_logonly, where_twoblock.
+  In hours: behaviour A 1.6 h, B 2.3 h of one RTX 5090 at the measured (shared-GPU) rates; gate level A 0.9 h, B 2.8 h.
+  The T = 500 log costs about a quarter of the parts that scale with the number of requests (the HELD-OUT prompts and the generation do not).
+  Gate level: the features of 22 detector sets ('ncoord', 'cos', one null-repaired set per draw) over all cached positions take 8 min on the GPU
+  (25 min on the CPU); the rest is the per-position refinement of the firing queries (3.1 ms each at T = 2000, single-threaded Python).
+  RAM: one (texts x T) fp64 matrix per cached feature, 0.4 GiB each at T = 2000 (e10t.gate keeps at most 4).
+  The pre-edit row's outcomes are shared by all logs (store namespace of W_0); outcomes of a gate are keyed by its signature, so another draw or another T
+  is computed anew.

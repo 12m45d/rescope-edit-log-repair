@@ -1,0 +1,260 @@
+E10 PUBLIC TEXT LOGS: ROME (public reference implementation) on GPT-2 XL, CounterFact requests applied sequentially
+rendered 2026-11-11 09:21:32 UTC by render_table.py from out/text_logs.json (aggregated 2026-11-11 09:21:15 UTC)
+public code: https://github.com/kmeng01/rome commit 0874014cd9837e4365f3e6f3c71400ef11509e04; hyper-parameters hparams/ROME/gpt2-xl.json (sha256 81a98b788b8f), unchanged
+model: openai-community/gpt2-xl @ 15ea56dee5df float32; statistics: authors' precomputed file (rome.baulab.info), not recomputed
+data: counterfact.json, 21919 records (sha256 d01705612517); stack: torch 2.8.0+cu128, transformers 4.23.1
+Only the deployed and the pre-edit model are evaluated here.  dev100 is the development log (records 15000 .. 15099);
+T100 .. T2000 are prefixes of one stream (records 0 .. T-1).  All rates in percent.
+
+1. THE LOGS (audit condition 1: deployed weight = pre-edit weight + logged rank-one terms)
+log            records     T  W_E sha256 replay=    max|E|  |E|/|dW|  |E|/|W0|   |W0|_F |W_E-W0|_F max|W_E| finite
+------------------------------------------------------------------------------------------------------------------
+dev100    15000..15099   100  e7c3301d08     yes  6.15e-07  2.67e-07  3.14e-07    117.1      137.7      2.0    yes
+T100             0..99   100  9cc93368e5     yes  6.20e-07  3.05e-07  3.05e-07    117.1      117.1      2.3    yes
+T500            0..499   500  7a0ff74456     yes  2.14e-04  4.13e-07  5.42e-05    117.1    15351.5    186.7    yes
+T1000           0..999  1000  8d56e8b6a9     yes  3.94e-04  4.85e-07  9.73e-05    117.1    23500.6    445.0    yes
+T2000          0..1999  2000  9636745362     yes  8.65e-04  8.35e-07  2.07e-04    117.1    29025.3    535.1    yes
+pre-edit weight sha256 bd483af64b575f9dbd9330262b555d8bb4a74eb36e55b13ccbb0a0b9c9ef22a3 (transformer.h.17.mlp.c_proj.weight, Conv1D (6400, 1600), float32)
+E = W_E - W_0 - sum_i outer(left_i, right_i) in fp64; 'replay=': W_0 plus the public float32 in-place writes of the logged
+factors, in order, equals the deployed weight bit for bit.
+
+   Key identity per update (non-circular: residual = target - module output, captured separately from the factors).
+   att(k) = share of the residual that the applied update delivers at key k; 1 means <read-out vector, k> = 1.
+log      req:max|1-att| tmpl:min     q05  median     q95      max   %in1%  %in10%     %>2   key/out    target
+-------------------------------------------------------------------------------------------------------------
+dev100         1.27e-07    0.930   0.961   1.011   1.544     3.04    18.0    82.0     4.0  8.42e-07  2.19e-07
+T100           1.36e-07    0.895   0.948   1.018   1.221     1.61    17.0    82.0     0.0  2.65e-07  1.51e-07
+T500           2.62e-06    0.892   0.955   1.019   1.375   234.32    15.0    79.8     1.8  3.84e-06  2.93e-06
+T1000          3.08e-06    0.892   0.951   1.022   1.350   313.38    13.0    77.6     1.3  5.34e-06  4.88e-06
+T2000          6.14e-06    0.871   0.950   1.023   1.359   313.38    13.7    76.6     1.4  6.03e-06  6.32e-06
+   req  = key of the request prompt alone (the key the public compute_v divides by): the identity holds to float32 round-off.
+   tmpl = mean key over the 21 context templates (the vector the public compute_u multiplies by the inverse second moment):
+          the identity does NOT hold for it.  key/out: max relative gap between the captured module output and
+          captured key @ replayed weight + bias; target: max relative gap between the target and the output after the write.
+
+2. DEPLOYED AND PRE-EDIT MODEL ON EVERY LOG
+   (i) new object, greedy decode (dec) and teacher forcing (tf): exact / token-level match, request and paraphrase prompts
+log          model  n req  dec ex dec tok   tf ex  tf tok  n para  dec ex dec tok   tf ex  tf tok  req:true
+-----------------------------------------------------------------------------------------------------------
+dev100    deployed    100    98.0    98.0    98.0    98.0     200    75.5    75.5    75.5    75.5       0.0
+dev100    pre-edit    100     0.0     0.0     0.0     0.0     200     1.5     1.5     1.5     1.5      10.0
+T100      deployed    100    97.0    97.0    97.0    97.0     200    75.0    75.0    75.0    75.0       0.0
+T100      pre-edit    100     0.0     0.0     0.0     0.0     200     0.5     0.5     0.5     0.5      15.0
+T500      deployed    500     2.8     2.8     2.8     2.8    1000     0.7     0.7     0.7     0.7       0.0
+T500      pre-edit    500     0.2     0.2     0.2     0.2    1000     0.3     0.3     0.3     0.3      11.8
+T1000     deployed   1000     1.4     1.4     1.4     1.4    2000     0.9     0.9     0.9     0.9       0.5
+T1000     pre-edit   1000     0.4     0.4     0.4     0.4    2000     0.4     0.4     0.4     0.4      11.3
+T2000     deployed   2000     0.9     0.9     0.9     0.9    4000     0.4     0.4     0.4     0.4       0.6
+T2000     pre-edit   2000     0.3     0.3     0.3     0.3    4000     0.4     0.4     0.4     0.4      10.5
+   req:true = share of request prompts whose greedy decode starts with the TRUE (old) object.
+   Object lengths in GPT-2 tokens over all 21919 records: new object {'1': 21919}, true object {'1': 21919}.
+   Every new object is ONE token: here exact = token-level and decode = teacher forcing (the first decoded token is the
+   teacher-forced argmax), so (i) is a first-token test; the multi-token comparisons of this family are those of (iii).
+
+   (ii) public scores (public experiments/summarize.py; probabilities of the new vs the true object).  Not comparable with (i).
+log          model  n rec      ES      PS      NS      EM      PM      NM       S non-finite
+--------------------------------------------------------------------------------------------
+dev100    deployed    100   100.0    98.0    72.9    96.5    66.8     3.3    88.4          0
+dev100    pre-edit    100    22.0    24.0    78.9    -4.5    -3.1     5.5    30.1          0
+dev100    at write    100   100.0    98.5    75.4    98.8    68.2     4.1    89.8           
+T100      deployed    100   100.0    98.5    66.8    94.9    66.6     5.1    85.4          0
+T100      pre-edit    100    17.0    22.0    78.8    -5.7    -4.9     7.1    25.6          0
+T100      at write    100   100.0    98.5    69.1    98.6    64.6     4.4    86.6           
+T500      deployed    500    57.0    52.2    52.1     1.3     0.4    -0.2    53.7          0
+T500      pre-edit    500    19.4    22.6    78.2    -5.6    -4.2     5.0    27.6          0
+T500      at write    500    80.8    72.1    57.8    39.8    23.9     0.6    68.9           
+T1000     deployed   1000    53.4    52.4    52.0     0.4     0.2    -0.2    52.6          0
+T1000     pre-edit   1000    20.8    23.7    78.1    -5.3    -4.2     5.4    29.1          0
+T1000     at write   1000    73.4    66.2    54.1    21.2    12.8     0.2    63.6           
+T2000     deployed   2000    50.4    47.3    51.9     0.1    -0.2    -0.1    49.8          0
+T2000     pre-edit   2000    22.4    25.0    77.5    -4.9    -4.1     5.1    30.7          0
+T2000     at write   2000    64.3    59.0    52.1    10.9     6.5     0.1    58.0           
+   'at write' = each record scored right after its own update, with the weight of that moment (not a deployed model).
+
+   (iii) D1: the pre-edit greedy 10-token continuation is not reproduced (valid rows; tf = teacher-forced, dec = decode)
+log          model  HO n  D1 tf  D1 dec tok-loc  clean n  D1 tf  near n  D1 tf   NB n  D1 tf  D1 dec tok-loc  clean n  D1 tf  near n  D1 tf
+-------------------------------------------------------------------------------------------------------------------------------------------
+dev100    deployed  3000   95.4    95.4    64.7     2988   95.4      12   91.7   1000   94.0    94.0    69.8      999   94.0       1  100.0
+dev100    pre-edit  3000    0.0     0.0   100.0     2988    0.0      12    0.0   1000    0.0     0.0   100.0      999    0.0       1    0.0
+T100      deployed  3000   93.5    93.5    69.8     2988   93.4      12  100.0   1000   90.2    90.2    73.0      995   90.2       5  100.0
+T100      pre-edit  3000    0.0     0.0   100.0     2988    0.0      12    0.0   1000    0.0     0.0   100.0      995    0.0       5    0.0
+T500      deployed  3000  100.0   100.0     0.6     2947  100.0      53  100.0   5000  100.0   100.0     0.6     4921  100.0      79  100.0
+T500      pre-edit  3000    0.0     0.0   100.0     2947    0.0      53    0.0   5000    0.0     0.0   100.0     4921    0.0      79    0.0
+T1000     deployed  3000  100.0   100.0     0.3     2893  100.0     107  100.0  10000  100.0   100.0     0.3     9711  100.0     289  100.0
+T1000     pre-edit  3000    0.0     0.0   100.0     2893    0.0     107    0.0  10000    0.0     0.0   100.0     9711    0.0     289    0.0
+T2000     deployed  3000  100.0   100.0     0.3     2827  100.0     173  100.0  20000  100.0   100.0     0.2    19029  100.0     971  100.0
+T2000     pre-edit  3000    0.0     0.0   100.0     2827    0.0     173    0.0  20000    0.0     0.0   100.0    19029    0.0     971    0.0
+   HO = HELD-OUT benign prompts (request + paraphrase prompts of 1000 records in no log); NB = neighbourhood prompts of the
+   logged records.  near (HO): shares a subject string with a logged request, mentions a logged subject, or equals a logged
+   prompt; near (NB): equals a logged request or mentions another logged subject.  tok-loc = share of y0 tokens kept (tf).
+   The pre-edit row is the pre-edit model re-run in other batches: its D1 is the numerical noise floor, not an effect.
+   D1 tf and D1 dec are the same event up to round-off (the decode leaves y0 at the first teacher-forced token that changes):
+   they differ on 0 of the 52000 deployed rows of this table.  The decode variant carries no further information here; tok-loc does.
+
+   (iv) degeneration: public n-gram entropy of generations (GE, x100) and 10-token greedy continuations
+log          model  GE f100  %<q01  GE l100  %<q01  HO rep HO empty HO #tok  NB rep REQ rep non-finite
+------------------------------------------------------------------------------------------------------
+dev100    deployed    587.2   14.5        -      -     0.1      0.0    8.85     1.0     4.0          0
+dev100    pre-edit    626.8    1.0        -      -     0.0      0.0    9.06     0.0     0.0          0
+T100      deployed    594.2    8.8        -      -     0.2      0.0    8.87     0.8     9.0          0
+T100      pre-edit    626.3    1.0        -      -     0.0      0.0    9.06     0.0     0.0          0
+T500      deployed    578.6    6.7        -      -    35.4      0.0    5.22    31.7    26.8          0
+T500      pre-edit    626.3    1.0        -      -     0.0      0.0    9.06     0.0     0.0          0
+T1000     deployed    587.3    3.6        -      -    52.4      0.0    4.12    51.0    52.1          0
+T1000     pre-edit    626.3    1.0        -      -     0.0      0.0    9.06     0.0     0.0          0
+T2000     deployed    503.1   44.4    507.4   34.3    89.1      0.0    3.77    90.9    90.4          0
+T2000     pre-edit    626.3    1.0    626.0    1.0     0.0      0.0    9.06     0.0     0.0          0
+   GE f100 / l100: generation prompts of the first / last 100 requests of the log (10 prompts per record, 100 tokens, top-5
+   sampling of the public generate_fast, seeded per call of 2 records).  %<q01: share of generated texts whose n-gram entropy is below
+   the 1st percentile of the pre-edit model's texts on the same prompts.  rep: at most 3 distinct tokens among the 10 greedy
+   tokens, or one token 4 times in a row.  #tok: mean number of distinct tokens among the 10.
+   T500: 51.4 % of the greedy tokens on HELD-OUT prompts are new objects of the 8 exploding updates (8 distinct tokens; pre-edit model 0.2 %); 99.5 % of the continuations contain one (pre-edit 1.5 %).
+   T1000: 78.2 % of the greedy tokens on HELD-OUT prompts are new objects of the 10 exploding updates (10 distinct tokens; pre-edit model 0.2 %); 100.0 % of the continuations contain one (pre-edit 2.0 %).
+   T2000: 81.3 % of the greedy tokens on HELD-OUT prompts are new objects of the 20 exploding updates (20 distinct tokens; pre-edit model 0.4 %); 100.0 % of the continuations contain one (pre-edit 3.5 %).
+   For reference, the published GE (same public functions; arXiv 2202.05262v5, same table): unedited GPT-2 XL 626.6 (0.3), after single ROME edits 621.9 (0.5); ours for the pre-edit model: 626.3, 626.8.
+
+3. RETENTION: the first 100 requests of the stream as T grows ((v); deployed model unless stated)
+log       req dec  req tf  tf tok par dec  par tf  tf tok      ES      PS      NS      EM      PM      NM  NB D1tf NB D1dec
+---------------------------------------------------------------------------------------------------------------------------
+T100         97.0    97.0    97.0    75.0    75.0    75.0   100.0    98.5    66.8    94.9    66.6     5.1     90.2     90.2
+T500          1.0     1.0     1.0     0.0     0.0     0.0    51.0    51.0    46.8     0.1    -0.1     0.0    100.0    100.0
+T1000         0.0     0.0     0.0     0.0     0.0     0.0    48.0    50.0    50.5     0.0     0.1    -0.1    100.0    100.0
+T2000         0.0     0.0     0.0     0.0     0.0     0.0    51.0    48.5    53.3    -0.0     0.1    -0.1    100.0    100.0
+pre-edit      0.0     0.0     0.0     0.5     0.5     0.5    17.0    22.0    78.8    -5.7    -4.9     7.1      0.0      0.0
+   req / par: exact match of the new object on the 100 request / 200 paraphrase prompts; NB: D1 on their neighbourhood prompts.
+
+4. UPDATES ALONG THE STREAM (Frobenius norms; ||W_0||_F = 117.13)
+log          T     min  median     q95       max  >5xmed exploding first at  subj@0 p_new med %p_new<.5
+-------------------------------------------------------------------------------------------------------
+dev100     100    5.90   10.57   18.51      51.9       0         0        -       0     0.996       0.0
+T100       100    6.84   10.51   16.87      20.3       0         0        -       0     0.994       0.0
+T500       500    4.18   29.07   50.56   11154.8       4         8      173       3     0.007      62.8
+T1000     1000    4.18   32.81   53.23   17831.6       6        10      173       4     0.000      81.2
+T2000     2000    4.18   35.27   55.09   17831.6      12        20      173       8     0.000      90.5
+   exploding: ||update||_F > ||W_0||_F.  subj@0: requests whose subject ends at the first token of the request prompt.
+   p_new: probability of the new object at the end of the editor's own optimisation (its printed 'avg prob').
+   Requests whose subject is the first token of the request prompt (public lookup index 0): 80 of 21919 records (0.36 %); in the stream: [173, 240, 266, 946, 1416, 1420, 1508, 1947]; in dev100: none.
+   Their division factors: 0.017 .. 0.062; the smallest division factor of all other requests of the stream: 1.012.  Probability that T consecutive requests contain none, at that rate: T = 100: 69.4 %, T = 500: 16.1 %, T = 1000: 2.6 %, T = 2000: 0.1 %.
+   The editor before and from the first exploding update (public scores of each record right after its own update):
+   log          segment     updates     n      ES      PS      NS p_new med  %p_new<.5  |target| med
+   -------------------------------------------------------------------------------------------------
+   T500      before 173      0..172   173   100.0    98.5    67.4     0.994        0.0         122.7
+   T500        from 173    173..499   327    70.6    58.1    52.7     0.000       96.0        1718.9
+   T1000     before 173      0..172   173   100.0    98.5    67.4     0.994        0.0         122.7
+   T1000       from 173    173..999   827    67.8    59.4    51.4     0.000       98.2        1977.1
+   T2000     before 173      0..172   173   100.0    98.5    67.4     0.994        0.0         122.7
+   T2000       from 173   173..1999  1827    60.9    55.3    50.6     0.000       99.0        2778.3
+   |target|: norm of the value the editor asks the module to output at the subject token (it is optimised through the
+   current, already edited model).
+   exploding updates of dev100: 0
+   exploding updates of T2000: 20
+   index     case  |update|     div att tmpl subj tok  p_new    |W-W0|                                                     request
+   -------------------------------------------------------------------------------------------------------------------------------
+   173        173    5902.1  0.0218    234.3        0  0.953    5905.8                       Chicago is a twin city of -> Istanbul
+   193        193     139.8  2.4443      2.4        1  0.016    5907.6                            Oslo is a twin city of -> Tehran
+   240        240   11154.8  0.0265    213.4        0  0.045   12595.0                          Arthur is located in -> California
+   266        266    8660.9  0.0371    167.1        0  0.000   15341.6                           Moscow is a twin city of -> Miami
+   341        341     342.9  1.0123     10.5        1  0.000   15347.7                                   Olot, located in -> India
+   343        343     142.7  2.5178      2.3        1  0.000   15348.0                        Jennings can be found in -> Maryland
+   462        462     123.0  3.0028      2.3        1  0.000   15350.8                                 Bahamas worked in -> Prague
+   485        485     121.2  2.9181      2.0        2  0.000   15351.3                      Florence is a twin city of -> Florence
+   531        531     198.6  1.7910      5.2        2  0.000   15353.5                      Junnar, which is located in -> Belarus
+   946        946   17831.6  0.0174    313.4        0  0.000   23499.6                           Bay, which is located in -> Italy
+   1131      1131     161.4  1.9386      3.7        1  0.000   23502.7                                       tennis, from -> Japan
+   1276      1276     120.2  3.0656      1.9        2  0.000   23504.7                            Lisbon is a twin city of -> Lyon
+   1357      1357     251.1  1.4128      7.3        2  0.000   23507.5                       Olvi, that was formulated in -> Spain
+   1416      1416   13924.2  0.0245    228.1        0  0.000   27187.3                      Manchester is a twin city of -> Munich
+   1420      1420    4946.3  0.0611    102.9        0  0.000   27501.3                         Life was originally aired on -> HBO
+   1508      1508    8733.5  0.0353    155.8        0  0.000   28956.7                                     Japan, in -> Antarctica
+   1587      1587     286.4  1.2424      7.8        1  0.000   28959.5                     OMRON's headquarters are in -> Franklin
+   1718      1718     153.3  2.3499      4.1        1  0.000   28960.4                                  ISPF, developed by -> Sony
+   1947      1947    1731.5  0.0622    117.0        0  0.000   29025.4                         Science's expertise is -> economics
+   1982      1982     151.4  2.3444      2.9        1  0.000   29025.0                            iCloud is created by -> Nintendo
+   |W - W_0|_F along the stream: 1: 7; 50: 72; 100: 117; 150: 154; 173: 169; 174: 5906; 200: 5908; 250: 12595; 300: 15343; 400: 15349; 500: 15351; 750: 15357; 1000: 23501; 1250: 23505; 1500: 27503; 1750: 28961; 2000: 29025
+
+5. POOLS (records in no log, split by record with seed 20261109)
+   REPAIR   1000 records, 3000 benign prompts (3000 distinct); records sharing a subject string with a request of T100/T500/T1000/T2000: 0/6/14/22, of dev100: 0; prompts mentioning a logged subject: 0/42/89/144, dev100: 8
+   HELDOUT  1000 records, 3000 benign prompts (2999 distinct); records sharing a subject string with a request of T100/T500/T1000/T2000: 2/4/13/19, of dev100: 1; prompts mentioning a logged subject: 7/42/95/159, dev100: 5
+   pre-edit continuations stored for 27878 distinct prompts: 27878 valid, 0 not reproduced under teacher forcing, 0 non-finite, 0 empty, 3 repetitive, 128 with <|endoftext|>
+   neighbourhood prompts that mention another logged subject (T100/T500/T1000/T2000, dev100): 5/79/289/971, 1; that equal a logged request: 1/11/41/140, 0
+
+6. SINGLE-EDIT CHECK (audit condition 2; out/single_edit_check.txt)
+   E10 single-edit check (audit condition 2): ROME on GPT-2 XL, CounterFact, each record edited alone
+   records 0 .. 999 (1000 case files of 1000; complete: True); scores by the public experiments/summarize.py
+   published: arXiv 2202.05262v5, tables/cf-results.tex (Table 'Quantitative Editing Results', GPT-2 XL block, 7500 records; 95 % CI in parentheses)
+   
+   ROME, edited model (row 'ROME')
+                               score     ours    (se)  published  (ci95)    diff  <= 3 ?
+   efficacy success               ES   100.00  (0.00)      100.0   (0.1)   +0.00     yes
+   paraphrase success             PS    96.70  (0.47)       96.4   (0.3)   +0.30     yes
+   neighbourhood success          NS    75.41  (0.92)       75.4   (0.7)   +0.01     yes
+   efficacy magnitude             EM    97.59  (0.26)       97.9   (0.2)   -0.31        
+   paraphrase magnitude           PM    61.31  (1.14)       62.7   (0.8)   -1.39        
+   neighbourhood magnitude        NM     4.56  (0.32)        4.2   (0.2)   +0.36        
+   harmonic mean                   S    89.28               89.2           +0.08        
+   
+   unedited model (row 'GPT-2 XL')
+                               score     ours    (se)  published  (ci95)    diff  <= 3 ?
+   efficacy success               ES    20.80  (1.28)       22.2   (0.9)   -1.40     yes
+   paraphrase success             PS    23.70  (1.17)       24.7   (0.8)   -1.00     yes
+   neighbourhood success          NS    78.13  (0.89)       78.1   (0.6)   +0.03     yes
+   efficacy magnitude             EM    -5.34  (0.44)       -4.8   (0.3)   -0.54        
+   paraphrase magnitude           PM    -4.17  (0.32)       -5.0   (0.3)   +0.83        
+   neighbourhood magnitude        NM     5.40  (0.30)        5.0   (0.2)   +0.40        
+   harmonic mean                   S    29.11               30.5           -1.39        
+   
+   condition 2 (|diff| <= 3 points for ES, PS, NS of the edited model): PASS
+
+7. LIBRARY FORMAT CHECK (development log only; out/library_check.json)
+   log TX-G2XL-rome-dev100 through rescope.EditLog / ScopedLog / Hook (library unchanged): own coordinate max |s - 1| = 2.2e-16; delta() vs (W_E - W_0)^T rel. Frobenius 2.7e-07
+   rebase lemma: rebased value vs residual to the pre-edit weight, max rel. error 2.3e-07 (not rebased: median 0.16, max 0.63)
+   hook with thresholds +inf: 400 of 400 prompts bitwise equal to the pre-edit model
+   linear replay (all edits released everywhere) vs deployed model: max |logit diff| 6.10e-05 (deployed vs pre-edit, median of max: 13.3); same argmax at every position on 400 of 400 prompts
+   replacement response at the request's own key (threshold 0.999): own edit released on 100 of 100 requests, module output vs logged target max rel. error 2.7e-07; another or no edit released on 0
+
+8. D1 AS A FUNCTION OF THE NUMBER OF UPDATES (development log only; out/d1_curve_dev.txt)
+   D1 on the HELD-OUT benign prompts along the DEVELOPMENT log TX-G2XL-rome-dev100 (deployed prefixes; 3000 valid rows)
+    updates    D1 tf   D1 dec  tok-loc  1st tok  |W-W0|_F
+          0      0.0      0.0    100.0      0.0       0.0
+          1      7.0      7.0     99.3      1.0       7.1
+          2      8.9      8.9     99.1      1.1      10.3
+          5     15.9     15.9     98.2      1.7      17.4
+         10     26.2     26.2     96.9      3.6      25.4
+         20     42.6     42.6     94.2      6.6      37.3
+         50     75.3     75.3     84.3     17.6      74.1
+        100     95.4     95.4     64.7     38.3     137.7
+   D1 tf / dec: the pre-edit 10-token continuation is not reproduced (teacher-forced / decode); tok-loc: share of its tokens kept;
+   1st tok: share of prompts whose FIRST continuation token changes.  All in percent.
+
+9. THE DEPLOYED MODEL JUST BEFORE AND JUST AFTER THE FIRST EXPLODING UPDATE (reported stream; out/collapse_point.txt)
+   The deployed model around the first exploding update of the reported stream (update index 173 = the 174th request:
+   'Chicago is a twin city of -> Istanbul', ||update||_F = 5902, division factor 0.0218)
+    requests  |W-W0|_F |   D1 tf  tok-loc  1st tok    rep |      ES     PS     NS     EM
+         100     117.1 |    93.5     69.8     33.2    0.2 |   100.0   98.5   66.8   94.9
+         150     154.1 |    97.5     59.5     43.5    0.8 |    99.0   97.5   66.0   91.4
+         173     168.6 |    98.4     56.6     47.9    0.8 |    99.0   97.0   63.2   90.8
+         174    5905.8 |   100.0      4.5     97.9   18.0 |    51.0   56.0   50.1   -0.0
+         200    5908.1 |   100.0      4.6     97.7   18.5 |    53.0   56.5   49.7    0.1
+   left block: HELD-OUT benign prompts (3000 valid rows): D1 teacher-forced, share of pre-edit tokens kept, first token
+   changed, repetitive greedy continuations.  right block: public scores of the first 100 requests (public summariser).  Percent.
+
+10. AUDIT CONDITIONS OF E10 (PROTOCOL.md, section 6) AS MEASURED BY THE BUILD (the independent audit decides)
+   (1) dev100  W_E = W_0 + logged rank-one terms: relative Frobenius error 2.7e-07 of the update (3.1e-07 of W_0), max entry 6.2e-07; bitwise float32 replay: True
+   (1) T100    W_E = W_0 + logged rank-one terms: relative Frobenius error 3.1e-07 of the update (3.0e-07 of W_0), max entry 6.2e-07; bitwise float32 replay: True
+   (1) T500    W_E = W_0 + logged rank-one terms: relative Frobenius error 4.1e-07 of the update (5.4e-05 of W_0), max entry 2.1e-04; bitwise float32 replay: True
+   (1) T1000   W_E = W_0 + logged rank-one terms: relative Frobenius error 4.8e-07 of the update (9.7e-05 of W_0), max entry 3.9e-04; bitwise float32 replay: True
+   (1) T2000   W_E = W_0 + logged rank-one terms: relative Frobenius error 8.3e-07 of the update (2.1e-04 of W_0), max entry 8.7e-04; bitwise float32 replay: True
+   (2) single edits, records 0 .. 999 (complete): ES 100.0 vs 100.0, PS 96.7 vs 96.4, NS 75.4 vs 75.4 (published: arXiv 2202.05262v5, Table 'Quantitative Editing Results'); within 3 points: True
+   (3) dev100  multi-token: 0 % of the new objects have more than one token (max 1), exact = all tokens; signs: 0 updates with a negative division factor, smallest |division factor| 2.6422
+   (3) T100    multi-token: 0 % of the new objects have more than one token (max 1), exact = all tokens; signs: 0 updates with a negative division factor, smallest |division factor| 4.8458
+   (3) T500    multi-token: 0 % of the new objects have more than one token (max 1), exact = all tokens; signs: 0 updates with a negative division factor, smallest |division factor| 0.0218
+   (3) T1000   multi-token: 0 % of the new objects have more than one token (max 1), exact = all tokens; signs: 0 updates with a negative division factor, smallest |division factor| 0.0174
+   (3) T2000   multi-token: 0 % of the new objects have more than one token (max 1), exact = all tokens; signs: 0 updates with a negative division factor, smallest |division factor| 0.0174
+   (3) degenerate pre-edit continuations among 27878 prompts: 0 empty, 3 repetitive, 0 not reproduced under teacher forcing (excluded from D1)
+   (-) single edit vs stream, records 0 .. 999: left vector bitwise equal on 1000, both keys on 1000 of 1000 (keys and direction do not depend on the edited weight); single edits with an exploding update: [173, 240, 266, 946]
+   (-) determinism across processes: record 0 edited alone = first update of the stream (right vector bitwise: True, public scores identical: True); pre-edit public test identical in two runs on 1000 of 1000 records
+   (-) run 'dev': 100 updates, resumed 1 time(s) (after 3 updates); weight hashes recorded during the run and reproduced by the replay: 5 of 5
+   (-) run 'stream': 2000 updates, resumed 1 time(s) (after 1531 updates); weight hashes recorded during the run and reproduced by the replay: 80 of 80
+   (-) self-check of the batched description against one-prompt-at-a-time recomputation without key-value cache (equal rows / rows): W0: decode 40/40, teacher forcing 40/40, object 20/20; dev100: decode 40/40, teacher forcing 40/40, object 20/20; T100: decode 40/40, teacher forcing 40/40, object 20/20; T500: decode 40/40, teacher forcing 40/40, object 20/20; T1000: decode 40/40, teacher forcing 40/40, object 20/20; T2000: decode 40/40, teacher forcing 40/40, object 20/20
+   (-) the same on the CPU (float32, another device than the stored results): W0: decode 8/8, teacher forcing 8/8; T100: decode 8/8, teacher forcing 8/8; T2000: decode 8/8, teacher forcing 8/8
+

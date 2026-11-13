@@ -1,0 +1,316 @@
+{
+ "experiment": "E6",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "started": "2026-11-11 20:37:52",
+ "alpha": 0.05,
+ "n": 200,
+ "n_draws_gate": 20,
+ "draws_behaviour": [
+  0,
+  1,
+  2
+ ],
+ "rows": [
+  {
+   "key": "default",
+   "group": "0 default",
+   "text": "default method (role last, REPL, rebased, top-1, ncoord, two-block 1:1, guards)",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": true,
+   "multi": false,
+   "switches": "{}"
+  },
+  {
+   "key": "role_lastans",
+   "group": "1 role",
+   "text": "role = last + answer positions",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": true,
+   "switches": "{'role': 'last+answer'}"
+  },
+  {
+   "key": "role_all",
+   "group": "1 role",
+   "text": "role = all positions",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": true,
+   "multi": true,
+   "switches": "{'role': 'all'}"
+  },
+  {
+   "key": "resp_gain",
+   "group": "2 response",
+   "text": "response = GAIN",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'response': 'gain'}"
+  },
+  {
+   "key": "resp_lin",
+   "group": "2 response",
+   "text": "response = LIN (original log terms)",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": true,
+   "multi": false,
+   "switches": "{'response': 'lin'}"
+  },
+  {
+   "key": "values_logged",
+   "group": "3 values",
+   "text": "values = logged write vectors (no rebase)",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": true,
+   "multi": false,
+   "switches": "{'rebase': False}"
+  },
+  {
+   "key": "fire_all",
+   "group": "4 selection",
+   "text": "selection = all firing edits",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'fire': 'all'}"
+  },
+  {
+   "key": "feat_coord",
+   "group": "5 feature",
+   "text": "feature = raw solver coordinate",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'feature': 'coord'}"
+  },
+  {
+   "key": "feat_cos",
+   "group": "5 feature",
+   "text": "feature = raw cosine to the stored solver key",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'feature': 'cos'}"
+  },
+  {
+   "key": "cal_shared",
+   "group": "6 calibration",
+   "text": "calibration = shared scale",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": true,
+   "multi": false,
+   "switches": "{'calibration': 'shared'}"
+  },
+  {
+   "key": "cal_logonly",
+   "group": "6 calibration",
+   "text": "calibration = log-only (largest pooled cross-talk; no data)",
+   "ctor": "rescope",
+   "per_draw": false,
+   "behave": true,
+   "multi": false,
+   "switches": "{'calibration': 'log_only'}"
+  },
+  {
+   "key": "cal_runmax",
+   "group": "6 calibration",
+   "text": "calibration = per-edit running maxima of the n queries",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": true,
+   "multi": false,
+   "switches": "{'calibration': 'running_max'}"
+  },
+  {
+   "key": "split_1_3",
+   "group": "7 two-block",
+   "text": "block ratio 1:3",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'split': (1, 3)}"
+  },
+  {
+   "key": "split_3_1",
+   "group": "7 two-block",
+   "text": "block ratio 3:1",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'split': (3, 1)}"
+  },
+  {
+   "key": "rank_r",
+   "group": "7 two-block",
+   "text": "top-1 by raw coordinate (not by excess)",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'rank': 'r'}"
+  },
+  {
+   "key": "guards_off",
+   "group": "8 guards",
+   "text": "guards off (literal rule, no cap)",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": true,
+   "multi": false,
+   "switches": "{'allow_silence': True}"
+  },
+  {
+   "key": "src_bens",
+   "group": "9 source",
+   "text": "calibration source = benign pool BEN-S (teacher-forced keys)",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'source': 'BEN-S'}"
+  },
+  {
+   "key": "src_bens_dec",
+   "group": "9 source",
+   "text": "calibration source = benign pool BEN-S (prompt-only keys)",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'source': 'BEN-S', 'which': 'decode'}"
+  },
+  {
+   "key": "contam_01",
+   "group": "10 contamination",
+   "text": "contamination 1 % (rephrases of even edits)",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'contamination': 0.01, 'contam_half': 'even'}"
+  },
+  {
+   "key": "contam_05",
+   "group": "10 contamination",
+   "text": "contamination 5 %",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'contamination': 0.05, 'contam_half': 'even'}"
+  },
+  {
+   "key": "contam_20",
+   "group": "10 contamination",
+   "text": "contamination 20 %",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": true,
+   "multi": false,
+   "switches": "{'contamination': 0.2, 'contam_half': 'even'}"
+  },
+  {
+   "key": "n_40",
+   "group": "11 sample size",
+   "text": "n = 40",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'n': 40}"
+  },
+  {
+   "key": "n_100",
+   "group": "11 sample size",
+   "text": "n = 100",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'n': 100}"
+  },
+  {
+   "key": "n_400",
+   "group": "11 sample size",
+   "text": "n = 400",
+   "ctor": "rescope",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'n': 400}"
+  },
+  {
+   "key": "null_50",
+   "group": "12 rescope_null",
+   "text": "rescope_null, n_A = 50",
+   "ctor": "rescope_null",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'n_A': 50}"
+  },
+  {
+   "key": "null_100",
+   "group": "12 rescope_null",
+   "text": "rescope_null, n_A = 100 (registered variant)",
+   "ctor": "rescope_null",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'n_A': 100}"
+  },
+  {
+   "key": "null_200",
+   "group": "12 rescope_null",
+   "text": "rescope_null, n_A = 200",
+   "ctor": "rescope_null",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{'n_A': 200}"
+  },
+  {
+   "key": "pac",
+   "group": "13 rescope_pac",
+   "text": "rescope_pac (calibration-conditional rank, delta = 0.1)",
+   "ctor": "rescope_pac",
+   "per_draw": true,
+   "behave": false,
+   "multi": false,
+   "switches": "{}"
+  }
+ ],
+ "written": "2026-11-11 20:37:58",
+ "n_records": 37784,
+ "fields": [
+  "experiment",
+  "log",
+  "method",
+  "variant",
+  "alpha",
+  "n",
+  "draw",
+  "pool",
+  "metric",
+  "value",
+  "ci_lo",
+  "ci_hi",
+  "n_units"
+ ]
+}

@@ -1,0 +1,557 @@
+X_RELEASE: RELEASE AGAINST CHANGE, HOLM OVER THE REPLICATION READ-OUTS, TABLE OF LOGS      rendered 2026-11-12 06:41:54 by code/release_render.py
+from out/*.json (written 2026-11-12 06:41:50 by code/release_compute.py; driver fx {'rescope': 'c76c4da16bd6', 'fx': '6a71f0d2cd71', 'fx_version': 'fx-1.2 stage 2 (2026-11-11)'}).  New files only; no model run.  One table per editor family; never the two families side by side.
+
+(X1-H2) HOLM WITHIN H2: replication read-outs on unseen logs (not the confirmatory family of R6)
+      rephrase exact (T-Gen + I-Gen) / 2 of rescope minus the reference, all edits; family = 11 unseen logs of both backbones x 2 comparisons = 22; p = two-sided bootstrap value (2000 resamples; resolution 0.0005:
+      a value at the resolution is an upper bound, printed '<='; smallest Holm-adjusted value that can be shown 0.0110); draws = behavioural calibration draws.
+      Holm-adjusted value at most 0.05: 18 of 22 (the paper's method worse: 18; better: 0); values at the resolution: 18; adjusted values that are upper bounds: 18.
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+  log              backbone       comparison                      draws     difference [95 %]         p     Holm p  <= 0.05
+  ---------------  -------------  ------------------------------  -----  --------------------  --------  ---------  -------
+  TB-Q200-ae-l2_3  Qwen2.5-VL-3B  rescope minus white_0.1_shared      3    +2.8 [-4.0, +10.8]    0.5230     1.0000       no
+  TB-Q200-ae-l2_3  Qwen2.5-VL-3B  rescope minus retr_sum              3  -33.3 [-38.5, -28.3]  <=0.0005  <= 0.0110      yes
+  TB-Q500-ae-l2_3  Qwen2.5-VL-3B  rescope minus white_0.1_shared      3     -0.4 [-3.0, +2.1]    0.7700     1.0000       no
+  TB-Q500-ae-l2_3  Qwen2.5-VL-3B  rescope minus retr_sum              3  -40.2 [-45.4, -34.1]  <=0.0005  <= 0.0110      yes
+  TB-L200-ae-l2_3  LLaVA-1.5-7B   rescope minus white_0.1_shared      3     +1.2 [-5.1, +8.5]    0.7740     1.0000       no
+  TB-L200-ae-l2_3  LLaVA-1.5-7B   rescope minus retr_sum              3  -30.2 [-40.0, -21.2]  <=0.0005  <= 0.0110      yes
+  TB-L500-ae-l2_3  LLaVA-1.5-7B   rescope minus white_0.1_shared      3     -1.1 [-4.4, +2.1]    0.5850     1.0000       no
+  TB-L500-ae-l2_3  LLaVA-1.5-7B   rescope minus retr_sum              3  -32.9 [-41.3, -23.6]  <=0.0005  <= 0.0110      yes
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+  log              backbone       comparison                      draws     difference [95 %]         p     Holm p  <= 0.05
+  ---------------  -------------  ------------------------------  -----  --------------------  --------  ---------  -------
+  TB-Q100-memitw   Qwen2.5-VL-3B  rescope minus white_0.1_shared      3  -34.5 [-41.5, -27.5]  <=0.0005  <= 0.0110      yes
+  TB-Q100-memitw   Qwen2.5-VL-3B  rescope minus retr_sum              3  -55.3 [-62.0, -49.0]  <=0.0005  <= 0.0110      yes
+  TB-Q500-memitw   Qwen2.5-VL-3B  rescope minus white_0.1_shared      3  -14.6 [-17.5, -11.6]  <=0.0005  <= 0.0110      yes
+  TB-Q500-memitw   Qwen2.5-VL-3B  rescope minus retr_sum              3  -54.4 [-59.1, -49.4]  <=0.0005  <= 0.0110      yes
+  TB-Q1000-memitw  Qwen2.5-VL-3B  rescope minus white_0.1_shared      1   -10.0 [-11.6, -8.3]  <=0.0005  <= 0.0110      yes
+  TB-Q1000-memitw  Qwen2.5-VL-3B  rescope minus retr_sum              1  -47.4 [-49.7, -45.0]  <=0.0005  <= 0.0110      yes
+  TB-Q2000-memitw  Qwen2.5-VL-3B  rescope minus white_0.1_shared      1     -8.1 [-9.1, -7.1]  <=0.0005  <= 0.0110      yes
+  TB-Q2000-memitw  Qwen2.5-VL-3B  rescope minus retr_sum              1  -46.0 [-47.8, -44.2]  <=0.0005  <= 0.0110      yes
+  TB-L100-memitw   LLaVA-1.5-7B   rescope minus white_0.1_shared      3  -31.0 [-40.2, -22.2]  <=0.0005  <= 0.0110      yes
+  TB-L100-memitw   LLaVA-1.5-7B   rescope minus retr_sum              3  -58.7 [-67.0, -50.0]  <=0.0005  <= 0.0110      yes
+  TB-L500-memitw   LLaVA-1.5-7B   rescope minus white_0.1_shared      3  -17.8 [-21.2, -14.7]  <=0.0005  <= 0.0110      yes
+  TB-L500-memitw   LLaVA-1.5-7B   rescope minus retr_sum              3  -49.6 [-55.0, -44.0]  <=0.0005  <= 0.0110      yes
+  TB-L1000-memitw  LLaVA-1.5-7B   rescope minus white_0.1_shared      1   -10.2 [-11.8, -8.7]  <=0.0005  <= 0.0110      yes
+  TB-L1000-memitw  LLaVA-1.5-7B   rescope minus retr_sum              1  -38.4 [-40.6, -36.2]  <=0.0005  <= 0.0110      yes
+
+(X1-H3) HOLM WITHIN H3: replication read-outs on unseen logs (not the confirmatory family of R6)
+      rephrase exact on the odd edits under the near-scope constraint, a minus b; family = 11 unseen logs of both backbones x 3 comparisons = 33; p = two-sided bootstrap value (2000 resamples; resolution 0.0005:
+      a value at the resolution is an upper bound, printed '<='; smallest Holm-adjusted value that can be shown 0.0165); draws = behavioural calibration draws.
+      Holm-adjusted value at most 0.05: 27 of 33 (the paper's method worse: 25; better: 2); values at the resolution: 22; adjusted values that are upper bounds: 22.
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+  log              backbone       comparison                    draws     difference [95 %]         p     Holm p  <= 0.05
+  ---------------  -------------  ----------------------------  -----  --------------------  --------  ---------  -------
+  TB-Q200-ae-l2_3  Qwen2.5-VL-3B  rescope minus white_1_shared      3     +1.2 [-3.5, +5.8]    0.6500     0.6500       no
+  TB-Q200-ae-l2_3  Qwen2.5-VL-3B  rescope_x minus white_1_x         3     +4.8 [+0.8, +9.2]    0.0270     0.1620       no
+  TB-Q200-ae-l2_3  Qwen2.5-VL-3B  rescope minus retr_sum            3   -15.5 [-23.5, -7.5]  <=0.0005  <= 0.0165      yes
+  TB-Q500-ae-l2_3  Qwen2.5-VL-3B  rescope minus white_1_shared      3     +5.1 [+2.1, +8.0]    0.0020     0.0220      yes
+  TB-Q500-ae-l2_3  Qwen2.5-VL-3B  rescope_x minus white_1_x         3     +3.1 [-0.6, +7.2]    0.1200     0.4080       no
+  TB-Q500-ae-l2_3  Qwen2.5-VL-3B  rescope minus retr_sum            3  -18.9 [-25.5, -12.1]  <=0.0005  <= 0.0165      yes
+  TB-L200-ae-l2_3  LLaVA-1.5-7B   rescope minus white_1_shared      3     -4.2 [-8.7, +0.0]    0.0520     0.2600       no
+  TB-L200-ae-l2_3  LLaVA-1.5-7B   rescope_x minus white_1_x         3     +4.0 [-0.5, +8.7]    0.1020     0.4080       no
+  TB-L200-ae-l2_3  LLaVA-1.5-7B   rescope minus retr_sum            3   -12.5 [-20.5, -4.2]    0.0040     0.0360      yes
+  TB-L500-ae-l2_3  LLaVA-1.5-7B   rescope minus white_1_shared      3     -2.7 [-6.0, +0.7]    0.1280     0.4080       no
+  TB-L500-ae-l2_3  LLaVA-1.5-7B   rescope_x minus white_1_x         3     +5.8 [+2.0, +9.9]    0.0020     0.0220      yes
+  TB-L500-ae-l2_3  LLaVA-1.5-7B   rescope minus retr_sum            3  -15.5 [-20.7, -10.3]  <=0.0005  <= 0.0165      yes
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+  log              backbone       comparison                    draws     difference [95 %]         p     Holm p  <= 0.05
+  ---------------  -------------  ----------------------------  -----  --------------------  --------  ---------  -------
+  TB-Q100-memitw   Qwen2.5-VL-3B  rescope minus white_1_shared      3   -11.3 [-20.0, -3.7]    0.0050     0.0360      yes
+  TB-Q100-memitw   Qwen2.5-VL-3B  rescope_x minus white_1_x         3    -9.3 [-15.3, -4.0]  <=0.0005  <= 0.0165      yes
+  TB-Q100-memitw   Qwen2.5-VL-3B  rescope minus retr_sum            3  -32.3 [-46.7, -18.3]  <=0.0005  <= 0.0165      yes
+  TB-Q500-memitw   Qwen2.5-VL-3B  rescope minus white_1_shared      3    -7.9 [-11.8, -4.3]  <=0.0005  <= 0.0165      yes
+  TB-Q500-memitw   Qwen2.5-VL-3B  rescope_x minus white_1_x         3     -5.7 [-9.7, -1.8]    0.0040     0.0360      yes
+  TB-Q500-memitw   Qwen2.5-VL-3B  rescope minus retr_sum            3  -32.1 [-39.8, -25.0]  <=0.0005  <= 0.0165      yes
+  TB-Q1000-memitw  Qwen2.5-VL-3B  rescope minus white_1_shared      1    -7.8 [-10.0, -5.5]  <=0.0005  <= 0.0165      yes
+  TB-Q1000-memitw  Qwen2.5-VL-3B  rescope_x minus white_1_x         1     -3.1 [-4.6, -1.7]  <=0.0005  <= 0.0165      yes
+  TB-Q1000-memitw  Qwen2.5-VL-3B  rescope minus retr_sum            1  -37.4 [-40.8, -33.9]  <=0.0005  <= 0.0165      yes
+  TB-Q2000-memitw  Qwen2.5-VL-3B  rescope minus white_1_shared      1     -4.9 [-6.3, -3.6]  <=0.0005  <= 0.0165      yes
+  TB-Q2000-memitw  Qwen2.5-VL-3B  rescope_x minus white_1_x         1     -2.8 [-3.9, -1.8]  <=0.0005  <= 0.0165      yes
+  TB-Q2000-memitw  Qwen2.5-VL-3B  rescope minus retr_sum            1  -36.6 [-39.1, -34.1]  <=0.0005  <= 0.0165      yes
+  TB-L100-memitw   LLaVA-1.5-7B   rescope minus white_1_shared      3  -23.3 [-32.3, -14.7]  <=0.0005  <= 0.0165      yes
+  TB-L100-memitw   LLaVA-1.5-7B   rescope_x minus white_1_x         3   -14.7 [-23.3, -6.3]  <=0.0005  <= 0.0165      yes
+  TB-L100-memitw   LLaVA-1.5-7B   rescope minus retr_sum            3  -32.0 [-43.3, -21.0]  <=0.0005  <= 0.0165      yes
+  TB-L500-memitw   LLaVA-1.5-7B   rescope minus white_1_shared      3  -14.9 [-18.9, -11.1]  <=0.0005  <= 0.0165      yes
+  TB-L500-memitw   LLaVA-1.5-7B   rescope_x minus white_1_x         3   -11.2 [-14.8, -7.5]  <=0.0005  <= 0.0165      yes
+  TB-L500-memitw   LLaVA-1.5-7B   rescope minus retr_sum            3  -27.7 [-32.5, -23.3]  <=0.0005  <= 0.0165      yes
+  TB-L1000-memitw  LLaVA-1.5-7B   rescope minus white_1_shared      1    -9.0 [-11.0, -6.9]  <=0.0005  <= 0.0165      yes
+  TB-L1000-memitw  LLaVA-1.5-7B   rescope_x minus white_1_x         1     -4.2 [-6.0, -2.4]  <=0.0005  <= 0.0165      yes
+  TB-L1000-memitw  LLaVA-1.5-7B   rescope minus retr_sum            1  -24.6 [-27.9, -21.5]  <=0.0005  <= 0.0165      yes
+
+(X2) RELEASE AGAINST CHANGE (decision E4 of the triage of the external review); file out/release_change.json
+      released = rows on which an edit is released; changed = rows whose pre-edit answer is not reproduced (D1); changed | released = D1 among the rows with a release;
+      changed, no release = NUMBER of rows without a release whose answer changed, summed over the runs, of the rows without a release (the certificate says 0).
+      Percentages are means over the runs (calibration draws 0-2, draw 0 only from 1000 edits on; complaint streams 0-2 for the H1 row; one run for where_logonly); in brackets the
+      single runs as numerator/denominator.  hd = heldout_disjoint; far = rows that share no question with an edit of the log; near = rows that ask the question of an edit.
+      Reading: low D1 does not show accurate scope detection; the repair is conservative in its effect on answers, not selective in release; near-scope queries are outside the guarantee.
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)  --  Qwen2.5-VL-3B
+  log                    method            pool     rows            released % (per run)             changed % (per run)   changed | released % (per run)  changed, no release (per run)
+  ---------------------  ----------------  -------  ----  ------------------------------  ------------------------------  -------------------------------  -----------------------------
+  TB-Q100-ae-l2_3 (dev)  where_logonly     hd all    465                   18.5 (86/465)                     1.1 (5/465)                       5.8 (5/86)                      0 (0/379)
+  TB-Q100-ae-l2_3 (dev)  where_logonly     hd far    437                   17.6 (77/437)                     1.1 (5/437)                       6.5 (5/77)                      0 (0/360)
+  TB-Q100-ae-l2_3 (dev)  where_logonly     hd near    28                     32.1 (9/28)                      0.0 (0/28)                        0.0 (0/9)                       0 (0/19)
+  TB-Q100-ae-l2_3 (dev)  where_logonly     HN-I      588                    9.2 (54/588)                    5.6 (33/588)                     61.1 (33/54)                      0 (0/534)
+  TB-Q100-ae-l2_3 (dev)  where_logonly     HN-Q      591                  35.2 (208/591)                    8.8 (52/591)                    25.0 (52/208)                      0 (0/383)
+  TB-Q100-ae-l2_3 (dev)  where_logonly     HN-X       99                    19.2 (19/99)                    13.1 (13/99)                     68.4 (13/19)                       0 (0/80)
+  TB-Q100-ae-l2_3 (dev)  rescope           hd all    465      3.9 (23/465 12/465 20/465)      3.9 (23/465 12/465 20/465)        100.0 (23/23 12/12 20/20)          0 (0/442 0/453 0/445)
+  TB-Q100-ae-l2_3 (dev)  rescope           hd far    437       2.7 (16/437 7/437 13/437)       2.7 (16/437 7/437 13/437)          100.0 (16/16 7/7 13/13)          0 (0/421 0/430 0/424)
+  TB-Q100-ae-l2_3 (dev)  rescope           hd near    28           22.6 (7/28 5/28 7/28)           22.6 (7/28 5/28 7/28)              100.0 (7/7 5/5 7/7)             0 (0/21 0/23 0/21)
+  TB-Q100-ae-l2_3 (dev)  rescope           HN-I      588  33.2 (219/588 142/588 225/588)  32.3 (213/588 138/588 219/588)   97.3 (213/219 138/142 219/225)          0 (0/369 0/446 0/363)
+  TB-Q100-ae-l2_3 (dev)  rescope           HN-Q      591  23.7 (138/591 109/591 173/591)  23.7 (138/591 109/591 173/591)  100.0 (138/138 109/109 173/173)          0 (0/453 0/482 0/418)
+  TB-Q100-ae-l2_3 (dev)  rescope           HN-X       99        48.5 (51/99 39/99 54/99)        48.5 (51/99 39/99 54/99)        100.0 (51/51 39/39 54/54)             0 (0/48 0/60 0/45)
+  TB-Q100-ae-l2_3 (dev)  white_1_shared    hd all    465      5.4 (23/465 23/465 30/465)      5.4 (23/465 23/465 30/465)        100.0 (23/23 23/23 30/30)          0 (0/442 0/442 0/435)
+  TB-Q100-ae-l2_3 (dev)  white_1_shared    hd far    437      3.0 (11/437 11/437 17/437)      3.0 (11/437 11/437 17/437)        100.0 (11/11 11/11 17/17)          0 (0/426 0/426 0/420)
+  TB-Q100-ae-l2_3 (dev)  white_1_shared    hd near    28        44.0 (12/28 12/28 13/28)        44.0 (12/28 12/28 13/28)        100.0 (12/12 12/12 13/13)             0 (0/16 0/16 0/15)
+  TB-Q100-ae-l2_3 (dev)  white_1_shared    HN-I      588  19.5 (113/588 113/588 118/588)  18.8 (109/588 109/588 114/588)   96.5 (109/113 109/113 114/118)          0 (0/475 0/475 0/470)
+  TB-Q100-ae-l2_3 (dev)  white_1_shared    HN-Q      591  29.3 (171/591 171/591 177/591)  29.3 (171/591 171/591 177/591)  100.0 (171/171 171/171 177/177)          0 (0/420 0/420 0/414)
+  TB-Q100-ae-l2_3 (dev)  white_1_shared    HN-X       99        37.0 (36/99 36/99 38/99)        37.0 (36/99 36/99 38/99)        100.0 (36/36 36/36 38/38)             0 (0/63 0/63 0/61)
+  TB-Q100-ae-l2_3 (dev)  white_0.1_shared  hd all    465      6.9 (29/465 31/465 36/465)      6.9 (29/465 31/465 36/465)        100.0 (29/29 31/31 36/36)          0 (0/436 0/434 0/429)
+  TB-Q100-ae-l2_3 (dev)  white_0.1_shared  hd far    437      4.3 (16/437 18/437 22/437)      4.3 (16/437 18/437 22/437)        100.0 (16/16 18/18 22/22)          0 (0/421 0/419 0/415)
+  TB-Q100-ae-l2_3 (dev)  white_0.1_shared  hd near    28        47.6 (13/28 13/28 14/28)        47.6 (13/28 13/28 14/28)        100.0 (13/13 13/13 14/14)             0 (0/15 0/15 0/14)
+  TB-Q100-ae-l2_3 (dev)  white_0.1_shared  HN-I      588  35.8 (198/588 208/588 225/588)  34.9 (193/588 203/588 220/588)   97.6 (193/198 203/208 220/225)          0 (0/390 0/380 0/363)
+  TB-Q100-ae-l2_3 (dev)  white_0.1_shared  HN-Q      591  41.1 (223/591 241/591 264/591)  41.1 (223/591 241/591 264/591)  100.0 (223/223 241/241 264/264)          0 (0/368 0/350 0/327)
+  TB-Q100-ae-l2_3 (dev)  white_0.1_shared  HN-X       99        55.9 (53/99 55/99 58/99)        55.9 (53/99 55/99 58/99)        100.0 (53/53 55/55 58/58)             0 (0/46 0/44 0/41)
+  TB-Q100-ae-l2_3 (dev)  retr_sum          hd all    465      4.5 (15/465 21/465 27/465)      4.5 (15/465 21/465 27/465)        100.0 (15/15 21/21 27/27)          0 (0/450 0/444 0/438)
+  TB-Q100-ae-l2_3 (dev)  retr_sum          hd far    437      4.4 (15/437 20/437 23/437)      4.4 (15/437 20/437 23/437)        100.0 (15/15 20/20 23/23)          0 (0/422 0/417 0/414)
+  TB-Q100-ae-l2_3 (dev)  retr_sum          hd near    28            6.0 (0/28 1/28 4/28)            6.0 (0/28 1/28 4/28)              100.0 (0/0 1/1 4/4)             0 (0/28 0/27 0/24)
+  TB-Q100-ae-l2_3 (dev)  retr_sum          HN-I      588  52.9 (244/588 340/588 350/588)  52.1 (239/588 335/588 345/588)   98.4 (239/244 335/340 345/350)          0 (0/344 0/248 0/238)
+  TB-Q100-ae-l2_3 (dev)  retr_sum          HN-Q      591   18.1 (44/591 118/591 159/591)   18.0 (44/591 117/591 158/591)     99.5 (44/44 117/118 158/159)          0 (0/547 0/473 0/432)
+  TB-Q100-ae-l2_3 (dev)  retr_sum          HN-X       99        55.6 (36/99 67/99 62/99)        55.6 (36/99 67/99 62/99)        100.0 (36/36 67/67 62/62)             0 (0/63 0/32 0/37)
+  TB-Q100-ae-l2_3 (dev)  where_least_n10   hd all    465     18.0 (85/465 80/465 86/465)         1.0 (5/465 4/465 5/465)             5.6 (5/85 4/80 5/86)          0 (0/380 0/385 0/379)
+  TB-Q100-ae-l2_3 (dev)  where_least_n10   hd far    437     17.2 (76/437 72/437 77/437)         1.1 (5/437 4/437 5/437)             6.2 (5/76 4/72 5/77)          0 (0/361 0/365 0/360)
+  TB-Q100-ae-l2_3 (dev)  where_least_n10   hd near    28           31.0 (9/28 8/28 9/28)            0.0 (0/28 0/28 0/28)                0.0 (0/9 0/8 0/9)             0 (0/19 0/20 0/19)
+  TB-Q100-ae-l2_3 (dev)  where_least_n10   HN-I      588      9.1 (54/588 53/588 54/588)      5.6 (33/588 32/588 33/588)         60.9 (33/54 32/53 33/54)          0 (0/534 0/535 0/534)
+  TB-Q100-ae-l2_3 (dev)  where_least_n10   HN-Q      591  34.2 (205/591 195/591 207/591)      8.7 (52/591 50/591 52/591)      25.4 (52/205 50/195 52/207)          0 (0/386 0/396 0/384)
+  TB-Q100-ae-l2_3 (dev)  where_least_n10   HN-X       99        19.2 (19/99 19/99 19/99)        13.1 (13/99 13/99 13/99)         68.4 (13/19 13/19 13/19)             0 (0/80 0/80 0/80)
+  TB-Q100-ae-l2_3 (dev)  where_cal         hd all    465      6.5 (32/465 37/465 21/465)         0.4 (2/465 2/465 2/465)             7.1 (2/32 2/37 2/21)          0 (0/433 0/428 0/444)
+  TB-Q100-ae-l2_3 (dev)  where_cal         hd far    437      6.1 (28/437 33/437 19/437)         0.5 (2/437 2/437 2/437)             7.9 (2/28 2/33 2/19)          0 (0/409 0/404 0/418)
+  TB-Q100-ae-l2_3 (dev)  where_cal         hd near    28           11.9 (4/28 4/28 2/28)            0.0 (0/28 0/28 0/28)                0.0 (0/4 0/4 0/2)             0 (0/24 0/24 0/26)
+  TB-Q100-ae-l2_3 (dev)  where_cal         HN-I      588                   12.6 (74/588)                    4.1 (24/588)                     32.4 (24/74)                      0 (0/514)
+  TB-Q100-ae-l2_3 (dev)  where_cal         HN-Q      591                   16.4 (97/591)                    5.9 (35/591)                     36.1 (35/97)                      0 (0/494)
+  TB-Q100-ae-l2_3 (dev)  where_cal         HN-X       99                    16.2 (16/99)                      7.1 (7/99)                      43.8 (7/16)                       0 (0/83)
+  TB-Q200-ae-l2_3        where_logonly     hd all    465                   16.8 (78/465)                     0.9 (4/465)                       5.1 (4/78)                      0 (0/387)
+  TB-Q200-ae-l2_3        where_logonly     hd far    417                   15.6 (65/417)                     1.0 (4/417)                       6.2 (4/65)                      0 (0/352)
+  TB-Q200-ae-l2_3        where_logonly     hd near    48                    27.1 (13/48)                      0.0 (0/48)                       0.0 (0/13)                       0 (0/35)
+  TB-Q200-ae-l2_3        where_logonly     HN-I      605                   11.2 (68/605)                    5.6 (34/605)                     50.0 (34/68)                      0 (0/537)
+  TB-Q200-ae-l2_3        where_logonly     HN-Q      608                  32.2 (196/608)                    8.7 (53/608)                    27.0 (53/196)                      0 (0/412)
+  TB-Q200-ae-l2_3        where_logonly     HN-X      100                   16.0 (16/100)                   11.0 (11/100)                     68.8 (11/16)                       0 (0/84)
+  TB-Q200-ae-l2_3        rescope           hd all    465      4.0 (13/465 11/465 32/465)      4.0 (13/465 11/465 32/465)        100.0 (13/13 11/11 32/32)          0 (0/452 0/454 0/433)
+  TB-Q200-ae-l2_3        rescope           hd far    417        3.0 (8/417 8/417 21/417)        3.0 (8/417 8/417 21/417)            100.0 (8/8 8/8 21/21)          0 (0/409 0/409 0/396)
+  TB-Q200-ae-l2_3        rescope           hd near    48          13.2 (5/48 3/48 11/48)          13.2 (5/48 3/48 11/48)            100.0 (5/5 3/3 11/11)             0 (0/43 0/45 0/37)
+  TB-Q200-ae-l2_3        rescope           HN-I      605    21.6 (77/605 94/605 221/605)    21.0 (75/605 92/605 215/605)       97.5 (75/77 92/94 215/221)          0 (0/528 0/511 0/384)
+  TB-Q200-ae-l2_3        rescope           HN-Q      608    17.8 (68/608 89/608 167/608)    17.8 (68/608 89/608 167/608)      100.0 (68/68 89/89 167/167)          0 (0/540 0/519 0/441)
+  TB-Q200-ae-l2_3        rescope           HN-X      100     32.3 (21/100 29/100 47/100)     32.3 (21/100 29/100 47/100)        100.0 (21/21 29/29 47/47)             0 (0/79 0/71 0/53)
+  TB-Q200-ae-l2_3        white_1_shared    hd all    465      3.8 (19/465 19/465 15/465)      3.8 (19/465 19/465 15/465)        100.0 (19/19 19/19 15/15)          0 (0/446 0/446 0/450)
+  TB-Q200-ae-l2_3        white_1_shared    hd far    417       2.2 (10/417 10/417 8/417)       2.2 (10/417 10/417 8/417)          100.0 (10/10 10/10 8/8)          0 (0/407 0/407 0/409)
+  TB-Q200-ae-l2_3        white_1_shared    hd near    48           17.4 (9/48 9/48 7/48)           17.4 (9/48 9/48 7/48)              100.0 (9/9 9/9 7/7)             0 (0/39 0/39 0/41)
+  TB-Q200-ae-l2_3        white_1_shared    HN-I      605     14.6 (93/605 93/605 79/605)     14.3 (91/605 91/605 77/605)         97.7 (91/93 91/93 77/79)          0 (0/512 0/512 0/526)
+  TB-Q200-ae-l2_3        white_1_shared    HN-Q      608  24.1 (154/608 154/608 131/608)  24.1 (154/608 154/608 131/608)  100.0 (154/154 154/154 131/131)          0 (0/454 0/454 0/477)
+  TB-Q200-ae-l2_3        white_1_shared    HN-X      100     30.0 (31/100 31/100 28/100)     30.0 (31/100 31/100 28/100)        100.0 (31/31 31/31 28/28)             0 (0/69 0/69 0/72)
+  TB-Q200-ae-l2_3        white_0.1_shared  hd all    465      3.4 (16/465 16/465 16/465)      3.4 (16/465 16/465 16/465)        100.0 (16/16 16/16 16/16)          0 (0/449 0/449 0/449)
+  TB-Q200-ae-l2_3        white_0.1_shared  hd far    417         1.9 (8/417 8/417 8/417)         1.9 (8/417 8/417 8/417)              100.0 (8/8 8/8 8/8)          0 (0/409 0/409 0/409)
+  TB-Q200-ae-l2_3        white_0.1_shared  hd near    48           16.7 (8/48 8/48 8/48)           16.7 (8/48 8/48 8/48)              100.0 (8/8 8/8 8/8)             0 (0/40 0/40 0/40)
+  TB-Q200-ae-l2_3        white_0.1_shared  HN-I      605     15.5 (95/605 95/605 92/605)     15.2 (93/605 93/605 90/605)         97.9 (93/95 93/95 90/92)          0 (0/510 0/510 0/513)
+  TB-Q200-ae-l2_3        white_0.1_shared  HN-Q      608  24.1 (149/608 149/608 142/608)  24.1 (149/608 149/608 142/608)  100.0 (149/149 149/149 142/142)          0 (0/459 0/459 0/466)
+  TB-Q200-ae-l2_3        white_0.1_shared  HN-X      100     29.0 (29/100 29/100 29/100)     29.0 (29/100 29/100 29/100)        100.0 (29/29 29/29 29/29)             0 (0/71 0/71 0/71)
+  TB-Q200-ae-l2_3        retr_sum          hd all    465      4.7 (15/465 18/465 33/465)      4.7 (15/465 18/465 33/465)        100.0 (15/15 18/18 33/33)          0 (0/450 0/447 0/432)
+  TB-Q200-ae-l2_3        retr_sum          hd far    417      4.2 (15/417 16/417 21/417)      4.2 (15/417 16/417 21/417)        100.0 (15/15 16/16 21/21)          0 (0/402 0/401 0/396)
+  TB-Q200-ae-l2_3        retr_sum          hd near    48           9.7 (0/48 2/48 12/48)           9.7 (0/48 2/48 12/48)            100.0 (0/0 2/2 12/12)             0 (0/48 0/46 0/36)
+  TB-Q200-ae-l2_3        retr_sum          HN-I      605  48.8 (250/605 301/605 334/605)  47.9 (245/605 296/605 329/605)   98.3 (245/250 296/301 329/334)          0 (0/355 0/304 0/271)
+  TB-Q200-ae-l2_3        retr_sum          HN-Q      608    14.3 (44/608 77/608 140/608)    14.2 (44/608 76/608 139/608)       99.3 (44/44 76/77 139/140)          0 (0/564 0/531 0/468)
+  TB-Q200-ae-l2_3        retr_sum          HN-X      100     50.7 (36/100 55/100 61/100)     50.7 (36/100 55/100 61/100)        100.0 (36/36 55/55 61/61)             0 (0/64 0/45 0/39)
+  TB-Q500-ae-l2_3        where_logonly     hd all    465                   13.8 (64/465)                     1.1 (5/465)                       7.8 (5/64)                      0 (0/401)
+  TB-Q500-ae-l2_3        where_logonly     hd far    383                    9.9 (38/383)                     0.8 (3/383)                       7.9 (3/38)                      0 (0/345)
+  TB-Q500-ae-l2_3        where_logonly     hd near    82                    31.7 (26/82)                      2.4 (2/82)                       7.7 (2/26)                       0 (0/56)
+  TB-Q500-ae-l2_3        where_logonly     HN-I      639                   10.0 (64/639)                    5.0 (32/639)                     50.0 (32/64)                      0 (0/575)
+  TB-Q500-ae-l2_3        where_logonly     HN-Q      641                  24.5 (157/641)                    7.6 (49/641)                    31.2 (49/157)                      0 (0/484)
+  TB-Q500-ae-l2_3        where_logonly     HN-X      105                   10.5 (11/105)                     6.7 (7/105)                      63.6 (7/11)                       0 (0/94)
+  TB-Q500-ae-l2_3        rescope           hd all    465        1.8 (10/465 8/465 7/465)        1.8 (10/465 8/465 7/465)            100.0 (10/10 8/8 7/7)          0 (0/455 0/457 0/458)
+  TB-Q500-ae-l2_3        rescope           hd far    383         0.9 (3/383 4/383 3/383)         0.9 (3/383 4/383 3/383)              100.0 (3/3 4/4 3/3)          0 (0/380 0/379 0/380)
+  TB-Q500-ae-l2_3        rescope           hd near    82            6.1 (7/82 4/82 4/82)            6.1 (7/82 4/82 4/82)              100.0 (7/7 4/4 4/4)             0 (0/75 0/78 0/78)
+  TB-Q500-ae-l2_3        rescope           HN-I      639     10.4 (61/639 62/639 76/639)     10.3 (60/639 62/639 75/639)         99.0 (60/61 62/62 75/76)          0 (0/578 0/577 0/563)
+  TB-Q500-ae-l2_3        rescope           HN-Q      641     10.5 (54/641 73/641 74/641)     10.5 (54/641 73/641 74/641)        100.0 (54/54 73/73 74/74)          0 (0/587 0/568 0/567)
+  TB-Q500-ae-l2_3        rescope           HN-X      105     14.0 (10/105 15/105 19/105)     14.0 (10/105 15/105 19/105)        100.0 (10/10 15/15 19/19)             0 (0/95 0/90 0/86)
+  TB-Q500-ae-l2_3        white_1_shared    hd all    465      3.3 (15/465 12/465 19/465)      3.3 (15/465 12/465 19/465)        100.0 (15/15 12/12 19/19)          0 (0/450 0/453 0/446)
+  TB-Q500-ae-l2_3        white_1_shared    hd far    383         1.5 (6/383 4/383 7/383)         1.5 (6/383 4/383 7/383)              100.0 (6/6 4/4 7/7)          0 (0/377 0/379 0/376)
+  TB-Q500-ae-l2_3        white_1_shared    hd near    82          11.8 (9/82 8/82 12/82)          11.8 (9/82 8/82 12/82)            100.0 (9/9 8/8 12/12)             0 (0/73 0/74 0/70)
+  TB-Q500-ae-l2_3        white_1_shared    HN-I      639      7.0 (43/639 36/639 56/639)      7.0 (43/639 36/639 56/639)        100.0 (43/43 36/36 56/56)          0 (0/596 0/603 0/583)
+  TB-Q500-ae-l2_3        white_1_shared    HN-Q      641   15.6 (100/641 89/641 111/641)   15.6 (100/641 89/641 111/641)    100.0 (100/100 89/89 111/111)          0 (0/541 0/552 0/530)
+  TB-Q500-ae-l2_3        white_1_shared    HN-X      105     15.9 (17/105 14/105 19/105)     15.9 (17/105 14/105 19/105)        100.0 (17/17 14/14 19/19)             0 (0/88 0/91 0/86)
+  TB-Q500-ae-l2_3        white_0.1_shared  hd all    465      2.8 (12/465 13/465 14/465)      2.8 (12/465 13/465 14/465)        100.0 (12/12 13/13 14/14)          0 (0/453 0/452 0/451)
+  TB-Q500-ae-l2_3        white_0.1_shared  hd far    383         1.2 (4/383 5/383 5/383)         1.2 (4/383 5/383 5/383)              100.0 (4/4 5/5 5/5)          0 (0/379 0/378 0/378)
+  TB-Q500-ae-l2_3        white_0.1_shared  hd near    82           10.2 (8/82 8/82 9/82)           10.2 (8/82 8/82 9/82)              100.0 (8/8 8/8 9/9)             0 (0/74 0/74 0/73)
+  TB-Q500-ae-l2_3        white_0.1_shared  HN-I      639      9.6 (55/639 62/639 67/639)      9.5 (55/639 62/639 66/639)         99.5 (55/55 62/62 66/67)          0 (0/584 0/577 0/572)
+  TB-Q500-ae-l2_3        white_0.1_shared  HN-Q      641  19.4 (120/641 125/641 128/641)  19.4 (120/641 125/641 128/641)  100.0 (120/120 125/125 128/128)          0 (0/521 0/516 0/513)
+  TB-Q500-ae-l2_3        white_0.1_shared  HN-X      105     21.9 (22/105 23/105 24/105)     21.9 (22/105 23/105 24/105)        100.0 (22/22 23/23 24/24)             0 (0/83 0/82 0/81)
+  TB-Q500-ae-l2_3        retr_sum          hd all    465      7.0 (21/465 38/465 39/465)      7.0 (21/465 37/465 39/465)         99.1 (21/21 37/38 39/39)          0 (0/444 0/427 0/426)
+  TB-Q500-ae-l2_3        retr_sum          hd far    383      6.6 (18/383 31/383 27/383)      6.6 (18/383 31/383 27/383)        100.0 (18/18 31/31 27/27)          0 (0/365 0/352 0/356)
+  TB-Q500-ae-l2_3        retr_sum          hd near    82           8.9 (3/82 7/82 12/82)           8.5 (3/82 6/82 12/82)             95.2 (3/3 6/7 12/12)             0 (0/79 0/75 0/70)
+  TB-Q500-ae-l2_3        retr_sum          HN-I      639  40.7 (171/639 314/639 296/639)  40.1 (168/639 309/639 291/639)   98.3 (168/171 309/314 291/296)          0 (0/468 0/325 0/343)
+  TB-Q500-ae-l2_3        retr_sum          HN-Q      641    12.0 (31/641 89/641 110/641)    11.9 (31/641 89/641 109/641)       99.7 (31/31 89/89 109/110)          0 (0/610 0/552 0/531)
+  TB-Q500-ae-l2_3        retr_sum          HN-X      105     41.0 (28/105 50/105 51/105)     41.0 (28/105 50/105 51/105)        100.0 (28/28 50/50 51/51)             0 (0/77 0/55 0/54)
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)  --  LLaVA-1.5-7B
+  log                    method            pool     rows            released % (per run)             changed % (per run)   changed | released % (per run)  changed, no release (per run)
+  ---------------------  ----------------  -------  ----  ------------------------------  ------------------------------  -------------------------------  -----------------------------
+  TB-L100-ae-l2_3 (dev)  where_logonly     hd all    469                  26.2 (123/469)                    2.8 (13/469)                    10.6 (13/123)                      0 (0/346)
+  TB-L100-ae-l2_3 (dev)  where_logonly     hd far    430                  26.3 (113/430)                    2.8 (12/430)                    10.6 (12/113)                      0 (0/317)
+  TB-L100-ae-l2_3 (dev)  where_logonly     hd near    39                    25.6 (10/39)                      2.6 (1/39)                      10.0 (1/10)                       0 (0/29)
+  TB-L100-ae-l2_3 (dev)  where_logonly     HN-I      590                  39.7 (234/590)                  19.8 (117/590)                   50.0 (117/234)                      0 (0/356)
+  TB-L100-ae-l2_3 (dev)  where_logonly     HN-Q      597                  59.1 (353/597)                  35.2 (210/597)                   59.5 (210/353)                      0 (0/244)
+  TB-L100-ae-l2_3 (dev)  where_logonly     HN-X       99                    51.5 (51/99)                    38.4 (38/99)                     74.5 (38/51)                       0 (0/48)
+  TB-L100-ae-l2_3 (dev)  rescope           hd all    469       3.1 (25/469 1/469 17/469)       3.1 (25/469 1/469 17/469)          100.0 (25/25 1/1 17/17)          0 (0/444 0/468 0/452)
+  TB-L100-ae-l2_3 (dev)  rescope           hd far    430       2.9 (22/430 1/430 14/430)       2.9 (22/430 1/430 14/430)          100.0 (22/22 1/1 14/14)          0 (0/408 0/429 0/416)
+  TB-L100-ae-l2_3 (dev)  rescope           hd near    39            5.1 (3/39 0/39 3/39)            5.1 (3/39 0/39 3/39)              100.0 (3/3 0/0 3/3)             0 (0/36 0/39 0/36)
+  TB-L100-ae-l2_3 (dev)  rescope           HN-I      590   20.1 (154/590 66/590 136/590)   20.1 (154/590 66/590 136/590)    100.0 (154/154 66/66 136/136)          0 (0/436 0/524 0/454)
+  TB-L100-ae-l2_3 (dev)  rescope           HN-Q      597  37.9 (271/597 158/597 250/597)  36.2 (261/597 148/597 240/597)   95.3 (261/271 148/158 240/250)          0 (0/326 0/439 0/347)
+  TB-L100-ae-l2_3 (dev)  rescope           HN-X       99        44.4 (54/99 29/99 49/99)        42.4 (52/99 27/99 47/99)         95.1 (52/54 27/29 47/49)             0 (0/45 0/70 0/50)
+  TB-L100-ae-l2_3 (dev)  white_1_shared    hd all    469      3.6 (25/469 11/469 15/469)      3.6 (25/469 11/469 15/469)        100.0 (25/25 11/11 15/15)          0 (0/444 0/458 0/454)
+  TB-L100-ae-l2_3 (dev)  white_1_shared    hd far    430        2.3 (15/430 6/430 9/430)        2.3 (15/430 6/430 9/430)            100.0 (15/15 6/6 9/9)          0 (0/415 0/424 0/421)
+  TB-L100-ae-l2_3 (dev)  white_1_shared    hd near    39          17.9 (10/39 5/39 6/39)          17.9 (10/39 5/39 6/39)            100.0 (10/10 5/5 6/6)             0 (0/29 0/34 0/33)
+  TB-L100-ae-l2_3 (dev)  white_1_shared    HN-I      590    16.7 (118/590 88/590 90/590)    16.7 (118/590 88/590 90/590)      100.0 (118/118 88/88 90/90)          0 (0/472 0/502 0/500)
+  TB-L100-ae-l2_3 (dev)  white_1_shared    HN-Q      597  52.5 (339/597 300/597 302/597)  50.9 (329/597 290/597 292/597)   96.8 (329/339 290/300 292/302)          0 (0/258 0/297 0/295)
+  TB-L100-ae-l2_3 (dev)  white_1_shared    HN-X       99        55.2 (61/99 51/99 52/99)        53.2 (59/99 49/99 50/99)         96.3 (59/61 49/51 50/52)             0 (0/38 0/48 0/47)
+  TB-L100-ae-l2_3 (dev)  white_0.1_shared  hd all    469      3.8 (22/469 13/469 18/469)      3.8 (22/469 13/469 18/469)        100.0 (22/22 13/13 18/18)          0 (0/447 0/456 0/451)
+  TB-L100-ae-l2_3 (dev)  white_0.1_shared  hd far    430       2.9 (17/430 8/430 13/430)       2.9 (17/430 8/430 13/430)          100.0 (17/17 8/8 13/13)          0 (0/413 0/422 0/417)
+  TB-L100-ae-l2_3 (dev)  white_0.1_shared  hd near    39           12.8 (5/39 5/39 5/39)           12.8 (5/39 5/39 5/39)              100.0 (5/5 5/5 5/5)             0 (0/34 0/34 0/34)
+  TB-L100-ae-l2_3 (dev)  white_0.1_shared  HN-I      590   17.9 (123/590 85/590 109/590)   17.9 (123/590 85/590 109/590)    100.0 (123/123 85/85 109/109)          0 (0/467 0/505 0/481)
+  TB-L100-ae-l2_3 (dev)  white_0.1_shared  HN-Q      597  53.8 (350/597 291/597 322/597)  52.1 (340/597 281/597 312/597)   96.9 (340/350 281/291 312/322)          0 (0/247 0/306 0/275)
+  TB-L100-ae-l2_3 (dev)  white_0.1_shared  HN-X       99        57.9 (63/99 50/99 59/99)        55.9 (61/99 48/99 57/99)         96.5 (61/63 48/50 57/59)             0 (0/36 0/49 0/40)
+  TB-L100-ae-l2_3 (dev)  retr_sum          hd all    469      6.7 (43/469 30/469 21/469)      6.7 (43/469 30/469 21/469)        100.0 (43/43 30/30 21/21)          0 (0/426 0/439 0/448)
+  TB-L100-ae-l2_3 (dev)  retr_sum          hd far    430      5.6 (35/430 20/430 17/430)      5.6 (35/430 20/430 17/430)        100.0 (35/35 20/20 17/17)          0 (0/395 0/410 0/413)
+  TB-L100-ae-l2_3 (dev)  retr_sum          hd near    39          18.8 (8/39 10/39 4/39)          18.8 (8/39 10/39 4/39)            100.0 (8/8 10/10 4/4)             0 (0/31 0/29 0/35)
+  TB-L100-ae-l2_3 (dev)  retr_sum          HN-I      590  60.4 (375/590 376/590 318/590)  60.4 (375/590 376/590 318/590)  100.0 (375/375 376/376 318/318)          0 (0/215 0/214 0/272)
+  TB-L100-ae-l2_3 (dev)  retr_sum          HN-Q      597  21.9 (140/597 139/597 113/597)  20.2 (130/597 129/597 103/597)   92.3 (130/140 129/139 103/113)          0 (0/457 0/458 0/484)
+  TB-L100-ae-l2_3 (dev)  retr_sum          HN-X       99        70.7 (74/99 70/99 66/99)        68.7 (72/99 68/99 64/99)         97.1 (72/74 68/70 64/66)             0 (0/25 0/29 0/33)
+  TB-L100-ae-l2_3 (dev)  where_least_n10   hd all    469  23.7 (102/469 123/469 109/469)      2.6 (11/469 13/469 13/469)      11.1 (11/102 13/123 13/109)          0 (0/367 0/346 0/360)
+  TB-L100-ae-l2_3 (dev)  where_least_n10   hd far    430   23.9 (94/430 113/430 101/430)      2.6 (10/430 12/430 12/430)       11.0 (10/94 12/113 12/101)          0 (0/336 0/317 0/329)
+  TB-L100-ae-l2_3 (dev)  where_least_n10   hd near    39          22.2 (8/39 10/39 8/39)            2.6 (1/39 1/39 1/39)              11.7 (1/8 1/10 1/8)             0 (0/31 0/29 0/31)
+  TB-L100-ae-l2_3 (dev)  where_least_n10   HN-I      590  30.2 (149/590 234/590 151/590)  19.6 (114/590 117/590 116/590)   67.8 (114/149 117/234 116/151)          0 (0/441 0/356 0/439)
+  TB-L100-ae-l2_3 (dev)  where_least_n10   HN-Q      597  52.0 (289/597 353/597 289/597)  34.8 (205/597 210/597 208/597)   67.5 (205/289 210/353 208/289)          0 (0/308 0/244 0/308)
+  TB-L100-ae-l2_3 (dev)  where_least_n10   HN-X       99        48.1 (46/99 51/99 46/99)        38.4 (38/99 38/99 38/99)         79.9 (38/46 38/51 38/46)             0 (0/53 0/48 0/53)
+  TB-L100-ae-l2_3 (dev)  where_cal         hd all    469      3.8 (13/469 14/469 27/469)         0.9 (3/469 3/469 6/469)            22.2 (3/13 3/14 6/27)          0 (0/456 0/455 0/442)
+  TB-L100-ae-l2_3 (dev)  where_cal         hd far    430      3.6 (10/430 13/430 23/430)         0.7 (2/430 2/430 5/430)            19.0 (2/10 2/13 5/23)          0 (0/420 0/417 0/407)
+  TB-L100-ae-l2_3 (dev)  where_cal         hd near    39            6.8 (3/39 1/39 4/39)            2.6 (1/39 1/39 1/39)               52.8 (1/3 1/1 1/4)             0 (0/36 0/38 0/35)
+  TB-L100-ae-l2_3 (dev)  where_cal         HN-I      590                  29.3 (173/590)                   11.4 (67/590)                    38.7 (67/173)                      0 (0/417)
+  TB-L100-ae-l2_3 (dev)  where_cal         HN-Q      597                  37.2 (222/597)                  30.3 (181/597)                   81.5 (181/222)                      0 (0/375)
+  TB-L100-ae-l2_3 (dev)  where_cal         HN-X       99                    56.6 (56/99)                    37.4 (37/99)                     66.1 (37/56)                       0 (0/43)
+  TB-L200-ae-l2_3        where_logonly     hd all    469                  29.4 (138/469)                    3.4 (16/469)                    11.6 (16/138)                      0 (0/331)
+  TB-L200-ae-l2_3        where_logonly     hd far    409                  29.3 (120/409)                    3.2 (13/409)                    10.8 (13/120)                      0 (0/289)
+  TB-L200-ae-l2_3        where_logonly     hd near    60                    30.0 (18/60)                      5.0 (3/60)                      16.7 (3/18)                       0 (0/42)
+  TB-L200-ae-l2_3        where_logonly     HN-I      622                  40.4 (251/622)                  21.7 (135/622)                   53.8 (135/251)                      0 (0/371)
+  TB-L200-ae-l2_3        where_logonly     HN-Q      627                  59.2 (371/627)                  35.2 (221/627)                   59.6 (221/371)                      0 (0/256)
+  TB-L200-ae-l2_3        where_logonly     HN-X      100                   52.0 (52/100)                   40.0 (40/100)                     76.9 (40/52)                       0 (0/48)
+  TB-L200-ae-l2_3        rescope           hd all    469       2.9 (27/469 2/469 12/469)       2.9 (27/469 2/469 12/469)          100.0 (27/27 2/2 12/12)          0 (0/442 0/467 0/457)
+  TB-L200-ae-l2_3        rescope           hd far    409        2.7 (22/409 2/409 9/409)        2.7 (22/409 2/409 9/409)            100.0 (22/22 2/2 9/9)          0 (0/387 0/407 0/400)
+  TB-L200-ae-l2_3        rescope           hd near    60            4.4 (5/60 0/60 3/60)            4.4 (5/60 0/60 3/60)              100.0 (5/5 0/0 3/3)             0 (0/55 0/60 0/57)
+  TB-L200-ae-l2_3        rescope           HN-I      622   17.6 (153/622 70/622 106/622)   17.6 (153/622 70/622 106/622)    100.0 (153/153 70/70 106/106)          0 (0/469 0/552 0/516)
+  TB-L200-ae-l2_3        rescope           HN-Q      627  34.0 (264/627 166/627 210/627)  32.4 (254/627 156/627 200/627)   95.1 (254/264 156/166 200/210)          0 (0/363 0/461 0/417)
+  TB-L200-ae-l2_3        rescope           HN-X      100     41.0 (49/100 30/100 44/100)     39.0 (47/100 28/100 42/100)         94.9 (47/49 28/30 42/44)             0 (0/51 0/70 0/56)
+  TB-L200-ae-l2_3        white_1_shared    hd all    469      3.4 (21/469 12/469 15/469)      3.4 (21/469 12/469 15/469)        100.0 (21/21 12/12 15/15)          0 (0/448 0/457 0/454)
+  TB-L200-ae-l2_3        white_1_shared    hd far    409         1.5 (9/409 4/409 5/409)         1.5 (9/409 4/409 5/409)              100.0 (9/9 4/4 5/5)          0 (0/400 0/405 0/404)
+  TB-L200-ae-l2_3        white_1_shared    hd near    60         16.7 (12/60 8/60 10/60)         16.7 (12/60 8/60 10/60)          100.0 (12/12 8/8 10/10)             0 (0/48 0/52 0/50)
+  TB-L200-ae-l2_3        white_1_shared    HN-I      622    14.4 (111/622 73/622 85/622)    14.4 (111/622 73/622 85/622)      100.0 (111/111 73/73 85/85)          0 (0/511 0/549 0/537)
+  TB-L200-ae-l2_3        white_1_shared    HN-Q      627  47.4 (340/627 265/627 286/627)  45.6 (329/627 254/627 275/627)   96.3 (329/340 254/265 275/286)          0 (0/287 0/362 0/341)
+  TB-L200-ae-l2_3        white_1_shared    HN-X      100     48.0 (55/100 43/100 46/100)     46.0 (53/100 41/100 44/100)         95.8 (53/55 41/43 44/46)             0 (0/45 0/57 0/54)
+  TB-L200-ae-l2_3        white_0.1_shared  hd all    469      3.5 (16/469 16/469 17/469)      3.5 (16/469 16/469 17/469)        100.0 (16/16 16/16 17/17)          0 (0/453 0/453 0/452)
+  TB-L200-ae-l2_3        white_0.1_shared  hd far    409         2.0 (8/409 8/409 9/409)         2.0 (8/409 8/409 9/409)              100.0 (8/8 8/8 9/9)          0 (0/401 0/401 0/400)
+  TB-L200-ae-l2_3        white_0.1_shared  hd near    60           13.3 (8/60 8/60 8/60)           13.3 (8/60 8/60 8/60)              100.0 (8/8 8/8 8/8)             0 (0/52 0/52 0/52)
+  TB-L200-ae-l2_3        white_0.1_shared  HN-I      622     15.3 (94/622 94/622 97/622)     15.3 (94/622 94/622 97/622)        100.0 (94/94 94/94 97/97)          0 (0/528 0/528 0/525)
+  TB-L200-ae-l2_3        white_0.1_shared  HN-Q      627  47.6 (297/627 297/627 302/627)  45.9 (286/627 286/627 291/627)   96.3 (286/297 286/297 291/302)          0 (0/330 0/330 0/325)
+  TB-L200-ae-l2_3        white_0.1_shared  HN-X      100     46.0 (46/100 46/100 46/100)     44.0 (44/100 44/100 44/100)         95.7 (44/46 44/46 44/46)             0 (0/54 0/54 0/54)
+  TB-L200-ae-l2_3        retr_sum          hd all    469      4.2 (18/469 24/469 17/469)      4.2 (18/469 24/469 17/469)        100.0 (18/18 24/24 17/17)          0 (0/451 0/445 0/452)
+  TB-L200-ae-l2_3        retr_sum          hd far    409      2.9 (10/409 13/409 13/409)      2.9 (10/409 13/409 13/409)        100.0 (10/10 13/13 13/13)          0 (0/399 0/396 0/396)
+  TB-L200-ae-l2_3        retr_sum          hd near    60          12.8 (8/60 11/60 4/60)          12.8 (8/60 11/60 4/60)            100.0 (8/8 11/11 4/4)             0 (0/52 0/49 0/56)
+  TB-L200-ae-l2_3        retr_sum          HN-I      622  52.1 (319/622 359/622 294/622)  52.1 (319/622 359/622 294/622)  100.0 (319/319 359/359 294/294)          0 (0/303 0/263 0/328)
+  TB-L200-ae-l2_3        retr_sum          HN-Q      627    16.5 (97/627 116/627 97/627)    14.8 (87/627 105/627 87/627)       90.0 (87/97 105/116 87/97)          0 (0/530 0/511 0/530)
+  TB-L200-ae-l2_3        retr_sum          HN-X      100     62.0 (65/100 64/100 57/100)     60.0 (63/100 62/100 55/100)         96.8 (63/65 62/64 55/57)             0 (0/35 0/36 0/43)
+  TB-L500-ae-l2_3        where_logonly     hd all    469                  44.1 (207/469)                   10.4 (49/469)                    23.7 (49/207)                      0 (0/262)
+  TB-L500-ae-l2_3        where_logonly     hd far    386                  47.7 (184/386)                   10.6 (41/386)                    22.3 (41/184)                      0 (0/202)
+  TB-L500-ae-l2_3        where_logonly     hd near    83                    27.7 (23/83)                      9.6 (8/83)                      34.8 (8/23)                       0 (0/60)
+  TB-L500-ae-l2_3        where_logonly     HN-I      676                  47.3 (320/676)                  28.6 (193/676)                   60.3 (193/320)                      0 (0/356)
+  TB-L500-ae-l2_3        where_logonly     HN-Q      681                  62.1 (423/681)                  39.4 (268/681)                   63.4 (268/423)                      0 (0/258)
+  TB-L500-ae-l2_3        where_logonly     HN-X      120                   58.3 (70/120)                   45.0 (54/120)                     77.1 (54/70)                       0 (0/50)
+  TB-L500-ae-l2_3        rescope           hd all    469        1.8 (8/469 6/469 12/469)        1.8 (8/469 6/469 12/469)            100.0 (8/8 6/6 12/12)          0 (0/461 0/463 0/457)
+  TB-L500-ae-l2_3        rescope           hd far    386         1.6 (6/386 3/386 9/386)         1.6 (6/386 3/386 9/386)              100.0 (6/6 3/3 9/9)          0 (0/380 0/383 0/377)
+  TB-L500-ae-l2_3        rescope           hd near    83            3.2 (2/83 3/83 3/83)            3.2 (2/83 3/83 3/83)              100.0 (2/2 3/3 3/3)             0 (0/81 0/80 0/80)
+  TB-L500-ae-l2_3        rescope           HN-I      676      9.7 (60/676 60/676 77/676)      9.7 (60/676 60/676 77/676)        100.0 (60/60 60/60 77/77)          0 (0/616 0/616 0/599)
+  TB-L500-ae-l2_3        rescope           HN-Q      681  24.1 (160/681 157/681 175/681)  22.5 (149/681 146/681 164/681)   93.3 (149/160 146/157 164/175)          0 (0/521 0/524 0/506)
+  TB-L500-ae-l2_3        rescope           HN-X      120     27.8 (33/120 31/120 36/120)     26.1 (31/120 29/120 34/120)         94.0 (31/33 29/31 34/36)             0 (0/87 0/89 0/84)
+  TB-L500-ae-l2_3        white_1_shared    hd all    469      2.9 (13/469 13/469 15/469)      2.9 (13/469 13/469 15/469)        100.0 (13/13 13/13 15/15)          0 (0/456 0/456 0/454)
+  TB-L500-ae-l2_3        white_1_shared    hd far    386         1.8 (7/386 7/386 7/386)         1.8 (7/386 7/386 7/386)              100.0 (7/7 7/7 7/7)          0 (0/379 0/379 0/379)
+  TB-L500-ae-l2_3        white_1_shared    hd near    83            8.0 (6/83 6/83 8/83)            8.0 (6/83 6/83 8/83)              100.0 (6/6 6/6 8/8)             0 (0/77 0/77 0/75)
+  TB-L500-ae-l2_3        white_1_shared    HN-I      676      9.9 (67/676 67/676 67/676)      9.8 (66/676 66/676 66/676)         98.5 (66/67 66/67 66/67)          0 (0/609 0/609 0/609)
+  TB-L500-ae-l2_3        white_1_shared    HN-Q      681  32.7 (221/681 221/681 226/681)  31.1 (210/681 210/681 215/681)   95.1 (210/221 210/221 215/226)          0 (0/460 0/460 0/455)
+  TB-L500-ae-l2_3        white_1_shared    HN-X      120     30.8 (37/120 37/120 37/120)     29.2 (35/120 35/120 35/120)         94.6 (35/37 35/37 35/37)             0 (0/83 0/83 0/83)
+  TB-L500-ae-l2_3        white_0.1_shared  hd all    469      3.3 (13/469 18/469 16/469)      3.3 (13/469 18/469 16/469)        100.0 (13/13 18/18 16/16)          0 (0/456 0/451 0/453)
+  TB-L500-ae-l2_3        white_0.1_shared  hd far    386       2.6 (8/386 12/386 10/386)       2.6 (8/386 12/386 10/386)          100.0 (8/8 12/12 10/10)          0 (0/378 0/374 0/376)
+  TB-L500-ae-l2_3        white_0.1_shared  hd near    83            6.8 (5/83 6/83 6/83)            6.8 (5/83 6/83 6/83)              100.0 (5/5 6/6 6/6)             0 (0/78 0/77 0/77)
+  TB-L500-ae-l2_3        white_0.1_shared  HN-I      676     10.3 (63/676 79/676 67/676)     10.2 (62/676 78/676 66/676)         98.6 (62/63 78/79 66/67)          0 (0/613 0/597 0/609)
+  TB-L500-ae-l2_3        white_0.1_shared  HN-Q      681  33.7 (213/681 253/681 222/681)  32.2 (203/681 243/681 212/681)   95.6 (203/213 243/253 212/222)          0 (0/468 0/428 0/459)
+  TB-L500-ae-l2_3        white_0.1_shared  HN-X      120     29.4 (34/120 37/120 35/120)     27.8 (32/120 35/120 33/120)         94.3 (32/34 35/37 33/35)             0 (0/86 0/83 0/85)
+  TB-L500-ae-l2_3        retr_sum          hd all    469      4.9 (15/469 30/469 24/469)      4.9 (15/469 30/469 24/469)        100.0 (15/15 30/30 24/24)          0 (0/454 0/439 0/445)
+  TB-L500-ae-l2_3        retr_sum          hd far    386      4.3 (12/386 21/386 17/386)      4.3 (12/386 21/386 17/386)        100.0 (12/12 21/21 17/17)          0 (0/374 0/365 0/369)
+  TB-L500-ae-l2_3        retr_sum          hd near    83            7.6 (3/83 9/83 7/83)            7.6 (3/83 9/83 7/83)              100.0 (3/3 9/9 7/7)             0 (0/80 0/74 0/76)
+  TB-L500-ae-l2_3        retr_sum          HN-I      676  39.4 (194/676 313/676 293/676)  39.4 (194/676 313/676 293/676)  100.0 (194/194 313/313 293/293)          0 (0/482 0/363 0/383)
+  TB-L500-ae-l2_3        retr_sum          HN-Q      681    10.1 (29/681 100/681 78/681)      8.7 (20/681 88/681 69/681)        81.8 (20/29 88/100 69/78)          0 (0/652 0/581 0/603)
+  TB-L500-ae-l2_3        retr_sum          HN-X      120     45.8 (36/120 68/120 61/120)     44.4 (35/120 66/120 59/120)         97.0 (35/36 66/68 59/61)             0 (0/84 0/52 0/59)
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)  --  Qwen2.5-VL-3B
+  log              method            pool     rows            released % (per run)             changed % (per run)   changed | released % (per run)  changed, no release (per run)
+  ---------------  ----------------  -------  ----  ------------------------------  ------------------------------  -------------------------------  -----------------------------
+  TB-Q100-memitw   where_logonly     hd all    465                  25.6 (119/465)                    7.7 (36/465)                    30.3 (36/119)                      0 (0/346)
+  TB-Q100-memitw   where_logonly     hd far    437                  23.8 (104/437)                    6.4 (28/437)                    26.9 (28/104)                      0 (0/333)
+  TB-Q100-memitw   where_logonly     hd near    28                    53.6 (15/28)                     28.6 (8/28)                      53.3 (8/15)                       0 (0/13)
+  TB-Q100-memitw   where_logonly     HN-I      588                  52.4 (308/588)                  27.6 (162/588)                   52.6 (162/308)                      0 (0/280)
+  TB-Q100-memitw   where_logonly     HN-Q      591                  55.3 (327/591)                  26.9 (159/591)                   48.6 (159/327)                      0 (0/264)
+  TB-Q100-memitw   where_logonly     HN-X       99                    58.6 (58/99)                    34.3 (34/99)                     58.6 (34/58)                       0 (0/41)
+  TB-Q100-memitw   rescope           hd all    465      4.2 (13/465 27/465 19/465)      4.2 (13/465 27/465 19/465)        100.0 (13/13 27/27 19/19)          0 (0/452 0/438 0/446)
+  TB-Q100-memitw   rescope           hd far    437      3.9 (11/437 25/437 15/437)      3.9 (11/437 25/437 15/437)        100.0 (11/11 25/25 15/15)          0 (0/426 0/412 0/422)
+  TB-Q100-memitw   rescope           hd near    28            9.5 (2/28 2/28 4/28)            9.5 (2/28 2/28 4/28)              100.0 (2/2 2/2 4/4)             0 (0/26 0/26 0/24)
+  TB-Q100-memitw   rescope           HN-I      588     10.5 (51/588 83/588 52/588)     10.1 (49/588 79/588 51/588)         96.4 (49/51 79/83 51/52)          0 (0/537 0/505 0/536)
+  TB-Q100-memitw   rescope           HN-Q      591    14.9 (71/591 110/591 83/591)    14.9 (71/591 110/591 83/591)      100.0 (71/71 110/110 83/83)          0 (0/520 0/481 0/508)
+  TB-Q100-memitw   rescope           HN-X       99        19.2 (16/99 24/99 17/99)        19.2 (16/99 24/99 17/99)        100.0 (16/16 24/24 17/17)             0 (0/83 0/75 0/82)
+  TB-Q100-memitw   white_1_shared    hd all    465      5.4 (23/465 23/465 30/465)      5.4 (23/465 23/465 30/465)        100.0 (23/23 23/23 30/30)          0 (0/442 0/442 0/435)
+  TB-Q100-memitw   white_1_shared    hd far    437      3.0 (11/437 11/437 17/437)      3.0 (11/437 11/437 17/437)        100.0 (11/11 11/11 17/17)          0 (0/426 0/426 0/420)
+  TB-Q100-memitw   white_1_shared    hd near    28        44.0 (12/28 12/28 13/28)        44.0 (12/28 12/28 13/28)        100.0 (12/12 12/12 13/13)             0 (0/16 0/16 0/15)
+  TB-Q100-memitw   white_1_shared    HN-I      588  19.5 (113/588 113/588 118/588)  18.7 (108/588 108/588 113/588)   95.6 (108/113 108/113 113/118)          0 (0/475 0/475 0/470)
+  TB-Q100-memitw   white_1_shared    HN-Q      591  29.3 (171/591 171/591 177/591)  29.3 (171/591 171/591 177/591)  100.0 (171/171 171/171 177/177)          0 (0/420 0/420 0/414)
+  TB-Q100-memitw   white_1_shared    HN-X       99        37.0 (36/99 36/99 38/99)        37.0 (36/99 36/99 38/99)        100.0 (36/36 36/36 38/38)             0 (0/63 0/63 0/61)
+  TB-Q100-memitw   white_0.1_shared  hd all    465      6.9 (29/465 31/465 36/465)      6.9 (29/465 31/465 36/465)        100.0 (29/29 31/31 36/36)          0 (0/436 0/434 0/429)
+  TB-Q100-memitw   white_0.1_shared  hd far    437      4.3 (16/437 18/437 22/437)      4.3 (16/437 18/437 22/437)        100.0 (16/16 18/18 22/22)          0 (0/421 0/419 0/415)
+  TB-Q100-memitw   white_0.1_shared  hd near    28        47.6 (13/28 13/28 14/28)        47.6 (13/28 13/28 14/28)        100.0 (13/13 13/13 14/14)             0 (0/15 0/15 0/14)
+  TB-Q100-memitw   white_0.1_shared  HN-I      588  35.8 (198/588 208/588 225/588)  34.8 (192/588 202/588 219/588)   97.1 (192/198 202/208 219/225)          0 (0/390 0/380 0/363)
+  TB-Q100-memitw   white_0.1_shared  HN-Q      591  41.1 (223/591 241/591 264/591)  41.1 (223/591 241/591 264/591)  100.0 (223/223 241/241 264/264)          0 (0/368 0/350 0/327)
+  TB-Q100-memitw   white_0.1_shared  HN-X       99        55.9 (53/99 55/99 58/99)        55.9 (53/99 55/99 58/99)        100.0 (53/53 55/55 58/58)             0 (0/46 0/44 0/41)
+  TB-Q100-memitw   retr_sum          hd all    465      4.5 (15/465 21/465 27/465)      4.5 (15/465 21/465 27/465)        100.0 (15/15 21/21 27/27)          0 (0/450 0/444 0/438)
+  TB-Q100-memitw   retr_sum          hd far    437      4.4 (15/437 20/437 23/437)      4.4 (15/437 20/437 23/437)        100.0 (15/15 20/20 23/23)          0 (0/422 0/417 0/414)
+  TB-Q100-memitw   retr_sum          hd near    28            6.0 (0/28 1/28 4/28)            6.0 (0/28 1/28 4/28)              100.0 (0/0 1/1 4/4)             0 (0/28 0/27 0/24)
+  TB-Q100-memitw   retr_sum          HN-I      588  52.9 (244/588 340/588 350/588)  51.9 (237/588 334/588 344/588)   97.9 (237/244 334/340 344/350)          0 (0/344 0/248 0/238)
+  TB-Q100-memitw   retr_sum          HN-Q      591   18.1 (44/591 118/591 159/591)   18.0 (44/591 117/591 158/591)     99.5 (44/44 117/118 158/159)          0 (0/547 0/473 0/432)
+  TB-Q100-memitw   retr_sum          HN-X       99        55.6 (36/99 67/99 62/99)        55.6 (36/99 67/99 62/99)        100.0 (36/36 67/67 62/62)             0 (0/63 0/32 0/37)
+  TB-Q500-memitw   where_logonly     hd all    465                  45.6 (212/465)                   11.2 (52/465)                    24.5 (52/212)                      0 (0/253)
+  TB-Q500-memitw   where_logonly     hd far    383                  43.9 (168/383)                    9.9 (38/383)                    22.6 (38/168)                      0 (0/215)
+  TB-Q500-memitw   where_logonly     hd near    82                    53.7 (44/82)                    17.1 (14/82)                     31.8 (14/44)                       0 (0/38)
+  TB-Q500-memitw   where_logonly     HN-I      639                  44.8 (286/639)                  18.3 (117/639)                   40.9 (117/286)                      0 (0/353)
+  TB-Q500-memitw   where_logonly     HN-Q      641                  41.3 (265/641)                  16.7 (107/641)                   40.4 (107/265)                      0 (0/376)
+  TB-Q500-memitw   where_logonly     HN-X      105                   38.1 (40/105)                   16.2 (17/105)                     42.5 (17/40)                       0 (0/65)
+  TB-Q500-memitw   rescope           hd all    465        1.8 (4/465 12/465 9/465)        1.8 (4/465 12/465 9/465)            100.0 (4/4 12/12 9/9)          0 (0/461 0/453 0/456)
+  TB-Q500-memitw   rescope           hd far    383         1.0 (1/383 7/383 4/383)         1.0 (1/383 7/383 4/383)              100.0 (1/1 7/7 4/4)          0 (0/382 0/376 0/379)
+  TB-Q500-memitw   rescope           hd near    82            5.3 (3/82 5/82 5/82)            5.3 (3/82 5/82 5/82)              100.0 (3/3 5/5 5/5)             0 (0/79 0/77 0/77)
+  TB-Q500-memitw   rescope           HN-I      639      3.1 (14/639 28/639 18/639)      3.1 (14/639 28/639 18/639)        100.0 (14/14 28/28 18/18)          0 (0/625 0/611 0/621)
+  TB-Q500-memitw   rescope           HN-Q      641      7.0 (31/641 63/641 40/641)      7.0 (31/641 63/641 40/641)        100.0 (31/31 63/63 40/40)          0 (0/610 0/578 0/601)
+  TB-Q500-memitw   rescope           HN-X      105        6.3 (5/105 10/105 5/105)        6.3 (5/105 10/105 5/105)            100.0 (5/5 10/10 5/5)           0 (0/100 0/95 0/100)
+  TB-Q500-memitw   white_1_shared    hd all    465      3.3 (15/465 12/465 19/465)      3.3 (15/465 12/465 19/465)        100.0 (15/15 12/12 19/19)          0 (0/450 0/453 0/446)
+  TB-Q500-memitw   white_1_shared    hd far    383         1.5 (6/383 4/383 7/383)         1.5 (6/383 4/383 7/383)              100.0 (6/6 4/4 7/7)          0 (0/377 0/379 0/376)
+  TB-Q500-memitw   white_1_shared    hd near    82          11.8 (9/82 8/82 12/82)          11.8 (9/82 8/82 12/82)            100.0 (9/9 8/8 12/12)             0 (0/73 0/74 0/70)
+  TB-Q500-memitw   white_1_shared    HN-I      639      7.0 (43/639 36/639 56/639)      7.0 (43/639 36/639 56/639)        100.0 (43/43 36/36 56/56)          0 (0/596 0/603 0/583)
+  TB-Q500-memitw   white_1_shared    HN-Q      641   15.6 (100/641 89/641 111/641)   15.6 (100/641 89/641 111/641)    100.0 (100/100 89/89 111/111)          0 (0/541 0/552 0/530)
+  TB-Q500-memitw   white_1_shared    HN-X      105     15.9 (17/105 14/105 19/105)     15.9 (17/105 14/105 19/105)        100.0 (17/17 14/14 19/19)             0 (0/88 0/91 0/86)
+  TB-Q500-memitw   white_0.1_shared  hd all    465      2.8 (12/465 13/465 14/465)      2.8 (12/465 13/465 14/465)        100.0 (12/12 13/13 14/14)          0 (0/453 0/452 0/451)
+  TB-Q500-memitw   white_0.1_shared  hd far    383         1.2 (4/383 5/383 5/383)         1.2 (4/383 5/383 5/383)              100.0 (4/4 5/5 5/5)          0 (0/379 0/378 0/378)
+  TB-Q500-memitw   white_0.1_shared  hd near    82           10.2 (8/82 8/82 9/82)           10.2 (8/82 8/82 9/82)              100.0 (8/8 8/8 9/9)             0 (0/74 0/74 0/73)
+  TB-Q500-memitw   white_0.1_shared  HN-I      639      9.6 (55/639 62/639 67/639)      9.5 (55/639 62/639 66/639)         99.5 (55/55 62/62 66/67)          0 (0/584 0/577 0/572)
+  TB-Q500-memitw   white_0.1_shared  HN-Q      641  19.4 (120/641 125/641 128/641)  19.4 (120/641 125/641 128/641)  100.0 (120/120 125/125 128/128)          0 (0/521 0/516 0/513)
+  TB-Q500-memitw   white_0.1_shared  HN-X      105     21.9 (22/105 23/105 24/105)     21.9 (22/105 23/105 24/105)        100.0 (22/22 23/23 24/24)             0 (0/83 0/82 0/81)
+  TB-Q500-memitw   retr_sum          hd all    465      7.0 (21/465 38/465 39/465)      7.0 (21/465 37/465 39/465)         99.1 (21/21 37/38 39/39)          0 (0/444 0/427 0/426)
+  TB-Q500-memitw   retr_sum          hd far    383      6.6 (18/383 31/383 27/383)      6.6 (18/383 31/383 27/383)        100.0 (18/18 31/31 27/27)          0 (0/365 0/352 0/356)
+  TB-Q500-memitw   retr_sum          hd near    82           8.9 (3/82 7/82 12/82)           8.5 (3/82 6/82 12/82)             95.2 (3/3 6/7 12/12)             0 (0/79 0/75 0/70)
+  TB-Q500-memitw   retr_sum          HN-I      639  40.7 (171/639 314/639 296/639)  39.9 (166/639 308/639 290/639)   97.7 (166/171 308/314 290/296)          0 (0/468 0/325 0/343)
+  TB-Q500-memitw   retr_sum          HN-Q      641    12.0 (31/641 89/641 110/641)    11.9 (31/641 89/641 109/641)       99.7 (31/31 89/89 109/110)          0 (0/610 0/552 0/531)
+  TB-Q500-memitw   retr_sum          HN-X      105     41.0 (28/105 50/105 51/105)     41.0 (28/105 50/105 51/105)        100.0 (28/28 50/50 51/51)             0 (0/77 0/55 0/54)
+  TB-Q1000-memitw  where_logonly     hd all    465                  44.1 (205/465)                    9.0 (42/465)                    20.5 (42/205)                      0 (0/260)
+  TB-Q1000-memitw  where_logonly     hd far    365                  42.5 (155/365)                    9.3 (34/365)                    21.9 (34/155)                      0 (0/210)
+  TB-Q1000-memitw  where_logonly     hd near   100                   50.0 (50/100)                     8.0 (8/100)                      16.0 (8/50)                       0 (0/50)
+  TB-Q1000-memitw  where_logonly     HN-I      681                  41.6 (283/681)                   14.2 (97/681)                    34.3 (97/283)                      0 (0/398)
+  TB-Q1000-memitw  where_logonly     HN-Q      683                  36.2 (247/683)                   13.8 (94/683)                    38.1 (94/247)                      0 (0/436)
+  TB-Q1000-memitw  where_logonly     HN-X      119                   33.6 (40/119)                    9.2 (11/119)                     27.5 (11/40)                       0 (0/79)
+  TB-Q1000-memitw  rescope           hd all    465                     1.5 (7/465)                     1.5 (7/465)                      100.0 (7/7)                      0 (0/458)
+  TB-Q1000-memitw  rescope           hd far    365                     0.5 (2/365)                     0.5 (2/365)                      100.0 (2/2)                      0 (0/363)
+  TB-Q1000-memitw  rescope           hd near   100                     5.0 (5/100)                     5.0 (5/100)                      100.0 (5/5)                       0 (0/95)
+  TB-Q1000-memitw  rescope           HN-I      681                    2.6 (18/681)                    2.6 (18/681)                    100.0 (18/18)                      0 (0/663)
+  TB-Q1000-memitw  rescope           HN-Q      683                    5.7 (39/683)                    5.7 (39/683)                    100.0 (39/39)                      0 (0/644)
+  TB-Q1000-memitw  rescope           HN-X      119                     5.0 (6/119)                     5.0 (6/119)                      100.0 (6/6)                      0 (0/113)
+  TB-Q1000-memitw  white_1_shared    hd all    465                    4.7 (22/465)                    4.7 (22/465)                    100.0 (22/22)                      0 (0/443)
+  TB-Q1000-memitw  white_1_shared    hd far    365                     1.6 (6/365)                     1.6 (6/365)                      100.0 (6/6)                      0 (0/359)
+  TB-Q1000-memitw  white_1_shared    hd near   100                   16.0 (16/100)                   16.0 (16/100)                    100.0 (16/16)                       0 (0/84)
+  TB-Q1000-memitw  white_1_shared    HN-I      681                    6.0 (41/681)                    6.0 (41/681)                    100.0 (41/41)                      0 (0/640)
+  TB-Q1000-memitw  white_1_shared    HN-Q      683                   14.1 (96/683)                   14.1 (96/683)                    100.0 (96/96)                      0 (0/587)
+  TB-Q1000-memitw  white_1_shared    HN-X      119                   13.4 (16/119)                   13.4 (16/119)                    100.0 (16/16)                      0 (0/103)
+  TB-Q1000-memitw  white_0.1_shared  hd all    465                    4.5 (21/465)                    4.5 (21/465)                    100.0 (21/21)                      0 (0/444)
+  TB-Q1000-memitw  white_0.1_shared  hd far    365                     1.4 (5/365)                     1.4 (5/365)                      100.0 (5/5)                      0 (0/360)
+  TB-Q1000-memitw  white_0.1_shared  hd near   100                   16.0 (16/100)                   16.0 (16/100)                    100.0 (16/16)                       0 (0/84)
+  TB-Q1000-memitw  white_0.1_shared  HN-I      681                    6.5 (44/681)                    6.5 (44/681)                    100.0 (44/44)                      0 (0/637)
+  TB-Q1000-memitw  white_0.1_shared  HN-Q      683                  15.5 (106/683)                  15.5 (106/683)                  100.0 (106/106)                      0 (0/577)
+  TB-Q1000-memitw  white_0.1_shared  HN-X      119                   16.8 (20/119)                   16.8 (20/119)                    100.0 (20/20)                       0 (0/99)
+  TB-Q1000-memitw  retr_sum          hd all    465                    5.8 (27/465)                    5.8 (27/465)                    100.0 (27/27)                      0 (0/438)
+  TB-Q1000-memitw  retr_sum          hd far    365                    6.3 (23/365)                    6.3 (23/365)                    100.0 (23/23)                      0 (0/342)
+  TB-Q1000-memitw  retr_sum          hd near   100                     4.0 (4/100)                     4.0 (4/100)                      100.0 (4/4)                       0 (0/96)
+  TB-Q1000-memitw  retr_sum          HN-I      681                  26.9 (183/681)                  26.1 (178/681)                   97.3 (178/183)                      0 (0/498)
+  TB-Q1000-memitw  retr_sum          HN-Q      683                    5.4 (37/683)                    5.4 (37/683)                    100.0 (37/37)                      0 (0/646)
+  TB-Q1000-memitw  retr_sum          HN-X      119                   26.1 (31/119)                   26.1 (31/119)                    100.0 (31/31)                       0 (0/88)
+  TB-Q2000-memitw  where_logonly     hd all    465                  31.6 (147/465)                    4.7 (22/465)                    15.0 (22/147)                      0 (0/318)
+  TB-Q2000-memitw  where_logonly     hd far    353                   22.9 (81/353)                    3.4 (12/353)                     14.8 (12/81)                      0 (0/272)
+  TB-Q2000-memitw  where_logonly     hd near   112                   58.9 (66/112)                    8.9 (10/112)                     15.2 (10/66)                       0 (0/46)
+  TB-Q2000-memitw  where_logonly     HN-I      787                  38.9 (306/787)                   10.4 (82/787)                    26.8 (82/306)                      0 (0/481)
+  TB-Q2000-memitw  where_logonly     HN-Q      786                  38.5 (303/786)                   10.4 (82/786)                    27.1 (82/303)                      0 (0/483)
+  TB-Q2000-memitw  where_logonly     HN-X      198                   38.9 (77/198)                   13.6 (27/198)                     35.1 (27/77)                      0 (0/121)
+  TB-Q2000-memitw  rescope           hd all    465                    2.8 (13/465)                    2.8 (13/465)                    100.0 (13/13)                      0 (0/452)
+  TB-Q2000-memitw  rescope           hd far    353                     0.8 (3/353)                     0.8 (3/353)                      100.0 (3/3)                      0 (0/350)
+  TB-Q2000-memitw  rescope           hd near   112                    8.9 (10/112)                    8.9 (10/112)                    100.0 (10/10)                      0 (0/102)
+  TB-Q2000-memitw  rescope           HN-I      787                    2.5 (20/787)                    2.5 (20/787)                    100.0 (20/20)                      0 (0/767)
+  TB-Q2000-memitw  rescope           HN-Q      786                    5.3 (42/786)                    5.3 (42/786)                    100.0 (42/42)                      0 (0/744)
+  TB-Q2000-memitw  rescope           HN-X      198                    6.6 (13/198)                    6.6 (13/198)                    100.0 (13/13)                      0 (0/185)
+  TB-Q2000-memitw  white_1_shared    hd all    465                    6.2 (29/465)                    6.2 (29/465)                    100.0 (29/29)                      0 (0/436)
+  TB-Q2000-memitw  white_1_shared    hd far    353                     1.4 (5/353)                     1.4 (5/353)                      100.0 (5/5)                      0 (0/348)
+  TB-Q2000-memitw  white_1_shared    hd near   112                   21.4 (24/112)                   21.4 (24/112)                    100.0 (24/24)                       0 (0/88)
+  TB-Q2000-memitw  white_1_shared    HN-I      787                    5.1 (40/787)                    5.1 (40/787)                    100.0 (40/40)                      0 (0/747)
+  TB-Q2000-memitw  white_1_shared    HN-Q      786                   12.5 (98/786)                   12.5 (98/786)                    100.0 (98/98)                      0 (0/688)
+  TB-Q2000-memitw  white_1_shared    HN-X      198                   12.1 (24/198)                   12.1 (24/198)                    100.0 (24/24)                      0 (0/174)
+  TB-Q2000-memitw  white_0.1_shared  hd all    465                    5.8 (27/465)                    5.8 (27/465)                    100.0 (27/27)                      0 (0/438)
+  TB-Q2000-memitw  white_0.1_shared  hd far    353                     1.4 (5/353)                     1.4 (5/353)                      100.0 (5/5)                      0 (0/348)
+  TB-Q2000-memitw  white_0.1_shared  hd near   112                   19.6 (22/112)                   19.6 (22/112)                    100.0 (22/22)                       0 (0/90)
+  TB-Q2000-memitw  white_0.1_shared  HN-I      787                    7.8 (61/787)                    7.8 (61/787)                    100.0 (61/61)                      0 (0/726)
+  TB-Q2000-memitw  white_0.1_shared  HN-Q      786                  15.9 (125/786)                  15.9 (125/786)                  100.0 (125/125)                      0 (0/661)
+  TB-Q2000-memitw  white_0.1_shared  HN-X      198                   14.6 (29/198)                   14.6 (29/198)                    100.0 (29/29)                      0 (0/169)
+  TB-Q2000-memitw  retr_sum          hd all    465                    8.0 (37/465)                    8.0 (37/465)                    100.0 (37/37)                      0 (0/428)
+  TB-Q2000-memitw  retr_sum          hd far    353                    7.9 (28/353)                    7.9 (28/353)                    100.0 (28/28)                      0 (0/325)
+  TB-Q2000-memitw  retr_sum          hd near   112                     8.0 (9/112)                     8.0 (9/112)                      100.0 (9/9)                      0 (0/103)
+  TB-Q2000-memitw  retr_sum          HN-I      787                  21.6 (170/787)                  21.1 (166/787)                   97.6 (166/170)                      0 (0/617)
+  TB-Q2000-memitw  retr_sum          HN-Q      786                    4.2 (33/786)                    4.2 (33/786)                    100.0 (33/33)                      0 (0/753)
+  TB-Q2000-memitw  retr_sum          HN-X      198                   28.3 (56/198)                   27.8 (55/198)                     98.2 (55/56)                      0 (0/142)
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)  --  LLaVA-1.5-7B
+  log              method            pool     rows            released % (per run)             changed % (per run)   changed | released % (per run)  changed, no release (per run)
+  ---------------  ----------------  -------  ----  ------------------------------  ------------------------------  -------------------------------  -----------------------------
+  TB-L100-memitw   where_logonly     hd all    469                  25.4 (119/469)                   17.5 (82/469)                    68.9 (82/119)                      0 (0/350)
+  TB-L100-memitw   where_logonly     hd far    430                   22.3 (96/430)                   14.7 (63/430)                     65.6 (63/96)                      0 (0/334)
+  TB-L100-memitw   where_logonly     hd near    39                    59.0 (23/39)                    48.7 (19/39)                     82.6 (19/23)                       0 (0/16)
+  TB-L100-memitw   where_logonly     HN-I      590                  65.3 (385/590)                  51.0 (301/590)                   78.2 (301/385)                      0 (0/205)
+  TB-L100-memitw   where_logonly     HN-Q      597                  83.4 (498/597)                  67.8 (405/597)                   81.3 (405/498)                       0 (0/99)
+  TB-L100-memitw   where_logonly     HN-X       99                    82.8 (82/99)                    69.7 (69/99)                     84.1 (69/82)                       0 (0/17)
+  TB-L100-memitw   rescope           hd all    469        2.4 (26/469 3/469 5/469)        2.4 (26/469 3/469 5/469)            100.0 (26/26 3/3 5/5)          0 (0/443 0/466 0/464)
+  TB-L100-memitw   rescope           hd far    430        1.8 (18/430 0/430 5/430)        1.8 (18/430 0/430 5/430)            100.0 (18/18 0/0 5/5)          0 (0/412 0/430 0/425)
+  TB-L100-memitw   rescope           hd near    39            9.4 (8/39 3/39 0/39)            9.4 (8/39 3/39 0/39)              100.0 (8/8 3/3 0/0)             0 (0/31 0/36 0/39)
+  TB-L100-memitw   rescope           HN-I      590   18.5 (137/590 61/590 129/590)   18.4 (136/590 61/590 129/590)     99.8 (136/137 61/61 129/129)          0 (0/453 0/529 0/461)
+  TB-L100-memitw   rescope           HN-Q      597  38.3 (321/597 155/597 210/597)  36.8 (311/597 148/597 200/597)   95.9 (311/321 148/155 200/210)          0 (0/276 0/442 0/387)
+  TB-L100-memitw   rescope           HN-X       99        39.1 (54/99 30/99 32/99)        37.0 (52/99 28/99 30/99)         94.5 (52/54 28/30 30/32)             0 (0/45 0/69 0/67)
+  TB-L100-memitw   white_1_shared    hd all    469      3.6 (25/469 11/469 15/469)      3.6 (25/469 11/469 15/469)        100.0 (25/25 11/11 15/15)          0 (0/444 0/458 0/454)
+  TB-L100-memitw   white_1_shared    hd far    430        2.3 (15/430 6/430 9/430)        2.3 (15/430 6/430 9/430)            100.0 (15/15 6/6 9/9)          0 (0/415 0/424 0/421)
+  TB-L100-memitw   white_1_shared    hd near    39          17.9 (10/39 5/39 6/39)          17.9 (10/39 5/39 6/39)            100.0 (10/10 5/5 6/6)             0 (0/29 0/34 0/33)
+  TB-L100-memitw   white_1_shared    HN-I      590    16.7 (118/590 88/590 90/590)    16.7 (118/590 88/590 90/590)      100.0 (118/118 88/88 90/90)          0 (0/472 0/502 0/500)
+  TB-L100-memitw   white_1_shared    HN-Q      597  52.5 (339/597 300/597 302/597)  50.9 (329/597 290/597 292/597)   96.8 (329/339 290/300 292/302)          0 (0/258 0/297 0/295)
+  TB-L100-memitw   white_1_shared    HN-X       99        55.2 (61/99 51/99 52/99)        53.2 (59/99 49/99 50/99)         96.3 (59/61 49/51 50/52)             0 (0/38 0/48 0/47)
+  TB-L100-memitw   white_0.1_shared  hd all    469      3.8 (22/469 13/469 18/469)      3.8 (22/469 13/469 18/469)        100.0 (22/22 13/13 18/18)          0 (0/447 0/456 0/451)
+  TB-L100-memitw   white_0.1_shared  hd far    430       2.9 (17/430 8/430 13/430)       2.9 (17/430 8/430 13/430)          100.0 (17/17 8/8 13/13)          0 (0/413 0/422 0/417)
+  TB-L100-memitw   white_0.1_shared  hd near    39           12.8 (5/39 5/39 5/39)           12.8 (5/39 5/39 5/39)              100.0 (5/5 5/5 5/5)             0 (0/34 0/34 0/34)
+  TB-L100-memitw   white_0.1_shared  HN-I      590   17.9 (123/590 85/590 109/590)   17.9 (123/590 85/590 109/590)    100.0 (123/123 85/85 109/109)          0 (0/467 0/505 0/481)
+  TB-L100-memitw   white_0.1_shared  HN-Q      597  53.8 (350/597 291/597 322/597)  52.1 (340/597 281/597 312/597)   96.9 (340/350 281/291 312/322)          0 (0/247 0/306 0/275)
+  TB-L100-memitw   white_0.1_shared  HN-X       99        57.9 (63/99 50/99 59/99)        55.9 (61/99 48/99 57/99)         96.5 (61/63 48/50 57/59)             0 (0/36 0/49 0/40)
+  TB-L100-memitw   retr_sum          hd all    469      6.7 (43/469 30/469 21/469)      6.7 (43/469 30/469 21/469)        100.0 (43/43 30/30 21/21)          0 (0/426 0/439 0/448)
+  TB-L100-memitw   retr_sum          hd far    430      5.6 (35/430 20/430 17/430)      5.6 (35/430 20/430 17/430)        100.0 (35/35 20/20 17/17)          0 (0/395 0/410 0/413)
+  TB-L100-memitw   retr_sum          hd near    39          18.8 (8/39 10/39 4/39)          18.8 (8/39 10/39 4/39)            100.0 (8/8 10/10 4/4)             0 (0/31 0/29 0/35)
+  TB-L100-memitw   retr_sum          HN-I      590  60.4 (375/590 376/590 318/590)  60.4 (375/590 376/590 318/590)  100.0 (375/375 376/376 318/318)          0 (0/215 0/214 0/272)
+  TB-L100-memitw   retr_sum          HN-Q      597  21.9 (140/597 139/597 113/597)  20.2 (130/597 129/597 103/597)   92.3 (130/140 129/139 103/113)          0 (0/457 0/458 0/484)
+  TB-L100-memitw   retr_sum          HN-X       99        70.7 (74/99 70/99 66/99)        68.7 (72/99 68/99 64/99)         97.1 (72/74 68/70 64/66)             0 (0/25 0/29 0/33)
+  TB-L500-memitw   where_logonly     hd all    469                  23.9 (112/469)                   14.7 (69/469)                    61.6 (69/112)                      0 (0/357)
+  TB-L500-memitw   where_logonly     hd far    386                   19.2 (74/386)                   11.7 (45/386)                     60.8 (45/74)                      0 (0/312)
+  TB-L500-memitw   where_logonly     hd near    83                    45.8 (38/83)                    28.9 (24/83)                     63.2 (24/38)                       0 (0/45)
+  TB-L500-memitw   where_logonly     HN-I      676                  50.7 (343/676)                  38.2 (258/676)                   75.2 (258/343)                      0 (0/333)
+  TB-L500-memitw   where_logonly     HN-Q      681                  69.2 (471/681)                  51.2 (349/681)                   74.1 (349/471)                      0 (0/210)
+  TB-L500-memitw   where_logonly     HN-X      120                   66.7 (80/120)                   49.2 (59/120)                     73.8 (59/80)                       0 (0/40)
+  TB-L500-memitw   rescope           hd all    469       3.1 (9/469 17/469 17/469)       3.1 (9/469 17/469 17/469)          100.0 (9/9 17/17 17/17)          0 (0/460 0/452 0/452)
+  TB-L500-memitw   rescope           hd far    386       2.0 (3/386 10/386 10/386)       2.0 (3/386 10/386 10/386)          100.0 (3/3 10/10 10/10)          0 (0/383 0/376 0/376)
+  TB-L500-memitw   rescope           hd near    83            8.0 (6/83 7/83 7/83)            8.0 (6/83 7/83 7/83)              100.0 (6/6 7/7 7/7)             0 (0/77 0/76 0/76)
+  TB-L500-memitw   rescope           HN-I      676    14.8 (49/676 93/676 158/676)    14.8 (49/676 93/676 158/676)      100.0 (49/49 93/93 158/158)          0 (0/627 0/583 0/518)
+  TB-L500-memitw   rescope           HN-Q      681  28.0 (129/681 203/681 240/681)  27.0 (124/681 196/681 231/681)   96.3 (124/129 196/203 231/240)          0 (0/552 0/478 0/441)
+  TB-L500-memitw   rescope           HN-X      120     29.4 (26/120 38/120 42/120)     28.1 (25/120 36/120 40/120)         95.4 (25/26 36/38 40/42)             0 (0/94 0/82 0/78)
+  TB-L500-memitw   white_1_shared    hd all    469      2.9 (13/469 13/469 15/469)      2.9 (13/469 13/469 15/469)        100.0 (13/13 13/13 15/15)          0 (0/456 0/456 0/454)
+  TB-L500-memitw   white_1_shared    hd far    386         1.8 (7/386 7/386 7/386)         1.8 (7/386 7/386 7/386)              100.0 (7/7 7/7 7/7)          0 (0/379 0/379 0/379)
+  TB-L500-memitw   white_1_shared    hd near    83            8.0 (6/83 6/83 8/83)            8.0 (6/83 6/83 8/83)              100.0 (6/6 6/6 8/8)             0 (0/77 0/77 0/75)
+  TB-L500-memitw   white_1_shared    HN-I      676      9.9 (67/676 67/676 67/676)      9.8 (66/676 66/676 66/676)         98.5 (66/67 66/67 66/67)          0 (0/609 0/609 0/609)
+  TB-L500-memitw   white_1_shared    HN-Q      681  32.7 (221/681 221/681 226/681)  31.1 (210/681 210/681 215/681)   95.1 (210/221 210/221 215/226)          0 (0/460 0/460 0/455)
+  TB-L500-memitw   white_1_shared    HN-X      120     30.8 (37/120 37/120 37/120)     29.2 (35/120 35/120 35/120)         94.6 (35/37 35/37 35/37)             0 (0/83 0/83 0/83)
+  TB-L500-memitw   white_0.1_shared  hd all    469      3.3 (13/469 18/469 16/469)      3.3 (13/469 18/469 16/469)        100.0 (13/13 18/18 16/16)          0 (0/456 0/451 0/453)
+  TB-L500-memitw   white_0.1_shared  hd far    386       2.6 (8/386 12/386 10/386)       2.6 (8/386 12/386 10/386)          100.0 (8/8 12/12 10/10)          0 (0/378 0/374 0/376)
+  TB-L500-memitw   white_0.1_shared  hd near    83            6.8 (5/83 6/83 6/83)            6.8 (5/83 6/83 6/83)              100.0 (5/5 6/6 6/6)             0 (0/78 0/77 0/77)
+  TB-L500-memitw   white_0.1_shared  HN-I      676     10.3 (63/676 79/676 67/676)     10.2 (62/676 78/676 66/676)         98.6 (62/63 78/79 66/67)          0 (0/613 0/597 0/609)
+  TB-L500-memitw   white_0.1_shared  HN-Q      681  33.7 (213/681 253/681 222/681)  32.2 (203/681 243/681 212/681)   95.6 (203/213 243/253 212/222)          0 (0/468 0/428 0/459)
+  TB-L500-memitw   white_0.1_shared  HN-X      120     29.4 (34/120 37/120 35/120)     27.8 (32/120 35/120 33/120)         94.3 (32/34 35/37 33/35)             0 (0/86 0/83 0/85)
+  TB-L500-memitw   retr_sum          hd all    469      4.9 (15/469 30/469 24/469)      4.9 (15/469 30/469 24/469)        100.0 (15/15 30/30 24/24)          0 (0/454 0/439 0/445)
+  TB-L500-memitw   retr_sum          hd far    386      4.3 (12/386 21/386 17/386)      4.3 (12/386 21/386 17/386)        100.0 (12/12 21/21 17/17)          0 (0/374 0/365 0/369)
+  TB-L500-memitw   retr_sum          hd near    83            7.6 (3/83 9/83 7/83)            7.6 (3/83 9/83 7/83)              100.0 (3/3 9/9 7/7)             0 (0/80 0/74 0/76)
+  TB-L500-memitw   retr_sum          HN-I      676  39.4 (194/676 313/676 293/676)  39.4 (194/676 313/676 293/676)  100.0 (194/194 313/313 293/293)          0 (0/482 0/363 0/383)
+  TB-L500-memitw   retr_sum          HN-Q      681    10.1 (29/681 100/681 78/681)      8.7 (20/681 88/681 69/681)        81.8 (20/29 88/100 69/78)          0 (0/652 0/581 0/603)
+  TB-L500-memitw   retr_sum          HN-X      120     45.8 (36/120 68/120 61/120)     44.4 (35/120 66/120 59/120)         97.0 (35/36 66/68 59/61)             0 (0/84 0/52 0/59)
+  TB-L1000-memitw  where_logonly     hd all    469                  22.2 (104/469)                   11.7 (55/469)                    52.9 (55/104)                      0 (0/365)
+  TB-L1000-memitw  where_logonly     hd far    366                   14.8 (54/366)                    7.1 (26/366)                     48.1 (26/54)                      0 (0/312)
+  TB-L1000-memitw  where_logonly     hd near   103                   48.5 (50/103)                   28.2 (29/103)                     58.0 (29/50)                       0 (0/53)
+  TB-L1000-memitw  where_logonly     HN-I      789                  44.9 (354/789)                  26.2 (207/789)                   58.5 (207/354)                      0 (0/435)
+  TB-L1000-memitw  where_logonly     HN-Q      792                  63.1 (500/792)                  40.9 (324/792)                   64.8 (324/500)                      0 (0/292)
+  TB-L1000-memitw  where_logonly     HN-X      196                  60.7 (119/196)                   35.7 (70/196)                    58.8 (70/119)                       0 (0/77)
+  TB-L1000-memitw  rescope           hd all    469                    2.8 (13/469)                    2.8 (13/469)                    100.0 (13/13)                      0 (0/456)
+  TB-L1000-memitw  rescope           hd far    366                     0.8 (3/366)                     0.8 (3/366)                      100.0 (3/3)                      0 (0/363)
+  TB-L1000-memitw  rescope           hd near   103                    9.7 (10/103)                    9.7 (10/103)                    100.0 (10/10)                       0 (0/93)
+  TB-L1000-memitw  rescope           HN-I      789                    9.1 (72/789)                    9.1 (72/789)                    100.0 (72/72)                      0 (0/717)
+  TB-L1000-memitw  rescope           HN-Q      792                  18.4 (146/792)                  18.1 (143/792)                   97.9 (143/146)                      0 (0/646)
+  TB-L1000-memitw  rescope           HN-X      196                   20.9 (41/196)                   20.4 (40/196)                     97.6 (40/41)                      0 (0/155)
+  TB-L1000-memitw  white_1_shared    hd all    469                    2.8 (13/469)                    2.8 (13/469)                    100.0 (13/13)                      0 (0/456)
+  TB-L1000-memitw  white_1_shared    hd far    366                     1.6 (6/366)                     1.6 (6/366)                      100.0 (6/6)                      0 (0/360)
+  TB-L1000-memitw  white_1_shared    hd near   103                     6.8 (7/103)                     6.8 (7/103)                      100.0 (7/7)                       0 (0/96)
+  TB-L1000-memitw  white_1_shared    HN-I      789                    8.4 (66/789)                    8.2 (65/789)                     98.5 (65/66)                      0 (0/723)
+  TB-L1000-memitw  white_1_shared    HN-Q      792                  26.5 (210/792)                  25.3 (200/792)                   95.2 (200/210)                      0 (0/582)
+  TB-L1000-memitw  white_1_shared    HN-X      196                   25.5 (50/196)                   24.5 (48/196)                     96.0 (48/50)                      0 (0/146)
+  TB-L1000-memitw  white_0.1_shared  hd all    469                    2.8 (13/469)                    2.8 (13/469)                    100.0 (13/13)                      0 (0/456)
+  TB-L1000-memitw  white_0.1_shared  hd far    366                     1.6 (6/366)                     1.6 (6/366)                      100.0 (6/6)                      0 (0/360)
+  TB-L1000-memitw  white_0.1_shared  hd near   103                     6.8 (7/103)                     6.8 (7/103)                      100.0 (7/7)                       0 (0/96)
+  TB-L1000-memitw  white_0.1_shared  HN-I      789                    6.8 (54/789)                    6.8 (54/789)                    100.0 (54/54)                      0 (0/735)
+  TB-L1000-memitw  white_0.1_shared  HN-Q      792                  23.1 (183/792)                  21.8 (173/792)                   94.5 (173/183)                      0 (0/609)
+  TB-L1000-memitw  white_0.1_shared  HN-X      196                   21.9 (43/196)                   20.9 (41/196)                     95.3 (41/43)                      0 (0/153)
+  TB-L1000-memitw  retr_sum          hd all    469                    3.8 (18/469)                    3.8 (18/469)                    100.0 (18/18)                      0 (0/451)
+  TB-L1000-memitw  retr_sum          hd far    366                    2.7 (10/366)                    2.7 (10/366)                    100.0 (10/10)                      0 (0/356)
+  TB-L1000-memitw  retr_sum          hd near   103                     7.8 (8/103)                     7.8 (8/103)                      100.0 (8/8)                       0 (0/95)
+  TB-L1000-memitw  retr_sum          HN-I      789                  26.9 (212/789)                  26.9 (212/789)                  100.0 (212/212)                      0 (0/577)
+  TB-L1000-memitw  retr_sum          HN-Q      792                    3.7 (29/792)                    2.5 (20/792)                     69.0 (20/29)                      0 (0/763)
+  TB-L1000-memitw  retr_sum          HN-X      196                   28.6 (56/196)                   27.6 (54/196)                     96.4 (54/56)                      0 (0/140)
+
+      method keys: where_logonly = ReScope-W, log-only thresholds (where_logonly); rescope = ReScope (rescope); white_1_shared = cosine family, selected for H3 (white_1_shared); white_0.1_shared = cosine family, selected for H2 (white_0.1_shared); retr_sum = retrieval reference (retr_sum); where_least_n10 = ReScope-W, least repair of 10 complaints from the log-only thresholds (E2 b; H1 row); where_cal = ReScope-W, two-block thresholds (E2 c')
+
+(X3) TABLE OF LOGS (decision 7): the deployed log as evaluated in these experiments, one sequence per forward pass; file out/logs_b1.json
+      Rel / T-Gen / I-Gen exact in percent of the T edits; D1 in percent of the valid heldout_disjoint rows; numerator/denominator in brackets
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+  log              backbone       role           T  hd rows       Rel exact    T-Gen exact     I-Gen exact           D1 hd                                                        source
+  ---------------  -------------  -----------  ---  -------  --------------  -------------  --------------  --------------  ------------------------------------------------------------
+  TB-Q100-ae-l2_3  Qwen2.5-VL-3B  development  100      465   78.0 (78/100)    9.0 (9/100)   22.0 (22/100)  54.2 (252/465)   e3_qwen/out/rows/TB-Q100-ae-l2_3__deployed__dx__tf.jsonl.gz
+  TB-Q200-ae-l2_3  Qwen2.5-VL-3B  unseen       200      465  65.5 (131/200)    4.5 (9/200)   22.5 (45/200)  77.4 (360/465)   e3_qwen/out/rows/TB-Q200-ae-l2_3__deployed__dx__tf.jsonl.gz
+  TB-Q500-ae-l2_3  Qwen2.5-VL-3B  unseen       500      465  54.6 (273/500)   4.4 (22/500)   16.0 (80/500)  89.0 (414/465)   e3_qwen/out/rows/TB-Q500-ae-l2_3__deployed__dx__tf.jsonl.gz
+  TB-L100-ae-l2_3  LLaVA-1.5-7B   development  100      469   88.0 (88/100)  29.0 (29/100)   66.0 (66/100)  62.3 (292/469)  e3_llava/out/rows/TB-L100-ae-l2_3__deployed__dx__tf.jsonl.gz
+  TB-L200-ae-l2_3  LLaVA-1.5-7B   unseen       200      469  70.0 (140/200)  21.5 (43/200)  51.0 (102/200)  76.1 (357/469)  e3_llava/out/rows/TB-L200-ae-l2_3__deployed__dx__tf.jsonl.gz
+  TB-L500-ae-l2_3  LLaVA-1.5-7B   unseen       500      469  40.6 (203/500)  11.4 (57/500)  33.2 (166/500)  91.9 (431/469)  e3_llava/out/rows/TB-L500-ae-l2_3__deployed__dx__tf.jsonl.gz
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3): PREFIX LOGS of the development streams (first 10, 20, 50 edits)
+  log                  backbone       role                               T  hd rows     Rel exact   T-Gen exact   I-Gen exact           D1 hd                                                     source
+  -------------------  -------------  --------------------------------  --  -------  ------------  ------------  ------------  --------------  ---------------------------------------------------------
+  TB-Q100-ae-l2_3-p10  Qwen2.5-VL-3B  prefix of the development stream  10      465   80.0 (8/10)    0.0 (0/10)   20.0 (2/10)  23.9 (111/465)  e2_prefix/out/rows/TB-Q100-ae-l2_3-p10__deployed.jsonl.gz
+  TB-Q100-ae-l2_3-p20  Qwen2.5-VL-3B  prefix of the development stream  20      465  75.0 (15/20)    0.0 (0/20)   15.0 (3/20)  29.9 (139/465)  e2_prefix/out/rows/TB-Q100-ae-l2_3-p20__deployed.jsonl.gz
+  TB-Q100-ae-l2_3-p50  Qwen2.5-VL-3B  prefix of the development stream  50      465  82.0 (41/50)    8.0 (4/50)  28.0 (14/50)  43.0 (200/465)  e2_prefix/out/rows/TB-Q100-ae-l2_3-p50__deployed.jsonl.gz
+  TB-L100-ae-l2_3-p10  LLaVA-1.5-7B   prefix of the development stream  10      469   90.0 (9/10)   10.0 (1/10)   80.0 (8/10)  26.4 (124/469)  e2_prefix/out/rows/TB-L100-ae-l2_3-p10__deployed.jsonl.gz
+  TB-L100-ae-l2_3-p20  LLaVA-1.5-7B   prefix of the development stream  20      469  90.0 (18/20)   30.0 (6/20)  75.0 (15/20)  35.4 (166/469)  e2_prefix/out/rows/TB-L100-ae-l2_3-p20__deployed.jsonl.gz
+  TB-L100-ae-l2_3-p50  LLaVA-1.5-7B   prefix of the development stream  50      469  86.0 (43/50)  24.0 (12/50)  64.0 (32/50)  50.5 (237/469)  e2_prefix/out/rows/TB-L100-ae-l2_3-p50__deployed.jsonl.gz
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+  log              backbone       role       T  hd rows        Rel exact      T-Gen exact      I-Gen exact           D1 hd                                                        source
+  ---------------  -------------  ------  ----  -------  ---------------  ---------------  ---------------  --------------  ------------------------------------------------------------
+  TB-Q100-memitw   Qwen2.5-VL-3B  unseen   100      465    53.0 (53/100)    11.0 (11/100)    19.0 (19/100)  89.5 (416/465)    e3_qwen/out/rows/TB-Q100-memitw__deployed__dx__tf.jsonl.gz
+  TB-Q500-memitw   Qwen2.5-VL-3B  unseen   500      465   25.0 (125/500)     6.4 (32/500)    10.0 (50/500)  96.6 (449/465)    e3_qwen/out/rows/TB-Q500-memitw__deployed__dx__tf.jsonl.gz
+  TB-Q1000-memitw  Qwen2.5-VL-3B  unseen  1000      465  15.2 (152/1000)    4.6 (46/1000)    6.5 (65/1000)  98.9 (460/465)   e3_qwen/out/rows/TB-Q1000-memitw__deployed__dx__tf.jsonl.gz
+  TB-Q2000-memitw  Qwen2.5-VL-3B  unseen  2000      465   9.8 (196/2000)    3.7 (74/2000)    4.7 (93/2000)  97.6 (454/465)   e3_qwen/out/rows/TB-Q2000-memitw__deployed__dx__tf.jsonl.gz
+  TB-L100-memitw   LLaVA-1.5-7B   unseen   100      469    78.0 (78/100)    26.0 (26/100)    65.0 (65/100)  77.8 (365/469)   e3_llava/out/rows/TB-L100-memitw__deployed__dx__tf.jsonl.gz
+  TB-L500-memitw   LLaVA-1.5-7B   unseen   500      469   45.6 (228/500)    13.4 (67/500)   38.4 (192/500)  87.0 (408/469)   e3_llava/out/rows/TB-L500-memitw__deployed__dx__tf.jsonl.gz
+  TB-L1000-memitw  LLaVA-1.5-7B   unseen  1000      469  37.3 (373/1000)  11.4 (114/1000)  29.6 (296/1000)  86.1 (404/469)  e3_llava/out/rows/TB-L1000-memitw__deployed__dx__tf.jsonl.gz
+

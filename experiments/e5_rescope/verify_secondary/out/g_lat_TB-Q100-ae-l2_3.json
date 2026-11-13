@@ -1,0 +1,49 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "mode": "last_fp64",
+ "plain_ms": {
+  "median": 67.29724816977978,
+  "p10": 23.099957779049873,
+  "p90": 155.77834583818913
+ },
+ "gated_ms": {
+  "median": 68.904222920537,
+  "p10": 23.92023466527462,
+  "p90": 158.80505479872227
+ },
+ "overhead_pct": {
+  "median": 2.463170743109,
+  "p10": -4.911943730865513,
+  "p90": 15.839842026878824
+ },
+ "overhead_min_based_pct": 1.1412917610221118,
+ "gate_alone_ms": {
+  "median": 0.32250769436359406,
+  "p10": 0.2979747951030731,
+  "p90": 0.7115352898836138
+ },
+ "gate_alone_ms_mean_of_min": 0.37938964863618213,
+ "gate_alone_pct_of_plain_forward": 0.5051595553074639,
+ "n_sequences_firing": 7,
+ "utilisation_pct": [
+  1.0,
+  36.0,
+  37.0,
+  32.0,
+  37.0,
+  42.0,
+  37.0,
+  37.0,
+  74.0,
+  69.0,
+  37.0
+ ],
+ "model_parameters_largest_module": 3754622976,
+ "module_shape": [
+  2048,
+  11008
+ ],
+ "module_dtype": "torch.bfloat16",
+ "reps": 9,
+ "gate_runs_per_sequence": 50
+}

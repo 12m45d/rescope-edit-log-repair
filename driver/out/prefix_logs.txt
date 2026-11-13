@@ -1,0 +1,18 @@
+PREFIX LOGS OF THE DEVELOPMENT STREAMS (R12) -- rendered 2026-11-11 15:21:17 by `python -m fx.prefix table` from out/prefix_logs/<log>/prefix.json
+deployed weight of a prefix = pre-edit weight + the stored applied batch updates of its first batches (harness rule, fp32 sum, cast to the module dtype);
+Rel / T-Gen / I-Gen: exact, teacher forced, B = 1, over the prefix's edits; D1: valid rows whose pre-edit answer is not reproduced (teacher forcing, B = 1);
+hard negatives: valid rows of the prefix's edits (HN-X: both edits in the prefix); '-p100' rows are the construction check, not experiment logs.
+
+log                     T  batches  Rel exact % (n)  T-Gen exact % (n)  I-Gen exact % (n)  D1 % heldout_disjoint (n)            D1 complaints in REPAIR  HN-I / HN-Q / HN-X valid  load checks       fx code
+--------------------  ---  -------  ---------------  -----------------  -----------------  -------------------------  ---------------------------------  ------------------------  -----------  ------------
+TB-Q100-ae-l2_3-p10    10        1      80.0 (8/10)         0.0 (0/10)        20.0 (2/10)            23.87 (111/465)     99 (36 image + 63 text) of 489               58 / 60 / 0          yes  7f8236032d7b
+TB-Q100-ae-l2_3-p20    20        2     75.0 (15/20)         0.0 (0/20)        15.0 (3/20)            29.89 (139/465)    130 (51 image + 79 text) of 489             117 / 120 / 4          yes  7f8236032d7b
+TB-Q100-ae-l2_3-p50    50        5     82.0 (41/50)         8.0 (4/50)       28.0 (14/50)            43.01 (200/465)   201 (98 image + 103 text) of 489            292 / 297 / 24          yes  7f8236032d7b
+TB-Q100-ae-l2_3-p100  100       10    78.0 (78/100)        9.0 (9/100)      22.0 (22/100)            54.19 (252/465)  297 (155 image + 142 text) of 489            588 / 591 / 99          yes  7f8236032d7b
+TB-L100-ae-l2_3-p10    10        1      90.0 (9/10)        10.0 (1/10)        80.0 (8/10)            26.44 (124/469)    128 (44 image + 84 text) of 494               58 / 60 / 1          yes  7f8236032d7b
+TB-L100-ae-l2_3-p20    20        2     90.0 (18/20)        30.0 (6/20)       75.0 (15/20)            35.39 (166/469)   175 (64 image + 111 text) of 494             117 / 120 / 3          yes  7f8236032d7b
+TB-L100-ae-l2_3-p50    50        5     86.0 (43/50)       24.0 (12/50)       64.0 (32/50)            50.53 (237/469)  264 (101 image + 163 text) of 494            295 / 298 / 22          yes  7f8236032d7b
+TB-L100-ae-l2_3-p100  100       10    88.0 (88/100)      29.0 (29/100)      66.0 (66/100)            62.26 (292/469)  305 (124 image + 181 text) of 494            590 / 597 / 99          yes  7f8236032d7b
+
+  TB-Q100-ae-l2_3-p100 (all 10 batches = the development log): composite == stored composite bitwise True; W_E == the development log's W_E bitwise True; D1 flags differing from the stored probe records 0 of 979 valid rows (565 complaints here, 565 stored)
+  TB-L100-ae-l2_3-p100 (all 10 batches = the development log): composite == stored composite bitwise True; W_E == the development log's W_E bitwise True; D1 flags differing from the stored probe records 0 of 988 valid rows (609 complaints here, 609 stored)

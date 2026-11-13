@@ -1,0 +1,62 @@
+{
+ "log": "TB-L100-ae-l2_3",
+ "blocks": [
+  "reedit_build",
+  "capture",
+  "base",
+  "cw",
+  "d",
+  "b1",
+  "c",
+  "b2",
+  "gen",
+  "e"
+ ],
+ "assert_clean": {
+  "hook_mismatch": 0,
+  "memo_conflicts": 0,
+  "forwards": 10188,
+  "rows": 151137
+ },
+ "hook_vs_vectors_total": {
+  "n_rows": 46217,
+  "n_fired_differs": 0,
+  "n_own_last_differs": 0
+ },
+ "seconds": 8232.29303574562,
+ "stats": {
+  "rows": 151137,
+  "pre": 55149,
+  "memo": 35293,
+  "run": 10862,
+  "lib": 49833,
+  "missing": 0,
+  "forwards": 10188,
+  "decodes": 2210,
+  "hook_mismatch": 0,
+  "near": 1,
+  "near_changed_on_device": 0,
+  "seconds_model": 7932.28693985939
+ },
+ "memo": {
+  "hits": 35967,
+  "misses": 16944,
+  "writes": 10862,
+  "shards": 23,
+  "shards_other_code": 0,
+  "entries": 29625,
+  "conflicts": 0,
+  "root": "[redacted: local path]/02_research/experiments/10_final/memo/llava",
+  "by_mode": {
+   "tf": 23164,
+   "decode": 6432,
+   "prompt": 29
+  },
+  "code": "c76c4da16bd6",
+  "accepted_library_versions": [
+   "c76c4da16bd6"
+  ]
+ },
+ "time": "2026-11-11 22:42:33",
+ "smoke": 0
+}

@@ -1,0 +1,117 @@
+{
+ "log": "TX-G2XL-rome-dev100",
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "levels_percent": [
+  0.5,
+  1.0,
+  2.0,
+  5.0,
+  10.0
+ ],
+ "features": {
+  "ncoord": {
+   "levels": {
+    "0.5": {
+     "threshold": 0.7579217852925696,
+     "heldout_firing": 0.5,
+     "paraphrase_own_candidate": 89.0,
+     "request_own_candidate": 100.0,
+     "neighbourhood_firing": 1.7999999999999998
+    },
+    "1.0": {
+     "threshold": 0.635419238034057,
+     "heldout_firing": 1.0,
+     "paraphrase_own_candidate": 96.5,
+     "request_own_candidate": 100.0,
+     "neighbourhood_firing": 2.4
+    },
+    "2.0": {
+     "threshold": 0.5369552487857415,
+     "heldout_firing": 2.0,
+     "paraphrase_own_candidate": 98.5,
+     "request_own_candidate": 100.0,
+     "neighbourhood_firing": 3.0
+    },
+    "5.0": {
+     "threshold": 0.3847120719718187,
+     "heldout_firing": 5.0,
+     "paraphrase_own_candidate": 99.0,
+     "request_own_candidate": 100.0,
+     "neighbourhood_firing": 6.7
+    },
+    "10.0": {
+     "threshold": 0.3168633260315224,
+     "heldout_firing": 10.0,
+     "paraphrase_own_candidate": 99.0,
+     "request_own_candidate": 100.0,
+     "neighbourhood_firing": 9.0
+    }
+   },
+   "n": {
+    "heldout": 3000,
+    "paraphrase": 200,
+    "request": 100,
+    "neighbourhood": 1000
+   }
+  },
+  "cos": {
+   "levels": {
+    "0.5": {
+     "threshold": 0.7263463113320583,
+     "heldout_firing": 0.5,
+     "paraphrase_own_candidate": 84.0,
+     "request_own_candidate": 100.0,
+     "neighbourhood_firing": 2.0
+    },
+    "1.0": {
+     "threshold": 0.6323189158469045,
+     "heldout_firing": 1.0,
+     "paraphrase_own_candidate": 91.5,
+     "request_own_candidate": 100.0,
+     "neighbourhood_firing": 3.1
+    },
+    "2.0": {
+     "threshold": 0.5679830946130279,
+     "heldout_firing": 2.0,
+     "paraphrase_own_candidate": 93.5,
+     "request_own_candidate": 100.0,
+     "neighbourhood_firing": 4.0
+    },
+    "5.0": {
+     "threshold": 0.4474940592087519,
+     "heldout_firing": 5.0,
+     "paraphrase_own_candidate": 95.0,
+     "request_own_candidate": 100.0,
+     "neighbourhood_firing": 6.9
+    },
+    "10.0": {
+     "threshold": 0.43104019935168475,
+     "heldout_firing": 10.0,
+     "paraphrase_own_candidate": 95.0,
+     "request_own_candidate": 100.0,
+     "neighbourhood_firing": 14.299999999999999
+    }
+   },
+   "published_0.65": {
+    "threshold": 0.65,
+    "heldout_firing": 0.8999999999999999,
+    "paraphrase_own_candidate": 91.0,
+    "request_own_candidate": 100.0,
+    "neighbourhood_firing": 2.4
+   },
+   "n": {
+    "heldout": 3000,
+    "paraphrase": 200,
+    "request": 100,
+    "neighbourhood": 1000
+   }
+  }
+ },
+ "what": "one global threshold per feature, read at matched firing on HELD-OUT benign prompts (descriptive; development log only)"
+}

@@ -1,0 +1,350 @@
+E0 SANITY COMPARISON BEFORE THE FINAL EXPERIMENTS      (rendered 2026-11-11 00:40:29 by code/e0_render.py from out/*.json; no number is typed by hand)
+alpha = 0.05; n = 200 calibration queries = a seeded random draw from the valid REPAIR probe rows (draw d: seed d for the draw and for the two-block split);
+teacher-forced keys and forwards at B = 1; every gate decides at the teacher-forced last prompt position (role 'last'); coordinates and cosines are SIGNED.
+M1 = default method of PROTOCOL.md (normalised solver coordinate, two-block calibration, top-1, REPL, rebased values, guards on); M2 = M1 with the shared-scale
+calibration; M3 / M4 = cosine gate (raw cosine to the stored solver key, top-1, rebased values, guards on) with the two-block / shared-scale calibration;
+M5 = cosine gate at 0.65 and M6 = exact-match gate (cos >= 0.999), both role 'last', top-1, rebased values; deployed = W_E; pre-edit = W_0 (control).
+Guards = each edit's stored solver key and the B = 1 key of its own Rel prompt must keep firing (capped thresholds; a capped edit is outside the conformal bound).
+Only the two development logs were touched.  Nothing was tuned or selected on these numbers.
+Library: rescope, code fingerprint c76c4da16bd6 (unchanged); 53 of its 53 stored test results carry this fingerprint, 53 pass.
+
+##########################################################################################################################################################################
+TB-Q100-ae-l2_3  (Qwen, T = 100 edits)
+##########################################################################################################################################################################
+rows: REPAIR 489 valid (calibration pool); HELD-OUT 490 valid, HELD-OUT-DISJOINT 465 (of them 90 ask a question that a REPAIR row asks about another image), HELD-OUT-STRICT 375;
+hard negatives (valid rows, first 100 edits) {'HN-I': 588, 'HN-Q': 591, 'HN-X': 99}: 884 new, source item related to an edit of this log 0, HN-I rows whose question is also asked by an edit of this log (cross-like) 74, same category as the edit 309, related_flag 181;
+sequences whose teacher-forced last prompt position is one token after the decode's: {'heldout_disjoint': 0, 'repair': 0, 'rel': 0, 'tgen': 0, 'igen': 0, 'hn': 0}
+
+(1) GATE LEVEL -- key cache, CPU, 20 seeded calibration draws; cells: mean [5th, 95th percentile over draws]; M5 / M6: one fixed gate.
+    fire = % of the 465 valid HELD-OUT-DISJOINT rows on which an edit fires ('uncapped' = the literal conformal rule, the event the bound covers).
+    coverage = % of the 100 T-Gen / I-Gen sequences on which their OWN edit fires = is the top-1 candidate and releases ('cand' = is a candidate, top-1 or not).
+    own prompts = the 100 B = 1 Rel prompts: number on which the own edit is NOT a candidate before / after the guard cap; 'not top-1' = number not released by
+    the own edit after the cap (another edit has the larger margin).
+    method                           fire % (as run)    fire % uncapped    T-Gen own fires     T-Gen own cand    I-Gen own fires     I-Gen own cand  own silenced before cap  after cap   own not top-1     edits capped
+    -----------------------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------------  ---------  --------------  ---------------
+    M1 ncoord two-block (default)  4.65 [2.56, 7.13]  4.65 [2.56, 7.13]  62.2 [53.9, 71.0]  64.5 [55.0, 74.2]  72.7 [66.9, 79.0]  74.7 [68.8, 81.0]           0.0 [0.0, 0.0]   0 [0, 0]  0.0 [0.0, 0.0]   0.0 [0.0, 0.0]
+    M2 ncoord shared scale         4.63 [4.22, 5.43]  4.63 [4.22, 5.43]  60.1 [55.2, 64.1]  62.1 [57.2, 66.1]  73.0 [68.8, 76.0]  74.9 [70.8, 78.0]           0.0 [0.0, 0.0]   0 [0, 0]  0.0 [0.0, 0.0]   0.0 [0.0, 0.0]
+    M3 cosine two-block            4.72 [2.94, 7.57]  4.72 [2.94, 7.57]   12.2 [8.0, 15.1]   12.2 [8.0, 15.1]  50.5 [39.0, 58.1]  53.0 [42.0, 60.0]          3.9 [0.0, 14.0]   0 [0, 0]  0.5 [0.0, 1.1]  3.9 [0.0, 14.0]
+    M4 cosine shared scale         3.89 [2.80, 4.98]  3.89 [2.80, 4.98]     2.0 [2.0, 2.0]     2.0 [2.0, 2.0]  48.5 [43.0, 52.0]  52.5 [47.0, 56.0]           0.0 [0.0, 0.0]   0 [0, 0]  0.0 [0.0, 0.0]   0.0 [0.0, 0.0]
+    M5 cosine 0.65                             48.17                  -               38.0               96.0               70.0              100.0               0 (no cap)          -               0                -
+    M6 exact (cos >= 0.999)                     0.00                  -                0.0                0.0                0.0                0.0               1 (no cap)          -               1                -
+
+    hard negatives of the first 100 edits, valid rows (HN-I n = 588, HN-Q n = 591, HN-X n = 99): % of rows on which AN edit fires / on which the
+    row's OWN edit fires (own = the edit whose image (HN-I) or question (HN-Q) the row uses; HN-X: own a = the image's edit, own b = the question's edit).
+    method                              HN-I an edit           HN-I own       HN-Q an edit           HN-Q own       HN-X an edit         HN-X own a        HN-X own b
+    -----------------------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------  ----------------
+    M1 ncoord two-block (default)  37.5 [24.1, 52.4]  32.0 [21.4, 42.0]  26.8 [18.3, 38.0]  19.6 [15.0, 25.4]  52.7 [39.1, 68.8]  31.7 [24.1, 39.4]  12.6 [9.0, 18.2]
+    M2 ncoord shared scale         29.1 [24.3, 33.8]  26.1 [21.9, 30.0]  19.0 [16.9, 21.2]  15.0 [13.4, 16.5]  38.6 [33.0, 44.7]  25.1 [21.0, 28.5]   9.0 [8.0, 10.2]
+    M3 cosine two-block             10.6 [5.4, 14.5]     5.9 [3.7, 7.3]   17.0 [9.1, 23.7]    8.8 [6.9, 10.5]  18.3 [11.0, 24.7]    6.7 [3.0, 10.2]    5.4 [4.0, 7.1]
+    M4 cosine shared scale            4.3 [3.6, 4.8]     3.5 [2.9, 3.7]     6.7 [6.3, 7.3]     2.2 [1.9, 2.4]     8.3 [6.1, 9.1]     2.5 [2.0, 3.0]    1.9 [1.0, 2.0]
+    M5 cosine 0.65                              99.7               27.7              100.0               23.2              100.0               29.3              12.1
+    M6 exact (cos >= 0.999)                      0.0                0.0                0.0                0.0                0.0                0.0               0.0
+
+    further gate-level numbers: fire % on other probe pools and at the other positions of the SAME gate (calibrated on teacher-forced keys): '@prompt' = the
+    decode's token in the teacher-forced sequence, '@decode' = the prompt-only key; Rel = % of own prompts on which the own edit fires; 'other edit' = % of
+    rephrase sequences on which ANOTHER edit fires (wrong target).
+    method                                    strict     HELD-OUT (all)      disjoint image      disjoint text   disjoint @prompt   disjoint @decode         Rel own fires  T-Gen other edit   I-Gen other edit
+    -----------------------------  -----------------  -----------------  ------------------  -----------------  -----------------  -----------------  --------------------  ----------------  -----------------
+    M1 ncoord two-block (default)  3.63 [2.12, 6.13]  4.85 [2.43, 7.57]  9.64 [5.31, 14.80]  0.00 [0.00, 0.00]  4.65 [2.56, 7.13]  4.68 [2.56, 7.13]  100.0 [100.0, 100.0]   9.2 [5.0, 14.1]    7.6 [4.0, 11.1]
+    M2 ncoord shared scale         2.75 [2.60, 3.25]  4.81 [4.41, 5.56]  9.51 [8.75, 10.80]  0.10 [0.00, 0.44]  4.63 [4.22, 5.43]  4.59 [4.22, 5.43]  100.0 [100.0, 100.0]    5.8 [5.0, 7.1]     7.2 [4.0, 9.0]
+    M3 cosine two-block            4.31 [2.09, 6.24]  4.83 [3.18, 7.60]  9.80 [6.09, 15.71]  0.00 [0.00, 0.00]  4.72 [2.94, 7.57]  4.72 [2.94, 7.57]    99.5 [99.0, 100.0]    4.0 [2.0, 7.1]    9.7 [5.0, 15.1]
+    M4 cosine shared scale         1.37 [0.80, 1.89]  4.10 [3.06, 5.13]  8.08 [5.80, 10.33]  0.00 [0.00, 0.00]  3.89 [2.80, 4.98]  3.78 [2.80, 4.77]  100.0 [100.0, 100.0]    3.0 [1.0, 5.0]  12.1 [11.0, 13.1]
+    M5 cosine 0.65                             35.73              50.82              100.00               0.00              48.17              48.17                 100.0              61.0               30.0
+    M6 exact (cos >= 0.999)                     0.00               0.00                0.00               0.00               0.00               0.00                  99.0               0.0                0.0
+
+    calibration M1: n1 = 100, n2 = 100, rank 96, bound 4.95 %, top-1 by excess, eta 0.154 [0.113, 0.201]; draws with a capped edit 0/20; guards silenced by the literal rule (of 200: stored keys + B = 1 Rel keys) 0.0 [0.0, 0.0]; reported rows (HELD-OUT-DISJOINT, T-Gen, I-Gen, hard negatives) within 1e-9 of a threshold, all draws: 0; firing flags of reported rows changed by the cap, all draws: 0
+    calibration M2: n1 = 0, n2 = 200, rank 191, bound 4.98 %, top-1 by r, eta 0.308 [0.288, 0.328]; draws with a capped edit 0/20; guards silenced by the literal rule (of 200: stored keys + B = 1 Rel keys) 0.0 [0.0, 0.0]; reported rows (HELD-OUT-DISJOINT, T-Gen, I-Gen, hard negatives) within 1e-9 of a threshold, all draws: 0; firing flags of reported rows changed by the cap, all draws: 0
+    calibration M3: n1 = 100, n2 = 100, rank 96, bound 4.95 %, top-1 by excess, eta 0.061 [0.048, 0.083]; draws with a capped edit 17/20; guards silenced by the literal rule (of 200: stored keys + B = 1 Rel keys) 7.7 [0.0, 28.0]; reported rows (HELD-OUT-DISJOINT, T-Gen, I-Gen, hard negatives) within 1e-9 of a threshold, all draws: 0; firing flags of reported rows changed by the cap, all draws: 0
+    calibration M4: n1 = 0, n2 = 200, rank 191, bound 4.98 %, top-1 by r, eta 0.930 [0.926, 0.935]; draws with a capped edit 0/20; guards silenced by the literal rule (of 200: stored keys + B = 1 Rel keys) 0.0 [0.0, 0.0]; reported rows (HELD-OUT-DISJOINT, T-Gen, I-Gen, hard negatives) within 1e-9 of a threshold, all draws: 0; firing flags of reported rows changed by the cap, all draws: 0
+    own B = 1 Rel key on its own detector (signed): ncoord min 0.9498, median 0.9947, max 1.0224; cos min 0.9989, median 0.9996, max 0.9998; M6 misses the own prompt of edits [24]
+
+(2) BEHAVIOUR -- teacher forcing at B = 1 (hook on the GPU), calibration draws [0, 1, 2]; cells of M1 - M4: mean [min, max] over the 3 draws.
+    Rel / T-Gen / I-Gen = exact % over all 100 edits; D1 = % of valid rows whose pre-edit answer y0 (multi-token, decoder v2) is not reproduced:
+    HELD-OUT-DISJOINT n = 465, HELD-OUT-STRICT n = 375, hard negatives HN-I n = 588, HN-Q n = 591, HN-X n = 99; T-Loc* / I-Loc* = token-level locality (%) on
+    HELD-OUT-DISJOINT (241 text / 224 image rows; rescope.locality).
+    method                                    Rel        T-Gen        I-Gen      D1 % disjoint        D1 % strict          HN-I D1 %          HN-Q D1 %          HN-X D1 %                   T-Loc*                I-Loc*
+    -----------------------------  --------------  -----------  -----------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------------  --------------------
+    M1 ncoord two-block (default)  100 [100, 100]  56 [52, 60]  68 [66, 70]  3.94 [2.58, 4.95]  3.11 [2.13, 3.73]  32.3 [23.5, 37.2]  23.7 [18.4, 29.3]  48.5 [39.4, 54.5]  100.00 [100.00, 100.00]  98.50 [98.19, 99.05]
+    M2 ncoord shared scale         100 [100, 100]  60 [58, 62]  72 [70, 75]  4.80 [4.52, 5.38]  2.84 [2.67, 3.20]  28.8 [26.4, 33.0]  19.2 [17.8, 21.2]  39.7 [37.4, 44.4]    99.97 [99.92, 100.00]  98.07 [97.88, 98.16]
+    M3 cosine two-block              99 [98, 100]   13 [9, 16]  49 [47, 51]  4.23 [3.01, 6.02]  3.91 [2.93, 5.87]    8.1 [5.1, 13.8]   15.4 [8.8, 23.5]  16.2 [12.1, 21.2]  100.00 [100.00, 100.00]  98.68 [98.16, 99.00]
+    M4 cosine shared scale         100 [100, 100]     3 [3, 3]  49 [48, 50]  4.30 [3.87, 4.52]  1.51 [1.33, 1.60]     4.5 [4.4, 4.6]     6.9 [6.8, 6.9]     9.1 [9.1, 9.1]  100.00 [100.00, 100.00]  98.68 [98.64, 98.77]
+    M5 cosine 0.65                            100           37           69              46.88              34.93               97.3               99.2              100.0                   100.00                 82.88
+    M6 exact (cos >= 0.999)                    99            1            0               0.00               0.00                0.0                0.0                0.0                   100.00                100.00
+    deployed log W_E                           78            9           22              54.19              54.67               76.7               77.7               86.9                    92.20                 92.08
+    pre-edit W_0 (control)                      0            1            0               0.00               0.00                0.0                0.0                0.0                   100.00                100.00
+
+    the same runs: firing on HELD-OUT-DISJOINT (hook), D1 among the firing rows, own edit fires on its rephrase, (T-Gen + I-Gen) / 2 exact, token accuracy of
+    the edits (%), hard negatives pooled
+    method                           fire % disjoint          D1 % | fired    T-Gen own fires    I-Gen own fires      (T+I)/2 exact               Rel tok          T-Gen tok          I-Gen tok          HN fire %            HN D1 %       HN tok-loc %
+    -----------------------------  -----------------  --------------------  -----------------  -----------------  -----------------  --------------------  -----------------  -----------------  -----------------  -----------------  -----------------
+    M1 ncoord two-block (default)  3.94 [2.58, 4.95]  100.0 [100.0, 100.0]  58.7 [54.0, 62.0]  69.3 [67.0, 71.0]  62.3 [59.0, 65.0]  100.0 [100.0, 100.0]  77.1 [74.7, 78.9]  79.4 [78.1, 80.1]  30.0 [22.7, 35.4]  29.6 [22.4, 34.9]  94.3 [93.3, 95.7]
+    M2 ncoord shared scale         4.80 [4.52, 5.38]  100.0 [100.0, 100.0]  61.0 [59.0, 64.0]  73.3 [71.0, 76.0]  66.0 [64.0, 68.5]  100.0 [100.0, 100.0]  79.3 [78.2, 81.0]  81.6 [80.0, 83.0]  25.4 [23.4, 28.7]  25.2 [23.2, 28.4]  95.1 [94.4, 95.5]
+    M3 cosine two-block            4.23 [3.01, 6.02]  100.0 [100.0, 100.0]   11.7 [8.0, 15.0]  49.7 [48.0, 52.0]  30.8 [29.0, 33.5]    99.2 [98.2, 100.0]  49.8 [47.7, 52.2]  68.5 [68.1, 69.2]   12.3 [7.5, 19.1]   12.1 [7.4, 18.9]  97.7 [96.2, 98.7]
+    M4 cosine shared scale         4.30 [3.87, 4.52]  100.0 [100.0, 100.0]     2.0 [2.0, 2.0]  50.3 [49.0, 51.0]  26.2 [25.5, 26.5]  100.0 [100.0, 100.0]  43.4 [43.4, 43.4]  68.4 [67.7, 68.7]     6.0 [5.9, 6.0]     6.0 [5.9, 6.0]  98.8 [98.8, 98.8]
+    M5 cosine 0.65                             48.17                  97.3               38.0               70.0               53.0                 100.0               65.6               80.5               99.8               98.4               81.5
+    M6 exact (cos >= 0.999)                     0.00                     -                0.0                0.0                0.5                  99.5               42.4               39.7                0.0                0.0              100.0
+    deployed log W_E                               -                     -                  -                  -               15.5                  91.2               52.2               58.3                  -               77.9               85.3
+    pre-edit W_0 (control)                         -                     -                  -                  -                0.5                  38.6               42.4               39.7                  -                0.0              100.0
+
+    degenerate pre-edit answers are counted: rows whose y0 is empty / one character / '?' / a bare None or No: HELD-OUT-DISJOINT 0 of 465 {'empty': 0, 'single_char': 0, 'qmark': 0, 'none_no': 0}; HN-I 0 of 588; HN-Q 0 of 591; HN-X 0 of 99.  D1 % without / on those rows:
+    method                             HN-I not deg.  HN-I deg.      HN-Q not deg.  HN-Q deg.      HN-X not deg.  HN-X deg.  disjoint not deg.
+    -----------------------------  -----------------  ---------  -----------------  ---------  -----------------  ---------  -----------------
+    M1 ncoord two-block (default)  32.3 [23.5, 37.2]          -  23.7 [18.4, 29.3]          -  48.5 [39.4, 54.5]          -  3.94 [2.58, 4.95]
+    M2 ncoord shared scale         28.8 [26.4, 33.0]          -  19.2 [17.8, 21.2]          -  39.7 [37.4, 44.4]          -  4.80 [4.52, 5.38]
+    M3 cosine two-block              8.1 [5.1, 13.8]          -   15.4 [8.8, 23.5]          -  16.2 [12.1, 21.2]          -  4.23 [3.01, 6.02]
+    M4 cosine shared scale            4.5 [4.4, 4.6]          -     6.9 [6.8, 6.9]          -     9.1 [9.1, 9.1]          -  4.30 [3.87, 4.52]
+    M5 cosine 0.65                              97.3          -               99.2          -              100.0          -              46.88
+    M6 exact (cos >= 0.999)                      0.0          -                0.0          -                0.0          -               0.00
+    deployed log W_E                            76.7          -               77.7          -               86.9          -              54.19
+    pre-edit W_0 (control)                       0.0          -                0.0          -                0.0          -               0.00
+
+    hard negatives by subset: fire % (gate level, mean over the 20 draws) / D1 % (mean over the 3 draws); deployed log and M5: D1 %
+    subset                                 n  M1 fire / D1  M2 fire / D1  M3 fire / D1  M4 fire / D1  M5 D1  deployed D1
+    -----------------------------------  ---  ------------  ------------  ------------  ------------  -----  -----------
+    HN-I existing (P11, other category)  196   31.6 / 26.9   23.2 / 22.4     7.7 / 4.6     0.5 / 0.5   96.4         77.0
+    HN-I new, other category             265   30.7 / 25.9   20.8 / 20.5     7.9 / 6.0     0.0 / 0.0   97.7         78.1
+    HN-I new, same category              127   60.7 / 54.1   55.7 / 55.9   20.7 / 17.8   19.0 / 20.2   97.6         73.2
+    HN-I related_flag                    144   44.5 / 38.9   32.8 / 33.1    13.4 / 9.7     6.5 / 6.7   99.3         77.1
+    HN-I not related_flag                444   35.2 / 30.2   27.9 / 27.4     9.7 / 7.6     3.6 / 3.8   96.6         76.6
+    HN-Q existing (P11)                  198   26.2 / 23.1   17.6 / 17.7   17.1 / 15.8     6.7 / 6.9   99.5         80.3
+    HN-Q new                             393   27.2 / 24.0   19.8 / 19.9   16.9 / 15.2     6.7 / 6.9   99.0         76.3
+
+    deployed log: stored benchmark locality T-Loc 84.24 / I-Loc 87.86; signed difference T-Loc* - T-Loc = 7.96, I-Loc* - I-Loc = 4.22 points (different quantities: other answer
+    text, B = 1, valid HELD-OUT-DISJOINT rows); stored edit exact of the vendor pass (padded batches of 8): Rel 78.0, T-Gen 9.0, I-Gen 23.0.
+    gates built on the GPU: M1: draw 0 eta 0.1622 capped 0, draw 1 eta 0.2003 capped 0, draw 2 eta 0.1484 capped 0; M2: draw 0 eta 0.3138 capped 0, draw 1 eta 0.3174 capped 0, draw 2 eta 0.2888 capped 0; M3: draw 0 eta 0.0824 capped 9, draw 1 eta 0.0532 capped 1, draw 2 eta 0.0661 capped 2; M4: draw 0 eta 0.9280 capped 0, draw 1 eta 0.9293 capped 0, draw 2 eta 0.9280 capped 0
+    rows with a non-finite logit, all methods and draws: 0.  E0 runs no free generation (teacher forcing only), so there are no generated outputs to count.
+
+(3) M1 / M2 AGAINST THE THEORY REFEREE (rf2_c6_checks.py, section D4, alpha = 5 %) -- one difference at a time; cells: mean over halves / draws +- standard error.
+    positions: 1279/1279 of the P11 sequences he read are bitwise the cache's teacher-forced keys, last prompt index equal 1279/1279: NO difference of position.
+    his script re-run unchanged: largest difference to his stored numbers 0.0e+00; the library's rule on his own 300 halves: largest difference to his numbers 0.0e+00 points.
+    two-block rule -> M1
+    step         what changes                                                                                   halves/draws  n cal  n read-out  rows firing %  T-Gen cov %  I-Gen cov %       Rel cov %    eta  edits capped
+    -----------  ---------------------------------------------------------------------------------------------  ------------  -----  ----------  -------------  -----------  -----------  --------------  -----  ------------
+    R0           referee, stored numbers (300 halves of all REPAIR rows; HELD-OUT; no guards; candidate)                 300    489         490           5.06         67.0         75.1          100.00
+    R0r          referee's script re-run unchanged                                                                       300    489         490           5.06         67.0         75.1          100.00
+    R1h          library rule on the referee's own 300 halves (key cache)                                                300    489         490   5.06 +- 0.06  67.0 +- 0.2  75.1 +- 0.1  100.00 +- 0.00  0.103          0.00
+    R1h_next600  library rule on the referee's NEXT 600 halves (drawn by his script for alpha = 10 % and 20 %)           600    489         490   4.87 +- 0.04  66.8 +- 0.1  75.0 +- 0.1  100.00 +- 0.00  0.105          0.00
+    R1           same setting, 60000 seeded halves (expectation over halves)                                           60000    489         490   4.87 +- 0.00  66.8 +- 0.0  75.1 +- 0.0  100.00 +- 0.00  0.105          0.00
+    R2           calibration pool: n = 200 drawn from REPAIR (6000 draws)                                               6000    200         490   4.62 +- 0.02  63.0 +- 0.1  73.9 +- 0.1  100.00 +- 0.00  0.159          0.00
+    R2s          the 20 draws of this experiment (seeds 0 - 19)                                                           20    200         490   4.85 +- 0.39  64.5 +- 1.5  74.7 +- 1.0  100.00 +- 0.00  0.154          0.00
+    R3           read-out pool: HELD-OUT-DISJOINT                                                                         20    200         465   4.65 +- 0.36  64.5 +- 1.5  74.7 +- 1.0  100.00 +- 0.00  0.154          0.00
+    R4           guards on (capped thresholds)                                                                            20    200         465   4.65 +- 0.36  64.5 +- 1.5  74.7 +- 1.0  100.00 +- 0.00  0.154          0.00
+    R5           top-1 coverage = M1                                                                                      20    200         465   4.65 +- 0.36  62.2 +- 1.4  72.7 +- 1.0  100.00 +- 0.00  0.154          0.00
+
+    shared scale -> M2
+    step  what changes                                                                             halves/draws  n cal  n read-out  rows firing %  T-Gen cov %  I-Gen cov %       Rel cov %    eta  edits capped
+    ----  ---------------------------------------------------------------------------------------  ------------  -----  ----------  -------------  -----------  -----------  --------------  -----  ------------
+    R0    referee, stored numbers (300 halves of all REPAIR rows; HELD-OUT; no guards; candidate)             1    489         490           4.69         64.0         76.0          100.00
+    R0r   referee's script re-run unchanged                                                                   1    489         490           4.69         64.0         76.0          100.00
+    R1    library rule in the referee's setting (all REPAIR rows; no randomness)                              1    489         490           4.69         64.0         76.0          100.00  0.301          0.00
+    R2    calibration pool: n = 200 drawn from REPAIR (6000 draws)                                         6000    200         490   4.87 +- 0.01  62.1 +- 0.1  74.7 +- 0.0  100.00 +- 0.00  0.308          0.00
+    R2s   the 20 draws of this experiment (seeds 0 - 19)                                                     20    200         490   4.81 +- 0.15  62.1 +- 1.2  74.9 +- 0.7  100.00 +- 0.00  0.308          0.00
+    R3    read-out pool: HELD-OUT-DISJOINT                                                                   20    200         465   4.63 +- 0.16  62.1 +- 1.2  74.9 +- 0.7  100.00 +- 0.00  0.308          0.00
+    R4    guards on (capped thresholds)                                                                      20    200         465   4.63 +- 0.16  62.1 +- 1.2  74.9 +- 0.7  100.00 +- 0.00  0.308          0.00
+    R5    top-1 coverage = M2                                                                                20    200         465   4.63 +- 0.16  60.1 +- 1.2  73.0 +- 0.7  100.00 +- 0.00  0.308          0.00
+
+    attribution of the difference to the referee, in points (rows firing % / T-Gen coverage % / I-Gen coverage %); the steps add up to the total:
+    M1 (two-block): referee 5.06 / 67.0 / 75.1  ->  this experiment 4.65 / 62.2 / 72.7   (total -0.41 / -4.7 / -2.4)
+        -0.19 / -0.2 / -0.1   Monte Carlo error of the referee's 300 halves (his number -> expectation over halves)
+        -0.25 / -3.8 / -1.2   POOL, calibration: all valid REPAIR rows -> n = 200 drawn at random (expectation over draws)
+        +0.23 / +1.5 / +0.8   the 20 draws of this experiment instead of the expectation (draw noise)
+        -0.20 / +0.0 / +0.0   POOL, read-out: HELD-OUT -> HELD-OUT-DISJOINT (25 rows that repeat a REPAIR query removed)
+        +0.00 / +0.0 / +0.0   GUARDS: B = 1 own Rel keys as guards, capped thresholds
+        +0.00 / -2.2 / -2.0   TOP-1: coverage counts the own edit only if it is the top-1 candidate
+        +0.00 / +0.0 / +0.0   POSITIONS: the same teacher-forced keys, bit for bit
+    M2 (shared scale): referee 4.69 / 64.0 / 76.0  ->  this experiment 4.63 / 60.1 / 73.0   (total -0.06 / -3.9 / -3.0)
+        +0.00 / +0.0 / +0.0   library rule in the referee's setting (no randomness)
+        +0.17 / -1.9 / -1.3   POOL, calibration: all valid REPAIR rows -> n = 200 drawn at random (expectation over draws)
+        -0.06 / +0.1 / +0.2   the 20 draws of this experiment instead of the expectation (draw noise)
+        -0.17 / +0.0 / +0.0   POOL, read-out: HELD-OUT -> HELD-OUT-DISJOINT (25 rows that repeat a REPAIR query removed)
+        +0.00 / +0.0 / +0.0   GUARDS: B = 1 own Rel keys as guards, capped thresholds
+        +0.00 / -2.0 / -2.0   TOP-1: coverage counts the own edit only if it is the top-1 candidate
+        +0.00 / +0.0 / +0.0   POSITIONS: the same teacher-forced keys, bit for bit
+    the referee's 300 halves against the expectation over halves (same rule, same keys, same pools; only the halves differ):
+        rows firing %: his 300 halves 5.06, expectation 4.87, standard error of a 300-halves mean 0.055 -> z = +3.38; of 200 disjoint blocks of 300 seeded halves (range 4.70 .. 5.04) 0 lie as far from the expectation
+        T-Gen coverage %: his 300 halves 67.00, expectation 66.77, standard error of a 300-halves mean 0.195 -> z = +1.17; of 200 disjoint blocks of 300 seeded halves (range 66.19 .. 67.28) 46 lie as far from the expectation
+        I-Gen coverage %: his 300 halves 75.15, expectation 75.06, standard error of a 300-halves mean 0.117 -> z = +0.77; of 200 disjoint blocks of 300 seeded halves (range 74.74 .. 75.39) 91 lie as far from the expectation
+    two-block MINUS shared scale (signed; mean +- standard error over calibrations):
+        referee's setting (all REPAIR rows, HELD-OUT, candidate) (60000 calibrations): rows firing +0.18 +- 0.00, T-Gen coverage +2.77 +- 0.01, I-Gen coverage -0.94 +- 0.01
+        n = 200, referee's read-out, paired on the same draws (6000 calibrations): rows firing -0.24 +- 0.02, T-Gen coverage +0.89 +- 0.11, I-Gen coverage -0.87 +- 0.06
+        M1 - M2 as defined (n = 200, HELD-OUT-DISJOINT, guards, top-1), paired on the same draws (6000 calibrations): rows firing -0.30 +- 0.02, T-Gen coverage +0.83 +- 0.10, I-Gen coverage -0.73 +- 0.06
+    M1 / M2 as defined over 6000 draws (expectation; the gate table has 20): M1 rows firing 4.40 % (5th - 95th percentile 1.72 - 7.31), T-Gen 60.9, I-Gen 72.0; M2 rows firing 4.70 % (3.87 - 5.81), T-Gen 60.1, I-Gen 72.8; bound 4.95 % / 4.98 %.
+
+(4) CHECKS (e0_checks.py)
+    A  naive numpy re-implementation of M1 - M6 from the raw files against the library: 0 of 1656936 per-row decisions differ (all 20 draws, capped and uncapped) -> OK
+    B  last ladder step against the gate-level table: largest difference 0.0e+00 -> OK
+    C  GPU hook against the CPU decisions from the key cache: 0 of 101388 firing flags differ (draws 0 - 2, M1 - M6: fired, top edit, own candidate, own release); thresholds built on the GPU against the CPU: largest relative difference 1.3e-15, eta 3.3e-16; same calibration draws True; same rows True -> OK
+    D  deployed D1 flags == the testbed's stored D1 complaints on 465/465 rows; pre-edit control: probe D1 0, hard-negative D1 0, token locality all 1: True, edit rows equal to the cache's pre-edit outcome 300/300; silent rows of the gates equal to the pre-edit rows 21147/21147; rows with a non-finite logit 0 -> OK
+    E  one seed for the draw and for the two-block split against an independently seeded split (6000 draws, M1's rule): rows firing 4.40 vs 4.45 % (z = -1.47), T-Gen coverage 63.0 vs 63.1 % (z = -1.18), image rows in block 1 minus block 2 +0.05 vs -0.02 -> OK (no difference)
+    F  restart of the complete GPU run (card 1): gates rebuilt bitwise 14/14 (largest relative difference 0.0e+00); first 40 items of every group and method re-evaluated: 1920/1920 rows identical to the stored rows -> OK
+
+##########################################################################################################################################################################
+TB-L100-ae-l2_3  (LLaVA, T = 100 edits)
+##########################################################################################################################################################################
+rows: REPAIR 494 valid (calibration pool); HELD-OUT 494 valid, HELD-OUT-DISJOINT 469 (of them 90 ask a question that a REPAIR row asks about another image), HELD-OUT-STRICT 379;
+hard negatives (valid rows, first 100 edits) {'HN-I': 590, 'HN-Q': 597, 'HN-X': 99}: 889 new, source item related to an edit of this log 0, HN-I rows whose question is also asked by an edit of this log (cross-like) 109, same category as the edit 316, related_flag 86;
+sequences whose teacher-forced last prompt position is one token after the decode's: {'heldout_disjoint': 18, 'repair': 24, 'rel': 1, 'tgen': 1, 'igen': 1, 'hn': 7}
+
+(1) GATE LEVEL -- key cache, CPU, 20 seeded calibration draws; cells: mean [5th, 95th percentile over draws]; M5 / M6: one fixed gate.
+    fire = % of the 469 valid HELD-OUT-DISJOINT rows on which an edit fires ('uncapped' = the literal conformal rule, the event the bound covers).
+    coverage = % of the 100 T-Gen / I-Gen sequences on which their OWN edit fires = is the top-1 candidate and releases ('cand' = is a candidate, top-1 or not).
+    own prompts = the 100 B = 1 Rel prompts: number on which the own edit is NOT a candidate before / after the guard cap; 'not top-1' = number not released by
+    the own edit after the cap (another edit has the larger margin).
+    method                           fire % (as run)    fire % uncapped    T-Gen own fires     T-Gen own cand    I-Gen own fires     I-Gen own cand  own silenced before cap  after cap   own not top-1       edits capped
+    -----------------------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------------  ---------  --------------  -----------------
+    M1 ncoord two-block (default)  3.09 [0.42, 7.46]  3.09 [0.42, 7.46]  43.2 [28.9, 51.0]  44.5 [28.9, 53.0]  90.8 [86.0, 93.2]  92.2 [87.0, 95.1]           0.2 [0.0, 1.0]   0 [0, 0]  0.0 [0.0, 0.0]     0.2 [0.0, 1.0]
+    M2 ncoord shared scale         3.39 [2.30, 4.32]  3.39 [2.30, 4.32]  32.6 [28.8, 35.2]  33.3 [28.8, 36.2]  89.9 [89.8, 90.0]  91.5 [90.8, 92.0]           0.0 [0.0, 0.0]   0 [0, 0]  0.0 [0.0, 0.0]     0.0 [0.0, 0.0]
+    M3 cosine two-block            4.91 [1.87, 9.17]  4.91 [1.87, 9.17]   13.2 [7.0, 17.1]   14.8 [9.9, 20.1]  52.1 [40.6, 60.2]  54.5 [41.8, 65.0]        36.8 [27.8, 52.3]   0 [0, 0]  1.1 [0.0, 3.0]  36.8 [27.8, 52.3]
+    M4 cosine shared scale         3.07 [1.27, 4.05]  3.07 [1.27, 4.05]     0.0 [0.0, 0.0]     0.0 [0.0, 0.0]  71.8 [68.9, 75.0]  72.8 [69.9, 76.0]           0.0 [0.0, 0.0]   0 [0, 0]  0.0 [0.0, 0.0]     0.0 [0.0, 0.0]
+    M5 cosine 0.65                             41.15                  -               24.0               69.0               94.0              100.0               0 (no cap)          -               0                  -
+    M6 exact (cos >= 0.999)                     0.00                  -                0.0                0.0                0.0                0.0               0 (no cap)          -               0                  -
+
+    hard negatives of the first 100 edits, valid rows (HN-I n = 590, HN-Q n = 597, HN-X n = 99): % of rows on which AN edit fires / on which the
+    row's OWN edit fires (own = the edit whose image (HN-I) or question (HN-Q) the row uses; HN-X: own a = the image's edit, own b = the question's edit).
+    method                              HN-I an edit        HN-I own       HN-Q an edit           HN-Q own       HN-X an edit      HN-X own a         HN-X own b
+    -----------------------------  -----------------  --------------  -----------------  -----------------  -----------------  --------------  -----------------
+    M1 ncoord two-block (default)  18.5 [10.7, 26.2]  6.9 [4.9, 8.7]  38.2 [28.1, 45.4]  33.3 [26.6, 37.5]  44.4 [29.3, 52.6]  7.0 [6.0, 8.1]  32.0 [23.2, 37.4]
+    M2 ncoord shared scale         12.5 [11.1, 13.8]  5.7 [5.2, 5.9]  26.8 [25.0, 28.8]  24.3 [22.7, 26.1]  31.4 [31.2, 31.5]  5.1 [5.0, 5.1]  25.3 [25.2, 25.3]
+    M3 cosine two-block             18.0 [2.8, 31.8]  0.6 [0.2, 1.0]  37.7 [20.1, 51.2]  21.3 [14.2, 26.5]  38.9 [21.1, 52.3]  1.2 [0.0, 3.1]  23.4 [14.0, 28.4]
+    M4 cosine shared scale            3.7 [2.7, 4.6]  1.5 [1.4, 1.5]     4.8 [3.7, 5.7]     1.9 [1.3, 2.2]     6.6 [5.1, 7.1]  3.0 [3.0, 3.0]     0.7 [0.0, 1.0]
+    M5 cosine 0.65                              90.8             4.1               98.8               39.2               99.0             5.1               38.4
+    M6 exact (cos >= 0.999)                      0.0             0.0                0.0                0.0                0.0             0.0                0.0
+
+    further gate-level numbers: fire % on other probe pools and at the other positions of the SAME gate (calibrated on teacher-forced keys): '@prompt' = the
+    decode's token in the teacher-forced sequence, '@decode' = the prompt-only key; Rel = % of own prompts on which the own edit fires; 'other edit' = % of
+    rephrase sequences on which ANOTHER edit fires (wrong target).
+    method                                    strict     HELD-OUT (all)       disjoint image      disjoint text   disjoint @prompt   disjoint @decode         Rel own fires  T-Gen other edit  I-Gen other edit
+    -----------------------------  -----------------  -----------------  -------------------  -----------------  -----------------  -----------------  --------------------  ----------------  ----------------
+    M1 ncoord two-block (default)  3.09 [0.26, 8.18]  3.23 [0.61, 7.30]    3.34 [0.87, 5.87]  2.87 [0.00, 8.17]  3.09 [0.42, 7.27]  3.09 [0.42, 7.27]  100.0 [100.0, 100.0]   7.5 [3.0, 11.1]    1.6 [1.0, 2.0]
+    M2 ncoord shared scale         3.22 [2.06, 4.27]  3.41 [2.38, 4.30]    2.42 [1.79, 2.74]  4.27 [2.76, 5.75]  4.05 [2.94, 4.98]  4.05 [2.94, 4.98]  100.0 [100.0, 100.0]    3.7 [3.0, 4.0]    1.9 [2.0, 2.0]
+    M3 cosine two-block            4.85 [2.06, 8.48]  5.25 [2.18, 9.31]  10.34 [3.92, 19.28]  0.00 [0.00, 0.00]  4.93 [1.87, 9.18]  4.93 [1.87, 9.18]    98.8 [97.0, 100.0]  16.5 [7.9, 23.1]    3.4 [2.0, 5.2]
+    M4 cosine shared scale         0.84 [0.26, 1.32]  3.32 [1.61, 4.25]    6.46 [2.67, 8.52]  0.00 [0.00, 0.00]  3.07 [1.27, 4.05]  3.07 [1.27, 4.05]  100.0 [100.0, 100.0]    7.3 [6.0, 8.0]    2.8 [2.0, 3.0]
+    M5 cosine 0.65                             28.23              43.72                86.55               0.00              41.36              41.36                 100.0              72.0               6.0
+    M6 exact (cos >= 0.999)                     0.00               0.00                 0.00               0.00               0.00               0.00                 100.0               0.0               0.0
+
+    calibration M1: n1 = 100, n2 = 100, rank 96, bound 4.95 %, top-1 by excess, eta 0.156 [0.099, 0.239]; draws with a capped edit 4/20 (draw: edits {'5': [87], '6': [87], '11': [87], '16': [87]}); guards silenced by the literal rule (of 200: stored keys + B = 1 Rel keys) 0.4 [0.0, 2.0]; reported rows (HELD-OUT-DISJOINT, T-Gen, I-Gen, hard negatives) within 1e-9 of a threshold, all draws: 0; firing flags of reported rows changed by the cap, all draws: 0
+    calibration M2: n1 = 0, n2 = 200, rank 191, bound 4.98 %, top-1 by r, eta 0.409 [0.390, 0.428]; draws with a capped edit 0/20; guards silenced by the literal rule (of 200: stored keys + B = 1 Rel keys) 0.0 [0.0, 0.0]; reported rows (HELD-OUT-DISJOINT, T-Gen, I-Gen, hard negatives) within 1e-9 of a threshold, all draws: 0; firing flags of reported rows changed by the cap, all draws: 0
+    calibration M3: n1 = 100, n2 = 100, rank 96, bound 4.95 %, top-1 by excess, eta 0.132 [0.090, 0.192]; draws with a capped edit 20/20; guards silenced by the literal rule (of 200: stored keys + B = 1 Rel keys) 73.6 [55.5, 104.6]; reported rows (HELD-OUT-DISJOINT, T-Gen, I-Gen, hard negatives) within 1e-9 of a threshold, all draws: 0; firing flags of reported rows changed by the cap, all draws: 0
+    calibration M4: n1 = 0, n2 = 200, rank 191, bound 4.98 %, top-1 by r, eta 0.964 [0.960, 0.969]; draws with a capped edit 0/20; guards silenced by the literal rule (of 200: stored keys + B = 1 Rel keys) 0.0 [0.0, 0.0]; reported rows (HELD-OUT-DISJOINT, T-Gen, I-Gen, hard negatives) within 1e-9 of a threshold, all draws: 0; firing flags of reported rows changed by the cap, all draws: 0
+    own B = 1 Rel key on its own detector (signed): ncoord min 0.9914, median 1.0000, max 1.0056; cos min 0.9997, median 1.0000, max 1.0000; M6 misses the own prompt of edits []
+
+(2) BEHAVIOUR -- teacher forcing at B = 1 (hook on the GPU), calibration draws [0, 1, 2]; cells of M1 - M4: mean [min, max] over the 3 draws.
+    Rel / T-Gen / I-Gen = exact % over all 100 edits; D1 = % of valid rows whose pre-edit answer y0 (multi-token, decoder v2) is not reproduced:
+    HELD-OUT-DISJOINT n = 469, HELD-OUT-STRICT n = 379, hard negatives HN-I n = 590, HN-Q n = 597, HN-X n = 99; T-Loc* / I-Loc* = token-level locality (%) on
+    HELD-OUT-DISJOINT (246 text / 223 image rows; rescope.locality).
+    method                                 Rel        T-Gen        I-Gen      D1 % disjoint        D1 % strict          HN-I D1 %          HN-Q D1 %          HN-X D1 %                   T-Loc*                I-Loc*
+    -----------------------------  -----------  -----------  -----------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------------  --------------------
+    M1 ncoord two-block (default)  98 [98, 98]  38 [25, 47]  90 [85, 95]  3.06 [0.21, 5.33]  2.73 [0.26, 4.75]  20.1 [11.2, 26.1]  36.2 [24.8, 43.7]  42.4 [27.3, 52.5]    99.61 [99.09, 100.00]  97.19 [95.73, 99.55]
+    M2 ncoord shared scale         98 [98, 98]  34 [32, 36]  89 [89, 90]  4.26 [3.62, 5.33]  4.13 [3.43, 5.28]  13.6 [12.9, 14.7]  26.9 [25.5, 29.6]  30.6 [29.3, 33.3]     99.24 [99.03, 99.41]  97.56 [97.31, 97.68]
+    M3 cosine two-block            97 [96, 98]  12 [10, 15]  52 [45, 59]  4.26 [3.20, 5.76]  4.05 [3.43, 5.28]  21.4 [11.9, 31.2]  37.4 [26.0, 47.4]  37.4 [28.3, 46.5]  100.00 [100.00, 100.00]  94.54 [93.00, 96.00]
+    M4 cosine shared scale         98 [98, 98]     2 [2, 2]  69 [66, 71]  2.56 [1.07, 3.41]  0.62 [0.26, 0.79]     3.4 [2.7, 4.1]     4.4 [3.4, 5.0]     5.7 [5.1, 6.1]  100.00 [100.00, 100.00]  96.34 [95.14, 98.28]
+    M5 cosine 0.65                          98           22           93              41.15              28.23               90.5               97.2               97.0                   100.00                 52.91
+    M6 exact (cos >= 0.999)                 98            2            1               0.00               0.00                0.0                0.0                0.0                   100.00                100.00
+    deployed log W_E                        88           29           66              62.26              66.75               62.9               65.5               75.8                    83.36                 78.24
+    pre-edit W_0 (control)                   1            2            1               0.00               0.00                0.0                0.0                0.0                   100.00                100.00
+
+    the same runs: firing on HELD-OUT-DISJOINT (hook), D1 among the firing rows, own edit fires on its rephrase, (T-Gen + I-Gen) / 2 exact, token accuracy of
+    the edits (%), hard negatives pooled
+    method                           fire % disjoint          D1 % | fired    T-Gen own fires    I-Gen own fires      (T+I)/2 exact            Rel tok          T-Gen tok          I-Gen tok          HN fire %            HN D1 %       HN tok-loc %
+    -----------------------------  -----------------  --------------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------
+    M1 ncoord two-block (default)  3.06 [0.21, 5.33]  100.0 [100.0, 100.0]  41.3 [26.0, 51.0]  91.3 [86.0, 96.0]  64.3 [55.0, 71.0]  99.7 [99.7, 99.7]  68.8 [61.5, 73.9]  95.1 [91.5, 97.9]  30.2 [19.7, 37.2]  29.3 [18.7, 36.3]  80.8 [76.1, 88.0]
+    M2 ncoord shared scale         4.26 [3.62, 5.33]  100.0 [100.0, 100.0]  35.7 [34.0, 38.0]  90.3 [90.0, 91.0]  61.5 [60.5, 63.0]  99.7 [99.7, 99.7]  66.5 [65.5, 67.7]  94.5 [94.1, 95.1]  22.0 [20.9, 24.0]  21.1 [20.0, 23.1]  86.8 [85.5, 87.5]
+    M3 cosine two-block            4.26 [3.20, 5.76]  100.0 [100.0, 100.0]  12.0 [10.0, 14.0]  52.7 [46.0, 60.0]  31.8 [28.0, 37.0]  99.3 [98.9, 99.7]  53.9 [53.1, 54.7]  74.4 [71.2, 80.0]  30.9 [20.5, 40.8]  30.0 [19.7, 39.9]  78.1 [70.5, 86.2]
+    M4 cosine shared scale         2.56 [1.07, 3.41]  100.0 [100.0, 100.0]     0.0 [0.0, 0.0]  70.3 [67.0, 72.0]  35.7 [34.0, 36.5]  99.7 [99.7, 99.7]  49.8 [49.8, 50.0]  84.7 [83.4, 85.3]     4.1 [3.2, 4.7]     4.0 [3.2, 4.7]  97.4 [97.0, 97.9]
+    M5 cosine 0.65                             41.15                 100.0               24.0               94.0               57.5               99.7               59.9               96.6               95.2               94.1               38.5
+    M6 exact (cos >= 0.999)                     0.00                     -                0.0                0.0                1.5               99.7               50.0               49.0                0.0                0.0              100.0
+    deployed log W_E                               -                     -                  -                  -               47.5               97.1               67.6               88.5                  -               65.1               61.1
+    pre-edit W_0 (control)                         -                     -                  -                  -                1.5               48.4               50.0               49.0                  -                0.0              100.0
+
+    degenerate pre-edit answers are counted: rows whose y0 is empty / one character / '?' / a bare None or No: HELD-OUT-DISJOINT 16 of 469 {'empty': 0, 'single_char': 1, 'qmark': 0, 'none_no': 15}; HN-I 188 of 590; HN-Q 185 of 597; HN-X 27 of 99.  D1 % without / on those rows:
+    method                             HN-I not deg.          HN-I deg.      HN-Q not deg.          HN-Q deg.      HN-X not deg.          HN-X deg.  disjoint not deg.
+    -----------------------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------  -----------------
+    M1 ncoord two-block (default)  19.7 [11.9, 24.1]   21.1 [9.6, 30.3]  32.9 [22.3, 39.6]  43.6 [30.3, 53.0]  38.4 [25.0, 45.8]  53.1 [33.3, 70.4]  2.87 [0.22, 5.08]
+    M2 ncoord shared scale         15.8 [14.9, 17.2]     8.9 [8.5, 9.6]  24.9 [23.3, 28.2]  31.2 [30.3, 33.0]  28.7 [27.8, 30.6]  35.8 [33.3, 40.7]  4.42 [3.75, 5.52]
+    M3 cosine two-block             10.4 [6.2, 12.7]  44.9 [23.9, 70.7]  29.3 [21.4, 34.7]  55.3 [36.2, 75.7]  28.7 [23.6, 33.3]  60.5 [40.7, 81.5]  3.75 [2.87, 5.30]
+    M4 cosine shared scale            5.1 [4.0, 6.0]     0.0 [0.0, 0.0]     6.1 [4.9, 7.0]     0.4 [0.0, 0.5]     7.9 [6.9, 8.3]     0.0 [0.0, 0.0]  2.65 [1.10, 3.53]
+    M5 cosine 0.65                              89.8               92.0               96.1               99.5               95.8              100.0              39.74
+    M6 exact (cos >= 0.999)                      0.0                0.0                0.0                0.0                0.0                0.0               0.00
+    deployed log W_E                            68.2               51.6               70.4               54.6               81.9               59.3              63.36
+    pre-edit W_0 (control)                       0.0                0.0                0.0                0.0                0.0                0.0               0.00
+
+    hard negatives by subset: fire % (gate level, mean over the 20 draws) / D1 % (mean over the 3 draws); deployed log and M5: D1 %
+    subset                                 n  M1 fire / D1  M2 fire / D1  M3 fire / D1  M4 fire / D1  M5 D1  deployed D1
+    -----------------------------------  ---  ------------  ------------  ------------  ------------  -----  -----------
+    HN-I existing (P11, other category)  197   15.6 / 17.3    9.4 / 10.2   20.3 / 24.5     0.0 / 0.0   89.8         64.0
+    HN-I new, other category             281   13.6 / 16.0     7.7 / 8.8   20.2 / 24.2     0.2 / 0.1   89.0         60.9
+    HN-I new, same category              112   36.2 / 35.4   30.0 / 31.8     8.3 / 8.6   19.0 / 17.9   95.5         66.1
+    HN-I related_flag                     68   45.1 / 45.6   42.7 / 44.6   15.4 / 19.1   14.9 / 14.2   97.1         69.1
+    HN-I not related_flag                522   15.1 / 16.8     8.6 / 9.6   18.3 / 21.6     2.3 / 2.0   89.7         62.1
+    HN-Q existing (P11)                  200   39.0 / 37.2   24.3 / 24.7   38.0 / 38.3     3.2 / 2.8   97.5         69.5
+    HN-Q new                             397   37.8 / 35.8   28.0 / 28.0   37.6 / 36.9     5.6 / 5.1   97.0         63.5
+
+    deployed log: stored benchmark locality T-Loc 77.94 / I-Loc 80.63; signed difference T-Loc* - T-Loc = 5.42, I-Loc* - I-Loc = -2.39 points (different quantities: other answer
+    text, B = 1, valid HELD-OUT-DISJOINT rows); stored edit exact of the vendor pass (padded batches of 8): Rel 88.0, T-Gen 29.0, I-Gen 66.0.
+    gates built on the GPU: M1: draw 0 eta 0.1001 capped 0, draw 1 eta 0.2692 capped 0, draw 2 eta 0.1254 capped 0; M2: draw 0 eta 0.3715 capped 0, draw 1 eta 0.4050 capped 0, draw 2 eta 0.4011 capped 0; M3: draw 0 eta 0.1253 capped 31, draw 1 eta 0.1653 capped 36, draw 2 eta 0.1241 capped 43; M4: draw 0 eta 0.9632 capped 0, draw 1 eta 0.9697 capped 0, draw 2 eta 0.9642 capped 0
+    rows with a non-finite logit, all methods and draws: 0.  E0 runs no free generation (teacher forcing only), so there are no generated outputs to count.
+
+(3) M1 / M2 AGAINST THE THEORY REFEREE (rf2_c6_checks.py, section D4, alpha = 5 %) -- one difference at a time; cells: mean over halves / draws +- standard error.
+    positions: 1288/1288 of the P11 sequences he read are bitwise the cache's teacher-forced keys, last prompt index equal 1288/1288: NO difference of position.
+    his script re-run unchanged: largest difference to his stored numbers 0.0e+00; the library's rule on his own 300 halves: largest difference to his numbers 7.1e-15 points.
+    two-block rule -> M1
+    step         what changes                                                                                   halves/draws  n cal  n read-out  rows firing %  T-Gen cov %  I-Gen cov %       Rel cov %    eta  edits capped
+    -----------  ---------------------------------------------------------------------------------------------  ------------  -----  ----------  -------------  -----------  -----------  --------------  -----  ------------
+    R0           referee, stored numbers (300 halves of all REPAIR rows; HELD-OUT; no guards; candidate)                 300    494         494           2.77         46.7         91.4           99.94
+    R0r          referee's script re-run unchanged                                                                       300    494         494           2.77         46.7         91.4           99.94
+    R1h          library rule on the referee's own 300 halves (key cache)                                                300    494         494   2.77 +- 0.07  46.7 +- 0.2  91.4 +- 0.1   99.94 +- 0.01  0.110          0.00
+    R1h_next600  library rule on the referee's NEXT 600 halves (drawn by his script for alpha = 10 % and 20 %)           600    494         494   2.81 +- 0.05  46.9 +- 0.1  91.5 +- 0.1   99.96 +- 0.01  0.109          0.00
+    R1           same setting, 60000 seeded halves (expectation over halves)                                           60000    494         494   2.81 +- 0.00  46.9 +- 0.0  91.5 +- 0.0   99.96 +- 0.00  0.109          0.00
+    R2           calibration pool: n = 200 drawn from REPAIR (6000 draws)                                               6000    200         494   3.14 +- 0.03  45.3 +- 0.1  91.8 +- 0.0   99.88 +- 0.00  0.154          0.00
+    R2s          the 20 draws of this experiment (seeds 0 - 19)                                                           20    200         494   3.23 +- 0.46  44.5 +- 1.8  92.2 +- 0.7   99.80 +- 0.09  0.156          0.00
+    R3           read-out pool: HELD-OUT-DISJOINT                                                                         20    200         469   3.09 +- 0.47  44.5 +- 1.8  92.2 +- 0.7   99.80 +- 0.09  0.156          0.00
+    R4           guards on (capped thresholds)                                                                            20    200         469   3.09 +- 0.47  44.5 +- 1.8  92.2 +- 0.7  100.00 +- 0.00  0.156          0.20
+    R5           top-1 coverage = M1                                                                                      20    200         469   3.09 +- 0.47  43.2 +- 1.7  90.8 +- 0.6  100.00 +- 0.00  0.156          0.20
+
+    shared scale -> M2
+    step  what changes                                                                             halves/draws  n cal  n read-out  rows firing %  T-Gen cov %  I-Gen cov %       Rel cov %    eta  edits capped
+    ----  ---------------------------------------------------------------------------------------  ------------  -----  ----------  -------------  -----------  -----------  --------------  -----  ------------
+    R0    referee, stored numbers (300 halves of all REPAIR rows; HELD-OUT; no guards; candidate)             1    494         494           3.64         35.0         92.0          100.00
+    R0r   referee's script re-run unchanged                                                                   1    494         494           3.64         35.0         92.0          100.00
+    R1    library rule in the referee's setting (all REPAIR rows; no randomness)                              1    494         494           3.64         35.0         92.0          100.00  0.405          0.00
+    R2    calibration pool: n = 200 drawn from REPAIR (6000 draws)                                         6000    200         494   3.47 +- 0.01  33.2 +- 0.0  91.6 +- 0.0  100.00 +- 0.00  0.408          0.00
+    R2s   the 20 draws of this experiment (seeds 0 - 19)                                                     20    200         494   3.41 +- 0.21  33.3 +- 0.9  91.5 +- 0.2  100.00 +- 0.00  0.409          0.00
+    R3    read-out pool: HELD-OUT-DISJOINT                                                                   20    200         469   3.39 +- 0.21  33.3 +- 0.9  91.5 +- 0.2  100.00 +- 0.00  0.409          0.00
+    R4    guards on (capped thresholds)                                                                      20    200         469   3.39 +- 0.21  33.3 +- 0.9  91.5 +- 0.2  100.00 +- 0.00  0.409          0.00
+    R5    top-1 coverage = M2                                                                                20    200         469   3.39 +- 0.21  32.6 +- 0.8  89.9 +- 0.2  100.00 +- 0.00  0.409          0.00
+
+    attribution of the difference to the referee, in points (rows firing % / T-Gen coverage % / I-Gen coverage %); the steps add up to the total:
+    M1 (two-block): referee 2.77 / 46.7 / 91.4  ->  this experiment 3.09 / 43.2 / 90.8   (total +0.32 / -3.4 / -0.7)
+        +0.05 / +0.2 / +0.0   Monte Carlo error of the referee's 300 halves (his number -> expectation over halves)
+        +0.33 / -1.7 / +0.3   POOL, calibration: all valid REPAIR rows -> n = 200 drawn at random (expectation over draws)
+        +0.09 / -0.8 / +0.4   the 20 draws of this experiment instead of the expectation (draw noise)
+        -0.14 / +0.0 / +0.0   POOL, read-out: HELD-OUT -> HELD-OUT-DISJOINT (25 rows that repeat a REPAIR query removed)
+        +0.00 / +0.0 / +0.0   GUARDS: B = 1 own Rel keys as guards, capped thresholds
+        +0.00 / -1.2 / -1.4   TOP-1: coverage counts the own edit only if it is the top-1 candidate
+        +0.00 / +0.0 / +0.0   POSITIONS: the same teacher-forced keys, bit for bit
+    M2 (shared scale): referee 3.64 / 35.0 / 92.0  ->  this experiment 3.39 / 32.6 / 89.9   (total -0.25 / -2.4 / -2.1)
+        -0.00 / +0.0 / -0.0   library rule in the referee's setting (no randomness)
+        -0.18 / -1.8 / -0.4   POOL, calibration: all valid REPAIR rows -> n = 200 drawn at random (expectation over draws)
+        -0.06 / +0.1 / -0.1   the 20 draws of this experiment instead of the expectation (draw noise)
+        -0.02 / +0.0 / +0.0   POOL, read-out: HELD-OUT -> HELD-OUT-DISJOINT (25 rows that repeat a REPAIR query removed)
+        +0.00 / +0.0 / +0.0   GUARDS: B = 1 own Rel keys as guards, capped thresholds
+        +0.00 / -0.6 / -1.6   TOP-1: coverage counts the own edit only if it is the top-1 candidate
+        +0.00 / +0.0 / +0.0   POSITIONS: the same teacher-forced keys, bit for bit
+    the referee's 300 halves against the expectation over halves (same rule, same keys, same pools; only the halves differ):
+        rows firing %: his 300 halves 2.77, expectation 2.81, standard error of a 300-halves mean 0.068 -> z = -0.70; of 200 disjoint blocks of 300 seeded halves (range 2.61 .. 2.98) 94 lie as far from the expectation
+        T-Gen coverage %: his 300 halves 46.70, expectation 46.94, standard error of a 300-halves mean 0.183 -> z = -1.32; of 200 disjoint blocks of 300 seeded halves (range 46.31 .. 47.44) 38 lie as far from the expectation
+        I-Gen coverage %: his 300 halves 91.43, expectation 91.47, standard error of a 300-halves mean 0.116 -> z = -0.28; of 200 disjoint blocks of 300 seeded halves (range 91.17 .. 91.83) 154 lie as far from the expectation
+    two-block MINUS shared scale (signed; mean +- standard error over calibrations):
+        referee's setting (all REPAIR rows, HELD-OUT, candidate) (60000 calibrations): rows firing -0.83 +- 0.00, T-Gen coverage +11.94 +- 0.01, I-Gen coverage -0.53 +- 0.01
+        n = 200, referee's read-out, paired on the same draws (6000 calibrations): rows firing -0.33 +- 0.03, T-Gen coverage +12.11 +- 0.09, I-Gen coverage +0.13 +- 0.04
+        M1 - M2 as defined (n = 200, HELD-OUT-DISJOINT, guards, top-1), paired on the same draws (6000 calibrations): rows firing -0.47 +- 0.03, T-Gen coverage +11.42 +- 0.08, I-Gen coverage +0.48 +- 0.03
+    M1 / M2 as defined over 6000 draws (expectation; the gate table has 20): M1 rows firing 2.98 % (5th - 95th percentile 0.43 - 7.04), T-Gen 43.9, I-Gen 90.4; M2 rows firing 3.45 % (1.92 - 4.69), T-Gen 32.5, I-Gen 90.0; bound 4.95 % / 4.98 %.
+
+(4) CHECKS (e0_checks.py)
+    A  naive numpy re-implementation of M1 - M6 from the raw files against the library: 0 of 1667952 per-row decisions differ (all 20 draws, capped and uncapped) -> OK
+    B  last ladder step against the gate-level table: largest difference 0.0e+00 -> OK
+    C  GPU hook against the CPU decisions from the key cache: 0 of 101948 firing flags differ (draws 0 - 2, M1 - M6: fired, top edit, own candidate, own release); thresholds built on the GPU against the CPU: largest relative difference 1.4e-15, eta 4.4e-16; same calibration draws True; same rows True -> OK
+    D  deployed D1 flags == the testbed's stored D1 complaints on 469/469 rows; pre-edit control: probe D1 0, hard-negative D1 0, token locality all 1: True, edit rows equal to the cache's pre-edit outcome 300/300; silent rows of the gates equal to the pre-edit rows 20881/20881; rows with a non-finite logit 0 -> OK
+    E  one seed for the draw and for the two-block split against an independently seeded split (6000 draws, M1's rule): rows firing 2.98 vs 2.97 % (z = +0.47), T-Gen coverage 45.3 vs 45.0 % (z = +1.87), image rows in block 1 minus block 2 +0.11 vs +0.04 -> OK (no difference)
+    F  restart of the complete GPU run (card 1): gates rebuilt bitwise 14/14 (largest relative difference 0.0e+00); first 40 items of every group and method re-evaluated: 1920/1920 rows identical to the stored rows -> OK
+

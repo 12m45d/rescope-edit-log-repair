@@ -1,0 +1,57 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "T": 100,
+ "alpha": 0.05,
+ "n_cal": 200,
+ "draws": [
+  0,
+  1,
+  2
+ ],
+ "gq_mem": 10500,
+ "cap_gb": 9.66796875,
+ "load_checks": {
+  "probe_uids_match_records": true,
+  "collapsed_working_point": false,
+  "WE_float_minus_W0_equals_stored_composite": true,
+  "C_equals_stored_composite": true,
+  "factor_uids_match_stream": true,
+  "rollback_empty_equals_WE": true
+ },
+ "from_harness_equals_from_testbed": {
+  "U": true,
+  "W": true,
+  "K": true,
+  "batch": true
+ },
+ "n_items": {
+  "edits": 8,
+  "probes": 12,
+  "hn": 32
+ },
+ "n_repair_pool": 489,
+ "verify_cache": {
+  "n_items": 52,
+  "n_in_cache": 52,
+  "n_checked": 24,
+  "key_bitwise": 24,
+  "key_prompt_checked": 0,
+  "key_prompt_bitwise": 0,
+  "pre_equal": 24,
+  "differing": []
+ },
+ "hn_dir": "[redacted: local path]/02_research/experiments/10_final/cache/hard_negatives",
+ "cache_dir": "[redacted: local path]/02_research/experiments/10_final/cache/qwen25vl",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "e0_code": {
+   "e0_behaviour.py": "1803cb5b1fe6",
+   "e0_common.py": "aa7364c815fd",
+   "e0_gate.py": "93686f87c356"
+  }
+ },
+ "torch": "2.8.0+cu128",
+ "gpu": "NVIDIA GeForce RTX 5090",
+ "limit": 40,
+ "started": "2026-11-10 23:48:10"
+}

@@ -1,0 +1,154 @@
+E10 PUBLIC TEXT LOGS -- index of deliverables
+rendered 2026-11-11 09:21:34 UTC by make_index.py
+
+PUBLIC CODE, MODEL, DATA (ext/)
+    973.0 kB  [redacted: local path]/02_research/ext/third_party/rome
+              public ROME repository (git clone, unedited); commit in out/provenance.json
+    615.3 kB  [redacted: local path]/02_research/ext/third_party/memit
+              public MEMIT repository (reference only)
+    235.9 kB  [redacted: local path]/02_research/ext/third_party/_tarballs
+              commit archives of both repositories (identical to the clones)
+     12.0 GB  [redacted: local path]/02_research/ext/models/gpt2-xl
+              GPT-2 XL float32 (model.safetensors, pytorch_model.bin, tokenizer), DOWNLOAD_RECORD.json
+     22.5 GB  [redacted: local path]/02_research/ext/models/gpt-j-6b
+              GPT-J 6B float32 main revision (downloaded for a later task; no GPU work done with it)
+     43.0 MB  [redacted: local path]/02_research/ext/data/counterfact/counterfact.json
+              CounterFact as published by the ROME authors (21,919 records)
+    781.3 MB  [redacted: local path]/02_research/ext/data/stats/gpt2-xl/wikipedia_stats
+              authors' precomputed second-moment statistics of transformer.h.17.mlp.c_proj
+         0 B  [redacted: local path]/02_research/ext/data/rome_data
+              the DATA_DIR / STATS_DIR layout the public code expects (symbolic links)
+     22.7 MB  [redacted: local path]/02_research/ext/data/paper_rome
+              arXiv 2202.05262v5: e-print, extracted LaTeX source (tables/cf-results.tex), PDF
+     12.4 MB  [redacted: local path]/02_research/ext/pydeps
+              nltk (pip --target)
+     71.3 MB  [redacted: local path]/02_research/ext/pydeps_tf4
+              transformers 4.23.1, tokenizers 0.13.3, huggingface_hub 0.11.1 (pip --target; E10 scripts only)
+
+EDIT LOGS (text_public/logs_edit/)
+     23.2 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/registry.json
+              the five logs: source, T, records, files, sha256 of W_0 and W_E, reconstruction errors, key identity
+     39.1 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/W0_transformer.h.17.mlp.c_proj.weight.pt
+              pre-edit Conv1D weight (6400, 1600) float32
+     10.5 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/dev/factors.pt
+              development log (records 15000..15099): stacked factors, keys, targets, requests, scalars, templates
+     39.1 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/dev/snapshots
+              deployed weight of the development log (W_T100.pt)
+     10.8 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/dev/updates
+              one file per update: what execute_rome returned + keys, target, request, seed, checks
+    237.9 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/dev/write_time
+              public probability test of each record right after its own update
+    210.4 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/stream/factors.pt
+              reported stream (records 0..1999): the same; T100/T500/T1000/T2000 are prefixes
+    156.3 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/stream/snapshots
+              deployed weights after 100, 500, 1000, 2000 requests
+    216.9 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/stream/updates
+              one file per update
+      2.9 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/stream/meta.json
+              seed, context templates, hyper-parameters, versions, resume events and checks
+    768.4 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs_edit/library_format
+              each log as a directory that rescope.loglib.from_testbed(<dir>) reads (edit_factors.pt, metrics.json)
+
+CODE (text_public/code/)
+     13.3 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/tx_public.py
+              LOADER AND REGISTRY for the frozen library: from_public(name), weights(name), load_model(), prompts, pools
+     18.4 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/tp_common.py
+              paths, set-up of the public repository, capture of the public computation, memory fallback
+      6.0 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/run_single.py
+              single-edit check (public protocol)
+     10.5 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/run_stream.py
+              sequential logs (dev, stream), resumable
+     15.8 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/build_logs.py
+              assemble + audit the logs, write the registry
+      3.9 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/export_library_format.py
+              library-format directories + check through the library's own constructor
+      7.7 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/check_library.py
+              development log through rescope.EditLog / ScopedLog / Hook (format check)
+     12.1 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/pools.py
+              REPAIR / HELD-OUT pools, prompt table, flags
+      4.3 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/pre_cont.py
+              pre-edit 10-token continuations
+      3.4 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/tp_eval.py
+              greedy decode / teacher forcing without padding, degeneration flags
+     12.9 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/describe.py
+              raw measurements of the pre-edit and the deployed weights
+      3.7 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/selfcheck.py
+              sample of rows recomputed one prompt at a time (selfcheck_cpu.py: on the CPU)
+      3.8 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/d1_curve_dev.py
+              development log: D1 as a function of the number of updates
+      5.9 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/collapse_point.py
+              reported stream: deployed prefixes around the first exploding update
+      3.2 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/first_token_subjects.py
+              count of first-token-subject requests in CounterFact
+      8.7 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/score_single.py
+              public summariser on the single-edit run + the paper's table
+     21.0 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/make_table.py
+              aggregation -> out/text_logs.json; render_table.py -> out/text_logs_table.txt
+      9.0 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/provenance.py
+              provenance record; make_deviations.py -> out/DEVIATIONS.txt; make_index.py -> this file
+      1.1 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/code/finalize.sh
+              CPU: rebuilds every rendered output from the stored results
+
+OUTPUTS (text_public/out/)
+     28.0 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/text_logs_table.txt
+              THE TABLE: logs, deployed vs pre-edit model, retention, updates, pools, audit conditions
+    652.8 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/text_logs.json
+              the numbers behind the table
+     44.5 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/text_logs_rows
+              per-row flags behind the table (one file per log and model)
+     14.0 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/DEVIATIONS.txt
+              every deviation from the public code and its hyper-parameter file, with the reason
+      1.8 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/single_edit_check.txt
+              audit condition 2: our scores against the published table
+     10.7 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/single_edit_check.json
+              the same, with intervals and the parsed table
+      1.7 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/log_audit.json
+              per-update audit: attainment at both keys, norms, replay hashes; single vs stream factors
+     14.0 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/provenance.json
+              commits, hashes, versions, run meta
+     20.1 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/pools.json
+              pools: rule, seed, record lists, overlap counts
+    531.2 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/pool_records.json
+              per pool record: subject, flags
+     13.9 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/prompts.jsonl
+              one row per (record, kind, k): set, text id, flags
+      3.1 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/prompt_texts.json
+              distinct prompt texts and their token ids
+      4.3 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/pre_continuations.pt
+              pre-edit greedy 10-token continuations (token ids), validity
+     10.5 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/pre_continuations.jsonl
+              the same, readable (ids and text, degeneration flags)
+     19.6 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/describe
+              raw description results per weight (dec.pt, edit_tf.pt, gen_*.json)
+    112.4 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/public_results/ROME_single/run_000
+              single-edit check: public-format case files + factors of every single edit
+     13.6 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/public_results/ROME_seq
+              public probability test of every logged record under each weight (public case format)
+      2.1 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/library_check.json
+              format check of the development log through the library
+      2.4 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/library_format.json
+              library-format export check
+       897 B  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/selfcheck.json
+              self-check of the batched description against single-prompt recomputation
+       460 B  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/selfcheck_cpu.json
+              the same on the CPU
+       823 B  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/d1_curve_dev.txt
+              development log: D1 on held-out prompts after 0, 1, 2, 5, 10, 20, 50, 100 updates
+       961 B  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/collapse_point.txt
+              reported stream: the deployed model after 100, 150, 173, 174, 200 requests
+      1.7 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/first_token_subjects.json
+              base rate of requests whose subject is the first token of the prompt (the exploding updates)
+      1.7 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/summary.txt
+              one line per log (the table of the report)
+      5.0 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/out/smoke_tf5.json
+              evidence: the public generation under the environment's transformers 5.17 (garbage templates)
+
+RUN LOGS (text_public/logs/)
+      4.4 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs/stream_public_stdout.log
+              everything the public code printed while writing the stream (its optimisation traces)
+    222.8 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs/dev_public_stdout.log
+              the same for the development log
+      2.2 MB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs/single_run_000_public_stdout.log
+              the same for the single-edit check
+      9.4 kB  [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/logs/setup
+              download / clone logs, GPT-J checksum, pip cache entries removed

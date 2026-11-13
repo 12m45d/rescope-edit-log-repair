@@ -1,0 +1,25 @@
+{
+ "n_images": 9165,
+ "n_questions": 6424,
+ "image_keys_md5": "311c4596e0f014326c1b7615ecb80230",
+ "question_keys_md5": "673912223862f204fd1d1d8aa6423632",
+ "backbones": [
+  "qwen25vl",
+  "llava"
+ ],
+ "attribute_tables": {
+  "qwen25vl": {
+   "file": "[redacted: local path]/02_research/experiments/10_final/cache2/retr/qwen25vl/attributes.jsonl",
+   "md5": "5f1c1c9e39c5a1468136b5d918567a28"
+  },
+  "llava": {
+   "file": "[redacted: local path]/02_research/experiments/10_final/cache2/retr/llava/attributes.jsonl",
+   "md5": "39c9c1b08ca145760a8f07ca98812972"
+  }
+ },
+ "n_images_shared_by_backbones": 3111,
+ "n_questions_shared_by_backbones": 3508,
+ "n_image_contents_with_several_paths": 302,
+ "image_root_of_relative_paths": "[redacted: local path]",
+ "question_key_rule": "question.strip().lower()"
+}

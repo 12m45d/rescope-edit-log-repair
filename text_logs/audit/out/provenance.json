@@ -1,0 +1,352 @@
+{
+ "written": "2026-11-11 09:40:10 UTC",
+ "builder_stated_commit": "0874014cd9837e4365f3e6f3c71400ef11509e04",
+ "public_code": {
+  "HEAD": "0874014cd9837e4365f3e6f3c71400ef11509e04",
+  "HEAD_equals_stated_commit": true,
+  "commit_date": "2022-10-14 05:16:00 -0400",
+  "status_porcelain": "",
+  "status_ignored": [
+   "!! baselines/efk/__pycache__/",
+   "!! baselines/mend/__pycache__/",
+   "!! dsets/__pycache__/",
+   "!! experiments/__pycache__/",
+   "!! experiments/py/__pycache__/",
+   "!! rome/__pycache__/",
+   "!! util/__pycache__/"
+  ],
+  "diff_HEAD_names": [],
+  "fsck_rc": 0,
+  "n_tracked_files": 146,
+  "n_tracked_symbolic_links": 10,
+  "tracked_files_whose_content_differs_from_commit": [],
+  "tracked_files_missing": [],
+  "untracked_files": {
+   "n": 30,
+   "n_pyc_in___pycache__": 30,
+   "others": []
+  },
+  "ls_remote": {
+   "ok": true,
+   "refs": {
+    "HEAD": "0874014cd9837e4365f3e6f3c71400ef11509e04",
+    "refs/heads/dep-fix": "51e236e11bf99be178b1c04f703a2b1d4a1b87e8",
+    "refs/heads/fluency": "0874014cd9837e4365f3e6f3c71400ef11509e04",
+    "refs/heads/human-eval-tmp": "79bb86115db99195b6f84aa708d6061923def466",
+    "refs/heads/main": "0874014cd9837e4365f3e6f3c71400ef11509e04",
+    "refs/pull/1/head": "7593c43e8b5cb59f6240a805087472944f40f792",
+    "refs/pull/11/head": "bc152656f93c900b774d97720e43738be3795a76",
+    "refs/pull/14/head": "3bc83fe539d7828fe620dbddb4e99e39c34abf23",
+    "refs/pull/15/head": "8e0653e4f1d8bdecc8be2ba8730b5999bcfca6a3",
+    "refs/pull/16/head": "dbb58b72c960b79279a20a4412f175c22c911404",
+    "refs/pull/17/head": "60bf0e44a4a76d03b95c7eb4a02189fdca228fb4",
+    "refs/pull/19/head": "8a7f57f9ec131d10a7704c4abb63ac6e43440aa2",
+    "refs/pull/20/head": "a31b3332c14a8a2695bd90f75b4266ba3b932e44",
+    "refs/pull/21/head": "0576345199ef3861ee11fed4ecfce5160cd1aebe",
+    "refs/pull/22/head": "5060e7dd66441ed844bbf99e2ee5fa51837ea123",
+    "refs/pull/22/merge": "bb33ddeb1a86e552d5398c9b178e4672c9425c4f",
+    "refs/pull/3/head": "4ccf7e1dc40c2c5be3c7a62522b48291c36b2665",
+    "refs/pull/33/head": "52b0022258a476aa41b710ddce2377b8ed14587b",
+    "refs/pull/33/merge": "b89977e840b65aff08412437e156964c4a228bb5",
+    "refs/pull/35/head": "00b9610f4dd6834622b91bc12de8c7a9d8503e36",
+    "refs/pull/35/merge": "6bbb269bf80f4c9352c621acb123e4ac4510b884",
+    "refs/pull/38/head": "975ab5e01504a13b5a0193bcb22638f0e416042e",
+    "refs/pull/39/head": "a09e34c78fd45f0655ff8207e6fefa48a08e7498",
+    "refs/pull/39/merge": "08c3943bcd51e3051d6f18ff5be25f8c2e98bc0b",
+    "refs/pull/4/head": "8fd98fc0940d431da56f137f50e8f34047a41f29",
+    "refs/pull/44/head": "ed5bf38377bbecba5040160b0ea8302a4a39f1e5",
+    "refs/pull/44/merge": "dd8462310dc57543be8b2ccf02e6b09c329e1674",
+    "refs/pull/5/head": "c7abf81d59699d466229fd61cfaf23b7a52ccebc",
+    "refs/pull/8/head": "eba8e054c3e31662c7bc2374809261773eee46e4",
+    "refs/pull/9/head": "f764a959de38a9f8fa61a32d9d38d7640b803321",
+    "refs/pull/9/merge": "7823beba0f2c141536c3937080c908148760cdee"
+   },
+   "err": ""
+  },
+  "remote_HEAD_equals_clone_HEAD": true,
+  "archive_fetched_by_audit": {
+   "ok": true,
+   "err": "",
+   "sha256": "93784cd2f616be4ae399751c1658e4c268722737dfc07beb7ecacd37b467a7ab",
+   "builder_archive_sha256": "93784cd2f616be4ae399751c1658e4c268722737dfc07beb7ecacd37b467a7ab",
+   "n_files_compared": 136,
+   "n_links_compared": 10,
+   "files_differing_from_clone": [],
+   "files_absent_in_clone": [],
+   "tracked_not_in_archive": [],
+   "archive_not_tracked": []
+  },
+  "verdict_unmodified": true,
+  "note": "untracked files are compiled byte code (__pycache__/*.pyc, ignored by the repository's .gitignore) written when the public modules were imported; they are not source files"
+ },
+ "hparams": {
+  "file": "[redacted: local path]/02_research/ext/third_party/rome/hparams/ROME/gpt2-xl.json",
+  "sha256": "81a98b788b8fbb89718288a8831441200e7d824fd057f62cb7d913ae4da5cf42",
+  "git_blob": "451604309afc0855557b1afa080832a67cf0ce71",
+  "git_blob_of_commit": "451604309afc0855557b1afa080832a67cf0ce71",
+  "content": {
+   "layers": [
+    17
+   ],
+   "fact_token": "subject_last",
+   "v_num_grad_steps": 20,
+   "v_lr": 0.5,
+   "v_loss_layer": 47,
+   "v_weight_decay": 0.5,
+   "clamp_norm_factor": 4,
+   "kl_factor": 0.0625,
+   "mom2_adjustment": true,
+   "context_template_length_params": [
+    [
+     5,
+     10
+    ],
+    [
+     10,
+     10
+    ]
+   ],
+   "rewrite_module_tmp": "transformer.h.{}.mlp.c_proj",
+   "layer_module_tmp": "transformer.h.{}",
+   "mlp_module_tmp": "transformer.h.{}.mlp",
+   "attn_module_tmp": "transformer.h.{}.attn",
+   "ln_f_module": "transformer.ln_f",
+   "lm_head_module": "transformer.wte",
+   "mom2_dataset": "wikipedia",
+   "mom2_n_samples": 100000,
+   "mom2_dtype": "float32"
+  },
+  "equals_commit": true,
+  "builder_stated_sha256_prefix_matches": true,
+  "copies_recorded_by_runs": {
+   "single_run_params.json_sha256_equal": true,
+   "dev_meta_hparams_equal": true,
+   "stream_meta_hparams_equal": true
+  }
+ },
+ "model": {
+  "dir": "[redacted: local path]/02_research/ext/models/gpt2-xl",
+  "mirror_api_ok": [
+   true,
+   true,
+   "",
+   ""
+  ],
+  "mirror_revision_main": "15ea56dee5df4983c59b2538573817e1667135e2",
+  "builder_download_record_revision": "15ea56dee5df4983c59b2538573817e1667135e2",
+  "revision_equals_mirror_main": true,
+  "files": {
+   "README.md": {
+    "bytes": 11973,
+    "git_blob": "34f1cc31333e001c3047539dd604123dafd37346",
+    "mirror_blob_oid": "34f1cc31333e001c3047539dd604123dafd37346",
+    "blob_equals_mirror_listing": true,
+    "size_equals_mirror_listing": true
+   },
+   "config.json": {
+    "bytes": 689,
+    "git_blob": "932bdee9f4b3878f7f285187564b46f256243aff",
+    "mirror_blob_oid": "932bdee9f4b3878f7f285187564b46f256243aff",
+    "blob_equals_mirror_listing": true,
+    "size_equals_mirror_listing": true
+   },
+   "generation_config.json": {
+    "bytes": 124,
+    "git_blob": "057e43033439e068b325f32af95dde9efc9552ae",
+    "mirror_blob_oid": "057e43033439e068b325f32af95dde9efc9552ae",
+    "blob_equals_mirror_listing": true,
+    "size_equals_mirror_listing": true
+   },
+   "merges.txt": {
+    "bytes": 456318,
+    "git_blob": "226b0752cac7789c48f0cb3ec53eda48b7be36cc",
+    "mirror_blob_oid": "226b0752cac7789c48f0cb3ec53eda48b7be36cc",
+    "blob_equals_mirror_listing": true,
+    "size_equals_mirror_listing": true
+   },
+   "model.safetensors": {
+    "bytes": 6431829964,
+    "sha256": "0f8b28eb05a8075f48b61b6f35332978c74fc7763fa9fb4051a1c30511736a6a",
+    "builder_recorded_lfs_sha256": "0f8b28eb05a8075f48b61b6f35332978c74fc7763fa9fb4051a1c30511736a6a",
+    "sha256_equals_builder_record": true,
+    "mirror_lfs_sha256": "0f8b28eb05a8075f48b61b6f35332978c74fc7763fa9fb4051a1c30511736a6a",
+    "sha256_equals_mirror_listing": true,
+    "size_equals_mirror_listing": true
+   },
+   "pytorch_model.bin": {
+    "bytes": 6431878936,
+    "sha256": "cd2a29e31040ef64d9362cb96801969c9f67b9e0bdbd6e00b9dda57cdbe17435",
+    "builder_recorded_lfs_sha256": "cd2a29e31040ef64d9362cb96801969c9f67b9e0bdbd6e00b9dda57cdbe17435",
+    "sha256_equals_builder_record": true,
+    "mirror_lfs_sha256": "cd2a29e31040ef64d9362cb96801969c9f67b9e0bdbd6e00b9dda57cdbe17435",
+    "sha256_equals_mirror_listing": true,
+    "size_equals_mirror_listing": true
+   },
+   "tokenizer.json": {
+    "bytes": 1355256,
+    "git_blob": "4b988bccc9dc5adacd403c00b4704976196548f8",
+    "mirror_blob_oid": "4b988bccc9dc5adacd403c00b4704976196548f8",
+    "blob_equals_mirror_listing": true,
+    "size_equals_mirror_listing": true
+   },
+   "tokenizer_config.json": {
+    "bytes": 26,
+    "git_blob": "be4d21d94f3b4687e5a54d84bf6ab46ed0f8defd",
+    "mirror_blob_oid": "be4d21d94f3b4687e5a54d84bf6ab46ed0f8defd",
+    "blob_equals_mirror_listing": true,
+    "size_equals_mirror_listing": true
+   },
+   "vocab.json": {
+    "bytes": 1042301,
+    "git_blob": "1f1d9aaca301414e7f6c9396df506798ff4eb9a6",
+    "mirror_blob_oid": "1f1d9aaca301414e7f6c9396df506798ff4eb9a6",
+    "blob_equals_mirror_listing": true,
+    "size_equals_mirror_listing": true
+   }
+  },
+  "files_in_mirror_listing_not_on_disk": [
+   ".gitattributes",
+   "flax_model.msgpack",
+   "generation_config_for_text_generation.json",
+   "rust_model.ot",
+   "tf_model.h5"
+  ]
+ },
+ "data": {
+  "file": "[redacted: local path]/02_research/ext/data/counterfact/counterfact.json",
+  "bytes": 45108470,
+  "sha256": "d017056125178a13728594e66a801357a8db9ed7973a7425554bb4271de9fc6f",
+  "n_records": 21919,
+  "case_ids_are_0_to_n_minus_1": true,
+  "first_record": {
+   "case_id": 0,
+   "requested_rewrite": {
+    "prompt": "The mother tongue of {} is",
+    "relation_id": "P103",
+    "target_new": {
+     "str": "English",
+     "id": "Q1860"
+    },
+    "target_true": {
+     "str": "French",
+     "id": "Q150"
+    },
+    "subject": "Danielle Darrieux"
+   }
+  },
+  "last_record": {
+   "case_id": 21918,
+   "requested_rewrite": {
+    "prompt": "{} works as",
+    "relation_id": "P106",
+    "target_new": {
+     "str": "composer",
+     "id": "Q36834"
+    },
+    "target_true": {
+     "str": "actor",
+     "id": "Q33999"
+    },
+    "subject": "Subair"
+   }
+  },
+  "keys": [
+   "attribute_prompts",
+   "case_id",
+   "generation_prompts",
+   "neighborhood_prompts",
+   "paraphrase_prompts",
+   "pararel_idx",
+   "requested_rewrite"
+  ],
+  "prompt_counts": {
+   "paraphrase_prompts": [
+    2
+   ],
+   "neighborhood_prompts": [
+    10
+   ],
+   "attribute_prompts": [
+    10
+   ],
+   "generation_prompts": [
+    10
+   ]
+  },
+  "builder_stated_sha256_prefix_matches": true,
+  "fresh_download": {
+   "ok": true,
+   "err": "",
+   "bytes": 45108470,
+   "sha256": "d017056125178a13728594e66a801357a8db9ed7973a7425554bb4271de9fc6f",
+   "equal_to_local": true
+  },
+  "rome_data_link_resolves_to_file": true
+ },
+ "statistics": {
+  "file": "[redacted: local path]/02_research/ext/data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz",
+  "bytes": 163841186,
+  "sha256": "376f29d29b05fed1f5c48daa47b40edb87a239ec817a51bfe4cf68659749bc78",
+  "builder_stated_sha256_matches": true,
+  "path_the_public_code_reads": "[redacted: local path]/02_research/ext/data/rome_data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz",
+  "path_resolves_to_file": true,
+  "fresh_download": {
+   "url": "https://rome.baulab.info/data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz",
+   "ok": false,
+   "err": "timeout"
+  },
+  "npz_keys": [
+   "mom2.constructor",
+   "mom2.count",
+   "mom2.mom2",
+   "sample_size"
+  ],
+  "mom2_shape": [
+   6400,
+   6400
+  ],
+  "mom2_dtype": "float32",
+  "token_count": 44068071.0,
+  "sample_size": 100000,
+  "constructor": "util.runningstats.SecondMoment()",
+  "finite": true,
+  "max_abs_asymmetry": 0.0,
+  "max_abs": 62225472.0,
+  "second_moment": {
+   "trace": 172.1222356282341,
+   "eig_min": 0.0003395856187618967,
+   "eig_max": 20.289528646266383,
+   "condition_number": 59747.90310685258,
+   "n_nonpositive_eigenvalues": 0
+  },
+  "recomputed_by_builder": false
+ },
+ "gpt_j": {
+  "bytes_files": {
+   "DOWNLOAD_RECORD.json": 1196,
+   "README.md": 10996,
+   "added_tokens.json": 4039,
+   "config.json": 930,
+   "merges.txt": 456356,
+   "pytorch_model.bin": 24207819307,
+   "special_tokens_map.json": 357,
+   "tokenizer.json": 1373465,
+   "tokenizer_config.json": 619,
+   "vocab.json": 798156
+  },
+  "bytes_total": 24210465421,
+  "bytes_total_without_download_record": 24210464225,
+  "builder_stated_total_bytes": 24210465421,
+  "repo": "EleutherAI/gpt-j-6b",
+  "revision": "47e169305d2e8376be1d31e765533382721b2cc1",
+  "mirror_listing_ok": true,
+  "mirror_lfs_sha256": "0e183edc2025ecfdba4429ba43c960224103b3c3dc26616503cdc2158a3d6c93",
+  "mirror_lfs_size": 24207819307,
+  "size_equals_mirror_listing": true,
+  "pytorch_model.bin_sha256": "0e183edc2025ecfdba4429ba43c960224103b3c3dc26616503cdc2158a3d6c93",
+  "sha256_equals_builder_record": true,
+  "sha256_equals_mirror_listing": true
+ },
+ "finished": "2026-11-11 10:02:14 UTC",
+ "public_code_recomputed": "2026-11-11 10:48:26 UTC"
+}

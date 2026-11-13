@@ -1,0 +1,52 @@
+{
+ "log": "TB-L100-ae-l2_3",
+ "assert_clean": {
+  "hook_mismatch": 0,
+  "memo_conflicts": 0,
+  "forwards": 0,
+  "rows": 14541
+ },
+ "memo": {
+  "hits": 4069,
+  "misses": 0,
+  "writes": 0,
+  "shards": 20,
+  "shards_other_code": 0,
+  "entries": 11531,
+  "conflicts": 0,
+  "root": "[redacted: local path]/02_research/experiments/10_final/memo/llava",
+  "by_mode": {
+   "tf": 11045,
+   "decode": 470,
+   "prompt": 16
+  },
+  "code": "c76c4da16bd6",
+  "accepted_library_versions": [
+   "c76c4da16bd6"
+  ]
+ },
+ "stats": {
+  "rows": 14541,
+  "pre": 4229,
+  "memo": 4069,
+  "run": 0,
+  "lib": 6243,
+  "missing": 0,
+  "forwards": 0,
+  "decodes": 78,
+  "hook_mismatch": 0,
+  "near": 0,
+  "near_changed_on_device": 0,
+  "seconds_model": 294.9420220851898
+ },
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "written": "2026-11-11 20:01:56",
+ "keys": [
+  "default",
+  "resp_lin"
+ ]
+}

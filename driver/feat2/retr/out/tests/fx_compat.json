@@ -1,0 +1,97 @@
+{
+ "ok": true,
+ "skipped": false,
+ "fx_version": "fx-1.0 (2026-11-11)",
+ "summary": "row sets, draw 0, own edits equal the driver's; fx.metrics.gate_stats accepts the retr / lookup decisions and gives the mechanics numbers: all hold",
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "row_sets_equal": true,
+   "heldout_disjoint_equal": true,
+   "default_draw_equals_fx_draw": true,
+   "own_equals_fx_own": true,
+   "retr_steps_equal_tf": true,
+   "retr_decision_has_every_key_of_fx_gate_decide": true,
+   "lookup_steps_equal_tf": true,
+   "lookup_decision_has_every_key_of_fx_gate_decide": true,
+   "forced_gate_is_a_memo_method_of_the_driver": true,
+   "forced_gate_through_fx_gate_decide": true,
+   "forced_gate_releases_the_drivers_values": true,
+   "reference_handle": true,
+   "retr_gate_stats_equal_mechanics": true,
+   "lookup_gate_stats_equal_mechanics": true,
+   "gate_stats": {
+    "retr": {
+     "heldout_disjoint_fired": 0.21505376344086022,
+     "tgen_own_top": 9.0,
+     "igen_own_top": 94.0,
+     "rel_own_top": 100.0,
+     "hn": {
+      "HN-I": 0.0,
+      "HN-Q": 0.1692047377326565,
+      "HN-X": 0.0
+     },
+     "benign_fired": 0.2
+    },
+    "lookup": {
+     "heldout_disjoint_fired": 0.0,
+     "tgen_own_top": 60.0,
+     "igen_own_top": 0.0,
+     "rel_own_top": 100.0,
+     "hn": {
+      "HN-I": 7.8231292517006805,
+      "HN-Q": 0.0,
+      "HN-X": 11.11111111111111
+     },
+     "benign_fired": 0.0
+    }
+   },
+   "ok": true
+  },
+  "TB-L100-ae-l2_3": {
+   "row_sets_equal": true,
+   "heldout_disjoint_equal": true,
+   "default_draw_equals_fx_draw": true,
+   "own_equals_fx_own": true,
+   "retr_steps_equal_tf": true,
+   "retr_decision_has_every_key_of_fx_gate_decide": true,
+   "lookup_steps_equal_tf": true,
+   "lookup_decision_has_every_key_of_fx_gate_decide": true,
+   "forced_gate_is_a_memo_method_of_the_driver": true,
+   "forced_gate_through_fx_gate_decide": true,
+   "forced_gate_releases_the_drivers_values": true,
+   "reference_handle": true,
+   "retr_gate_stats_equal_mechanics": true,
+   "lookup_gate_stats_equal_mechanics": true,
+   "gate_stats": {
+    "retr": {
+     "heldout_disjoint_fired": 0.0,
+     "tgen_own_top": 11.0,
+     "igen_own_top": 97.0,
+     "rel_own_top": 100.0,
+     "hn": {
+      "HN-I": 0.3389830508474576,
+      "HN-Q": 0.0,
+      "HN-X": 0.0
+     },
+     "benign_fired": 0.3
+    },
+    "lookup": {
+     "heldout_disjoint_fired": 0.0,
+     "tgen_own_top": 59.0,
+     "igen_own_top": 0.0,
+     "rel_own_top": 100.0,
+     "hn": {
+      "HN-I": 5.593220338983051,
+      "HN-Q": 0.0,
+      "HN-X": 7.070707070707071
+     },
+     "benign_fired": 0.0
+    }
+   },
+   "ok": true
+  }
+ },
+ "test": "fx_compat",
+ "seconds": 1.4,
+ "when": "2026-11-11 08:41:24 UTC"
+}

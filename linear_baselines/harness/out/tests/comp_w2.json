@@ -1,0 +1,924 @@
+{
+ "n": 20,
+ "complaints_ci": [
+  2,
+  7,
+  16,
+  34,
+  35,
+  36,
+  44,
+  60,
+  63,
+  77,
+  111,
+  115,
+  127,
+  159,
+  161,
+  168,
+  174,
+  187,
+  189,
+  195
+ ],
+ "resolved_new_ungated": 16,
+ "resolved_new_gated": 16,
+ "resolved_old": 16,
+ "flag_agreement_ungated": 20,
+ "flag_agreement_gated": 20,
+ "dW_fro_max_rel_diff": 1.3796785571947539e-15,
+ "edits_broken_new": 1,
+ "edits_broken_old": 1,
+ "old_200_H1": 0.795,
+ "load_checks": {
+  "probe_uids_match_records": true,
+  "collapsed_working_point": false,
+  "old_w2_W0_entries_differing_from_checkpoint": 3148538
+ },
+ "rows": [
+  {
+   "ci": 2,
+   "ptype": "image",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 24.68695141262813,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.8207784332334995,
+     "solve": 0.05576952174305916,
+     "total": 0.8766083940863609
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 24.68695141262813,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.26945146918296814,
+     "solve": 0.03303872048854828,
+     "total": 0.3025352321565151
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 24.68695141262813,
+    "edits_broken_rel": 0,
+    "t_solve": 0.015653133392333984
+   }
+  },
+  {
+   "ci": 7,
+   "ptype": "image",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 15.494167774765957,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.24834425374865532,
+     "solve": 0.03308521956205368,
+     "total": 0.2814696617424488
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 15.494167774765957,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.20895559340715408,
+     "solve": 0.009287334978580475,
+     "total": 0.2182806320488453
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 15.494167774765957,
+    "edits_broken_rel": 0,
+    "t_solve": 0.029842376708984375
+   }
+  },
+  {
+   "ci": 16,
+   "ptype": "image",
+   "ungated": {
+    "resolved": false,
+    "dW_fro": 9.51411153917409,
+    "edits_broken_rel": 1,
+    "sec": {
+     "capture": 0.18759610503911972,
+     "solve": 0.009239744395017624,
+     "total": 0.19686826691031456
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": false,
+    "dW_fro": 9.51411153917409,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.2154158018529415,
+     "solve": 0.009417582303285599,
+     "total": 0.22486763820052147
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": false,
+    "dW_fro": 9.51411153917409,
+    "edits_broken_rel": 1,
+    "t_solve": 0.03160667419433594
+   }
+  },
+  {
+   "ci": 34,
+   "ptype": "image",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 9.69345496884839,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.11667858436703682,
+     "solve": 0.010353725403547287,
+     "total": 0.12706635892391205
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 9.69345496884839,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.1121072992682457,
+     "solve": 0.00972391664981842,
+     "total": 0.12186383083462715
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 9.69345496884839,
+    "edits_broken_rel": 0,
+    "t_solve": 0.01637554168701172
+   }
+  },
+  {
+   "ci": 35,
+   "ptype": "image",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 10.793975232102756,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.2018524892628193,
+     "solve": 0.009420473128557205,
+     "total": 0.2113080993294716
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 10.793975232102756,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.20233941078186035,
+     "solve": 0.009461157023906708,
+     "total": 0.21183506399393082
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 10.793975232102756,
+    "edits_broken_rel": 0,
+    "t_solve": 0.02345585823059082
+   }
+  },
+  {
+   "ci": 36,
+   "ptype": "image",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 17.626177517401732,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.1260657012462616,
+     "solve": 0.028268184512853622,
+     "total": 0.1543721817433834
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 17.626177517401732,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.11423306912183762,
+     "solve": 0.00943831354379654,
+     "total": 0.12370609119534492
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 17.626177517401732,
+    "edits_broken_rel": 0,
+    "t_solve": 0.02566671371459961
+   }
+  },
+  {
+   "ci": 44,
+   "ptype": "image",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 12.054649392688795,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.21600857377052307,
+     "solve": 0.009467676281929016,
+     "total": 0.225508451461792
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 12.054649392688795,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.18271683156490326,
+     "solve": 0.009499955922365189,
+     "total": 0.19224853441119194
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 12.054649392688795,
+    "edits_broken_rel": 0,
+    "t_solve": 0.020879030227661133
+   }
+  },
+  {
+   "ci": 60,
+   "ptype": "image",
+   "ungated": {
+    "resolved": false,
+    "dW_fro": 13.009665159260864,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.33103687688708305,
+     "solve": 0.009295951575040817,
+     "total": 0.34036703407764435
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": false,
+    "dW_fro": 13.009665159260864,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.2620742842555046,
+     "solve": 0.00944550335407257,
+     "total": 0.2715522162616253
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": false,
+    "dW_fro": 13.009665159260864,
+    "edits_broken_rel": 0,
+    "t_solve": 0.016027450561523438
+   }
+  },
+  {
+   "ci": 63,
+   "ptype": "image",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 8.712052287924928,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.23711320385336876,
+     "solve": 0.009367894381284714,
+     "total": 0.246515154838562
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 8.712052287924928,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.1996356137096882,
+     "solve": 0.009001534432172775,
+     "total": 0.20867600664496422
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 8.712052287924928,
+    "edits_broken_rel": 0,
+    "t_solve": 0.03590273857116699
+   }
+  },
+  {
+   "ci": 77,
+   "ptype": "image",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 14.162665014619412,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.189512949436903,
+     "solve": 0.003817956894636154,
+     "total": 0.19336481392383575
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 14.162665014619412,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.23926283419132233,
+     "solve": 0.002615738660097122,
+     "total": 0.2419217899441719
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 14.162665014619432,
+    "edits_broken_rel": 0,
+    "t_solve": 0.01372218132019043
+   }
+  },
+  {
+   "ci": 111,
+   "ptype": "text",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 5.696378315034425,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.01774509996175766,
+     "solve": 0.03305552154779434,
+     "total": 0.050838541239500046
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 5.696378315034425,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.04872996360063553,
+     "solve": 0.03309774026274681,
+     "total": 0.0818646177649498
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 5.696378315034425,
+    "edits_broken_rel": 0,
+    "t_solve": 0.04018878936767578
+   }
+  },
+  {
+   "ci": 115,
+   "ptype": "text",
+   "ungated": {
+    "resolved": false,
+    "dW_fro": 7.08316568744534,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.04873977228999138,
+     "solve": 0.033025845885276794,
+     "total": 0.08179979771375656
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": false,
+    "dW_fro": 7.08316568744534,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.018056392669677734,
+     "solve": 0.03297574073076248,
+     "total": 0.05106959491968155
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": false,
+    "dW_fro": 7.08316568744534,
+    "edits_broken_rel": 0,
+    "t_solve": 0.030001163482666016
+   }
+  },
+  {
+   "ci": 127,
+   "ptype": "text",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 5.35467777078936,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.018744047731161118,
+     "solve": 0.03306460380554199,
+     "total": 0.051845066249370575
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 5.35467777078936,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.0351126603782177,
+     "solve": 0.013907510787248611,
+     "total": 0.04905539005994797
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 5.35467777078936,
+    "edits_broken_rel": 0,
+    "t_solve": 0.017896413803100586
+   }
+  },
+  {
+   "ci": 159,
+   "ptype": "text",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 5.92682421745397,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.035054512321949005,
+     "solve": 0.004367407411336899,
+     "total": 0.0394575260579586
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 5.92682421745397,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.03725498169660568,
+     "solve": 0.004222605377435684,
+     "total": 0.041511546820402145
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 5.926824217453971,
+    "edits_broken_rel": 0,
+    "t_solve": 0.004210948944091797
+   }
+  },
+  {
+   "ci": 161,
+   "ptype": "text",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 4.368131381410513,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.037696998566389084,
+     "solve": 0.01433371752500534,
+     "total": 0.05206577107310295
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 4.368131381410513,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.02659977227449417,
+     "solve": 0.022010620683431625,
+     "total": 0.048651374876499176
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 4.368131381410513,
+    "edits_broken_rel": 0,
+    "t_solve": 0.01862168312072754
+   }
+  },
+  {
+   "ci": 168,
+   "ptype": "text",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 4.506952850658491,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.038696885108947754,
+     "solve": 0.03300091251730919,
+     "total": 0.07173366472125053
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 4.506952850658491,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.04880601540207863,
+     "solve": 0.015711165964603424,
+     "total": 0.06455376744270325
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 4.506952850658491,
+    "edits_broken_rel": 0,
+    "t_solve": 0.03934049606323242
+   }
+  },
+  {
+   "ci": 174,
+   "ptype": "text",
+   "ungated": {
+    "resolved": false,
+    "dW_fro": 7.364793923466699,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.021084122359752655,
+     "solve": 0.033228278160095215,
+     "total": 0.05435026437044144
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": false,
+    "dW_fro": 7.364793923466699,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.022198110818862915,
+     "solve": 0.013904187828302383,
+     "total": 0.036139197647571564
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": false,
+    "dW_fro": 7.364793923466699,
+    "edits_broken_rel": 0,
+    "t_solve": 0.01780867576599121
+   }
+  },
+  {
+   "ci": 187,
+   "ptype": "text",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 4.9061892111918635,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.017535697668790817,
+     "solve": 0.011784758418798447,
+     "total": 0.029355444014072418
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 4.9061892111918635,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.034878920763731,
+     "solve": 0.014208417385816574,
+     "total": 0.04912226274609566
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 4.9061892111918635,
+    "edits_broken_rel": 0,
+    "t_solve": 0.024562835693359375
+   }
+  },
+  {
+   "ci": 189,
+   "ptype": "text",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 5.099237505395446,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.018646351993083954,
+     "solve": 0.011158294975757599,
+     "total": 0.029836904257535934
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 5.099237505395446,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.018253877758979797,
+     "solve": 0.0197698175907135,
+     "total": 0.038067661225795746
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 5.099237505395446,
+    "edits_broken_rel": 0,
+    "t_solve": 0.04877424240112305
+   }
+  },
+  {
+   "ci": 195,
+   "ptype": "text",
+   "ungated": {
+    "resolved": true,
+    "dW_fro": 4.973927749745765,
+    "edits_broken_rel": 0,
+    "sec": {
+     "capture": 0.02019362524151802,
+     "solve": 0.01760771870613098,
+     "total": 0.037836357951164246
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "gated": {
+    "resolved": true,
+    "dW_fro": 4.973927749745765,
+    "edits_broken_rel": null,
+    "sec": {
+     "capture": 0.017572756856679916,
+     "solve": 0.0320088155567646,
+     "total": 0.0496201328933239
+    },
+    "passes": {
+     "full": 0,
+     "prefix": 1,
+     "fwd_bwd": 0,
+     "suffix": 0,
+     "suffix_grad": 0
+    }
+   },
+   "old": {
+    "resolved": true,
+    "dW_fro": 4.973927749745765,
+    "edits_broken_rel": 0,
+    "t_solve": 0.02151942253112793
+   }
+  }
+ ],
+ "pass": true,
+ "seconds": 1273.9409754276276,
+ "gpu": "NVIDIA GeForce RTX 5090"
+}

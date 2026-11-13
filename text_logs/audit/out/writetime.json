@@ -1,0 +1,442 @@
+{
+ "written": "2026-11-11 10:58:40 UTC",
+ "transformers": "4.23.1",
+ "runs": {
+  "stream": {
+   "n_updates_checked": 49,
+   "n_identical_to_stored_write_time_file": 49,
+   "max_abs_diff": 0.0,
+   "n_after_173": 45,
+   "n_installed_flag_equal(P(new|request) > 0.5)": 49,
+   "n_installed_in_sample_audit": 5,
+   "n_installed_in_sample_after_173_audit": 1,
+   "rows": [
+    {
+     "index": 0,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9996709714555467,
+     "P_new_on_request_stored": 0.9996709714555467
+    },
+    {
+     "index": 45,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9946542985737375,
+     "P_new_on_request_stored": 0.9946542985737375
+    },
+    {
+     "index": 134,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9901091866346453,
+     "P_new_on_request_stored": 0.9901091866346453
+    },
+    {
+     "index": 172,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9982283564339057,
+     "P_new_on_request_stored": 0.9982283564339057
+    },
+    {
+     "index": 173,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.41372079179515864,
+     "P_new_on_request_stored": 0.41372079179515864
+    },
+    {
+     "index": 174,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.00015070731724951372,
+     "P_new_on_request_stored": 0.00015070731724951372
+    },
+    {
+     "index": 209,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.17410390156075442,
+     "P_new_on_request_stored": 0.17410390156075442
+    },
+    {
+     "index": 239,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.04878118773305244,
+     "P_new_on_request_stored": 0.04878118773305244
+    },
+    {
+     "index": 240,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9256511512514911,
+     "P_new_on_request_stored": 0.9256511512514911
+    },
+    {
+     "index": 248,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 1.2230580780403494e-05,
+     "P_new_on_request_stored": 1.2230580780403494e-05
+    },
+    {
+     "index": 252,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 9.438207168211698e-06,
+     "P_new_on_request_stored": 9.438207168211698e-06
+    },
+    {
+     "index": 273,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 6.084322038977929e-08,
+     "P_new_on_request_stored": 6.084322038977929e-08
+    },
+    {
+     "index": 297,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 1.3299898583933634e-06,
+     "P_new_on_request_stored": 1.3299898583933634e-06
+    },
+    {
+     "index": 309,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.058689411672109504,
+     "P_new_on_request_stored": 0.058689411672109504
+    },
+    {
+     "index": 317,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 1.638471396358213e-06,
+     "P_new_on_request_stored": 1.638471396358213e-06
+    },
+    {
+     "index": 487,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 6.661225614613924e-05,
+     "P_new_on_request_stored": 6.661225614613924e-05
+    },
+    {
+     "index": 500,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 6.1289729438390224e-06,
+     "P_new_on_request_stored": 6.1289729438390224e-06
+    },
+    {
+     "index": 594,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.004863804102565933,
+     "P_new_on_request_stored": 0.004863804102565933
+    },
+    {
+     "index": 654,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 1.3954599925973907e-06,
+     "P_new_on_request_stored": 1.3954599925973907e-06
+    },
+    {
+     "index": 766,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 2.4052454977660287e-06,
+     "P_new_on_request_stored": 2.4052454977660287e-06
+    },
+    {
+     "index": 779,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 4.2290354422853367e-07,
+     "P_new_on_request_stored": 4.2290354422853367e-07
+    },
+    {
+     "index": 807,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.05460667173545729,
+     "P_new_on_request_stored": 0.05460667173545729
+    },
+    {
+     "index": 823,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 8.090533548473501e-07,
+     "P_new_on_request_stored": 8.090533548473501e-07
+    },
+    {
+     "index": 848,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.0013392131149080944,
+     "P_new_on_request_stored": 0.0013392131149080944
+    },
+    {
+     "index": 877,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 8.010087109784693e-06,
+     "P_new_on_request_stored": 8.010087109784693e-06
+    },
+    {
+     "index": 893,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.00012190784369505212,
+     "P_new_on_request_stored": 0.00012190784369505212
+    },
+    {
+     "index": 903,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.0009013295607544907,
+     "P_new_on_request_stored": 0.0009013295607544907
+    },
+    {
+     "index": 906,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 6.877137038650043e-06,
+     "P_new_on_request_stored": 6.877137038650043e-06
+    },
+    {
+     "index": 1090,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 4.4587885990771556e-07,
+     "P_new_on_request_stored": 4.4587885990771556e-07
+    },
+    {
+     "index": 1188,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.0005999046718116764,
+     "P_new_on_request_stored": 0.0005999046718116764
+    },
+    {
+     "index": 1214,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 3.3841109354588825e-06,
+     "P_new_on_request_stored": 3.3841109354588825e-06
+    },
+    {
+     "index": 1243,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.00024165785103995142,
+     "P_new_on_request_stored": 0.00024165785103995142
+    },
+    {
+     "index": 1260,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 4.319473933111061e-06,
+     "P_new_on_request_stored": 4.319473933111061e-06
+    },
+    {
+     "index": 1282,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 3.7996619728300444e-06,
+     "P_new_on_request_stored": 3.7996619728300444e-06
+    },
+    {
+     "index": 1289,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 3.1681473877580925e-07,
+     "P_new_on_request_stored": 3.1681473877580925e-07
+    },
+    {
+     "index": 1341,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.1650496955817465,
+     "P_new_on_request_stored": 0.1650496955817465
+    },
+    {
+     "index": 1396,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 4.369882067195067e-06,
+     "P_new_on_request_stored": 4.369882067195067e-06
+    },
+    {
+     "index": 1409,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 1.2966896313396222e-05,
+     "P_new_on_request_stored": 1.2966896313396222e-05
+    },
+    {
+     "index": 1484,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 1.2358620222232493e-12,
+     "P_new_on_request_stored": 1.2358620222232493e-12
+    },
+    {
+     "index": 1530,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 5.546824942614897e-05,
+     "P_new_on_request_stored": 5.546824942614897e-05
+    },
+    {
+     "index": 1531,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 9.482961983378297e-07,
+     "P_new_on_request_stored": 9.482961983378297e-07
+    },
+    {
+     "index": 1612,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 1.0566192622269678e-08,
+     "P_new_on_request_stored": 1.0566192622269678e-08
+    },
+    {
+     "index": 1664,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 7.368043012192935e-06,
+     "P_new_on_request_stored": 7.368043012192935e-06
+    },
+    {
+     "index": 1726,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 3.5557870464444667e-06,
+     "P_new_on_request_stored": 3.5557870464444667e-06
+    },
+    {
+     "index": 1774,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 2.0206592448797516e-05,
+     "P_new_on_request_stored": 2.0206592448797516e-05
+    },
+    {
+     "index": 1869,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 1.5083620796550787e-07,
+     "P_new_on_request_stored": 1.5083620796550787e-07
+    },
+    {
+     "index": 1895,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 4.904856582982875e-10,
+     "P_new_on_request_stored": 4.904856582982875e-10
+    },
+    {
+     "index": 1903,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 3.802012751779706e-05,
+     "P_new_on_request_stored": 3.802012751779706e-05
+    },
+    {
+     "index": 1999,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 7.3407279983002e-07,
+     "P_new_on_request_stored": 7.3407279983002e-07
+    }
+   ]
+  },
+  "dev": {
+   "n_updates_checked": 10,
+   "n_identical_to_stored_write_time_file": 10,
+   "max_abs_diff": 0.0,
+   "n_after_173": null,
+   "n_installed_flag_equal(P(new|request) > 0.5)": 10,
+   "n_installed_in_sample_audit": 10,
+   "n_installed_in_sample_after_173_audit": null,
+   "rows": [
+    {
+     "index": 3,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9921061841557095,
+     "P_new_on_request_stored": 0.9921061841557095
+    },
+    {
+     "index": 4,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9815045210293093,
+     "P_new_on_request_stored": 0.9815045210293093
+    },
+    {
+     "index": 18,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9828072751470247,
+     "P_new_on_request_stored": 0.9828072751470247
+    },
+    {
+     "index": 22,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9966188935225795,
+     "P_new_on_request_stored": 0.9966188935225795
+    },
+    {
+     "index": 23,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9940429290527701,
+     "P_new_on_request_stored": 0.9940429290527701
+    },
+    {
+     "index": 25,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9982347709630576,
+     "P_new_on_request_stored": 0.9982347709630576
+    },
+    {
+     "index": 27,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9841988175228488,
+     "P_new_on_request_stored": 0.9841988175228488
+    },
+    {
+     "index": 37,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9994848046206039,
+     "P_new_on_request_stored": 0.9994848046206039
+    },
+    {
+     "index": 75,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9555768718211083,
+     "P_new_on_request_stored": 0.9555768718211083
+    },
+    {
+     "index": 90,
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "P_new_on_request_audit": 0.9969058702096412,
+     "P_new_on_request_stored": 0.9969058702096412
+    }
+   ]
+  }
+ },
+ "finished": "2026-11-11 10:58:46 UTC"
+}

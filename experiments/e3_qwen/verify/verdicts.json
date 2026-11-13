@@ -1,0 +1,1859 @@
+{
+ "experiment": "E3 (e3_qwen, e3_llava)",
+ "written": "2026-11-12 06:12:02 UTC",
+ "verifier_directory": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify",
+ "checks": {
+  "1_protocol_discipline": {
+   "verdict": "CONFIRMED with reporting problems",
+   "detail": {
+    "qwen": {
+     "n_cells": 382,
+     "bad_cells": [],
+     "n_failed_or_skipped_files": 0,
+     "digest_gate_vs_behaviour_differ": [],
+     "internal_logs_mentioned": {
+      "TB-Q1000-ae-l2_3": 0,
+      "TB-Q2000-ae-l2_3": 0,
+      "TB-L1000-ae-l2_3": 0
+     },
+     "out_internal_dir_exists": false,
+     "logs_in_results": [
+      "TB-Q100-memitw",
+      "TB-Q100-ae-l2_3",
+      "TB-Q1000-memitw",
+      "TB-Q200-ae-l2_3",
+      "TB-Q2000-memitw",
+      "TB-Q500-memitw",
+      "TB-Q500-ae-l2_3"
+     ],
+     "jobs_per_log": {
+      "TB-Q100-ae-l2_3": 1,
+      "TB-Q200-ae-l2_3": 1,
+      "TB-Q500-ae-l2_3": 1,
+      "TB-Q100-memitw": 1,
+      "TB-Q500-memitw": 1,
+      "TB-Q1000-memitw": 1,
+      "TB-Q2000-memitw": 1
+     }
+    },
+    "llava": {
+     "n_cells": 356,
+     "bad_cells": [],
+     "n_failed_or_skipped_files": 0,
+     "digest_gate_vs_behaviour_differ": [],
+     "internal_logs_mentioned": {
+      "TB-Q1000-ae-l2_3": 0,
+      "TB-Q2000-ae-l2_3": 0,
+      "TB-L1000-ae-l2_3": 0
+     },
+     "out_internal_dir_exists": false,
+     "logs_in_results": [
+      "TB-L100-memitw",
+      "TB-L100-ae-l2_3",
+      "TB-L1000-memitw",
+      "TB-L200-ae-l2_3",
+      "TB-L500-memitw",
+      "TB-L500-ae-l2_3"
+     ],
+     "jobs_per_log": {
+      "TB-L100-ae-l2_3": 1,
+      "TB-L200-ae-l2_3": 1,
+      "TB-L500-ae-l2_3": 1,
+      "TB-L100-memitw": 1,
+      "TB-L500-memitw": 1,
+      "TB-L1000-memitw": 1
+     }
+    }
+   }
+  },
+  "2_own_recomputation": {
+   "verdict": "CONFIRMED",
+   "draw0_own_forwards": {
+    "probe_rows": 6804,
+    "probe_flags_differ": 0,
+    "edit_rows": 7200,
+    "edit_flags_differ": 0,
+    "prompt_rows": 138,
+    "prompt_flags_differ": 0,
+    "cov_flags_differ": 0,
+    "cov_flags": 45000,
+    "keys": 7100,
+    "keys_equal": 7100,
+    "max_eta_diff": 1.6397994073713562e-13,
+    "capped_differs": 0,
+    "max_thr_diff": 1.6103784972187896e-13
+   },
+   "draw0_rows": [
+    {
+     "log": "TB-Q500-ae-l2_3",
+     "method": "rescope",
+     "eta": [
+      0.3463330009863156,
+      0.3463330009863157
+     ],
+     "capped": [
+      0,
+      0
+     ],
+     "hd_fired": [
+      2.150537634408602,
+      2.150537634408602
+     ],
+     "hd_D1": [
+      2.150537634408602,
+      2.150537634408602
+     ],
+     "n_hd": 465,
+     "rel_tgen_igen_exact": [
+      [
+       99.33333333333333,
+       99.33333333333333
+      ],
+      [
+       23.333333333333332,
+       23.333333333333332
+      ],
+      [
+       56.666666666666664,
+       56.666666666666664
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       24.8,
+       24.8
+      ],
+      [
+       57.599999999999994,
+       57.599999999999994
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": null
+    },
+    {
+     "log": "TB-Q500-ae-l2_3",
+     "method": "rescope_null",
+     "eta": [
+      0.322710776744568,
+      0.32271077674456367
+     ],
+     "capped": [
+      0,
+      0
+     ],
+     "hd_fired": [
+      1.935483870967742,
+      1.935483870967742
+     ],
+     "hd_D1": [
+      1.935483870967742,
+      1.935483870967742
+     ],
+     "n_hd": 465,
+     "rel_tgen_igen_exact": [
+      [
+       99.33333333333333,
+       99.33333333333333
+      ],
+      [
+       29.333333333333332,
+       29.333333333333332
+      ],
+      [
+       61.333333333333336,
+       61.333333333333336
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       30.2,
+       30.2
+      ],
+      [
+       61.6,
+       61.6
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": null
+    },
+    {
+     "log": "TB-Q500-ae-l2_3",
+     "method": "cosine_shared",
+     "eta": [
+      0.9465885438922855,
+      0.9465885438922859
+     ],
+     "capped": [
+      0,
+      0
+     ],
+     "hd_fired": [
+      5.376344086021505,
+      5.376344086021505
+     ],
+     "hd_D1": [
+      5.376344086021505,
+      5.376344086021505
+     ],
+     "n_hd": 465,
+     "rel_tgen_igen_exact": [
+      [
+       99.33333333333333,
+       99.33333333333333
+      ],
+      [
+       2.6666666666666665,
+       2.6666666666666665
+      ],
+      [
+       38.666666666666664,
+       38.666666666666664
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       0.6,
+       0.6
+      ],
+      [
+       37.6,
+       37.6
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": null
+    },
+    {
+     "log": "TB-Q500-memitw",
+     "method": "rescope",
+     "eta": [
+      0.44471564535041525,
+      0.4447156453504151
+     ],
+     "capped": [
+      25,
+      25
+     ],
+     "hd_fired": [
+      0.8602150537634409,
+      0.8602150537634409
+     ],
+     "hd_D1": [
+      0.8602150537634409,
+      0.8602150537634409
+     ],
+     "n_hd": 465,
+     "rel_tgen_igen_exact": [
+      [
+       99.33333333333333,
+       99.33333333333333
+      ],
+      [
+       12.666666666666666,
+       12.666666666666666
+      ],
+      [
+       38.666666666666664,
+       38.666666666666664
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       9.0,
+       9.0
+      ],
+      [
+       40.2,
+       40.2
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": null
+    },
+    {
+     "log": "TB-Q500-memitw",
+     "method": "rescope_null",
+     "eta": [
+      0.3877044340498902,
+      0.3877044340498472
+     ],
+     "capped": [
+      1,
+      1
+     ],
+     "hd_fired": [
+      2.5806451612903225,
+      2.5806451612903225
+     ],
+     "hd_D1": [
+      2.5806451612903225,
+      2.5806451612903225
+     ],
+     "n_hd": 465,
+     "rel_tgen_igen_exact": [
+      [
+       99.33333333333333,
+       99.33333333333333
+      ],
+      [
+       19.333333333333332,
+       19.333333333333332
+      ],
+      [
+       50.0,
+       50.0
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       16.6,
+       16.6
+      ],
+      [
+       53.400000000000006,
+       53.400000000000006
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": null
+    },
+    {
+     "log": "TB-Q500-memitw",
+     "method": "cosine_shared",
+     "eta": [
+      0.9465885438922855,
+      0.9465885438922859
+     ],
+     "capped": [
+      0,
+      0
+     ],
+     "hd_fired": [
+      5.376344086021505,
+      5.376344086021505
+     ],
+     "hd_D1": [
+      5.376344086021505,
+      5.376344086021505
+     ],
+     "n_hd": 465,
+     "rel_tgen_igen_exact": [
+      [
+       99.33333333333333,
+       99.33333333333333
+      ],
+      [
+       2.6666666666666665,
+       2.6666666666666665
+      ],
+      [
+       38.666666666666664,
+       38.666666666666664
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       0.6,
+       0.6
+      ],
+      [
+       37.6,
+       37.6
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": null
+    },
+    {
+     "log": "TB-Q2000-memitw",
+     "method": "rescope",
+     "eta": [
+      0.5039141295626085,
+      0.5039141295626084
+     ],
+     "capped": [
+      69,
+      69
+     ],
+     "hd_fired": [
+      2.5,
+      2.5
+     ],
+     "hd_D1": [
+      2.5,
+      2.5
+     ],
+     "n_hd": 200,
+     "rel_tgen_igen_exact": [
+      [
+       100.0,
+       100.0
+      ],
+      [
+       6.0,
+       6.0
+      ],
+      [
+       37.0,
+       37.0
+      ]
+     ],
+     "n_edits": 100,
+     "coverage_tgen_igen_all_edits": [
+      [
+       5.7,
+       5.7
+      ],
+      [
+       31.45,
+       31.45
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": null
+    },
+    {
+     "log": "TB-Q2000-memitw",
+     "method": "rescope_null",
+     "eta": [
+      0.5114803211277392,
+      0.511480321127655
+     ],
+     "capped": [
+      26,
+      26
+     ],
+     "hd_fired": [
+      2.0,
+      2.0
+     ],
+     "hd_D1": [
+      2.0,
+      2.0
+     ],
+     "n_hd": 200,
+     "rel_tgen_igen_exact": [
+      [
+       100.0,
+       100.0
+      ],
+      [
+       7.0,
+       7.0
+      ],
+      [
+       40.0,
+       40.0
+      ]
+     ],
+     "n_edits": 100,
+     "coverage_tgen_igen_all_edits": [
+      [
+       6.65,
+       6.65
+      ],
+      [
+       33.0,
+       33.0
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": null
+    },
+    {
+     "log": "TB-Q2000-memitw",
+     "method": "cosine_shared",
+     "eta": [
+      0.9690917204889707,
+      0.9690917204889706
+     ],
+     "capped": [
+      0,
+      0
+     ],
+     "hd_fired": [
+      3.5,
+      3.5
+     ],
+     "hd_D1": [
+      3.5,
+      3.5
+     ],
+     "n_hd": 200,
+     "rel_tgen_igen_exact": [
+      [
+       100.0,
+       100.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       22.0,
+       22.0
+      ]
+     ],
+     "n_edits": 100,
+     "coverage_tgen_igen_all_edits": [
+      [
+       0.05,
+       0.05
+      ],
+      [
+       21.099999999999998,
+       21.099999999999998
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": null
+    },
+    {
+     "log": "TB-L500-ae-l2_3",
+     "method": "rescope",
+     "eta": [
+      0.2996261602141348,
+      0.2996261602141347
+     ],
+     "capped": [
+      1,
+      1
+     ],
+     "hd_fired": [
+      1.7057569296375266,
+      1.7057569296375266
+     ],
+     "hd_D1": [
+      1.7057569296375266,
+      1.7057569296375266
+     ],
+     "n_hd": 469,
+     "rel_tgen_igen_exact": [
+      [
+       98.66666666666667,
+       98.66666666666667
+      ],
+      [
+       11.333333333333334,
+       11.333333333333334
+      ],
+      [
+       76.66666666666667,
+       76.66666666666667
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       17.4,
+       17.4
+      ],
+      [
+       80.4,
+       80.4
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": {
+      "n_shifted": 18,
+      "hd_fired": [
+       1.7057569296375266,
+       1.7057569296375266
+      ],
+      "hd_D1": [
+       1.7057569296375266,
+       1.7057569296375266
+      ],
+      "decisions_differing_from_tf": 0
+     }
+    },
+    {
+     "log": "TB-L500-ae-l2_3",
+     "method": "rescope_null",
+     "eta": [
+      0.212564477368607,
+      0.21256447736861228
+     ],
+     "capped": [
+      0,
+      0
+     ],
+     "hd_fired": [
+      6.183368869936034,
+      6.183368869936034
+     ],
+     "hd_D1": [
+      6.183368869936034,
+      6.183368869936034
+     ],
+     "n_hd": 469,
+     "rel_tgen_igen_exact": [
+      [
+       98.66666666666667,
+       98.66666666666667
+      ],
+      [
+       34.0,
+       34.0
+      ],
+      [
+       85.33333333333333,
+       85.33333333333333
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       37.2,
+       37.2
+      ],
+      [
+       87.4,
+       87.4
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": {
+      "n_shifted": 18,
+      "hd_fired": [
+       6.183368869936034,
+       6.183368869936034
+      ],
+      "hd_D1": [
+       6.183368869936034,
+       6.183368869936034
+      ],
+      "decisions_differing_from_tf": 0
+     }
+    },
+    {
+     "log": "TB-L500-ae-l2_3",
+     "method": "cosine_shared",
+     "eta": [
+      0.9732579696740232,
+      0.9732579696740234
+     ],
+     "capped": [
+      0,
+      0
+     ],
+     "hd_fired": [
+      3.1982942430703623,
+      3.1982942430703623
+     ],
+     "hd_D1": [
+      3.1982942430703623,
+      3.1982942430703623
+     ],
+     "n_hd": 469,
+     "rel_tgen_igen_exact": [
+      [
+       98.66666666666667,
+       98.66666666666667
+      ],
+      [
+       0.0,
+       0.0
+      ],
+      [
+       63.333333333333336,
+       63.333333333333336
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       64.2,
+       64.2
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": {
+      "n_shifted": 18,
+      "hd_fired": [
+       3.1982942430703623,
+       3.1982942430703623
+      ],
+      "hd_D1": [
+       3.1982942430703623,
+       3.1982942430703623
+      ],
+      "decisions_differing_from_tf": 0
+     }
+    },
+    {
+     "log": "TB-L500-memitw",
+     "method": "rescope",
+     "eta": [
+      0.5252695235045004,
+      0.5252695235045002
+     ],
+     "capped": [
+      113,
+      113
+     ],
+     "hd_fired": [
+      1.9189765458422174,
+      1.9189765458422174
+     ],
+     "hd_D1": [
+      1.9189765458422174,
+      1.9189765458422174
+     ],
+     "n_hd": 469,
+     "rel_tgen_igen_exact": [
+      [
+       98.66666666666667,
+       98.66666666666667
+      ],
+      [
+       1.3333333333333333,
+       1.3333333333333333
+      ],
+      [
+       46.0,
+       46.0
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       3.0,
+       3.0
+      ],
+      [
+       51.0,
+       51.0
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": {
+      "n_shifted": 18,
+      "hd_fired": [
+       1.9189765458422174,
+       1.9189765458422174
+      ],
+      "hd_D1": [
+       1.9189765458422174,
+       1.9189765458422174
+      ],
+      "decisions_differing_from_tf": 0
+     }
+    },
+    {
+     "log": "TB-L500-memitw",
+     "method": "rescope_null",
+     "eta": [
+      0.43882362173084544,
+      0.4388236217310094
+     ],
+     "capped": [
+      20,
+      20
+     ],
+     "hd_fired": [
+      5.11727078891258,
+      5.11727078891258
+     ],
+     "hd_D1": [
+      5.11727078891258,
+      5.11727078891258
+     ],
+     "n_hd": 469,
+     "rel_tgen_igen_exact": [
+      [
+       98.66666666666667,
+       98.66666666666667
+      ],
+      [
+       10.0,
+       10.0
+      ],
+      [
+       64.66666666666667,
+       64.66666666666667
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       11.4,
+       11.4
+      ],
+      [
+       70.19999999999999,
+       70.19999999999999
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": {
+      "n_shifted": 18,
+      "hd_fired": [
+       5.11727078891258,
+       5.11727078891258
+      ],
+      "hd_D1": [
+       5.11727078891258,
+       5.11727078891258
+      ],
+      "decisions_differing_from_tf": 0
+     }
+    },
+    {
+     "log": "TB-L500-memitw",
+     "method": "cosine_shared",
+     "eta": [
+      0.9732579696740232,
+      0.9732579696740234
+     ],
+     "capped": [
+      0,
+      0
+     ],
+     "hd_fired": [
+      3.1982942430703623,
+      3.1982942430703623
+     ],
+     "hd_D1": [
+      3.1982942430703623,
+      3.1982942430703623
+     ],
+     "n_hd": 469,
+     "rel_tgen_igen_exact": [
+      [
+       98.66666666666667,
+       98.66666666666667
+      ],
+      [
+       0.0,
+       0.0
+      ],
+      [
+       63.333333333333336,
+       63.333333333333336
+      ]
+     ],
+     "n_edits": 150,
+     "coverage_tgen_igen_all_edits": [
+      [
+       0.0,
+       0.0
+      ],
+      [
+       64.2,
+       64.2
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": {
+      "n_shifted": 18,
+      "hd_fired": [
+       3.1982942430703623,
+       3.1982942430703623
+      ],
+      "hd_D1": [
+       3.1982942430703623,
+       3.1982942430703623
+      ],
+      "decisions_differing_from_tf": 0
+     }
+    },
+    {
+     "log": "TB-L1000-memitw",
+     "method": "rescope",
+     "eta": [
+      0.5433743538727186,
+      0.5433743538727185
+     ],
+     "capped": [
+      163,
+      163
+     ],
+     "hd_fired": [
+      4.0,
+      4.0
+     ],
+     "hd_D1": [
+      4.0,
+      4.0
+     ],
+     "n_hd": 200,
+     "rel_tgen_igen_exact": [
+      [
+       99.0,
+       99.0
+      ],
+      [
+       2.0,
+       2.0
+      ],
+      [
+       48.0,
+       48.0
+      ]
+     ],
+     "n_edits": 100,
+     "coverage_tgen_igen_all_edits": [
+      [
+       3.5999999999999996,
+       3.5999999999999996
+      ],
+      [
+       55.50000000000001,
+       55.50000000000001
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": {
+      "n_shifted": 10,
+      "hd_fired": [
+       4.0,
+       4.0
+      ],
+      "hd_D1": [
+       4.0,
+       4.0
+      ],
+      "decisions_differing_from_tf": 0
+     }
+    },
+    {
+     "log": "TB-L1000-memitw",
+     "method": "rescope_null",
+     "eta": [
+      0.49829852888584414,
+      0.4982985288858452
+     ],
+     "capped": [
+      52,
+      52
+     ],
+     "hd_fired": [
+      6.0,
+      6.0
+     ],
+     "hd_D1": [
+      6.0,
+      6.0
+     ],
+     "n_hd": 200,
+     "rel_tgen_igen_exact": [
+      [
+       99.0,
+       99.0
+      ],
+      [
+       5.0,
+       5.0
+      ],
+      [
+       67.0,
+       67.0
+      ]
+     ],
+     "n_edits": 100,
+     "coverage_tgen_igen_all_edits": [
+      [
+       7.3999999999999995,
+       7.3999999999999995
+      ],
+      [
+       66.8,
+       66.8
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": {
+      "n_shifted": 10,
+      "hd_fired": [
+       6.0,
+       6.0
+      ],
+      "hd_D1": [
+       6.0,
+       6.0
+      ],
+      "decisions_differing_from_tf": 0
+     }
+    },
+    {
+     "log": "TB-L1000-memitw",
+     "method": "cosine_shared",
+     "eta": [
+      0.9745608507467124,
+      0.9745608507467131
+     ],
+     "capped": [
+      0,
+      0
+     ],
+     "hd_fired": [
+      2.0,
+      2.0
+     ],
+     "hd_D1": [
+      2.0,
+      2.0
+     ],
+     "n_hd": 200,
+     "rel_tgen_igen_exact": [
+      [
+       99.0,
+       99.0
+      ],
+      [
+       1.0,
+       1.0
+      ],
+      [
+       55.0,
+       55.0
+      ]
+     ],
+     "n_edits": 100,
+     "coverage_tgen_igen_all_edits": [
+      [
+       0.1,
+       0.1
+      ],
+      [
+       58.5,
+       58.5
+      ]
+     ],
+     "flags_differ": 0,
+     "prompt_position": {
+      "n_shifted": 10,
+      "hd_fired": [
+       2.0,
+       2.0
+      ],
+      "hd_D1": [
+       2.0,
+       2.0
+      ],
+      "decisions_differing_from_tf": 0
+     }
+    }
+   ],
+   "all_20_draws_own_rule": {
+    "n_log_method": 39,
+    "hd_flags": 364140,
+    "hd_flags_differ": 0,
+    "cov_flags": 816000,
+    "cov_flags_differ": 0,
+    "draws_capped_differs": 0,
+    "max_eta_diff": 6.785128014996644e-13,
+    "max_mean_fire_diff": 0.0
+   },
+   "method": "plain rescope.Evaluator, keys captured here, thresholds by my own numpy rule; no driver, no memo, no key cache (the cache is used only for gate-level coverage and the 20-draw recomputation, after a bitwise check against the keys captured here)"
+  },
+  "3_internal_consistency": {
+   "verdict": "CONFIRMED",
+   "detail": {
+    "qwen": {
+     "results_json_cells_recomputed": 3085,
+     "results_json_disagree": 0,
+     "paper_numbers": 2518,
+     "paper_numbers_recomputed": 2504,
+     "paper_numbers_disagree": 0,
+     "paper_numbers_not_recomputed_kinds": [
+      "CLoggedErrMedian",
+      "CRebaseErrMedian",
+      "LoggedErrMedian",
+      "MLoggedErrMedian",
+      "MRebaseErrMedian",
+      "RebaseErrMedian"
+     ],
+     "rerun_of_their_analysis": {
+      "n_records_delivered": 33120,
+      "n_records_rerun": 33120,
+      "n_keys_only_in_one": 0,
+      "n_values_differ_above_1e-9": 0,
+      "largest_abs_diff": 0.0
+     },
+     "rerun_paper_numbers_differ": 0,
+     "rerendered_table_diff_lines": 0,
+     "dev_vs_e0": {
+      "n_cells": 96,
+      "largest_abs_diff": 7.105427357601002e-15
+     },
+     "row_files_have_expected_rows": true,
+     "near_scope_flags_differing": 0.0,
+     "deployed_probe_D1_flags_differing_from_stored": 0,
+     "deployed_edit_flags_differing_from_stored_vendor_pass": {
+      "TB-Q100-ae-l2_3": [
+       2,
+       0,
+       1
+      ],
+      "TB-Q200-ae-l2_3": [
+       3,
+       1,
+       2
+      ],
+      "TB-Q500-ae-l2_3": [
+       13,
+       2,
+       5
+      ],
+      "TB-Q100-memitw": [
+       0,
+       0,
+       1
+      ],
+      "TB-Q500-memitw": [
+       4,
+       1,
+       3
+      ],
+      "TB-Q1000-memitw": [
+       5,
+       3,
+       3
+      ],
+      "TB-Q2000-memitw": [
+       10,
+       6,
+       4
+      ]
+     },
+     "deployed_rel_exact_B1_vs_stored": {
+      "TB-Q100-ae-l2_3": [
+       78.0,
+       78.0
+      ],
+      "TB-Q200-ae-l2_3": [
+       65.5,
+       67.0
+      ],
+      "TB-Q500-ae-l2_3": [
+       54.6,
+       56.4
+      ],
+      "TB-Q100-memitw": [
+       53.0,
+       53.0
+      ],
+      "TB-Q500-memitw": [
+       25.0,
+       25.8
+      ],
+      "TB-Q1000-memitw": [
+       15.2,
+       15.1
+      ],
+      "TB-Q2000-memitw": [
+       9.8,
+       9.6
+      ]
+     },
+     "counts": {
+      "TB-Q100-ae-l2_3": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 979,
+       "n_hd_all": 475,
+       "n_hd_valid": 465,
+       "n_repair_valid": 489,
+       "n_near_rows": 28.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-Q200-ae-l2_3": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 979,
+       "n_hd_all": 475,
+       "n_hd_valid": 465,
+       "n_repair_valid": 489,
+       "n_near_rows": 48.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-Q500-ae-l2_3": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 979,
+       "n_hd_all": 475,
+       "n_hd_valid": 465,
+       "n_repair_valid": 489,
+       "n_near_rows": 82.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-Q100-memitw": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 979,
+       "n_hd_all": 475,
+       "n_hd_valid": 465,
+       "n_repair_valid": 489,
+       "n_near_rows": 28.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-Q500-memitw": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 979,
+       "n_hd_all": 475,
+       "n_hd_valid": 465,
+       "n_repair_valid": 489,
+       "n_near_rows": 82.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-Q1000-memitw": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 979,
+       "n_hd_all": 475,
+       "n_hd_valid": 465,
+       "n_repair_valid": 489,
+       "n_near_rows": 100.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-Q2000-memitw": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 979,
+       "n_hd_all": 475,
+       "n_hd_valid": 465,
+       "n_repair_valid": 489,
+       "n_near_rows": 112.0,
+       "max_D1_without_firing": 0
+      }
+     },
+     "rebase_error_medians_recomputed_pct": {
+      "TB-Q100-ae-l2_3": [
+       0.81,
+       11.3
+      ],
+      "TB-Q200-ae-l2_3": [
+       0.82,
+       15.9
+      ],
+      "TB-Q500-ae-l2_3": [
+       0.9,
+       24.4
+      ],
+      "TB-Q100-memitw": [
+       0.83,
+       57.0
+      ],
+      "TB-Q500-memitw": [
+       0.9,
+       58.3
+      ],
+      "TB-Q1000-memitw": [
+       0.96,
+       58.1
+      ],
+      "TB-Q2000-memitw": [
+       1.13,
+       58.1
+      ]
+     },
+     "rebase_paper_numbers_range": [
+      0.0081,
+      0.0113,
+      0.1129,
+      0.5835
+     ]
+    },
+    "llava": {
+     "results_json_cells_recomputed": 3174,
+     "results_json_disagree": 0,
+     "paper_numbers": 2182,
+     "paper_numbers_recomputed": 2170,
+     "paper_numbers_disagree": 0,
+     "paper_numbers_not_recomputed_kinds": [
+      "LoggedErrMax",
+      "RebaseErrMax"
+     ],
+     "rerun_of_their_analysis": {
+      "n_records_delivered": 54008,
+      "n_records_rerun": 54008,
+      "n_keys_only_in_one": 0,
+      "n_values_differ_above_1e-9": 0,
+      "largest_abs_diff": 0.0
+     },
+     "rerun_paper_numbers_differ": 0,
+     "rerendered_table_diff_lines": 0,
+     "dev_vs_e0": {
+      "n_cells": 96,
+      "largest_abs_diff": 7.105427357601002e-15
+     },
+     "row_files_have_expected_rows": true,
+     "near_scope_flags_differing": 0.0,
+     "deployed_probe_D1_flags_differing_from_stored": 0,
+     "deployed_edit_flags_differing_from_stored_vendor_pass": {
+      "TB-L100-ae-l2_3": [
+       0,
+       0,
+       0
+      ],
+      "TB-L200-ae-l2_3": [
+       0,
+       1,
+       0
+      ],
+      "TB-L500-ae-l2_3": [
+       2,
+       0,
+       4
+      ],
+      "TB-L100-memitw": [
+       0,
+       0,
+       1
+      ],
+      "TB-L500-memitw": [
+       0,
+       0,
+       0
+      ],
+      "TB-L1000-memitw": [
+       6,
+       2,
+       5
+      ]
+     },
+     "deployed_rel_exact_B1_vs_stored": {
+      "TB-L100-ae-l2_3": [
+       88.0,
+       88.0
+      ],
+      "TB-L200-ae-l2_3": [
+       70.0,
+       70.0
+      ],
+      "TB-L500-ae-l2_3": [
+       40.6,
+       41.0
+      ],
+      "TB-L100-memitw": [
+       78.0,
+       78.0
+      ],
+      "TB-L500-memitw": [
+       45.6,
+       45.6
+      ],
+      "TB-L1000-memitw": [
+       37.3,
+       37.3
+      ]
+     },
+     "counts": {
+      "TB-L100-ae-l2_3": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 988,
+       "n_hd_all": 475,
+       "n_hd_valid": 469,
+       "n_repair_valid": 494,
+       "n_near_rows": 39.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-L200-ae-l2_3": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 988,
+       "n_hd_all": 475,
+       "n_hd_valid": 469,
+       "n_repair_valid": 494,
+       "n_near_rows": 60.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-L500-ae-l2_3": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 988,
+       "n_hd_all": 475,
+       "n_hd_valid": 469,
+       "n_repair_valid": 494,
+       "n_near_rows": 83.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-L100-memitw": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 988,
+       "n_hd_all": 475,
+       "n_hd_valid": 469,
+       "n_repair_valid": 494,
+       "n_near_rows": 39.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-L500-memitw": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 988,
+       "n_hd_all": 475,
+       "n_hd_valid": 469,
+       "n_repair_valid": 494,
+       "n_near_rows": 83.0,
+       "max_D1_without_firing": 0
+      },
+      "TB-L1000-memitw": {
+       "n_probe_rows": 1000,
+       "n_probe_valid": 988,
+       "n_hd_all": 475,
+       "n_hd_valid": 469,
+       "n_repair_valid": 494,
+       "n_near_rows": 103.0,
+       "max_D1_without_firing": 0
+      }
+     }
+    }
+   }
+  },
+  "limits_of_this_verification": "own forwards and own thresholds cover rescope, rescope_null and cosine_shared (as tasked); the rows of the other methods (white_*, retr_sum, rescope_x, where_logonly, cosine, lookup, exact, deployed) were recomputed from the experiments' stored per-row files, not from forwards of my own; BEN-T / MME-T firing was read from the gate cells",
+  "4_unfavourable_items_missing_from_the_summaries": {
+   "verdict": "summaries correct but incomplete",
+   "items": {
+    "qwen": [
+     "near-scope held-out probes: rescope releases an edit on 5-23 % (behaviour; 6-27 % gate level)",
+     "single calibration draws above 4.95 % on five of six unseen logs (3-8 of 20)",
+     "H3 pair 2 (rescope_x minus white_1_x) negative on every MEMIT-style log (-9.3 to -2.9); H3 against retr_sum -15 to -37",
+     "the registered variant rescope_null beats the default by 7.5-9.0 points of rephrase exact on the MEMIT-style logs with 100-1000 edits; the shared-scale ablation beats it by 4.9 on TB-Q500-ae-l2_3"
+    ],
+    "llava": [
+     "H2 as a difference: -31.0, -17.8, -10.2 points on the MEMIT-style logs (T = 100, 500, 1000), +1.2 / -1.1 on the AlphaEdit-style logs",
+     "behavioural H3 pair 1 negative on all five unseen logs (-2.7 to -23.3)",
+     "rephrase exact of rescope is 10.8 points BELOW the deployed log on TB-L100-memitw",
+     "negative self-separation margin at T = 1000 (two edits)",
+     "BEN-T far firing above the level for rescope_x (6.0 % on L200-ae) and rescope_shared (5.6-5.8 % on L100 / L200-ae)"
+    ]
+   }
+  }
+ },
+ "claims": [
+  {
+   "id": "Q1",
+   "claim": "Qwen: all seven logs finished, 0 missing / failed cells, hook_mismatch 0, development log = sanity run e0",
+   "verdict": "CONFIRMED",
+   "evidence": "382 cells present with alpha 0.05, n 200, one variant per label, driver 6a71f0d2cd71; one job record per log; no FAILED / SKIPPED file; e0: {'n_cells': 96, 'largest_abs_diff': 7.105427357601002e-15}"
+  },
+  {
+   "id": "Q2",
+   "claim": "Qwen main table (7 logs x 5 methods: Rel / T-Gen / I-Gen exact, D1 on heldout_disjoint, D1 on hard negatives)",
+   "verdict": "CONFIRMED",
+   "evidence": "all 35 rows reproduced from the per-row files; draw-0 flags of rescope / rescope_null / cosine_shared reproduced row for row by my own forwards on TB-Q500-ae-l2_3, TB-Q500-memitw, TB-Q2000-memitw"
+  },
+  {
+   "id": "Q3",
+   "claim": "Qwen: far locality holds (gate firing 2.3-4.5 % over 20 draws, bound 4.95 %; Rel exact >= 99.5)",
+   "verdict": "CONFIRMED",
+   "evidence": "my own rule on the raw key files, 20 draws, flag for flag; not said in the summary: single draws exceed 4.95 % on 0-8 of 20 draws per log, and near-scope held-out probes are released on 5-23 % (behaviour)",
+   "detail": {
+    "draws_above_bound": {
+     "Q100-ae-l2_3": 7,
+     "Q200-ae-l2_3": 5,
+     "Q500-ae-l2_3": 0,
+     "Q100-memitw": 7,
+     "Q500-memitw": 3,
+     "Q1000-memitw": 4,
+     "Q2000-memitw": 8
+    },
+    "near_scope_probes_released_beh_gate": {
+     "Q100-ae-l2_3": [
+      22.6,
+      26.6
+     ],
+     "Q200-ae-l2_3": [
+      13.2,
+      14.2
+     ],
+     "Q500-ae-l2_3": [
+      6.1,
+      6.3
+     ],
+     "Q100-memitw": [
+      9.5,
+      15.7
+     ],
+     "Q500-memitw": [
+      5.3,
+      11.3
+     ],
+     "Q1000-memitw": [
+      5.0,
+      12.8
+     ],
+     "Q2000-memitw": [
+      8.9,
+      12.5
+     ]
+    }
+   }
+  },
+  {
+   "id": "Q4",
+   "claim": "Qwen: H2 not confirmed (tie with white_0.1_shared on AlphaEdit-style logs, loss on every MEMIT-style log; later edits; gate-level coverage form)",
+   "verdict": "CONFIRMED",
+   "evidence": "differences and intervals recomputed from the per-row files with my own crossed bootstrap (all within 0.2 points of the reported intervals)"
+  },
+  {
+   "id": "Q5",
+   "claim": "Qwen: H3 pair 1 +1.2 / +5.1 on AlphaEdit-style, -11.3 to -4.9 on MEMIT-style",
+   "verdict": "PARTLY CONFIRMED",
+   "evidence": "numbers reproduced; the summary omits pair 2 (rescope_x minus white_1_x) and the retrieval reference, both in the files",
+   "detail": {
+    "pair2": {
+     "Q200-ae-l2_3": 4.8,
+     "Q500-ae-l2_3": 3.1,
+     "Q100-memitw": -9.3,
+     "Q500-memitw": -5.7,
+     "Q1000-memitw": -3.1,
+     "Q2000-memitw": -2.9
+    },
+    "retr": {
+     "Q200-ae-l2_3": -15.5,
+     "Q500-ae-l2_3": -18.9,
+     "Q100-memitw": -32.3,
+     "Q500-memitw": -32.1,
+     "Q1000-memitw": -37.4,
+     "Q2000-memitw": -36.6
+    }
+   }
+  },
+  {
+   "id": "Q6",
+   "claim": "Qwen: retr_sum ahead by 28-55 points; coverage and retention decay; capped edits 5 -> 60 (rescope_x 220); literal rule fires identically; where_logonly degrades MEMIT logs; MME-T of the null variants",
+   "verdict": "CONFIRMED",
+   "evidence": "every number recomputed (claims.json)"
+  },
+  {
+   "id": "Q7",
+   "claim": "Qwen anomalies: baseline rows equal on both families at equal T (attributed, untested); cosine_published = cosine_default; one negative margin (-0.012); rebase error 0.8-1.1 % against 11-58 %",
+   "verdict": "CONFIRMED",
+   "evidence": "stored solver keys of the two families are bitwise equal and the rebased values differ by at most 1.3 % (gate20.json); my forwards of the all-positions cosine gate: 0 + 0 releases away from the last prompt position on 300 sequences, 0 rows differ; margins and rebase error recomputed",
+   "detail": {
+    "families_at_equal_T": {
+     "TB-Q100-ae-l2_3 | TB-Q100-memitw": {
+      "solver_keys_bitwise_equal": true,
+      "max_abs_key_diff": 0.0,
+      "rebased_values_rel_diff_median": 0.002943127627300274,
+      "rebased_values_rel_diff_max": 0.0059838447489708275
+     },
+     "TB-Q500-ae-l2_3 | TB-Q500-memitw": {
+      "solver_keys_bitwise_equal": true,
+      "max_abs_key_diff": 0.0,
+      "rebased_values_rel_diff_median": 0.005829652487969603,
+      "rebased_values_rel_diff_max": 0.013386846335381982
+     },
+     "TB-L100-ae-l2_3 | TB-L100-memitw": {
+      "solver_keys_bitwise_equal": true,
+      "max_abs_key_diff": 0.0,
+      "rebased_values_rel_diff_median": 0.00019813080847101298,
+      "rebased_values_rel_diff_max": 0.0003071899849929771
+     },
+     "TB-L500-ae-l2_3 | TB-L500-memitw": {
+      "solver_keys_bitwise_equal": true,
+      "max_abs_key_diff": 0.0,
+      "rebased_values_rel_diff_median": 0.0004087381830554714,
+      "rebased_values_rel_diff_max": 0.0009477676534744493
+     }
+    },
+    "rebase_pct_rebased_logged": {
+     "TB-Q100-ae-l2_3": [
+      0.81,
+      11.3
+     ],
+     "TB-Q200-ae-l2_3": [
+      0.82,
+      15.9
+     ],
+     "TB-Q500-ae-l2_3": [
+      0.9,
+      24.4
+     ],
+     "TB-Q100-memitw": [
+      0.83,
+      57.0
+     ],
+     "TB-Q500-memitw": [
+      0.9,
+      58.3
+     ],
+     "TB-Q1000-memitw": [
+      0.96,
+      58.1
+     ],
+     "TB-Q2000-memitw": [
+      1.13,
+      58.1
+     ]
+    }
+   }
+  },
+  {
+   "id": "L1",
+   "claim": "LLaVA: all six logs finished, nothing failed, hook_mismatch 0, development log = sanity run e0",
+   "verdict": "CONFIRMED",
+   "evidence": "356 cells present, same settings on every log; e0: {'n_cells': 96, 'largest_abs_diff': 7.105427357601002e-15}"
+  },
+  {
+   "id": "L2",
+   "claim": "LLaVA main table (6 logs x 6 methods)",
+   "verdict": "CONFIRMED",
+   "evidence": "all 36 rows reproduced from the per-row files and gate cells; draw-0 flags reproduced by my own forwards on TB-L500-ae-l2_3, TB-L500-memitw, TB-L1000-memitw at both gate positions"
+  },
+  {
+   "id": "L3",
+   "claim": "LLaVA: reliability and far locality hold (Rel 98-99, D1 2-3 %, mean firing below 4.95 % on every log; 9 of 20 draws above on L100-memitw)",
+   "verdict": "CONFIRMED",
+   "evidence": "20 draws with my own rule, flag for flag"
+  },
+  {
+   "id": "L4",
+   "claim": "LLaVA: text rephrases weak and worse with T; whitened cosine matches or beats rescope; retr_sum far ahead",
+   "verdict": "PARTLY CONFIRMED",
+   "evidence": "numbers reproduced; imprecise: retr_sum T-Gen is 89 on L100-memitw (summary: 58-83), HN-I firing 37-60 % (summary: 40-60); the summary gives no paired H2 / H3 difference, and the experiment computed none",
+   "detail": {
+    "H2_mine": {
+     "L200-ae-l2_3": [
+      1.2,
+      -5.2,
+      8.5
+     ],
+     "L500-ae-l2_3": [
+      -1.1,
+      -4.7,
+      2.2
+     ],
+     "L100-memitw": [
+      -31.0,
+      -39.7,
+      -22.0
+     ],
+     "L500-memitw": [
+      -17.8,
+      -21.0,
+      -14.7
+     ],
+     "L1000-memitw": [
+      -10.2,
+      -11.7,
+      -8.7
+     ]
+    },
+    "H3_beh_pair1_pair2_retr_mine": {
+     "L200-ae-l2_3": [
+      -4.2,
+      4.0,
+      -12.5
+     ],
+     "L500-ae-l2_3": [
+      -2.7,
+      5.8,
+      -15.5
+     ],
+     "L100-memitw": [
+      -23.3,
+      -14.7,
+      -32.0
+     ],
+     "L500-memitw": [
+      -14.9,
+      -11.2,
+      -27.7
+     ],
+     "L1000-memitw": [
+      -9.0,
+      -4.2,
+      -24.6
+     ]
+    },
+    "rescope_minus_deployed_rephrase_exact": {
+     "L100-ae-l2_3": 16.8,
+     "L200-ae-l2_3": 22.8,
+     "L500-ae-l2_3": 26.2,
+     "L100-memitw": -10.8,
+     "L500-memitw": 5.9,
+     "L1000-memitw": 9.5
+    }
+   }
+  },
+  {
+   "id": "L5",
+   "claim": "LLaVA: H3 gate table (4 logs x 5 methods)",
+   "verdict": "CONFIRMED",
+   "evidence": "20 cells reproduced from the per-edit flags; no unreachable draw"
+  },
+  {
+   "id": "L6",
+   "claim": "LLaVA: the bound is void for many memitw edits (19 / 91 / 149 capped, rescope_x 24 / 171 / 411); smallest self-separation margin 0.02 on memitw",
+   "verdict": "PARTLY CONFIRMED",
+   "evidence": "capped counts confirmed; the margin statement is wrong for TB-L1000-memitw: smallest margin -0.107, two edits with a non-positive margin (the experiment's own files and paper numbers hold -0.107)",
+   "detail": {
+    "L100-ae-l2_3": [
+     0.53,
+     0
+    ],
+    "L200-ae-l2_3": [
+     0.53,
+     0
+    ],
+    "L500-ae-l2_3": [
+     0.385,
+     0
+    ],
+    "L100-memitw": [
+     0.023,
+     0
+    ],
+    "L500-memitw": [
+     0.023,
+     0
+    ],
+    "L1000-memitw": [
+     -0.107,
+     2
+    ]
+   }
+  },
+  {
+   "id": "L7",
+   "claim": "LLaVA: rescope_x cuts hard-negative D1 to 4-8 % at a cost of 15-20 points of I-Gen",
+   "verdict": "PARTLY CONFIRMED",
+   "evidence": "D1 confirmed; the I-Gen cost is 5 points on L100-memitw and 16-21 elsewhere"
+  },
+  {
+   "id": "L8",
+   "claim": "LLaVA: retention; MME-T firing above the budget on the ae logs; counts (non-oracle targets, 12 invalid probes, shifted sequences); where_logonly at T = 1000",
+   "verdict": "CONFIRMED",
+   "evidence": "claims.json"
+  }
+ ],
+ "summary_numbers_checked": {
+  "n": 120,
+  "n_agree": 117,
+  "disagreeing": [
+   {
+    "claim": "L capped",
+    "quantity": "smallest self-separation margin: memitw (min over logs); ae (min / max over logs)",
+    "experiment": [
+     0.02,
+     0.39,
+     0.53
+    ],
+    "mine": [
+     -0.11,
+     0.39,
+     0.53
+    ],
+    "agree": false,
+    "tolerance": 0.0051,
+    "note": ""
+   },
+   {
+    "claim": "L near scope",
+    "quantity": "rescope_x: HN D1 min / max (%); I-Gen cost against rescope min / max (points)",
+    "experiment": [
+     4,
+     8,
+     15,
+     20
+    ],
+    "mine": [
+     4,
+     8,
+     5,
+     21
+    ],
+    "agree": false,
+    "tolerance": 0.5,
+    "note": ""
+   },
+   {
+    "claim": "L retr",
+    "quantity": "retr_sum: T-Gen exact min / max over the five unseen logs; gate firing hd min / max; HN-I firing min / max (%)",
+    "experiment": [
+     58,
+     83,
+     6,
+     7,
+     40,
+     60
+    ],
+    "mine": [
+     58,
+     89,
+     6,
+     7,
+     37,
+     60
+    ],
+    "agree": false,
+    "tolerance": 0.5,
+    "note": "T-Gen is 89 on L100-memitw (same row as the development log)"
+   }
+  ]
+ },
+ "problems": [
+  {
+   "where": "e3_llava/code/e3_analyze.py (behaviour(), lines 305-442; paper(), line 553)",
+   "problem": "no paired comparison is computed: H2 and H3 exist only as per-method levels (tables 1 and 4), no difference, no paired interval (PROTOCOL section 4, R6, R10, R25 (3)); e3_qwen/code/e3_analyze.py:472 (endpoints) does it for Qwen",
+   "effect": "no number is wrong; the LLaVA H2 / H3 differences and intervals are missing from results.json and paper_numbers.json",
+   "fix": "add the paired crossed-bootstrap differences (my values: claims_extra.json)"
+  },
+  {
+   "where": "LLaVA summary (text), not the files",
+   "problem": "'smallest self-separation margin is 0.02 on memitw' ignores TB-L1000-memitw (-0.107, two edits non-positive)",
+   "effect": "understates the log-level warning sign at T = 1000",
+   "fix": "quote paper number EthreeLMeThousandMarginMin"
+  },
+  {
+   "where": "e3_qwen/code/e3_analyze.py, e3_llava/code/e3_analyze.py",
+   "problem": "no exact McNemar test for the binary paired comparisons (PROTOCOL section 4); no Holm correction (left to the coordinator; said only in the Qwen report)",
+   "effect": "the per-log H2 / H3 read-outs are uncorrected and descriptive",
+   "fix": "compute from the per-row flags when the confirmatory family is assembled"
+  },
+  {
+   "where": "e3_qwen/code/e3_render.py:275 (MAIN TABLE, COMPACT; table.txt lines 9-139) and both summaries",
+   "problem": "AlphaEdit-style and MEMIT-style logs ([redacted: describes a related submission under double-blind review]) are listed in one table (amendment of 2026-11-10 17:40, item iii); the baselines' rows are identical in both families at equal T by construction (equal solver keys)",
+   "effect": "presentation only",
+   "fix": "one table per family in the paper; state that baseline rows do not depend on the family"
+  },
+  {
+   "where": "e3_qwen/code, e3_llava/code",
+   "problem": "E3 as registered (section 3) lists gate latency and storage against T; neither experiment measures them",
+   "effect": "none on the reported numbers",
+   "fix": "take them from E8 or say so"
+  },
+  {
+   "where": "e3_qwen/code/e3_gate.py (modified 02:49 UTC), e3_render.py (05:35), e3_analyze.py (01:28); e3_llava/code/e3_analyze.py, e3_render.py (03:06)",
+   "problem": "scripts were edited while or after the jobs ran; there is no version history",
+   "effect": "none found: the registered gate cells predate the edit, no cell was computed twice (one job record per log, no second settings), and the delivered scripts reproduce results.json, paper_numbers.json and table.txt exactly",
+   "fix": "none needed; keep the code frozen"
+  },
+  {
+   "where": "both experiments",
+   "problem": "the deployed log's Rel / T-Gen / I-Gen are B = 1 values and differ from the testbed's stored vendor-pass flags (padded batches) on 0-13 edits per metric (largest: TB-Q500-ae-l2_3 Rel 54.6 against 56.4 stored); D1 equals the stored flags on every row",
+   "effect": "documented limitation of the stored metrics; both values are in results.json",
+   "fix": "the paper's table of logs must use the B = 1 values"
+  }
+ ],
+ "must_fix_before_paper": [
+  "compute the LLaVA paired H2 / H3 differences with intervals (missing in e3_llava)",
+  "correct the LLaVA margin statement (T = 1000: -0.107, two edits)",
+  "split every table by log family; no side-by-side of the two families",
+  "McNemar and Holm for the confirmatory comparisons, from the stored per-row flags",
+  "state next to 'far locality': releases on near-scope held-out probes (3-23 %), single draws above the level, and that the bound is void for capped edits (up to 60 / 149 for the default method)",
+  "report H3 pair 2 and the retrieval reference next to pair 1"
+ ],
+ "files": {
+  "compare.json": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/compare.json",
+  "compare_table.txt": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/compare_table.txt",
+  "gate20.json": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/gate20.json",
+  "gate20_table.txt": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/gate20_table.txt",
+  "internal.json": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/internal.json",
+  "mine_qwen.json": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/mine_qwen.json",
+  "mine_llava.json": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/mine_llava.json",
+  "rerender.json": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/rerender.json",
+  "claims.json": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/claims.json",
+  "claims_table.txt": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/claims_table.txt",
+  "claims_extra.json": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/claims_extra.json",
+  "misc.json": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/misc.json",
+  "pub_TB-Q500-ae-l2_3.json": "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/pub_TB-Q500-ae-l2_3.json"
+ }
+}

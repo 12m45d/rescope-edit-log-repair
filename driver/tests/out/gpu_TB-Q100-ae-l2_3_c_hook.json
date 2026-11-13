@@ -1,0 +1,118 @@
+{
+ "n_sequences": 2557,
+ "methods": {
+  "rescope": {
+   "capped_edits": 0,
+   "tf": {
+    "n": 2557,
+    "seconds_full_pass": 239.64154052734375,
+    "n_fired_hook": 699,
+    "n_near": 1,
+    "cpu_vs_hook": 0,
+    "device_vs_hook": 0,
+    "rows_vs_hook": 0,
+    "differing": []
+   },
+   "prompt": {
+    "n": 0
+   }
+  },
+  "cosine": {
+   "capped_edits": 9,
+   "tf": {
+    "n": 2557,
+    "seconds_full_pass": 258.39695048332214,
+    "n_fired_hook": 294,
+    "n_near": 10,
+    "cpu_vs_hook": 0,
+    "device_vs_hook": 0,
+    "rows_vs_hook": 0,
+    "differing": []
+   },
+   "prompt": {
+    "n": 0
+   }
+  }
+ },
+ "dense": {
+  "router": {
+   "n": 853,
+   "threshold": 31.430880430651424,
+   "n_fired_hook": 95,
+   "rows_vs_hook": 0,
+   "differing": [],
+   "seconds_fast": 0.14583587646484375,
+   "seconds_full_pass": 145.02723503112793,
+   "sources": {
+    "pre": 758,
+    "memo": 95,
+    "run": 0,
+    "lib": 0,
+    "forwards": 0,
+    "captures": 0
+   }
+  },
+  "zscore": {
+   "n": 853,
+   "threshold": 4.922373196695223,
+   "n_fired_hook": 39,
+   "rows_vs_hook": 0,
+   "differing": [],
+   "seconds_fast": 11.479921102523804,
+   "seconds_full_pass": 130.7393615245819,
+   "sources": {
+    "pre": 813,
+    "memo": 0,
+    "run": 0,
+    "lib": 40,
+    "forwards": 40,
+    "captures": 0
+   }
+  },
+  "zscore_default": {
+   "n": 853,
+   "threshold": 2.2,
+   "n_fired_hook": 702,
+   "rows_vs_hook": 0,
+   "differing": [],
+   "seconds_fast": 101.00255560874939,
+   "seconds_full_pass": 106.01331567764282,
+   "sources": {
+    "pre": 151,
+    "memo": 0,
+    "run": 0,
+    "lib": 702,
+    "forwards": 702,
+    "captures": 0
+   }
+  }
+ },
+ "hook_mismatch": 0,
+ "note": "cpu_vs_hook = fx.gate.decide (CPU, key cache) against the hook; device_vs_hook = fx.behave's decision (CPU + the rows inside the decision band re-decided on the model's device); rows_vs_hook = the memo path's row against the row of the full pass",
+ "ok": true,
+ "test": "hook",
+ "log": "TB-Q100-ae-l2_3",
+ "seconds_test": 993.09587931633,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 18:28:11",
+ "session_stats": {
+  "rows": 89116,
+  "pre": 60002,
+  "memo": 27612,
+  "run": 9,
+  "lib": 1493,
+  "missing": 0,
+  "forwards": 833,
+  "decodes": 3,
+  "hook_mismatch": 0,
+  "near": 78,
+  "near_changed_on_device": 3,
+  "seconds_model": 179.1922526359558
+ },
+ "peak_gpu_gb": 8.33730173110962,
+ "peak_rss_gb": 8.110694885253906
+}

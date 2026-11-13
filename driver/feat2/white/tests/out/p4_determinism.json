@@ -1,0 +1,35 @@
+{
+ "pass": true,
+ "runs": {
+  "PYTHONHASHSEED=0": {
+   "exit": 0,
+   "identical": {
+    "README.txt": true,
+    "blip2.json": true,
+    "llava.json": true,
+    "qwen25vl.json": true
+   }
+  },
+  "PYTHONHASHSEED=987": {
+   "exit": 0,
+   "identical": {
+    "README.txt": true,
+    "blip2.json": true,
+    "llava.json": true,
+    "qwen25vl.json": true
+   }
+  }
+ },
+ "in_process_render_equals_file": true,
+ "note": "4 files x 2 fresh processes (PYTHONHASHSEED 0, 987) + in-process render: all byte-identical: True",
+ "test": "p4_determinism",
+ "group": "parts",
+ "what": "determinism: a re-run in a fresh process (other hash seeds) reproduces every stored file byte for byte",
+ "seconds": 4.146934509277344,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

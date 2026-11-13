@@ -1,0 +1,283 @@
+[
+ {
+  "log": "TB-Q500-ae-l2_3",
+  "T": 500,
+  "methods": {
+   "rescope": {
+    "thresholds": {
+     "eta_mine": 0.3463330009863156,
+     "eta_library_on_my_keys": 0.3463330009863158,
+     "eta_experiment": 0.3463330009863157,
+     "n_capped_mine": 0,
+     "n_capped_experiment": 0,
+     "thr_min_med_max_mine": [
+      0.37524364400855786,
+      0.4578029250476361,
+      0.8687542259725343
+     ],
+     "thr_min_med_max_experiment": [
+      0.37524364400855803,
+      0.4578029250476362,
+      0.8687542259725346
+     ],
+     "max_abs_thr_diff_mine_vs_library": 6.661338147750939e-16,
+     "bound": 0.04950495049504951,
+     "eta_abs_diff": 1.1102230246251565e-16,
+     "thr_summary_max_abs_diff": 3.3306690738754696e-16
+    },
+    "probes": {
+     "n": 10,
+     "n_missing_in_experiment": 0,
+     "n_differ_fired": 0,
+     "n_differ_D1": 0,
+     "n_differ_exact": 0,
+     "n_experiment_all": 465,
+     "fired_mine": 0.0,
+     "fired_experiment_same_rows": 0.0,
+     "D1_mine": 0.0,
+     "D1_experiment_same_rows": 0.0,
+     "fired_experiment_all_rows": 2.150537634408602,
+     "D1_experiment_all_rows": 2.150537634408602,
+     "n_D1_without_firing_mine": 0
+    },
+    "edits": {
+     "n": 15,
+     "n_missing_in_experiment": 0,
+     "n_differ_exact": 0,
+     "n_differ_fired": 0,
+     "n_differ_own_released_last": 0,
+     "n_edits": 5,
+     "rel": {
+      "exact_mine": 100.0,
+      "exact_experiment_same_edits": 100.0,
+      "released_own_mine": 100.0,
+      "exact_experiment_all_edits": 99.8
+     },
+     "tgen": {
+      "exact_mine": 0.0,
+      "exact_experiment_same_edits": 0.0,
+      "released_own_mine": 0.0,
+      "exact_experiment_all_edits": 24.2
+     },
+     "igen": {
+      "exact_mine": 40.0,
+      "exact_experiment_same_edits": 40.0,
+      "released_own_mine": 40.0,
+      "exact_experiment_all_edits": 56.2
+     }
+    },
+    "coverage_all_edits_gate_level": {
+     "tgen": {
+      "coverage_mine": 24.8,
+      "coverage_experiment": 24.8,
+      "n_flags_differ": 0,
+      "n": 500
+     },
+     "igen": {
+      "coverage_mine": 57.599999999999994,
+      "coverage_experiment": 57.599999999999994,
+      "n_flags_differ": 0,
+      "n": 500
+     },
+     "rel": {
+      "coverage_mine": 100.0,
+      "coverage_experiment": 100.0,
+      "n_flags_differ": 0,
+      "n": 500
+     }
+    }
+   },
+   "rescope_null": {
+    "thresholds": {
+     "eta_mine": 0.322710776744568,
+     "eta_library_on_my_keys": 0.3227107767445637,
+     "eta_experiment": 0.32271077674456367,
+     "n_capped_mine": 0,
+     "n_capped_experiment": 0,
+     "thr_min_med_max_mine": [
+      0.35548285403577246,
+      0.4254882280682386,
+      0.8231749595986064
+     ],
+     "thr_min_med_max_experiment": [
+      0.3554828540357687,
+      0.42548822806823927,
+      0.8231749595986838
+     ],
+     "max_abs_thr_diff_mine_vs_library": 4.742872761198669e-13,
+     "bound": 0.04950495049504951,
+     "eta_abs_diff": 4.3298697960381105e-15,
+     "thr_summary_max_abs_diff": 7.738254481637341e-14
+    },
+    "probes": {
+     "n": 10,
+     "n_missing_in_experiment": 0,
+     "n_differ_fired": 0,
+     "n_differ_D1": 0,
+     "n_differ_exact": 0,
+     "n_experiment_all": 465,
+     "fired_mine": 0.0,
+     "fired_experiment_same_rows": 0.0,
+     "D1_mine": 0.0,
+     "D1_experiment_same_rows": 0.0,
+     "fired_experiment_all_rows": 1.935483870967742,
+     "D1_experiment_all_rows": 1.935483870967742,
+     "n_D1_without_firing_mine": 0
+    },
+    "edits": {
+     "n": 15,
+     "n_missing_in_experiment": 0,
+     "n_differ_exact": 0,
+     "n_differ_fired": 0,
+     "n_differ_own_released_last": 0,
+     "n_edits": 5,
+     "rel": {
+      "exact_mine": 100.0,
+      "exact_experiment_same_edits": 100.0,
+      "released_own_mine": 100.0,
+      "exact_experiment_all_edits": 99.8
+     },
+     "tgen": {
+      "exact_mine": 20.0,
+      "exact_experiment_same_edits": 20.0,
+      "released_own_mine": 20.0,
+      "exact_experiment_all_edits": 29.4
+     },
+     "igen": {
+      "exact_mine": 60.0,
+      "exact_experiment_same_edits": 60.0,
+      "released_own_mine": 60.0,
+      "exact_experiment_all_edits": 60.2
+     }
+    },
+    "coverage_all_edits_gate_level": {
+     "tgen": {
+      "coverage_mine": 30.2,
+      "coverage_experiment": 30.2,
+      "n_flags_differ": 0,
+      "n": 500
+     },
+     "igen": {
+      "coverage_mine": 61.6,
+      "coverage_experiment": 61.6,
+      "n_flags_differ": 0,
+      "n": 500
+     },
+     "rel": {
+      "coverage_mine": 100.0,
+      "coverage_experiment": 100.0,
+      "n_flags_differ": 0,
+      "n": 500
+     }
+    }
+   },
+   "cosine_shared": {
+    "thresholds": {
+     "eta_mine": 0.9465885438922855,
+     "eta_library_on_my_keys": 0.9465885438922855,
+     "eta_experiment": 0.9465885438922859,
+     "n_capped_mine": 0,
+     "n_capped_experiment": 0,
+     "thr_min_med_max_mine": [
+      0.9465885438922855,
+      0.9465885438922855,
+      0.9465885438922855
+     ],
+     "thr_min_med_max_experiment": [
+      0.946588543892286,
+      0.946588543892286,
+      0.946588543892286
+     ],
+     "max_abs_thr_diff_mine_vs_library": 1.1102230246251565e-16,
+     "bound": 0.04975124378109453,
+     "eta_abs_diff": 3.3306690738754696e-16,
+     "thr_summary_max_abs_diff": 4.440892098500626e-16
+    },
+    "probes": {
+     "n": 10,
+     "n_missing_in_experiment": 0,
+     "n_differ_fired": 0,
+     "n_differ_D1": 0,
+     "n_differ_exact": 0,
+     "n_experiment_all": 465,
+     "fired_mine": 20.0,
+     "fired_experiment_same_rows": 20.0,
+     "D1_mine": 20.0,
+     "D1_experiment_same_rows": 20.0,
+     "fired_experiment_all_rows": 5.376344086021505,
+     "D1_experiment_all_rows": 5.376344086021505,
+     "n_D1_without_firing_mine": 0
+    },
+    "edits": {
+     "n": 15,
+     "n_missing_in_experiment": 0,
+     "n_differ_exact": 0,
+     "n_differ_fired": 0,
+     "n_differ_own_released_last": 0,
+     "n_edits": 5,
+     "rel": {
+      "exact_mine": 100.0,
+      "exact_experiment_same_edits": 100.0,
+      "released_own_mine": 100.0,
+      "exact_experiment_all_edits": 99.8
+     },
+     "tgen": {
+      "exact_mine": 0.0,
+      "exact_experiment_same_edits": 0.0,
+      "released_own_mine": 0.0,
+      "exact_experiment_all_edits": 1.0
+     },
+     "igen": {
+      "exact_mine": 40.0,
+      "exact_experiment_same_edits": 40.0,
+      "released_own_mine": 40.0,
+      "exact_experiment_all_edits": 36.8
+     }
+    },
+    "coverage_all_edits_gate_level": {
+     "tgen": {
+      "coverage_mine": 0.6,
+      "coverage_experiment": 0.6,
+      "n_flags_differ": 0,
+      "n": 500
+     },
+     "igen": {
+      "coverage_mine": 37.6,
+      "coverage_experiment": 37.6,
+      "n_flags_differ": 0,
+      "n": 500
+     },
+     "rel": {
+      "coverage_mine": 100.0,
+      "coverage_experiment": 100.0,
+      "n_flags_differ": 0,
+      "n": 500
+     }
+    }
+   }
+  },
+  "n_repair_valid": 489,
+  "cache_check": {
+   "own_rel": {
+    "n": 500,
+    "n_bitwise_equal": 500,
+    "max_abs_diff": 0.0
+   },
+   "calibration": {
+    "n": 200,
+    "n_bitwise_equal": 200,
+    "max_abs_diff": 0.0
+   },
+   "null_sample": {
+    "n": 100,
+    "n_bitwise_equal": 100,
+    "max_abs_diff": 0.0
+   },
+   "rephrase_sample": {
+    "n": 10,
+    "n_bitwise_equal": 10,
+    "max_abs_diff": 0.0
+   }
+  }
+ }
+]

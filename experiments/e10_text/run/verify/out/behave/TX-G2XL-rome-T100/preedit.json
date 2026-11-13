@@ -1,0 +1,266 @@
+{
+ "log": "TX-G2XL-rome-T100",
+ "label": "preedit",
+ "info": {
+  "kind": "weight",
+  "what": "pre-edit weight W_0"
+ },
+ "stats": {
+  "edit.request.exact": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 100,
+   "n_units": 100
+  },
+  "edit.request.own_released": {
+   "value": null,
+   "n": 100
+  },
+  "edit.request.own_released_dec": {
+   "value": null,
+   "n": 100
+  },
+  "edit.paraphrase.exact": {
+   "value": 0.5,
+   "ci_lo": 0.0,
+   "ci_hi": 1.5,
+   "n": 200,
+   "n_units": 100
+  },
+  "edit.paraphrase.own_released": {
+   "value": null,
+   "n": 200
+  },
+  "edit.paraphrase.own_released_dec": {
+   "value": null,
+   "n": 200
+  },
+  "heldout.D1_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.D1_dec": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.kept_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.first_changed_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.fired": {
+   "value": null,
+   "n": 900
+  },
+  "heldout.fired_dec": {
+   "value": null,
+   "n": 900
+  },
+  "heldout.clean.D1_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 899,
+   "n_units": 300
+  },
+  "heldout.clean.D1_dec": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 899,
+   "n_units": 300
+  },
+  "heldout.clean.kept_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 899,
+   "n_units": 300
+  },
+  "heldout.clean.first_changed_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 899,
+   "n_units": 300
+  },
+  "heldout.clean.fired": {
+   "value": null,
+   "n": 899
+  },
+  "heldout.clean.fired_dec": {
+   "value": null,
+   "n": 899
+  },
+  "heldout.near_scope.D1_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 1,
+   "n_units": 1
+  },
+  "heldout.near_scope.D1_dec": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 1,
+   "n_units": 1
+  },
+  "heldout.near_scope.kept_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 1,
+   "n_units": 1
+  },
+  "heldout.near_scope.first_changed_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 1,
+   "n_units": 1
+  },
+  "heldout.near_scope.fired": {
+   "value": null,
+   "n": 1
+  },
+  "heldout.near_scope.fired_dec": {
+   "value": null,
+   "n": 1
+  },
+  "neighborhood.D1_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 1000,
+   "n_units": 100
+  },
+  "neighborhood.D1_dec": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 1000,
+   "n_units": 100
+  },
+  "neighborhood.kept_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 1000,
+   "n_units": 100
+  },
+  "neighborhood.first_changed_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 1000,
+   "n_units": 100
+  },
+  "neighborhood.fired": {
+   "value": null,
+   "n": 1000
+  },
+  "neighborhood.fired_dec": {
+   "value": null,
+   "n": 1000
+  },
+  "neighborhood.clean.D1_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 995,
+   "n_units": 100
+  },
+  "neighborhood.clean.D1_dec": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 995,
+   "n_units": 100
+  },
+  "neighborhood.clean.kept_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 995,
+   "n_units": 100
+  },
+  "neighborhood.clean.first_changed_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 995,
+   "n_units": 100
+  },
+  "neighborhood.clean.fired": {
+   "value": null,
+   "n": 995
+  },
+  "neighborhood.clean.fired_dec": {
+   "value": null,
+   "n": 995
+  },
+  "neighborhood.near_scope.D1_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 5,
+   "n_units": 4
+  },
+  "neighborhood.near_scope.D1_dec": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 5,
+   "n_units": 4
+  },
+  "neighborhood.near_scope.kept_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 5,
+   "n_units": 4
+  },
+  "neighborhood.near_scope.first_changed_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 5,
+   "n_units": 4
+  },
+  "neighborhood.near_scope.fired": {
+   "value": null,
+   "n": 5
+  },
+  "neighborhood.near_scope.fired_dec": {
+   "value": null,
+   "n": 5
+  }
+ },
+ "n_rows": 2200,
+ "seconds": 32.12500309944153,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "5b266fadd236",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "evaluation": "every sampled prompt through the model; verifier's batches; no store"
+}

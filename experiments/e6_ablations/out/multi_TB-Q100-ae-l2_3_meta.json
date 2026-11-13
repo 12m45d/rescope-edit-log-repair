@@ -1,0 +1,57 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "n_draws": 20,
+ "checks": {
+  "role_lastans_d0": {
+   "driver_digest": "d2a91fe2abd1c310",
+   "own_digest": "d2a91fe2abd1c310",
+   "equal": true,
+   "n_capped_driver": 0
+  },
+  "role_lastans_d1": {
+   "driver_digest": "759c29045f0d4d90",
+   "own_digest": "759c29045f0d4d90",
+   "equal": true,
+   "n_capped_driver": 0
+  },
+  "role_lastans_d2": {
+   "driver_digest": "add7cbb5b389ccf7",
+   "own_digest": "add7cbb5b389ccf7",
+   "equal": true,
+   "n_capped_driver": 0
+  },
+  "role_all_d0": {
+   "driver_digest": "f013f427633da495",
+   "own_digest": "f013f427633da495",
+   "equal": true,
+   "n_capped_driver": 2
+  },
+  "role_all_d1": {
+   "driver_digest": "03f802a5105aeef2",
+   "own_digest": "03f802a5105aeef2",
+   "equal": true,
+   "n_capped_driver": 1
+  },
+  "role_all_d2": {
+   "driver_digest": "1f39422022806e09",
+   "own_digest": "1f39422022806e09",
+   "equal": true,
+   "n_capped_driver": 3
+  }
+ },
+ "n_pool": 489,
+ "n_sequences": 2043,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "BEN-T": "not defined: key-level pools hold the last-prompt key only",
+ "assert_clean": {
+  "hook_mismatch": 0,
+  "memo_conflicts": 0,
+  "forwards": 0,
+  "rows": 0
+ },
+ "written": "2026-11-11 20:12:44"
+}

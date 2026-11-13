@@ -1,0 +1,4747 @@
+{
+ "AuditDevHundredVerdict": {
+  "value": "safe",
+  "file": "../../../09_testbed_scale/text_public/audit/verdicts.json",
+  "key": "per_log.TX-G2XL-rome-dev100.verdict"
+ },
+ "AuditT2000Verdict": {
+  "value": "safe",
+  "file": "../../../09_testbed_scale/text_public/audit/verdicts.json",
+  "key": "per_log.TX-G2XL-rome-T2000.verdict"
+ },
+ "AuditT500Verdict": {
+  "value": "safe",
+  "file": "../../../09_testbed_scale/text_public/audit/verdicts.json",
+  "key": "per_log.TX-G2XL-rome-T500.verdict"
+ },
+ "AuditTHundred0Verdict": {
+  "value": "safe",
+  "file": "../../../09_testbed_scale/text_public/audit/verdicts.json",
+  "key": "per_log.TX-G2XL-rome-T1000.verdict"
+ },
+ "AuditTHundredVerdict": {
+  "value": "safe",
+  "file": "../../../09_testbed_scale/text_public/audit/verdicts.json",
+  "key": "per_log.TX-G2XL-rome-T100.verdict"
+ },
+ "BestGateText": {
+  "value": "whitecos_0.1",
+  "file": "out/best_gate_text.json",
+  "key": "selected"
+ },
+ "CertTFiveChecked": {
+  "value": 50521,
+  "file": "out/cert/TX-G2XL-rome-T500.json",
+  "key": "total.n_checked_certified"
+ },
+ "CertTFiveViolations": {
+  "value": 0,
+  "file": "out/cert/TX-G2XL-rome-T500.json",
+  "key": "total.n_violations_certified"
+ },
+ "CertTOneChecked": {
+  "value": 34398,
+  "file": "out/cert/TX-G2XL-rome-T100.json",
+  "key": "total.n_checked_certified"
+ },
+ "CertTOneViolations": {
+  "value": 0,
+  "file": "out/cert/TX-G2XL-rome-T100.json",
+  "key": "total.n_violations_certified"
+ },
+ "EqualTFiveBlocklistNHundredDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveBlocklistNHundredDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveBlocklistNHundredKeptHeldout": {
+  "value": 0.64,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveBlocklistNHundredParExact": {
+  "value": 0.29,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n100.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveBlocklistNHundredReqExact": {
+  "value": 1.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n100.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveBlocklistNOneDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveBlocklistNOneDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveBlocklistNOneKeptHeldout": {
+  "value": 0.64,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveBlocklistNOneParExact": {
+  "value": 0.29,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n1.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveBlocklistNOneReqExact": {
+  "value": 1.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n1.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveBlocklistNTenDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveBlocklistNTenDOneNeighbourhood": {
+  "value": 99.99,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveBlocklistNTenKeptHeldout": {
+  "value": 0.64,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveBlocklistNTenParExact": {
+  "value": 0.29,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n10.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveBlocklistNTenReqExact": {
+  "value": 1.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "blocklist|n10.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveCompMinNHundredDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveCompMinNHundredDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveCompMinNHundredKeptHeldout": {
+  "value": 1.74,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveCompMinNHundredParExact": {
+  "value": 0.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n100.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveCompMinNHundredReqExact": {
+  "value": 0.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n100.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveCompMinNOneDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveCompMinNOneDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveCompMinNOneKeptHeldout": {
+  "value": 0.81,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveCompMinNOneParExact": {
+  "value": 0.19,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n1.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveCompMinNOneReqExact": {
+  "value": 0.58,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n1.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveCompMinNTenDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveCompMinNTenDOneNeighbourhood": {
+  "value": 99.99,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveCompMinNTenKeptHeldout": {
+  "value": 1.26,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveCompMinNTenParExact": {
+  "value": 0.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n10.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveCompMinNTenReqExact": {
+  "value": 0.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "comp_min|n10.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveLeastProtectingNHundredDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveLeastProtectingNHundredDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveLeastProtectingNHundredKeptHeldout": {
+  "value": 4.02,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveLeastProtectingNHundredParExact": {
+  "value": 0.58,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n100.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveLeastProtectingNHundredReqExact": {
+  "value": 1.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n100.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveLeastProtectingNOneDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveLeastProtectingNOneDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveLeastProtectingNOneKeptHeldout": {
+  "value": 4.02,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveLeastProtectingNOneParExact": {
+  "value": 0.58,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n1.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveLeastProtectingNOneReqExact": {
+  "value": 1.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n1.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveLeastProtectingNTenDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveLeastProtectingNTenDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveLeastProtectingNTenKeptHeldout": {
+  "value": 4.02,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveLeastProtectingNTenParExact": {
+  "value": 0.58,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n10.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveLeastProtectingNTenReqExact": {
+  "value": 1.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_protecting|n10.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveLeastSacrificingNHundredDOneHeldout": {
+  "value": 35.5,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveLeastSacrificingNHundredDOneNeighbourhood": {
+  "value": 31.7,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveLeastSacrificingNHundredKeptHeldout": {
+  "value": 91.04,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveLeastSacrificingNHundredParExact": {
+  "value": 54.34,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n100.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveLeastSacrificingNHundredReqExact": {
+  "value": 87.28,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n100.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveLeastSacrificingNOneDOneHeldout": {
+  "value": 41.9,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveLeastSacrificingNOneDOneNeighbourhood": {
+  "value": 35.63,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveLeastSacrificingNOneKeptHeldout": {
+  "value": 88.38,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveLeastSacrificingNOneParExact": {
+  "value": 52.02,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n1.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveLeastSacrificingNOneReqExact": {
+  "value": 87.28,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n1.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveLeastSacrificingNTenDOneHeldout": {
+  "value": 41.4,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveLeastSacrificingNTenDOneNeighbourhood": {
+  "value": 34.93,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveLeastSacrificingNTenKeptHeldout": {
+  "value": 88.53,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveLeastSacrificingNTenParExact": {
+  "value": 52.02,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n10.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveLeastSacrificingNTenReqExact": {
+  "value": 87.28,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "least_sacrificing|n10.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveRbLineageNHundredDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveRbLineageNHundredDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveRbLineageNHundredKeptHeldout": {
+  "value": 16.54,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveRbLineageNHundredParExact": {
+  "value": 1.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n100.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveRbLineageNHundredReqExact": {
+  "value": 1.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n100.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveRbLineageNOneDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveRbLineageNOneDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveRbLineageNOneKeptHeldout": {
+  "value": 12.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveRbLineageNOneParExact": {
+  "value": 1.35,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n1.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveRbLineageNOneReqExact": {
+  "value": 2.7,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n1.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveRbLineageNTenDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveRbLineageNTenDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveRbLineageNTenKeptHeldout": {
+  "value": 12.34,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveRbLineageNTenParExact": {
+  "value": 1.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n10.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveRbLineageNTenReqExact": {
+  "value": 2.31,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_lineage|n10.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveRbSuffixNHundredDOneHeldout": {
+  "value": 0.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveRbSuffixNHundredDOneNeighbourhood": {
+  "value": 0.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveRbSuffixNHundredKeptHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveRbSuffixNHundredParExact": {
+  "value": 0.87,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n100.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveRbSuffixNHundredReqExact": {
+  "value": 0.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n100.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveRbSuffixNOneDOneHeldout": {
+  "value": 88.44,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveRbSuffixNOneDOneNeighbourhood": {
+  "value": 84.21,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveRbSuffixNOneKeptHeldout": {
+  "value": 71.69,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveRbSuffixNOneParExact": {
+  "value": 41.52,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n1.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveRbSuffixNOneReqExact": {
+  "value": 56.07,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n1.metrics.edit.request.exact.before.value"
+ },
+ "EqualTFiveRbSuffixNTenDOneHeldout": {
+  "value": 10.2,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTFiveRbSuffixNTenDOneNeighbourhood": {
+  "value": 9.89,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTFiveRbSuffixNTenKeptHeldout": {
+  "value": 98.86,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTFiveRbSuffixNTenParExact": {
+  "value": 1.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n10.metrics.edit.paraphrase.exact.before.value"
+ },
+ "EqualTFiveRbSuffixNTenReqExact": {
+  "value": 1.35,
+  "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+  "key": "rb_suffix|n10.metrics.edit.request.exact.before.value"
+ },
+ "EqualTOneBlocklistNHundredDOneHeldout": {
+  "value": 93.47,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneBlocklistNHundredDOneNeighbourhood": {
+  "value": 90.2,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneBlocklistNHundredKeptHeldout": {
+  "value": 69.85,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneBlocklistNHundredParExact": {
+  "value": 75.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n100.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneBlocklistNHundredReqExact": {
+  "value": 97.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n100.metrics.edit.request.exact.value"
+ },
+ "EqualTOneBlocklistNOneDOneHeldout": {
+  "value": 93.47,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneBlocklistNOneDOneNeighbourhood": {
+  "value": 90.2,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneBlocklistNOneKeptHeldout": {
+  "value": 69.85,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneBlocklistNOneParExact": {
+  "value": 75.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n1.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneBlocklistNOneReqExact": {
+  "value": 97.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n1.metrics.edit.request.exact.value"
+ },
+ "EqualTOneBlocklistNTenDOneHeldout": {
+  "value": 93.47,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneBlocklistNTenDOneNeighbourhood": {
+  "value": 90.2,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneBlocklistNTenKeptHeldout": {
+  "value": 69.85,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneBlocklistNTenParExact": {
+  "value": 75.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n10.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneBlocklistNTenReqExact": {
+  "value": 97.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "blocklist|n10.metrics.edit.request.exact.value"
+ },
+ "EqualTOneCompMinNHundredDOneHeldout": {
+  "value": 80.87,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneCompMinNHundredDOneNeighbourhood": {
+  "value": 80.9,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneCompMinNHundredKeptHeldout": {
+  "value": 80.48,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneCompMinNHundredParExact": {
+  "value": 71.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n100.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneCompMinNHundredReqExact": {
+  "value": 97.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n100.metrics.edit.request.exact.value"
+ },
+ "EqualTOneCompMinNOneDOneHeldout": {
+  "value": 93.16,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneCompMinNOneDOneNeighbourhood": {
+  "value": 89.83,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneCompMinNOneKeptHeldout": {
+  "value": 70.22,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneCompMinNOneParExact": {
+  "value": 74.33,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n1.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneCompMinNOneReqExact": {
+  "value": 97.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n1.metrics.edit.request.exact.value"
+ },
+ "EqualTOneCompMinNTenDOneHeldout": {
+  "value": 87.97,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneCompMinNTenDOneNeighbourhood": {
+  "value": 86.77,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneCompMinNTenKeptHeldout": {
+  "value": 74.94,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneCompMinNTenParExact": {
+  "value": 73.67,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n10.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneCompMinNTenReqExact": {
+  "value": 97.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "comp_min|n10.metrics.edit.request.exact.value"
+ },
+ "EqualTOneLeastProtectingNHundredDOneHeldout": {
+  "value": 11.77,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneLeastProtectingNHundredDOneNeighbourhood": {
+  "value": 18.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneLeastProtectingNHundredKeptHeldout": {
+  "value": 97.61,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneLeastProtectingNHundredParExact": {
+  "value": 64.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n100.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneLeastProtectingNHundredReqExact": {
+  "value": 96.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n100.metrics.edit.request.exact.value"
+ },
+ "EqualTOneLeastProtectingNOneDOneHeldout": {
+  "value": 18.96,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneLeastProtectingNOneDOneNeighbourhood": {
+  "value": 25.93,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneLeastProtectingNOneKeptHeldout": {
+  "value": 96.43,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneLeastProtectingNOneParExact": {
+  "value": 64.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n1.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneLeastProtectingNOneReqExact": {
+  "value": 96.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n1.metrics.edit.request.exact.value"
+ },
+ "EqualTOneLeastProtectingNTenDOneHeldout": {
+  "value": 17.83,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneLeastProtectingNTenDOneNeighbourhood": {
+  "value": 24.73,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneLeastProtectingNTenKeptHeldout": {
+  "value": 96.6,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneLeastProtectingNTenParExact": {
+  "value": 63.83,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n10.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneLeastProtectingNTenReqExact": {
+  "value": 96.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_protecting|n10.metrics.edit.request.exact.value"
+ },
+ "EqualTOneLeastSacrificingNHundredDOneHeldout": {
+  "value": 11.77,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneLeastSacrificingNHundredDOneNeighbourhood": {
+  "value": 18.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneLeastSacrificingNHundredKeptHeldout": {
+  "value": 97.61,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneLeastSacrificingNHundredParExact": {
+  "value": 64.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n100.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneLeastSacrificingNHundredReqExact": {
+  "value": 96.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n100.metrics.edit.request.exact.value"
+ },
+ "EqualTOneLeastSacrificingNOneDOneHeldout": {
+  "value": 18.96,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneLeastSacrificingNOneDOneNeighbourhood": {
+  "value": 25.93,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneLeastSacrificingNOneKeptHeldout": {
+  "value": 96.43,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneLeastSacrificingNOneParExact": {
+  "value": 64.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n1.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneLeastSacrificingNOneReqExact": {
+  "value": 96.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n1.metrics.edit.request.exact.value"
+ },
+ "EqualTOneLeastSacrificingNTenDOneHeldout": {
+  "value": 17.83,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneLeastSacrificingNTenDOneNeighbourhood": {
+  "value": 24.73,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneLeastSacrificingNTenKeptHeldout": {
+  "value": 96.6,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneLeastSacrificingNTenParExact": {
+  "value": 63.83,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n10.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneLeastSacrificingNTenReqExact": {
+  "value": 96.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "least_sacrificing|n10.metrics.edit.request.exact.value"
+ },
+ "EqualTOneRbLineageNHundredDOneHeldout": {
+  "value": 68.9,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneRbLineageNHundredDOneNeighbourhood": {
+  "value": 67.3,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneRbLineageNHundredKeptHeldout": {
+  "value": 87.14,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneRbLineageNHundredParExact": {
+  "value": 32.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n100.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneRbLineageNHundredReqExact": {
+  "value": 42.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n100.metrics.edit.request.exact.value"
+ },
+ "EqualTOneRbLineageNOneDOneHeldout": {
+  "value": 93.46,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneRbLineageNOneDOneNeighbourhood": {
+  "value": 90.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneRbLineageNOneKeptHeldout": {
+  "value": 69.9,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneRbLineageNOneParExact": {
+  "value": 74.5,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n1.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneRbLineageNOneReqExact": {
+  "value": 96.67,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n1.metrics.edit.request.exact.value"
+ },
+ "EqualTOneRbLineageNTenDOneHeldout": {
+  "value": 90.68,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneRbLineageNTenDOneNeighbourhood": {
+  "value": 87.17,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneRbLineageNTenKeptHeldout": {
+  "value": 73.31,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneRbLineageNTenParExact": {
+  "value": 64.83,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n10.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneRbLineageNTenReqExact": {
+  "value": 85.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_lineage|n10.metrics.edit.request.exact.value"
+ },
+ "EqualTOneRbSuffixNHundredDOneHeldout": {
+  "value": 0.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n100.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneRbSuffixNHundredDOneNeighbourhood": {
+  "value": 0.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n100.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneRbSuffixNHundredKeptHeldout": {
+  "value": 100.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n100.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneRbSuffixNHundredParExact": {
+  "value": 0.5,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n100.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneRbSuffixNHundredReqExact": {
+  "value": 0.0,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n100.metrics.edit.request.exact.value"
+ },
+ "EqualTOneRbSuffixNOneDOneHeldout": {
+  "value": 54.26,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n1.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneRbSuffixNOneDOneNeighbourhood": {
+  "value": 52.27,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n1.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneRbSuffixNOneKeptHeldout": {
+  "value": 90.32,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n1.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneRbSuffixNOneParExact": {
+  "value": 19.17,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n1.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneRbSuffixNOneReqExact": {
+  "value": 30.33,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n1.metrics.edit.request.exact.value"
+ },
+ "EqualTOneRbSuffixNTenDOneHeldout": {
+  "value": 7.56,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n10.metrics.heldout.D1_tf.value"
+ },
+ "EqualTOneRbSuffixNTenDOneNeighbourhood": {
+  "value": 5.8,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n10.metrics.neighborhood.D1_tf.value"
+ },
+ "EqualTOneRbSuffixNTenKeptHeldout": {
+  "value": 99.2,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n10.metrics.heldout.kept_tf.value"
+ },
+ "EqualTOneRbSuffixNTenParExact": {
+  "value": 0.5,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n10.metrics.edit.paraphrase.exact.value"
+ },
+ "EqualTOneRbSuffixNTenReqExact": {
+  "value": 1.33,
+  "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+  "key": "rb_suffix|n10.metrics.edit.request.exact.value"
+ },
+ "GenTFiveDeployedGE": {
+  "value": 578.6,
+  "file": "out/gen/TX-G2XL-rome-T500_summary.json",
+  "key": "rows.deployed.GE"
+ },
+ "GenTFiveMigrationGE": {
+  "value": 540.1,
+  "file": "out/gen/TX-G2XL-rome-T500_summary.json",
+  "key": "rows.rescope.GE"
+ },
+ "GenTFiveMigrationGuardsOffGE": {
+  "value": 626.3,
+  "file": "out/gen/TX-G2XL-rome-T500_summary.json",
+  "key": "rows.rescope@goff.GE"
+ },
+ "GenTFivePreeditGE": {
+  "value": 626.3,
+  "file": "out/gen/TX-G2XL-rome-T500_summary.json",
+  "key": "rows.preedit.GE"
+ },
+ "GenTFiveRepairLogonlyGE": {
+  "value": 431.6,
+  "file": "out/gen/TX-G2XL-rome-T500_summary.json",
+  "key": "rows.where_logonly.GE"
+ },
+ "GenTFiveRepairLogonlyGuardsOffGE": {
+  "value": 617.2,
+  "file": "out/gen/TX-G2XL-rome-T500_summary.json",
+  "key": "rows.where_logonly@goff.GE"
+ },
+ "GenTFiveRepairTwoblockGE": {
+  "value": 431.2,
+  "file": "out/gen/TX-G2XL-rome-T500_summary.json",
+  "key": "rows.where_twoblock.GE"
+ },
+ "GenTFiveRepairTwoblockGuardsOffGE": {
+  "value": 626.3,
+  "file": "out/gen/TX-G2XL-rome-T500_summary.json",
+  "key": "rows.where_twoblock@goff.GE"
+ },
+ "GenTOneDeployedGE": {
+  "value": 594.2,
+  "file": "out/gen/TX-G2XL-rome-T100_summary.json",
+  "key": "rows.deployed.GE"
+ },
+ "GenTOneMigrationGE": {
+  "value": 607.8,
+  "file": "out/gen/TX-G2XL-rome-T100_summary.json",
+  "key": "rows.rescope.GE"
+ },
+ "GenTOnePreeditGE": {
+  "value": 626.3,
+  "file": "out/gen/TX-G2XL-rome-T100_summary.json",
+  "key": "rows.preedit.GE"
+ },
+ "GenTOneRepairLogonlyGE": {
+  "value": 619.5,
+  "file": "out/gen/TX-G2XL-rome-T100_summary.json",
+  "key": "rows.where_logonly.GE"
+ },
+ "GenTOneRepairTwoblockGE": {
+  "value": 618.5,
+  "file": "out/gen/TX-G2XL-rome-T100_summary.json",
+  "key": "rows.where_twoblock.GE"
+ },
+ "RelTFiveBlocklistMOneQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[16].queries_exact_pct.value"
+ },
+ "RelTFiveBlocklistMOneRef": {
+  "value": 0.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[16].reference_preservation.value"
+ },
+ "RelTFiveBlocklistMOneRet": {
+  "value": 2.8,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[16].retention.value"
+ },
+ "RelTFiveBlocklistMOneRetBefore": {
+  "value": 1.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[16].retention_before.value"
+ },
+ "RelTFiveBlocklistMOneTV": {
+  "value": 0.9832,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[16].aggregate_tv_mean.value"
+ },
+ "RelTFiveBlocklistMTenQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[28].queries_exact_pct.value"
+ },
+ "RelTFiveBlocklistMTenRef": {
+  "value": 0.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[28].reference_preservation.value"
+ },
+ "RelTFiveBlocklistMTenRet": {
+  "value": 2.8,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[28].retention.value"
+ },
+ "RelTFiveBlocklistMTenRetBefore": {
+  "value": 1.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[28].retention_before.value"
+ },
+ "RelTFiveBlocklistMTenTV": {
+  "value": 0.9832,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[28].aggregate_tv_mean.value"
+ },
+ "RelTFiveBlocklistMThreeQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[22].queries_exact_pct.value"
+ },
+ "RelTFiveBlocklistMThreeRef": {
+  "value": 0.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[22].reference_preservation.value"
+ },
+ "RelTFiveBlocklistMThreeRet": {
+  "value": 2.8,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[22].retention.value"
+ },
+ "RelTFiveBlocklistMThreeRetBefore": {
+  "value": 1.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[22].retention_before.value"
+ },
+ "RelTFiveBlocklistMThreeTV": {
+  "value": 0.9832,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[22].aggregate_tv_mean.value"
+ },
+ "RelTFiveCompMinMOneQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[15].queries_exact_pct.value"
+ },
+ "RelTFiveCompMinMOneRef": {
+  "value": 0.71,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[15].reference_preservation.value"
+ },
+ "RelTFiveCompMinMOneRet": {
+  "value": 1.8,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[15].retention.value"
+ },
+ "RelTFiveCompMinMOneRetBefore": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[15].retention_before.value"
+ },
+ "RelTFiveCompMinMOneTV": {
+  "value": 0.9782,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[15].aggregate_tv_mean.value"
+ },
+ "RelTFiveCompMinMTenQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[27].queries_exact_pct.value"
+ },
+ "RelTFiveCompMinMTenRef": {
+  "value": 3.01,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[27].reference_preservation.value"
+ },
+ "RelTFiveCompMinMTenRet": {
+  "value": 1.27,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[27].retention.value"
+ },
+ "RelTFiveCompMinMTenRetBefore": {
+  "value": 0.58,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[27].retention_before.value"
+ },
+ "RelTFiveCompMinMTenTV": {
+  "value": 0.9405,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[27].aggregate_tv_mean.value"
+ },
+ "RelTFiveCompMinMThreeQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[21].queries_exact_pct.value"
+ },
+ "RelTFiveCompMinMThreeRef": {
+  "value": 1.71,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[21].reference_preservation.value"
+ },
+ "RelTFiveCompMinMThreeRet": {
+  "value": 1.47,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[21].retention.value"
+ },
+ "RelTFiveCompMinMThreeRetBefore": {
+  "value": 0.39,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[21].retention_before.value"
+ },
+ "RelTFiveCompMinMThreeTV": {
+  "value": 0.9629,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[21].aggregate_tv_mean.value"
+ },
+ "RelTFiveDeployedQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[1].queries_exact_pct.value"
+ },
+ "RelTFiveDeployedRef": {
+  "value": 0.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[1].reference_preservation.value"
+ },
+ "RelTFiveDeployedRet": {
+  "value": 2.8,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[1].retention.value"
+ },
+ "RelTFiveDeployedRetBefore": {
+  "value": 1.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[1].retention_before.value"
+ },
+ "RelTFiveDeployedTV": {
+  "value": 0.9832,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[1].aggregate_tv_mean.value"
+ },
+ "RelTFiveLeastProtectingMOneQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[12].queries_exact_pct.value"
+ },
+ "RelTFiveLeastProtectingMOneRef": {
+  "value": 3.04,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[12].reference_preservation.value"
+ },
+ "RelTFiveLeastProtectingMOneRet": {
+  "value": 2.2,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[12].retention.value"
+ },
+ "RelTFiveLeastProtectingMOneRetBefore": {
+  "value": 1.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[12].retention_before.value"
+ },
+ "RelTFiveLeastProtectingMOneTV": {
+  "value": 0.9472,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[12].aggregate_tv_mean.value"
+ },
+ "RelTFiveLeastProtectingMTenQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[24].queries_exact_pct.value"
+ },
+ "RelTFiveLeastProtectingMTenRef": {
+  "value": 3.04,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[24].reference_preservation.value"
+ },
+ "RelTFiveLeastProtectingMTenRet": {
+  "value": 2.2,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[24].retention.value"
+ },
+ "RelTFiveLeastProtectingMTenRetBefore": {
+  "value": 1.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[24].retention_before.value"
+ },
+ "RelTFiveLeastProtectingMTenTV": {
+  "value": 0.9472,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[24].aggregate_tv_mean.value"
+ },
+ "RelTFiveLeastProtectingMThreeQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[18].queries_exact_pct.value"
+ },
+ "RelTFiveLeastProtectingMThreeRef": {
+  "value": 3.04,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[18].reference_preservation.value"
+ },
+ "RelTFiveLeastProtectingMThreeRet": {
+  "value": 2.2,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[18].retention.value"
+ },
+ "RelTFiveLeastProtectingMThreeRetBefore": {
+  "value": 1.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[18].retention_before.value"
+ },
+ "RelTFiveLeastProtectingMThreeTV": {
+  "value": 0.9472,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[18].aggregate_tv_mean.value"
+ },
+ "RelTFiveLeastSacrificingMOneQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[11].queries_exact_pct.value"
+ },
+ "RelTFiveLeastSacrificingMOneRef": {
+  "value": 90.69,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[11].reference_preservation.value"
+ },
+ "RelTFiveLeastSacrificingMOneRet": {
+  "value": 37.6,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[11].retention.value"
+ },
+ "RelTFiveLeastSacrificingMOneRetBefore": {
+  "value": 87.28,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[11].retention_before.value"
+ },
+ "RelTFiveLeastSacrificingMOneTV": {
+  "value": 0.1321,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[11].aggregate_tv_mean.value"
+ },
+ "RelTFiveLeastSacrificingMTenQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[23].queries_exact_pct.value"
+ },
+ "RelTFiveLeastSacrificingMTenRef": {
+  "value": 93.59,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[23].reference_preservation.value"
+ },
+ "RelTFiveLeastSacrificingMTenRet": {
+  "value": 37.6,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[23].retention.value"
+ },
+ "RelTFiveLeastSacrificingMTenRetBefore": {
+  "value": 87.28,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[23].retention_before.value"
+ },
+ "RelTFiveLeastSacrificingMTenTV": {
+  "value": 0.1217,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[23].aggregate_tv_mean.value"
+ },
+ "RelTFiveLeastSacrificingMThreeQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[17].queries_exact_pct.value"
+ },
+ "RelTFiveLeastSacrificingMThreeRef": {
+  "value": 91.67,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[17].reference_preservation.value"
+ },
+ "RelTFiveLeastSacrificingMThreeRet": {
+  "value": 37.6,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[17].retention.value"
+ },
+ "RelTFiveLeastSacrificingMThreeRetBefore": {
+  "value": 87.28,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[17].retention_before.value"
+ },
+ "RelTFiveLeastSacrificingMThreeTV": {
+  "value": 0.1302,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[17].aggregate_tv_mean.value"
+ },
+ "RelTFiveLookupQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[10].queries_exact_pct.value"
+ },
+ "RelTFiveLookupRef": {
+  "value": 99.6,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[10].reference_preservation.value"
+ },
+ "RelTFiveLookupRet": {
+  "value": 39.6,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[10].retention.value"
+ },
+ "RelTFiveLookupRetBefore": {
+  "value": 98.84,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[10].retention_before.value"
+ },
+ "RelTFiveLookupTV": {
+  "value": 0.0967,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[10].aggregate_tv_mean.value"
+ },
+ "RelTFiveMigrationGuardsOffQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[7].queries_exact_pct.value"
+ },
+ "RelTFiveMigrationGuardsOffRef": {
+  "value": 98.64,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[7].reference_preservation.value"
+ },
+ "RelTFiveMigrationGuardsOffRet": {
+  "value": 25.8,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[7].retention.value"
+ },
+ "RelTFiveMigrationGuardsOffRetBefore": {
+  "value": 64.35,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[7].retention_before.value"
+ },
+ "RelTFiveMigrationGuardsOffTV": {
+  "value": 0.123,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[7].aggregate_tv_mean.value"
+ },
+ "RelTFiveMigrationQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[4].queries_exact_pct.value"
+ },
+ "RelTFiveMigrationRef": {
+  "value": 10.23,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[4].reference_preservation.value"
+ },
+ "RelTFiveMigrationRet": {
+  "value": 13.2,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[4].retention.value"
+ },
+ "RelTFiveMigrationRetBefore": {
+  "value": 15.61,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[4].retention_before.value"
+ },
+ "RelTFiveMigrationTV": {
+  "value": 0.8217,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[4].aggregate_tv_mean.value"
+ },
+ "RelTFiveOracleDeleteSplitQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[9].queries_exact_pct.value"
+ },
+ "RelTFiveOracleDeleteSplitRef": {
+  "value": 0.72,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[9].reference_preservation.value"
+ },
+ "RelTFiveOracleDeleteSplitRet": {
+  "value": 2.2,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[9].retention.value"
+ },
+ "RelTFiveOracleDeleteSplitRetBefore": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[9].retention_before.value"
+ },
+ "RelTFiveOracleDeleteSplitTV": {
+  "value": 0.9743,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[9].aggregate_tv_mean.value"
+ },
+ "RelTFiveOverheadDeployedWeight": {
+  "value": 1.005,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T500.deployed weight.ratio_median_to_pre_edit"
+ },
+ "RelTFiveOverheadLookupSubject": {
+  "value": 1.055,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T500.lookup_subject.ratio_median_to_pre_edit"
+ },
+ "RelTFiveOverheadMigrationHookAllPositions": {
+  "value": 1.141,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T500.migration (hook, all positions).ratio_median_to_pre_edit"
+ },
+ "RelTFiveOverheadPreEditWeight": {
+  "value": 1.0,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T500.pre-edit weight.ratio_median_to_pre_edit"
+ },
+ "RelTFiveOverheadRescopeWLogOnlyHookAllPositions": {
+  "value": 1.149,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T500.ReScope-W log-only (hook, all positions).ratio_median_to_pre_edit"
+ },
+ "RelTFiveOverheadRescopeWTwoBlockHookAllPositions": {
+  "value": 1.136,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T500.ReScope-W two-block (hook, all positions).ratio_median_to_pre_edit"
+ },
+ "RelTFiveRbLineageMOneQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[14].queries_exact_pct.value"
+ },
+ "RelTFiveRbLineageMOneRef": {
+  "value": 25.27,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[14].reference_preservation.value"
+ },
+ "RelTFiveRbLineageMOneRet": {
+  "value": 16.4,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[14].retention.value"
+ },
+ "RelTFiveRbLineageMOneRetBefore": {
+  "value": 2.12,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[14].retention_before.value"
+ },
+ "RelTFiveRbLineageMOneTV": {
+  "value": 0.6258,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[14].aggregate_tv_mean.value"
+ },
+ "RelTFiveRbLineageMTenQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[26].queries_exact_pct.value"
+ },
+ "RelTFiveRbLineageMTenRef": {
+  "value": 38.6,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[26].reference_preservation.value"
+ },
+ "RelTFiveRbLineageMTenRet": {
+  "value": 11.07,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[26].retention.value"
+ },
+ "RelTFiveRbLineageMTenRetBefore": {
+  "value": 3.47,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[26].retention_before.value"
+ },
+ "RelTFiveRbLineageMTenTV": {
+  "value": 0.5074,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[26].aggregate_tv_mean.value"
+ },
+ "RelTFiveRbLineageMThreeQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[20].queries_exact_pct.value"
+ },
+ "RelTFiveRbLineageMThreeRef": {
+  "value": 30.07,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[20].reference_preservation.value"
+ },
+ "RelTFiveRbLineageMThreeRet": {
+  "value": 15.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[20].retention.value"
+ },
+ "RelTFiveRbLineageMThreeRetBefore": {
+  "value": 2.31,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[20].retention_before.value"
+ },
+ "RelTFiveRbLineageMThreeTV": {
+  "value": 0.5843,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[20].aggregate_tv_mean.value"
+ },
+ "RelTFiveRbScreenQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[8].queries_exact_pct.value"
+ },
+ "RelTFiveRbScreenRef": {
+  "value": 24.56,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[8].reference_preservation.value"
+ },
+ "RelTFiveRbScreenRet": {
+  "value": 17.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[8].retention.value"
+ },
+ "RelTFiveRbScreenRetBefore": {
+  "value": 2.31,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[8].retention_before.value"
+ },
+ "RelTFiveRbScreenTV": {
+  "value": 0.634,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[8].aggregate_tv_mean.value"
+ },
+ "RelTFiveRbSuffixMOneQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[13].queries_exact_pct.value"
+ },
+ "RelTFiveRbSuffixMOneRef": {
+  "value": 95.61,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[13].reference_preservation.value"
+ },
+ "RelTFiveRbSuffixMOneRet": {
+  "value": 2.67,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[13].retention.value"
+ },
+ "RelTFiveRbSuffixMOneRetBefore": {
+  "value": 7.13,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[13].retention_before.value"
+ },
+ "RelTFiveRbSuffixMOneTV": {
+  "value": 0.1608,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[13].aggregate_tv_mean.value"
+ },
+ "RelTFiveRbSuffixMTenQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[25].queries_exact_pct.value"
+ },
+ "RelTFiveRbSuffixMTenRef": {
+  "value": 100.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[25].reference_preservation.value"
+ },
+ "RelTFiveRbSuffixMTenRet": {
+  "value": 0.2,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[25].retention.value"
+ },
+ "RelTFiveRbSuffixMTenRetBefore": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[25].retention_before.value"
+ },
+ "RelTFiveRbSuffixMTenTV": {
+  "value": 0.1523,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[25].aggregate_tv_mean.value"
+ },
+ "RelTFiveRbSuffixMThreeQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[19].queries_exact_pct.value"
+ },
+ "RelTFiveRbSuffixMThreeRef": {
+  "value": 99.8,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[19].reference_preservation.value"
+ },
+ "RelTFiveRbSuffixMThreeRet": {
+  "value": 0.27,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[19].retention.value"
+ },
+ "RelTFiveRbSuffixMThreeRetBefore": {
+  "value": 0.19,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[19].retention_before.value"
+ },
+ "RelTFiveRbSuffixMThreeTV": {
+  "value": 0.1523,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[19].aggregate_tv_mean.value"
+ },
+ "RelTFiveRepairLogonlyGuardsOffQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[5].queries_exact_pct.value"
+ },
+ "RelTFiveRepairLogonlyGuardsOffRef": {
+  "value": 90.52,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[5].reference_preservation.value"
+ },
+ "RelTFiveRepairLogonlyGuardsOffRet": {
+  "value": 37.6,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[5].retention.value"
+ },
+ "RelTFiveRepairLogonlyGuardsOffRetBefore": {
+  "value": 87.28,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[5].retention_before.value"
+ },
+ "RelTFiveRepairLogonlyGuardsOffTV": {
+  "value": 0.1331,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[5].aggregate_tv_mean.value"
+ },
+ "RelTFiveRepairLogonlyQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[2].queries_exact_pct.value"
+ },
+ "RelTFiveRepairLogonlyRef": {
+  "value": 3.04,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[2].reference_preservation.value"
+ },
+ "RelTFiveRepairLogonlyRet": {
+  "value": 2.2,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[2].retention.value"
+ },
+ "RelTFiveRepairLogonlyRetBefore": {
+  "value": 1.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[2].retention_before.value"
+ },
+ "RelTFiveRepairLogonlyTV": {
+  "value": 0.9472,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[2].aggregate_tv_mean.value"
+ },
+ "RelTFiveRepairTwoblockGuardsOffQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[6].queries_exact_pct.value"
+ },
+ "RelTFiveRepairTwoblockGuardsOffRef": {
+  "value": 98.87,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[6].reference_preservation.value"
+ },
+ "RelTFiveRepairTwoblockGuardsOffRet": {
+  "value": 24.33,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[6].retention.value"
+ },
+ "RelTFiveRepairTwoblockGuardsOffRetBefore": {
+  "value": 56.65,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[6].retention_before.value"
+ },
+ "RelTFiveRepairTwoblockGuardsOffTV": {
+  "value": 0.1212,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[6].aggregate_tv_mean.value"
+ },
+ "RelTFiveRepairTwoblockQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[3].queries_exact_pct.value"
+ },
+ "RelTFiveRepairTwoblockRef": {
+  "value": 2.85,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[3].reference_preservation.value"
+ },
+ "RelTFiveRepairTwoblockRet": {
+  "value": 2.2,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[3].retention.value"
+ },
+ "RelTFiveRepairTwoblockRetBefore": {
+  "value": 1.16,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[3].retention_before.value"
+ },
+ "RelTFiveRepairTwoblockTV": {
+  "value": 0.9497,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[3].aggregate_tv_mean.value"
+ },
+ "RelTFiveRestoreBaseQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[0].queries_exact_pct.value"
+ },
+ "RelTFiveRestoreBaseRef": {
+  "value": 100.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[0].reference_preservation.value"
+ },
+ "RelTFiveRestoreBaseRet": {
+  "value": 0.2,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[0].retention.value"
+ },
+ "RelTFiveRestoreBaseRetBefore": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[0].retention_before.value"
+ },
+ "RelTFiveRestoreBaseTV": {
+  "value": 0.1523,
+  "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+  "key": "rows[0].aggregate_tv_mean.value"
+ },
+ "RelTOneBlocklistMOneQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[12].queries_exact_pct.value"
+ },
+ "RelTOneBlocklistMOneRef": {
+  "value": 70.28,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[12].reference_preservation.value"
+ },
+ "RelTOneBlocklistMOneRet": {
+  "value": 97.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[12].retention.value"
+ },
+ "RelTOneBlocklistMOneTV": {
+  "value": 0.2368,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[12].aggregate_tv_mean.value"
+ },
+ "RelTOneBlocklistMTenQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[24].queries_exact_pct.value"
+ },
+ "RelTOneBlocklistMTenRef": {
+  "value": 70.28,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[24].reference_preservation.value"
+ },
+ "RelTOneBlocklistMTenRet": {
+  "value": 97.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[24].retention.value"
+ },
+ "RelTOneBlocklistMTenTV": {
+  "value": 0.2368,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[24].aggregate_tv_mean.value"
+ },
+ "RelTOneBlocklistMThreeQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[18].queries_exact_pct.value"
+ },
+ "RelTOneBlocklistMThreeRef": {
+  "value": 70.28,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[18].reference_preservation.value"
+ },
+ "RelTOneBlocklistMThreeRet": {
+  "value": 97.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[18].retention.value"
+ },
+ "RelTOneBlocklistMThreeTV": {
+  "value": 0.2368,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[18].aggregate_tv_mean.value"
+ },
+ "RelTOneCompMinMOneQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[11].queries_exact_pct.value"
+ },
+ "RelTOneCompMinMOneRef": {
+  "value": 73.15,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[11].reference_preservation.value"
+ },
+ "RelTOneCompMinMOneRet": {
+  "value": 97.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[11].retention.value"
+ },
+ "RelTOneCompMinMOneTV": {
+  "value": 0.2091,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[11].aggregate_tv_mean.value"
+ },
+ "RelTOneCompMinMTenQExact": {
+  "value": 2.08,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[23].queries_exact_pct.value"
+ },
+ "RelTOneCompMinMTenRef": {
+  "value": 82.15,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[23].reference_preservation.value"
+ },
+ "RelTOneCompMinMTenRet": {
+  "value": 97.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[23].retention.value"
+ },
+ "RelTOneCompMinMTenTV": {
+  "value": 0.1315,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[23].aggregate_tv_mean.value"
+ },
+ "RelTOneCompMinMThreeQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[17].queries_exact_pct.value"
+ },
+ "RelTOneCompMinMThreeRef": {
+  "value": 78.01,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[17].reference_preservation.value"
+ },
+ "RelTOneCompMinMThreeRet": {
+  "value": 97.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[17].retention.value"
+ },
+ "RelTOneCompMinMThreeTV": {
+  "value": 0.1693,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[17].aggregate_tv_mean.value"
+ },
+ "RelTOneDeployedQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[1].queries_exact_pct.value"
+ },
+ "RelTOneDeployedRef": {
+  "value": 70.28,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[1].reference_preservation.value"
+ },
+ "RelTOneDeployedRet": {
+  "value": 97.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[1].retention.value"
+ },
+ "RelTOneDeployedTV": {
+  "value": 0.2368,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[1].aggregate_tv_mean.value"
+ },
+ "RelTOneLeastProtectingMOneQExact": {
+  "value": 16.67,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[8].queries_exact_pct.value"
+ },
+ "RelTOneLeastProtectingMOneRef": {
+  "value": 95.88,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[8].reference_preservation.value"
+ },
+ "RelTOneLeastProtectingMOneRet": {
+  "value": 96.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[8].retention.value"
+ },
+ "RelTOneLeastProtectingMOneTV": {
+  "value": 0.0442,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[8].aggregate_tv_mean.value"
+ },
+ "RelTOneLeastProtectingMTenQExact": {
+  "value": 32.29,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[20].queries_exact_pct.value"
+ },
+ "RelTOneLeastProtectingMTenRef": {
+  "value": 97.33,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[20].reference_preservation.value"
+ },
+ "RelTOneLeastProtectingMTenRet": {
+  "value": 96.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[20].retention.value"
+ },
+ "RelTOneLeastProtectingMTenTV": {
+  "value": 0.0321,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[20].aggregate_tv_mean.value"
+ },
+ "RelTOneLeastProtectingMThreeQExact": {
+  "value": 21.88,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[14].queries_exact_pct.value"
+ },
+ "RelTOneLeastProtectingMThreeRef": {
+  "value": 96.44,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[14].reference_preservation.value"
+ },
+ "RelTOneLeastProtectingMThreeRet": {
+  "value": 96.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[14].retention.value"
+ },
+ "RelTOneLeastProtectingMThreeTV": {
+  "value": 0.0399,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[14].aggregate_tv_mean.value"
+ },
+ "RelTOneLeastSacrificingMOneQExact": {
+  "value": 16.67,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[7].queries_exact_pct.value"
+ },
+ "RelTOneLeastSacrificingMOneRef": {
+  "value": 95.88,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[7].reference_preservation.value"
+ },
+ "RelTOneLeastSacrificingMOneRet": {
+  "value": 96.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[7].retention.value"
+ },
+ "RelTOneLeastSacrificingMOneTV": {
+  "value": 0.0442,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[7].aggregate_tv_mean.value"
+ },
+ "RelTOneLeastSacrificingMTenQExact": {
+  "value": 32.29,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[19].queries_exact_pct.value"
+ },
+ "RelTOneLeastSacrificingMTenRef": {
+  "value": 97.33,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[19].reference_preservation.value"
+ },
+ "RelTOneLeastSacrificingMTenRet": {
+  "value": 96.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[19].retention.value"
+ },
+ "RelTOneLeastSacrificingMTenTV": {
+  "value": 0.0321,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[19].aggregate_tv_mean.value"
+ },
+ "RelTOneLeastSacrificingMThreeQExact": {
+  "value": 21.88,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[13].queries_exact_pct.value"
+ },
+ "RelTOneLeastSacrificingMThreeRef": {
+  "value": 96.44,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[13].reference_preservation.value"
+ },
+ "RelTOneLeastSacrificingMThreeRet": {
+  "value": 96.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[13].retention.value"
+ },
+ "RelTOneLeastSacrificingMThreeTV": {
+  "value": 0.0399,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[13].aggregate_tv_mean.value"
+ },
+ "RelTOneLookupQExact": {
+  "value": 93.75,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[6].queries_exact_pct.value"
+ },
+ "RelTOneLookupRef": {
+  "value": 99.92,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[6].reference_preservation.value"
+ },
+ "RelTOneLookupRet": {
+  "value": 100.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[6].retention.value"
+ },
+ "RelTOneLookupTV": {
+  "value": 0.0006,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[6].aggregate_tv_mean.value"
+ },
+ "RelTOneMigrationQExact": {
+  "value": 44.79,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[4].queries_exact_pct.value"
+ },
+ "RelTOneMigrationRef": {
+  "value": 97.25,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[4].reference_preservation.value"
+ },
+ "RelTOneMigrationRet": {
+  "value": 100.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[4].retention.value"
+ },
+ "RelTOneMigrationTV": {
+  "value": 0.0322,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[4].aggregate_tv_mean.value"
+ },
+ "RelTOneOverheadDeployedWeight": {
+  "value": 1.014,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T100.deployed weight.ratio_median_to_pre_edit"
+ },
+ "RelTOneOverheadLookupSubject": {
+  "value": 1.02,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T100.lookup_subject.ratio_median_to_pre_edit"
+ },
+ "RelTOneOverheadMigrationHookAllPositions": {
+  "value": 1.055,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T100.migration (hook, all positions).ratio_median_to_pre_edit"
+ },
+ "RelTOneOverheadPreEditWeight": {
+  "value": 1.0,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T100.pre-edit weight.ratio_median_to_pre_edit"
+ },
+ "RelTOneOverheadRescopeWLogOnlyHookAllPositions": {
+  "value": 1.084,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T100.ReScope-W log-only (hook, all positions).ratio_median_to_pre_edit"
+ },
+ "RelTOneOverheadRescopeWTwoBlockHookAllPositions": {
+  "value": 1.052,
+  "file": "out/r22/overhead.json",
+  "key": "logs.TX-G2XL-rome-T100.ReScope-W two-block (hook, all positions).ratio_median_to_pre_edit"
+ },
+ "RelTOneRbLineageMOneQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[10].queries_exact_pct.value"
+ },
+ "RelTOneRbLineageMOneRef": {
+  "value": 73.72,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[10].reference_preservation.value"
+ },
+ "RelTOneRbLineageMOneRet": {
+  "value": 86.33,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[10].retention.value"
+ },
+ "RelTOneRbLineageMOneTV": {
+  "value": 0.2065,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[10].aggregate_tv_mean.value"
+ },
+ "RelTOneRbLineageMTenQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[22].queries_exact_pct.value"
+ },
+ "RelTOneRbLineageMTenRef": {
+  "value": 86.63,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[22].reference_preservation.value"
+ },
+ "RelTOneRbLineageMTenRet": {
+  "value": 41.67,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[22].retention.value"
+ },
+ "RelTOneRbLineageMTenTV": {
+  "value": 0.1246,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[22].aggregate_tv_mean.value"
+ },
+ "RelTOneRbLineageMThreeQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[16].queries_exact_pct.value"
+ },
+ "RelTOneRbLineageMThreeRef": {
+  "value": 78.56,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[16].reference_preservation.value"
+ },
+ "RelTOneRbLineageMThreeRet": {
+  "value": 68.33,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[16].retention.value"
+ },
+ "RelTOneRbLineageMThreeTV": {
+  "value": 0.1767,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[16].aggregate_tv_mean.value"
+ },
+ "RelTOneRbScreenQExact": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[5].queries_exact_pct.value"
+ },
+ "RelTOneRbScreenRef": {
+  "value": 70.28,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[5].reference_preservation.value"
+ },
+ "RelTOneRbScreenRet": {
+  "value": 97.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[5].retention.value"
+ },
+ "RelTOneRbScreenTV": {
+  "value": 0.2368,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[5].aggregate_tv_mean.value"
+ },
+ "RelTOneRbSuffixMOneQExact": {
+  "value": 1.04,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[9].queries_exact_pct.value"
+ },
+ "RelTOneRbSuffixMOneRef": {
+  "value": 95.29,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[9].reference_preservation.value"
+ },
+ "RelTOneRbSuffixMOneRet": {
+  "value": 13.67,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[9].retention.value"
+ },
+ "RelTOneRbSuffixMOneTV": {
+  "value": 0.0615,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[9].aggregate_tv_mean.value"
+ },
+ "RelTOneRbSuffixMTenQExact": {
+  "value": 3.12,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[21].queries_exact_pct.value"
+ },
+ "RelTOneRbSuffixMTenRef": {
+  "value": 100.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[21].reference_preservation.value"
+ },
+ "RelTOneRbSuffixMTenRet": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[21].retention.value"
+ },
+ "RelTOneRbSuffixMTenTV": {
+  "value": 0.0372,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[21].aggregate_tv_mean.value"
+ },
+ "RelTOneRbSuffixMThreeQExact": {
+  "value": 4.17,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[15].queries_exact_pct.value"
+ },
+ "RelTOneRbSuffixMThreeRef": {
+  "value": 99.28,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[15].reference_preservation.value"
+ },
+ "RelTOneRbSuffixMThreeRet": {
+  "value": 1.33,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[15].retention.value"
+ },
+ "RelTOneRbSuffixMThreeTV": {
+  "value": 0.0413,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[15].aggregate_tv_mean.value"
+ },
+ "RelTOneRepairLogonlyQExact": {
+  "value": 15.62,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[2].queries_exact_pct.value"
+ },
+ "RelTOneRepairLogonlyRef": {
+  "value": 95.56,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[2].reference_preservation.value"
+ },
+ "RelTOneRepairLogonlyRet": {
+  "value": 96.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[2].retention.value"
+ },
+ "RelTOneRepairLogonlyTV": {
+  "value": 0.0473,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[2].aggregate_tv_mean.value"
+ },
+ "RelTOneRepairTwoblockQExact": {
+  "value": 62.5,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[3].queries_exact_pct.value"
+ },
+ "RelTOneRepairTwoblockRef": {
+  "value": 99.04,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[3].reference_preservation.value"
+ },
+ "RelTOneRepairTwoblockRet": {
+  "value": 95.67,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[3].retention.value"
+ },
+ "RelTOneRepairTwoblockTV": {
+  "value": 0.014,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[3].aggregate_tv_mean.value"
+ },
+ "RelTOneRestoreBaseQExact": {
+  "value": 3.12,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[0].queries_exact_pct.value"
+ },
+ "RelTOneRestoreBaseRef": {
+  "value": 100.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[0].reference_preservation.value"
+ },
+ "RelTOneRestoreBaseRet": {
+  "value": 0.0,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[0].retention.value"
+ },
+ "RelTOneRestoreBaseTV": {
+  "value": 0.0372,
+  "file": "out/summary/r22_TX-G2XL-rome-T100.json",
+  "key": "rows[0].aggregate_tv_mean.value"
+ },
+ "ScreenTFiveExplodingPrecision": {
+  "value": 83.3,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T500.against.exploding_norm.precision"
+ },
+ "ScreenTFiveExplodingRecall": {
+  "value": 62.5,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T500.against.exploding_norm.recall"
+ },
+ "ScreenTFiveFirstTokenPrecision": {
+  "value": 50.0,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T500.against.first_token_subject.precision"
+ },
+ "ScreenTFiveFirstTokenRecall": {
+  "value": 100.0,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T500.against.first_token_subject.recall"
+ },
+ "ScreenTFiveFlagged": {
+  "value": 6,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T500.n_flagged"
+ },
+ "ScreenTOneFlagged": {
+  "value": 0,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T100.n_flagged"
+ },
+ "ScreenTThousandExplodingPrecision": {
+  "value": 53.8,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T1000.against.exploding_norm.precision"
+ },
+ "ScreenTThousandExplodingRecall": {
+  "value": 70.0,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T1000.against.exploding_norm.recall"
+ },
+ "ScreenTThousandFirstTokenPrecision": {
+  "value": 30.8,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T1000.against.first_token_subject.precision"
+ },
+ "ScreenTThousandFirstTokenRecall": {
+  "value": 100.0,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T1000.against.first_token_subject.recall"
+ },
+ "ScreenTThousandFlagged": {
+  "value": 13,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T1000.n_flagged"
+ },
+ "ScreenTTwoThousandExplodingPrecision": {
+  "value": 41.4,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T2000.against.exploding_norm.precision"
+ },
+ "ScreenTTwoThousandExplodingRecall": {
+  "value": 60.0,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T2000.against.exploding_norm.recall"
+ },
+ "ScreenTTwoThousandFirstTokenPrecision": {
+  "value": 27.6,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T2000.against.first_token_subject.precision"
+ },
+ "ScreenTTwoThousandFirstTokenRecall": {
+  "value": 100.0,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T2000.against.first_token_subject.recall"
+ },
+ "ScreenTTwoThousandFlagged": {
+  "value": 29,
+  "file": "out/screening.json",
+  "key": "logs.TX-G2XL-rome-T2000.n_flagged"
+ },
+ "TextTFiveBestGateCapped": {
+  "value": 1.75,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.whitecos_0.1.cal.n_edits_capped.mean"
+ },
+ "TextTFiveBestGateCoverage": {
+  "value": 93.95,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.whitecos_0.1.paraphrase.own_released.mean"
+ },
+ "TextTFiveBestGateDOneHeldout": {
+  "value": 7.52,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveBestGateDOneNeighbourhood": {
+  "value": 7.01,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveBestGateES": {
+  "value": 77.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.public.all.ES.value"
+ },
+ "TextTFiveBestGateESBefore": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.public.before.ES.value"
+ },
+ "TextTFiveBestGateESFrom": {
+  "value": 65.44,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.public.from.ES.value"
+ },
+ "TextTFiveBestGateFalseFiring": {
+  "value": 6.65,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.whitecos_0.1.heldout.fired.mean"
+ },
+ "TextTFiveBestGateFiringNeighbourhood": {
+  "value": 6.46,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.whitecos_0.1.neighborhood.fired.mean"
+ },
+ "TextTFiveBestGateFirstChangedHeldout": {
+  "value": 4.42,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveBestGateGuardsOffCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.whitecos_0.1@goff.cal.n_edits_capped.mean"
+ },
+ "TextTFiveBestGateGuardsOffCoverage": {
+  "value": 93.95,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.whitecos_0.1@goff.paraphrase.own_released.mean"
+ },
+ "TextTFiveBestGateGuardsOffDOneHeldout": {
+  "value": 7.52,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveBestGateGuardsOffDOneNeighbourhood": {
+  "value": 6.99,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveBestGateGuardsOffES": {
+  "value": 77.27,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.public.all.ES.value"
+ },
+ "TextTFiveBestGateGuardsOffESBefore": {
+  "value": 99.61,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.public.before.ES.value"
+ },
+ "TextTFiveBestGateGuardsOffESFrom": {
+  "value": 65.44,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.public.from.ES.value"
+ },
+ "TextTFiveBestGateGuardsOffFalseFiring": {
+  "value": 6.62,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.whitecos_0.1@goff.heldout.fired.mean"
+ },
+ "TextTFiveBestGateGuardsOffFiringNeighbourhood": {
+  "value": 6.37,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.whitecos_0.1@goff.neighborhood.fired.mean"
+ },
+ "TextTFiveBestGateGuardsOffFirstChangedHeldout": {
+  "value": 4.42,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveBestGateGuardsOffKeptHeldout": {
+  "value": 95.48,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveBestGateGuardsOffNS": {
+  "value": 75.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.public.all.NS.value"
+ },
+ "TextTFiveBestGateGuardsOffNSBefore": {
+  "value": 73.08,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.public.before.NS.value"
+ },
+ "TextTFiveBestGateGuardsOffNSFrom": {
+  "value": 76.63,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.public.from.NS.value"
+ },
+ "TextTFiveBestGateGuardsOffPS": {
+  "value": 73.43,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.public.all.PS.value"
+ },
+ "TextTFiveBestGateGuardsOffPSBefore": {
+  "value": 95.95,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.public.before.PS.value"
+ },
+ "TextTFiveBestGateGuardsOffPSFrom": {
+  "value": 61.52,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.public.from.PS.value"
+ },
+ "TextTFiveBestGateGuardsOffParExact": {
+  "value": 30.1,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveBestGateGuardsOffParExactBefore": {
+  "value": 72.16,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveBestGateGuardsOffParExactFrom": {
+  "value": 7.85,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveBestGateGuardsOffReqExact": {
+  "value": 39.73,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.metrics.edit.request.exact.value"
+ },
+ "TextTFiveBestGateGuardsOffReqExactBefore": {
+  "value": 99.23,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveBestGateGuardsOffReqExactFrom": {
+  "value": 8.26,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1@goff.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveBestGateKeptHeldout": {
+  "value": 95.48,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveBestGateNS": {
+  "value": 75.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.public.all.NS.value"
+ },
+ "TextTFiveBestGateNSBefore": {
+  "value": 73.08,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.public.before.NS.value"
+ },
+ "TextTFiveBestGateNSFrom": {
+  "value": 76.63,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.public.from.NS.value"
+ },
+ "TextTFiveBestGatePS": {
+  "value": 73.43,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.public.all.PS.value"
+ },
+ "TextTFiveBestGatePSBefore": {
+  "value": 95.95,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.public.before.PS.value"
+ },
+ "TextTFiveBestGatePSFrom": {
+  "value": 61.52,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.public.from.PS.value"
+ },
+ "TextTFiveBestGateParExact": {
+  "value": 30.1,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveBestGateParExactBefore": {
+  "value": 72.16,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveBestGateParExactFrom": {
+  "value": 7.85,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveBestGateReqExact": {
+  "value": 39.87,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.metrics.edit.request.exact.value"
+ },
+ "TextTFiveBestGateReqExactBefore": {
+  "value": 99.61,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveBestGateReqExactFrom": {
+  "value": 8.26,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "whitecos_0.1.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveCosineCapped": {
+  "value": 5.75,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine.cal.n_edits_capped.mean"
+ },
+ "TextTFiveCosineCoverage": {
+  "value": 91.17,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine.paraphrase.own_released.mean"
+ },
+ "TextTFiveCosineDOneHeldout": {
+  "value": 6.98,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveCosineDOneNeighbourhood": {
+  "value": 7.07,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveCosineES": {
+  "value": 77.47,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.public.all.ES.value"
+ },
+ "TextTFiveCosineESBefore": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.public.before.ES.value"
+ },
+ "TextTFiveCosineESFrom": {
+  "value": 65.54,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.public.from.ES.value"
+ },
+ "TextTFiveCosineFalseFiring": {
+  "value": 6.74,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine.heldout.fired.mean"
+ },
+ "TextTFiveCosineFiringNeighbourhood": {
+  "value": 6.78,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine.neighborhood.fired.mean"
+ },
+ "TextTFiveCosineFirstChangedHeldout": {
+  "value": 4.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveCosineGuardsOffCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine@goff.cal.n_edits_capped.mean"
+ },
+ "TextTFiveCosineGuardsOffCoverage": {
+  "value": 91.17,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine@goff.paraphrase.own_released.mean"
+ },
+ "TextTFiveCosineGuardsOffDOneHeldout": {
+  "value": 6.91,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveCosineGuardsOffDOneNeighbourhood": {
+  "value": 6.77,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveCosineGuardsOffES": {
+  "value": 76.8,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.public.all.ES.value"
+ },
+ "TextTFiveCosineGuardsOffESBefore": {
+  "value": 99.23,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.public.before.ES.value"
+ },
+ "TextTFiveCosineGuardsOffESFrom": {
+  "value": 64.93,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.public.from.ES.value"
+ },
+ "TextTFiveCosineGuardsOffFalseFiring": {
+  "value": 6.64,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine@goff.heldout.fired.mean"
+ },
+ "TextTFiveCosineGuardsOffFiringNeighbourhood": {
+  "value": 6.4,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine@goff.neighborhood.fired.mean"
+ },
+ "TextTFiveCosineGuardsOffFirstChangedHeldout": {
+  "value": 4.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveCosineGuardsOffKeptHeldout": {
+  "value": 95.74,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveCosineGuardsOffNS": {
+  "value": 75.45,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.public.all.NS.value"
+ },
+ "TextTFiveCosineGuardsOffNSBefore": {
+  "value": 73.1,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.public.before.NS.value"
+ },
+ "TextTFiveCosineGuardsOffNSFrom": {
+  "value": 76.7,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.public.from.NS.value"
+ },
+ "TextTFiveCosineGuardsOffPS": {
+  "value": 71.1,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.public.all.PS.value"
+ },
+ "TextTFiveCosineGuardsOffPSBefore": {
+  "value": 92.29,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.public.before.PS.value"
+ },
+ "TextTFiveCosineGuardsOffPSFrom": {
+  "value": 59.89,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.public.from.PS.value"
+ },
+ "TextTFiveCosineGuardsOffParExact": {
+  "value": 28.9,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveCosineGuardsOffParExactBefore": {
+  "value": 69.08,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveCosineGuardsOffParExactFrom": {
+  "value": 7.65,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveCosineGuardsOffReqExact": {
+  "value": 39.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.metrics.edit.request.exact.value"
+ },
+ "TextTFiveCosineGuardsOffReqExactBefore": {
+  "value": 98.46,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveCosineGuardsOffReqExactFrom": {
+  "value": 8.15,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine@goff.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveCosineKeptHeldout": {
+  "value": 95.73,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveCosineNS": {
+  "value": 75.43,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.public.all.NS.value"
+ },
+ "TextTFiveCosineNSBefore": {
+  "value": 73.04,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.public.before.NS.value"
+ },
+ "TextTFiveCosineNSFrom": {
+  "value": 76.7,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.public.from.NS.value"
+ },
+ "TextTFiveCosinePS": {
+  "value": 71.1,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.public.all.PS.value"
+ },
+ "TextTFiveCosinePSBefore": {
+  "value": 92.29,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.public.before.PS.value"
+ },
+ "TextTFiveCosinePSFrom": {
+  "value": 59.89,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.public.from.PS.value"
+ },
+ "TextTFiveCosineParExact": {
+  "value": 28.9,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveCosineParExactBefore": {
+  "value": 69.08,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveCosineParExactFrom": {
+  "value": 7.65,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveCosinePublishedCoverage": {
+  "value": 90.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine_published.paraphrase.own_released.mean"
+ },
+ "TextTFiveCosinePublishedDOneHeldout": {
+  "value": 82.23,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveCosinePublishedDOneNeighbourhood": {
+  "value": 85.02,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveCosinePublishedES": {
+  "value": 75.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.public.all.ES.value"
+ },
+ "TextTFiveCosinePublishedESBefore": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.public.before.ES.value"
+ },
+ "TextTFiveCosinePublishedESFrom": {
+  "value": 62.39,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.public.from.ES.value"
+ },
+ "TextTFiveCosinePublishedFalseFiring": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine_published.heldout.fired.mean"
+ },
+ "TextTFiveCosinePublishedFiringNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.cosine_published.neighborhood.fired.mean"
+ },
+ "TextTFiveCosinePublishedFirstChangedHeldout": {
+  "value": 16.7,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveCosinePublishedKeptHeldout": {
+  "value": 81.31,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveCosinePublishedNS": {
+  "value": 74.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.public.all.NS.value"
+ },
+ "TextTFiveCosinePublishedNSBefore": {
+  "value": 72.77,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.public.before.NS.value"
+ },
+ "TextTFiveCosinePublishedNSFrom": {
+  "value": 75.26,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.public.from.NS.value"
+ },
+ "TextTFiveCosinePublishedPS": {
+  "value": 69.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.public.all.PS.value"
+ },
+ "TextTFiveCosinePublishedPSBefore": {
+  "value": 91.91,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.public.before.PS.value"
+ },
+ "TextTFiveCosinePublishedPSFrom": {
+  "value": 57.65,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.public.from.PS.value"
+ },
+ "TextTFiveCosinePublishedParExact": {
+  "value": 26.9,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveCosinePublishedParExactBefore": {
+  "value": 65.9,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveCosinePublishedParExactFrom": {
+  "value": 6.27,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveCosinePublishedReqExact": {
+  "value": 39.6,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.metrics.edit.request.exact.value"
+ },
+ "TextTFiveCosinePublishedReqExactBefore": {
+  "value": 98.27,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveCosinePublishedReqExactFrom": {
+  "value": 8.56,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine_published.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveCosineReqExact": {
+  "value": 39.8,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.metrics.edit.request.exact.value"
+ },
+ "TextTFiveCosineReqExactBefore": {
+  "value": 99.42,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveCosineReqExactFrom": {
+  "value": 8.26,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "cosine.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveDeployedDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveDeployedDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveDeployedES": {
+  "value": 57.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.public.all.ES.value"
+ },
+ "TextTFiveDeployedESBefore": {
+  "value": 49.71,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.public.before.ES.value"
+ },
+ "TextTFiveDeployedESFrom": {
+  "value": 60.86,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.public.from.ES.value"
+ },
+ "TextTFiveDeployedFirstChangedHeldout": {
+  "value": 99.8,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveDeployedKeptHeldout": {
+  "value": 0.64,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveDeployedNS": {
+  "value": 52.12,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.public.all.NS.value"
+ },
+ "TextTFiveDeployedNSBefore": {
+  "value": 49.77,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.public.before.NS.value"
+ },
+ "TextTFiveDeployedNSFrom": {
+  "value": 53.36,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.public.from.NS.value"
+ },
+ "TextTFiveDeployedPS": {
+  "value": 52.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.public.all.PS.value"
+ },
+ "TextTFiveDeployedPSBefore": {
+  "value": 47.98,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.public.before.PS.value"
+ },
+ "TextTFiveDeployedPSFrom": {
+  "value": 54.43,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.public.from.PS.value"
+ },
+ "TextTFiveDeployedParExact": {
+  "value": 0.7,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveDeployedParExactBefore": {
+  "value": 0.29,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveDeployedParExactFrom": {
+  "value": 0.92,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveDeployedReqExact": {
+  "value": 2.8,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.metrics.edit.request.exact.value"
+ },
+ "TextTFiveDeployedReqExactBefore": {
+  "value": 1.16,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveDeployedReqExactFrom": {
+  "value": 3.67,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "deployed.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveExactCoverage": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.exact.paraphrase.own_released.mean"
+ },
+ "TextTFiveExactDOneHeldout": {
+  "value": 23.17,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveExactDOneNeighbourhood": {
+  "value": 29.94,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveExactES": {
+  "value": 76.8,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.public.all.ES.value"
+ },
+ "TextTFiveExactESBefore": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.public.before.ES.value"
+ },
+ "TextTFiveExactESFrom": {
+  "value": 64.53,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.public.from.ES.value"
+ },
+ "TextTFiveExactFalseFiring": {
+  "value": 28.6,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.exact.heldout.fired.mean"
+ },
+ "TextTFiveExactFiringNeighbourhood": {
+  "value": 34.54,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.exact.neighborhood.fired.mean"
+ },
+ "TextTFiveExactFirstChangedHeldout": {
+  "value": 4.57,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveExactKeptHeldout": {
+  "value": 95.17,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveExactNS": {
+  "value": 77.72,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.public.all.NS.value"
+ },
+ "TextTFiveExactNSBefore": {
+  "value": 76.94,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.public.before.NS.value"
+ },
+ "TextTFiveExactNSFrom": {
+  "value": 78.13,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.public.from.NS.value"
+ },
+ "TextTFiveExactPS": {
+  "value": 22.8,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.public.all.PS.value"
+ },
+ "TextTFiveExactPSBefore": {
+  "value": 23.7,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.public.before.PS.value"
+ },
+ "TextTFiveExactPSFrom": {
+  "value": 22.32,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.public.from.PS.value"
+ },
+ "TextTFiveExactParExact": {
+  "value": 0.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveExactParExactBefore": {
+  "value": 1.16,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveExactParExactFrom": {
+  "value": 0.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveExactReqExact": {
+  "value": 39.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.metrics.edit.request.exact.value"
+ },
+ "TextTFiveExactReqExactBefore": {
+  "value": 98.27,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveExactReqExactFrom": {
+  "value": 8.26,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "exact.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveLookupCoverage": {
+  "value": 99.4,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.lookup_subject.paraphrase.own_released.mean"
+ },
+ "TextTFiveLookupDOneHeldout": {
+  "value": 1.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveLookupDOneNeighbourhood": {
+  "value": 1.76,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveLookupES": {
+  "value": 77.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.public.all.ES.value"
+ },
+ "TextTFiveLookupESBefore": {
+  "value": 99.42,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.public.before.ES.value"
+ },
+ "TextTFiveLookupESFrom": {
+  "value": 65.44,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.public.from.ES.value"
+ },
+ "TextTFiveLookupFalseFiring": {
+  "value": 1.57,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.lookup_subject.heldout.fired.mean"
+ },
+ "TextTFiveLookupFiringNeighbourhood": {
+  "value": 1.84,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.lookup_subject.neighborhood.fired.mean"
+ },
+ "TextTFiveLookupFirstChangedHeldout": {
+  "value": 0.73,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveLookupKeptHeldout": {
+  "value": 99.21,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveLookupNS": {
+  "value": 77.66,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.public.all.NS.value"
+ },
+ "TextTFiveLookupNSBefore": {
+  "value": 76.07,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.public.before.NS.value"
+ },
+ "TextTFiveLookupNSFrom": {
+  "value": 78.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.public.from.NS.value"
+ },
+ "TextTFiveLookupPS": {
+  "value": 77.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.public.all.PS.value"
+ },
+ "TextTFiveLookupPSBefore": {
+  "value": 98.84,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.public.before.PS.value"
+ },
+ "TextTFiveLookupPSFrom": {
+  "value": 65.44,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.public.from.PS.value"
+ },
+ "TextTFiveLookupParExact": {
+  "value": 31.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveLookupParExactBefore": {
+  "value": 75.43,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveLookupParExactFrom": {
+  "value": 8.26,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveLookupReqExact": {
+  "value": 39.6,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.metrics.edit.request.exact.value"
+ },
+ "TextTFiveLookupReqExactBefore": {
+  "value": 98.84,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveLookupReqExactFrom": {
+  "value": 8.26,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "lookup_subject.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveMigrationCapped": {
+  "value": 78.95,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.rescope.cal.n_edits_capped.mean"
+ },
+ "TextTFiveMigrationCoverage": {
+  "value": 81.91,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.rescope.paraphrase.own_released.mean"
+ },
+ "TextTFiveMigrationDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveMigrationDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveMigrationES": {
+  "value": 71.27,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.public.all.ES.value"
+ },
+ "TextTFiveMigrationESBefore": {
+  "value": 69.56,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.public.before.ES.value"
+ },
+ "TextTFiveMigrationESFrom": {
+  "value": 72.17,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.public.from.ES.value"
+ },
+ "TextTFiveMigrationFalseFiring": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.rescope.heldout.fired.mean"
+ },
+ "TextTFiveMigrationFiringNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.rescope.neighborhood.fired.mean"
+ },
+ "TextTFiveMigrationFirstChangedHeldout": {
+  "value": 89.01,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveMigrationGuardsOffCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.rescope@goff.cal.n_edits_capped.mean"
+ },
+ "TextTFiveMigrationGuardsOffCoverage": {
+  "value": 79.43,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.rescope@goff.paraphrase.own_released.mean"
+ },
+ "TextTFiveMigrationGuardsOffDOneHeldout": {
+  "value": 4.47,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveMigrationGuardsOffDOneNeighbourhood": {
+  "value": 2.77,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveMigrationGuardsOffES": {
+  "value": 56.13,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.public.all.ES.value"
+ },
+ "TextTFiveMigrationGuardsOffESBefore": {
+  "value": 71.29,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.public.before.ES.value"
+ },
+ "TextTFiveMigrationGuardsOffESFrom": {
+  "value": 48.11,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.public.from.ES.value"
+ },
+ "TextTFiveMigrationGuardsOffFalseFiring": {
+  "value": 5.91,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.rescope@goff.heldout.fired.mean"
+ },
+ "TextTFiveMigrationGuardsOffFiringNeighbourhood": {
+  "value": 4.36,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.rescope@goff.neighborhood.fired.mean"
+ },
+ "TextTFiveMigrationGuardsOffFirstChangedHeldout": {
+  "value": 2.11,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveMigrationGuardsOffKeptHeldout": {
+  "value": 97.65,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveMigrationGuardsOffNS": {
+  "value": 77.38,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.public.all.NS.value"
+ },
+ "TextTFiveMigrationGuardsOffNSBefore": {
+  "value": 75.34,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.public.before.NS.value"
+ },
+ "TextTFiveMigrationGuardsOffNSFrom": {
+  "value": 78.46,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.public.from.NS.value"
+ },
+ "TextTFiveMigrationGuardsOffPS": {
+  "value": 55.03,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.public.all.PS.value"
+ },
+ "TextTFiveMigrationGuardsOffPSBefore": {
+  "value": 68.98,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.public.before.PS.value"
+ },
+ "TextTFiveMigrationGuardsOffPSFrom": {
+  "value": 47.65,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.public.from.PS.value"
+ },
+ "TextTFiveMigrationGuardsOffParExact": {
+  "value": 19.1,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveMigrationGuardsOffParExactBefore": {
+  "value": 46.34,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveMigrationGuardsOffParExactFrom": {
+  "value": 4.69,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveMigrationGuardsOffReqExact": {
+  "value": 25.8,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.metrics.edit.request.exact.value"
+ },
+ "TextTFiveMigrationGuardsOffReqExactBefore": {
+  "value": 64.35,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveMigrationGuardsOffReqExactFrom": {
+  "value": 5.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope@goff.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveMigrationKeptHeldout": {
+  "value": 11.72,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveMigrationNS": {
+  "value": 53.57,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.public.all.NS.value"
+ },
+ "TextTFiveMigrationNSBefore": {
+  "value": 49.52,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.public.before.NS.value"
+ },
+ "TextTFiveMigrationNSFrom": {
+  "value": 55.72,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.public.from.NS.value"
+ },
+ "TextTFiveMigrationPS": {
+  "value": 61.33,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.public.all.PS.value"
+ },
+ "TextTFiveMigrationPSBefore": {
+  "value": 59.73,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.public.before.PS.value"
+ },
+ "TextTFiveMigrationPSFrom": {
+  "value": 62.18,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.public.from.PS.value"
+ },
+ "TextTFiveMigrationParExact": {
+  "value": 6.3,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveMigrationParExactBefore": {
+  "value": 7.13,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveMigrationParExactFrom": {
+  "value": 5.86,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveMigrationReqExact": {
+  "value": 13.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.metrics.edit.request.exact.value"
+ },
+ "TextTFiveMigrationReqExactBefore": {
+  "value": 15.61,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveMigrationReqExactFrom": {
+  "value": 11.93,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "rescope.metrics.edit.request.exact.from.value"
+ },
+ "TextTFivePreeditDOneHeldout": {
+  "value": 0.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.metrics.heldout.D1_tf.value"
+ },
+ "TextTFivePreeditDOneNeighbourhood": {
+  "value": 0.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFivePreeditES": {
+  "value": 19.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.public.all.ES.value"
+ },
+ "TextTFivePreeditESBefore": {
+  "value": 20.23,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.public.before.ES.value"
+ },
+ "TextTFivePreeditESFrom": {
+  "value": 18.96,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.public.from.ES.value"
+ },
+ "TextTFivePreeditFirstChangedHeldout": {
+  "value": 0.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFivePreeditKeptHeldout": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.metrics.heldout.kept_tf.value"
+ },
+ "TextTFivePreeditNS": {
+  "value": 78.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.public.all.NS.value"
+ },
+ "TextTFivePreeditNSBefore": {
+  "value": 76.53,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.public.before.NS.value"
+ },
+ "TextTFivePreeditNSFrom": {
+  "value": 79.08,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.public.from.NS.value"
+ },
+ "TextTFivePreeditPS": {
+  "value": 22.6,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.public.all.PS.value"
+ },
+ "TextTFivePreeditPSBefore": {
+  "value": 23.12,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.public.before.PS.value"
+ },
+ "TextTFivePreeditPSFrom": {
+  "value": 22.32,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.public.from.PS.value"
+ },
+ "TextTFivePreeditParExact": {
+  "value": 0.3,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFivePreeditParExactBefore": {
+  "value": 0.87,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFivePreeditParExactFrom": {
+  "value": 0.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFivePreeditReqExact": {
+  "value": 0.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.metrics.edit.request.exact.value"
+ },
+ "TextTFivePreeditReqExactBefore": {
+  "value": 0.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.metrics.edit.request.exact.before.value"
+ },
+ "TextTFivePreeditReqExactFrom": {
+  "value": 0.31,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "preedit.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveRepairLogonlyCapped": {
+  "value": 10.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_logonly.cal.n_edits_capped.mean"
+ },
+ "TextTFiveRepairLogonlyCoverage": {
+  "value": 98.7,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_logonly.paraphrase.own_released.mean"
+ },
+ "TextTFiveRepairLogonlyDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveRepairLogonlyDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveRepairLogonlyES": {
+  "value": 57.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.public.all.ES.value"
+ },
+ "TextTFiveRepairLogonlyESBefore": {
+  "value": 50.87,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.public.before.ES.value"
+ },
+ "TextTFiveRepairLogonlyESFrom": {
+  "value": 60.86,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.public.from.ES.value"
+ },
+ "TextTFiveRepairLogonlyFalseFiring": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_logonly.heldout.fired.mean"
+ },
+ "TextTFiveRepairLogonlyFiringNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_logonly.neighborhood.fired.mean"
+ },
+ "TextTFiveRepairLogonlyFirstChangedHeldout": {
+  "value": 97.33,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_logonly@goff.cal.n_edits_capped.mean"
+ },
+ "TextTFiveRepairLogonlyGuardsOffCoverage": {
+  "value": 98.3,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_logonly@goff.paraphrase.own_released.mean"
+ },
+ "TextTFiveRepairLogonlyGuardsOffDOneHeldout": {
+  "value": 42.07,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffDOneNeighbourhood": {
+  "value": 35.74,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffES": {
+  "value": 80.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.public.all.ES.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffESBefore": {
+  "value": 96.53,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.public.before.ES.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffESFrom": {
+  "value": 71.87,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.public.from.ES.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffFalseFiring": {
+  "value": 62.03,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_logonly@goff.heldout.fired.mean"
+ },
+ "TextTFiveRepairLogonlyGuardsOffFiringNeighbourhood": {
+  "value": 52.12,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_logonly@goff.neighborhood.fired.mean"
+ },
+ "TextTFiveRepairLogonlyGuardsOffFirstChangedHeldout": {
+  "value": 10.73,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffKeptHeldout": {
+  "value": 88.35,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffNS": {
+  "value": 74.74,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.public.all.NS.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffNSBefore": {
+  "value": 73.06,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.public.before.NS.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffNSFrom": {
+  "value": 75.63,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.public.from.NS.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffPS": {
+  "value": 78.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.public.all.PS.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffPSBefore": {
+  "value": 91.91,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.public.before.PS.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffPSFrom": {
+  "value": 70.64,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.public.from.PS.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffParExact": {
+  "value": 25.1,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffParExactBefore": {
+  "value": 52.02,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffParExactFrom": {
+  "value": 10.86,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffReqExact": {
+  "value": 37.6,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.metrics.edit.request.exact.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffReqExactBefore": {
+  "value": 87.28,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveRepairLogonlyGuardsOffReqExactFrom": {
+  "value": 11.31,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly@goff.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveRepairLogonlyKeptHeldout": {
+  "value": 4.02,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveRepairLogonlyNS": {
+  "value": 52.84,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.public.all.NS.value"
+ },
+ "TextTFiveRepairLogonlyNSBefore": {
+  "value": 49.42,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.public.before.NS.value"
+ },
+ "TextTFiveRepairLogonlyNSFrom": {
+  "value": 54.65,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.public.from.NS.value"
+ },
+ "TextTFiveRepairLogonlyPS": {
+  "value": 51.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.public.all.PS.value"
+ },
+ "TextTFiveRepairLogonlyPSBefore": {
+  "value": 52.6,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.public.before.PS.value"
+ },
+ "TextTFiveRepairLogonlyPSFrom": {
+  "value": 50.76,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.public.from.PS.value"
+ },
+ "TextTFiveRepairLogonlyParExact": {
+  "value": 1.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveRepairLogonlyParExactBefore": {
+  "value": 0.58,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveRepairLogonlyParExactFrom": {
+  "value": 1.99,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveRepairLogonlyReqExact": {
+  "value": 2.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.metrics.edit.request.exact.value"
+ },
+ "TextTFiveRepairLogonlyReqExactBefore": {
+  "value": 1.16,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveRepairLogonlyReqExactFrom": {
+  "value": 2.75,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_logonly.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveRepairTwoblockCapped": {
+  "value": 78.95,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_twoblock.cal.n_edits_capped.mean"
+ },
+ "TextTFiveRepairTwoblockCoverage": {
+  "value": 82.38,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_twoblock.paraphrase.own_released.mean"
+ },
+ "TextTFiveRepairTwoblockDOneHeldout": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveRepairTwoblockDOneNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveRepairTwoblockES": {
+  "value": 57.47,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.public.all.ES.value"
+ },
+ "TextTFiveRepairTwoblockESBefore": {
+  "value": 50.87,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.public.before.ES.value"
+ },
+ "TextTFiveRepairTwoblockESFrom": {
+  "value": 60.96,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.public.from.ES.value"
+ },
+ "TextTFiveRepairTwoblockFalseFiring": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_twoblock.heldout.fired.mean"
+ },
+ "TextTFiveRepairTwoblockFiringNeighbourhood": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_twoblock.neighborhood.fired.mean"
+ },
+ "TextTFiveRepairTwoblockFirstChangedHeldout": {
+  "value": 97.22,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_twoblock@goff.cal.n_edits_capped.mean"
+ },
+ "TextTFiveRepairTwoblockGuardsOffCoverage": {
+  "value": 79.89,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_twoblock@goff.paraphrase.own_released.mean"
+ },
+ "TextTFiveRepairTwoblockGuardsOffDOneHeldout": {
+  "value": 4.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.metrics.heldout.D1_tf.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffDOneNeighbourhood": {
+  "value": 2.65,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffES": {
+  "value": 59.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.public.all.ES.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffESBefore": {
+  "value": 69.56,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.public.before.ES.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffESFrom": {
+  "value": 54.03,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.public.from.ES.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffFalseFiring": {
+  "value": 5.91,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_twoblock@goff.heldout.fired.mean"
+ },
+ "TextTFiveRepairTwoblockGuardsOffFiringNeighbourhood": {
+  "value": 4.36,
+  "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+  "key": "rows.where_twoblock@goff.neighborhood.fired.mean"
+ },
+ "TextTFiveRepairTwoblockGuardsOffFirstChangedHeldout": {
+  "value": 2.07,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffKeptHeldout": {
+  "value": 97.7,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffNS": {
+  "value": 77.48,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.public.all.NS.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffNSBefore": {
+  "value": 75.57,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.public.before.NS.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffNSFrom": {
+  "value": 78.49,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.public.from.NS.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffPS": {
+  "value": 56.47,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.public.all.PS.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffPSBefore": {
+  "value": 66.09,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.public.before.PS.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffPSFrom": {
+  "value": 51.38,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.public.from.PS.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffParExact": {
+  "value": 16.73,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffParExactBefore": {
+  "value": 36.03,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffParExactFrom": {
+  "value": 6.52,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffReqExact": {
+  "value": 24.33,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.metrics.edit.request.exact.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffReqExactBefore": {
+  "value": 56.65,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveRepairTwoblockGuardsOffReqExactFrom": {
+  "value": 7.24,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock@goff.metrics.edit.request.exact.from.value"
+ },
+ "TextTFiveRepairTwoblockKeptHeldout": {
+  "value": 4.03,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.metrics.heldout.kept_tf.value"
+ },
+ "TextTFiveRepairTwoblockNS": {
+  "value": 52.91,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.public.all.NS.value"
+ },
+ "TextTFiveRepairTwoblockNSBefore": {
+  "value": 49.36,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.public.before.NS.value"
+ },
+ "TextTFiveRepairTwoblockNSFrom": {
+  "value": 54.79,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.public.from.NS.value"
+ },
+ "TextTFiveRepairTwoblockPS": {
+  "value": 50.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.public.all.PS.value"
+ },
+ "TextTFiveRepairTwoblockPSBefore": {
+  "value": 52.12,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.public.before.PS.value"
+ },
+ "TextTFiveRepairTwoblockPSFrom": {
+  "value": 48.88,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.public.from.PS.value"
+ },
+ "TextTFiveRepairTwoblockParExact": {
+  "value": 1.17,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTFiveRepairTwoblockParExactBefore": {
+  "value": 0.58,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.metrics.edit.paraphrase.exact.before.value"
+ },
+ "TextTFiveRepairTwoblockParExactFrom": {
+  "value": 1.48,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.metrics.edit.paraphrase.exact.from.value"
+ },
+ "TextTFiveRepairTwoblockReqExact": {
+  "value": 2.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.metrics.edit.request.exact.value"
+ },
+ "TextTFiveRepairTwoblockReqExactBefore": {
+  "value": 1.16,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.metrics.edit.request.exact.before.value"
+ },
+ "TextTFiveRepairTwoblockReqExactFrom": {
+  "value": 2.75,
+  "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+  "key": "where_twoblock.metrics.edit.request.exact.from.value"
+ },
+ "TextTOneBestGateCapped": {
+  "value": 0.05,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.whitecos_0.1.cal.n_edits_capped.mean"
+ },
+ "TextTOneBestGateCoverage": {
+  "value": 98.5,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.whitecos_0.1.paraphrase.own_released.mean"
+ },
+ "TextTOneBestGateDOneHeldout": {
+  "value": 4.46,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "whitecos_0.1.metrics.heldout.D1_tf.value"
+ },
+ "TextTOneBestGateDOneNeighbourhood": {
+  "value": 9.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "whitecos_0.1.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTOneBestGateES": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "whitecos_0.1.public.all.ES.value"
+ },
+ "TextTOneBestGateFalseFiring": {
+  "value": 4.1,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.whitecos_0.1.heldout.fired.mean"
+ },
+ "TextTOneBestGateFiringNeighbourhood": {
+  "value": 8.54,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.whitecos_0.1.neighborhood.fired.mean"
+ },
+ "TextTOneBestGateFirstChangedHeldout": {
+  "value": 2.78,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "whitecos_0.1.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTOneBestGateGuardsOffCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.whitecos_0.1@goff.cal.n_edits_capped.mean"
+ },
+ "TextTOneBestGateGuardsOffCoverage": {
+  "value": 98.5,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.whitecos_0.1@goff.paraphrase.own_released.mean"
+ },
+ "TextTOneBestGateGuardsOffFalseFiring": {
+  "value": 4.1,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.whitecos_0.1@goff.heldout.fired.mean"
+ },
+ "TextTOneBestGateGuardsOffFiringNeighbourhood": {
+  "value": 8.54,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.whitecos_0.1@goff.neighborhood.fired.mean"
+ },
+ "TextTOneBestGateKeptHeldout": {
+  "value": 97.73,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "whitecos_0.1.metrics.heldout.kept_tf.value"
+ },
+ "TextTOneBestGateNS": {
+  "value": 72.77,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "whitecos_0.1.public.all.NS.value"
+ },
+ "TextTOneBestGatePS": {
+  "value": 98.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "whitecos_0.1.public.all.PS.value"
+ },
+ "TextTOneBestGateParExact": {
+  "value": 73.67,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "whitecos_0.1.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTOneBestGateReqExact": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "whitecos_0.1.metrics.edit.request.exact.value"
+ },
+ "TextTOneCosineCapped": {
+  "value": 0.35,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine.cal.n_edits_capped.mean"
+ },
+ "TextTOneCosineCoverage": {
+  "value": 96.97,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine.paraphrase.own_released.mean"
+ },
+ "TextTOneCosineDOneHeldout": {
+  "value": 4.64,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine.metrics.heldout.D1_tf.value"
+ },
+ "TextTOneCosineDOneNeighbourhood": {
+  "value": 10.1,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTOneCosineES": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine.public.all.ES.value"
+ },
+ "TextTOneCosineFalseFiring": {
+  "value": 4.66,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine.heldout.fired.mean"
+ },
+ "TextTOneCosineFiringNeighbourhood": {
+  "value": 9.13,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine.neighborhood.fired.mean"
+ },
+ "TextTOneCosineFirstChangedHeldout": {
+  "value": 3.03,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTOneCosineGuardsOffCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine@goff.cal.n_edits_capped.mean"
+ },
+ "TextTOneCosineGuardsOffCoverage": {
+  "value": 96.97,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine@goff.paraphrase.own_released.mean"
+ },
+ "TextTOneCosineGuardsOffFalseFiring": {
+  "value": 4.66,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine@goff.heldout.fired.mean"
+ },
+ "TextTOneCosineGuardsOffFiringNeighbourhood": {
+  "value": 9.13,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine@goff.neighborhood.fired.mean"
+ },
+ "TextTOneCosineKeptHeldout": {
+  "value": 97.52,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine.metrics.heldout.kept_tf.value"
+ },
+ "TextTOneCosineNS": {
+  "value": 72.17,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine.public.all.NS.value"
+ },
+ "TextTOneCosinePS": {
+  "value": 98.67,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine.public.all.PS.value"
+ },
+ "TextTOneCosineParExact": {
+  "value": 73.67,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTOneCosinePublishedCoverage": {
+  "value": 93.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine_published.paraphrase.own_released.mean"
+ },
+ "TextTOneCosinePublishedDOneHeldout": {
+  "value": 1.07,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine_published.metrics.heldout.D1_tf.value"
+ },
+ "TextTOneCosinePublishedDOneNeighbourhood": {
+  "value": 3.6,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine_published.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTOneCosinePublishedES": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine_published.public.all.ES.value"
+ },
+ "TextTOneCosinePublishedFalseFiring": {
+  "value": 1.1,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine_published.heldout.fired.mean"
+ },
+ "TextTOneCosinePublishedFiringNeighbourhood": {
+  "value": 3.6,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.cosine_published.neighborhood.fired.mean"
+ },
+ "TextTOneCosinePublishedFirstChangedHeldout": {
+  "value": 0.87,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine_published.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTOneCosinePublishedKeptHeldout": {
+  "value": 99.42,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine_published.metrics.heldout.kept_tf.value"
+ },
+ "TextTOneCosinePublishedNS": {
+  "value": 76.1,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine_published.public.all.NS.value"
+ },
+ "TextTOneCosinePublishedPS": {
+  "value": 94.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine_published.public.all.PS.value"
+ },
+ "TextTOneCosinePublishedParExact": {
+  "value": 71.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine_published.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTOneCosinePublishedReqExact": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine_published.metrics.edit.request.exact.value"
+ },
+ "TextTOneCosineReqExact": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "cosine.metrics.edit.request.exact.value"
+ },
+ "TextTOneDeployedDOneHeldout": {
+  "value": 93.47,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "deployed.metrics.heldout.D1_tf.value"
+ },
+ "TextTOneDeployedDOneNeighbourhood": {
+  "value": 90.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "deployed.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTOneDeployedES": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "deployed.public.all.ES.value"
+ },
+ "TextTOneDeployedFirstChangedHeldout": {
+  "value": 33.23,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "deployed.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTOneDeployedKeptHeldout": {
+  "value": 69.85,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "deployed.metrics.heldout.kept_tf.value"
+ },
+ "TextTOneDeployedNS": {
+  "value": 66.8,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "deployed.public.all.NS.value"
+ },
+ "TextTOneDeployedPS": {
+  "value": 98.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "deployed.public.all.PS.value"
+ },
+ "TextTOneDeployedParExact": {
+  "value": 75.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "deployed.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTOneDeployedReqExact": {
+  "value": 97.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "deployed.metrics.edit.request.exact.value"
+ },
+ "TextTOneExactCoverage": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.exact.paraphrase.own_released.mean"
+ },
+ "TextTOneExactDOneHeldout": {
+  "value": 0.07,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "exact.metrics.heldout.D1_tf.value"
+ },
+ "TextTOneExactDOneNeighbourhood": {
+  "value": 0.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "exact.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTOneExactES": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "exact.public.all.ES.value"
+ },
+ "TextTOneExactFalseFiring": {
+  "value": 0.07,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.exact.heldout.fired.mean"
+ },
+ "TextTOneExactFiringNeighbourhood": {
+  "value": 0.4,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.exact.neighborhood.fired.mean"
+ },
+ "TextTOneExactFirstChangedHeldout": {
+  "value": 0.07,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "exact.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTOneExactKeptHeldout": {
+  "value": 99.96,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "exact.metrics.heldout.kept_tf.value"
+ },
+ "TextTOneExactNS": {
+  "value": 78.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "exact.public.all.NS.value"
+ },
+ "TextTOneExactPS": {
+  "value": 22.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "exact.public.all.PS.value"
+ },
+ "TextTOneExactParExact": {
+  "value": 0.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "exact.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTOneExactReqExact": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "exact.metrics.edit.request.exact.value"
+ },
+ "TextTOneLookupCoverage": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.lookup_subject.paraphrase.own_released.mean"
+ },
+ "TextTOneLookupDOneHeldout": {
+  "value": 0.2,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "lookup_subject.metrics.heldout.D1_tf.value"
+ },
+ "TextTOneLookupDOneNeighbourhood": {
+  "value": 0.6,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "lookup_subject.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTOneLookupES": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "lookup_subject.public.all.ES.value"
+ },
+ "TextTOneLookupFalseFiring": {
+  "value": 0.23,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.lookup_subject.heldout.fired.mean"
+ },
+ "TextTOneLookupFiringNeighbourhood": {
+  "value": 0.6,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.lookup_subject.neighborhood.fired.mean"
+ },
+ "TextTOneLookupFirstChangedHeldout": {
+  "value": 0.13,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "lookup_subject.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTOneLookupKeptHeldout": {
+  "value": 99.87,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "lookup_subject.metrics.heldout.kept_tf.value"
+ },
+ "TextTOneLookupNS": {
+  "value": 78.4,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "lookup_subject.public.all.NS.value"
+ },
+ "TextTOneLookupPS": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "lookup_subject.public.all.PS.value"
+ },
+ "TextTOneLookupParExact": {
+  "value": 75.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "lookup_subject.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTOneLookupReqExact": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "lookup_subject.metrics.edit.request.exact.value"
+ },
+ "TextTOneMigrationCapped": {
+  "value": 0.95,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.rescope.cal.n_edits_capped.mean"
+ },
+ "TextTOneMigrationCoverage": {
+  "value": 98.3,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.rescope.paraphrase.own_released.mean"
+ },
+ "TextTOneMigrationDOneHeldout": {
+  "value": 3.79,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "rescope.metrics.heldout.D1_tf.value"
+ },
+ "TextTOneMigrationDOneNeighbourhood": {
+  "value": 7.47,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "rescope.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTOneMigrationES": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "rescope.public.all.ES.value"
+ },
+ "TextTOneMigrationFalseFiring": {
+  "value": 3.94,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.rescope.heldout.fired.mean"
+ },
+ "TextTOneMigrationFiringNeighbourhood": {
+  "value": 7.36,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.rescope.neighborhood.fired.mean"
+ },
+ "TextTOneMigrationFirstChangedHeldout": {
+  "value": 2.37,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "rescope.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTOneMigrationGuardsOffCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.rescope@goff.cal.n_edits_capped.mean"
+ },
+ "TextTOneMigrationGuardsOffCoverage": {
+  "value": 98.22,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.rescope@goff.paraphrase.own_released.mean"
+ },
+ "TextTOneMigrationGuardsOffFalseFiring": {
+  "value": 3.94,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.rescope@goff.heldout.fired.mean"
+ },
+ "TextTOneMigrationGuardsOffFiringNeighbourhood": {
+  "value": 7.36,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.rescope@goff.neighborhood.fired.mean"
+ },
+ "TextTOneMigrationKeptHeldout": {
+  "value": 98.12,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "rescope.metrics.heldout.kept_tf.value"
+ },
+ "TextTOneMigrationNS": {
+  "value": 74.43,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "rescope.public.all.NS.value"
+ },
+ "TextTOneMigrationPS": {
+  "value": 97.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "rescope.public.all.PS.value"
+ },
+ "TextTOneMigrationParExact": {
+  "value": 73.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "rescope.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTOneMigrationReqExact": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "rescope.metrics.edit.request.exact.value"
+ },
+ "TextTOnePreeditDOneHeldout": {
+  "value": 0.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "preedit.metrics.heldout.D1_tf.value"
+ },
+ "TextTOnePreeditDOneNeighbourhood": {
+  "value": 0.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "preedit.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTOnePreeditES": {
+  "value": 17.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "preedit.public.all.ES.value"
+ },
+ "TextTOnePreeditFirstChangedHeldout": {
+  "value": 0.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "preedit.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTOnePreeditKeptHeldout": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "preedit.metrics.heldout.kept_tf.value"
+ },
+ "TextTOnePreeditNS": {
+  "value": 78.8,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "preedit.public.all.NS.value"
+ },
+ "TextTOnePreeditPS": {
+  "value": 22.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "preedit.public.all.PS.value"
+ },
+ "TextTOnePreeditParExact": {
+  "value": 0.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "preedit.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTOnePreeditReqExact": {
+  "value": 0.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "preedit.metrics.edit.request.exact.value"
+ },
+ "TextTOneRepairLogonlyCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_logonly.cal.n_edits_capped.mean"
+ },
+ "TextTOneRepairLogonlyCoverage": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_logonly.paraphrase.own_released.mean"
+ },
+ "TextTOneRepairLogonlyDOneHeldout": {
+  "value": 19.03,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_logonly.metrics.heldout.D1_tf.value"
+ },
+ "TextTOneRepairLogonlyDOneNeighbourhood": {
+  "value": 26.1,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_logonly.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTOneRepairLogonlyES": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_logonly.public.all.ES.value"
+ },
+ "TextTOneRepairLogonlyFalseFiring": {
+  "value": 57.53,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_logonly.heldout.fired.mean"
+ },
+ "TextTOneRepairLogonlyFiringNeighbourhood": {
+  "value": 54.8,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_logonly.neighborhood.fired.mean"
+ },
+ "TextTOneRepairLogonlyFirstChangedHeldout": {
+  "value": 4.27,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_logonly.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTOneRepairLogonlyGuardsOffCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_logonly@goff.cal.n_edits_capped.mean"
+ },
+ "TextTOneRepairLogonlyGuardsOffCoverage": {
+  "value": 100.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_logonly@goff.paraphrase.own_released.mean"
+ },
+ "TextTOneRepairLogonlyGuardsOffFalseFiring": {
+  "value": 57.53,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_logonly@goff.heldout.fired.mean"
+ },
+ "TextTOneRepairLogonlyGuardsOffFiringNeighbourhood": {
+  "value": 54.8,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_logonly@goff.neighborhood.fired.mean"
+ },
+ "TextTOneRepairLogonlyKeptHeldout": {
+  "value": 96.42,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_logonly.metrics.heldout.kept_tf.value"
+ },
+ "TextTOneRepairLogonlyNS": {
+  "value": 72.7,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_logonly.public.all.NS.value"
+ },
+ "TextTOneRepairLogonlyPS": {
+  "value": 96.5,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_logonly.public.all.PS.value"
+ },
+ "TextTOneRepairLogonlyParExact": {
+  "value": 64.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_logonly.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTOneRepairLogonlyReqExact": {
+  "value": 96.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_logonly.metrics.edit.request.exact.value"
+ },
+ "TextTOneRepairTwoblockCapped": {
+  "value": 0.95,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_twoblock.cal.n_edits_capped.mean"
+ },
+ "TextTOneRepairTwoblockCoverage": {
+  "value": 98.3,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_twoblock.paraphrase.own_released.mean"
+ },
+ "TextTOneRepairTwoblockDOneHeldout": {
+  "value": 2.74,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_twoblock.metrics.heldout.D1_tf.value"
+ },
+ "TextTOneRepairTwoblockDOneNeighbourhood": {
+  "value": 6.37,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_twoblock.metrics.neighborhood.D1_tf.value"
+ },
+ "TextTOneRepairTwoblockES": {
+  "value": 100.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_twoblock.public.all.ES.value"
+ },
+ "TextTOneRepairTwoblockFalseFiring": {
+  "value": 3.94,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_twoblock.heldout.fired.mean"
+ },
+ "TextTOneRepairTwoblockFiringNeighbourhood": {
+  "value": 7.36,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_twoblock.neighborhood.fired.mean"
+ },
+ "TextTOneRepairTwoblockFirstChangedHeldout": {
+  "value": 1.24,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_twoblock.metrics.heldout.first_changed_tf.value"
+ },
+ "TextTOneRepairTwoblockGuardsOffCapped": {
+  "value": 0.0,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_twoblock@goff.cal.n_edits_capped.mean"
+ },
+ "TextTOneRepairTwoblockGuardsOffCoverage": {
+  "value": 98.22,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_twoblock@goff.paraphrase.own_released.mean"
+ },
+ "TextTOneRepairTwoblockGuardsOffFalseFiring": {
+  "value": 3.94,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_twoblock@goff.heldout.fired.mean"
+ },
+ "TextTOneRepairTwoblockGuardsOffFiringNeighbourhood": {
+  "value": 7.36,
+  "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+  "key": "rows.where_twoblock@goff.neighborhood.fired.mean"
+ },
+ "TextTOneRepairTwoblockKeptHeldout": {
+  "value": 99.12,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_twoblock.metrics.heldout.kept_tf.value"
+ },
+ "TextTOneRepairTwoblockNS": {
+  "value": 76.0,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_twoblock.public.all.NS.value"
+ },
+ "TextTOneRepairTwoblockPS": {
+  "value": 95.17,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_twoblock.public.all.PS.value"
+ },
+ "TextTOneRepairTwoblockParExact": {
+  "value": 62.67,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_twoblock.metrics.edit.paraphrase.exact.value"
+ },
+ "TextTOneRepairTwoblockReqExact": {
+  "value": 95.67,
+  "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+  "key": "where_twoblock.metrics.edit.request.exact.value"
+ }
+}

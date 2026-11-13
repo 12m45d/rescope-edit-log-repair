@@ -1,0 +1,73 @@
+{
+ "pass": true,
+ "checks": {
+  "gram": {
+   "cos_centred: translation of all keys": 5.551115123125783e-16,
+   "cos_centred: rotation of all keys": 6.661338147750939e-16,
+   "cos_centred: query scaled about mu": 6.661338147750939e-16,
+   "white kappa 0.01: linear in the query": 5.551115123125783e-16,
+   "white kappa 0.01: joint scaling of all keys": 1.3322676295501878e-15,
+   "white kappa 0.01: rotation of all keys": 1.3739009929736312e-15,
+   "whitecos kappa 0.01: query scaling": 9.992007221626409e-16,
+   "whitecos kappa 0.01: joint scaling of all keys": 1.582067810090848e-15,
+   "whitecos kappa 0.01: rotation of all keys": 1.915134717478395e-15,
+   "whitecos kappa 0.01: = white * sqrt(k_i'Mk_i / k'Mk)": 7.771561172376096e-16,
+   "whitecos kappa 0.01: |score| <= 1 (excess)": 0.0,
+   "white kappa 1: linear in the query": 4.440892098500626e-16,
+   "white kappa 1: joint scaling of all keys": 5.551115123125783e-16,
+   "white kappa 1: rotation of all keys": 8.881784197001252e-16,
+   "whitecos kappa 1: query scaling": 7.771561172376096e-16,
+   "whitecos kappa 1: joint scaling of all keys": 4.996003610813204e-16,
+   "whitecos kappa 1: rotation of all keys": 5.551115123125783e-16,
+   "whitecos kappa 1: = white * sqrt(k_i'Mk_i / k'Mk)": 6.661338147750939e-16,
+   "whitecos kappa 1: |score| <= 1 (excess)": 0.0
+  },
+  "primal": {
+   "cos_centred: translation of all keys": 4.440892098500626e-16,
+   "cos_centred: rotation of all keys": 9.992007221626409e-16,
+   "cos_centred: query scaled about mu": 7.771561172376096e-16,
+   "white kappa 0.01: linear in the query": 6.661338147750939e-16,
+   "white kappa 0.01: joint scaling of all keys": 3.6012859361278515e-15,
+   "white kappa 0.01: rotation of all keys": 5.065392549852277e-15,
+   "whitecos kappa 0.01: query scaling": 6.661338147750939e-16,
+   "whitecos kappa 0.01: joint scaling of all keys": 5.190292640122607e-15,
+   "whitecos kappa 0.01: rotation of all keys": 5.3013149425851225e-15,
+   "whitecos kappa 0.01: = white * sqrt(k_i'Mk_i / k'Mk)": 9.992007221626409e-16,
+   "whitecos kappa 0.01: |score| <= 1 (excess)": 0.0,
+   "white kappa 1: linear in the query": 5.551115123125783e-16,
+   "white kappa 1: joint scaling of all keys": 5.551115123125783e-16,
+   "white kappa 1: rotation of all keys": 8.326672684688674e-16,
+   "whitecos kappa 1: query scaling": 6.661338147750939e-16,
+   "whitecos kappa 1: joint scaling of all keys": 7.771561172376096e-16,
+   "whitecos kappa 1: rotation of all keys": 9.992007221626409e-16,
+   "whitecos kappa 1: = white * sqrt(k_i'Mk_i / k'Mk)": 6.661338147750939e-16,
+   "whitecos kappa 1: |score| <= 1 (excess)": 0.0
+  },
+  "null": {
+   "cos_null: query scaling": 5.551115123125783e-16,
+   "cos_null: numerator unchanged by adding null keys": 1.4210854715202004e-14,
+   "cos_null: other basis of the same span": 1.0547118733938987e-15,
+   "cos_null: null keys permuted and repeated": 3.885780586188048e-16,
+   "ncoord_null: other basis of the same span": 1.8318679906315083e-15
+  },
+  "limits": {
+   "cos_centred with mu = 0 == cos": 0.0,
+   "whitecos, kappa = 1e12 == cos": 5.9102930882737326e-12,
+   "white, kappa = 1e12 == <k_i, k> / |k_i|^2": 6.768363647324804e-12,
+   "cos_null with no null key == cos": 0.0
+  }
+ },
+ "worst_abs_deviation": 6.768363647324804e-12,
+ "n_checks": 47,
+ "note": "47 identities on a synthetic log (Gram and primal form): worst deviation 1.4e-14; limits mu = 0 / kappa = 1e12 / no null key reproduce the cosine gate to 6.8e-12",
+ "test": "c3_invariances",
+ "group": "scores",
+ "what": "invariances: translation / rotation / scaling (cos_centred), linearity and joint scaling (white), query scaling and Cauchy-Schwarz (whitecos), null-key shifts and change of basis (cos_null)",
+ "seconds": 0.04738044738769531,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

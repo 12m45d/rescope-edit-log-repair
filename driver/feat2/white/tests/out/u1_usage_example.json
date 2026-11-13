@@ -1,0 +1,29 @@
+{
+ "pass": true,
+ "n_lines": 10,
+ "printed": [
+  "cos_centred 0.17965988735519278 10 0.025806451612903226",
+  "cos_null 0.22723899921164709 0 0.05591397849462366",
+  "white_0.01 0.1473371387528114 0 0.043010752688172046",
+  "white_0.1 0.15071180685117747 0 0.04946236559139785",
+  "white_1 0.20312532714961892 0 0.05161290322580645",
+  "whitecos_0.01 0.1947708250987353 0 0.03870967741935484",
+  "whitecos_0.1 0.19583802606811518 0 0.04086021505376344",
+  "whitecos_1 0.22072784657484765 0 0.04516129032258064"
+ ],
+ "R_shape": [
+  8,
+  100
+ ],
+ "note": "10 lines executed; printed one line per variant (cos_centred, cos_null, white_0.01, white_0.1, white_1, whitecos_0.01, whitecos_0.1, whitecos_1); null_w returns a ScopedLog; score matrix (8, 100): True",
+ "test": "u1_usage_example",
+ "group": "usage",
+ "what": "the ten-line example of USAGE.txt is executed as printed (development log TB-Q100-ae-l2_3)",
+ "seconds": 3.617297887802124,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

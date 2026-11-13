@@ -1,0 +1,58 @@
+{
+ "pass": true,
+ "per_backbone": {
+  "qwen25vl": {
+   "n_items": 2002,
+   "items_per_part": {
+    "BEN-W": 400,
+    "BEN-S": 901,
+    "BEN-T": 701
+   },
+   "percent": {
+    "BEN-W": 19.98001998001998,
+    "BEN-S": 45.004995004995,
+    "BEN-T": 35.014985014985015
+   },
+   "equal_to_file": true
+  },
+  "llava": {
+   "n_items": 2002,
+   "items_per_part": {
+    "BEN-W": 400,
+    "BEN-S": 901,
+    "BEN-T": 701
+   },
+   "percent": {
+    "BEN-W": 19.98001998001998,
+    "BEN-S": 45.004995004995,
+    "BEN-T": 35.014985014985015
+   },
+   "equal_to_file": true
+  },
+  "blip2": {
+   "n_items": 2002,
+   "items_per_part": {
+    "BEN-W": 400,
+    "BEN-S": 901,
+    "BEN-T": 701
+   },
+   "percent": {
+    "BEN-W": 19.98001998001998,
+    "BEN-S": 45.004995004995,
+    "BEN-T": 35.014985014985015
+   },
+   "equal_to_file": true
+  }
+ },
+ "note": "2002 items -> W / S / T = 400 / 901 / 701 (19.98 / 45.00 / 35.01 %); file == rule for 3 backbones",
+ "test": "p1_split_rule",
+ "group": "parts",
+ "what": "the stored split is the documented rule (re-coded here): sorted uids, default_rng(20261111).permutation, 20 / 45 / 35 percent of the items",
+ "seconds": 0.1746673583984375,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

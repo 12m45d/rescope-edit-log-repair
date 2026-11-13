@@ -1,0 +1,244 @@
+{
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "written": "2026-11-11 12:08:22 UTC",
+ "gpu": "NVIDIA GeForce RTX 5090",
+ "note": "timings on a shared GPU are load-dependent; synthetic logs = the development log's factors tiled with 2 % noise",
+ "passes": {
+  "weight": {
+   "benign": {
+    "tf": 0.0028442899386088055,
+    "dec": 0.014729883670806885,
+    "n_sequences": 600,
+    "n_batches": 12
+   },
+   "request_paraphrase": {
+    "tf": 0.0024921544392903644,
+    "dec": 0.014873676300048828,
+    "n_sequences": 300,
+    "n_batches": 6
+   }
+  },
+  "gate_T100": {
+   "silent_hook": {
+    "benign": {
+     "tf": 0.0021239376068115236,
+     "dec": 0.007428944110870361,
+     "n_sequences": 600,
+     "n_batches": 12
+    }
+   },
+   "rescope": {
+    "benign": {
+     "tf": 0.002131173610687256,
+     "dec": 0.007467021544774373,
+     "n_sequences": 600,
+     "n_batches": 12
+    },
+    "request_paraphrase": {
+     "tf": 0.0021004883448282876,
+     "dec": 0.007428784370422364,
+     "n_sequences": 300,
+     "n_batches": 6
+    }
+   },
+   "cosine_silent_hook": {
+    "benign": {
+     "tf": 0.0021282962958017984,
+     "dec": 0.008811081647872926,
+     "n_sequences": 600,
+     "n_batches": 12
+    }
+   },
+   "where_all_fire": {
+    "request_paraphrase": {
+     "tf": 0.002595521608988444,
+     "dec": 0.013526811599731445,
+     "n_sequences": 150,
+     "n_batches": 3
+    }
+   }
+  },
+  "public_T100": {
+   "prob_test_seconds_per_record_weight": 0.12460575103759766,
+   "generation_seconds_per_record_weight": 2.8362388610839844,
+   "prob_test_seconds_per_record_gate": 0.12770466804504393,
+   "generation_seconds_per_record_gate": 3.0745983123779297
+  },
+  "gate_T500": {
+   "silent_hook": {
+    "benign": {
+     "tf": 0.0027558529376983643,
+     "dec": 0.01332982063293457,
+     "n_sequences": 600,
+     "n_batches": 12
+    }
+   },
+   "rescope": {
+    "benign": {
+     "tf": 0.0027624309062957765,
+     "dec": 0.012959053119023642,
+     "n_sequences": 600,
+     "n_batches": 12
+    },
+    "request_paraphrase": {
+     "tf": 0.0027809842427571614,
+     "dec": 0.012628130912780762,
+     "n_sequences": 300,
+     "n_batches": 6
+    }
+   },
+   "cosine_silent_hook": {
+    "benign": {
+     "tf": 0.0026744536558787027,
+     "dec": 0.011679551204045614,
+     "n_sequences": 600,
+     "n_batches": 12
+    }
+   },
+   "where_all_fire": {
+    "request_paraphrase": {
+     "tf": 0.002814186414082845,
+     "dec": 0.01306100845336914,
+     "n_sequences": 150,
+     "n_batches": 3
+    }
+   }
+  },
+  "public_T500": {
+   "prob_test_seconds_per_record_weight": 0.12658178806304932,
+   "generation_seconds_per_record_weight": 2.385328471660614,
+   "prob_test_seconds_per_record_gate": 0.12235691547393798,
+   "generation_seconds_per_record_gate": 2.478444516658783
+  },
+  "gate_T2000": {
+   "silent_hook": {
+    "benign": {
+     "tf": 0.0029354488849639895,
+     "dec": 0.011257877349853515,
+     "n_sequences": 600,
+     "n_batches": 12
+    }
+   },
+   "rescope": {
+    "benign": {
+     "tf": 0.0029595057169596356,
+     "dec": 0.01126145084698995,
+     "n_sequences": 600,
+     "n_batches": 12
+    },
+    "request_paraphrase": {
+     "tf": 0.0029366509119669597,
+     "dec": 0.011123442649841308,
+     "n_sequences": 300,
+     "n_batches": 6
+    }
+   },
+   "cosine_silent_hook": {
+    "benign": {
+     "tf": 0.002946914037068685,
+     "dec": 0.011429628133773804,
+     "n_sequences": 600,
+     "n_batches": 12
+    }
+   },
+   "where_all_fire": {
+    "request_paraphrase": {
+     "tf": 0.0034281349182128905,
+     "dec": 0.014101646741231282,
+     "n_sequences": 150,
+     "n_batches": 3
+    }
+   }
+  },
+  "public_T2000": {
+   "prob_test_seconds_per_record_weight": 0.127150297164917,
+   "generation_seconds_per_record_weight": 2.4317047595977783,
+   "prob_test_seconds_per_record_gate": 0.135434889793396,
+   "generation_seconds_per_record_gate": 2.5121161341667175
+  }
+ },
+ "build": {
+  "T100": {
+   "rescope": 0.4088101387023926,
+   "rescope_shared": 0.0355682373046875,
+   "rescope_null": 2.100371837615967,
+   "cosine": 0.372084379196167,
+   "cosine_published": 0.04325294494628906,
+   "exact": 0.042464494705200195,
+   "rescope_next_draw": 0.2530031204223633,
+   "rescope_null_next_draw": 1.878197431564331
+  },
+  "T500": {
+   "rescope": 1.4318716526031494,
+   "rescope_shared": 0.22781968116760254,
+   "rescope_null": 2.79093337059021,
+   "cosine": 1.1820721626281738,
+   "cosine_published": 0.3076908588409424,
+   "exact": 0.30371999740600586,
+   "rescope_next_draw": 0.5598509311676025,
+   "rescope_null_next_draw": 2.8152949810028076
+  },
+  "T2000": {
+   "rescope": 26.632046699523926,
+   "rescope_shared": 1.065340280532837,
+   "rescope_null": 9.56583046913147,
+   "cosine": 7.329616069793701,
+   "cosine_published": 1.3774442672729492,
+   "exact": 1.3634753227233887,
+   "rescope_next_draw": 1.765760898590088,
+   "rescope_null_next_draw": 9.59091567993164
+  }
+ },
+ "gate_level": {
+  "T100": {
+   "n_texts": 300,
+   "n_positions": 7636,
+   "seconds_cpu": 0.4229280948638916,
+   "ns_per_position_detector_cpu": 553.8607842638706,
+   "seconds_cuda": 0.12669873237609863,
+   "ns_per_position_detector_cuda": 165.9229077738327,
+   "decide_100_request_prompts_seconds": 0.11107039451599121
+  },
+  "T500": {
+   "n_texts": 300,
+   "n_positions": 7636,
+   "seconds_cpu": 0.5120153427124023,
+   "ns_per_position_detector_cpu": 134.1056424076486,
+   "seconds_cuda": 0.1618666648864746,
+   "ns_per_position_detector_cuda": 42.39566916879901,
+   "decide_100_request_prompts_seconds": 0.16769838333129883
+  },
+  "T2000": {
+   "n_texts": 300,
+   "n_positions": 7636,
+   "seconds_cpu": 1.0498671531677246,
+   "ns_per_position_detector_cpu": 68.744575246708,
+   "seconds_cuda": 0.31319665908813477,
+   "ns_per_position_detector_cuda": 20.50790067365995,
+   "decide_100_request_prompts_seconds": 0.30834531784057617
+  }
+ },
+ "mem": {
+  "T100": {
+   "peak_alloc_MiB": 8506.46435546875,
+   "peak_reserved_MiB": 9016.0,
+   "seconds_block": 60.16930627822876
+  },
+  "T500": {
+   "peak_alloc_MiB": 8555.12109375,
+   "peak_reserved_MiB": 9264.0,
+   "seconds_block": 73.03374981880188
+  },
+  "T2000": {
+   "peak_alloc_MiB": 8740.08984375,
+   "peak_reserved_MiB": 9304.0,
+   "seconds_block": 182.10466957092285
+  }
+ }
+}

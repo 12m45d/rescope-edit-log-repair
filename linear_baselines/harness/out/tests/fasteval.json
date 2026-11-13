@@ -1,0 +1,203 @@
+{
+ "n": 16,
+ "n_identical": 16,
+ "sec_fast_median": 21.901641964912415,
+ "sec_full_median": 35.78662419319153,
+ "baseline_checks": {
+  "heldout_reproduced_equals_stored_v2": true,
+  "n_heldout_rows": 490,
+  "n_heldout_items": 250,
+  "Rel_token_WE": 91.57936528325081,
+  "Rel_exact_WE": 78.0,
+  "Rel_B1_token_WE": 91.19047638773918,
+  "Rel_B1_exact_WE": 78.0,
+  "edits_B1_vs_b8_em_flags_differing": {
+   "rel": 2,
+   "tgen": 0,
+   "igen": 1
+  },
+  "Rel_matches_stored": true,
+  "fast_eval_equals_full": true
+ },
+ "rows": [
+  {
+   "group": "image_407",
+   "method": "COMP",
+   "cfg": {},
+   "identical": true,
+   "sec_fast": 132.829674243927,
+   "sec_full": 67.26332998275757,
+   "broken": 1,
+   "lost": 14
+  },
+  {
+   "group": "image_407",
+   "method": "COMP",
+   "cfg": {
+    "form": "merged"
+   },
+   "identical": true,
+   "sec_fast": 48.685311794281006,
+   "sec_full": 69.44894337654114,
+   "broken": 1,
+   "lost": 16
+  },
+  {
+   "group": "image_407",
+   "method": "ROLLBACK_FO",
+   "cfg": {
+    "budget": 10
+   },
+   "identical": true,
+   "sec_fast": 47.68807101249695,
+   "sec_full": 63.99238967895508,
+   "broken": 2,
+   "lost": 19
+  },
+  {
+   "group": "image_407",
+   "method": "REEDIT",
+   "cfg": {},
+   "identical": true,
+   "sec_fast": 21.453203201293945,
+   "sec_full": 34.845778465270996,
+   "broken": 0,
+   "lost": 10
+  },
+  {
+   "group": "image_124",
+   "method": "COMP",
+   "cfg": {},
+   "identical": true,
+   "sec_fast": 25.959775686264038,
+   "sec_full": 48.48901557922363,
+   "broken": 1,
+   "lost": 15
+  },
+  {
+   "group": "image_124",
+   "method": "COMP",
+   "cfg": {
+    "form": "merged"
+   },
+   "identical": true,
+   "sec_fast": 31.962077140808105,
+   "sec_full": 43.93819260597229,
+   "broken": 1,
+   "lost": 14
+  },
+  {
+   "group": "image_124",
+   "method": "ROLLBACK_FO",
+   "cfg": {
+    "budget": 10
+   },
+   "identical": true,
+   "sec_fast": 21.472339630126953,
+   "sec_full": 34.9157075881958,
+   "broken": 6,
+   "lost": 21
+  },
+  {
+   "group": "image_124",
+   "method": "REEDIT",
+   "cfg": {},
+   "identical": true,
+   "sec_fast": 21.524667501449585,
+   "sec_full": 34.978432178497314,
+   "broken": 1,
+   "lost": 11
+  },
+  {
+   "group": "text_278",
+   "method": "COMP",
+   "cfg": {},
+   "identical": true,
+   "sec_fast": 22.657729148864746,
+   "sec_full": 36.52905035018921,
+   "broken": 0,
+   "lost": 27
+  },
+  {
+   "group": "text_278",
+   "method": "COMP",
+   "cfg": {
+    "form": "merged"
+   },
+   "identical": true,
+   "sec_fast": 21.463271379470825,
+   "sec_full": 35.170666456222534,
+   "broken": 0,
+   "lost": 27
+  },
+  {
+   "group": "text_278",
+   "method": "ROLLBACK_FO",
+   "cfg": {
+    "budget": 10
+   },
+   "identical": true,
+   "sec_fast": 21.672529458999634,
+   "sec_full": 35.081912994384766,
+   "broken": 4,
+   "lost": 20
+  },
+  {
+   "group": "text_278",
+   "method": "REEDIT",
+   "cfg": {},
+   "identical": true,
+   "sec_fast": 21.506040811538696,
+   "sec_full": 35.101292848587036,
+   "broken": 0,
+   "lost": 55
+  },
+  {
+   "group": "text_226",
+   "method": "COMP",
+   "cfg": {},
+   "identical": true,
+   "sec_fast": 22.76831364631653,
+   "sec_full": 37.719950914382935,
+   "broken": 2,
+   "lost": 27
+  },
+  {
+   "group": "text_226",
+   "method": "COMP",
+   "cfg": {
+    "form": "merged"
+   },
+   "identical": true,
+   "sec_fast": 21.679632663726807,
+   "sec_full": 35.84252953529358,
+   "broken": 2,
+   "lost": 21
+  },
+  {
+   "group": "text_226",
+   "method": "ROLLBACK_FO",
+   "cfg": {
+    "budget": 10
+   },
+   "identical": true,
+   "sec_fast": 21.922303915023804,
+   "sec_full": 35.73071885108948,
+   "broken": 12,
+   "lost": 23
+  },
+  {
+   "group": "text_226",
+   "method": "REEDIT",
+   "cfg": {},
+   "identical": true,
+   "sec_fast": 21.880980014801025,
+   "sec_full": 35.699742794036865,
+   "broken": 0,
+   "lost": 55
+  }
+ ],
+ "pass": true,
+ "seconds": 1226.8095586299896,
+ "gpu": "NVIDIA GeForce RTX 5090"
+}

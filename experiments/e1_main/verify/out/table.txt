@@ -1,0 +1,222 @@
+VERIFICATION OF E1 (main comparison; E1b, E1c, E7)      rendered 2026-11-11 23:59:12 by verify/code/v_render.py from verify/out/checks.json
+own evaluation: the library's plain Evaluator (rescope.Evaluator: no driver, no memo, no key cache; every row a B = 1 forward), gates built on the model's device from keys captured in the job;
+calibration draw 0, alpha = 0.05, n = 200; own statistics: own crossed / paired percentile bootstrap (2000 resamples; other random numbers than the driver's).
+
+(0) CHECKS
+check                                     ok                                                                                                                                                                                                                                                                                                                           numbers
+--------------------------------------  ----  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+A_cells_vs_results_json                 True                                                                                                                                                                                                                                                                               n_cells_compared = 410; largest_abs_diff = 7.11e-15
+A_cells_vs_paper_numbers                True                                                                                                                                                                                                                                                                             n_numbers_compared = 392; largest_abs_diff = 7.11e-15
+B_H2                                    True  n_tests = 18; gate_form_largest_abs_diff_point_estimates = 1.42e-14; gate_form_largest_abs_diff_interval_ends = 0.724; largest_abs_diff_point_estimates = 1.33e-14; largest_abs_diff_secondary_points = 7.99e-15; largest_abs_diff_interval_ends = 1; intervals_exclude_0_in_the_same_cases = True; holm_rejections_equal = True
+C_H3_decision                           True                                                                                                                                                                      equal = True; largest_abs_diff_point_estimates = 7.11e-15; largest_abs_diff_interval_ends = 0.601; raise_consistent = True; largest_H3_difference_points = 2
+D_selection                             True                                                                                                                                                                                                              equal = True; selection_file_older_than_first_behavioural_cell_of_a_selected_gate = True; seconds_between = 1.16e+03
+F_sanity_e0                             True                                                                                                                                                                                                                                                                                      n_cells_compared = 296; largest_abs_diff = 0
+G_counts_and_discipline                 True
+H_gate_level_paper_numbers              True                                                                                                                                                                                                                                                                                    n_numbers_compared = 136; largest_abs_diff = 0
+I_rerun_of_analysis_and_rendering       True                                                                                                                                                                                                                                                                                                      n_files = 9; n_identical = 9
+I_gate_cells_rebuilt                    True                                                                                                                                                                                                                                                             n_logs = 5; n_cells = 195; n_digest_differs = 0; largest_abs_diff = 0
+I_frontier_rerun_one_log_per_process    True                                                                                                                                                                                                                                                                                                       n_logs = 2; n_identical = 2
+I_calibration_draws_from_REPAIR         True                                                                                                                                                                              n_draws_per_log = 20; draws_equal_to_own_seeded_draw = 20; rows_of_HELD-OUT_in_a_calibration_or_null_sample = 0; rescope_digest_equal_all_draws = 20
+I_E1c_matched_coverage_own_computation  True                                                                                                                                                                                                                                            n_cells = 12; n_reachable = 10; reachability_equal = True; largest_abs_diff = 7.11e-15
+
+(1) OWN FORWARDS AGAINST THE EXPERIMENT'S ROWS, calibration draw 0 (deployed: no draw): mine / experiment, %; all 100 edits, heldout_disjoint, valid near-scope negatives
+  TB-Q100-ae-l2_3
+  method              fire hd          D1 hd            Rel        T-Gen        I-Gen  T-Gen coverage  I-Gen coverage      HN-I D1      HN-Q D1      HN-X D1
+  --------------  -----------  -------------  -------------  -----------  -----------  --------------  --------------  -----------  -----------  -----------
+  rescope         4.95 / 4.95    4.95 / 4.95  100.0 / 100.0  57.0 / 57.0  69.0 / 69.0     60.0 / 60.0     70.0 / 70.0  36.2 / 36.2  23.4 / 23.4  51.5 / 51.5
+  rescope_shared  4.52 / 4.52    4.52 / 4.52  100.0 / 100.0  59.0 / 59.0  72.0 / 72.0     60.0 / 60.0     73.0 / 73.0  27.0 / 27.0  18.6 / 18.6  37.4 / 37.4
+  rescope_null    4.30 / 4.30    4.30 / 4.30  100.0 / 100.0  59.0 / 59.0  76.0 / 76.0     61.0 / 61.0     77.0 / 77.0  35.0 / 35.0  27.4 / 27.4  52.5 / 52.5
+  cosine_shared   4.52 / 4.52    4.52 / 4.52  100.0 / 100.0    3.0 / 3.0  50.0 / 50.0       2.0 / 2.0     51.0 / 51.0    4.6 / 4.6    6.9 / 6.9    9.1 / 9.1
+  deployed              - / -  54.19 / 54.19    78.0 / 78.0    9.0 / 9.0  22.0 / 22.0               -               -  76.7 / 76.7  77.7 / 77.7  86.9 / 86.9
+  row-level agreement of the flags (exact, D1, released, released edit, own edit released): flags that differ / flags compared
+  method          edit rows  heldout_disjoint rows  near-scope rows  rows that differ
+  --------------  ---------  ---------------------  ---------------  ----------------
+  rescope         0 of 1200              0 of 1860        0 of 5112
+  rescope_shared  0 of 1200              0 of 1860        0 of 5112
+  rescope_null    0 of 1200              0 of 1860        0 of 5112
+  cosine_shared   0 of 1200              0 of 1860        0 of 5112
+  deployed         0 of 300               0 of 930        0 of 2556
+  my gates (built on the GPU from live keys) against the driver's gates of the experiment (CPU, key cache): rescope: thresholds differ by at most 1.0e-15 (relative), same calibration queries True, driver digest = experiment's cell True; rescope_shared: thresholds differ by at most 0.0e+00 (relative), same calibration queries True, driver digest = experiment's cell True; rescope_null: thresholds differ by at most 1.8e-12 (relative), same calibration queries True, same null-repair queries True, driver digest = experiment's cell True; cosine_shared: thresholds differ by at most 1.2e-16 (relative), same calibration queries True, driver digest = experiment's cell True
+  primary endpoint at draw 0, (T-Gen + I-Gen) / 2 exact, rescope minus cosine_shared, paired bootstrap over the 100 edits: from mine: +36.5 [+30.5, +42.5]; from experiment rows: +36.5 [+30.5, +42.5]
+
+  TB-L100-ae-l2_3
+  method              fire hd          D1 hd          Rel        T-Gen        I-Gen  T-Gen coverage  I-Gen coverage      HN-I D1      HN-Q D1      HN-X D1
+  --------------  -----------  -------------  -----------  -----------  -----------  --------------  --------------  -----------  -----------  -----------
+  rescope         5.33 / 5.33    5.33 / 5.33  98.0 / 98.0  47.0 / 47.0  95.0 / 95.0     51.0 / 51.0     96.0 / 96.0  26.1 / 26.1  43.7 / 43.7  52.5 / 52.5
+  rescope_shared  5.33 / 5.33    5.33 / 5.33  98.0 / 98.0  36.0 / 36.0  90.0 / 90.0     38.0 / 38.0     91.0 / 91.0  14.7 / 14.7  29.6 / 29.6  33.3 / 33.3
+  rescope_null    7.68 / 7.68    7.68 / 7.68  98.0 / 98.0  51.0 / 51.0  95.0 / 95.0     55.0 / 55.0     96.0 / 96.0  26.9 / 26.9  46.6 / 46.6  54.5 / 54.5
+  cosine_shared   3.41 / 3.41    3.41 / 3.41  98.0 / 98.0    2.0 / 2.0  71.0 / 71.0       0.0 / 0.0     72.0 / 72.0    4.1 / 4.1    5.0 / 5.0    6.1 / 6.1
+  deployed              - / -  62.26 / 62.26  88.0 / 88.0  29.0 / 29.0  66.0 / 66.0               -               -  62.9 / 62.9  65.5 / 65.5  75.8 / 75.8
+  row-level agreement of the flags (exact, D1, released, released edit, own edit released): flags that differ / flags compared
+  method          edit rows  heldout_disjoint rows  near-scope rows  rows that differ
+  --------------  ---------  ---------------------  ---------------  ----------------
+  rescope         0 of 1200              0 of 1876        0 of 5144
+  rescope_shared  0 of 1200              0 of 1876        0 of 5144
+  rescope_null    0 of 1200              0 of 1876        0 of 5144
+  cosine_shared   0 of 1200              0 of 1876        0 of 5144
+  deployed         0 of 300               0 of 938        0 of 2572
+  my gates (built on the GPU from live keys) against the driver's gates of the experiment (CPU, key cache): rescope: thresholds differ by at most 1.4e-15 (relative), same calibration queries True, driver digest = experiment's cell True; rescope_shared: thresholds differ by at most 0.0e+00 (relative), same calibration queries True, driver digest = experiment's cell True; rescope_null: thresholds differ by at most 5.5e-13 (relative), same calibration queries True, same null-repair queries True, driver digest = experiment's cell True; cosine_shared: thresholds differ by at most 4.6e-16 (relative), same calibration queries True, driver digest = experiment's cell True
+  primary endpoint at draw 0, (T-Gen + I-Gen) / 2 exact, rescope minus cosine_shared, paired bootstrap over the 100 edits: from mine: +34.5 [+28.0, +41.0]; from experiment rows: +34.5 [+28.0, +41.0]
+
+(2) FREE GENERATION, D2 AND DUAL ON SEEDED SAMPLES (own decodes; 60 edit prompts, 60 heldout_disjoint probes, 60 near-scope negatives, 60 pre-correct heldout_disjoint rows; dual: the 60 probes + 40 edit prompts)
+  TB-Q100-ae-l2_3
+  method     kind  rows  48-token text differs  eq / contains / agree differs  released differs  not decoded by the driver (of them not pre-edit in my decode)  eq (edit) or agree (probe, hn): mine / experiment  rows
+  --------  -----  ----  ---------------------  -----------------------------  ----------------  -------------------------------------------------------------  -------------------------------------------------  ----
+  deployed  probe    60                      0                              0                 0                                                          0 (0)                               36.7 / 36.7 (n = 60)
+  deployed   edit    60                      0                              0                 0                                                          0 (0)                               38.3 / 38.3 (n = 60)
+  deployed     hn    60                      0                              0                 0                                                          0 (0)                               16.7 / 16.7 (n = 60)
+  preedit   probe    60                      0                              0                 0                                                          0 (0)                             100.0 / 100.0 (n = 60)
+  preedit    edit    40                      0                              0                 0                                                          0 (0)                                 0.0 / 0.0 (n = 40)
+  rescope   probe    60                      0                              0                 0                                                          0 (0)                               96.7 / 96.7 (n = 60)
+  rescope    edit    60                      0                              0                 0                                                          0 (0)                               60.0 / 60.0 (n = 60)
+  rescope      hn    60                      0                              0                 0                                                         34 (0)                               56.7 / 56.7 (n = 60)
+  dual      probe    60                      0                              0                 0                                                          0 (0)                             100.0 / 100.0 (n = 60)
+  dual       edit    40                      0                              0                 0                                                          0 (0)                               40.0 / 40.0 (n = 40)
+  dual: release decision differs on 0 of 100 queries; released mine / experiment: probes 0.0 / 0.0 (n = 60), edit prompts 40.0 / 40.0 (n = 40); teacher-forced composition (my decodes select the model, my forward): flags that differ 0; exact on the edit prompts 40.0 / 40.0; D1 on the probes 0.0 / 0.0
+  D2 on the sample: deployed: D2 mine / experiment 20.0 / 20.0 % of 60 rows (flags that differ 0, texts that differ 0, rows in the experiment's D2 set 60); rescope: D2 mine / experiment 8.3 / 8.3 % of 60 rows (flags that differ 0, texts that differ 0, rows in the experiment's D2 set 60)
+
+  TB-L100-ae-l2_3
+  method     kind  rows  48-token text differs  eq / contains / agree differs  released differs  not decoded by the driver (of them not pre-edit in my decode)  eq (edit) or agree (probe, hn): mine / experiment  rows
+  --------  -----  ----  ---------------------  -----------------------------  ----------------  -------------------------------------------------------------  -------------------------------------------------  ----
+  deployed  probe    60                      0                              0                 0                                                          0 (0)                               36.7 / 36.7 (n = 60)
+  deployed   edit    60                      0                              0                 0                                                          0 (0)                               38.3 / 38.3 (n = 60)
+  deployed     hn    60                      0                              0                 0                                                          0 (0)                               26.7 / 26.7 (n = 60)
+  preedit   probe    60                      0                              0                 0                                                          0 (0)                             100.0 / 100.0 (n = 60)
+  preedit    edit    40                      0                              0                 0                                                          0 (0)                                 2.5 / 2.5 (n = 40)
+  rescope   probe    60                      0                              0                 0                                                          0 (0)                               93.3 / 93.3 (n = 60)
+  rescope    edit    60                      0                              0                 0                                                          0 (0)                               61.7 / 61.7 (n = 60)
+  rescope      hn    60                      0                              0                 0                                                         33 (0)                               56.7 / 56.7 (n = 60)
+  dual      probe    60                      0                              0                 0                                                          0 (0)                               98.3 / 98.3 (n = 60)
+  dual       edit    40                      0                              0                 0                                                          0 (0)                               37.5 / 37.5 (n = 40)
+  dual: release decision differs on 0 of 100 queries; released mine / experiment: probes 1.7 / 1.7 (n = 60), edit prompts 37.5 / 37.5 (n = 40); teacher-forced composition (my decodes select the model, my forward): flags that differ 0; exact on the edit prompts 37.5 / 37.5; D1 on the probes 1.7 / 1.7
+  D2 on the sample: deployed: D2 mine / experiment 36.7 / 36.7 % of 60 rows (flags that differ 0, texts that differ 0, rows in the experiment's D2 set 60); rescope: D2 mine / experiment 5.0 / 5.0 % of 60 rows (flags that differ 0, texts that differ 0, rows in the experiment's D2 set 60)
+
+(3) THE MAIN TABLE OF THE EXPERIMENT'S SUMMARY (alpha = 0.05, mean of draws 0-2) AGAINST THE CELLS RECOMPUTED FROM ITS ROW FILES: Rel / T-Gen / I-Gen | D1 heldout_disjoint | D1 HN-I / HN-Q / HN-X
+row               log                     summary                 recomputed from the rows  agree within rounding
+----------------  ---  --------------------------  ---------------------------------------  ---------------------
+deployed            Q   78/9/22 | 54.2 | 77/78/87   78.0/9.0/22.0 | 54.19 | 76.7/77.7/86.9                    yes
+deployed            L  88/29/66 | 62.3 | 63/66/76  88.0/29.0/66.0 | 62.26 | 62.9/65.5/75.8                    yes
+rescope             Q  100/56/68 | 3.9 | 32/24/49  100.0/56.3/68.3 | 3.94 | 32.3/23.7/48.5                    yes
+rescope             L   98/38/90 | 3.1 | 20/36/42   98.0/38.3/90.3 | 3.06 | 20.1/36.2/42.4                    yes
+rescope_x           Q    100/21/57 | 2.5 | 9/8/16    100.0/21.0/57.3 | 2.51 | 9.2/7.5/15.8                    yes
+rescope_x           L     98/15/70 | 2.4 | 5/9/14     98.0/15.0/69.7 | 2.35 | 5.0/9.4/13.5                    yes
+where_logonly       Q      78/7/26 | 1.1 | 6/9/13      78.0/7.0/26.0 | 1.08 | 5.6/8.8/13.1                    yes
+where_logonly       L   92/28/68 | 2.8 | 20/35/38   92.0/28.0/68.0 | 2.77 | 19.8/35.2/38.4                    yes
+white_1_shared      Q  100/45/75 | 5.5 | 19/29/37  100.0/44.7/75.0 | 5.45 | 18.8/29.3/37.0                    yes
+white_1_shared      L   98/29/93 | 3.6 | 17/51/53   98.0/29.3/93.0 | 3.62 | 16.7/50.9/53.2                    yes
+white_0.1_shared    Q  100/60/79 | 6.9 | 35/41/56  100.0/59.7/79.0 | 6.88 | 34.9/41.1/55.9                    yes
+white_0.1_shared    L   98/38/93 | 3.8 | 18/52/56   98.0/38.3/93.0 | 3.77 | 17.9/52.1/55.9                    yes
+cosine_shared       Q      100/3/49 | 4.3 | 5/7/9      100.0/3.0/49.3 | 4.30 | 4.5/6.9/9.1                    yes
+cosine_shared       L       98/2/69 | 2.6 | 3/4/6       98.0/2.0/69.3 | 2.56 | 3.4/4.4/5.7                    yes
+retr_sum            Q  100/86/95 | 4.5 | 52/18/56  100.0/85.7/94.7 | 4.52 | 52.1/18.0/55.6                    yes
+retr_sum            L   98/89/97 | 6.7 | 60/20/69   98.0/89.3/97.3 | 6.68 | 60.4/20.2/68.7                    yes
+dual                Q       64/8/18 | 0.0 | 1/4/3       64.0/8.0/18.0 | 0.00 | 0.7/3.6/3.0                    yes
+dual                L    72/28/51 | 0.4 | 5/18/21    72.0/28.0/51.0 | 0.43 | 5.4/18.4/21.2                    yes
+
+(4) CONFIRMATORY COMPARISONS recomputed from the experiment's per-edit rows (own crossed bootstrap, draws x edits): mine | experiment
+  TB-Q100-ae-l2_3   H2: (T-Gen + I-Gen) / 2 exact, all edits, ReScope minus the baseline; 3 draws
+  baseline                  method  difference [95 %] mine  p Holm mine  difference [95 %] experiment  p Holm experiment  gate coverage form (20 draws) mine            experiment
+  --------------  ----------------  ----------------------  -----------  ----------------------------  -----------------  ----------------------------------  --------------------
+  best_cosine_H2  white_0.1_shared      -7.0 [-12.5, -2.2]       0.0200            -7.0 [-12.0, -2.0]             0.0280                   -1.7 [-6.2, +2.6]     -1.7 [-6.4, +2.6]
+  best_cosine_H3    white_1_shared       +2.5 [-3.2, +7.5]       1.0000             +2.5 [-2.5, +7.8]             1.0000                  +5.3 [+0.5, +10.0]    +5.3 [+0.8, +10.2]
+  retr                    retr_sum    -27.8 [-36.2, -20.0]       0.0090          -27.8 [-36.0, -20.2]             0.0090                -26.8 [-32.7, -21.0]  -26.8 [-32.8, -21.0]
+  lookup                    lookup    +33.8 [+26.8, +40.5]       0.0090          +33.8 [+27.3, +40.7]             0.0090                +37.5 [+31.5, +43.3]  +37.5 [+30.8, +43.7]
+  cosine                    cosine    +31.5 [+24.0, +39.0]       0.0090          +31.5 [+23.5, +39.0]             0.0090                +36.1 [+30.2, +41.8]  +36.1 [+30.5, +41.9]
+  cosine_shared      cosine_shared    +36.2 [+29.7, +42.2]       0.0090          +36.2 [+29.5, +43.0]             0.0090                +42.2 [+35.8, +48.5]  +42.2 [+36.0, +48.3]
+  ball                        ball    +26.0 [+18.3, +33.0]       0.0090          +26.0 [+18.5, +33.5]             0.0090                +32.0 [+26.2, +37.7]  +32.0 [+26.7, +37.7]
+  router                    router    +49.3 [+42.3, +56.5]       0.0090          +49.3 [+42.7, +56.5]             0.0090                                   -                     -
+  dual                        dual    +49.3 [+42.3, +56.3]       0.0090          +49.3 [+42.2, +56.5]             0.0090                                   -                     -
+  H3: the same quantity on the odd edits under the near-scope constraint, a minus b; behaviour 3 draws, gate-level coverage form 20 draws
+  pair             a               b       behaviour mine  behaviour experiment        gate form mine  gate form experiment     edits at cap a / b  >= 10 and intervals exclude 0
+  -------  ---------  --------------  -------------------  --------------------  --------------------  --------------------  ---------------------  -----------------------------
+  pair1      rescope  white_1_shared    -1.3 [-8.0, +5.0]     -1.3 [-7.7, +5.3]     -0.9 [-7.1, +5.4]     -0.9 [-7.3, +5.1]  [0, 0, 0] / [0, 0, 0]                          False
+  pair2_x  rescope_x       white_1_x    +2.0 [-2.7, +7.0]     +2.0 [-3.0, +7.0]     +1.7 [-3.8, +6.7]     +1.6 [-3.5, +7.2]  [0, 0, 0] / [0, 0, 0]                          False
+  retr       rescope        retr_sum  -22.3 [-36.0, -8.7]   -22.3 [-36.0, -9.0]  -22.1 [-32.1, -11.4]  -22.0 [-31.8, -11.6]  [0, 0, 0] / [2, 6, 9]                          False
+  TB-L100-ae-l2_3   H2: (T-Gen + I-Gen) / 2 exact, all edits, ReScope minus the baseline; 3 draws
+  baseline                  method  difference [95 %] mine  p Holm mine  difference [95 %] experiment  p Holm experiment  gate coverage form (20 draws) mine            experiment
+  --------------  ----------------  ----------------------  -----------  ----------------------------  -----------------  ----------------------------------  --------------------
+  best_cosine_H2  white_0.1_shared       -1.3 [-8.2, +4.7]       1.0000             -1.3 [-8.0, +4.7]             1.0000                   +0.3 [-3.7, +4.6]     +0.3 [-3.8, +4.6]
+  best_cosine_H3    white_1_shared      +3.2 [-5.2, +10.7]       1.0000            +3.2 [-4.7, +11.0]             1.0000                   +4.8 [+0.6, +9.2]     +4.8 [+0.4, +9.2]
+  retr                    retr_sum    -29.0 [-39.5, -20.3]       0.0090          -29.0 [-39.0, -19.8]             0.0090                -26.8 [-32.4, -21.0]  -26.8 [-32.5, -21.3]
+  lookup                    lookup    +35.3 [+24.5, +45.0]       0.0090          +35.3 [+25.5, +45.3]             0.0090                +37.5 [+30.9, +44.2]  +37.5 [+30.5, +44.4]
+  cosine                    cosine    +32.5 [+23.5, +41.0]       0.0090          +32.5 [+23.7, +42.0]             0.0090                +34.4 [+28.5, +40.7]  +34.4 [+28.1, +40.8]
+  cosine_shared      cosine_shared    +28.7 [+19.5, +37.0]       0.0090          +28.7 [+20.0, +37.7]             0.0090                +31.1 [+25.1, +37.5]  +31.1 [+24.8, +37.2]
+  ball                        ball    +25.3 [+18.5, +32.5]       0.0090          +25.3 [+18.0, +33.0]             0.0090                +24.7 [+19.4, +30.4]  +24.7 [+19.4, +30.5]
+  router                    router    +41.5 [+31.3, +50.7]       0.0090          +41.5 [+32.0, +51.3]             0.0090                                   -                     -
+  dual                        dual    +24.8 [+13.8, +34.7]       0.0090          +24.8 [+14.3, +35.7]             0.0090                                   -                     -
+  H3: the same quantity on the odd edits under the near-scope constraint, a minus b; behaviour 3 draws, gate-level coverage form 20 draws
+  pair             a               b       behaviour mine  behaviour experiment       gate form mine  gate form experiment       edits at cap a / b  >= 10 and intervals exclude 0
+  -------  ---------  --------------  -------------------  --------------------  -------------------  --------------------  -----------------------  -----------------------------
+  pair1      rescope  white_1_shared   -4.0 [-10.0, +2.0]     -4.0 [-9.7, +1.7]    -4.1 [-8.8, +0.7]     -4.1 [-9.0, +0.5]    [2, 0, 1] / [0, 0, 0]                          False
+  pair2_x  rescope_x       white_1_x    -0.3 [-6.0, +5.0]     -0.3 [-6.0, +5.3]    +0.1 [-5.5, +5.5]     +0.1 [-5.3, +5.5]   [0, 1, 0] / [4, 8, 10]                          False
+  retr       rescope        retr_sum  -12.7 [-24.7, -0.3]   -12.7 [-25.0, -0.3]  -17.6 [-27.5, -8.3]   -17.5 [-27.2, -7.7]  [2, 0, 1] / [9, 12, 12]                          False
+  DECISION (R6 / R25, applied literally): mine {'pair1': 'trade-off', 'pair2_x': 'trade-off', 'retr': 'trade-off'} ; experiment {'pair1': 'trade-off', 'pair2_x': 'trade-off', 'retr': 'trade-off'}; largest H3 difference of a cosine-family pair: +2.0 points
+
+(5) SELECTION IN FAVOUR OF THE BASELINE recomputed from the per-edit coverage flags of the gate-level cells (20 draws): largest mean coverage; ties by the registered order
+log  family  read-out   selected (mine)  coverage                          tied with                   runner-up        experiment
+---  ------  --------  ----------------  --------  ---------------------------------  --------------------------  ----------------
+Q    cosine        H3    white_1_shared    39.000  white_1_shared, whitecos_1_shared  whitecos_0.1_shared 38.000    white_1_shared
+Q    cosine        H2  white_0.1_shared    69.175                                  -    white_0.01_shared 68.350  white_0.1_shared
+Q      retr        H3          retr_sum    60.150                                  -             retr_min 55.200          retr_sum
+Q      retr        H2          retr_sum    94.300                                  -             retr_min 55.450          retr_sum
+L    cosine        H3    white_1_shared    41.000                                  -   cos_centred_shared 40.200    white_1_shared
+L    cosine        H2  white_0.1_shared    66.675                                  -    white_0.01_shared 66.400  white_0.1_shared
+L      retr        H3          retr_sum    54.400                                  -            retr_conj 53.850          retr_sum
+L      retr        H2          retr_sum    93.775                                  -            retr_conj 54.850          retr_sum
+  the selection file is older than the first behavioural cell of a selected gate: True (1163 s)
+
+(6) COUNTS, BOUND, FURTHER CLAIMS OF THE SUMMARY
+  TB-Q100-ae-l2_3: edit rows 300, heldout_disjoint rows 465 in 449 query clusters (invalid pre-edit answers among them: 0), near-scope rows 1278 {'HN-I': 588, 'HN-Q': 591, 'HN-X': 99}, with a degenerate pre-edit answer {'HN-I': 0, 'HN-Q': 0, 'HN-X': 0}; the same row set for every method and draw: True; behavioural cells 74, hook_mismatch max 0, memo conflicts max 0
+     calibrated gates whose false firing on heldout_disjoint (literal rule, mean of 20 draws) exceeds the bound of their rule: ball 5.86; cos_null_shared 5.01; router 5.77; white_0.01_shared 6.77; white_0.1_shared 6.70; white_1_shared 6.27; whitecos_0.01 5.45; whitecos_0.01_shared 6.02; whitecos_0.1 5.19; whitecos_0.1_shared 6.22; whitecos_1 5.26; whitecos_1_shared 6.41
+  TB-L100-ae-l2_3: edit rows 300, heldout_disjoint rows 469 in 453 query clusters (invalid pre-edit answers among them: 0), near-scope rows 1286 {'HN-I': 590, 'HN-Q': 597, 'HN-X': 99}, with a degenerate pre-edit answer {'HN-I': 188, 'HN-Q': 185, 'HN-X': 27}; the same row set for every method and draw: True; behavioural cells 113, hook_mismatch max 0, memo conflicts max 0
+     calibrated gates whose false firing on heldout_disjoint (literal rule, mean of 20 draws) exceeds the bound of their rule: cos_null 5.05 (capped 9.4); retr_min 5.48 (capped 44.9); retr_sum 7.16 (capped 0.3)
+  logs in results.json: ['TB-L100-ae', 'TB-L100-ae-l2_3', 'TB-Q100-ae', 'TB-Q100-ae-l2_1', 'TB-Q100-ae-l2_3']; with behavioural records: ['TB-L100-ae-l2_3', 'TB-Q100-ae-l2_3']
+  MME-T firing on Qwen (20 draws; mean [min, max]): rescope 5.6 [0.0, 23.2]; rescope_null 23.4 [0.3, 61.4]; rescope_shared 0.3 [0.0, 0.9]; router 87.3 [81.4, 93.8]
+  cosine 0.65 at all positions against the last position: Qwen 0 of 2043 rows differ in any field; LLaVA, of 2055 rows: 10 differ in some field, 8 in the release flag, 5 in the teacher-forced outcome (token accuracy), 3 in exact / D1 (summary: 5 rows differ)
+  LLaVA, gate at the decode's position: largest number of behavioural rows that change in a cell 15 (summary: 12); largest change of a cell 1.07 points
+  capped edits (mean of 20 draws): Q/cosine 3.9; Q/retr_conj 44.8; Q/retr_min 42.9; Q/rescope 0.0; Q/rescope_x 0.0; L/cosine 36.8; L/retr_conj 50.6; L/retr_min 44.9; L/rescope 0.2; L/rescope_x 1.1
+  re-run of the experiment's own e1_analyze.py and e1_render.py on a private copy: identical to the experiment's files: endpoints.json: True; decision.json: True; paper_numbers.json: True; paper_numbers_doc.json: True; gate_draws.json: True; missing.json: True; results.json (records): True; table.txt (all lines but the time stamp): True; e2_rows_used.json (records): True
+     E2 rows of table (2b): E2 rendered 2026-11-11 22:43:08 when the experiment read them; at the re-run (2026-11-11 22:57:55) E2 was rendered 2026-11-11 22:43:08
+
+(7) WHAT THE SUMMARY DOES NOT CARRY (recomputed from the experiment's row files)
+  near-scope D1 of the three calibration draws d0/d1/d2 (%; the main table of the experiment prints their mean and lists the draws for heldout_disjoint and the edits only):
+  log          method            HN-I            HN-Q            HN-X
+  ---  --------------  --------------  --------------  --------------
+  Q           rescope  36.2/23.5/37.2  23.4/18.4/29.3  51.5/39.4/54.5
+  Q         rescope_x    8.8/12.2/6.6     6.9/9.3/6.3  16.2/17.2/14.1
+  Q            cosine    5.1/13.8/5.4   8.8/23.5/13.9  12.1/21.2/15.2
+  Q    white_1_shared  18.5/18.5/19.4  28.9/28.9/29.9  36.4/36.4/38.4
+  Q          retr_sum  40.6/57.0/58.7   7.4/19.8/26.7  36.4/67.7/62.6
+  L           rescope  26.1/11.2/23.1  43.7/24.8/40.2  52.5/27.3/47.5
+  L         rescope_x     5.6/3.9/5.4   11.1/6.9/10.4  15.2/10.1/15.2
+  L            cosine  21.0/11.9/31.2  38.7/26.0/47.4  37.4/28.3/46.5
+  L    white_1_shared  20.0/14.9/15.3  55.1/48.6/48.9  59.6/49.5/50.5
+  L          retr_sum  63.6/63.7/53.9  21.8/21.6/17.3  72.7/68.7/64.6
+  generated answers at draw 0: D2 (% of the pre-correct heldout_disjoint rows) and wrong-target rate on the near-scope negatives (% of all valid rows whose generated answer is the target of the released edit):
+  log          method      D2 (n)  wrong target HN-I  HN-Q  HN-X
+  ---  --------------  ----------  -----------------  ----  ----
+  Q          deployed  15.9 (107)                  -     -     -
+  Q           rescope   9.3 (107)                9.0  10.5  15.2
+  Q         rescope_x   2.8 (107)                3.7   2.9   7.1
+  Q    white_1_shared   6.5 (107)                5.4  12.0  12.1
+  Q          retr_sum   3.7 (107)                9.4   4.7  12.1
+  Q              dual   0.0 (107)                0.7   3.6   3.0
+  L          deployed   39.7 (78)                  -     -     -
+  L           rescope    3.8 (78)               20.5  32.8  37.4
+  L         rescope_x    1.3 (78)                4.6   7.5  13.1
+  L    white_1_shared    5.1 (78)               16.1  42.9  45.5
+  L          retr_sum    2.6 (78)               25.6  15.7  30.3
+  L              dual    0.0 (78)                5.9  19.9  24.2
+  the experiment's paper_numbers.json (691 names): names with a wrong-target rate 0, with D2 0, with a generation metric 0
+  LLaVA near-scope negatives, D1 (%) on rows with a non-degenerate / degenerate pre-edit answer (empty, one character, '?', bare None / No), mean of draws 0-2 (n rows):
+  method               HN-I non-deg / deg       HN-Q non-deg / deg     HN-X non-deg / deg
+  --------------  -----------------------  -----------------------  ---------------------
+  deployed        68.2 / 51.6 (402 / 188)  70.4 / 54.6 (412 / 185)  81.9 / 59.3 (72 / 27)
+  rescope         19.7 / 21.1 (402 / 188)  32.9 / 43.6 (412 / 185)  38.4 / 53.1 (72 / 27)
+  rescope_x         5.5 / 3.9 (402 / 188)   9.1 / 10.1 (412 / 185)  12.0 / 17.3 (72 / 27)
+  cosine_shared     5.1 / 0.0 (402 / 188)    6.1 / 0.4 (412 / 185)    7.9 / 0.0 (72 / 27)
+  white_1_shared  19.7 / 10.3 (402 / 188)  51.6 / 49.2 (412 / 185)  54.6 / 49.4 (72 / 27)
+  retr_sum        63.8 / 53.0 (402 / 188)  17.1 / 27.2 (412 / 185)  71.3 / 61.7 (72 / 27)
+  exact McNemar (PROTOCOL section 4; not in the experiment's files), D1 on heldout_disjoint, ReScope against the deployed log, per calibration draw: rows changed only under the deployed log / only under ReScope (p):
+     TB-Q100-ae-l2_3: d0: 239 / 10 (p = 4.8e-58); d1: 242 / 2 (p = 2.1e-69); d2: 238 / 6 (p = 2.0e-62)
+     TB-L100-ae-l2_3: d0: 273 / 6 (p = 1.3e-72); d1: 291 / 0 (p = 5.0e-88); d2: 280 / 5 (p = 5.0e-76)

@@ -1,0 +1,109 @@
+{
+ "zstar": {
+  "log": "TB-Q100-ae-l2_3",
+  "first_attempt_pairs": {
+   "image": {
+    "n": 49,
+    "bitwise_equal": 1,
+    "median_rel_diff": 0.056402160125316916,
+    "max_rel_diff": 0.42949221204983945,
+    "h_bitwise_equal": 49,
+    "steps_differ": 7,
+    "oracle_differ": 0
+   },
+   "text": {
+    "n": 49,
+    "bitwise_equal": 49,
+    "median_rel_diff": 0.0,
+    "max_rel_diff": 0.0,
+    "h_bitwise_equal": 49,
+    "steps_differ": 0,
+    "oracle_differ": 0
+   }
+  },
+  "oracle_flips_in_experiment_files": [
+   {
+    "source": "p12 logs/streams_TB-Q100-ae-l2_3.log",
+    "group": "image_263",
+    "first_run_oracle": false,
+    "second_run_oracle": true,
+    "second_run_attempts": 1,
+    "ptype": "image"
+   },
+   {
+    "source": "07_repair_v3/rq1 rows (default call, one attempt) vs p12 cache/targets",
+    "group": "image_20",
+    "first_run_oracle": false,
+    "second_run_oracle": true,
+    "second_run_attempts": 1,
+    "ptype": "image"
+   }
+  ],
+  "my_first_attempt_not_oracle": [
+   "image_263",
+   "text_446"
+  ],
+  "my_oracle_after_ladder": 100,
+  "n_mine": 100
+ },
+ "near_twins": {
+  "TB-Q100-ae-l2_3": {
+   "n_valid_heldout": 490,
+   "exact_twins": 25,
+   "near_twins": 10,
+   "near_twins_that_are_complaints": 3,
+   "near_twins_of_a_repair_complaint": 8,
+   "best_point_fixed_over_complaints": {
+    "exact_twins": [
+     12,
+     16
+    ],
+    "near_twins_of_a_repair_complaint": [
+     2,
+     3
+    ],
+    "all_other_heldout_complaints": [
+     83,
+     249
+    ]
+   },
+   "strictly_disjoint_rows": 455,
+   "best_point_D1_strict": 49.67032967032967,
+   "none_D1_strict": 54.72527472527472,
+   "mcnemar_p_strict": 0.06543081048244809,
+   "fixed_lost_strict": [
+    83,
+    60
+   ]
+  },
+  "TB-L100-ae-l2_3": {
+   "n_valid_heldout": 494,
+   "exact_twins": 25,
+   "near_twins": 10,
+   "near_twins_that_are_complaints": 3,
+   "near_twins_of_a_repair_complaint": 6,
+   "best_point_fixed_over_complaints": {
+    "exact_twins": [
+     7,
+     12
+    ],
+    "near_twins_of_a_repair_complaint": [
+     2,
+     2
+    ],
+    "all_other_heldout_complaints": [
+     63,
+     290
+    ]
+   },
+   "strictly_disjoint_rows": 459,
+   "best_point_D1_strict": 60.78431372549019,
+   "none_D1_strict": 62.96296296296296,
+   "mcnemar_p_strict": 0.40346969965531165,
+   "fixed_lost_strict": [
+    63,
+    53
+   ]
+  }
+ }
+}

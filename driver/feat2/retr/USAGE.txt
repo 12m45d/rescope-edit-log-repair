@@ -1,0 +1,219 @@
+feat2/retr -- the retrieval reference (retr) and the lookup rule (lookup) of PROTOCOL.md, section 6, "Review round 1", item R4
+======================================================================================================================
+(this first section was written on 2026-11-11 06:50 UTC, BEFORE any score, gate decision, coverage or firing rate of retr / lookup existed)
+
+A. CONTENT WORDS AND THE LOOKUP RULE (fixed in advance; code: stoplist.py, retr.lookup_decide)
+  token         a maximal run of Unicode letters of the lower-cased question string (digits, punctuation, white space separate tokens)
+  content word  a token of at least two letters that is not in the stop list STOP = FUNCTION_WORDS | PICTURE_FRAME
+  lookup rule   edit i is a candidate on a query  iff  the query has an image whose md5 equals the md5 of the edit's image
+                AND the query's question and the edit's question share at least one content word.
+                Released edit (top-1): the candidate with the most shared content words; a tie goes to the lowest edit index.
+                No calibration, no threshold, no guard.  An edit whose question has no content word can never be released (counted).
+  The list was written from general knowledge of English and of the visual-question frame, not from token statistics of the
+  benchmark; it is not changed afterwards (sha1 of the sorted list: 08f4a4b05448; 226 words).
+
+  FUNCTION_WORDS (162): the English stop-word list of NLTK, split at the apostrophe as the tokeniser splits it, plus
+  could would may might must shall cannot whose us
+    a about above after again against ain all am an and any are aren as at be because been before being below
+    between both but by can cannot could couldn d did didn do does doesn doing don down during each few for from
+    further had hadn has hasn have haven having he her here hers herself him himself his how i if in into is isn it
+    its itself just ll m ma may me might mightn more most must mustn my myself needn no nor not now o of off on once
+    only or other our ours ourselves out over own re s same shall shan she should shouldn so some such t than that
+    the their theirs them themselves then there these they this those through to too under until up us ve very was
+    wasn we were weren what when where which while who whom whose why will with won would wouldn y you your yours
+    yourself yourselves
+
+  PICTURE_FRAME (64): words that name the picture or the act of depicting it, in all inflections (nearly every visual
+  question carries one, so without them any two questions about a picture would share a content word)
+    appear appeared appearing appears capture captured captures capturing depict depicted depicting depicts display
+    displayed displaying displays feature featured features featuring illustrate illustrated illustrates
+    illustrating illustration illustrations image images photo photograph photographed photographing photographs
+    photos pic pics picture pictured pictures picturing portray portrayed portraying portrays present presented
+    presenting presents represent represented representing represents see seeing seen sees show showed showing shown
+    shows snapshot snapshots visible
+
+  Generic question nouns (name, title, type, kind, person, ...) are NOT in the list: they are content words.
+
+(everything below was written after the layer was built and tested; section A above is unchanged since 06:50 UTC)
+
+B. WHAT EXISTS
+  data   10_final/cache2/retr/            README.txt there (script-written): formats, counts, md5 sums, the exact preprocessing
+           <backbone>/attributes.jsonl     qwen25vl (14300 sequences + 2500 edit requests: families Q and QK), llava (8800 + 1000: family L):
+                                           image md5 and question string of every sequence of the key cache and of every edit request
+           emb/image_emb.npy  (9165 x 1024), emb/question_emb.npy (6424 x 384), their key lists, meta.json; shared by the backbones
+  code   10_final/feat2/retr/
+           stoplist.py          the stop list and content_words(q)                     (fixed in advance, section A)
+           build_attributes.py  task 1: attribute tables (derivation from the loaders, md5, rendering of every prompt)
+           encoders.py          the two encoders, exact preprocessing, the storage form of an embedding
+           embed.py             task 2: key lists, resumable embedding jobs, assembly
+           retr.py              tasks 3 and 4: scores, calibration, decisions of retr and lookup, the gate objects for the library
+           tests.py             task 5 (+ more): out/tests/<test>.json, out/test_table.txt
+           mechanics.py         task 6: out/mechanics.txt, out/mechanics.json           (development logs only)
+           make_readme.py       writes cache2/retr/README.txt;  rcommon.py: paths and small helpers
+  python = $RESCOPE_PYTHON; every script caps BLAS at 4 threads and writes no bytecode.
+
+C. USE (CPU, no model; a full pass over the sequences of a T = 100 log takes well under a second)
+    import sys; sys.path.insert(0, "$RESCOPE_ROOT/02_research/experiments/10_final/feat2/retr"); import retr
+    L = fx.logs.open("TB-Q100-ae-l2_3")                               # or a rescope EditLog, a testbed log name, or (cache, uids)
+    dr = fx.draws.calibration(L, 200, draw)                           # the SAME draw as every other gate of the driver
+    R  = retr.reference("retr", L, dr.rows, alpha=0.05, seed=dr.seed) # two-block rule per attribute on that draw; seed = seed of the split
+    Rl = retr.reference("lookup", L)                                  # no calibration
+    dec = R.decide(rows, which="tf")                                  # rows = positions in the key-cache index (the driver's sequences)
+    ev  = R.evaluate(positions=("tf",))                               # {part: {which: decision}} over fx.gate.row_sets(L): the form of fx.gate.evaluate
+    st  = fx.metrics.gate_stats(L, ev)                                # the gate-level numbers of every other gate (checked: test fx_compat)
+    R.rec, R.fingerprint                                              # JSON record (alpha, n, eta and bound per attribute, capped edits, guarantee), 12 hex digits
+
+  Signatures (details: the docstrings of retr.py)
+    retr.store(cache, data_dir=None, verify=False) -> Store           attributes + embeddings of a key cache ('qwen25vl' | 'llava')
+    retr.edits(log, cache=None) -> Edits                              the requests of a log's edits: .T, .uids, .md5, .question, .content_words, .family
+    retr.own(log, rows) -> (n,) int                                   own edit of every sequence in this log (-1: none) = fx LogData.own
+    retr.scores(log, rows) -> (SI, SQ)                                (n, T) float64 image cosine / question cosine; SI = -inf for rows without an image
+    retr.own_request_scores(log) -> (gI, gQ)                          (T,) score of every edit's own request on itself (the guards; 1 up to 1.5e-7)
+    retr.calibrate(SI, SQ, alpha=0.05, seed=0, split=(1, 1), blocks=None, guards=None, allow_silence=False, rule="two_block") -> Thresholds
+    retr.calibrate_log(log, cal_rows, alpha=0.05, seed=0, split=(1, 1), allow_silence=False, rule="two_block") -> Thresholds
+          Thresholds: th_img, th_q (installed), b_img, b_q (ranking baselines), eta_img, eta_q, tau_img, tau_q (literal), capped_img, capped_q, rec
+    retr.decide(SI, SQ, thr, own=None, rows=None, which="tf") -> decision      apply the two thresholds; top-1 by the sum of the two margins
+    retr.retr_decide(log, rows, thr, which="tf") -> decision          scores + decide for sequences of the key cache
+    retr.lookup_decide(log, rows, which="tf") -> decision             the lookup rule;  retr.lookup_shared(log, rows) -> (n, T) shared content words
+    retr.lookup_record(log) -> dict                                   stop-list fingerprint, edits without a content word, edits sharing an image
+    retr.evaluate(log, thr | None, positions=("tf",), parts=..., rows=None) -> {part: {which: decision}}
+    retr.reference(kind, log, cal_rows=None, alpha=0.05, seed=0, split=(1, 1), allow_silence=False) -> Reference (.decide .evaluate .gate .rec .fingerprint)
+    retr.forced_gate(S, edit) -> ScopedLog                            the library gate that releases exactly `edit` at the last prompt position
+    retr.gates(S, dec) -> [None | ScopedLog];  retr.release_plan(dec) -> {edit: [positions in dec]}
+    retr.request_gate(S, log, dec) -> RequestGate;  retr.gate_rows(ev, gate | {label: method}, items, fn="tf" | "generate", lp="tf")
+    retr.default_draw(log, n=200, draw=0) -> rows;  retr.row_sets(log) -> {probe, edit, hn, benign, heldout_disjoint, repair}
+    stoplist.content_words(q) -> frozenset;  encoders.ImageEncoder(device), QuestionEncoder(backend), finalize(x)
+
+  A DECISION is a dict of arrays aligned with the sequences, with every key of rescope.KeyCache.decide / fx.gate.decide:
+    fired, top_edit (-1: none), n_cand, margin (>= 0 <=> fired), own, own_cand, own_top, near (always False: scores are exact), rows, which,
+    resolves_edits; plus cand (n, T) bool, rank, and for retr n_img_pass / n_q_pass (edits passing ONE attribute).  which='steps' adds step_fired,
+    step_top, step_near.  The decision of a sequence depends on its image content and question string only, NOT on the key: it is the same at
+    'tf', 'prompt', 'decode' and in every forward of a decode, and the same for every calibration `which` of fx.draws (tf / all / ...).
+
+D. DEFINITIONS
+  score        image: cosine of the CLIP embeddings of the query's image and the edit's image; question: cosine of the MiniLM embeddings of the two
+               question keys (strip, lower case).  Stored embeddings are unit-norm float32 on the 2^-24 grid, so the float64 dot product IS the
+               cosine and is exact: scores are bit-for-bit functions of the stored files (no BLAS / batch / device dependence; test exact_scores).
+               A query without an image has image score -inf for every edit: it never raises a baseline and nothing can be released on it.
+  calibration  (task 4) the library's two-block rule (rescope.two_block_rule: exact rank, strict gate, floating-point-safe thresholds) applied to
+               EACH attribute's [calibration queries x edits] score matrix with the SAME blocks (rescope.split_blocks(n, split, seed)):
+                   b_a[i]  = largest score_a of edit i over block 1                         (baseline of edit i for attribute a)
+                   eta_a   = k-th smallest over block 2 of max_i (score_a[i] - b_a[i]),  k = ceil((1 - alpha)(n2 + 1))      (common scale of a)
+                   edit i PASSES attribute a  iff  score_a[i] - b_a[i] > eta_a
+               release rule = the conjunction: edit i is a candidate iff it passes the image attribute AND the question attribute.
+  top-1        the candidate with the largest (score_img - b_img) + (score_q - b_q), the sum of the two margins (R4); the library's convention:
+               the margin r - b is used, which differs from the excess over the calibrated level by the constant eta_img + eta_q; an exact tie
+               goes to the lowest edit index.
+  guards       the own request of every edit must keep passing both attributes (the analogue of the own-prompt guards of every calibrated gate):
+               where the literal rule would silence it on an attribute, that threshold is capped at (1 - 1e-9) x the own score (library rule);
+               such an edit then passes that attribute only for (numerically) its own image / its own question string.  Counted per attribute:
+               rec['n_edits_capped'], ['n_edits_capped_image'], ['n_edits_capped_question'], ['n_edits_capped_both'], ['capped_edits'].
+               allow_silence=True: the literal rule.
+  behaviour    the library's scoped replay of the released edit: module output W_0 k + V_edit at the last prompt position (V = the values of the
+               scoped log handed to forced_gate / RequestGate: hand it the driver's base gate and the values are the same rebased values as for
+               every other gate), the pre-edit model, bit for bit, everywhere else and on every sequence on which nothing is released.
+
+  WHY THE BOUND OF THE CALIBRATION THEOREM HOLDS FOR THE CONJUNCTION
+    The theorem (two-block rule, uncapped): the feature map of an attribute (query -> its T scores) does not depend on the calibration or test
+    queries (the edits' requests and two fixed pretrained encoders determine it), the baselines depend on block 1 only, so the block-2 margins
+    and the margin of a fresh benign query are exchangeable, and
+        P(A_a) <= floor(alpha (n2 + 1)) / (n2 + 1) <= alpha,     A_a = {some edit passes attribute a on the fresh query},   a = image, question.
+    retr releases an edit only if ONE edit passes BOTH attributes.  That event R satisfies  R  subset of  A_image intersect A_question, hence
+        P(R) <= min(P(A_image), P(A_question)) <= min(bound_image, bound_question) <= alpha        (rec['bound_false_firing']).
+    No union bound and no independence between the attributes is needed: the conjunction releases no more than either attribute alone
+    (test properties checks on every sequence that a release implies a passing edit on each attribute; mechanics.txt prints the three rates).
+    With caps: a capped threshold lies below the conformal level of ITS attribute only.  If no edit is capped on the image attribute, every
+    release still needs the literal image event, so P(R) <= bound_image holds exactly, however many question thresholds are capped (and the
+    same with the roles exchanged); if both attributes have capped edits but no edit is capped on both, P(R) <= bound_image + bound_question;
+    for an edit capped on both the bound is void (it releases only on, numerically, its own request).  rec['guarantee'] states which case holds
+    and rec['bound_false_firing_with_caps'] is the bound that holds.
+    What the bound does NOT say: it is marginal over the benign pool (image and text queries together).  retr can release on image queries only,
+    so its rate among image queries alone is bounded by bound / (share of image queries), not by alpha.  It is a statement about queries
+    exchangeable with the calibration queries: near-scope negatives are outside it, as for every gate.
+
+E. WIRING INTO THE DRIVER (fx is not changed by this layer; what follows was run against fx as it stood on 2026-11-11 08:30 UTC, its files
+   last modified 07:55 UTC; fx is under review: if its interfaces move, rerun tests fx_compat and behaviour_fx)
+  gate level      section C: R.evaluate() -> fx.metrics.gate_stats(L, ev).  Records: R.rec (calibration), Rl.rec (lookup).
+  behaviour       a reference system is not a function of the module input, so it is not a ScopedLog with thresholds.  Two exact routes:
+    (a) memo path (recommended; tests fx_compat and behaviour_fx):
+          dec = R.decide(rows);  S0 = fx.methods.base_gate(L)[0]
+          for e, pos in retr.release_plan(dec).items():
+              M = fx.methods.wrap(L, retr.forced_gate(S0, e), f"retr@{e}", rec={...})      # M.memo is True: the driver's memo path
+              out = ses.tf(M, [rows[i] for i in pos])                                      # same memo signature (the value V_e) as any scoped gate
+          a sequence with dec['fired'] False is the pre-edit model: its row is the cached pre-edit outcome (as the driver does for a silent gate).
+          The outcome fields of the rows are final; the FIRING FLAGS of such a row are those of the forced gate (fired, top_last = e, one
+          candidate): take n_cand_edits / own_fired_last / own_released_last from the decision (dec['n_cand'], dec['own_cand'], dec['own_top']).
+          Decodes (D2, free generation, wrong target): the same gate; it releases e in every full forward that holds the last prompt position.
+    (b) library path (tests request_gate and behaviour_smoke): ONE gate object in the interface baselines.py documents (firing / respond / apply):
+          g = R.gate(S_on_device, dec);  rows = retr.gate_rows(ev, g, items)               # g.select(it['sid']) before the forward(s) of each item
+          The rows carry the decision's flags (fired, top_last, n_cand_edits, own_fired_last, own_released_last).  One forward per item, no memo.
+          A RequestGate must be told the sequence (select): it cannot be passed to fx.behave / Evaluator.tf_rows over several items as it is.
+  calibration     dr.rows of any fx.draws.calibration draw (REPAIR pool, benign pool, contaminated): all are sequences of the key cache.  Pass
+                  seed=dr.seed: the blocks are then the blocks of every other gate of that draw.  retr.default_draw(log, 200, d) equals
+                  fx.draws.calibration(L, 200, d).rows; the driver's draws of other sizes are nested and must be taken from fx.draws.
+  logs            any log whose edits are edits of a cached stream family (Q: up to 2000 edits, QK: MMKE-Bench 500, L: 1000); the scores of a
+                  longer log contain those of its prefixes.  NOT covered: the scout's caches (10_final/cache/QO one-hop family, blip2): they have
+                  no attribute table and no embeddings here (retr.edits raises LookupError / FileNotFoundError).
+
+F. TESTS (out/test_table.txt is the script-rendered table; out/tests/<test>.json the details)
+    python tests.py                                                   every CPU test + the table (about 4 minutes; reembed_images_cpu takes 2.5 of them)
+    $GQ run --mem 2000  --prio 4 --name retr_t  -- python tests.py reembed_images_gpu
+    $GQ run --mem 10500 --prio 4 --name retr_b  -- python tests.py behaviour_smoke          (RETR_SMOKE_LOG=TB-L100-ae-l2_3 and --mem 17000: LLaVA)
+    $GQ run --mem 10500 --prio 4 --name retr_fx -- python tests.py behaviour_fx
+    python tests.py table
+  repro                 attribute tables and key lists: a re-run reproduces the files byte for byte
+  attributes            (question, image) derived from the data loaders == cache index for every sequence; md5 recomputed; every prompt rendered
+  facts                 questions repeated across edits, images shared between items (descriptive, all streams)
+  unit_norm             both matrices: float32, | |e| - 1 | <= 1e-6, on the 2^-24 grid
+  reembed_questions     50 questions: sentence-transformers (the build's path), the model card's transformers recipe, another order: <= 1e-6
+  reembed_questions_all all 6424 questions: the matrix bit for bit
+  reembed_images_gpu    50 images on the GPU (the build's device model): <= 1e-6 (bit for bit)
+  reembed_images_cpu    the same 50 images on the CPU: 2.2e-6 > 1e-6, i.e. this test does NOT pass; it is kept and reported as it is (section H)
+  exact_scores          BLAS dot product == exact integer arithmetic; scores independent of batch and order, bitwise
+  own_request           every edit's own request scores 1 on both attributes (all 3500 edits of the three streams)
+  rephrase_scores       distribution of the two scores of T-Gen / I-Gen sequences against their own edit (development logs; descriptive)
+  naive                 a second implementation that shares no code with retr.py (own file reading, math.fsum, the defining comparisons): 100
+                        sequences per development log, retr and lookup decisions, baselines and eta bitwise
+  properties            conjunction <= each attribute; text rows silent; tie -> lowest index; eta = +inf; literal thresholds == library rule, also
+                        through rescope.calibrate_two_block of a cosine gate on the question embeddings; shared rule; records
+  forced_gate           the forced gate through rescope.KeyCache.decide and rescope.Hook
+  request_gate          RequestGate through rescope.Hook (output, flags, decode bookkeeping) == decision == forced gate
+  fx_compat             row sets, draws, own edits == the driver's; fx.metrics.gate_stats on the decisions == mechanics numbers; fx.methods.wrap of a
+                        forced gate is a memo-path method
+  behaviour_smoke       GPU: both gate forms through rescope.load + rescope.Evaluator on both development logs (flags, silent rows == pre-edit model)
+  behaviour_fx          GPU: route (a) through fx.behave (temporary private memo; teacher forcing and decodes) == route (b); second pass served
+                        from the memo; a RequestGate built on the CPU is moved to the model's device by the Evaluator
+
+G. MECHANICS CHECK (python mechanics.py -> out/mechanics.txt, out/mechanics.json)
+  The two development logs only, calibration draw 0, alpha = 0.05, n = 200; retr and lookup: false firing on heldout_disjoint, coverage of text
+  and image rephrases, firing on the three kinds of hard negatives, capped edits, and what explains them.  A mechanics check: nothing was tuned
+  on it and no number of it selects anything.  No gate of this layer was run on any other log.
+
+H. THINGS TO KNOW
+  * Capped edits (measured on the two development logs, draw 0; out/mechanics.txt).  The question baseline of an edit is the largest cosine
+    between its question and the question of a block-1 calibration query; its median over the edits is 0.90 / 0.87, and 14 / 22 of the 200
+    calibration queries ask an edit's question word for word.  With eta about 0.16 the literal question threshold (baseline + eta) exceeds 1
+    for 59 / 58 of the 100 edits: those edits are capped and pass the question attribute only for their own question string.  No edit was
+    capped on the image attribute, so the false-firing bound holds through it (section D).  A capped edit cannot be released on a text
+    rephrase; whether that is the main limit of retr's text-rephrase coverage was not analysed further.
+  * Image rephrases use another image of the same entity: the image cosine there (out/tests/rephrase_scores.json) is what limits retr on
+    I-Gen; lookup cannot cover an image rephrase at all (another file, another md5) unless the benchmark repeats the image.
+  * Questions repeat across edits (out/tests/facts.json): the question attribute alone does not identify an edit; the edit images of a stream
+    are all distinct by md5.  A few edits have an image rephrase that IS their own image (same md5).
+  * Reproducibility of the image embeddings.  On the GPU model of the build (RTX 5090; checked on both cards) a re-embedding is bit for bit.  On
+    the CPU the float32 CLIP forward differs by up to 2.2e-6 per component (a cosine by up to 1.8e-6): test reembed_images_cpu does NOT meet
+    its 1e-6 criterion and is listed as such in the test table.  The stored matrix (md5 in emb/meta.json) is the reference; a rebuild on another
+    device or another GPU model is not guaranteed to reproduce it bit for bit, so never mix rows of two builds.  Scores themselves are exact
+    functions of the stored files.
+  * Last prompt position.  A reference system releases whatever the key is, so in a decode it also releases on the LLaVA sequences whose
+    teacher-forced last prompt position is one token later than the decode's (lp_shift = 1), where the log's own detectors cannot fire.  The
+    released value was written for the teacher-forced position; the outcome there is whatever the model does with it.
+  * The vision tower COULD be loaded alone (391 tensors of one safetensors shard); the fallback to a backbone's own tower was not needed.
+  * retr and lookup decide on the query's attributes, so they need the attribute table.  A query that is not a sequence of the key cache: embed
+    its image / question with encoders.py (ImageEncoder.embed_paths, QuestionEncoder.embed on question.strip().lower(): same preprocessing and
+    storage form), take the float64 dot products with st.EI[E.img] / st.EQ[E.q] (st = retr.store(cache), E = retr.edits(log)) and call retr.decide.
+  * How the stop list of section A came about: it was written after reading the caches' documentation and about twenty example prompts of the
+    cache index (inspection of the format), before any embedding, score or decision existed; no token statistics were computed, then or later,
+    and the list was not touched after 06:27 UTC (stoplist.py; this file's section A: 06:50 UTC, byte-identical since).
+  * Scale: retr.scores for the longest streams (T = 2000 x 11800 sequences; T = 1000 x 8800) takes 1.6 s / 0.2 s and 0.7 GB (timing only; no
+    threshold or decision was computed on any log other than the two development logs).

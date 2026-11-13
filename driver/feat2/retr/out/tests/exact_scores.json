@@ -1,0 +1,29 @@
+{
+ "ok": true,
+ "summary": "image: 60000/60000 dot products == exact integer arithmetic; question: 60000/60000 dot products == exact integer arithmetic; scores independent of the batch (bitwise)",
+ "dot": {
+  "image": {
+   "n_pairs": 60000,
+   "n_bitwise_equal_to_integer_arithmetic": 60000,
+   "max_abs_integer_sum_log2": 48.00000009486923
+  },
+  "question": {
+   "n_pairs": 60000,
+   "n_bitwise_equal_to_integer_arithmetic": 60000,
+   "max_abs_integer_sum_log2": 48.00000007887416
+  }
+ },
+ "batch_independence": {
+  "TB-Q100-ae-l2_3": {
+   "n_sequences": 200,
+   "batch_of_200_equals_one_by_one_and_reversed_bitwise": true
+  },
+  "TB-L100-ae-l2_3": {
+   "n_sequences": 200,
+   "batch_of_200_equals_one_by_one_and_reversed_bitwise": true
+  }
+ },
+ "test": "exact_scores",
+ "seconds": 0.4,
+ "when": "2026-11-11 08:30:26 UTC"
+}

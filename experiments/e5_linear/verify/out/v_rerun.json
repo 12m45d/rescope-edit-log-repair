@@ -1,0 +1,134 @@
+{
+ "definition": "Verification, task (4): every value of out/paper_numbers.json is derived from out/results.json by the script.\n\nusage: python v_rerun.py        -> verify/out/v_rerun.json        (CPU, seconds)\n\nNothing of e5_linear/out or e5_linear/code is changed: the measuring agent's scripts are copied, unmodified, into the\nsandbox verify/rerun/code and their RAW inputs (per-complaint rows, optimum rows, capacity files, self-test, the agent's\nown verification) into verify/rerun/out; e5_common.py derives its output directory from its own location, so the copies\nread and write the sandbox only.  Three checks:\n  (a) DERIVATION.  results.json (the stored file) -> e5_aggregate.paper_numbers() -> is_core filter -> compared value by\n      value with the stored paper_numbers.json; the unfiltered dictionary with paper_numbers_all.json; DOC with\n      paper_numbers_doc.json.\n  (b) RE-RUN.  `python e5_aggregate.py` in the sandbox regenerates results.json and the three paper_numbers files from\n      the raw inputs; compared with the stored files (results.json: every entry but the time stamps 'generated', 'sec').\n  (c) RENDER.  `python e5_render.py` in the sandbox regenerates table.txt; compared line by line with the stored table\n      (the second line carries two time stamps).\nAlso recorded: md5 sums of the measuring agent's files before and after (nothing changed), and of the copied scripts\nagainst the originals.\n",
+ "sandbox": "[redacted: local path]/02_research/experiments/10_final/e5_linear/verify/rerun",
+ "raw_inputs_copied": [
+  "capacity_TB-L100-ae-l2_3_need.json",
+  "capacity_TB-L100-ae-l2_3_seq.json",
+  "capacity_TB-Q100-ae-l2_3_need.json",
+  "capacity_TB-Q100-ae-l2_3_seq.json",
+  "cond_rollback_TB-L100-ae-l2_3.json",
+  "cond_rollback_TB-Q100-ae-l2_3.json",
+  "opt_meta_TB-L100-ae-l2_3.json",
+  "opt_meta_TB-Q100-ae-l2_3.json",
+  "opt_rows_TB-L100-ae-l2_3.jsonl",
+  "opt_rows_TB-Q100-ae-l2_3.jsonl",
+  "opt_stop_TB-Q100-ae-l2_3.json",
+  "selftest.json",
+  "verify_TB-L100-ae-l2_3.json",
+  "verify_TB-Q100-ae-l2_3.json"
+ ],
+ "scripts_copied_bitwise": true,
+ "derivation": {
+  "n_values_paper_numbers": 464,
+  "n_values_recomputed": 464,
+  "n_differences_paper_numbers": 0,
+  "differences_paper_numbers": [],
+  "n_values_paper_numbers_all": 938,
+  "n_differences_paper_numbers_all": 0,
+  "differences_paper_numbers_all": [],
+  "n_differences_doc": 0,
+  "n_null_values_paper_numbers": 8,
+  "null_names": [
+   "rollback.TB-Q100-ae-l2_3.c0.1.opt_median_certified",
+   "rollback.TB-Q100-ae-l2_3.c0.1.opt_median_lf_over_opt_certified",
+   "rollback.TB-Q100-ae-l2_3.c0.1.opt_median_fo_over_opt_certified",
+   "rollback.TB-Q100-ae-l2_3.c0.1.opt_median_bi_over_opt_certified",
+   "rollback.TB-L100-ae-l2_3.c0.1.opt_median_certified",
+   "rollback.TB-L100-ae-l2_3.c0.1.opt_median_lf_over_opt_certified",
+   "rollback.TB-L100-ae-l2_3.c0.1.opt_median_fo_over_opt_certified",
+   "rollback.TB-L100-ae-l2_3.c0.1.opt_median_bi_over_opt_certified"
+  ]
+ },
+ "runs": {
+  "e5_aggregate.py": {
+   "returncode": 0,
+   "stdout": "wrote results.json, paper_numbers.json (464 numbers), paper_numbers_all.json (938) and paper_numbers_doc.json (0.7s)",
+   "stderr": ""
+  },
+  "e5_render.py": {
+   "returncode": 0,
+   "stdout": "wrote table.txt (365 lines)",
+   "stderr": ""
+  }
+ },
+ "rerun": {
+  "results_json": {
+   "n_leaf_values": 21121,
+   "n_differences": 0,
+   "differences": [],
+   "time_stamps_ignored": {
+    "generated": [
+     "2026-11-11 01:12:42",
+     "2026-11-11 02:46:41"
+    ],
+    "sec": [
+     0.7564303874969482,
+     0.7407538890838623
+    ]
+   }
+  },
+  "paper_numbers.json": {
+   "n_values": 464,
+   "n_differences": 0,
+   "differences": [],
+   "bytes_equal": true
+  },
+  "paper_numbers_all.json": {
+   "n_values": 938,
+   "n_differences": 0,
+   "differences": [],
+   "bytes_equal": true
+  },
+  "paper_numbers_doc.json": {
+   "n_values": 38,
+   "n_differences": 0,
+   "differences": [],
+   "bytes_equal": true
+  }
+ },
+ "render": {
+  "n_lines_stored": 366,
+  "n_lines_rerun": 366,
+  "lines_differing": [
+   2
+  ],
+  "only_the_time_stamp_line_differs": true,
+  "differing_lines": [
+   {
+    "line": 2,
+    "stored": "rendered 2026-11-11 01:12:44 by code/e5_render.py from out/results.json (aggregated 2026-11-11 01:12:42) and out/paper_numbers_all.json; no number is typed by hand.",
+    "rerun": "rendered 2026-11-11 02:46:43 by code/e5_render.py from out/results.json (aggregated 2026-11-11 02:46:41) and out/paper_numbers_all.json; no number is typed by hand."
+   }
+  ]
+ },
+ "untouched": {
+  "out_files": 19,
+  "out_unchanged": true,
+  "code_files": 12,
+  "code_unchanged": true,
+  "no_pycache_in_code": true,
+  "md5_out": {
+   "capacity_TB-L100-ae-l2_3_need.json": "9bb4a54921be701a0404795ec1526ad5",
+   "capacity_TB-L100-ae-l2_3_seq.json": "4922a8eda4d7418ff9d475af2fa4c5b0",
+   "capacity_TB-Q100-ae-l2_3_need.json": "29d3bdb9fb65e5bf448802b7cf7a546b",
+   "capacity_TB-Q100-ae-l2_3_seq.json": "df820ecf71c2f89a4a5d7ed89de38bbf",
+   "cond_rollback_TB-L100-ae-l2_3.json": "cb8d50bd471b5948770aa680abc3c868",
+   "cond_rollback_TB-Q100-ae-l2_3.json": "83e4a8c12fa20e085ce6861c0136aaf6",
+   "opt_meta_TB-L100-ae-l2_3.json": "bbf5026ca3b056517dcdfce546cb5ee8",
+   "opt_meta_TB-Q100-ae-l2_3.json": "65e6e13445cebf00b0dec39456b7b517",
+   "opt_rows_TB-L100-ae-l2_3.jsonl": "7d9c6d035bfab78051d9744387a40d78",
+   "opt_rows_TB-Q100-ae-l2_3.jsonl": "1df6692fb54e09719fb4c665a6a42e0c",
+   "opt_stop_TB-Q100-ae-l2_3.json": "852f7506f3c1d4a5dc120bf1d5471cdb",
+   "paper_numbers.json": "2d5423ec5a27620625ab60ca44608423",
+   "paper_numbers_all.json": "751cdf743da358177e0ffcee7a040cf7",
+   "paper_numbers_doc.json": "8e3cd2afeb5b8a4653ba5b7665c7224f",
+   "results.json": "c09e4123b69d2ad1cc958fde6b8307f3",
+   "selftest.json": "d98455c4117b95d184203a9667224cb9",
+   "table.txt": "42c81e22c4976ddf63840ffaf5d77b23",
+   "verify_TB-L100-ae-l2_3.json": "eb9ced573bbf37f4730ed2b74b974ad8",
+   "verify_TB-Q100-ae-l2_3.json": "20aad60e1e03c00b9e478275bc4d7dd7"
+  }
+ },
+ "all_pass": true,
+ "sec": 3.91815447807312
+}

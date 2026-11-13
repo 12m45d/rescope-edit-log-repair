@@ -1,0 +1,194 @@
+{
+ "source": "[redacted: local path]",
+ "parquet_files": [
+  {
+   "file": "test-00000-of-00004-a25dbe3b44c4fda6.parquet",
+   "md5": "9bb8599ad3dc39da51c171aaf240ac46",
+   "n_rows": 594
+  },
+  {
+   "file": "test-00001-of-00004-7d22c7f1aba6fca4.parquet",
+   "md5": "ada29c3f683168587eb8c85795e1ded0",
+   "n_rows": 594
+  },
+  {
+   "file": "test-00002-of-00004-594798fd3f5b029c.parquet",
+   "md5": "4cc24ddfd3a07f20f8509169580216db",
+   "n_rows": 593
+  },
+  {
+   "file": "test-00003-of-00004-53ae1794f93b1e35.parquet",
+   "md5": "3bc0befdf90a91a113da2e56eaffe618",
+   "n_rows": 593
+  }
+ ],
+ "n_rows": 2374,
+ "n_images": 1177,
+ "n_categories": 14,
+ "n_question_ids": 1187,
+ "n_distinct_question_strings": 1983,
+ "n_distinct_queries(image content, question string)": 2374,
+ "n_questions_ending_with_suffix": 2374,
+ "suffix": "Please answer yes or no.",
+ "reference_answers": {
+  "Yes": 1187,
+  "No": 1187
+ },
+ "rows_per_image": {
+  "2": 1167,
+  "4": 10
+ },
+ "images_in_two_categories": [
+  [
+   "color+count",
+   "94d7258fc85d19d79afd7551fb5a98e8"
+  ],
+  [
+   "color+count",
+   "e5e9cad75e3f55ab6fdaed8734720477"
+  ],
+  [
+   "count+existence",
+   "994136cc39034b6bd15be2626d80168a"
+  ],
+  [
+   "count+existence",
+   "a104073b8a7d7911da933796d7154f10"
+  ],
+  [
+   "count+existence",
+   "b0597d280ac2c62ccda9159bbebed384"
+  ],
+  [
+   "count+position",
+   "3fcb041ffe5c4660d8eb55616109a924"
+  ],
+  [
+   "count+position",
+   "b10ca216581ec3d48ba4538923b2035f"
+  ],
+  [
+   "count+position",
+   "e77b468b561c0991f2a9447757e1eb67"
+  ],
+  [
+   "existence+position",
+   "8f4f4d3dc8aca9a8ec5a50f0bb39063f"
+  ],
+  [
+   "existence+position",
+   "a92837ca100fdcb453d5813558f4fa51"
+  ]
+ ],
+ "by_category": {
+  "code_reasoning": {
+   "rows": 40,
+   "images": 20,
+   "ref_yes": 20,
+   "ref_no": 20
+  },
+  "artwork": {
+   "rows": 400,
+   "images": 200,
+   "ref_yes": 200,
+   "ref_no": 200
+  },
+  "celebrity": {
+   "rows": 340,
+   "images": 170,
+   "ref_yes": 170,
+   "ref_no": 170
+  },
+  "numerical_calculation": {
+   "rows": 40,
+   "images": 20,
+   "ref_yes": 20,
+   "ref_no": 20
+  },
+  "text_translation": {
+   "rows": 40,
+   "images": 20,
+   "ref_yes": 20,
+   "ref_no": 20
+  },
+  "count": {
+   "rows": 60,
+   "images": 30,
+   "ref_yes": 30,
+   "ref_no": 30
+  },
+  "color": {
+   "rows": 60,
+   "images": 30,
+   "ref_yes": 30,
+   "ref_no": 30
+  },
+  "commonsense_reasoning": {
+   "rows": 140,
+   "images": 70,
+   "ref_yes": 70,
+   "ref_no": 70
+  },
+  "position": {
+   "rows": 60,
+   "images": 30,
+   "ref_yes": 30,
+   "ref_no": 30
+  },
+  "OCR": {
+   "rows": 40,
+   "images": 20,
+   "ref_yes": 20,
+   "ref_no": 20
+  },
+  "landmark": {
+   "rows": 400,
+   "images": 200,
+   "ref_yes": 200,
+   "ref_no": 200
+  },
+  "scene": {
+   "rows": 400,
+   "images": 200,
+   "ref_yes": 200,
+   "ref_no": 200
+  },
+  "existence": {
+   "rows": 60,
+   "images": 30,
+   "ref_yes": 30,
+   "ref_no": 30
+  },
+  "posters": {
+   "rows": 294,
+   "images": 147,
+   "ref_yes": 147,
+   "ref_no": 147
+  }
+ },
+ "image_formats": {
+  "PNG": 130,
+  "JPEG": 1030,
+  "MPO": 17
+ },
+ "image_modes": {
+  "RGB": 1164,
+  "L": 13
+ },
+ "image_pixels": {
+  "min": 13020,
+  "median": 393728,
+  "max": 33405360
+ },
+ "image_aspect_ratio(long side / short side)": {
+  "median": 1.481,
+  "max": 4.01
+ },
+ "image_bytes_total": 865873358,
+ "question_chars": {
+  "min": 42,
+  "max": 160
+ },
+ "row_table_md5": "a8611ebef6cb995fd772c84668cb0929",
+ "image_file_name": "<md5 of the image bytes>.<jpg | png>; the bytes are those of the benchmark, unchanged"
+}

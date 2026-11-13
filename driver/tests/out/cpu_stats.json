@@ -1,0 +1,65 @@
+{
+ "bootstrap": {
+  "value": 32.0,
+  "ci": [
+   27.536231884057973,
+   36.668032786885234
+  ],
+  "direct_ci": [
+   27.536231884057973,
+   36.668032786885234
+  ],
+  "n_units": 107,
+  "value_ok": true,
+  "ok": true
+ },
+ "paired": {
+  "value": 20.0,
+  "ci": [
+   10.5,
+   30.0
+  ],
+  "p": 0.0005,
+  "ok": true
+ },
+ "mcnemar": {
+  "n_cases": 30,
+  "n_equal_scipy": 30,
+  "ok": true
+ },
+ "over_draws": {
+  "res": {
+   "n_draws": 4,
+   "mean": 2.5,
+   "p05": 1.15,
+   "p95": 3.8499999999999996,
+   "min": 1.0,
+   "max": 4.0,
+   "sd": 1.2909944487358056
+  },
+  "ok": true
+ },
+ "ratio_none": {
+  "res": {
+   "value": 0.6666666666666666,
+   "ci_lo": 0.5,
+   "ci_hi": 1.0,
+   "n_units": 2,
+   "n_rows": 3,
+   "n_boot": 2000,
+   "seed": 0,
+   "n_dropped": 1,
+   "n_resamples_undefined": 0
+  },
+  "ok": true
+ },
+ "ok": true,
+ "test": "stats",
+ "seconds": 0.6417489051818848,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:14:46"
+}

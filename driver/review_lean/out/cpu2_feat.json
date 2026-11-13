@@ -1,0 +1,725 @@
+{
+ "ben_t_use": {
+  "code_lines_naming_BEN-T_or_MME-T": {
+   "feat2/white/__init__.py": [
+    "white.benparts   parts of the label-free benign pool: BEN-W / BEN-S / BEN-T, split by source item (R2)"
+   ],
+   "feat2/white/benparts.py": [
+    "BEN-T   35 percent                       fresh test rows, used for nothing else",
+    "3. the items perm[0 : n_W] are BEN-W, perm[n_W : n_W + n_S] are BEN-S, the rest are BEN-T, with",
+    "parts     {sid: 'BEN-W' | 'BEN-S' | 'BEN-T'}           every row of the pool",
+    "P.part(sid), P.sids(\"BEN-W\"), P.rows(\"BEN-T\", kc)   (positions in the index of rescope.KeyCache: fx sequences), P.summary",
+    "PARTS = (\"BEN-W\", \"BEN-S\", \"BEN-T\")",
+    "PERCENT = {\"BEN-W\": 20, \"BEN-S\": 45, \"BEN-T\": 35}",
+    "\"BEN-T\": \"fresh test rows, used for nothing else (D1 on its rows with a cached pre-edit answer, firing on all its rows)\"}",
+    "return {\"what\": \"parts of the label-free benign pool: sid -> BEN-W | BEN-S | BEN-T, split by source item\",",
+    "\"= BEN-W, next round(0.45 n) = BEN-S, rest = BEN-T; a row takes the part of its item (code: feat2/white/benparts.py)\",",
+    "part(sid) -> 'BEN-W' | 'BEN-S' | 'BEN-T'           part_of_item(uid) -> part",
+    "lines.append(\"  BEN-T rows whose question string also occurs in BEN-W / BEN-S: \"",
+    "f\"{sh['BEN-T rows whose question string occurs in BEN-W']['all']} / {sh['BEN-T rows whose question string occurs in BEN-S']['all']} \""
+   ],
+   "feat2/white/tests/t_parts.py": [
+    "mine[uids[int(i)]] = \"BEN-W\" if rank < n_w else (\"BEN-S\" if rank < n_w + n_s else \"BEN-T\")",
+    "\"note\": f\"{q['n_items']} items -> W / S / T = {q['items_per_part']['BEN-W']} / {q['items_per_part']['BEN-S']} / {q['items_per_part']['BEN-T']} \"",
+    "f\"({q['percent']['BEN-W']:.2f} / {q['percent']['BEN-S']:.2f} / {q['percent']['BEN-T']:.2f} %); file == rule for {len(out)} backbones\"}",
+    "f\"{q['rows']['BEN-W']} / {q['rows']['BEN-S']} / {q['rows']['BEN-T']} of {sum(q['rows'].values())}\"}",
+    "\"\"\"The uses of the parts rest on this: BEN-T rows are 'fresh test rows' and BEN-W keys are disjoint from the calibration draws only if no",
+    "f\"of the MMKE-Bench family (BEN-W {tot['BEN-W']}, BEN-S {tot['BEN-S']}, BEN-T {tot['BEN-T']}; REPAIR and held-out): on TB-Q*-mmke logs the parts are n"
+   ]
+  },
+  "llava": {
+   "whiten_all_BEN-W": true,
+   "whiten_n": 600,
+   "whiten_stats_parts": [
+    "BEN-W"
+   ]
+  },
+  "qwen25vl": {
+   "whiten_all_BEN-W": true,
+   "whiten_n": 600,
+   "whiten_stats_parts": [
+    "BEN-W"
+   ]
+  }
+ },
+ "benign_split": {
+  "llava": {
+   "all_rows_have_a_part": true,
+   "counts": {
+    "BEN-S": 1375,
+    "BEN-T": 1025,
+    "BEN-W": 600
+   },
+   "item_counts": {
+    "BEN-S": 901,
+    "BEN-T": 701,
+    "BEN-W": 400
+   },
+   "items_in_two_parts": 0,
+   "n_items": 2002,
+   "n_rows": 3000,
+   "rows_differing_from_own_split": 0
+  },
+  "qwen25vl": {
+   "all_rows_have_a_part": true,
+   "counts": {
+    "BEN-S": 1375,
+    "BEN-T": 1025,
+    "BEN-W": 600
+   },
+   "item_counts": {
+    "BEN-S": 901,
+    "BEN-T": 701,
+    "BEN-W": 400
+   },
+   "items_in_two_parts": 0,
+   "n_items": 2002,
+   "n_rows": 3000,
+   "rows_differing_from_own_split": 0
+  },
+  "same_items_and_parts_both_backbones": true,
+  "same_rows_both_backbones": true
+ },
+ "recomb_rules": {
+  "llava": {
+   "cache_kinds_hit": {},
+   "caches_compared": [
+    "qwen25vl",
+    "llava",
+    "QO",
+    "blip2"
+   ],
+   "every_edit_has_4_4_4": true,
+   "first_100_edits_batch_partner_counts": [
+    2
+   ],
+   "first_100_edits_with_2_batch_partners": 100,
+   "later_edits_with_batch_scope": 0,
+   "n_cache_queries": 19427,
+   "n_edits": 1000,
+   "n_mme_rows_compared": 1983,
+   "n_rows": 12000,
+   "n_stream_edits": 1000,
+   "violations": {
+    "duplicate_rows": 58,
+    "equals_cache_query": 0,
+    "equals_mme_query": 0,
+    "min_T_wrong": 0,
+    "q_equals_own_question_or_rephrase": 0,
+    "repeat_within_the_same_edit": 0,
+    "xi_image_not_own": 0,
+    "xi_question_from_own_item": 0,
+    "xq_image_is_an_edit_image_of_own": 0,
+    "xq_question_not_own": 0,
+    "xx_image_not_own": 0,
+    "xx_min_T_wrong": 0,
+    "xx_partner_is_self": 0,
+    "xx_question_not_partner": 0,
+    "xx_row_fields_not_the_edits": 0,
+    "xx_same_answer_or_question": 0,
+    "xx_share_entity_mid": 0,
+    "xx_share_name_or_answer": 0
+   },
+   "xx_partner_positions": {
+    "other": 0,
+    "same_batch_of_10": 541,
+    "same_block_of_100": 3459
+   },
+   "xx_scope_violations": 0
+  },
+  "qwen25vl": {
+   "cache_kinds_hit": {},
+   "caches_compared": [
+    "qwen25vl",
+    "llava",
+    "QO",
+    "blip2"
+   ],
+   "every_edit_has_4_4_4": true,
+   "first_100_edits_batch_partner_counts": [
+    2
+   ],
+   "first_100_edits_with_2_batch_partners": 100,
+   "later_edits_with_batch_scope": 0,
+   "n_cache_queries": 19427,
+   "n_edits": 2000,
+   "n_mme_rows_compared": 1983,
+   "n_rows": 24000,
+   "n_stream_edits": 2000,
+   "violations": {
+    "duplicate_rows": 238,
+    "equals_cache_query": 0,
+    "equals_mme_query": 0,
+    "min_T_wrong": 0,
+    "q_equals_own_question_or_rephrase": 0,
+    "repeat_within_the_same_edit": 0,
+    "xi_image_not_own": 0,
+    "xi_question_from_own_item": 0,
+    "xq_image_is_an_edit_image_of_own": 0,
+    "xq_question_not_own": 0,
+    "xx_image_not_own": 0,
+    "xx_min_T_wrong": 0,
+    "xx_partner_is_self": 0,
+    "xx_question_not_partner": 0,
+    "xx_row_fields_not_the_edits": 0,
+    "xx_same_answer_or_question": 0,
+    "xx_share_entity_mid": 0,
+    "xx_share_name_or_answer": 0
+   },
+   "xx_partner_positions": {
+    "other": 0,
+    "same_batch_of_10": 894,
+    "same_block_of_100": 7106
+   },
+   "xx_scope_violations": 0
+  }
+ },
+ "scan_log_names": {
+  "bytes": 96397981,
+  "files": 253,
+  "logs_named": {
+   "TB-L100-memitw": [
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-L100-ae": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-L100-ae-l2_1": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json"
+   ],
+   "TB-L100-ae-l2_3": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/USAGE.txt",
+    "feat2/recomb/out/mechanics.json",
+    "feat2/recomb/out/mechanics.txt",
+    "feat2/recomb/rc_common.py",
+    "feat2/recomb/rc_mechanics.py",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt",
+    "feat2/recomb/tests/tcommon.py",
+    "feat2/retr/USAGE.txt",
+    "feat2/retr/logs/test_behaviour_fx.log",
+    "feat2/retr/logs/test_behaviour_smoke.log",
+    "feat2/retr/logs/test_behaviour_smoke_L.log",
+    "feat2/retr/logs/test_reembed_cpu.log",
+    "feat2/retr/logs/test_reembed_gpu.log",
+    "feat2/retr/logs/tests_cpu_final.log",
+    "feat2/retr/out/mechanics.json",
+    "feat2/retr/out/mechanics.txt",
+    "feat2/retr/out/test_table.txt",
+    "feat2/retr/out/tests/behaviour_smoke.json",
+    "feat2/retr/out/tests/exact_scores.json",
+    "feat2/retr/out/tests/forced_gate.json",
+    "feat2/retr/out/tests/fx_compat.json",
+    "feat2/retr/out/tests/naive.json",
+    "feat2/retr/out/tests/own_request.json",
+    "feat2/retr/out/tests/properties.json",
+    "feat2/retr/out/tests/rephrase_scores.json",
+    "feat2/retr/out/tests/request_gate.json",
+    "feat2/retr/rcommon.py",
+    "feat2/retr/tests.py",
+    "feat2/verify/code/vcommon.py",
+    "feat2/white/common.py",
+    "feat2/white/logs/mechanics_run.log",
+    "feat2/white/logs/tests_all.log",
+    "feat2/white/logs/tests_gpu.log",
+    "feat2/white/logs/tests_naive.log",
+    "feat2/white/logs/tests_scores.log",
+    "feat2/white/out/mechanics.txt"
+   ],
+   "TB-L1000-memitw": [
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-L1000-ae-l2_3": [
+    "cache2/mme/llava/README.txt",
+    "cache2/mme/llava/capture_parts.json",
+    "cache2/mme/llava/index.jsonl",
+    "cache2/mme/llava/meta.json",
+    "cache2/mme/llava/verify.json",
+    "cache2/mme/logs/capture_llava_L.log",
+    "cache2/mme/logs/capture_llava_L_proof.log",
+    "cache2/mme/logs/gq_llava.out",
+    "cache2/mme/work/proof/llava/proof.json",
+    "cache2/mme/work/test_pool/llava/index.jsonl",
+    "cache2/mme/work/verify/llava_gpu.json",
+    "cache2/recomb/README.txt",
+    "cache2/recomb/llava/README.txt",
+    "cache2/recomb/llava/capture_meta.json",
+    "cache2/recomb/llava/check_select.json",
+    "cache2/recomb/llava/check_select_fast.json",
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/llava/verify_capture.json",
+    "cache2/recomb/logs/capture_llava.log",
+    "cache2/recomb/logs/nohup_capture_llava.out",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "cache2/retr/README.txt",
+    "cache2/retr/llava/attributes_meta.json",
+    "feat2/recomb/USAGE.txt",
+    "feat2/recomb/rc_select.py",
+    "feat2/recomb/tests/out/select.json",
+    "feat2/recomb/tests/out/select_llava.log",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt",
+    "feat2/retr/build_attributes.py"
+   ],
+   "TB-L200-memitw": [
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-L200-ae-l2_3": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-L500-memitw": [
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-L500-ae-l2_3": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q100-memit": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json"
+   ],
+   "TB-Q100-memitw": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q100-ae": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q100-ae-l2_1": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q100-ae-l2_3": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/USAGE.txt",
+    "feat2/recomb/out/mechanics.json",
+    "feat2/recomb/out/mechanics.txt",
+    "feat2/recomb/rc_common.py",
+    "feat2/recomb/rc_mechanics.py",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt",
+    "feat2/recomb/tests/tcommon.py",
+    "feat2/retr/USAGE.txt",
+    "feat2/retr/logs/test_behaviour_fx.log",
+    "feat2/retr/logs/test_behaviour_smoke.log",
+    "feat2/retr/logs/test_behaviour_smoke_L.log",
+    "feat2/retr/logs/test_reembed_cpu.log",
+    "feat2/retr/logs/test_reembed_gpu.log",
+    "feat2/retr/logs/tests_cpu_final.log",
+    "feat2/retr/out/mechanics.json",
+    "feat2/retr/out/mechanics.txt",
+    "feat2/retr/out/test_table.txt",
+    "feat2/retr/out/tests/behaviour_fx.json",
+    "feat2/retr/out/tests/behaviour_smoke.json",
+    "feat2/retr/out/tests/exact_scores.json",
+    "feat2/retr/out/tests/forced_gate.json",
+    "feat2/retr/out/tests/fx_compat.json",
+    "feat2/retr/out/tests/naive.json",
+    "feat2/retr/out/tests/own_request.json",
+    "feat2/retr/out/tests/properties.json",
+    "feat2/retr/out/tests/rephrase_scores.json",
+    "feat2/retr/out/tests/request_gate.json",
+    "feat2/retr/rcommon.py",
+    "feat2/verify/code/vcommon.py",
+    "feat2/white/USAGE.txt",
+    "feat2/white/common.py",
+    "feat2/white/logs/mechanics_run.log",
+    "feat2/white/logs/tests_all.log",
+    "feat2/white/logs/tests_gpu.log",
+    "feat2/white/logs/tests_naive.log",
+    "feat2/white/logs/tests_scores.log"
+   ],
+   "TB-Q100-mmke-l2_3": [
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/table.txt",
+    "feat2/recomb/tests/t_real.py"
+   ],
+   "TB-Q100-onehop-l2_3": [
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/table.txt",
+    "feat2/recomb/tests/t_real.py"
+   ],
+   "[redacted: describes a related submission under double-blind review]": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json"
+   ],
+   "TB-Q1000-memitw": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q1000-ae-l2_3": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q200-memitw": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q200-ae-l2_3": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt",
+    "feat2/white/tests/out/m3_scope.json",
+    "feat2/white/tests/t_mech.py"
+   ],
+   "TB-Q2000-memitw": [
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q2000-ae-l2_3": [
+    "cache2/mme/logs/capture_qwen25vl_Q.log",
+    "cache2/mme/logs/capture_qwen25vl_Q_proof.log",
+    "cache2/mme/logs/gq_qwen25vl.out",
+    "cache2/mme/qwen25vl/README.txt",
+    "cache2/mme/qwen25vl/capture_parts.json",
+    "cache2/mme/qwen25vl/index.jsonl",
+    "cache2/mme/qwen25vl/meta.json",
+    "cache2/mme/qwen25vl/verify.json",
+    "cache2/mme/work/proof/qwen25vl/proof.json",
+    "cache2/mme/work/test_pool/qwen25vl/index.jsonl",
+    "cache2/mme/work/verify/qwen25vl_gpu.json",
+    "cache2/recomb/README.txt",
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/logs/capture_qwen25vl.log",
+    "cache2/recomb/logs/nohup_capture_qwen25vl.out",
+    "cache2/recomb/qwen25vl/README.txt",
+    "cache2/recomb/qwen25vl/capture_meta.json",
+    "cache2/recomb/qwen25vl/check_select.json",
+    "cache2/recomb/qwen25vl/check_select_fast.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "cache2/recomb/qwen25vl/verify_capture.json",
+    "cache2/retr/README.txt",
+    "cache2/retr/qwen25vl/attributes_meta.json",
+    "feat2/recomb/USAGE.txt",
+    "feat2/recomb/rc_select.py",
+    "feat2/recomb/tests/out/select.json",
+    "feat2/recomb/tests/out/select_qwen25vl.log",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt",
+    "feat2/retr/build_attributes.py"
+   ],
+   "TB-Q500-memit": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json"
+   ],
+   "TB-Q500-memitw": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q500-ae": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/USAGE.txt",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/table.txt",
+    "feat2/recomb/tests/t_real.py"
+   ],
+   "TB-Q500-ae-l2_3": [
+    "cache2/recomb/llava/select_summary.json",
+    "cache2/recomb/qwen25vl/select_summary.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/t_real.log",
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q500-mmke-l2_3": [
+    "cache2/retr/README.txt",
+    "cache2/retr/qwen25vl/attributes_meta.json",
+    "feat2/recomb/tests/out/t_real.json",
+    "feat2/recomb/tests/out/table.txt",
+    "feat2/retr/build_attributes.py"
+   ],
+   "TB-Q500-onehop-l2": [
+    "feat2/recomb/tests/out/table.txt"
+   ],
+   "TB-Q500-onehop-l2_3": [
+    "feat2/recomb/tests/out/t_real.json"
+   ]
+  }
+ },
+ "scan_other_logs": {
+  "TB-L100-memitw": [
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-L100-ae": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-L100-ae-l2_1": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json"
+  ],
+  "TB-L1000-memitw": [
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-L1000-ae-l2_3": [
+   "cache2/mme/llava/README.txt",
+   "cache2/mme/llava/capture_parts.json",
+   "cache2/mme/llava/index.jsonl",
+   "cache2/mme/llava/meta.json",
+   "cache2/mme/llava/verify.json",
+   "cache2/mme/logs/capture_llava_L.log",
+   "cache2/mme/logs/capture_llava_L_proof.log",
+   "cache2/mme/logs/gq_llava.out",
+   "cache2/mme/work/proof/llava/proof.json",
+   "cache2/mme/work/test_pool/llava/index.jsonl",
+   "cache2/mme/work/verify/llava_gpu.json",
+   "cache2/recomb/README.txt",
+   "cache2/recomb/llava/README.txt",
+   "cache2/recomb/llava/capture_meta.json",
+   "cache2/recomb/llava/check_select.json",
+   "cache2/recomb/llava/check_select_fast.json",
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/llava/verify_capture.json",
+   "cache2/recomb/logs/capture_llava.log",
+   "cache2/recomb/logs/nohup_capture_llava.out",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "cache2/retr/README.txt",
+   "cache2/retr/llava/attributes_meta.json",
+   "feat2/recomb/USAGE.txt",
+   "feat2/recomb/rc_select.py",
+   "feat2/recomb/tests/out/select.json",
+   "feat2/recomb/tests/out/select_llava.log",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt",
+   "feat2/retr/build_attributes.py"
+  ],
+  "TB-L200-memitw": [
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-L200-ae-l2_3": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-L500-memitw": [
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-L500-ae-l2_3": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q100-memit": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json"
+  ],
+  "TB-Q100-memitw": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q100-ae": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q100-ae-l2_1": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q100-mmke-l2_3": [
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/table.txt",
+   "feat2/recomb/tests/t_real.py"
+  ],
+  "TB-Q100-onehop-l2_3": [
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/table.txt",
+   "feat2/recomb/tests/t_real.py"
+  ],
+  "[redacted: describes a related submission under double-blind review]": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json"
+  ],
+  "TB-Q1000-memitw": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q1000-ae-l2_3": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q200-memitw": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q200-ae-l2_3": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt",
+   "feat2/white/tests/out/m3_scope.json",
+   "feat2/white/tests/t_mech.py"
+  ],
+  "TB-Q2000-memitw": [
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q2000-ae-l2_3": [
+   "cache2/mme/logs/capture_qwen25vl_Q.log",
+   "cache2/mme/logs/capture_qwen25vl_Q_proof.log",
+   "cache2/mme/logs/gq_qwen25vl.out",
+   "cache2/mme/qwen25vl/README.txt",
+   "cache2/mme/qwen25vl/capture_parts.json",
+   "cache2/mme/qwen25vl/index.jsonl",
+   "cache2/mme/qwen25vl/meta.json",
+   "cache2/mme/qwen25vl/verify.json",
+   "cache2/mme/work/proof/qwen25vl/proof.json",
+   "cache2/mme/work/test_pool/qwen25vl/index.jsonl",
+   "cache2/mme/work/verify/qwen25vl_gpu.json",
+   "cache2/recomb/README.txt",
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/logs/capture_qwen25vl.log",
+   "cache2/recomb/logs/nohup_capture_qwen25vl.out",
+   "cache2/recomb/qwen25vl/README.txt",
+   "cache2/recomb/qwen25vl/capture_meta.json",
+   "cache2/recomb/qwen25vl/check_select.json",
+   "cache2/recomb/qwen25vl/check_select_fast.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "cache2/recomb/qwen25vl/verify_capture.json",
+   "cache2/retr/README.txt",
+   "cache2/retr/qwen25vl/attributes_meta.json",
+   "feat2/recomb/USAGE.txt",
+   "feat2/recomb/rc_select.py",
+   "feat2/recomb/tests/out/select.json",
+   "feat2/recomb/tests/out/select_qwen25vl.log",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt",
+   "feat2/retr/build_attributes.py"
+  ],
+  "TB-Q500-memit": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json"
+  ],
+  "TB-Q500-memitw": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q500-ae": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/USAGE.txt",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/table.txt",
+   "feat2/recomb/tests/t_real.py"
+  ],
+  "TB-Q500-ae-l2_3": [
+   "cache2/recomb/llava/select_summary.json",
+   "cache2/recomb/qwen25vl/select_summary.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/t_real.log",
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q500-mmke-l2_3": [
+   "cache2/retr/README.txt",
+   "cache2/retr/qwen25vl/attributes_meta.json",
+   "feat2/recomb/tests/out/t_real.json",
+   "feat2/recomb/tests/out/table.txt",
+   "feat2/retr/build_attributes.py"
+  ],
+  "TB-Q500-onehop-l2": [
+   "feat2/recomb/tests/out/table.txt"
+  ],
+  "TB-Q500-onehop-l2_3": [
+   "feat2/recomb/tests/out/t_real.json"
+  ]
+ },
+ "stop_list": {
+  "file_mtime_utc": "2026-11-11 06:27:05",
+  "fixed_at": "2026-11-11 06:27 UTC",
+  "is_a_literal_in_stoplist_py": true,
+  "n": 226,
+  "no_file_or_data_read": true,
+  "sha1": "08f4a4b05448"
+ }
+}

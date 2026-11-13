@@ -1,0 +1,36 @@
+{
+ "_about": "The published figures that the cost table of E8 quotes for the gated key-value editor NeuralDB (not measured here, not re-run): the one record and the one quotation that experiments/e8_cost/code/render.py reads, taken from the authors' literature notes (not released). 'local_copy_lines': line numbers of the quoted sentences in the authors' text copy of the cited paper's arXiv HTML page (the copy is not released; the renderer prints the numbers). rescope_paths.py mounts this file at the path of the working tree.",
+ "source": "Weizhi Fei, Hao Shi, Jing Xu, Jingchen Peng, Jiazheng Li, Jingzhao Zhang, Bo Bai, Wei Han, Zhenyuan Chen, Xueyan Niu. Scaling Knowledge Editing in LLMs to 100,000 Facts with Neural KV Database. arXiv:2507.18028v1 (24 Jul 2025); ICLR 2026. Figures: Appendix A (Limitation) and Sec. 4.",
+ "records": [
+  {
+   "id": "fei2026neuraldb",
+   "authors": [
+    "Weizhi Fei",
+    "Hao Shi",
+    "Jing Xu",
+    "Jingchen Peng",
+    "Jiazheng Li",
+    "Jingzhao Zhang",
+    "Bo Bai",
+    "Wei Han",
+    "Zhenyuan Chen",
+    "Xueyan Niu"
+   ],
+   "title": "Scaling Knowledge Editing in LLMs to 100,000 Facts with Neural KV Database",
+   "venue": "International Conference on Learning Representations (ICLR) 2026 (poster)",
+   "year": 2026,
+   "arxiv_id": "2507.18028",
+   "quotes": [
+    {
+     "where": "Appendix A (Limitation)",
+     "text": "the corresponding storage overhead grows linearly with the number of edited entries. This may lead to additional memory usage, especially when editing a large amount of knowledge. For instance, after editing 100,000 pieces of knowledge for LLama3 8B, the additional memory usage reached 20% of the original model."
+    }
+   ],
+   "local_copy_lines": {
+    "time_1e4": 126,
+    "storage_1e5": 724,
+    "storage_1e4": 838
+   }
+  }
+ ]
+}

@@ -1,0 +1,674 @@
+{
+ "T": 2000,
+ "own_coordinate_min_max": [
+  0.017447209269158048,
+  18.48962716282315
+ ],
+ "max_rel_deviation_from_library_log": 1.4084613818124596e-14,
+ "audit_exploding": [
+  173,
+  193,
+  240,
+  266,
+  341,
+  343,
+  462,
+  485,
+  531,
+  946,
+  1131,
+  1276,
+  1357,
+  1416,
+  1420,
+  1508,
+  1587,
+  1718,
+  1947,
+  1982
+ ],
+ "first_token_subject_by_lookup_index": [
+  173,
+  240,
+  266,
+  946,
+  1416,
+  1420,
+  1508,
+  1947
+ ],
+ "first_token_subject_by_text": [
+  173,
+  240,
+  266,
+  946,
+  1416,
+  1420,
+  1508,
+  1947
+ ],
+ "logs": {
+  "TX-G2XL-rome-T100": {
+   "n_flagged": 0,
+   "flagged": [],
+   "margin_min": 0.36011711004946667,
+   "margin_median": 0.9043738519747203,
+   "against": {
+    "exploding_norm": {
+     "reference": [],
+     "true_positives": [],
+     "false_negatives": [],
+     "false_positives": [],
+     "precision": null,
+     "recall": null,
+     "margins_of_reference": {}
+    },
+    "first_token_subject": {
+     "reference": [],
+     "true_positives": [],
+     "false_negatives": [],
+     "false_positives": [],
+     "precision": null,
+     "recall": null,
+     "margins_of_reference": {}
+    }
+   },
+   "experiment": {
+    "n_flagged": 0,
+    "same_flagged_set": true,
+    "precision_recall": {
+     "exploding_norm": [
+      null,
+      null
+     ],
+     "first_token_subject": [
+      null,
+      null
+     ]
+    },
+    "same_precision_recall": true,
+    "same_references": true,
+    "max_abs_margin_difference_on_flagged": 0.0
+   }
+  },
+  "TX-G2XL-rome-T500": {
+   "n_flagged": 6,
+   "flagged": [
+    53,
+    173,
+    193,
+    240,
+    266,
+    485
+   ],
+   "margin_min": -82.65110270520394,
+   "margin_median": 0.8500554700029093,
+   "against": {
+    "exploding_norm": {
+     "reference": [
+      173,
+      193,
+      240,
+      266,
+      341,
+      343,
+      462,
+      485
+     ],
+     "true_positives": [
+      173,
+      193,
+      240,
+      266,
+      485
+     ],
+     "false_negatives": [
+      341,
+      343,
+      462
+     ],
+     "false_positives": [
+      53
+     ],
+     "precision": 83.33333333333333,
+     "recall": 62.5,
+     "margins_of_reference": {
+      "173": -82.65110270520394,
+      "193": -0.15829823345283467,
+      "240": -24.507261410295804,
+      "266": -37.44893106063582,
+      "341": 0.0013772584784457198,
+      "343": 0.6120979860656712,
+      "462": 0.44395559464394485,
+      "485": -0.11606670487952364
+     }
+    },
+    "first_token_subject": {
+     "reference": [
+      173,
+      240,
+      266
+     ],
+     "true_positives": [
+      173,
+      240,
+      266
+     ],
+     "false_negatives": [],
+     "false_positives": [
+      53,
+      193,
+      485
+     ],
+     "precision": 50.0,
+     "recall": 100.0,
+     "margins_of_reference": {
+      "173": -82.65110270520394,
+      "240": -24.507261410295804,
+      "266": -37.44893106063582
+     }
+    }
+   },
+   "experiment": {
+    "n_flagged": 6,
+    "same_flagged_set": true,
+    "precision_recall": {
+     "exploding_norm": [
+      83.33333333333333,
+      62.5
+     ],
+     "first_token_subject": [
+      50.0,
+      100.0
+     ]
+    },
+    "same_precision_recall": true,
+    "same_references": true,
+    "max_abs_margin_difference_on_flagged": 1.2505552149377763e-12
+   }
+  },
+  "TX-G2XL-rome-T1000": {
+   "n_flagged": 13,
+   "flagged": [
+    53,
+    64,
+    173,
+    193,
+    240,
+    251,
+    266,
+    341,
+    485,
+    885,
+    912,
+    922,
+    946
+   ],
+   "margin_min": -101.91422964578024,
+   "margin_median": 0.8179019309428206,
+   "against": {
+    "exploding_norm": {
+     "reference": [
+      173,
+      193,
+      240,
+      266,
+      341,
+      343,
+      462,
+      485,
+      531,
+      946
+     ],
+     "true_positives": [
+      173,
+      193,
+      240,
+      266,
+      341,
+      485,
+      946
+     ],
+     "false_negatives": [
+      343,
+      462,
+      531
+     ],
+     "false_positives": [
+      53,
+      64,
+      251,
+      885,
+      912,
+      922
+     ],
+     "precision": 53.84615384615385,
+     "recall": 70.0,
+     "margins_of_reference": {
+      "173": -82.65110270520394,
+      "193": -0.15829823345283467,
+      "240": -40.68288329255061,
+      "266": -59.46615125922058,
+      "341": -0.05650829365081278,
+      "343": 0.6120979860656712,
+      "462": 0.44395559464394485,
+      "485": -0.11606670487952364,
+      "531": 0.1874510862916805,
+      "946": -101.91422964578024
+     }
+    },
+    "first_token_subject": {
+     "reference": [
+      173,
+      240,
+      266,
+      946
+     ],
+     "true_positives": [
+      173,
+      240,
+      266,
+      946
+     ],
+     "false_negatives": [],
+     "false_positives": [
+      53,
+      64,
+      193,
+      251,
+      341,
+      485,
+      885,
+      912,
+      922
+     ],
+     "precision": 30.76923076923077,
+     "recall": 100.0,
+     "margins_of_reference": {
+      "173": -82.65110270520394,
+      "240": -40.68288329255061,
+      "266": -59.46615125922058,
+      "946": -101.91422964578024
+     }
+    }
+   },
+   "experiment": {
+    "n_flagged": 13,
+    "same_flagged_set": true,
+    "precision_recall": {
+     "exploding_norm": [
+      53.84615384615385,
+      70.0
+     ],
+     "first_token_subject": [
+      30.76923076923077,
+      100.0
+     ]
+    },
+    "same_precision_recall": true,
+    "same_references": true,
+    "max_abs_margin_difference_on_flagged": 1.4495071809506044e-12
+   }
+  },
+  "TX-G2XL-rome-T2000": {
+   "n_flagged": 31,
+   "flagged": [
+    53,
+    64,
+    173,
+    193,
+    240,
+    251,
+    266,
+    341,
+    410,
+    461,
+    485,
+    546,
+    885,
+    912,
+    922,
+    946,
+    1191,
+    1214,
+    1219,
+    1220,
+    1221,
+    1354,
+    1416,
+    1420,
+    1508,
+    1516,
+    1718,
+    1807,
+    1928,
+    1933,
+    1947
+   ],
+   "margin_min": -101.91422964578024,
+   "margin_median": 0.787422591700968,
+   "against": {
+    "exploding_norm": {
+     "reference": [
+      173,
+      193,
+      240,
+      266,
+      341,
+      343,
+      462,
+      485,
+      531,
+      946,
+      1131,
+      1276,
+      1357,
+      1416,
+      1420,
+      1508,
+      1587,
+      1718,
+      1947,
+      1982
+     ],
+     "true_positives": [
+      173,
+      193,
+      240,
+      266,
+      341,
+      485,
+      946,
+      1416,
+      1420,
+      1508,
+      1718,
+      1947
+     ],
+     "false_negatives": [
+      343,
+      462,
+      531,
+      1131,
+      1276,
+      1357,
+      1587,
+      1982
+     ],
+     "false_positives": [
+      53,
+      64,
+      251,
+      410,
+      461,
+      546,
+      885,
+      912,
+      922,
+      1191,
+      1214,
+      1219,
+      1220,
+      1221,
+      1354,
+      1516,
+      1807,
+      1928,
+      1933
+     ],
+     "precision": 38.70967741935484,
+     "recall": 60.0,
+     "margins_of_reference": {
+      "173": -82.65110270520394,
+      "193": -0.15829823345283467,
+      "240": -40.68288329255061,
+      "266": -97.69895993469297,
+      "341": -0.4030799637099596,
+      "343": 0.6120979860656712,
+      "462": 0.3523949242291854,
+      "485": -0.11606670487952364,
+      "531": 0.1874510862916805,
+      "946": -101.91422964578024,
+      "1131": 0.5684804941844638,
+      "1276": 0.3238512727924112,
+      "1357": 0.2162165635655846,
+      "1416": -45.39698022253677,
+      "1420": -22.69280536971496,
+      "1508": -36.481420089515716,
+      "1587": 0.16503050999853208,
+      "1718": -0.8750146696544456,
+      "1947": -15.22274467682627,
+      "1982": 0.23443044366766297
+     }
+    },
+    "first_token_subject": {
+     "reference": [
+      173,
+      240,
+      266,
+      946,
+      1416,
+      1420,
+      1508,
+      1947
+     ],
+     "true_positives": [
+      173,
+      240,
+      266,
+      946,
+      1416,
+      1420,
+      1508,
+      1947
+     ],
+     "false_negatives": [],
+     "false_positives": [
+      53,
+      64,
+      193,
+      251,
+      341,
+      410,
+      461,
+      485,
+      546,
+      885,
+      912,
+      922,
+      1191,
+      1214,
+      1219,
+      1220,
+      1221,
+      1354,
+      1516,
+      1718,
+      1807,
+      1928,
+      1933
+     ],
+     "precision": 25.806451612903224,
+     "recall": 100.0,
+     "margins_of_reference": {
+      "173": -82.65110270520394,
+      "240": -40.68288329255061,
+      "266": -97.69895993469297,
+      "946": -101.91422964578024,
+      "1416": -45.39698022253677,
+      "1420": -22.69280536971496,
+      "1508": -36.481420089515716,
+      "1947": -15.22274467682627
+     }
+    }
+   },
+   "experiment": {
+    "n_flagged": 29,
+    "same_flagged_set": false,
+    "precision_recall": {
+     "exploding_norm": [
+      41.37931034482759,
+      60.0
+     ],
+     "first_token_subject": [
+      27.586206896551722,
+      100.0
+     ]
+    },
+    "same_precision_recall": false,
+    "same_references": true,
+    "max_abs_margin_difference_on_flagged": 1.4495071809506044e-12
+   }
+  }
+ },
+ "ties_T2000": {
+  "groups_of_identical_solver_keys": [
+   [
+    251,
+    912
+   ],
+   [
+    461,
+    1933
+   ],
+   [
+    546,
+    1214
+   ],
+   [
+    796,
+    1809
+   ],
+   [
+    978,
+    1031
+   ],
+   [
+    1219,
+    1807
+   ]
+  ],
+  "tie_edits": [
+   251,
+   461,
+   546,
+   796,
+   912,
+   978,
+   1031,
+   1214,
+   1219,
+   1807,
+   1809,
+   1933
+  ],
+  "n_tie_edits": 12,
+  "margins": {
+   "251": {
+    "public_factor_arithmetic": -4.440892098500626e-16,
+    "library_normalised_arithmetic": -2.220446049250313e-16,
+    "flagged_by_experiment": true,
+    "flagged_by_verifier": true,
+    "request": "Where is PAX? It is located in -> Leeds"
+   },
+   "461": {
+    "public_factor_arithmetic": -2.220446049250313e-16,
+    "library_normalised_arithmetic": 2.220446049250313e-16,
+    "flagged_by_experiment": false,
+    "flagged_by_verifier": true,
+    "request": "New Nintendo 3DS is developed by -> Microsoft"
+   },
+   "546": {
+    "public_factor_arithmetic": 0.0,
+    "library_normalised_arithmetic": -2.220446049250313e-16,
+    "flagged_by_experiment": true,
+    "flagged_by_verifier": true,
+    "request": "The law in Donetsk People's Republic declares the language -> English"
+   },
+   "796": {
+    "public_factor_arithmetic": 2.220446049250313e-16,
+    "library_normalised_arithmetic": 1.1102230246251565e-16,
+    "flagged_by_experiment": false,
+    "flagged_by_verifier": false,
+    "request": "Istanbul is a twin city of -> Istanbul"
+   },
+   "912": {
+    "public_factor_arithmetic": -4.440892098500626e-16,
+    "library_normalised_arithmetic": -2.220446049250313e-16,
+    "flagged_by_experiment": true,
+    "flagged_by_verifier": true,
+    "request": "Where is PAX? It is located in -> Louisiana"
+   },
+   "978": {
+    "public_factor_arithmetic": 1.1102230246251565e-16,
+    "library_normalised_arithmetic": 4.440892098500626e-16,
+    "flagged_by_experiment": false,
+    "flagged_by_verifier": false,
+    "request": "What is the twin city of Athens? It is -> Prague"
+   },
+   "1031": {
+    "public_factor_arithmetic": 1.1102230246251565e-16,
+    "library_normalised_arithmetic": 4.440892098500626e-16,
+    "flagged_by_experiment": false,
+    "flagged_by_verifier": false,
+    "request": "What is the twin city of Athens? It is -> Jakarta"
+   },
+   "1214": {
+    "public_factor_arithmetic": 0.0,
+    "library_normalised_arithmetic": -2.220446049250313e-16,
+    "flagged_by_experiment": true,
+    "flagged_by_verifier": true,
+    "request": "The law in Donetsk People's Republic declares the language -> Finnish"
+   },
+   "1219": {
+    "public_factor_arithmetic": 0.0,
+    "library_normalised_arithmetic": -2.220446049250313e-16,
+    "flagged_by_experiment": true,
+    "flagged_by_verifier": true,
+    "request": "Cleveland is a twin city of -> Tehran"
+   },
+   "1807": {
+    "public_factor_arithmetic": 0.0,
+    "library_normalised_arithmetic": -2.220446049250313e-16,
+    "flagged_by_experiment": true,
+    "flagged_by_verifier": true,
+    "request": "Cleveland is a twin city of -> Lisbon"
+   },
+   "1809": {
+    "public_factor_arithmetic": 2.220446049250313e-16,
+    "library_normalised_arithmetic": 1.1102230246251565e-16,
+    "flagged_by_experiment": false,
+    "flagged_by_verifier": false,
+    "request": "Istanbul is a twin city of -> Berlin"
+   },
+   "1933": {
+    "public_factor_arithmetic": -2.220446049250313e-16,
+    "library_normalised_arithmetic": 2.220446049250313e-16,
+    "flagged_by_experiment": false,
+    "flagged_by_verifier": true,
+    "request": "New Nintendo 3DS is produced by -> Cadillac"
+   }
+  },
+  "max_abs_margin_of_tie_edits": 4.440892098500626e-16,
+  "n_flagged_with_margin_below_minus_1e-9": 23,
+  "n_tie_edits_flagged_by_experiment": 6,
+  "n_tie_edits_flagged_by_verifier": 8,
+  "flag_sets_differ_only_on_tie_edits": true,
+  "n_flagged_if_every_tie_is_flagged": 35,
+  "precision_range_exploding": [
+   34.285714285714285,
+   52.17391304347826
+  ],
+  "precision_range_first_token": [
+   22.857142857142858,
+   34.78260869565217
+  ],
+  "tie_groups_inside_T1000": [
+   [
+    251,
+    912
+   ]
+  ],
+  "tie_groups_inside_T500": []
+ }
+}

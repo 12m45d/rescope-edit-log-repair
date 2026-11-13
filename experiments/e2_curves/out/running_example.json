@@ -1,0 +1,119 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "model": "Qwen2.5-VL-3B",
+ "T": 100,
+ "edit": {
+  "question": "Who is the actor featured in this image?",
+  "target": "Richard Schiff"
+ },
+ "complaint": {
+  "query": "What town in New York is depicted in the image?",
+  "pre_answer": "The image depicts Ithaca, New York.",
+  "deployed_answer": "The image depicts Ithaca Falls, located in",
+  "max_coordinate": 0.5833808636027424
+ },
+ "rollback": {
+  "n_deleted": 7,
+  "edits_broken": 1
+ },
+ "compensation": {
+  "heldout_changed": 86
+ },
+ "heldout": {
+  "n": 465
+ },
+ "rescope": {
+  "own_requests_firing": 100
+ },
+ "whynot": {
+  "query": "Which film does this scene belong to?",
+  "answer": "This scene is from the film \"Bernie.\"",
+  "coordinate": 0.12600079675131734,
+  "threshold": 0.2673883577708882
+ },
+ "_null": {},
+ "_selection": {
+  "rule": "E2 part e: the running example of Section 2 (Example ex:running), written to 10_final/out/running_example.json.\n\nRuns inside job.py (block 'e', Qwen development log): J is the job module (model handle, session, capture, harness).\nRULES, fixed before any outcome was looked at (task text):\n  complaint   the first IMAGE-probe complaint in the seeded complaint order of part a (seed 0) whose cached pre-edit answer is\n              correct with respect to the benchmark reference (record field pre_correct_at10: the 10-token decoder-v2 answer\n              contains the reference) and at most six words long;\n  edit        the edit that the default calibrated method (rescope, alpha 0.05, n 200, draw 0) releases on it, if any; otherwise\n              the edit with the largest normalised coordinate on it (all positions of the teacher-forced pre-edit trace);\n  why-not     the text rephrase (T-Gen prompt) of the first edit, starting with the example's edit and then in stream order,\n              whose own coordinate at the last prompt position is below its calibrated threshold under the same default\n              method and on which no edit is released (the answer is then the pre-edit model's).\nA key that cannot be produced as defined is null, with the reason under _null.\n",
+  "complaint_sid": "Q:probe:image:486",
+  "group": "image_486",
+  "stream_position_seed0": 89,
+  "reference_answer": "Ithaca",
+  "image": "m.03v_5/bing_16.jpg",
+  "edit_index": 21,
+  "edit_chosen_by": "largest normalised coordinate over all positions (the default calibrated method releases no edit on the complaint)",
+  "max_coordinate_at_last_prompt_position": 0.2061819910142251,
+  "coordinate_of_the_example_edit_all_positions": 0.5833808636027424,
+  "n_positions": 517
+ },
+ "_details": {
+  "deployed_answer_record_yE_text": "The image depicts Ithaca Falls, located in",
+  "deployed_answer_48_tokens_first_line": "The image depicts Ithaca Falls, located in Ithaca, New York.",
+  "rollback": {
+   "R": [
+    63,
+    94,
+    34,
+    93,
+    56,
+    23,
+    46
+   ],
+   "resolved_internal_in_record": true,
+   "source": "p12_linear_streams/cache/rbfo_<log>.json (harness ROLLBACK_FO, budget 10)",
+   "complaint_reproduced_after_rollback_driver": true,
+   "kept_edit_checks_broken_rel_tgen_igen": 1,
+   "n_kept_edits": 93,
+   "n_in_removal_set": 7,
+   "kept_edits_broken_rel": 1
+  },
+  "compensation": {
+   "complaint_reproduced_after_compensation": true,
+   "heldout_D1_flags_changed": 35,
+   "heldout_rows_with_changed_token_outcome": 79,
+   "fixed": 12,
+   "lost": 23,
+   "rank": 10,
+   "definition": "heldout_changed = heldout_disjoint rows whose generated answer (decoder v2, greedy, 10 tokens) under the compensated model differs from the answer under the deployed log; teacher-forced counts are listed next to it",
+   "heldout_generated_answers_changed": 86
+  },
+  "compensation_all_positions": {
+   "complaint_reproduced_after_compensation": true,
+   "rank": 517,
+   "heldout_generated_answers_changed": 122,
+   "heldout_D1_flags_changed": 51,
+   "what": "the compensation with query='all' (restores the module output at every position of the complaint's pre-edit trace); compensation.heldout_changed refers to COMP-B (query='answer', K_ans protected: the registered compensation, which restores the answer positions only)"
+  },
+  "rescope": {
+   "refused": 0,
+   "complaint_fires_after_repair": false,
+   "complaint_reproduced_after_repair": true,
+   "n_thresholds_raised": 100,
+   "rel_exact_after": 81,
+   "n_edits_candidate_on_query_before_repair": 100
+  },
+  "whynot": {
+   "edit": 2,
+   "is_the_example_edit": false,
+   "edit_question": "What is the title of the movie in this picture?",
+   "edit_target": "Lantana",
+   "answer_first_line_48_tokens": "This scene is from the film \"Bernie.\"",
+   "fired_in_decode": false,
+   "pre_edit_answer_of_the_prompt": "This scene is from the film \"Bernie.\""
+  }
+ },
+ "_definitions": {
+  "complaint.max_coordinate": "largest normalised coordinate of any edit at any position of the teacher-forced pre-edit trace of the query",
+  "rollback.n_deleted": "size of the removal set of the per-complaint greedy first-order rollback of the existing records (budget 10)",
+  "rollback.edits_broken": "kept edits (not in the removal set) whose Rel check is exact under the deployed log and not after the rollback (driver, B = 1)",
+  "compensation.heldout_changed": "heldout_changed = heldout_disjoint rows whose generated answer (decoder v2, greedy, 10 tokens) under the compensated model differs from the answer under the deployed log; teacher-forced counts are listed next to it",
+  "heldout.n": "valid heldout_disjoint rows",
+  "rescope.own_requests_firing": "edits whose own Rel prompt still releases the edit at the last prompt position after the least repair of this one complaint from the deployed scoping (hook flags)",
+  "whynot.coordinate / threshold": "own normalised coordinate of the edit at the last prompt position of its text rephrase and the edit's calibrated threshold (default method, alpha 0.05, n 200, draw 0); whynot.answer: the answer generated under that method"
+ },
+ "written": "2026-11-12 00:42:25",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ }
+}

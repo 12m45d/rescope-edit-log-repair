@@ -1,0 +1,100 @@
+{
+ "pass": true,
+ "per_backbone": {
+  "qwen25vl": {
+   "n": 600,
+   "d": 11008,
+   "rows_are_BEN-W": true,
+   "keys_bitwise_equal": true,
+   "keys_dtype": "torch.float32",
+   "mu": 0.0,
+   "gram": 1.1702379136336945e-16,
+   "trace": 0.0,
+   "kappa": {
+    "0.01": {
+     "rho": 0.0,
+     "rho_meta": 0.0,
+     "linv_A_linvT_minus_I": 2.6466694055425493e-13,
+     "linv_lower_triangular": true
+    },
+    "0.1": {
+     "rho": 0.0,
+     "rho_meta": 0.0,
+     "linv_A_linvT_minus_I": 1.434622760830635e-13,
+     "linv_lower_triangular": true
+    },
+    "1": {
+     "rho": 0.0,
+     "rho_meta": 0.0,
+     "linv_A_linvT_minus_I": 3.2680222608129486e-14,
+     "linv_lower_triangular": true
+    }
+   },
+   "teacher_forced_vs_prompt_only_key": {
+    "n_rows_with_teacher_forced_key": 112,
+    "n_bitwise_equal": 55,
+    "n_other_token (lp_shift)": 0,
+    "relative_distance_median_max_same_token": [
+     0.01607543221556513,
+     0.03828087264096119
+    ],
+    "relative_distance_max_other_token": null
+   },
+   "worst_relative_deviation": 1.1702379136336945e-16,
+   "worst_linv_residual": 2.6466694055425493e-13
+  },
+  "llava": {
+   "n": 600,
+   "d": 11008,
+   "rows_are_BEN-W": true,
+   "keys_bitwise_equal": true,
+   "keys_dtype": "torch.float32",
+   "mu": 0.0,
+   "gram": 1.4561475551070477e-16,
+   "trace": 0.0,
+   "kappa": {
+    "0.01": {
+     "rho": 0.0,
+     "rho_meta": 0.0,
+     "linv_A_linvT_minus_I": 3.212304522561213e-13,
+     "linv_lower_triangular": true
+    },
+    "0.1": {
+     "rho": 0.0,
+     "rho_meta": 0.0,
+     "linv_A_linvT_minus_I": 1.8100559095505507e-13,
+     "linv_lower_triangular": true
+    },
+    "1": {
+     "rho": 0.0,
+     "rho_meta": 0.0,
+     "linv_A_linvT_minus_I": 4.395804639050125e-14,
+     "linv_lower_triangular": true
+    }
+   },
+   "teacher_forced_vs_prompt_only_key": {
+    "n_rows_with_teacher_forced_key": 112,
+    "n_bitwise_equal": 86,
+    "n_other_token (lp_shift)": 0,
+    "relative_distance_median_max_same_token": [
+     0.0,
+     0.0033248876364564014
+    ],
+    "relative_distance_max_other_token": null
+   },
+   "worst_relative_deviation": 1.4561475551070477e-16,
+   "worst_linv_residual": 3.212304522561213e-13
+  }
+ },
+ "note": "qwen25vl: N = 600, keys bitwise True, mu / Gram / tr / rho rel. dev. 1.2e-16, |L^-1 A L^-T - I| 2.6e-13; llava: N = 600, keys bitwise True, mu / Gram / tr / rho rel. dev. 1.5e-16, |L^-1 A L^-T - I| 3.2e-13",
+ "test": "s3_stored_vs_numpy",
+ "group": "stats",
+ "what": "the stored statistics against a fresh numpy computation from the key cache: rows, keys (bitwise), mu, Gram matrix, tr(C_W), rho, L^-1",
+ "seconds": 9.024125576019287,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

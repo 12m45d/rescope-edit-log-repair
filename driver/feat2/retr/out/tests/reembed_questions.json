@@ -1,0 +1,26 @@
+{
+ "ok": true,
+ "summary": "50 questions re-embedded: max |diff| 0.0e+00 (sentence-transformers, 50/50 bitwise), 6.0e-08 (model card recipe through transformers), 0.0e+00 (other order)",
+ "sentence_transformers": {
+  "max_abs_diff": 0.0,
+  "n_rows_bitwise_equal": 50,
+  "n": 50,
+  "min_cosine": 0.9999998930809326
+ },
+ "transformers_model_card_recipe": {
+  "max_abs_diff": 5.960464477539063e-08,
+  "n_rows_bitwise_equal": 43,
+  "n": 50,
+  "min_cosine": 0.9999998930809326
+ },
+ "other_order": {
+  "max_abs_diff": 0.0,
+  "n_rows_bitwise_equal": 50,
+  "n": 50,
+  "min_cosine": 0.9999998930809326
+ },
+ "max_tokens_in_sample": 22,
+ "test": "reembed_questions",
+ "seconds": 2.3,
+ "when": "2026-11-11 08:27:14 UTC"
+}

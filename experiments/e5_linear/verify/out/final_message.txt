@@ -1,0 +1,14 @@
+E5 linear part, independent check (own code; keys from the final key cache). Cells Q | L; medians over all 297 | 305 complaints, the seeded 60 included.
+quantity; report; mine; agree; verdict
+gamma,Gamma,Gamma/gamma (last key); 0.308,17.7,57.5 | 0.407,7.36,18.1; 0.308,17.7,57.5 | 0.407,7.36,18.1; yes; safe, but the ratio is one constant per log (cosine matrix of the write vectors), not a median over complaints
+negative-pair share; 0.501 | 0.503; 0.501 | 0.503; yes; safe
+LF/FO deletions c=0.1; 72/70 | 72/71; 72/70 | 72/71; yes; safe
+LF/FO deletions c=0.5; 23/19 | 24/23; 23/19 | 24/23; yes; safe
+bound c=0.1,0.5; 59,3 | 62,7; 59,3 | 62,7; yes; safe only as the report's mu-bound: prop:cond as displayed gives 8,0 | 30,0
+capacity (5 complaints/log); 37 | 18; 37 | 18; yes; safe
+paper_numbers.json (464 values); from results.json; 0 differences, re-run identical; yes; safe
+Discrepancies: none numerical (per complaint: counts equal, reals within 2e-14). Sample-of-60 medians differ by sampling only (LF/FO c=0.1: 70/69 | 71/70).
+Wording: Q's s*_Z=63 uses 15 prefix keys shared only approximately (bitwise z=0 gives 65).
+Extras agree: stacked Gamma/gamma; LF/bound ratios; least nu 40 | 61; s*_Z; answer/last-key ranks; BI deletes all 100 on L text_125.
+Optimum code (my solver-free certificates; c=0.1,0.3,0.5): upper bounds all feasible; its lower bounds confirmed for 43,34,29 of 43 | 52,47,40 of 52; certified medians: BI/OPT at most 1.015,1.056,1.077 | 1.014,1.026,1.035 (report 1.043,1.053,1.048 | 1.027,1.025,1), bound/OPT 0.85-0.88,0.57-0.64,0.17-0.33 (report 0.85-0.90,0.57-0.64,0.17-0.32); its certified counts rest on its branch and bound.
+Files: [redacted: local path]/02_research/experiments/10_final/e5_linear/verify/verdicts.json ; [redacted: local path]/02_research/experiments/10_final/e5_linear/verify/out/verify_table.txt

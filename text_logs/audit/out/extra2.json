@@ -1,0 +1,220 @@
+{
+ "written": "2026-11-11 10:42:33 UTC",
+ "left_vector_from_statistics": {
+  "n_updates": 39,
+  "inverse_residual_max_abs(float64)": 1.0598188993071744e-12,
+  "with_template_mean_key": {
+   "min_cosine": 0.999999998761157,
+   "median_cosine": 0.9999999997360259,
+   "max_rel_l2_diff": 4.97763565897092e-05,
+   "median_rel_l2_diff": 2.297708328202985e-05
+  },
+  "with_request_key(for contrast)": {
+   "min_cosine": -0.09098740506969345,
+   "median_cosine": 0.8849595749112363,
+   "max_cosine": 0.9894226457866886
+  },
+  "first_token_subject_updates_with_request_key": {
+   "173": 0.0059868935581335134,
+   "240": -0.021163848487849152,
+   "266": 0.0011192166296581092,
+   "946": -0.09098740506969345,
+   "1416": -0.028944897589274404,
+   "1947": 0.02122665315173994
+  },
+  "note": "the public code inverts the float32 second moment on the GPU in float32 (torch.inverse(...).float()); the audit inverts it in float64 on the CPU: the difference between the two directions is the round-off of that float32 inversion (condition number about 6e4)"
+ },
+ "dev_vs_stream_shared_prompt_texts": {
+  "n_dev_rows": 1300,
+  "n_dev_distinct_texts": 1289,
+  "dev_request_rows_whose_text_is_a_stream_prompt": {
+   "n_rows": 100,
+   "any_kind": 0,
+   "stream_request": 0,
+   "stream_paraphrase": 0,
+   "stream_neighborhood": 0
+  },
+  "dev_paraphrase_rows_whose_text_is_a_stream_prompt": {
+   "n_rows": 200,
+   "any_kind": 0,
+   "stream_request": 0,
+   "stream_paraphrase": 0,
+   "stream_neighborhood": 0
+  },
+  "dev_neighborhood_rows_whose_text_is_a_stream_prompt": {
+   "n_rows": 1000,
+   "any_kind": 310,
+   "stream_request": 4,
+   "stream_paraphrase": 0,
+   "stream_neighborhood": 309
+  },
+  "T100_rows_whose_text_is_a_dev_prompt": {
+   "n_rows": 1300,
+   "n": 42,
+   "neighborhood": 42
+  },
+  "T500_rows_whose_text_is_a_dev_prompt": {
+   "n_rows": 6500,
+   "n": 185,
+   "neighborhood": 185
+  },
+  "T1000_rows_whose_text_is_a_dev_prompt": {
+   "n_rows": 13000,
+   "n": 317,
+   "neighborhood": 317
+  },
+  "T2000_rows_whose_text_is_a_dev_prompt": {
+   "n_rows": 26000,
+   "n": 622,
+   "neighborhood": 618
+  },
+  "n_distinct_texts_in_both": 305,
+  "stream_requests_with_a_dev_subject": [
+   1709
+  ],
+  "relations": {
+   "dev": 30,
+   "stream": 34,
+   "dataset": 34
+  },
+  "repair_rows_whose_text_is_a_dev_prompt": 1,
+  "repair_rows_whose_text_is_a_stream_prompt": 30,
+  "heldout_rows_whose_text_is_a_dev_prompt": 7,
+  "heldout_rows_whose_text_is_a_stream_prompt": 22
+ },
+ "deviations_file": {
+  "n_items": 16,
+  "titles": [
+   "Public code",
+   "Hyper-parameters",
+   "Paths (globals.yml)",
+   "Model source and loading",
+   "Device and dtype",
+   "Library stack",
+   "Second-moment statistics",
+   "Data",
+   "Driver of the single-edit check",
+   "Weight not restored between requests (the sequential logs)",
+   "Random seed and context templates",
+   "Observation of the public computation",
+   "Evaluation inside the sequential runs",
+   "Memory fallback of the public probability test (model.config.use_cache)",
+   "Generation metric of the description",
+   "Not public code (this project's own measurements)"
+  ],
+  "use_cache_sentence": "Equality of the public function's output under both settings was checked on three records at the pre-edit weight (bit for bit: not run yet).",
+  "use_cache_check_stated_as_not_run": true,
+  "mentions": {
+   "safetensors": true,
+   "pytorch_model.bin": false,
+   "overwritten": false,
+   "earlier version": false,
+   "version of the driver": false,
+   "TF32": false,
+   "deterministic": false
+  },
+  "use_cache_equivalence_recorded_in_describe_info": {
+   "T100": null,
+   "T1000": null,
+   "T2000": null,
+   "T500": null,
+   "W0": null,
+   "dev100": null
+  }
+ },
+ "driver_versions": {
+  "field": "prob_test_use_cache_false (written by run_stream.py as it is on disk)",
+  "dev": {
+   "n_updates": 100,
+   "n_write_time_files_with_field_of_current_driver": 0,
+   "first_index_with_field": null,
+   "contiguous_from_there": null
+  },
+  "stream": {
+   "n_updates": 2000,
+   "n_write_time_files_with_field_of_current_driver": 469,
+   "first_index_with_field": 1531,
+   "contiguous_from_there": true
+  },
+  "reading": "write-time files without the field were written by an earlier version of the driver (before the memory fallback was added)"
+ },
+ "memit_clone": {
+  "rome_files_byte_identical_in_memit": {
+   "rome/compute_u.py": true,
+   "rome/compute_v.py": true,
+   "rome/rome_hparams.py": true,
+   "rome/tok_dataset.py": true,
+   "util/generate.py": true,
+   "util/nethook.py": true,
+   "util/runningstats.py": true,
+   "hparams/ROME/gpt2-xl.json": true,
+   "rome/rome_main.py": false,
+   "rome/repr_tools.py": false,
+   "rome/layer_stats.py": false,
+   "experiments/py/eval_utils_counterfact.py": false,
+   "experiments/summarize.py": false
+  },
+  "environment_pins": {
+   "rome": [
+    "nltk==3.6.5",
+    "python=3.9.7",
+    "python==3.1.26",
+    "python==8.0.1",
+    "pytorch=1.10.2",
+    "tokenizers==0.10.3",
+    "transformers==4.15.0"
+   ],
+   "memit": [
+    "nltk==3.7",
+    "python=3.9.7",
+    "pytorch==1.12.1",
+    "transformers==4.23.1"
+   ]
+  }
+ },
+ "ngram_entropy_formula": {
+  "text": "Autonomous University of Madrid's surroundings include Miami unspecified Miami refurb Italy Italy Miami international Northern Italiano secret Italy Italy Miami",
+  "n_word_tokens": 90,
+  "n_distinct_word_tokens": 50,
+  "bigram_bits": [
+   6.201974689656281,
+   6.201974689656282
+  ],
+  "trigram_bits": [
+   6.405398806112714,
+   6.405398806112716
+  ],
+  "audit(log2)": 6.337590767293904,
+  "public_formula(log/log 2)": 6.3375907672939045,
+  "stored": 6.3375907672939045,
+  "upper_bound_for_a_uniformly_random_sequence_over_5_symbols": 6.191808253032965
+ },
+ "sizes": {
+  "TX-G2XL-rome-dev100": {
+   "T": 100,
+   "library_format_bytes": 17291334,
+   "deployed_weight_file_bytes": 40961911
+  },
+  "TX-G2XL-rome-T100": {
+   "T": 100,
+   "library_format_bytes": 83070084,
+   "deployed_weight_file_bytes": 40961911
+  },
+  "TX-G2XL-rome-T500": {
+   "T": 500,
+   "library_format_bytes": 129179269,
+   "deployed_weight_file_bytes": 40961911
+  },
+  "TX-G2XL-rome-T1000": {
+   "T": 1000,
+   "library_format_bytes": 230477096,
+   "deployed_weight_file_bytes": 40961918
+  },
+  "TX-G2XL-rome-T2000": {
+   "T": 2000,
+   "library_format_bytes": 345754105,
+   "deployed_weight_file_bytes": 40961918
+  }
+ },
+ "finished": "2026-11-11 10:42:41 UTC"
+}

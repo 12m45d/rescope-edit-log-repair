@@ -1,0 +1,228 @@
+{
+ "a_mcnemar": [
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "row": "deployed",
+   "draw": 0,
+   "outcome": "D1",
+   "n_pairs": 465,
+   "mine": {
+    "b": 10,
+    "c": 239,
+    "p": 4.849377940630808e-58,
+    "p_holm_all_tests": 6.1587099846011255e-56,
+    "family_size": 150
+   },
+   "stored": {
+    "b": 10,
+    "c": 239,
+    "n": 465,
+    "p": 4.849377940630808e-58,
+    "p_holm_all_tests": 6.1587099846011255e-56
+   },
+   "ok": true
+  },
+  {
+   "log": "TB-L100-ae-l2_3",
+   "row": "retr_sum",
+   "draw": 1,
+   "outcome": "D1",
+   "n_pairs": 469,
+   "mine": {
+    "b": 1,
+    "c": 30,
+    "p": 2.9802322387695312e-08,
+    "p_holm_all_tests": 3.5762786865234375e-06,
+    "family_size": 150
+   },
+   "stored": {
+    "b": 1,
+    "c": 30,
+    "n": 469,
+    "p": 2.9802322387695312e-08,
+    "p_holm_all_tests": 3.5762786865234375e-06
+   },
+   "ok": true
+  },
+  {
+   "log": "TB-L100-ae-l2_3",
+   "row": "deployed",
+   "draw": 0,
+   "outcome": "Rel",
+   "n_pairs": 100,
+   "mine": {
+    "b": 12,
+    "c": 2,
+    "p": 0.012939453125,
+    "p_holm_all_tests": 1.0,
+    "family_size": 150
+   },
+   "stored": {
+    "b": 12,
+    "c": 2,
+    "n": 100,
+    "p": 0.012939453125,
+    "p_holm_all_tests": 1.0
+   },
+   "ok": true
+  }
+ ],
+ "b_paper_numbers": [
+  {
+   "name": "EoneFxLBestCosHNIWrongTarget (wrong-target rate, HN-I, white_1_shared, draw 0)",
+   "mine": 16.101694915254235,
+   "stored": 16.10169491525424,
+   "n_rows": 590,
+   "ok": true
+  },
+  {
+   "name": "EoneFxLDeployedDtwo (D2 rate of pre-correct heldout_disjoint rows, deployed)",
+   "mine": 39.743589743589745,
+   "stored": 39.743589743589745,
+   "n_rows": 78,
+   "ok": true
+  },
+  {
+   "name": "EoneFxLBestCosGenTGenEq (generated T-Gen answer equals the target, white_1_shared, draw 0)",
+   "mine": 27.0,
+   "stored": 27.0,
+   "n_rows": 100,
+   "ok": true
+  },
+  {
+   "name": "EoneFxLBallHNQFireDOne (HN-Q firing, ball, calibration draw 1)",
+   "mine": 22.110552763819097,
+   "stored": 22.110552763819097,
+   "n_rows": 597,
+   "ok": true
+  },
+  {
+   "name": "EoneFxLRowCompBAllGenTGenEq (row taken from E2: COMP-B at all complaints, generated T-Gen equals target)",
+   "mine": 28.999999999999996,
+   "stored": 29.0,
+   "n_rows": 100,
+   "ok": true
+  }
+ ],
+ "d_mtimes": {
+  "E1": {
+   "oldest_file_of_fixup_directory_utc": "2026-11-12 03:14:03",
+   "earliest_trace_of_the_fixup_utc (fix-up code / directory)": "2026-11-12 03:07:26",
+   "n_files_checked": 1304,
+   "existing_files_modified_after_the_oldest_fixup_file": [],
+   "existing_files_modified_after_the_earliest_trace": [],
+   "newest_non_fixup_file_utc": "2026-11-11 23:59:12",
+   "n_paper_numbers": 691,
+   "n_fixup_numbers": 3406,
+   "name_collisions": []
+  },
+  "E2": {
+   "oldest_file_of_fixup_directory_utc": "2026-11-12 03:14:09",
+   "earliest_trace_of_the_fixup_utc (fix-up code / directory)": "2026-11-12 03:13:28",
+   "n_files_checked": 1054,
+   "existing_files_modified_after_the_oldest_fixup_file": [],
+   "existing_files_modified_after_the_earliest_trace": [],
+   "newest_non_fixup_file_utc": "2026-11-12 01:32:05",
+   "n_paper_numbers": 248,
+   "n_fixup_numbers": 256,
+   "name_collisions": []
+  }
+ },
+ "e_h1": {
+  "rule_quoted_verbatim_from_PROTOCOL": true,
+  "development_log_numbers_and_readings_equal_my_recomputation_from_rows": {
+   "TB-Q100-ae-l2_3": true,
+   "TB-L100-ae-l2_3": true
+  },
+  "h1_json_agrees": {
+   "TB-Q100-ae-l2_3": true,
+   "TB-L100-ae-l2_3": true
+  },
+  "prefix_part_of_record": {
+   "source_file_modified": "2026-11-12 02:25:33 UTC",
+   "n_complete": 5,
+   "label": "prefix part: provisional"
+  },
+  "final_h1_prefix_json_modified_utc": "2026-11-12 04:11:47",
+  "record_older_than_final_prefix_file": true,
+  "final_outcome_from_rows": {
+   "two_sided": {
+    "development_logs": false,
+    "prefixes_met": [
+     "TB-Q100-ae-l2_3-p10",
+     "TB-Q100-ae-l2_3-p20",
+     "TB-L100-ae-l2_3-p10",
+     "TB-L100-ae-l2_3-p20"
+    ],
+    "rule_met": false
+   },
+   "one_sided": {
+    "development_logs": true,
+    "prefixes_met": [
+     "TB-Q100-ae-l2_3-p10",
+     "TB-Q100-ae-l2_3-p20",
+     "TB-L100-ae-l2_3-p10",
+     "TB-L100-ae-l2_3-p20",
+     "TB-L100-ae-l2_3-p50"
+    ],
+    "rule_met": true
+   }
+  },
+  "prefix_details": {
+   "TB-Q100-ae-l2_3-p10": {
+    "D1_repair": 0.5734767025089607,
+    "rel_repair": 80.0,
+    "D1_deployed": 23.870967741935484,
+    "rel_deployed": 80.0,
+    "rel_diff": 0.0,
+    "two_sided_met": true,
+    "one_sided_met": true
+   },
+   "TB-Q100-ae-l2_3-p20": {
+    "D1_repair": 1.075268817204301,
+    "rel_repair": 75.0,
+    "D1_deployed": 29.89247311827957,
+    "rel_deployed": 75.0,
+    "rel_diff": 0.0,
+    "two_sided_met": true,
+    "one_sided_met": true
+   },
+   "TB-Q100-ae-l2_3-p50": {
+    "D1_repair": 0.931899641577061,
+    "rel_repair": 78.0,
+    "D1_deployed": 43.01075268817204,
+    "rel_deployed": 82.0,
+    "rel_diff": -4.0,
+    "two_sided_met": false,
+    "one_sided_met": false
+   },
+   "TB-L100-ae-l2_3-p10": {
+    "D1_repair": 0.4975124378109453,
+    "rel_repair": 90.0,
+    "D1_deployed": 26.439232409381663,
+    "rel_deployed": 90.0,
+    "rel_diff": 0.0,
+    "two_sided_met": true,
+    "one_sided_met": true
+   },
+   "TB-L100-ae-l2_3-p20": {
+    "D1_repair": 0.923951670220327,
+    "rel_repair": 90.0,
+    "D1_deployed": 35.39445628997868,
+    "rel_deployed": 90.0,
+    "rel_diff": 0.0,
+    "two_sided_met": true,
+    "one_sided_met": true
+   },
+   "TB-L100-ae-l2_3-p50": {
+    "D1_repair": 1.847903340440654,
+    "rel_repair": 92.0,
+    "D1_deployed": 50.53304904051173,
+    "rel_deployed": 86.0,
+    "rel_diff": 6.0,
+    "two_sided_met": false,
+    "one_sided_met": true
+   }
+  }
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "name": "c_pack",
+ "pass": true,
+ "what": "edit sets in the hook's rows are lossless at any size; PAD positions of a padded batch never fire; key-value-cache steps continue the rows",
+ "detail": {
+  "pack_roundtrip": true,
+  "n_fire_pos": [
+   6,
+   4,
+   5
+  ],
+  "n_cand_edits": [
+   80,
+   80,
+   80
+  ],
+  "cand_edits_is_mask": [
+   true,
+   true,
+   true
+  ],
+  "own_cand": [
+   true,
+   true,
+   null
+  ],
+  "own_released": [
+   true,
+   true,
+   null
+  ],
+  "other_released": [
+   true,
+   true,
+   null
+  ],
+  "linear_response_equals_log_terms": true,
+  "pad_positions_bitwise_the_modules_own_output": true,
+  "real_positions_changed": true
+ },
+ "error": null,
+ "seconds": 0.025695085525512695,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "written": "2026-11-11 11:55:37 UTC"
+}

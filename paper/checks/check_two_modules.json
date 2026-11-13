@@ -1,0 +1,45 @@
+{
+ "sentence": "With several modules, raising a threshold can fire another edit [technical report, App. B.2]; certificate and least repair are open.",
+ "what_is_checked": "the counterexample only (monotonicity of firing fails with two edited modules); nothing is claimed or checked about a certificate or a least repair for several modules",
+ "results": {
+  "E1_firing_is_not_antitone": {
+   "pre_edit_output": "2",
+   "scoped": {
+    "h": "-3",
+    "output": "-3",
+    "fire": [
+     "e1"
+    ]
+   },
+   "after_raising_tau1": {
+    "h": "2",
+    "output": "12",
+    "fire": [
+     "e2"
+    ]
+   },
+   "pass": true
+  },
+  "E1b_frame_rule_fails_on_stored_keys": {
+   "output_value_10": "7",
+   "output_value_20": "17",
+   "fire": [
+    "e1",
+    "e2"
+   ],
+   "e2_fires_on_stored_pre_edit_key": false,
+   "pass": true
+  },
+  "C1_one_module_grid": {
+   "pairs": 193600,
+   "firing_set_grew": 0,
+   "pass": true
+  },
+  "C2_two_modules_grid": {
+   "pairs": 193600,
+   "firing_set_grew": 12096,
+   "pass": true
+  }
+ },
+ "ALL_PASS": true
+}

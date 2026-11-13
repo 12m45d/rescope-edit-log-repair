@@ -1,0 +1,43 @@
+TESTS of feat2/retr (python tests.py; details: out/tests/<test>.json)
+
+test                         result     time                                                                                         what
+---------------------  ------------  -------  -------------------------------------------------------------------------------------------
+repro                          pass   12.2 s             re-runs reproduce byte for byte (attribute tables, key lists, mechanics, README)
+attributes                     pass    2.0 s                               attributes derived from the loaders == cache; prompts rendered
+facts                          pass    0.6 s                                repeated questions / shared images (all streams; descriptive)
+unit_norm                      pass    0.3 s                                                   embeddings: unit norm, float32, 2^-24 grid
+reembed_questions              pass    2.3 s                                                           50 questions re-embedded (<= 1e-6)
+reembed_questions_all          pass   39.5 s                                                all questions re-embedded: matrix bit for bit
+reembed_images_gpu             pass   18.4 s                                                         50 images re-embedded, GPU (<= 1e-6)
+reembed_images_cpu     exceeds 1e-6  151.5 s                                           50 images re-embedded, CPU (other device; <= 1e-6)
+exact_scores                   pass    0.4 s                                                           scores exact and batch-independent
+own_request                    pass    0.1 s                                          own request scores 1 on both attributes (all edits)
+rephrase_scores                pass    0.0 s                            rephrases: distribution of the two scores (dev logs; descriptive)
+naive                          pass    3.1 s                                       naive second implementation, 100 sequences per dev log
+properties                     pass    0.2 s                                                       properties of calibration and decision
+forced_gate                    pass    1.6 s                                         forced_gate through the library's key cache and Hook
+request_gate                   pass   13.0 s                         RequestGate (library gate interface) through the library's Hook, CPU
+fx_compat                      pass    1.4 s                                     decisions accepted by the driver (fx.metrics.gate_stats)
+behaviour_smoke                pass   35.6 s          gate objects through rescope.Evaluator on the model (GPU, both dev logs; mechanics)
+behaviour_fx                   pass   22.4 s  forced gates through the driver's memo path == library route (GPU, Qwen dev log; mechanics)
+
+17 of 18 tests that ran pass.  NOT passing: reembed_images_cpu.
+
+repro: 7/7 files byte-identical on a re-run (attribute tables, key lists, mechanics.txt / .json, README.txt)
+attributes: qwen25vl: 14300 sequences + 2500 requests derived from the loaders == index, md5 recomputed, all prompts rendered; sample 300/300; llava: 8800 sequences + 1000 requests derived from the loaders == index, md5 recomputed, all prompts rendered; sample 300/300
+facts: qwen25vl/Q: 1123/2000 edits share their question with another edit (1058 distinct questions), 677 ask a probe question; edit images all distinct: True; image rephrase = own image for 3, shared with another edit for 0; qwen25vl/QK: 328/500 edits share their question with another edit (223 distinct questions), 0 ask a probe question; edit images all distinct: True; image rephrase = own image for 1, shared with another edit for 35; llava/L: 514/1000 edits share their question with another edit (585 distinct questions), 325 ask a probe question; edit images all distinct: True; image rephrase = own image for 2, shared with another edit for 0
+unit_norm: image: [9165, 1024] float32, max | |e| - 1 | = 6.4e-08, on the 2^-24 grid; question: [6424, 384] float32, max | |e| - 1 | = 9.0e-08, on the 2^-24 grid
+reembed_questions: 50 questions re-embedded: max |diff| 0.0e+00 (sentence-transformers, 50/50 bitwise), 6.0e-08 (model card recipe through transformers), 0.0e+00 (other order)
+reembed_questions_all: all 6424 questions re-embedded: matrix bitwise identical = True (max |diff| 0.0e+00)
+reembed_images_gpu: 50 images re-embedded on cuda:0: max |diff| 0.0e+00 (50/50 bitwise), other order 0.0e+00; largest change of a cosine among them 0.0e+00
+reembed_images_cpu: 50 images re-embedded on cpu: max |diff| 2.2e-06 (0/50 bitwise), other order 2.2e-06; largest change of a cosine among them 1.8e-06  -> NOT within 1e-6 across devices (float32 forward); the stored files are the reference
+exact_scores: image: 60000/60000 dot products == exact integer arithmetic; question: 60000/60000 dot products == exact integer arithmetic; scores independent of the batch (bitwise)
+own_request: qwen25vl/Q: 2000 edits, | score - 1 | <= 1.5e-07; qwen25vl/QK: 500 edits, | score - 1 | <= 1.5e-07; llava/L: 1000 edits, | score - 1 | <= 1.5e-07; retr.scores on the Rel sequences of the development logs: diagonal == 1 (bitwise the own-request scores)
+rephrase_scores: TB-Q100-ae-l2_3: T-Gen question cos (min / q25 / med / q75 / max) 0.151 / 0.673 / 0.744 / 0.860 / 0.961, image cos = 1 on 100/100; I-Gen image cos 0.666 / 0.775 / 0.830 / 0.889 / 0.976, question cos = 1 on 100/100; TB-L100-ae-l2_3: T-Gen question cos (min / q25 / med / q75 / max) 0.332 / 0.650 / 0.716 / 0.814 / 0.947, image cos = 1 on 100/100; I-Gen image cos 0.680 / 0.785 / 0.846 / 0.898 / 0.991, question cos = 1 on 100/100
+naive: TB-Q100-ae-l2_3: retr 100/100, lookup 100/100 decisions equal to the naive implementation (25 / 19 firing), baselines and eta bitwise equal; TB-L100-ae-l2_3: retr 100/100, lookup 100/100 decisions equal to the naive implementation (27 / 19 firing), baselines and eta bitwise equal
+properties: conjunction never releases where one attribute alone has no candidate; rows without an image never fire; tie -> lowest index; eta = +inf releases own requests only; literal thresholds == library rule (also through calibrate_two_block of a cosine gate): all hold
+forced_gate: TB-Q100-ae-l2_3: forced gate releases the given edit on 60/60 cached sequences; Hook output = W0 k + V_e at the last prompt position only: True; TB-L100-ae-l2_3: forced gate releases the given edit on 60/60 cached sequences; Hook output = W0 k + V_e at the last prompt position only: True
+request_gate: TB-Q100-ae-l2_3: retr 70/70 (29 firing), lookup 70/70 (22 firing); TB-L100-ae-l2_3: retr 70/70 (30 firing), lookup 70/70 (19 firing) sequences: Hook output and flags == decision, forced gate == RequestGate, decode bookkeeping
+fx_compat: row sets, draw 0, own edits equal the driver's; fx.metrics.gate_stats accepts the retr / lookup decisions and gives the mechanics numbers: all hold
+behaviour_smoke: TB-L100-ae-l2_3, 36 sequences through rescope.Evaluator: retr: flags == decision 36/36, forced gate == RequestGate 16/16, silent == pre-edit 20/20, decode fires in every full forward True, Rel exact 8/8; lookup: flags == decision 36/36, forced gate == RequestGate 10/10, silent == pre-edit 26/26, decode fires in every full forward True, Rel exact 8/8 | TB-Q100-ae-l2_3, 36 sequences through rescope.Evaluator: retr: flags == decision 36/36, forced gate == RequestGate 17/17, silent == pre-edit 19/19, decode fires in every full forward True, Rel exact 8/8; lookup: flags == decision 36/36, forced gate == RequestGate 12/12, silent == pre-edit 24/24, decode fires in every full forward True, Rel exact 8/8
+behaviour_fx: TB-Q100-ae-l2_3: retr: 17/17 firing rows of fx.behave (forced gates, memo path; first pass {'run': 17}, second pass {'memo': 17}) == library route, silent 6/6 == cached pre-edit outcome, decodes 2/2 equal; lookup: 12/12 firing rows of fx.behave (forced gates, memo path; first pass {'memo': 9, 'run': 3}, second pass {'memo': 12}) == library route, silent 6/6 == cached pre-edit outcome, decodes 2/2 equal; hook mismatches 0

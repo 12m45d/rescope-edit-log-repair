@@ -1,0 +1,65 @@
+{
+ "io": {
+  "n_records": 10,
+  "fields_ok": true,
+  "is_list": true,
+  "summary_records": [
+   "fire@mean",
+   "fire@p05",
+   "fire@p95"
+  ],
+  "rows_back": [
+   {
+    "sid": "probe:image:0",
+    "D1": false,
+    "x": "inf"
+   }
+  ],
+  "paper": {
+   "TestQwenFire": 5.0,
+   "TestQwenTGen": 62.0
+  },
+  "table": "method          tgen_exact  fire       fire@mean  probe.D1  probe.n     probe.fired\n-------  -----------------  ----  --------------  --------  -------  --------------\nrescope  62.0 [52.0, 71.0]   4.0  5.0 [4.1, 5.9]         -        -               -\ncosine                   -     -               -       1.5    465.0  3.0 [2.0, 4.0]\n",
+  "ok": true
+ },
+ "memo": {
+  "writers": 6,
+  "writes_per_writer": [
+   436,
+   436,
+   859,
+   423,
+   423,
+   423
+  ],
+  "seconds_all_writing_together": 0.05351567268371582,
+  "n_duplicate_writes": 0,
+  "conflicts_seen_by_writers": 0,
+  "concurrent_reader": {
+   "refreshes": 140729,
+   "entries": 3000,
+   "conflicts": 0,
+   "values_ok": true
+  },
+  "n_expected_keys": 3000,
+  "n_keys_read": 3000,
+  "all_present": true,
+  "values_ok": true,
+  "conflicts_between_writers": 0,
+  "shards": 6,
+  "seconds": 15.111917734146118,
+  "conflict_detected": true,
+  "other_library_version_ignored": true,
+  "accept_list_admits_named_version": true,
+  "ok": true
+ },
+ "ok": true,
+ "test": "io_memo",
+ "seconds": 15.116403102874756,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:15:01"
+}

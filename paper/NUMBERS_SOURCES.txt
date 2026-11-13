@@ -1,0 +1,579 @@
+Sources of the 570 macros of the paper's numbers file (paper/expected/numbers.tex; regenerated as paper/numbers.tex).
+Written by the test of the artifact (not by hand): a source is marked
+  [R]  if an analysis command of the README's table of experiments rewrote the file in a fresh copy (and its paper numbers came out byte for byte as shipped);
+  [C]  if the number is collected from the released logs by paper/scripts/collect_setup.py (python paper/scripts/gen_numbers.py without --no-collect);
+  [S]  if the file is used as shipped: it is written by a gate-level or GPU script, by an audit, or it is a released input (README, 'Levels of reproduction').
+Counts: [C] 134, [R] 315, [S] 121
+
+macro                                        level  source
+------------------------------------------------------------------------------------------------------------------------------------------------------
+exLog                                        [S]    experiments/e2_curves/out/running_example.json
+exT                                          [S]    experiments/e2_curves/out/running_example.json
+exQuery                                      [S]    experiments/e2_curves/out/running_example.json
+exPreAnswer                                  [S]    experiments/e2_curves/out/running_example.json
+exDepAnswer                                  [S]    experiments/e2_curves/out/running_example.json
+exMaxCoord                                   [S]    experiments/e2_curves/out/running_example.json
+exOwnKept                                    [S]    experiments/e2_curves/out/running_example.json
+exRbSize                                     [S]    experiments/e2_curves/out/running_example.json
+exRbBroken                                   [S]    experiments/e2_curves/out/running_example.json
+exCompChanged                                [S]    experiments/e2_curves/out/running_example.json
+exNHeld                                      [S]    experiments/e2_curves/out/running_example.json
+thCapPredQlo                                 [S]    experiments/e5_rescope/inputs/capacity_predictions.json
+thCapPredQhi                                 [S]    experiments/e5_rescope/inputs/capacity_predictions.json
+thCapPredL                                   [S]    experiments/e5_rescope/inputs/capacity_predictions.json
+bbQ                                          [S]    numbers manifest (paper/scripts/numbers_manifest.json): constant label (manifest)
+bbL                                          [S]    numbers manifest (paper/scripts/numbers_manifest.json): constant label (manifest)
+bbQs                                         [S]    numbers manifest (paper/scripts/numbers_manifest.json): constant label (manifest)
+bbLs                                         [S]    numbers manifest (paper/scripts/numbers_manifest.json): constant label (manifest)
+bbQLayer                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+bbLLayer                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+txLayer                                      [S]    text_logs/out/provenance.json
+lgBatch                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcLaterQ                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcLaterL                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcPrefA                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcPrefB                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcPrefC                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+txSplit                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+txDec                                        [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+prItems                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+prTwins                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+prQHeldValid                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+prLHeldValid                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+decShort                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+decLong                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+bnRows                                       [S]    keycache/cache2/benign_parts/qwen25vl.json
+mmeRows                                      [S]    keycache/cache2/mme/summary.json
+pcAlpha                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcNcal                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcDraws                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcBoot                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcExactCos                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcBehDraws                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcEvGrid                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcSeedsSmall                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcSeedsNmax                                  [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcVDraws                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcDelta                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+pcSynthT                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+hOneN                                        [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+hOneDoneMax                                  [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+hOneRelPts                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+hThreeFire                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+hThreePts                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+txEvGrid                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+rwView                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+rwMin                                        [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+rwDiagPasses                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+txPreColExact                                [S]    text_logs/audit/out/misc.json
+txPreColKept                                 [S]    text_logs/audit/out/misc.json
+txPreColDone                                 [S]    text_logs/audit/out/misc.json
+txPreColFirst                                [S]    text_logs/audit/out/misc.json
+txPostColExact                               [S]    text_logs/audit/out/misc.json
+txPostColKept                                [S]    text_logs/audit/out/misc.json
+txPostColDone                                [S]    text_logs/audit/out/misc.json
+txPostColFirst                               [S]    text_logs/audit/out/misc.json
+TextTOneDeployedDOneHeldout                  [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T100.json
+TextTOneDeployedParExact                     [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T100.json
+TextTOneRepairLogonlyDOneHeldout             [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T100.json
+TextTOneRepairLogonlyFalseFiring             [R]    experiments/e10_text/run/out/summary/gate_TX-G2XL-rome-T100.json
+TextTOneRepairLogonlyDOneLo                  [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T100.json
+TextTOneRepairLogonlyDOneHi                  [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T100.json
+TextTOneRepairTwoblockDOneHeldout            [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T100.json
+TextTOneRepairTwoblockFalseFiring            [R]    experiments/e10_text/run/out/summary/gate_TX-G2XL-rome-T100.json
+TextTOneRepairTwoblockParExact               [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T100.json
+TextTOneRepairTwoblockDOneLo                 [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T100.json
+TextTOneRepairTwoblockDOneHi                 [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T100.json
+TextTFiveGoffReqA                            [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T500.json
+TextTFiveGoffReqB                            [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T500.json
+TextTFiveGoffReqC                            [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T500.json
+TextTFiveGoffDraws                           [S]    out/gate/TX-G2XL-rome-T500.json rows.rescope.goff.per_draw (via e10_facts.json); not rewritten by an analysis command: experiments/e10_text/run/out/gate/TX-G2XL-rome-T500.json
+TextTFiveGoffBadDraws                        [S]    out/gate/TX-G2XL-rome-T500.json rows.rescope.goff.per_draw (via e10_facts.json); not rewritten by an analysis command: experiments/e10_text/run/out/gate/TX-G2XL-rome-T500.json
+TextTFiveGoffBadMin                          [S]    out/gate/TX-G2XL-rome-T500.json rows.rescope.goff.per_draw (via e10_facts.json); not rewritten by an analysis command: experiments/e10_text/run/out/gate/TX-G2XL-rome-T500.json
+TextTFiveRepairLogonlyGuardsOffReqExactBefore [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T500.json
+TextTFiveRepairLogonlyGuardsOffDOneHeldout   [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T500.json
+TextTFiveCosineReqExactBefore                [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T500.json
+TextTFiveCosineFalseFiring                   [R]    experiments/e10_text/run/out/summary/gate_TX-G2XL-rome-T500.json
+TextTFiveWhitecosFalseFiring                 [R]    experiments/e10_text/run/out/summary/gate_TX-G2XL-rome-T500.json
+TextTFiveCosineDOneHeldout                   [R]    experiments/e10_text/run/out/summary/behave_TX-G2XL-rome-T500.json
+TextTFiveFromMax                             [R]    summary/behave_, equal_, r22_TX-G2XL-rome-T500.json (via e10_facts.json)
+TextTFiveCosGoffMaxChange                    [R]    summary/behave_, gate_TX-G2XL-rome-T500.json (via e10_facts.json)
+ScreenTFiveFlagged                           [S]    out/screening.json (via e10_facts.json); not rewritten by an analysis command: experiments/e10_text/run/out/screening.json
+ScreenTFiveExplTP                            [S]    out/screening.json (via e10_facts.json); not rewritten by an analysis command: experiments/e10_text/run/out/screening.json
+ScreenTFiveExplRef                           [S]    out/screening.json (via e10_facts.json); not rewritten by an analysis command: experiments/e10_text/run/out/screening.json
+ScreenTFiveFirstRef                          [S]    out/screening.json (via e10_facts.json); not rewritten by an analysis command: experiments/e10_text/run/out/screening.json
+ScreenTTwoThousandNegative                   [S]    verify/out/screening_T2000.json (via e10_facts.json); not rewritten by an analysis command: experiments/e10_text/run/verify/out/screening_T2000.json
+ScreenTTwoThousandTies                       [S]    verify/out/screening_T2000.json (via e10_facts.json); not rewritten by an analysis command: experiments/e10_text/run/verify/out/screening_T2000.json
+CertCheckedTotal                             [S]    out/cert/<log>.json total.n_checked_certified (via e10_facts.json); not rewritten by an analysis command: experiments/e10_text/run/out/cert/TX-G2XL-rome-T100.json, experiments/e10_text/run/out/cert/TX-G2XL-rome-T500.json
+RelTOneRepairLogonlyQExact                   [R]    experiments/e10_text/run/out/summary/r22_TX-G2XL-rome-T100.json
+RelTOneLeastSacrificingMThreeQExact          [R]    experiments/e10_text/run/out/summary/r22_TX-G2XL-rome-T100.json
+RelTOneLeastSacrificingMTenQExact            [R]    experiments/e10_text/run/out/summary/r22_TX-G2XL-rome-T100.json
+RelTOneRepairTwoblockQExact                  [R]    experiments/e10_text/run/out/summary/r22_TX-G2XL-rome-T100.json
+RelTOneLookupQExact                          [R]    experiments/e10_text/run/out/summary/r22_TX-G2XL-rome-T100.json
+RelTOneLinearQMax                            [R]    summary/r22_TX-G2XL-rome-T100.json (via e10_facts.json)
+RelTFiveQMax                                 [R]    summary/r22_TX-G2XL-rome-T500.json (via e10_facts.json)
+EqualTOneLeastSacrificingNOneDOneHeldout     [R]    experiments/e10_text/run/out/summary/equal_TX-G2XL-rome-T100.json
+EqualTOneLeastSacrificingNTenDOneHeldout     [R]    experiments/e10_text/run/out/summary/equal_TX-G2XL-rome-T100.json
+EqualTOneLeastSacrificingNHundredDOneHeldout [R]    experiments/e10_text/run/out/summary/equal_TX-G2XL-rome-T100.json
+EqualTOneLinearDoneMin                       [R]    summary/equal_TX-G2XL-rome-T100.json (via e10_facts.json)
+EqualTOneLinearDoneMax                       [R]    summary/equal_TX-G2XL-rome-T100.json (via e10_facts.json)
+EqualTOnePrefixLostMin                       [R]    summary/equal_TX-G2XL-rome-T100.json (via e10_facts.json)
+EqualTOnePrefixLostMax                       [R]    summary/equal_TX-G2XL-rome-T100.json (via e10_facts.json)
+EqualTOneLeastNTenCertified                  [R]    summary/equal_TX-G2XL-rome-T100.json (via e10_facts.json)
+EqualTOneLeastNTenReported                   [R]    summary/equal_TX-G2XL-rome-T100.json (via e10_facts.json)
+EqualTOneLeastNHundredCertified              [R]    summary/equal_TX-G2XL-rome-T100.json (via e10_facts.json)
+EqualTOneLeastNHundredReported               [R]    summary/equal_TX-G2XL-rome-T100.json (via e10_facts.json)
+EqualTFiveLeastNTenCertified                 [R]    summary/equal_TX-G2XL-rome-T500.json (via e10_facts.json)
+EqualTFiveLeastNTenReported                  [R]    summary/equal_TX-G2XL-rome-T500.json (via e10_facts.json)
+EqualTFiveLeastNHundredCertified             [R]    summary/equal_TX-G2XL-rome-T500.json (via e10_facts.json)
+EqualTFiveLeastNHundredReported              [R]    summary/equal_TX-G2XL-rome-T500.json (via e10_facts.json)
+EqualTFiveProtectingReported                 [R]    summary/equal_TX-G2XL-rome-T500.json (via e10_facts.json)
+EqualNMid                                    [R]    summary/equal_TX-G2XL-rome-T100.json (via e10_facts.json)
+EqualSeedsMid                                [R]    summary/equal_TX-G2XL-rome-T100.json (via e10_facts.json)
+RelMThree                                    [R]    experiments/e10_text/run/out/summary/r22_TX-G2XL-rome-T100.json
+RelMTen                                      [R]    experiments/e10_text/run/out/summary/r22_TX-G2XL-rome-T100.json
+pcLogOnlyPct                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+vAQDepDone                                   [R]    experiments/e2_curves/out/paper_numbers.json
+vAQDepRel                                    [R]    experiments/e2_curves/out/paper_numbers.json
+vAQCompDone                                  [R]    experiments/e2_curves/out/paper_numbers.json
+vAQCompAllposDone                            [R]    experiments/e2_curves/out/paper_numbers.json
+vAQRbDone                                    [R]    experiments/e2_curves/out/paper_numbers.json
+vAQRbRel                                     [R]    experiments/e2_curves/out/paper_numbers.json
+vAQRbAllDone                                 [R]    experiments/e2_curves/out/paper_numbers.json
+vAQRbAllRel                                  [R]    experiments/e2_curves/out/paper_numbers.json
+vAQWDone                                     [R]    experiments/e2_curves/out/paper_numbers.json
+vAQWRel                                      [R]    experiments/e2_curves/out/paper_numbers.json
+vAQDiff                                      [R]    experiments/e2_curves/out/paper_numbers.json
+vAQDiffLo                                    [R]    experiments/e2_curves/out/paper_numbers.json
+vAQDiffHi                                    [R]    experiments/e2_curves/out/paper_numbers.json
+vAQKept                                      [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vAQGained                                    [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vAQLost                                      [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vAQLogDone                                   [R]    experiments/e1_main/out/paper_numbers.json
+vAQWAllDone                                  [R]    experiments/e2_curves/out/paper_numbers.json
+vAQCalDone                                   [R]    experiments/e2_curves/out/paper_numbers.json
+vAQStartTenRls                               [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vAQRls                                       [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQChg                                       [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQChgRls                                    [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQNearRlsI                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQNearChgI                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQNearCrI                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBQSysRlsI                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBQSysChgI                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQNearRlsQ                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQNearChgQ                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQNearCrQ                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBQSysRlsQ                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBQSysChgQ                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQNearRlsX                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQNearChgX                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQNearCrX                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBQSysRlsX                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBQSysChgX                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vAQPfxRbFiftyDone                            [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vAQPfxRbFiftyRel                             [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vAQPfxFiftyWRel                              [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vAQPfxFiftyDepRel                            [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vAQCapFull                                   [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vAQCapMeas                                   [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vAQCapPred                                   [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+thCapMeasQ                                   [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+thCapNdQ                                     [R]    experiments/e5_rescope/out/paper_numbers.json
+vAQCapPredGrid                               [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vAQCapEvery                                  [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vAQCapWzPred                                 [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vAQCapWzPredGrid                             [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vAQCapWzEvery                                [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vBQHTwo                                      [R]    experiments/e1_main/out/paper_numbers.json
+vBQHTwoLo                                    [R]    experiments/e1_main/out/paper_numbers.json
+vBQHTwoHi                                    [R]    experiments/e1_main/out/paper_numbers.json
+vBQHTwoP                                     [R]    experiments/e1_main/out/paper_numbers.json
+vBQHTwoRetr                                  [R]    experiments/e1_main/out/paper_numbers.json
+vBQHThree                                    [R]    experiments/e1_main/out/paper_numbers.json
+vBQHThreeLo                                  [R]    experiments/e1_main/out/paper_numbers.json
+vBQHThreeHi                                  [R]    experiments/e1_main/out/paper_numbers.json
+vBQHThreeX                                   [R]    experiments/e1_main/out/paper_numbers.json
+vBQHThreeXLo                                 [R]    experiments/e1_main/out/paper_numbers.json
+vBQHThreeXHi                                 [R]    experiments/e1_main/out/paper_numbers.json
+vBQHThreeRetr                                [R]    experiments/e1_main/out/paper_numbers.json
+vBQWhiteGateFire                             [R]    experiments/e1_main/out/paper_numbers.json
+vBQWhiteGateFireB                            [R]    experiments/e1_main/out/paper_numbers.json
+vBQFrontCoordFF                              [S]    02_research/experiments/10_final/e1_main/out/frontier.json (via vlm_facts.json); not rewritten by an analysis command: experiments/e1_main/out/frontier.json
+vBQFrontCosFF                                [S]    02_research/experiments/10_final/e1_main/out/frontier.json (via vlm_facts.json); not rewritten by an analysis command: experiments/e1_main/out/frontier.json
+vCQARetDep                                   [R]    02_research/experiments/10_final/e3_*/out/retention_series.json (via vlm_facts.json)
+vCQARetWMin                                  [R]    02_research/experiments/10_final/e3_*/out/retention_series.json (via vlm_facts.json)
+vCQARetSMin                                  [R]    02_research/experiments/10_final/e3_*/out/retention_series.json (via vlm_facts.json)
+vCQAWDoneMin                                 [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCQAWDoneMax                                 [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCQMHTwo                                     [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCQMErrLog                                   [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vCQMCapMax                                   [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCQMargin                                    [R]    experiments/e3_qwen/out/fixup/paper_numbers_fixup.json
+vEQHeld                                      [R]    experiments/e5_rescope/out/paper_numbers.json
+vEQHeldLo                                    [R]    experiments/e5_rescope/out/paper_numbers.json
+vEQHeldHi                                    [R]    experiments/e5_rescope/out/paper_numbers.json
+vEQMme                                       [R]    experiments/e5_rescope/out/paper_numbers.json
+vEQMmeLo                                     [R]    experiments/e5_rescope/out/paper_numbers.json
+vEQMmeHi                                     [R]    experiments/e5_rescope/out/paper_numbers.json
+vEQMmeAbove                                  [R]    experiments/e5_rescope/out/paper_numbers.json
+vEQFresh                                     [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vEQFreshLo                                   [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vEQFreshHi                                   [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vEQHeldW                                     [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vFQViol                                      [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFQFrameN                                    [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFQCertSilent                                [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFQLinFlagsOne                               [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFQLinFlagsFifty                             [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFQLineageN                                  [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFQOneMask                                   [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFQLineageMax                                [R]    experiments/e9_maintenance/out/paper_numbers.json
+cstQGateMs                                   [R]    experiments/e8_cost/out/paper_numbers.json
+cstQOverPct                                  [R]    experiments/e8_cost/out/paper_numbers.json
+cstQStoreMb                                  [R]    experiments/e8_cost/out/paper_numbers.json
+cstQCalS                                     [R]    experiments/e8_cost/out/paper_numbers.json
+cstQRepMs                                    [R]    experiments/e8_cost/out/paper_numbers.json
+cstQWGateMs                                  [R]    experiments/e8_cost/out/paper_numbers.json
+cstQWOverPct                                 [R]    experiments/e8_cost/out/paper_numbers.json
+cstQWLogGateMs                               [R]    02_research/experiments/10_final/e8_cost/out/results.json (via vlm_facts.json)
+cstQWLogOverPct                              [R]    02_research/experiments/10_final/e8_cost/out/results.json (via vlm_facts.json)
+cstQGateMsTwo                                [R]    02_research/experiments/10_final/e8_cost/out/results.json (via vlm_facts.json)
+cstQOverPctTwo                               [R]    02_research/experiments/10_final/e8_cost/out/results.json (via vlm_facts.json)
+cstQWGateMsTwo                               [R]    02_research/experiments/10_final/e8_cost/out/results.json (via vlm_facts.json)
+cstQWOverPctTwo                              [R]    02_research/experiments/10_final/e8_cost/out/results.json (via vlm_facts.json)
+vFQUtil                                      [R]    experiments/e8_cost/out/paper_numbers.json
+vFQPerEdit                                   [R]    experiments/e8_cost/out/paper_numbers.json
+vGQRunMax                                    [R]    experiments/e6_ablations/out/paper_numbers.json
+vALDepDone                                   [R]    experiments/e2_curves/out/paper_numbers.json
+vALDepRel                                    [R]    experiments/e2_curves/out/paper_numbers.json
+vALCompDone                                  [R]    experiments/e2_curves/out/paper_numbers.json
+vALCompAllposDone                            [R]    experiments/e2_curves/out/paper_numbers.json
+vALRbDone                                    [R]    experiments/e2_curves/out/paper_numbers.json
+vALRbRel                                     [R]    experiments/e2_curves/out/paper_numbers.json
+vALRbAllDone                                 [R]    experiments/e2_curves/out/paper_numbers.json
+vALRbAllRel                                  [R]    experiments/e2_curves/out/paper_numbers.json
+vALWDone                                     [R]    experiments/e2_curves/out/paper_numbers.json
+vALWRel                                      [R]    experiments/e2_curves/out/paper_numbers.json
+vALDiff                                      [R]    experiments/e2_curves/out/paper_numbers.json
+vALDiffLo                                    [R]    experiments/e2_curves/out/paper_numbers.json
+vALDiffHi                                    [R]    experiments/e2_curves/out/paper_numbers.json
+vALRelDelta                                  [R]    experiments/e2_curves/out/paper_numbers.json
+vALKept                                      [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vALGained                                    [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vALLost                                      [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vALLogDone                                   [R]    experiments/e1_main/out/paper_numbers.json
+vALWAllDone                                  [R]    experiments/e2_curves/out/paper_numbers.json
+vALCalDone                                   [R]    experiments/e2_curves/out/paper_numbers.json
+vALStartTenRls                               [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vALRls                                       [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALChg                                       [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALChgRls                                    [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALNearRlsI                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALNearChgI                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALNearCrI                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBLSysRlsI                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBLSysChgI                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALNearRlsQ                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALNearChgQ                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALNearCrQ                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBLSysRlsQ                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBLSysChgQ                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALNearRlsX                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALNearChgX                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALNearCrX                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBLSysRlsX                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vBLSysChgX                                   [R]    experiments/x_release/out/paper_numbers_fixup.json
+vALPfxRbFiftyDone                            [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vALPfxRbFiftyRel                             [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vALCapFull                                   [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vALCapMeas                                   [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vALCapPred                                   [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+thCapMeasL                                   [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+thCapNdL                                     [R]    experiments/e5_rescope/out/paper_numbers.json
+vALCapPredGrid                               [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vALCapEvery                                  [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vALCapWzPred                                 [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vALCapWzPredGrid                             [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vALCapWzEvery                                [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vBLHTwo                                      [R]    experiments/e1_main/out/paper_numbers.json
+vBLHTwoLo                                    [R]    experiments/e1_main/out/paper_numbers.json
+vBLHTwoHi                                    [R]    experiments/e1_main/out/paper_numbers.json
+vBLHTwoRetr                                  [R]    experiments/e1_main/out/paper_numbers.json
+vBLHThree                                    [R]    experiments/e1_main/out/paper_numbers.json
+vBLHThreeLo                                  [R]    experiments/e1_main/out/paper_numbers.json
+vBLHThreeHi                                  [R]    experiments/e1_main/out/paper_numbers.json
+vBLHThreeX                                   [R]    experiments/e1_main/out/paper_numbers.json
+vBLHThreeXLo                                 [R]    experiments/e1_main/out/paper_numbers.json
+vBLHThreeXHi                                 [R]    experiments/e1_main/out/paper_numbers.json
+vBLHThreeRetr                                [R]    experiments/e1_main/out/paper_numbers.json
+vBLRetrGateFire                              [R]    experiments/e1_main/out/paper_numbers.json
+vBLFrontCoordFF                              [S]    02_research/experiments/10_final/e1_main/out/frontier.json (via vlm_facts.json); not rewritten by an analysis command: experiments/e1_main/out/frontier.json
+vBLFrontCosFF                                [S]    02_research/experiments/10_final/e1_main/out/frontier.json (via vlm_facts.json); not rewritten by an analysis command: experiments/e1_main/out/frontier.json
+vCLARetDep                                   [R]    02_research/experiments/10_final/e3_*/out/retention_series.json (via vlm_facts.json)
+vCLARetWMin                                  [R]    02_research/experiments/10_final/e3_*/out/retention_series.json (via vlm_facts.json)
+vCLARetSMin                                  [R]    02_research/experiments/10_final/e3_*/out/retention_series.json (via vlm_facts.json)
+vCLAWDoneMin                                 [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCLAWDoneMax                                 [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCLMHTwo                                     [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCLMErrLog                                   [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vCLMCapMax                                   [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCLMargin                                    [R]    experiments/e3_llava/out/fixup/paper_numbers_fixup.json
+vELHeld                                      [R]    experiments/e5_rescope/out/paper_numbers.json
+vELHeldLo                                    [R]    experiments/e5_rescope/out/paper_numbers.json
+vELHeldHi                                    [R]    experiments/e5_rescope/out/paper_numbers.json
+vELMme                                       [R]    experiments/e5_rescope/out/paper_numbers.json
+vELFresh                                     [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vELFreshLo                                   [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vELFreshHi                                   [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vELHeldW                                     [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vFLFrameN                                    [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFLCertSilent                                [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFLLinFlagsOne                               [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFLLinFlagsFifty                             [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFLLineageN                                  [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFLOneMask                                   [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFLLineageMax                                [R]    experiments/e9_maintenance/out/paper_numbers.json
+vFLPerEdit                                   [R]    experiments/e8_cost/out/paper_numbers.json
+vGLRunMax                                    [R]    experiments/e6_ablations/out/paper_numbers.json
+vSLDegenerate                                [R]    02_research/experiments/10_final/e2_curves/out/results.json (via vlm_facts.json)
+vAHolm                                       [R]    02_research/experiments/10_final/e2_curves/out/fixup/h1_registered.json (via vlm_facts.json)
+vAPfxN                                       [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vAPfxTwo                                     [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vARelDeltaMin                                [R]    e2_curves paper numbers + 02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vARelDeltaMax                                [R]    e2_curves paper numbers + 02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vADoneMax                                    [R]    e2_curves paper numbers + 02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vANLogs                                      [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vALeastCells                                 [R]    02_research/experiments/10_final/e2_curves/out/results.json (via vlm_facts.json)
+vALeastOrders                                [R]    02_research/experiments/10_final/e2_curves/out/results.json (via vlm_facts.json)
+vAHOneBelow                                  [R]    e2_curves paper numbers + 02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vAHOneAbove                                  [R]    e2_curves paper numbers + 02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vAQCapWzMiss                                 [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vACapStep                                    [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vACompMin                                    [R]    e2_curves paper numbers + 02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vALinMin                                     [R]    02_research/experiments/10_final/e2_curves/out/paper_numbers.json (via vlm_facts.json)
+vALinMax                                     [R]    02_research/experiments/10_final/e2_curves/out/paper_numbers.json (via vlm_facts.json)
+vACapSilenced                                [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vACapTol                                     [R]    02_research/experiments/10_final/e5_rescope/out/capacity_curve.json (via vlm_facts.json)
+vAPfxRbSmallDone                             [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vAPfxRbSmallRel                              [R]    02_research/experiments/10_final/e2_prefix/out/h1_prefix.json (via vlm_facts.json)
+vBVerdictA                                   [R]    experiments/e1_main/out/paper_numbers.json
+vBHTwoOtherMin                               [R]    02_research/experiments/10_final/e1_main/out/paper_numbers.json (via vlm_facts.json)
+vBHTwoOtherMax                               [R]    02_research/experiments/10_final/e1_main/out/paper_numbers.json (via vlm_facts.json)
+vBHTwoN                                      [R]    experiments/e1_main/out/fixup/paper_numbers_fixup.json
+vBSelCos                                     [S]    02_research/experiments/10_final/e1_main/out/best_cosine_gate.json (via vlm_facts.json); not rewritten by an analysis command: experiments/e1_main/out/best_cosine_gate.json
+vBSelRetr                                    [S]    02_research/experiments/10_final/e1_main/out/best_cosine_gate.json (via vlm_facts.json); not rewritten by an analysis command: experiments/e1_main/out/best_cosine_gate.json
+vBSysCrMin                                   [R]    02_research/experiments/10_final/x_release/out/paper_numbers_fixup.json (via vlm_facts.json)
+vEQPfxHeldW                                  [R]    experiments/e2_prefix/out/paper_numbers.json
+vBMcExp                                      [R]    02_research/experiments/10_final/e1_main/out/fixup/paper_numbers_fixup.json (via vlm_facts.json)
+vCHolmHTwoN                                  [R]    experiments/x_release/out/paper_numbers_fixup.json
+vCHolmHTwoRej                                [R]    experiments/x_release/out/paper_numbers_fixup.json
+vCHolmHThreeN                                [R]    experiments/x_release/out/paper_numbers_fixup.json
+vCHolmHThreeRej                              [R]    experiments/x_release/out/paper_numbers_fixup.json
+vCHolmHThreeWorse                            [R]    experiments/x_release/out/paper_numbers_fixup.json
+vCHolmHThreeBetter                           [R]    experiments/x_release/out/paper_numbers_fixup.json
+vCRetrHThreeMin                              [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCRetrHThreeMax                              [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCCapPOneA                                   [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCCapPOneB                                   [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCCapPTwoA                                   [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCCapPTwoB                                   [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCCapRetr                                    [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCNearRelMax                                 [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCNearRelUnseenMin                           [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCNearRelUnseenMax                           [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCDrawsMin                                   [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCDrawsMax                                   [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCErrRebMax                                  [R]    paper numbers of e3_qwen / e3_llava (+ fixup) (via vlm_facts.json)
+vCLMmeAcc                                    [R]    experiments/e3_llava/out/paper_numbers.json
+vCLMmeAd                                     [R]    experiments/e3_llava/out/paper_numbers.json
+vESameMeanMin                                [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vESameMeanMax                                [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vESameAboveMin                               [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vESameAboveMax                               [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vEBeta                                       [R]    02_research/experiments/10_final/e5_rescope/out/validity_distribution.json (via vlm_facts.json)
+vEBound                                      [R]    02_research/experiments/10_final/e5_rescope/out/validity_distribution.json (via vlm_facts.json)
+vEPacAboveMax                                [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vERevMin                                     [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vERevMax                                     [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vERevPacMin                                  [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vERevPacMax                                  [R]    02_research/experiments/10_final/e5_rescope/out/paper_numbers.json (via vlm_facts.json)
+vEPostDraws                                  [R]    experiments/e2_curves/out/fixup/paper_numbers_fixup.json
+vFRbKMin                                     [R]    02_research/experiments/10_final/e9_maintenance/out/paper_numbers.json (via vlm_facts.json)
+vFRbKMax                                     [R]    02_research/experiments/10_final/e9_maintenance/out/paper_numbers.json (via vlm_facts.json)
+vFSynPct                                     [R]    experiments/e8_cost/out/paper_numbers.json
+cstEqualT                                    [R]    experiments/e8_cost/out/paper_numbers.json
+cstNdbStore                                  [R]    experiments/e8_cost/out/paper_numbers.json
+vGLoggedDiff                                 [R]    02_research/experiments/10_final/e6_ablations/out/paper_numbers.json (via vlm_facts.json)
+lgQAcTenName                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcTenId                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcTenT                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcTenRel                                  [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAcTenTGen                                 [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAcTenIGen                                 [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAcTenTLoc                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcTenILoc                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcTenCmp                                  [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcName                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcId                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcT                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcRel                                     [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAcTGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAcIGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAcTLoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcILoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcCmp                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcOneName                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcOneId                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcOneT                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcOneRel                                  [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAcOneTGen                                 [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAcOneIGen                                 [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAcOneTLoc                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcOneILoc                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAcOneCmp                                  [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAccName                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAccId                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAccT                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAccRel                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAccTGen                                   [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAccIGen                                   [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAccTLoc                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAccILoc                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAccCmp                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAdName                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAdId                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAdT                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAdRel                                     [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAdTGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAdIGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQAdTLoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAdILoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQAdCmp                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcTenName                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcTenId                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcTenT                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcTenRel                                  [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAcTenTGen                                 [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAcTenIGen                                 [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAcTenTLoc                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcTenILoc                                 [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcTenCmp                                  [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcName                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcId                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcT                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcRel                                     [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAcTGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAcIGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAcTLoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcILoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAcCmp                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAccName                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAccId                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAccT                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAccRel                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAccTGen                                   [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAccIGen                                   [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAccTLoc                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAccILoc                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAccCmp                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAdName                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAdId                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAdT                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAdRel                                     [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAdTGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAdIGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLAdTLoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAdILoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLAdCmp                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWcName                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWcId                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWcT                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWcRel                                     [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWcTGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWcIGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWcTLoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWcILoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWcCmp                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWdName                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWdId                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWdT                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWdRel                                     [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWdTGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWdIGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWdTLoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWdILoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWdCmp                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmName                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmId                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmT                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmRel                                     [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWmTGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWmIGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWmTLoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmILoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmCmp                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmmName                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmmId                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmmT                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmmRel                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWmmTGen                                   [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWmmIGen                                   [S]    several files (via vlm_facts.json; inputs listed there)
+lgQWmmTLoc                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmmILoc                                   [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgQWmmCmp                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWcName                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWcId                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWcT                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWcRel                                     [S]    several files (via vlm_facts.json; inputs listed there)
+lgLWcTGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLWcIGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLWcTLoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWcILoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWcCmp                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWdName                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWdId                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWdT                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWdRel                                     [S]    several files (via vlm_facts.json; inputs listed there)
+lgLWdTGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLWdIGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLWdTLoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWdILoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWdCmp                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWmName                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWmId                                      [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWmT                                       [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWmRel                                     [S]    several files (via vlm_facts.json; inputs listed there)
+lgLWmTGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLWmIGen                                    [S]    several files (via vlm_facts.json; inputs listed there)
+lgLWmTLoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWmILoc                                    [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+lgLWmCmp                                     [C]    the released logs (metrics, probe records, registries), collected into paper/scripts/data/setup_facts.json
+txGRcName                                    [S]    text_logs/out/text_logs.json
+txGRcId                                      [S]    text_logs/out/text_logs.json
+txGRcT                                       [S]    text_logs/out/text_logs.json
+txGRcRel                                     [S]    text_logs/out/text_logs.json
+txGRcTGen                                    [S]    text_logs/out/text_logs.json
+txGRcTLoc                                    [S]    text_logs/out/text_logs.json
+txGRcCmp                                     [S]    text_logs/out/text_logs.json
+txGRdName                                    [S]    text_logs/out/text_logs.json
+txGRdId                                      [S]    text_logs/out/text_logs.json
+txGRdT                                       [S]    text_logs/out/text_logs.json
+txGRdRel                                     [S]    text_logs/out/text_logs.json
+txGRdTGen                                    [S]    text_logs/out/text_logs.json
+txGRdTLoc                                    [S]    text_logs/out/text_logs.json
+txGRdCmp                                     [S]    text_logs/out/text_logs.json
+txGRmName                                    [S]    text_logs/out/text_logs.json
+txGRmId                                      [S]    text_logs/out/text_logs.json
+txGRmT                                       [S]    text_logs/out/text_logs.json
+txGRmRel                                     [S]    text_logs/out/text_logs.json
+txGRmTGen                                    [S]    text_logs/out/text_logs.json
+txGRmTLoc                                    [S]    text_logs/out/text_logs.json
+txGRmCmp                                     [S]    text_logs/out/text_logs.json
+txGRmmName                                   [S]    text_logs/out/text_logs.json
+txGRmmId                                     [S]    text_logs/out/text_logs.json
+txGRmmT                                      [S]    text_logs/out/text_logs.json
+txGRmmRel                                    [S]    text_logs/out/text_logs.json
+txGRmmTGen                                   [S]    text_logs/out/text_logs.json
+txGRmmTLoc                                   [S]    text_logs/out/text_logs.json
+txGRmmCmp                                    [S]    text_logs/out/text_logs.json

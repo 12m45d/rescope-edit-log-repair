@@ -1,0 +1,153 @@
+{
+ "_about": "SHA-256 of the saved corrections of the linear repairs (kind 'weight': the repaired weight W of the edited module in its stored type; kind 'adapter': the factors Lf, Rf of the side path, float64). Bytes of each tensor in row-major order. The tensors themselves are not released (size; the re-editing rows re-run the editor that wrote the logs); a re-run of experiments/e2_curves/code/job.py reproduces the files of the compensation and rollback rows, which can be compared with these hashes. Keys: working-tree log name (LOG_NAMES.json) -> record name.",
+ "corrections": {
+  "TB-L100-ae-l2_3": {
+   "COMP_B__nALL__s0": {
+    "kind": "adapter",
+    "file_bytes": 238403501,
+    "Lf": {
+     "dtype": "float64",
+     "shape": [
+      4096,
+      1973
+     ],
+     "sha256": "a36d803bc816dec81b46d45c3a0514fa221c3ffe615b115a7f5b247695f9196f"
+    },
+    "Rf": {
+     "dtype": "float64",
+     "shape": [
+      11008,
+      1973
+     ],
+     "sha256": "df66bd7d4848723e311ff05637c55e72f384fb0482c7b8910075689a3105be9c"
+    },
+    "gate": 1e-08
+   },
+   "RB_TOT__n10__s0": {
+    "kind": "weight",
+    "file_bytes": 90179297,
+    "W": {
+     "dtype": "float16",
+     "shape": [
+      4096,
+      11008
+     ],
+     "sha256": "2acf14860812cf1a6347073b0d236e5b346769e9370219e95a7a07909cb386f4"
+    }
+   },
+   "RB_UNION__n10__s0": {
+    "kind": "weight",
+    "file_bytes": 90179311,
+    "W": {
+     "dtype": "float16",
+     "shape": [
+      4096,
+      11008
+     ],
+     "sha256": "01dcc007cabec2efa3f0003bb48b71a80767f759a61899e755d2164906d0c91f"
+    }
+   },
+   "RB_UNION__nALL__s0": {
+    "kind": "weight",
+    "file_bytes": 90179446,
+    "W": {
+     "dtype": "float16",
+     "shape": [
+      4096,
+      11008
+     ],
+     "sha256": "e7de8fc6fc88afd6ac81d9b1e0d7221678263b719c00d04d162ec6e437fd0ce4"
+    }
+   },
+   "REEDIT_B__n10__s0": {
+    "kind": "weight",
+    "file_bytes": 90179844,
+    "W": {
+     "dtype": "float16",
+     "shape": [
+      4096,
+      11008
+     ],
+     "sha256": "78db662c2dd47e9487dbc8da4b6569604d048122cf9d52fa411f19b9e5e364b4"
+    },
+    "seconds": 12.38957166671753,
+    "peak_gpu_bytes": 15857532416,
+    "built": "2026-11-11 20:25:33"
+   }
+  },
+  "TB-Q100-ae-l2_3": {
+   "COMP_B__nALL__s0": {
+    "kind": "adapter",
+    "file_bytes": 296738733,
+    "Lf": {
+     "dtype": "float64",
+     "shape": [
+      2048,
+      2841
+     ],
+     "sha256": "99230858371699925704703adaf0702e2de9abcafd2d4e49174c842461cab3a2"
+    },
+    "Rf": {
+     "dtype": "float64",
+     "shape": [
+      11008,
+      2841
+     ],
+     "sha256": "ecef270b17a92b80bb398d67c2ffff4f63f5e4d0a16aaeb2286701ef392138b6"
+    },
+    "gate": 1e-08
+   },
+   "RB_TOT__n10__s0": {
+    "kind": "weight",
+    "file_bytes": 45090529,
+    "W": {
+     "dtype": "bfloat16",
+     "shape": [
+      2048,
+      11008
+     ],
+     "sha256": "fd358c3571889aa184ce9ffa1b5cabdb971d1ed7d6df6d5e3f017c5fec107d64"
+    }
+   },
+   "RB_UNION__n10__s0": {
+    "kind": "weight",
+    "file_bytes": 45090543,
+    "W": {
+     "dtype": "bfloat16",
+     "shape": [
+      2048,
+      11008
+     ],
+     "sha256": "b7d9582f6dd46a552bd602ed9729aa887703f40608935b60b0d4ceb4fe680069"
+    }
+   },
+   "RB_UNION__nALL__s0": {
+    "kind": "weight",
+    "file_bytes": 45090678,
+    "W": {
+     "dtype": "bfloat16",
+     "shape": [
+      2048,
+      11008
+     ],
+     "sha256": "bae672194b887b6dfa9abfb36124160dd7ce643ca4d9e934e4045a445c502a53"
+    }
+   },
+   "REEDIT_B__n10__s0": {
+    "kind": "weight",
+    "file_bytes": 45091076,
+    "W": {
+     "dtype": "bfloat16",
+     "shape": [
+      2048,
+      11008
+     ],
+     "sha256": "5a103d1014dbd689eeded7b8763d669ff7407ecfeb1cde2cadcd582e167b1891"
+    },
+    "seconds": 20.7830171585083,
+    "peak_gpu_bytes": 9299475456,
+    "built": "2026-11-11 20:42:30"
+   }
+  }
+ }
+}

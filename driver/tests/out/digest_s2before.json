@@ -1,0 +1,236 @@
+{
+ "alpha": 0.05,
+ "draw": 0,
+ "fx_before_or_after": {
+  "fx": "7f8236032d7b",
+  "fx_version": "fx-1.1 stage 1 (2026-11-11)",
+  "rescope": "c76c4da16bd6"
+ },
+ "logs": {
+  "TB-L100-ae-l2_3": {
+   "ball": {
+    "decisions_sha1": "cc0482f254f15c88",
+    "gate_sha1": "7c8d1dc3d3ae709a",
+    "key": "72248a81aecd",
+    "kind": "scoped",
+    "n_decisions": 40740,
+    "n_edits_capped": 0,
+    "variant": ""
+   },
+   "ball_default": {
+    "decisions_sha1": "bbb8809c202e6987",
+    "gate_sha1": "7dad9aae964dbfff",
+    "key": "71371b0cea72",
+    "kind": "scoped",
+    "n_decisions": 40740,
+    "n_edits_capped": null,
+    "variant": "radius1"
+   },
+   "cosine": {
+    "decisions_sha1": "4bc968ea64e12361",
+    "gate_sha1": "7aea754dbf8fe293",
+    "key": "9c8a3b1e29f8",
+    "kind": "scoped",
+    "n_decisions": 40740,
+    "n_edits_capped": 31,
+    "variant": ""
+   },
+   "cosine_default": {
+    "decisions_sha1": "5ee50089b8341d4a",
+    "gate_sha1": "036b65ef6d0ac6bc",
+    "key": "e7e8f462425f",
+    "kind": "scoped",
+    "n_decisions": 40740,
+    "n_edits_capped": null,
+    "variant": "gamma0.65/last"
+   },
+   "cosine_published": {
+    "gate_sha1": "e05558820bea236f",
+    "key": "90cf1eeac0d8",
+    "kind": "gate",
+    "n_edits_capped": null,
+    "variant": "gamma0.65/all"
+   },
+   "cosine_shared": {
+    "decisions_sha1": "2bd48b9a3ef4305b",
+    "gate_sha1": "ca8b17c658d98027",
+    "key": "ebbee90f8ada",
+    "kind": "scoped",
+    "n_decisions": 40740,
+    "n_edits_capped": 0,
+    "variant": "calibration=shared"
+   },
+   "deployed": {
+    "key": "e5ea5f19ec9e",
+    "kind": "deployed",
+    "variant": ""
+   },
+   "dual": {
+    "key": "6e51d73a548b",
+    "kind": "dual",
+    "variant": "eq"
+   },
+   "exact": {
+    "decisions_sha1": "65f1510f4f66161c",
+    "gate_sha1": "8868e1b74c1ed04c",
+    "key": "876aad60f92c",
+    "kind": "scoped",
+    "n_decisions": 40740,
+    "n_edits_capped": null,
+    "variant": ""
+   },
+   "preedit": {
+    "key": "33276570a8a7",
+    "kind": "preedit",
+    "variant": ""
+   },
+   "rescope": {
+    "decisions_sha1": "9f273851aa6a1381",
+    "gate_sha1": "af9617757d877045",
+    "key": "5e0b49bf9d77",
+    "kind": "scoped",
+    "n_decisions": 40740,
+    "n_edits_capped": 0,
+    "variant": ""
+   },
+   "rescope_null": {
+    "decisions_sha1": "08d0cf2fcb062cba",
+    "gate_sha1": "492e3acaa81ff236",
+    "key": "7312852f9cbd",
+    "kind": "scoped",
+    "n_decisions": 40740,
+    "n_edits_capped": 0,
+    "variant": ""
+   },
+   "rescope_shared": {
+    "decisions_sha1": "83a100a1723794f8",
+    "gate_sha1": "4a49b1b1be19071b",
+    "key": "2cffaa3c0a2b",
+    "kind": "scoped",
+    "n_decisions": 40740,
+    "n_edits_capped": 0,
+    "variant": ""
+   },
+   "where_logonly": {
+    "gate_sha1": "4b95959522ebe84f",
+    "key": "592e778fc7b5",
+    "kind": "gate",
+    "n_edits_capped": 0,
+    "variant": ""
+   }
+  },
+  "TB-Q100-ae-l2_3": {
+   "ball": {
+    "decisions_sha1": "7a08017969e791fd",
+    "gate_sha1": "a31b782a758bff3d",
+    "key": "971ce0e8bf0b",
+    "kind": "scoped",
+    "n_decisions": 40570,
+    "n_edits_capped": 0,
+    "variant": ""
+   },
+   "ball_default": {
+    "decisions_sha1": "971253c8a1750706",
+    "gate_sha1": "ade1cd48e7fd6198",
+    "key": "8b1303223e99",
+    "kind": "scoped",
+    "n_decisions": 40570,
+    "n_edits_capped": null,
+    "variant": "radius1"
+   },
+   "cosine": {
+    "decisions_sha1": "11f92919619c0428",
+    "gate_sha1": "3c5305bcd426c551",
+    "key": "849604bec225",
+    "kind": "scoped",
+    "n_decisions": 40570,
+    "n_edits_capped": 9,
+    "variant": ""
+   },
+   "cosine_default": {
+    "decisions_sha1": "93b0f03765e83be9",
+    "gate_sha1": "617345a5f03a3fa8",
+    "key": "0d15d5b2508a",
+    "kind": "scoped",
+    "n_decisions": 40570,
+    "n_edits_capped": null,
+    "variant": "gamma0.65/last"
+   },
+   "cosine_published": {
+    "gate_sha1": "639557ccc28c7503",
+    "key": "4bce4fdffdd1",
+    "kind": "gate",
+    "n_edits_capped": null,
+    "variant": "gamma0.65/all"
+   },
+   "cosine_shared": {
+    "decisions_sha1": "cf705c5b0da51e8e",
+    "gate_sha1": "6802b413c4a6e64b",
+    "key": "4a92e067d434",
+    "kind": "scoped",
+    "n_decisions": 40570,
+    "n_edits_capped": 0,
+    "variant": "calibration=shared"
+   },
+   "deployed": {
+    "key": "bc1e436a68fc",
+    "kind": "deployed",
+    "variant": ""
+   },
+   "dual": {
+    "key": "86a3b361863c",
+    "kind": "dual",
+    "variant": "eq"
+   },
+   "exact": {
+    "decisions_sha1": "9622625d13f6a62d",
+    "gate_sha1": "4405a80c1bd0eb75",
+    "key": "3a03ff9b0f45",
+    "kind": "scoped",
+    "n_decisions": 40570,
+    "n_edits_capped": null,
+    "variant": ""
+   },
+   "preedit": {
+    "key": "7f58ac48cf76",
+    "kind": "preedit",
+    "variant": ""
+   },
+   "rescope": {
+    "decisions_sha1": "a1a935593d094604",
+    "gate_sha1": "a31a81265bfd91fa",
+    "key": "7aa0cb00ec67",
+    "kind": "scoped",
+    "n_decisions": 40570,
+    "n_edits_capped": 0,
+    "variant": ""
+   },
+   "rescope_null": {
+    "decisions_sha1": "6e5375a085ec7974",
+    "gate_sha1": "892a403e768b9af2",
+    "key": "e6dd63502117",
+    "kind": "scoped",
+    "n_decisions": 40570,
+    "n_edits_capped": 0,
+    "variant": ""
+   },
+   "rescope_shared": {
+    "decisions_sha1": "2cfa8267b173d7b6",
+    "gate_sha1": "ace78bc135a491e1",
+    "key": "663419f6ef1a",
+    "kind": "scoped",
+    "n_decisions": 40570,
+    "n_edits_capped": 0,
+    "variant": ""
+   },
+   "where_logonly": {
+    "gate_sha1": "ea515a107beb5048",
+    "key": "214f67c5c5de",
+    "kind": "gate",
+    "n_edits_capped": 2,
+    "variant": ""
+   }
+  }
+ },
+ "n": 200
+}

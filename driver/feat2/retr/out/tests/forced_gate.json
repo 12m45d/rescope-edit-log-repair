@@ -1,0 +1,19 @@
+{
+ "ok": true,
+ "summary": "TB-Q100-ae-l2_3: forced gate releases the given edit on 60/60 cached sequences; Hook output = W0 k + V_e at the last prompt position only: True; TB-L100-ae-l2_3: forced gate releases the given edit on 60/60 cached sequences; Hook output = W0 k + V_e at the last prompt position only: True",
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "uids_from_edit_batch_equal_edit_factors": true,
+   "keycache_decide_forced": "60/60",
+   "hook_releases_value_at_lp_only": true
+  },
+  "TB-L100-ae-l2_3": {
+   "uids_from_edit_batch_equal_edit_factors": true,
+   "keycache_decide_forced": "60/60",
+   "hook_releases_value_at_lp_only": true
+  }
+ },
+ "test": "forced_gate",
+ "seconds": 1.6,
+ "when": "2026-11-11 08:30:31 UTC"
+}

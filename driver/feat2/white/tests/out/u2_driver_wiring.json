@@ -1,0 +1,260 @@
+{
+ "pass": true,
+ "per_log": {
+  "TB-Q100-ae-l2_3": {
+   "cos_centred": {
+    "values_are_the_drivers": true,
+    "n_guards": 200,
+    "two_block": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "TCosLog",
+     "fingerprint": "31589c4b659a",
+     "decisions_equal": true,
+     "own_prompts_not_released": 1
+    },
+    "shared": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "TCosLog",
+     "fingerprint": "fc1b1742c9f4",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    }
+   },
+   "cos_null": {
+    "values_are_the_drivers": true,
+    "n_guards": 200,
+    "two_block": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "86ae726ef224",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    },
+    "shared": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "d2b8c105c8fd",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    }
+   },
+   "white_0.1": {
+    "values_are_the_drivers": true,
+    "n_guards": 200,
+    "two_block": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "6a378abab3d8",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    },
+    "shared": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "2ee3dec947ed",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    }
+   },
+   "whitecos_0.1": {
+    "values_are_the_drivers": true,
+    "n_guards": 200,
+    "two_block": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "TCosLog",
+     "fingerprint": "35ac49b490e3",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    },
+    "shared": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "TCosLog",
+     "fingerprint": "9e2c34a1ada5",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    }
+   },
+   "rescope_nullW": {
+    "values_are_the_drivers": true,
+    "n_guards": 200,
+    "two_block": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "79dd59b862b5",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    },
+    "shared": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "9ffa2ad12657",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    }
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "cos_centred": {
+    "values_are_the_drivers": true,
+    "n_guards": 200,
+    "two_block": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "TCosLog",
+     "fingerprint": "13161f7ce202",
+     "decisions_equal": true,
+     "own_prompts_not_released": 1
+    },
+    "shared": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "TCosLog",
+     "fingerprint": "a46f39844aa8",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    }
+   },
+   "cos_null": {
+    "values_are_the_drivers": true,
+    "n_guards": 200,
+    "two_block": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "b7ebfa420226",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    },
+    "shared": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "baf536b9369a",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    }
+   },
+   "white_0.1": {
+    "values_are_the_drivers": true,
+    "n_guards": 200,
+    "two_block": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "b30b820e29ff",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    },
+    "shared": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "da5789d1811e",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    }
+   },
+   "whitecos_0.1": {
+    "values_are_the_drivers": true,
+    "n_guards": 200,
+    "two_block": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "TCosLog",
+     "fingerprint": "61d839a2995f",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    },
+    "shared": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "TCosLog",
+     "fingerprint": "2cec1d45d080",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    }
+   },
+   "rescope_nullW": {
+    "values_are_the_drivers": true,
+    "n_guards": 200,
+    "two_block": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "33e02a1acfd9",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    },
+    "shared": {
+     "thresholds_bitwise_equal": true,
+     "ranking_equal": true,
+     "method_kind": "scoped",
+     "memo_path": true,
+     "class": "ScopedLog",
+     "fingerprint": "e424654f5913",
+     "decisions_equal": true,
+     "own_prompts_not_released": 0
+    }
+   }
+  }
+ },
+ "note": "20 rows (5 gates x 2 rules x 2 logs): fx.methods.recalibrate thresholds == direct library calibration bit for bit; fx.methods.wrap gives kind 'scoped' on the memo path with a distinct method key; fx.gate.decide == KeyCache.decide; values = fx.methods.released_values: True",
+ "test": "u2_driver_wiring",
+ "group": "usage",
+ "what": "hand-over to the shared driver (development logs): a new gate through fx.methods.recalibrate + fx.methods.wrap == the direct library calibration, bit for bit",
+ "seconds": 3.7152628898620605,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

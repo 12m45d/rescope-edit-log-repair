@@ -1,0 +1,79 @@
+{
+ "written": "2026-11-11 09:21:12 UTC",
+ "definition": "public lookup index of the request prompt alone == 0 (subject = first token of the prompt)",
+ "n_records": 21919,
+ "n_first_token_subject": 80,
+ "rate": 0.0036498015420411514,
+ "in_stream_0_1999": [
+  173,
+  240,
+  266,
+  946,
+  1416,
+  1420,
+  1508,
+  1947
+ ],
+ "in_dev_15000_15099": [],
+ "in_repair_pool": [
+  5921,
+  5997,
+  20962
+ ],
+ "in_heldout_pool": [
+  13235
+ ],
+ "first_in_data_order": [
+  173,
+  240,
+  266,
+  946,
+  1416,
+  1420,
+  1508,
+  1947,
+  2065,
+  2520
+ ],
+ "probability_that_T_consecutive_requests_contain_none": {
+  "100": 0.6937470738127385,
+  "173": 0.5312243994823763,
+  "500": 0.16069627934774586,
+  "1000": 0.02582329419620877,
+  "2000": 0.0006668425231439497
+ },
+ "examples": [
+  "Chicago is a twin city of",
+  "Arthur is located in",
+  "Moscow is a twin city of",
+  "Bay, which is located in",
+  "Manchester is a twin city of",
+  "Life was originally aired on",
+  "Japan, in",
+  "Science's expertise is"
+ ],
+ "stream_check": {
+  "division_factor_of_these_requests": {
+   "173": 0.021807414812861303,
+   "240": 0.026509990540904804,
+   "266": 0.037099918952903876,
+   "946": 0.017447209269158298,
+   "1416": 0.024518242466473494,
+   "1420": 0.06110186151601049,
+   "1508": 0.03530976801582786,
+   "1947": 0.06221838014408909
+  },
+  "update_fro_of_these_requests": {
+   "173": 5902.105251580258,
+   "240": 11154.75002507185,
+   "266": 8660.940829765472,
+   "946": 17831.563093246714,
+   "1416": 13924.173953470583,
+   "1420": 4946.312090451465,
+   "1508": 8733.463718605468,
+   "1947": 1731.4765475482561
+  },
+  "smallest_division_factor_of_all_other_requests": 1.012318564638633,
+  "lookup_index_agrees_with_the_run": true
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "required": {
+  "cosine": "cosine gate, two-block",
+  "cosine_shared": "cosine gate, shared scale",
+  "ball": "distance-ball gate, two-block",
+  "router": "activation router, conformal",
+  "cosine_default": "cosine 0.65 at the last prompt position",
+  "cosine_published": "cosine 0.65 at all positions",
+  "zscore_default": "z-score gate, published setting",
+  "zscore": "z-score gate, conformal",
+  "exact": "exact-match gate",
+  "dual": "answer-match baseline",
+  "rescope": "default method",
+  "rescope_shared": "shared scale",
+  "rescope_null": "ReScope-N",
+  "where_logonly": "Rescope-WHERE, log-only thresholds",
+  "deployed": "deployed log",
+  "preedit": "pre-edit model"
+ },
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "calibrated_rows": [
+    "rescope",
+    "rescope_shared",
+    "rescope_null",
+    "cosine",
+    "cosine_shared",
+    "ball",
+    "rescope_pac"
+   ],
+   "same_calibration_rows": true,
+   "same_alpha_n_draw": true,
+   "rules": {
+    "rescope": "calibrate_two_block",
+    "rescope_shared": "calibrate_shared",
+    "rescope_null": "calibrate_two_block",
+    "cosine": "calibrate_two_block",
+    "cosine_shared": "calibrate_shared",
+    "ball": "calibrate_two_block",
+    "rescope_pac": "calibrate_two_block"
+   },
+   "n_edits_capped": {
+    "rescope": 0,
+    "rescope_shared": 0,
+    "rescope_null": 0,
+    "cosine": 1,
+    "cosine_shared": 0,
+    "ball": 0,
+    "rescope_pac": 0
+   },
+   "digests_distinct": true
+  },
+  "TB-L100-ae-l2_3": {
+   "calibrated_rows": [
+    "rescope",
+    "rescope_shared",
+    "rescope_null",
+    "cosine",
+    "cosine_shared",
+    "ball",
+    "rescope_pac"
+   ],
+   "same_calibration_rows": true,
+   "same_alpha_n_draw": true,
+   "rules": {
+    "rescope": "calibrate_two_block",
+    "rescope_shared": "calibrate_shared",
+    "rescope_null": "calibrate_two_block",
+    "cosine": "calibrate_two_block",
+    "cosine_shared": "calibrate_shared",
+    "ball": "calibrate_two_block",
+    "rescope_pac": "calibrate_two_block"
+   },
+   "n_edits_capped": {
+    "rescope": 0,
+    "rescope_shared": 0,
+    "rescope_null": 0,
+    "cosine": 35,
+    "cosine_shared": 0,
+    "ball": 0,
+    "rescope_pac": 0
+   },
+   "digests_distinct": true
+  }
+ },
+ "missing_rows": [],
+ "gate_level_only": [
+  "rescope_pac"
+ ],
+ "undefined_calibrated_forms_documented": true,
+ "ok": true,
+ "test": "rowset",
+ "seconds": 0.8944144248962402,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:09:48"
+}

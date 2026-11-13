@@ -1,0 +1,65 @@
+{
+ "n_sequences": 10,
+ "logits_bitwise": {
+  "adapter_gated": true,
+  "adapter_ungated": true,
+  "merged": true,
+  "weight_WE": true,
+  "rollback_empty": true
+ },
+ "eval_identical": {
+  "adapter_gated": true,
+  "merged": true
+ },
+ "none_record_unchanged": {
+  "edits_broken": 0,
+  "edits_fixed": 0,
+  "collateral_changed_rows": 0,
+  "loc_items_changed": {
+   "tloc": 0,
+   "iloc": 0
+  },
+  "edits_identical": true
+ },
+ "suffix_equals_full": {
+  "WE": true,
+  "W0": true,
+  "W(R=3,17,55)": true,
+  "W(batch 2 + edit 40)": true
+ },
+ "rollback_all_equals_W0": true,
+ "load_checks": {
+  "probe_uids_match_records": true,
+  "collapsed_working_point": false,
+  "WE_float_minus_W0_equals_stored_composite": true,
+  "C_equals_stored_composite": true,
+  "factor_uids_match_stream": true,
+  "rollback_empty_equals_WE": true
+ },
+ "vision_cache_bitwise": true,
+ "prebuilt_batches_equal_vendor_run_probes": {
+  "rel": true,
+  "tgen": true,
+  "igen": true
+ },
+ "baseline_checks": {
+  "heldout_reproduced_equals_stored_v2": true,
+  "n_heldout_rows": 490,
+  "n_heldout_items": 250,
+  "Rel_token_WE": 91.57936528325081,
+  "Rel_exact_WE": 78.0,
+  "Rel_B1_token_WE": 91.19047638773918,
+  "Rel_B1_exact_WE": 78.0,
+  "edits_B1_vs_b8_em_flags_differing": {
+   "rel": 2,
+   "tgen": 0,
+   "igen": 1
+  },
+  "Rel_matches_stored": true,
+  "fast_eval_equals_full": true
+ },
+ "keys_independent_of_edited_weight": true,
+ "pass": true,
+ "seconds": 241.8676142692566,
+ "gpu": "NVIDIA GeForce RTX 5090"
+}

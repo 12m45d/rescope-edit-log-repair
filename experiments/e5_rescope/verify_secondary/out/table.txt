@@ -1,0 +1,127 @@
+VERIFICATION OF THE SECONDARY EXPERIMENTS (E5, E8, E6, E9, E2 on prefix logs, fix-up of E1 / E2)   rendered 2026-11-12 04:48:54 UTC by code/c9_render.py from out/*.json; own code under verify_secondary/code
+verdicts: 0: pass; 1: pass; 2: pass; 3: pass; 4: pass; 5: pass; 6: pass; 7: pass (numbers: 100 of 100) / fail (deviation statements incomplete); 8: pass with two labelling failures (f: MME-T label of E2; g: draw label of E1 table (2b))
+
+CHECK 0  E5 (f) capacity curve, TB-Q100-ae-l2_3, complaint order 0 (own capture: rescope.Evaluator.capture; 30 of 30 key sets bitwise equal to the experiment's hashes)
+n    keys  rank K_Q mine  rank exp  cap mine  cap exp  match
+--  -----  -------------  --------  --------  -------  -----
+10   4684           4583      4583       100      100   True
+20   8790           8570      8570       100      100   True
+30  12293          11008     11008         0        0   True
+
+CHECK 1  E5 (c) two-block rule, n = 200, alpha = 0.05, with guards unless 'literal'; mine = mean over 200 own draws, experiment = 500 draws; z by the Monte Carlo errors
+log                                          cell  mine %  experiment %   diff      z
+---  --------------------------------------------  ------  ------------  -----  -----
+Q        tf: REPAIR -> heldout_disjoint [literal]    4.39          4.59  -0.20  -1.22
+Q         tf: REPAIR -> heldout_disjoint [guards]    4.39          4.59  -0.20  -1.22
+Q    prompt: REPAIR -> heldout_disjoint [literal]    4.38          4.36   0.02   0.11
+Q     prompt: REPAIR -> heldout_disjoint [guards]    4.38          4.36   0.02   0.11
+Q               prompt: REPAIR -> BEN-T [literal]    4.18          4.12   0.06   0.44
+Q                prompt: REPAIR -> BEN-T [guards]    4.18          4.12   0.06   0.44
+Q               prompt: REPAIR -> MME-T [literal]    7.69          6.08   1.61   1.60
+Q                prompt: REPAIR -> MME-T [guards]    7.69          6.08   1.61   1.60
+Q       prompt: REPAIR -> BEN-T far rows [guards]    2.53          2.52   0.01      -
+L        tf: REPAIR -> heldout_disjoint [literal]    3.15          3.00   0.15   0.78
+L         tf: REPAIR -> heldout_disjoint [guards]    3.15          3.00   0.15   0.78
+L    prompt: REPAIR -> heldout_disjoint [literal]    2.85          2.92  -0.07  -0.40
+L     prompt: REPAIR -> heldout_disjoint [guards]    2.85          2.92  -0.07  -0.40
+L               prompt: REPAIR -> BEN-T [literal]    3.58          3.70  -0.12  -0.69
+L                prompt: REPAIR -> BEN-T [guards]    3.58          3.70  -0.12  -0.69
+L               prompt: REPAIR -> MME-T [literal]    1.57          1.73  -0.16  -1.01
+L                prompt: REPAIR -> MME-T [guards]    1.57          1.73  -0.16  -1.01
+L       prompt: REPAIR -> BEN-T far rows [guards]    3.24          3.38  -0.14      -
+  calibration-conditional rank (n2 = 100, alpha 0.05, delta 0.1), exact rational arithmetic: 99 (experiment: 99); P[FF <= alpha] at ranks 96..100: {'96': 0.564018699314288, '97': 0.7421613408839836, '98': 0.8817370188148791, '99': 0.9629187906726447, '100': 0.994079470779666}
+
+CHECK 2  E5 (a) rebase error (max over edits, percent of the target norm) and smallest self-separation margin
+log              rebased max % mine    exp  logged max % mine     exp  margin min mine      exp  max abs diff
+---------------  ------------------  -----  -----------------  ------  ---------------  -------  ------------
+TB-Q500-ae-l2_3               1.869  1.869              72.95   72.95           0.2750   0.2750       2.2e-16
+TB-Q2000-memitw               2.380  2.380             117.61  117.61          -0.0118  -0.0118       6.7e-16
+TB-L500-ae-l2_3               0.664  0.664              34.90   34.90           0.3855   0.3855       1.2e-16
+TB-L1000-memitw               0.703  0.703              61.30   61.30          -0.1071  -0.1071       3.3e-16
+
+CHECK 3  E8 storage (numbers of the scoped log = detectors + values + scales + thresholds + baselines; guard keys not counted) and the re-timed latency cell
+log              numbers mine   stored  MB fp64 mine  stored  % of module mine  stored
+---------------  ------------  -------  ------------  ------  ----------------  ------
+TB-Q100-ae-l2_3       1305900  1305900         9.963   9.963             5.793   5.793
+TB-L100-ae-l2_3       1510700  1510700        11.526  11.526             3.351   3.351
+latency cell  plain ms  overhead % median [p10, p90]  min-based %  gate alone ms median  min-based ms  card util %
+------------  --------  ----------------------------  -----------  --------------------  ------------  -----------
+mine             67.30              2.5 [-4.9, 15.8]         1.14                 0.323         0.379        37.00
+experiment      105.91             5.0 [-11.7, 35.2]         0.48                 1.050         0.561        92.00
+
+CHECK 4  E6 draw 0 (FF and D1 on heldout_disjoint, percent; Rel / T-Gen / I-Gen exact): my forwards through the plain Evaluator, my gate arithmetic, the experiment's rows
+log            row  FF hook  FF own gate  FF exp  D1 mine  D1 exp  Rel/T/I mine  Rel/T/I exp  rows differing
+---  -------------  -------  -----------  ------  -------  ------  ------------  -----------  --------------
+Q         resp_lin     4.95         4.95    4.95     2.58    2.58       78/8/26      78/8/26               0
+Q    values_logged     4.95         4.95    4.95     4.95    4.95      99/56/68     99/56/68               0
+Q         role_all     6.88         6.88    6.88     0.43    0.43     100/17/45    100/17/45               0
+L         resp_lin     5.33         5.33    5.33     2.13    2.13      92/32/69     92/32/69               0
+L    values_logged     5.33         5.33    5.33     5.33    5.33      99/48/96     99/48/96               0
+L         role_all     2.77         2.77    2.77     1.49    1.49      92/36/86     92/36/86               0
+
+CHECK 5  E9, R(m = 10, s = 0): frame = sequences without a released revoked edit; kept = Rel/T-Gen/I-Gen exact % of the 90 kept edits under the rollback weight (rebuilt by me) and under the deployed weight
+log  frame  violations  touched  touched changed  kept seqs changed (scoped)  probes changed (scoped)  linear kept after mine             exp          before  kept flags changed  kept logits changed (linear)  rollback == harness  logit hashes == experiment (min of 4 runs)
+---  -----  ----------  -------  ---------------  --------------------------  -----------------------  ----------------------  --------------  --------------  ------------------  ----------------------------  -------------------  ------------------------------------------
+Q      741           0       24               24                           2                        0           80.0/8.9/22.2   80.0/8.9/22.2   76.7/8.9/21.1                   4                           270                 True                                         765
+L      739           0       30               30                           2                        3          88.9/33.3/68.9  88.9/33.3/68.9  87.8/31.1/66.7                   5                           270                 True                                         769
+
+CHECK 6  prefix logs: D1 on heldout_disjoint (%) and Rel exact (%) from my forwards against the experiment's rows (linear repair: saved weight, n = 10, seed 0; where_least: thresholds rebuilt by me)
+prefix log                      method  D1 mine  D1 exp  Rel mine  Rel exp  rows differing  rows compared
+-------------------  -----------------  -------  ------  --------  -------  --------------  -------------
+TB-Q100-ae-l2_3-p10    deployed_prefix    23.87   23.87        80       80               0            495
+TB-Q100-ae-l2_3-p10  REEDIT_B__n10__s0    46.45   46.45        80       80               0            495
+TB-Q100-ae-l2_3-p10        where_least     0.22    0.22        80       80               0            495
+TB-Q100-ae-l2_3-p50    deployed_prefix    43.01   43.01        82       82               0            615
+TB-Q100-ae-l2_3-p50  RB_UNION__n10__s0    26.24   26.24        34       34               0            615
+TB-Q100-ae-l2_3-p50        where_least     0.65    0.65        78       78               0            615
+TB-L100-ae-l2_3-p10    deployed_prefix    26.44   26.44        90       90               0            499
+TB-L100-ae-l2_3-p10  REEDIT_B__n10__s0    47.12   47.12        90       90               0            499
+TB-L100-ae-l2_3-p10        where_least     1.07    1.07        90       90               0            499
+TB-L100-ae-l2_3-p50    deployed_prefix    50.53   50.53        86       86               0            619
+TB-L100-ae-l2_3-p50  RB_UNION__n10__s0    40.51   40.51        56       56               0            619
+TB-L100-ae-l2_3-p50        where_least     1.92    1.92        92       92               0            619
+  H1 by the registered rule from the per-row files (3 complaint streams; two-sided: |Rel - Rel deployed| <= 2; one-sided: Rel >= Rel deployed - 2):
+prefix log           D1 deployed -> repair  Rel deployed -> repair  two-sided  one-sided  == h1_prefix.json  best linear (one-sided sel.)  best linear (two-sided sel.)  D1 diff  sign change
+-------------------  ---------------------  ----------------------  ---------  ---------  -----------------  ----------------------------  ----------------------------  -------  -----------
+TB-Q100-ae-l2_3-p10           23.9 -> 0.57                80 -> 80       True       True               True                        COMP_B                        COMP_B   -19.35        False
+TB-Q100-ae-l2_3-p20           29.9 -> 1.08                75 -> 75       True       True               True                        COMP_B                        COMP_B   -27.60        False
+TB-Q100-ae-l2_3-p50           43.0 -> 0.93                82 -> 78      False      False               True                        COMP_B                        COMP_B   -35.63        False
+TB-L100-ae-l2_3-p10           26.4 -> 0.50                90 -> 90       True       True               True                       COMP_BP                       COMP_BP   -26.65        False
+TB-L100-ae-l2_3-p20           35.4 -> 0.92                90 -> 90       True       True               True                       COMP_BP                       COMP_BP   -35.68        False
+TB-L100-ae-l2_3-p50           50.5 -> 1.85                86 -> 92      False       True               True                        COMP_B                        COMP_B   -49.54        False
+
+CHECK 7  paper numbers reproduced: E9 20/20, E6 20/20, E2P 20/20, E5 20/20, E8 20/20
+  deviations from PROTOCOL.md that the reports do not state:
+    - E8: latency and storage are reported for the paper's gate (role last in fp64 / module dtype, all-positions forms, ReScope-W) and the answer-match baseline; PROTOCOL section 3 E8 asks for 'each gate' (cosine, ball, router, z-score are not timed); not among the deviations of the E5 / E8 report
+    - E6: behaviour is run for 8 of the 28 ablation rows; the table attributes this to R19, whose text holds no such list (GAIN response, selection = all and role last + answer have no behavioural cell, so the GAIN row equals the default row by construction); not among the deviations of the E6 / E9 report
+    - E5 (c): the validity cells exist for 8 of the 13 logs of the report's table (the others print '-'); the report says nothing is missing and gives no reason
+    - E5 (f): the thresholds-only repair starts from the log-only thresholds, R20 says 'of the deployed scoping' (the conclusion 'no edit silenced' holds a fortiori from thresholds -inf); stated in the code, not in the report
+    - E9 (c) retention: not part of E9's output (the protocol reads it from E3); the E6 / E9 report does not mention it
+
+CHECK 8  fix-up additions
+  (a) exact McNemar: Q D1 vs deployed d0: b/c 10/239 p 4.85e-58 Holm 6.16e-56 (== stored); L D1 vs retr_sum d1: b/c 1/30 p 2.98e-08 Holm 3.58e-06 (== stored); L Rel vs deployed d0: b/c 12/2 p 0.0129 Holm 1 (== stored)
+  (b) paper numbers: EoneFxLBestCosHNIWrongTarget 16.1017 (== stored); EoneFxLDeployedDtwo 39.7436 (== stored); EoneFxLBestCosGenTGenEq 27.0000 (== stored); EoneFxLBallHNQFireDOne 22.1106 (== stored); EoneFxLRowCompBAllGenTGenEq 29.0000 (== stored)
+  (c), (h) literal two-block rule of ReScope-W from the captured all-position maxima; own = 200 independent draws (mean +- Monte Carlo SE); bound 4.95 %
+log                  (i) REPAIR rest rows  (i) fresh by query  z (rest)  (ii) heldout_disjoint  one row per query  driver draws: fresh (200)  hd (200)  hd first 20 literal  hd image / REPAIR image
+-------------------  --------------------  ------------------  --------  ---------------------  -----------------  -------------------------  --------  -------------------  -----------------------
+TB-Q100-ae-l2_3-p50          5.01 +- 0.17        5.02 +- 0.17     +0.35           6.81 +- 0.17       5.19 +- 0.17                       5.19      6.93                 6.81               14.1 / 9.7
+TB-Q100-ae-l2_3              4.95 +- 0.18        5.02 +- 0.18     -0.01           5.95 +- 0.13       5.15 +- 0.15                       5.16      5.90                 5.57               12.4 / 9.7
+TB-L100-ae-l2_3              4.97 +- 0.16        5.02 +- 0.17     +0.13           2.92 +- 0.08       4.93 +- 0.17                       5.03      2.89                 3.03                2.9 / 7.2
+  (c) interval of the fix-up reproduced: Q mine [3.75, 6.76] stored [3.78, 6.68], Monte Carlo SE 0.19; L mine [3.61, 6.61] stored [3.56, 6.73], Monte Carlo SE 0.18
+  (d) files modified after the fix-up started: E1: 0 of 1304 (newest other file 2026-11-11 23:59:12; fix-up from 2026-11-12 03:07:26); name collisions 0; E2: 0 of 1054 (newest other file 2026-11-12 01:32:05; fix-up from 2026-11-12 03:13:28); name collisions 0
+  (e) rule quoted verbatim: True; final H1: two-sided NOT met (prefixes 4 of 6), one-sided met (prefixes 5 of 6)
+  (f) MME-T firing of the default method, driver draws 0-19, my arithmetic at teacher-forced | prompt-only keys of the MME rows, stored E1 / E2 cell, E5 (prompt-only on both sides, 500 draws):
+log  tf keys  prompt-only keys  stored E1  stored E2 (which)    E5
+---  -------  ----------------  ---------  -----------------  ----
+Q     5.6282            5.6282     5.6282        5.6282 (tf)  6.08
+L     1.5894            1.5894     1.5894        1.5894 (tf)  1.73
+  (g) 8 duplicated keys; read by 0 paper numbers; E2 table c' uses the 20-draw record; E1 table (2b) prints the draw-0 behavioural record under the label 'draws 0-2'
+  (i) best linear repair with the requests kept, two-sided selection: Q-p10: COMP_B (-19.4); Q-p20: COMP_B (-27.6); Q-p50: COMP_B (-35.6); L-p10: COMP_BP (-26.7); L-p20: COMP_BP (-35.7); L-p50: COMP_B (-49.5)  -> same repair as the one-sided selection on all six prefixes; no verdict and no sign changes
+
+RESIDUAL RISKS
+  - GPU checks (0, 4, 5, 6) use the library's plain Evaluator and the harness's model loader: they are independent of the driver, not of the library; the logits of 3,068 scoped / weight forwards equal the experiments' hashes bit for bit
+  - check 0 covers the Qwen development log, complaint order 0, n <= 30; the LLaVA log and the other orders were not re-captured (their numbers were only reproduced from the per-complaint files)
+  - check 3: timings depend on the load of the shared card; only the role-last fp64 cell of the Qwen development log was re-timed; synthetic logs were not re-run
+  - E5 (b), (d), (e), E6 rows other than the three checked, E9 for other m and the lineage part were verified only through the paper numbers of check 7
+  - REPAIR -> MME-T on the Qwen log: the mean over draws is dominated by a few draws (95th percentile about 24 %); three estimates (6.1, 6.3, 7.7 %) are all above the level
+  - check 8 (h): the excess of heldout_disjoint over the bound on the 50-edit Qwen prefix (6.8 %) is a property of that pool of 224 image rows; with items as units it is 1.6 standard errors above the REPAIR rate: the bound is not claimed for this pool row by row

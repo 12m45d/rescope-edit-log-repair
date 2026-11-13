@@ -1,0 +1,41 @@
+{
+ "a_bernoulli": {
+  "value": 30.0,
+  "se_boot": 1.0320197235784436,
+  "se_normal": 1.0246950765959597,
+  "ok": true
+ },
+ "b_clustered": {
+  "se_units": 2.2489835643933582,
+  "se_rows": 1.0175122972291324,
+  "ratio": 2.2102765445859887,
+  "expected_ratio": 2.23606797749979,
+  "ok": true
+ },
+ "c_crossed": {
+  "se_boot_mean": 1.389532890436239,
+  "se_two_way_plug_in_mean": 1.393080990371637,
+  "ratio": 0.9974530555223128,
+  "ok": true
+ },
+ "d_coverage": {
+  "coverage_pct": 96.66666666666667,
+  "ok": true
+ },
+ "e_paired": {
+  "diff": 4.666666666666663,
+  "se_paired": 0.8159814917275179,
+  "se_unpaired_normal": 2.882305532934561,
+  "ci": [
+   3.0000000000000027,
+   6.333333333333336
+  ],
+  "ok": true
+ },
+ "f_missing": {
+  "value": 49.14139569956919,
+  "expected": 49.1413956995692,
+  "ok": true
+ },
+ "all_ok": true
+}

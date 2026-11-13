@@ -1,0 +1,281 @@
+E9 MAINTENANCE OF A SCOPED LOG: SELECTIVE REVOCATION AND LINEAGE      (rendered 2026-11-12 00:37:13 by code/e9_render.py; no number is typed by hand)
+Development logs; alpha = 0.05, n = 200, calibration draw 0 (R19 c); revocation sets R of m edits, 3 seeded sets per m, the SAME sets for the scoped and the linear log.
+Scoped log = the calibrated default method with the edits of R masked (threshold +inf; nothing else changes).  Linear log = the deployed weight minus the stored rank-one
+solver terms of R (harness rollback_weight).  Every sequence of every run is one B = 1 forward through the library's Evaluator with a hash of its logits (ses.tf_hashed);
+'bit-identical' compares these hashes.  Sequences: Rel / T-Gen / I-Gen of all 100 edits (300) and the valid heldout_disjoint probes.  Cells: mean over the 3 sets (range).
+flag = exact (edit sequences) / D1 (probes); the pre-edit level is the target for the revoked edits.
+
+######################################################################################################################################################
+TB-Q100-ae-l2_3
+######################################################################################################################################################
+   scoped log before revocation: default method, draw 0, digest 53b38b77e7e361ad, capped edits 0, own prompts not released 0; sequences: 300 edit sequences, 465 heldout_disjoint probes
+   certificate (Prop. certificate a) on the base run: 497 sequences on which nothing is released; logits bit-identical to the pre-edit model on 497 of them
+
+(a) SELECTIVE REVOCATION -- edits: exact % of the revoked edits (after | before | pre-edit level) and of the kept edits (after | before)
+log      m  sets                   revoked Rel                                     revoked T-Gen                 revoked I-Gen                             kept Rel                           kept T-Gen                           kept I-Gen
+------  --  ----  ----------------------------  ------------------------------------------------  ----------------------------  -----------------------------------  -----------------------------------  -----------------------------------
+scoped   1     3             0.0 | 100.0 | 0.0                      0.0 | 66.7 (0.0-100.0) | 0.0  0.0 | 66.7 (0.0-100.0) | 0.0                        100.0 | 100.0  56.9 (56.6-57.6) | 56.9 (56.6-57.6)  69.0 (68.7-69.7) | 69.0 (68.7-69.7)
+scoped   5     3             0.0 | 100.0 | 0.0                     0.0 | 80.0 (60.0-100.0) | 0.0  0.0 | 33.3 (20.0-40.0) | 0.0                        100.0 | 100.0  56.1 (54.7-57.9) | 55.8 (54.7-56.8)  70.9 (70.5-71.6) | 70.9 (70.5-71.6)
+scoped  10     3             0.0 | 100.0 | 0.0                      0.0 | 36.7 (30.0-40.0) | 0.0  0.0 | 66.7 (60.0-70.0) | 0.0                        100.0 | 100.0  59.6 (58.9-61.1) | 59.3 (58.9-60.0)  69.6 (68.9-70.0) | 69.3 (68.9-70.0)
+scoped  20     3             0.0 | 100.0 | 0.0  1.7 (0.0-5.0) | 58.3 (50.0-70.0) | 1.7 (0.0-5.0)  0.0 | 65.0 (50.0-80.0) | 0.0                        100.0 | 100.0  57.1 (55.0-58.8) | 56.7 (53.8-58.8)  71.2 (67.5-75.0) | 70.0 (66.2-73.8)
+scoped  50     3             0.0 | 100.0 | 0.0  0.7 (0.0-2.0) | 58.0 (48.0-64.0) | 0.7 (0.0-2.0)  0.0 | 65.3 (60.0-70.0) | 0.0                        100.0 | 100.0  56.7 (52.0-66.0) | 56.0 (50.0-66.0)  73.3 (70.0-78.0) | 72.7 (68.0-78.0)
+linear   1     3             0.0 | 100.0 | 0.0                                   0.0 | 0.0 | 0.0  0.0 | 66.7 (0.0-100.0) | 0.0              79.1 (78.8-79.8) | 77.8                            9.1 | 9.1  21.5 (21.2-22.2) | 21.5 (21.2-22.2)
+linear   5     3  0.0 | 60.0 (40.0-80.0) | 0.0                                   0.0 | 0.0 | 0.0               0.0 | 0.0 | 0.0  77.9 (76.8-78.9) | 78.9 (77.9-80.0)                            9.5 | 9.5                          24.2 | 23.2
+linear  10     3  0.0 | 83.3 (70.0-90.0) | 0.0                        0.0 | 6.7 (0.0-10.0) | 0.0  0.0 | 23.3 (10.0-30.0) | 0.0  78.5 (77.8-80.0) | 77.4 (76.7-78.9)      9.6 (8.9-10.0) | 9.3 (8.9-10.0)  23.0 (22.2-23.3) | 21.9 (21.1-23.3)
+linear  20     3  0.0 | 63.3 (55.0-70.0) | 0.0   1.7 (0.0-5.0) | 10.0 (5.0-15.0) | 1.7 (0.0-5.0)  0.0 | 16.7 (10.0-25.0) | 0.0  80.4 (76.2-82.5) | 81.7 (80.0-83.8)      9.6 (7.5-11.2) | 8.8 (7.5-10.0)  25.4 (23.8-26.2) | 23.3 (21.2-25.0)
+linear  50     3              0.0 | 74.0 | 0.0    1.3 (0.0-4.0) | 8.7 (6.0-12.0) | 0.7 (0.0-2.0)  0.0 | 16.7 (10.0-22.0) | 0.0              82.7 (82.0-84.0) | 82.0    12.0 (10.0-14.0) | 9.3 (6.0-12.0)  29.3 (22.0-36.0) | 27.3 (22.0-34.0)
+
+(a) SELECTIVE REVOCATION -- side effects: number of kept-edit sequences / heldout_disjoint probe rows whose flag changes and whose logits are not bit-identical
+    to those before the revocation; D1 on the probes (% after | before; rows fixed / lost)
+log      m  revoked seqs: flag changed  kept seqs  kept: flag changed  kept: logits changed  probes  probes: flag changed  probes: logits changed            D1 after | before          D1 fixed           D1 lost
+------  --  --------------------------  ---------  ------------------  --------------------  ------  --------------------  ----------------------  ---------------------------  ----------------  ----------------
+scoped   1          2.3 (1.0-3.0) of 3        297                 0.0                   0.0     465                   0.0                     0.0                  4.95 | 4.95               0.0               0.0
+scoped   5       10.7 (9.0-12.0) of 15        285       0.3 (0.0-1.0)         0.3 (0.0-1.0)     465         1.0 (0.0-2.0)           1.0 (0.0-2.0)      4.73 (4.52-4.95) | 4.95     1.0 (0.0-2.0)               0.0
+scoped  10      20.3 (20.0-21.0) of 30        270       0.7 (0.0-2.0)         1.3 (0.0-2.0)     465         1.0 (0.0-2.0)           1.0 (0.0-2.0)      4.73 (4.52-4.95) | 4.95     1.0 (0.0-2.0)               0.0
+scoped  20      44.3 (42.0-47.0) of 60        240       1.3 (1.0-2.0)         2.7 (1.0-5.0)     465         3.3 (2.0-6.0)           3.7 (2.0-7.0)      4.23 (3.66-4.52) | 4.95     3.3 (2.0-6.0)               0.0
+scoped  50  111.3 (109.0-114.0) of 150        150       0.7 (0.0-1.0)         3.3 (1.0-5.0)     465        8.7 (7.0-11.0)          8.7 (7.0-11.0)      3.08 (2.58-3.44) | 4.95    8.7 (7.0-11.0)               0.0
+linear   1          1.7 (1.0-2.0) of 3        297       1.3 (1.0-2.0)                 297.0     465      21.0 (17.0-25.0)                   465.0  54.41 (53.55-55.27) | 54.19   10.0 (6.0-14.0)              11.0
+linear   5         3.0 (2.0-4.0) of 15        285       2.7 (2.0-3.0)                 285.0     465      40.7 (34.0-48.0)                   465.0  53.48 (52.47-54.19) | 54.19  22.0 (17.0-28.0)  18.7 (17.0-20.0)
+linear  10       11.3 (9.0-13.0) of 30        270       5.0 (4.0-6.0)                 270.0     465      54.0 (51.0-60.0)                   465.0  52.33 (50.97-54.41) | 54.19  31.3 (25.0-36.0)  22.7 (18.0-26.0)
+linear  20      17.7 (14.0-20.0) of 60        240      6.0 (3.0-10.0)                 240.0     465      70.3 (67.0-74.0)                   465.0  51.11 (50.54-52.04) | 54.19  42.3 (42.0-43.0)  28.0 (25.0-32.0)
+linear  50     49.0 (46.0-52.0) of 150        150       8.0 (6.0-9.0)                 150.0     465   114.7 (106.0-125.0)                   465.0  43.73 (42.80-44.73) | 54.19  81.7 (75.0-87.0)  33.0 (30.0-38.0)
+
+(a) FRAME RULE of the scoped log (Prop. certificate b, c), per revocation set, over ALL 300 edit sequences + probes: 'frame' = sequences on which no edit of R was
+    released before the revocation; violation = a frame sequence whose logits changed (expected 0); 'touched' = sequences on which an edit of R was released;
+    'other edit' = touched sequences on which ANOTHER edit is released after the masking (top-1 among several candidates; each case is listed below)
+m   set                                      R  frame  violations  touched  touched: logits changed  other edit released
+--  ---  -------------------------------------  -----  ----------  -------  -----------------------  -------------------
+1     0                                     76    764           0        1                        1                    0
+1     1                                      0    762           0        3                        3                    1
+1     2                                     90    762           0        3                        3                    0
+5     0                         15 60 73 78 79    753           0       12                       12                    2
+5     1                         25 29 41 68 84    753           0       12                       12                    3
+5     2                         14 41 52 76 95    753           0       12                       12                    1
+10    0          12 18 24 35 51 63 70 75 76 93    741           0       24                       24                    2
+10    1          23 33 51 60 64 67 84 88 95 97    743           0       22                       22                    1
+10    2          23 32 37 38 44 57 68 71 74 80    740           0       25                       25                    1
+20    0  5 13 18 21 24 27 30 33 ... (20 edits)    718           0       47                       47                    3
+20    1  2 10 12 14 24 27 28 29 ... (20 edits)    715           0       50                       50                    1
+20    2   1 8 21 31 38 43 45 46 ... (20 edits)    709           0       56                       56                    5
+50    0     2 6 7 8 10 11 15 17 ... (50 edits)    635           0      130                      130                    2
+50    1     0 2 6 7 11 12 13 14 ... (50 edits)    636           0      129                      129                    7
+50    2     0 5 6 7 11 12 13 14 ... (50 edits)    632           0      133                      133                    4
+   total: 0 violations in 10816 frame sequences over 15 revocation sets
+   other edit released, m=1 set=1: Q:edit:tgen:0 (edit/tgen, own edit 0): before [0] -> after [99]
+   other edit released, m=5 set=0: Q:edit:rel:15 (edit/rel, own edit 15): before [15] -> after [41]
+   other edit released, m=5 set=0: Q:edit:tgen:82 (edit/tgen, own edit 82): before [78] -> after [82]
+   other edit released, m=5 set=1: Q:edit:rel:25 (edit/rel, own edit 25): before [25] -> after [15]
+   other edit released, m=5 set=1: Q:edit:rel:41 (edit/rel, own edit 41): before [41] -> after [15]
+   other edit released, m=5 set=1: Q:edit:tgen:68 (edit/tgen, own edit 68): before [68] -> after [14]
+   other edit released, m=5 set=2: Q:edit:rel:41 (edit/rel, own edit 41): before [41] -> after [15]
+   other edit released, m=10 set=0: Q:edit:tgen:88 (edit/tgen, own edit 88): before [75] -> after [88]
+   other edit released, m=10 set=0: Q:edit:igen:8 (edit/igen, own edit 8): before [24] -> after [8]
+   other edit released, m=10 set=1: Q:edit:rel:67 (edit/rel, own edit 67): before [67] -> after [4]
+   other edit released, m=10 set=2: Q:edit:tgen:68 (edit/tgen, own edit 68): before [68] -> after [14]
+   other edit released, m=20 set=0: Q:edit:rel:41 (edit/rel, own edit 41): before [41] -> after [15]
+   other edit released, m=20 set=0: Q:edit:tgen:68 (edit/tgen, own edit 68): before [68] -> after [14]
+   other edit released, m=20 set=0: Q:edit:igen:8 (edit/igen, own edit 8): before [24] -> after [8]
+   other edit released, m=20 set=1: Q:edit:igen:8 (edit/igen, own edit 8): before [24] -> after [8]
+   other edit released, m=20 set=2: Q:edit:rel:43 (edit/rel, own edit 43): before [43] -> after [56]
+   other edit released, m=20 set=2: Q:edit:tgen:82 (edit/tgen, own edit 82): before [78] -> after [82]
+   other edit released, m=20 set=2: Q:edit:igen:43 (edit/igen, own edit 43): before [43] -> after [56]
+   other edit released, m=20 set=2: Q:edit:igen:99 (edit/igen, own edit 99): before [46] -> after [99]
+   other edit released, m=20 set=2: Q:probe:image:119 (probe, own edit None): before [46] -> after [99]
+   other edit released, m=50 set=0: Q:edit:tgen:7 (edit/tgen, own edit 7): before [7] -> after [38]
+   other edit released, m=50 set=0: Q:edit:igen:40 (edit/igen, own edit 40): before [40] -> after [4]
+   other edit released, m=50 set=1: Q:edit:rel:15 (edit/rel, own edit 15): before [15] -> after [41]
+   other edit released, m=50 set=1: Q:edit:rel:56 (edit/rel, own edit 56): before [56] -> after [42]
+   other edit released, m=50 set=1: Q:edit:rel:67 (edit/rel, own edit 67): before [67] -> after [4]
+   other edit released, m=50 set=1: Q:edit:tgen:7 (edit/tgen, own edit 7): before [7] -> after [38]
+   other edit released, m=50 set=1: Q:edit:tgen:56 (edit/tgen, own edit 56): before [56] -> after [42]
+   other edit released, m=50 set=1: Q:edit:igen:8 (edit/igen, own edit 8): before [24] -> after [8]
+   other edit released, m=50 set=1: Q:edit:igen:40 (edit/igen, own edit 40): before [40] -> after [4]
+   other edit released, m=50 set=2: Q:edit:rel:15 (edit/rel, own edit 15): before [15] -> after [41]
+   other edit released, m=50 set=2: Q:edit:rel:99 (edit/rel, own edit 99): before [99] -> after [26]
+   other edit released, m=50 set=2: Q:edit:tgen:7 (edit/tgen, own edit 7): before [7] -> after [38]
+   other edit released, m=50 set=2: Q:edit:tgen:88 (edit/tgen, own edit 88): before [75] -> after [88]
+
+(a') THE SAME IN DATABASE VOCABULARY.  Statements = logged edits; tuples = query answers (the kept edits' Rel / T-Gen / I-Gen sequences and the heldout_disjoint
+    probes); lineage of a tuple = the statements released on it under the scoped log before the deletion (Fire(q)); a linear log has no per-tuple lineage (every
+    statement contributes to every key), so the SAME tuple set is used for both logs: tuples on which no deleted statement is released.  'changed' = logits not
+    bit-identical | teacher-forced answer row changed (first mismatching token or token accuracy) | reported flag changed (exact / D1)
+log     statements deleted  tuples outside the lineage      changed: logits  changed: answer row        changed: flag  tuples inside the lineage  inside: logits changed
+------  ------------------  --------------------------  -------------------  -------------------  -------------------  -------------------------  ----------------------
+scoped                   1                       762.0                  0.0                  0.0                  0.0                        0.0                     0.0
+scoped                   5         748.7 (747.0-750.0)                  0.0                  0.0                  0.0              1.3 (0.0-3.0)           1.3 (0.0-3.0)
+scoped                  10         732.7 (732.0-733.0)                  0.0                  0.0                  0.0              2.3 (2.0-3.0)           2.3 (2.0-3.0)
+scoped                  20         698.7 (693.0-702.0)                  0.0                  0.0                  0.0             6.3 (3.0-12.0)          6.3 (3.0-12.0)
+scoped                  50                       603.0                  0.0                  0.0                  0.0                       12.0                    12.0
+linear                   1                       762.0                762.0     52.3 (43.0-61.0)     22.3 (19.0-26.0)                        0.0                     0.0
+linear                   5         748.7 (747.0-750.0)  748.7 (747.0-750.0)    86.7 (76.0-100.0)     43.0 (36.0-50.0)              1.3 (0.0-3.0)           1.3 (0.0-3.0)
+linear                  10         732.7 (732.0-733.0)  732.7 (732.0-733.0)  113.7 (103.0-130.0)     58.7 (55.0-66.0)              2.3 (2.0-3.0)           2.3 (2.0-3.0)
+linear                  20         698.7 (693.0-702.0)  698.7 (693.0-702.0)  148.0 (141.0-158.0)     75.0 (68.0-83.0)             6.3 (3.0-12.0)          6.3 (3.0-12.0)
+linear                  50                       603.0                603.0  205.0 (199.0-215.0)  120.3 (108.0-132.0)                       12.0                    12.0
+
+(b) LINEAGE.  Every heldout_disjoint probe and every valid near-scope negative on which the calibrated default method (draw 0) releases an edit: that edit is masked
+    and the row is run again; if another edit is released it is masked too, until nothing is released.  'pre-edit after 1' = rows whose logits are bit-identical to the
+    pre-edit model after masking the ONE released edit; 'another edit' = rows on which another edit is released instead (lineage size at least 2); 'masks needed' =
+    number of masked edits until nothing is released; 'gate n_cand' = number of candidate edits of the row at gate level (key cache)
+rows                      releasing  pre-edit after 1 (%)  another edit (%)  masks needed: mean  max    1 / 2 / 3 / 4+  = gate n_cand  final logits = pre-edit
+------------------------  ---------  --------------------  ----------------  ------------------  ---  ----------------  -------------  -----------------------
+heldout_disjoint probes          23                  91.3               8.7                1.09    2    21 / 2 / 0 / 0          23/23                    23/23
+HN-I                            219                  93.6               6.4                1.07    3  205 / 13 / 1 / 0        219/219                  219/219
+HN-Q                            138                  96.4               3.6                1.04    2   133 / 5 / 0 / 0        138/138                  138/138
+HN-X                             51                  84.3              15.7                1.16    2    43 / 8 / 0 / 0          51/51                    51/51
+all near-scope negatives        408                  93.4               6.6                1.07    3  381 / 26 / 1 / 0        408/408                  408/408
+all                             431                  93.3               6.7                1.07    3  402 / 28 / 1 / 0        431/431                  431/431
+   461 forwards in 3 rounds
+
+    LINEAR LOG, from existing records (read, not recomputed): number of edits k that a rollback removes for ONE complaint
+source                                            rule  complaints  resolved  k median  k mean  k min-max  k = 1  edits broken / repair
+----------------------  ------------------------------  ----------  --------  --------  ------  ---------  -----  ---------------------
+P12 text head-to-head   behavioural greedy (budget 20)          30        30       3.0    4.80       1-17      9                   6.50
+P12 text head-to-head   first-order greedy (budget 10)          30        24       3.0    5.00       1-10      7                   6.83
+rq1 (image complaints)  behavioural greedy (budget 20)          28        27       4.0    5.21       1-20      9                   7.11
+rq1 (image complaints)  first-order greedy (budget 10)          28        24       4.5    4.89       1-10      8                   6.43
+    layer-level optimum (E5, tolerance 0.1; 43 complaints, 0 certified): median optimum between 68.0 and 71.0 edits (certified cases: median None); best greedy rule median 70.0; lower bound of the proposition median 59.0 (min 27.0, max 71.0)
+    layer-level optimum (E5, tolerance 0.5; 43 complaints, 20 certified): median optimum between 19.0 and 20.0 edits (certified cases: median 15.0); best greedy rule median 19.0; lower bound of the proposition median 3.0 (min 1.0, max 13.0)
+    files: [redacted: local path]/02_research/experiments/08_rescope/p12_linear_streams/out/text_h2h/rows_TB-Q100-ae-l2_3.jsonl (results: [redacted: local path]/02_research/experiments/08_rescope/p12_linear_streams/results.md, section 9); [redacted: local path]/02_research/experiments/07_repair_v3/rq1/rows/rows_TB-Q100-ae-l2_3.jsonl (results: [redacted: local path]/02_research/experiments/07_repair_v3/rq1/results.md); [redacted: local path]/02_research/experiments/10_final/e5_linear/out/paper_numbers.json
+   job record, stages base: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 3572, 'rows': 3572} (hook_mismatch and memo conflicts must be 0); hashed forwards 3572
+   job record, stages m1: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 4590, 'rows': 4590} (hook_mismatch and memo conflicts must be 0); hashed forwards 4590
+   job record, stages m10: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 4590, 'rows': 4590} (hook_mismatch and memo conflicts must be 0); hashed forwards 4590
+   job record, stages m20: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 4590, 'rows': 4590} (hook_mismatch and memo conflicts must be 0); hashed forwards 4590
+   job record, stages m5: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 4590, 'rows': 4590} (hook_mismatch and memo conflicts must be 0); hashed forwards 4590
+   job record, stages m50: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 4590, 'rows': 4590} (hook_mismatch and memo conflicts must be 0); hashed forwards 4590
+
+######################################################################################################################################################
+TB-L100-ae-l2_3
+######################################################################################################################################################
+   scoped log before revocation: default method, draw 0, digest be285ab03226cc43, capped edits 0, own prompts not released 0; sequences: 300 edit sequences, 469 heldout_disjoint probes
+   certificate (Prop. certificate a) on the base run: 484 sequences on which nothing is released; logits bit-identical to the pre-edit model on 484 of them
+
+(a) SELECTIVE REVOCATION -- edits: exact % of the revoked edits (after | before | pre-edit level) and of the kept edits (after | before)
+log      m  sets                                          revoked Rel                                       revoked T-Gen                                        revoked I-Gen                               kept Rel                           kept T-Gen                           kept I-Gen
+------  --  ----  ---------------------------------------------------  --------------------------------------------------  ---------------------------------------------------  -------------------------------------  -----------------------------------  -----------------------------------
+scoped   1     3                                    0.0 | 100.0 | 0.0                                     0.0 | 0.0 | 0.0                                    0.0 | 100.0 | 0.0                            98.0 | 98.0                          47.5 | 47.5                          94.9 | 94.9
+scoped   5     3  6.7 (0.0-20.0) | 86.7 (80.0-100.0) | 6.7 (0.0-20.0)  6.7 (0.0-20.0) | 46.7 (20.0-80.0) | 6.7 (0.0-20.0)  6.7 (0.0-20.0) | 86.7 (80.0-100.0) | 6.7 (0.0-20.0)    98.6 (97.9-98.9) | 98.6 (97.9-98.9)  47.0 (45.3-48.4) | 47.0 (45.3-48.4)  95.4 (94.7-95.8) | 95.4 (94.7-95.8)
+scoped  10     3                        0.0 | 96.7 (90.0-100.0) | 0.0                        0.0 | 36.7 (20.0-50.0) | 0.0                        0.0 | 90.0 (80.0-100.0) | 0.0    98.1 (97.8-98.9) | 98.1 (97.8-98.9)  48.1 (46.7-50.0) | 48.1 (46.7-50.0)  95.6 (94.4-96.7) | 95.6 (94.4-96.7)
+scoped  20     3    1.7 (0.0-5.0) | 96.7 (90.0-100.0) | 1.7 (0.0-5.0)                        5.0 | 55.0 (50.0-65.0) | 5.0    1.7 (0.0-5.0) | 96.7 (95.0-100.0) | 1.7 (0.0-5.0)  98.3 (97.5-100.0) | 98.3 (97.5-100.0)  45.4 (43.8-46.2) | 45.0 (42.5-46.2)  94.6 (93.8-95.0) | 94.6 (93.8-95.0)
+scoped  50     3                 1.3 (0.0-2.0) | 98.0 | 1.3 (0.0-2.0)    2.7 (2.0-4.0) | 48.7 (44.0-52.0) | 2.7 (2.0-4.0)     1.3 (0.0-2.0) | 96.7 (96.0-98.0) | 1.3 (0.0-2.0)                            98.0 | 98.0  47.3 (44.0-52.0) | 45.3 (42.0-50.0)  93.3 (92.0-94.0) | 93.3 (92.0-94.0)
+linear   1     3                                    0.0 | 100.0 | 0.0                                     0.0 | 0.0 | 0.0                         0.0 | 33.3 (0.0-100.0) | 0.0                88.2 (87.9-88.9) | 87.9              29.6 (29.3-30.3) | 29.3              66.7 | 66.3 (65.7-66.7)
+linear   5     3  6.7 (0.0-20.0) | 93.3 (80.0-100.0) | 6.7 (0.0-20.0)  6.7 (0.0-20.0) | 46.7 (20.0-80.0) | 6.7 (0.0-20.0)   6.7 (0.0-20.0) | 73.3 (60.0-80.0) | 6.7 (0.0-20.0)    88.1 (86.3-89.5) | 87.7 (87.4-88.4)  28.4 (26.3-30.5) | 28.1 (26.3-29.5)  65.6 (64.2-66.3) | 65.6 (65.3-66.3)
+linear  10     3                        0.0 | 93.3 (90.0-100.0) | 0.0                        0.0 | 30.0 (10.0-50.0) | 0.0                         0.0 | 70.0 (60.0-80.0) | 0.0    89.3 (88.9-90.0) | 87.4 (86.7-87.8)  30.0 (26.7-33.3) | 28.9 (26.7-31.1)  67.8 (65.6-68.9) | 65.6 (64.4-66.7)
+linear  20     3     1.7 (0.0-5.0) | 88.3 (85.0-95.0) | 1.7 (0.0-5.0)                        5.0 | 26.7 (15.0-45.0) | 5.0     1.7 (0.0-5.0) | 63.3 (55.0-80.0) | 1.7 (0.0-5.0)    91.7 (91.2-92.5) | 87.9 (86.2-88.8)  29.6 (26.2-31.2) | 29.6 (25.0-32.5)  69.2 (63.8-73.8) | 66.7 (62.5-68.8)
+linear  50     3     1.3 (0.0-2.0) | 89.3 (88.0-90.0) | 1.3 (0.0-2.0)    2.7 (2.0-4.0) | 31.3 (28.0-38.0) | 2.7 (2.0-4.0)     1.3 (0.0-2.0) | 68.7 (64.0-72.0) | 1.3 (0.0-2.0)    90.7 (88.0-92.0) | 86.7 (86.0-88.0)  30.7 (28.0-34.0) | 26.7 (20.0-30.0)  66.0 (62.0-72.0) | 63.3 (60.0-68.0)
+
+(a) SELECTIVE REVOCATION -- side effects: number of kept-edit sequences / heldout_disjoint probe rows whose flag changes and whose logits are not bit-identical
+    to those before the revocation; D1 on the probes (% after | before; rows fixed / lost)
+log      m  revoked seqs: flag changed  kept seqs  kept: flag changed  kept: logits changed  probes  probes: flag changed  probes: logits changed            D1 after | before          D1 fixed           D1 lost
+------  --  --------------------------  ---------  ------------------  --------------------  ------  --------------------  ----------------------  ---------------------------  ----------------  ----------------
+scoped   1                    2.0 of 3        297                 0.0                   0.0     469                   0.0                     0.0                  5.33 | 5.33               0.0               0.0
+scoped   5       10.0 (9.0-11.0) of 15        285                 0.0         1.7 (0.0-5.0)     469         1.3 (0.0-3.0)           1.3 (0.0-3.0)      5.05 (4.69-5.33) | 5.33     1.3 (0.0-3.0)               0.0
+scoped  10      22.3 (20.0-25.0) of 30        270                 0.0         1.7 (0.0-3.0)     469         2.3 (0.0-5.0)           2.7 (0.0-5.0)      4.83 (4.26-5.33) | 5.33     2.3 (0.0-5.0)               0.0
+scoped  20      48.0 (47.0-49.0) of 60        240       0.3 (0.0-1.0)         1.0 (0.0-3.0)     469         6.0 (3.0-8.0)           7.0 (4.0-9.0)      4.05 (3.62-4.69) | 5.33     6.0 (3.0-8.0)               0.0
+scoped  50  119.0 (117.0-122.0) of 150        150                 1.0         4.7 (4.0-6.0)     469      13.3 (11.0-16.0)        13.7 (12.0-16.0)      2.49 (1.92-2.99) | 5.33  13.3 (11.0-16.0)               0.0
+linear   1          1.3 (1.0-2.0) of 3        297       1.0 (0.0-2.0)                 297.0     469      12.7 (10.0-16.0)                   469.0  62.26 (61.41-62.69) | 62.26     6.3 (5.0-7.0)     6.3 (3.0-9.0)
+linear   5        9.7 (9.0-10.0) of 15        285       2.7 (2.0-4.0)                 285.0     469      32.0 (27.0-36.0)                   469.0  61.83 (61.19-62.69) | 62.26  17.0 (16.0-18.0)  15.0 (11.0-19.0)
+linear  10      19.3 (16.0-22.0) of 30        270       5.3 (5.0-6.0)                 270.0     469      45.3 (37.0-57.0)                   469.0  59.84 (58.64-60.55) | 62.26  28.3 (23.0-37.0)  17.0 (14.0-20.0)
+linear  20      35.3 (29.0-45.0) of 60        240    10.3 (10.0-11.0)                 240.0     469      62.7 (60.0-65.0)                   469.0  59.42 (57.36-60.55) | 62.26  38.0 (34.0-44.0)  24.7 (21.0-27.0)
+linear  50     93.3 (90.0-98.0) of 150        150      8.7 (4.0-15.0)                 150.0     469   111.3 (110.0-113.0)                   469.0  51.17 (49.25-52.88) | 62.26  81.7 (77.0-87.0)  29.7 (26.0-33.0)
+
+(a) FRAME RULE of the scoped log (Prop. certificate b, c), per revocation set, over ALL 300 edit sequences + probes: 'frame' = sequences on which no edit of R was
+    released before the revocation; violation = a frame sequence whose logits changed (expected 0); 'touched' = sequences on which an edit of R was released;
+    'other edit' = touched sequences on which ANOTHER edit is released after the masking (top-1 among several candidates; each case is listed below)
+m   set                                      R  frame  violations  touched  touched: logits changed  other edit released
+--  ---  -------------------------------------  -----  ----------  -------  -----------------------  -------------------
+1     0                                     76    767           0        2                        2                    0
+1     1                                      0    767           0        2                        2                    0
+1     2                                     90    767           0        2                        2                    0
+5     0                         15 60 73 78 79    749           0       20                       20                    0
+5     1                         25 29 41 68 84    754           0       15                       15                    0
+5     2                         14 41 52 76 95    755           0       14                       14                    0
+10    0          12 18 24 35 51 63 70 75 76 93    739           0       30                       30                    5
+10    1          23 33 51 60 64 67 84 88 95 97    739           0       30                       30                    2
+10    2          23 32 37 38 44 57 68 71 74 80    744           0       25                       25                    0
+20    0  5 13 18 21 24 27 30 33 ... (20 edits)    712           0       57                       57                    5
+20    1  2 10 12 14 24 27 28 29 ... (20 edits)    711           0       58                       58                    3
+20    2   1 8 21 31 38 43 45 46 ... (20 edits)    702           0       67                       67                    3
+50    0     2 6 7 8 10 11 15 17 ... (50 edits)    622           0      147                      147                    1
+50    1     0 2 6 7 11 12 13 14 ... (50 edits)    623           0      146                      146                   11
+50    2     0 5 6 7 11 12 13 14 ... (50 edits)    625           0      144                      144                    2
+   total: 0 violations in 10776 frame sequences over 15 revocation sets
+   other edit released, m=10 set=0: L:edit:rel:24 (edit/rel, own edit 24): before [24] -> after [9]
+   other edit released, m=10 set=0: L:edit:rel:63 (edit/rel, own edit 63): before [63] -> after [81]
+   other edit released, m=10 set=0: L:edit:igen:24 (edit/igen, own edit 24): before [24] -> after [9]
+   other edit released, m=10 set=0: L:edit:igen:63 (edit/igen, own edit 63): before [63] -> after [81]
+   other edit released, m=10 set=0: L:probe:image:151 (probe, own edit None): before [24] -> after [9]
+   other edit released, m=10 set=1: L:edit:rel:67 (edit/rel, own edit 67): before [67] -> after [92]
+   other edit released, m=10 set=1: L:edit:igen:67 (edit/igen, own edit 67): before [67] -> after [92]
+   other edit released, m=20 set=0: L:edit:rel:24 (edit/rel, own edit 24): before [24] -> after [9]
+   other edit released, m=20 set=0: L:edit:rel:82 (edit/rel, own edit 82): before [82] -> after [69]
+   other edit released, m=20 set=0: L:edit:igen:24 (edit/igen, own edit 24): before [24] -> after [9]
+   other edit released, m=20 set=0: L:edit:igen:82 (edit/igen, own edit 82): before [82] -> after [69]
+   other edit released, m=20 set=0: L:probe:image:151 (probe, own edit None): before [24] -> after [9]
+   other edit released, m=20 set=1: L:edit:rel:24 (edit/rel, own edit 24): before [24] -> after [9]
+   other edit released, m=20 set=1: L:edit:igen:24 (edit/igen, own edit 24): before [24] -> after [9]
+   other edit released, m=20 set=1: L:probe:image:151 (probe, own edit None): before [24] -> after [9]
+   other edit released, m=20 set=2: L:edit:rel:89 (edit/rel, own edit 89): before [89] -> after [28]
+   other edit released, m=20 set=2: L:edit:tgen:65 (edit/tgen, own edit 65): before [59] -> after [65]
+   other edit released, m=20 set=2: L:probe:image:30 (probe, own edit None): before [8] -> after [41]
+   other edit released, m=50 set=0: L:edit:tgen:78 (edit/tgen, own edit 78): before [73] -> after [78]
+   other edit released, m=50 set=1: L:edit:rel:24 (edit/rel, own edit 24): before [24] -> after [9]
+   other edit released, m=50 set=1: L:edit:rel:63 (edit/rel, own edit 63): before [63] -> after [81]
+   other edit released, m=50 set=1: L:edit:rel:67 (edit/rel, own edit 67): before [67] -> after [57]
+   other edit released, m=50 set=1: L:edit:rel:89 (edit/rel, own edit 89): before [89] -> after [28]
+   other edit released, m=50 set=1: L:edit:rel:98 (edit/rel, own edit 98): before [98] -> after [57]
+   other edit released, m=50 set=1: L:edit:tgen:78 (edit/tgen, own edit 78): before [73] -> after [78]
+   other edit released, m=50 set=1: L:edit:igen:24 (edit/igen, own edit 24): before [24] -> after [9]
+   other edit released, m=50 set=1: L:edit:igen:63 (edit/igen, own edit 63): before [63] -> after [81]
+   other edit released, m=50 set=1: L:edit:igen:67 (edit/igen, own edit 67): before [67] -> after [57]
+   other edit released, m=50 set=1: L:edit:igen:98 (edit/igen, own edit 98): before [98] -> after [57]
+   other edit released, m=50 set=1: L:probe:image:151 (probe, own edit None): before [24] -> after [9]
+   other edit released, m=50 set=2: L:edit:rel:89 (edit/rel, own edit 89): before [89] -> after [28]
+   other edit released, m=50 set=2: L:edit:tgen:65 (edit/tgen, own edit 65): before [59] -> after [65]
+
+(a') THE SAME IN DATABASE VOCABULARY.  Statements = logged edits; tuples = query answers (the kept edits' Rel / T-Gen / I-Gen sequences and the heldout_disjoint
+    probes); lineage of a tuple = the statements released on it under the scoped log before the deletion (Fire(q)); a linear log has no per-tuple lineage (every
+    statement contributes to every key), so the SAME tuple set is used for both logs: tuples on which no deleted statement is released.  'changed' = logits not
+    bit-identical | teacher-forced answer row changed (first mismatching token or token accuracy) | reported flag changed (exact / D1)
+log     statements deleted  tuples outside the lineage      changed: logits  changed: answer row        changed: flag  tuples inside the lineage  inside: logits changed
+------  ------------------  --------------------------  -------------------  -------------------  -------------------  -------------------------  ----------------------
+scoped                   1                       766.0                  0.0                  0.0                  0.0                        0.0                     0.0
+scoped                   5         751.0 (748.0-754.0)                  0.0                  0.0                  0.0              3.0 (0.0-6.0)           3.0 (0.0-6.0)
+scoped                  10         734.7 (734.0-736.0)                  0.0                  0.0                  0.0              4.3 (3.0-5.0)           4.3 (3.0-5.0)
+scoped                  20         701.0 (697.0-705.0)                  0.0                  0.0                  0.0             8.0 (4.0-12.0)          8.0 (4.0-12.0)
+scoped                  50         600.7 (599.0-602.0)                  0.0                  0.0                  0.0           18.3 (17.0-20.0)        18.3 (17.0-20.0)
+linear                   1                       766.0                766.0     27.0 (21.0-35.0)     13.7 (11.0-18.0)                        0.0                     0.0
+linear                   5         751.0 (748.0-754.0)  751.0 (748.0-754.0)     76.3 (64.0-84.0)     34.7 (29.0-38.0)              3.0 (0.0-6.0)           3.0 (0.0-6.0)
+linear                  10         734.7 (734.0-736.0)  734.7 (734.0-736.0)  113.0 (103.0-122.0)     50.0 (41.0-62.0)              4.3 (3.0-5.0)           4.3 (3.0-5.0)
+linear                  20         701.0 (697.0-705.0)  701.0 (697.0-705.0)  157.0 (154.0-160.0)     71.3 (71.0-72.0)             8.0 (4.0-12.0)          8.0 (4.0-12.0)
+linear                  50         600.7 (599.0-602.0)  600.7 (599.0-602.0)  203.3 (192.0-214.0)  115.0 (111.0-121.0)           18.3 (17.0-20.0)        18.3 (17.0-20.0)
+
+(b) LINEAGE.  Every heldout_disjoint probe and every valid near-scope negative on which the calibrated default method (draw 0) releases an edit: that edit is masked
+    and the row is run again; if another edit is released it is masked too, until nothing is released.  'pre-edit after 1' = rows whose logits are bit-identical to the
+    pre-edit model after masking the ONE released edit; 'another edit' = rows on which another edit is released instead (lineage size at least 2); 'masks needed' =
+    number of masked edits until nothing is released; 'gate n_cand' = number of candidate edits of the row at gate level (key cache)
+rows                      releasing  pre-edit after 1 (%)  another edit (%)  masks needed: mean  max    1 / 2 / 3 / 4+  = gate n_cand  final logits = pre-edit
+------------------------  ---------  --------------------  ----------------  ------------------  ---  ----------------  -------------  -----------------------
+heldout_disjoint probes          25                  92.0               8.0                1.08    2    23 / 2 / 0 / 0          25/25                    25/25
+HN-I                            154                  92.2               7.8                1.08    2  142 / 12 / 0 / 0        154/154                  154/154
+HN-Q                            271                  91.5               8.5                1.08    2  248 / 23 / 0 / 0        271/271                  271/271
+HN-X                             54                  88.9              11.1                1.11    2    48 / 6 / 0 / 0          54/54                    54/54
+all near-scope negatives        479                  91.4               8.6                1.09    2  438 / 41 / 0 / 0        479/479                  479/479
+all                             504                  91.5               8.5                1.09    2  461 / 43 / 0 / 0        504/504                  504/504
+   547 forwards in 2 rounds
+
+    LINEAR LOG, from existing records (read, not recomputed): number of edits k that a rollback removes for ONE complaint
+source                                            rule  complaints  resolved  k median  k mean  k min-max  k = 1  edits broken / repair
+----------------------  ------------------------------  ----------  --------  --------  ------  ---------  -----  ---------------------
+P12 text head-to-head   behavioural greedy (budget 20)          30        29       6.0    6.97       1-20      4                  15.40
+P12 text head-to-head   first-order greedy (budget 10)          30        19       8.0    6.90       1-10      2                  14.80
+rq1 (image complaints)  behavioural greedy (budget 20)          44        44       3.0    4.07       1-18     11                   8.16
+rq1 (image complaints)  first-order greedy (budget 10)          44        37       3.0    4.39       1-10      9                   9.05
+    layer-level optimum (E5, tolerance 0.1; 52 complaints, 0 certified): median optimum between 69.0 and 70.0 edits (certified cases: median None); best greedy rule median 71.0; lower bound of the proposition median 62.0 (min 24.0, max 73.0)
+    layer-level optimum (E5, tolerance 0.5; 52 complaints, 38 certified): median optimum between 21.0 and 21.5 edits (certified cases: median 18.0); best greedy rule median 22.0; lower bound of the proposition median 7.0 (min 1.0, max 15.0)
+    files: [redacted: local path]/02_research/experiments/08_rescope/p12_linear_streams/out/text_h2h/rows_TB-L100-ae-l2_3.jsonl (results: [redacted: local path]/02_research/experiments/08_rescope/p12_linear_streams/results.md, section 9); [redacted: local path]/02_research/experiments/07_repair_v3/rq1/rows/rows_TB-L100-ae-l2_3.jsonl (results: [redacted: local path]/02_research/experiments/07_repair_v3/rq1/results.md); [redacted: local path]/02_research/experiments/10_final/e5_linear/out/paper_numbers.json
+   job record, stages base: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 3812, 'rows': 3812} (hook_mismatch and memo conflicts must be 0); hashed forwards 3812
+   job record, stages m1: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 4614, 'rows': 4614} (hook_mismatch and memo conflicts must be 0); hashed forwards 4614
+   job record, stages m10: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 4614, 'rows': 4614} (hook_mismatch and memo conflicts must be 0); hashed forwards 4614
+   job record, stages m20: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 4614, 'rows': 4614} (hook_mismatch and memo conflicts must be 0); hashed forwards 4614
+   job record, stages m5: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 4614, 'rows': 4614} (hook_mismatch and memo conflicts must be 0); hashed forwards 4614
+   job record, stages m50: assert_clean {'hook_mismatch': 0, 'memo_conflicts': 0, 'forwards': 4614, 'rows': 4614} (hook_mismatch and memo conflicts must be 0); hashed forwards 4614

@@ -1,0 +1,67 @@
+{
+ "log": "TB-B500-ae",
+ "role": "stress",
+ "T": 500,
+ "seconds": {
+  "open": 0.2981579303741455,
+  "build_rescope": 1.0349364280700684,
+  "gate_level_pass": 1.063204288482666,
+  "second_draw_build_and_gate_pass": 0.10366344451904297,
+  "load_model": 33.541725397109985,
+  "behaviour_50_sequences": 4.748483657836914,
+  "behaviour_50_sequences_second_pass": 0.08626437187194824
+ },
+ "seconds_per_item": {
+  "forward_deployed_weight": 0.05467879772186279,
+  "forward_gate_role_last": 0.05932704925537109,
+  "forward_gate_role_all": 0.06830375194549561,
+  "decode_deployed_weight": 0.20798718929290771
+ },
+ "n_sequences": {
+  "edit": 1500,
+  "probe_heldout_disjoint": 469,
+  "hn_valid": 1256
+ },
+ "n_gate_rows": {
+  "probe": 985,
+  "edit": 1500,
+  "hn": 1256,
+  "benign": 3000
+ },
+ "n_behaviour_rows": 50,
+ "rows_complete": true,
+ "second_pass_equal": true,
+ "forwards": 50,
+ "sources_first_pass": {
+  "pre": 0,
+  "memo": 0,
+  "run": 50
+ },
+ "sources_second_pass": {
+  "pre": 0,
+  "memo": 50,
+  "run": 0
+ },
+ "hook_mismatch": 0,
+ "peak_rss_gb_before_model": 1.1897087097167969,
+ "peak_rss_gb": 15.585861206054688,
+ "peak_gpu_gb": 7.757046222686768,
+ "load_info": {
+  "lean": true,
+  "seconds": 33.295223236083984,
+  "peak_rss_gb_before": 1.1897087097167969,
+  "peak_rss_gb": 15.585861206054688,
+  "T": 500,
+  "reused_model_of": null
+ },
+ "lean": true,
+ "note": "mechanics only: no metric of this log is computed, stored or printed",
+ "ok": true,
+ "test": "mechanics",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "19507c0dc9d6",
+  "fx_version": "fx-1.0 (2026-11-11)"
+ },
+ "time": "2026-11-11 09:52:21"
+}

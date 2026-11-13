@@ -1,0 +1,212 @@
+{
+ "written": "2026-11-11 10:41:50 UTC",
+ "transformers": "4.23.1",
+ "T": {
+  "update": 97,
+  "request": "Corinne Calvet speaks the language -> Dutch",
+  "a_templates_from_edited_model_at_state": {
+   "templates_equal_builder": false,
+   "n_templates_equal_positionwise": 11,
+   "templates": [
+    "{}",
+    "In the first of. {}",
+    "The following is a. {}",
+    "I have been working. {}",
+    "A man was arrested. {}",
+    "The U.S. {}",
+    "I have been working. {}",
+    "I've been working. {}",
+    "\"I have no. {}",
+    "In this week's. {}",
+    "I've been working. {}",
+    "The U.S. government's National Institutes. {}",
+    "\"The best way to deal with people like. {}",
+    "A man in the US who had his genitals. {}",
+    "A new study from the National Institute on Drug. {}",
+    "In the past, it was easy to find. {}",
+    "I've never been one for the whole \". {}",
+    "I'm trying to get my hands on an. {}",
+    "The first thing that comes to mind when hearing. {}",
+    "The first-ever national study has found that. {}",
+    "A man was killed by police after he was. {}"
+   ],
+   "left_bitwise_equal_stored": false,
+   "right_bitwise_equal_stored": false,
+   "left_rel_l2_diff": 0.03805114815485663,
+   "right_rel_l2_diff": 0.2204829360974935,
+   "update_fro": 11.584417074351407,
+   "outer_product_rel_fro_diff": 0.2236546900794868
+  },
+  "b_templates_from_pre_edit_model": {
+   "templates_equal_builder": true,
+   "n_templates_equal_positionwise": 21,
+   "templates": [
+    "{}",
+    "In the last few. {}",
+    "The following is a. {}",
+    "I have been working. {}",
+    "A man was arrested. {}",
+    "The U.S. {}",
+    "I have been working. {}",
+    "I've been working. {}",
+    "\"I have to. {}",
+    "In this week's. {}",
+    "I've been working. {}",
+    "The U.S. government's National Ocean. {}",
+    "\"The best way to describe it would be. {}",
+    "A man in the US who has been living. {}",
+    "A new study has found a link between the. {}",
+    "In the past few decades, a growing number. {}",
+    "I've seen a lot of people complaining about. {}",
+    "I'm trying to get my hands on an. {}",
+    "The first thing that comes to mind when hearing. {}",
+    "The first day of the 2016 season has officially. {}",
+    "A man was killed when he was struck by. {}"
+   ],
+   "left_bitwise_equal_stored": true,
+   "right_bitwise_equal_stored": true,
+   "left_rel_l2_diff": 0.0,
+   "right_rel_l2_diff": 0.0,
+   "update_fro": 11.616571984990628,
+   "outer_product_rel_fro_diff": 0.0
+  }
+ },
+ "K": {
+  "n_heldout_prompts": 200,
+  "points": [
+   {
+    "n_requests": 100,
+    "weight_sha256": "9cc93368e5bf547279d97c090917e5975495d56e08e730376ad58fc7d99c135e",
+    "weight_sha256_builder": "9cc93368e5bf547279d97c090917e5975495d56e08e730376ad58fc7d99c135e",
+    "weight_equals_builder": true,
+    "W_minus_W0_fro": 117.07310378350778,
+    "audit_200_prompts": {
+     "D1_tf": 94.0,
+     "tok_loc": 69.45,
+     "first_token_changed": 34.0
+    },
+    "builder_3000_prompts": {
+     "D1_tf": 93.46666666666667,
+     "tok_loc": 69.84666770522793,
+     "first_token_changed": 33.233333333333334
+    },
+    "audit_first_100_requests_exact_pct": 97.0,
+    "builder_first100_public": {
+     "ES": 100.0,
+     "PS": 98.5,
+     "NS": 66.8
+    }
+   },
+   {
+    "n_requests": 150,
+    "weight_sha256": "f5b5075b17c08ca123998f95ab3c45cb24cff5f86d27c97a6bbafc4c35056b4f",
+    "weight_sha256_builder": "f5b5075b17c08ca123998f95ab3c45cb24cff5f86d27c97a6bbafc4c35056b4f",
+    "weight_equals_builder": true,
+    "W_minus_W0_fro": 154.1305355740157,
+    "audit_200_prompts": {
+     "D1_tf": 99.0,
+     "tok_loc": 57.8,
+     "first_token_changed": 45.5
+    },
+    "builder_3000_prompts": {
+     "D1_tf": 97.5,
+     "tok_loc": 59.49333418086171,
+     "first_token_changed": 43.5
+    },
+    "audit_first_100_requests_exact_pct": 95.0,
+    "builder_first100_public": {
+     "ES": 99.0,
+     "PS": 97.5,
+     "NS": 66.0
+    }
+   },
+   {
+    "n_requests": 173,
+    "weight_sha256": "3ccc6e1d620e8d7548ed18a5b3fc40cf492d6039d95668e9032d85e61661bbaf",
+    "weight_sha256_builder": "3ccc6e1d620e8d7548ed18a5b3fc40cf492d6039d95668e9032d85e61661bbaf",
+    "weight_equals_builder": true,
+    "W_minus_W0_fro": 168.6311319995909,
+    "audit_200_prompts": {
+     "D1_tf": 99.0,
+     "tok_loc": 54.949999999999996,
+     "first_token_changed": 53.0
+    },
+    "builder_3000_prompts": {
+     "D1_tf": 98.36666666666666,
+     "tok_loc": 56.62666744813323,
+     "first_token_changed": 47.93333333333333
+    },
+    "audit_first_100_requests_exact_pct": 94.0,
+    "builder_first100_public": {
+     "ES": 99.0,
+     "PS": 97.0,
+     "NS": 63.2
+    },
+    "public_test_records_0_99": {
+     "n_records_identical_to_builder_case_files": 100,
+     "audit": {
+      "ES": 99.0,
+      "PS": 97.0,
+      "NS": 63.2
+     }
+    }
+   },
+   {
+    "n_requests": 174,
+    "weight_sha256": "576e01a41e281193da9651fc7db18eec5894fa280226f23292180b7b90aeb10b",
+    "weight_sha256_builder": "576e01a41e281193da9651fc7db18eec5894fa280226f23292180b7b90aeb10b",
+    "weight_equals_builder": true,
+    "W_minus_W0_fro": 5905.778721034438,
+    "audit_200_prompts": {
+     "D1_tf": 100.0,
+     "tok_loc": 4.4,
+     "first_token_changed": 97.0
+    },
+    "builder_3000_prompts": {
+     "D1_tf": 100.0,
+     "tok_loc": 4.546666741867861,
+     "first_token_changed": 97.9
+    },
+    "audit_first_100_requests_exact_pct": 1.0,
+    "builder_first100_public": {
+     "ES": 51.0,
+     "PS": 56.0,
+     "NS": 50.1
+    },
+    "public_test_records_0_99": {
+     "n_records_identical_to_builder_case_files": 100,
+     "audit": {
+      "ES": 51.0,
+      "PS": 56.00000000000001,
+      "NS": 50.1
+     }
+    }
+   },
+   {
+    "n_requests": 200,
+    "weight_sha256": "fc70ad6b2f98836e09912c7ef058db02025f8e46756cda5709dafca1f4a81c27",
+    "weight_sha256_builder": "fc70ad6b2f98836e09912c7ef058db02025f8e46756cda5709dafca1f4a81c27",
+    "weight_equals_builder": true,
+    "W_minus_W0_fro": 5908.118889516858,
+    "audit_200_prompts": {
+     "D1_tf": 100.0,
+     "tok_loc": 4.3500000000000005,
+     "first_token_changed": 97.0
+    },
+    "builder_3000_prompts": {
+     "D1_tf": 100.0,
+     "tok_loc": 4.596666741619507,
+     "first_token_changed": 97.73333333333333
+    },
+    "audit_first_100_requests_exact_pct": 1.0,
+    "builder_first100_public": {
+     "ES": 53.0,
+     "PS": 56.5,
+     "NS": 49.7
+    }
+   }
+  ]
+ },
+ "peak_alloc_MiB": 9091.6064453125,
+ "finished": "2026-11-11 10:43:45 UTC"
+}

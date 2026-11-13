@@ -1,0 +1,247 @@
+{
+ "title": "Realised release rate over 500 calibration draws, per calibration -> test pair (Fig. fig:validity)",
+ "source": {
+  "files": [
+   "02_research/experiments/10_final/e5_rescope/out/paper_numbers.json"
+  ]
+ },
+ "level_pct": 5.0,
+ "panels": [
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "title": "Q-A100-r3",
+   "pairs": [
+    {
+     "pair": "repair_to_repair_rest",
+     "label": "benchmark, same pool",
+     "two_block": {
+      "mean": 5.150173010380623,
+      "p05": 1.7301038062283738,
+      "p95": 10.034602076124568
+     },
+     "pac": {
+      "mean": 2.039446366782007,
+      "p05": 0.0,
+      "p95": 5.190311418685121
+     }
+    },
+    {
+     "pair": "ben_s_to_ben_s_rest",
+     "label": "benign, same pool",
+     "two_block": {
+      "mean": 5.139574468085106,
+      "p05": 1.872340425531915,
+      "p95": 9.45106382978723
+     },
+     "pac": {
+      "mean": 2.0983829787234045,
+      "p05": 0.2553191489361702,
+      "p95": 5.191489361702128
+     }
+    },
+    {
+     "pair": "mme_c_to_mme_c_rest",
+     "label": "other workload, same pool",
+     "two_block": {
+      "mean": 4.972874493927126,
+      "p05": 2.0242914979757085,
+      "p95": 9.109311740890687
+     },
+     "pac": {
+      "mean": 1.9186234817813765,
+      "p05": 0.30364372469635625,
+      "p95": 4.4534412955465585
+     }
+    },
+    {
+     "pair": "repair_to_heldout",
+     "label": "benchmark to Held-out",
+     "two_block": {
+      "mean": 4.586236559139786,
+      "p05": 1.935483870967742,
+      "p95": 7.526881720430108
+     },
+     "pac": {
+      "mean": 1.769462365591398,
+      "p05": 0.0,
+      "p95": 4.301075268817205
+     }
+    },
+    {
+     "pair": "repair_to_ben_t",
+     "label": "benchmark to benign",
+     "two_block": {
+      "mean": 2.5254098360655735,
+      "p05": 1.2295081967213115,
+      "p95": 4.371584699453552
+     },
+     "pac": {
+      "mean": 1.0806010928961751,
+      "p05": 0.1366120218579235,
+      "p95": 2.3224043715846996
+     }
+    },
+    {
+     "pair": "ben_s_to_heldout",
+     "label": "benign to Held-out",
+     "two_block": {
+      "mean": 4.539784946236559,
+      "p05": 1.7096774193548394,
+      "p95": 8.182795698924721
+     },
+     "pac": {
+      "mean": 1.7961290322580643,
+      "p05": 0.0,
+      "p95": 4.516129032258064
+     }
+    },
+    {
+     "pair": "repair_to_mme_t",
+     "label": "benchmark to other workload",
+     "two_block": {
+      "mean": 6.083811129848229,
+      "p05": 0.0,
+      "p95": 24.371838111298477
+     },
+     "pac": {
+      "mean": 0.433389544688027,
+      "p05": 0.0,
+      "p95": 2.027824620573352
+     }
+    },
+    {
+     "pair": "ben_s_to_mme_t",
+     "label": "benign to other workload",
+     "two_block": {
+      "mean": 7.884822934232716,
+      "p05": 0.0,
+      "p95": 38.621416526138276
+     },
+     "pac": {
+      "mean": 0.5436762225969647,
+      "p05": 0.0,
+      "p95": 2.360876897133221
+     }
+    }
+   ]
+  },
+  {
+   "log": "TB-L100-ae-l2_3",
+   "title": "L-A100-r3",
+   "pairs": [
+    {
+     "pair": "repair_to_repair_rest",
+     "label": "benchmark, same pool",
+     "two_block": {
+      "mean": 4.893197278911565,
+      "p05": 1.3605442176870748,
+      "p95": 9.523809523809524
+     },
+     "pac": {
+      "mean": 1.9877551020408164,
+      "p05": 0.0,
+      "p95": 5.459183673469372
+     }
+    },
+    {
+     "pair": "ben_s_to_ben_s_rest",
+     "label": "benign, same pool",
+     "two_block": {
+      "mean": 4.837446808510638,
+      "p05": 1.6170212765957446,
+      "p95": 8.851063829787234
+     },
+     "pac": {
+      "mean": 1.8817021276595742,
+      "p05": 0.2553191489361702,
+      "p95": 4.340425531914894
+     }
+    },
+    {
+     "pair": "mme_c_to_mme_c_rest",
+     "label": "other workload, same pool",
+     "two_block": {
+      "mean": 4.763765182186234,
+      "p05": 1.8218623481781375,
+      "p95": 8.810728744939267
+     },
+     "pac": {
+      "mean": 1.8971659919028339,
+      "p05": 0.30364372469635625,
+      "p95": 4.357287449392708
+     }
+    },
+    {
+     "pair": "repair_to_heldout",
+     "label": "benchmark to Held-out",
+     "two_block": {
+      "mean": 3.002985074626866,
+      "p05": 0.42643923240938164,
+      "p95": 7.675906183368871
+     },
+     "pac": {
+      "mean": 0.6336886993603411,
+      "p05": 0.0,
+      "p95": 2.345415778251599
+     }
+    },
+    {
+     "pair": "repair_to_ben_t",
+     "label": "benchmark to benign",
+     "two_block": {
+      "mean": 3.375,
+      "p05": 0.9408602150537635,
+      "p95": 7.795698924731183
+     },
+     "pac": {
+      "mean": 0.9244623655913979,
+      "p05": 0.0,
+      "p95": 2.829301075268811
+     }
+    },
+    {
+     "pair": "ben_s_to_heldout",
+     "label": "benign to Held-out",
+     "two_block": {
+      "mean": 3.3292110874200427,
+      "p05": 0.6396588486140725,
+      "p95": 7.675906183368871
+     },
+     "pac": {
+      "mean": 0.9134328358208954,
+      "p05": 0.21321961620469082,
+      "p95": 2.9850746268656714
+     }
+    },
+    {
+     "pair": "repair_to_mme_t",
+     "label": "benchmark to other workload",
+     "two_block": {
+      "mean": 1.7284991568296795,
+      "p05": 0.0,
+      "p95": 5.236087689713314
+     },
+     "pac": {
+      "mean": 0.2099494097807757,
+      "p05": 0.0,
+      "p95": 1.1003372681281582
+     }
+    },
+    {
+     "pair": "ben_s_to_mme_t",
+     "label": "benign to other workload",
+     "two_block": {
+      "mean": 2.280775716694772,
+      "p05": 0.0,
+      "p95": 9.654300168634025
+     },
+     "pac": {
+      "mean": 0.3021922428330523,
+      "p05": 0.0,
+      "p95": 1.433389544688027
+     }
+    }
+   ]
+  }
+ ]
+}

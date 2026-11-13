@@ -1,0 +1,311 @@
+{
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "x_without_recombination_equals_gate": {
+    "rescope": true,
+    "rescope_null": true,
+    "rescope_nullW": true,
+    "cosine": true,
+    "ball": true,
+    "cos_centred": true,
+    "cos_null": true,
+    "white_0.01": true,
+    "white_0.1": true,
+    "white_1": true,
+    "whitecos_0.01": true,
+    "whitecos_0.1": true,
+    "whitecos_1": true
+   },
+   "rowset": {
+    "n_rows": 35,
+    "labels_ok": true,
+    "stage1_rows_same_content": true,
+    "same_calibration_rows": true,
+    "n_calibrated": 26,
+    "with_gate_level": true,
+    "other_draw_changes_calibrated_rows_only": true,
+    "n_rows_changed_by_the_draw": 25,
+    "digests_distinct": true,
+    "capped": {
+     "rescope": 0,
+     "rescope_shared": 0,
+     "rescope_null": 0,
+     "cosine": 9,
+     "cosine_shared": 0,
+     "ball": 0,
+     "cos_centred": 10,
+     "cos_centred_shared": 0,
+     "cos_null": 0,
+     "cos_null_shared": 0,
+     "white_0.01": 0,
+     "white_0.01_shared": 0,
+     "white_0.1": 0,
+     "white_0.1_shared": 0,
+     "white_1": 0,
+     "white_1_shared": 0,
+     "whitecos_0.01": 0,
+     "whitecos_0.01_shared": 0,
+     "whitecos_0.1": 0,
+     "whitecos_0.1_shared": 0,
+     "whitecos_1": 0,
+     "whitecos_1_shared": 0,
+     "rescope_x": 0,
+     "retr_conj": 59,
+     "retr_sum": 0,
+     "retr_min": 45
+    }
+   },
+   "pools": {
+    "BEN-T": {
+     "whitecos_0.1": 1025,
+     "retr_sum": 1025,
+     "retr_conj": 1025,
+     "lookup": 1025
+    },
+    "MME-T_scoped_n": 1186,
+    "MME-T_retrieval_not_defined": [
+     true,
+     true,
+     true
+    ],
+    "BEN-T_calibration_refused": true
+   },
+   "switches": {
+    "allow_silence": [
+     0,
+     0,
+     0
+    ],
+    "qdisjoint": [
+     "mask=qdisjoint",
+     "mask=qdisjoint",
+     "mask=qdisjoint,x=external"
+    ],
+    "BEN-S": [
+     "BEN-S",
+     "BEN-S"
+    ],
+    "MME-C_scoped": "MME-C",
+    "MME-C_retrieval_not_defined": true,
+    "null_sample_sharing_a_query_refused": true,
+    "unknown_switch_raises": true
+   },
+   "digests": {
+    "same_build_same_digest": true,
+    "request_digests_distinct": true,
+    "dedupe": true,
+    "mask_edits_refused": true,
+    "unthresholded": true
+   },
+   "ok": true
+  },
+  "TB-L100-ae-l2_3": {
+   "x_without_recombination_equals_gate": {
+    "rescope": true,
+    "rescope_null": true,
+    "rescope_nullW": true,
+    "cosine": true,
+    "ball": true,
+    "cos_centred": true,
+    "cos_null": true,
+    "white_0.01": true,
+    "white_0.1": true,
+    "white_1": true,
+    "whitecos_0.01": true,
+    "whitecos_0.1": true,
+    "whitecos_1": true
+   },
+   "rowset": {
+    "n_rows": 35,
+    "labels_ok": true,
+    "stage1_rows_same_content": true,
+    "same_calibration_rows": true,
+    "n_calibrated": 26,
+    "with_gate_level": true,
+    "other_draw_changes_calibrated_rows_only": true,
+    "n_rows_changed_by_the_draw": 26,
+    "digests_distinct": true,
+    "capped": {
+     "rescope": 0,
+     "rescope_shared": 0,
+     "rescope_null": 0,
+     "cosine": 31,
+     "cosine_shared": 0,
+     "ball": 0,
+     "cos_centred": 28,
+     "cos_centred_shared": 0,
+     "cos_null": 8,
+     "cos_null_shared": 0,
+     "white_0.01": 1,
+     "white_0.01_shared": 0,
+     "white_0.1": 1,
+     "white_0.1_shared": 0,
+     "white_1": 1,
+     "white_1_shared": 0,
+     "whitecos_0.01": 0,
+     "whitecos_0.01_shared": 0,
+     "whitecos_0.1": 0,
+     "whitecos_0.1_shared": 0,
+     "whitecos_1": 0,
+     "whitecos_1_shared": 0,
+     "rescope_x": 0,
+     "retr_conj": 58,
+     "retr_sum": 0,
+     "retr_min": 44
+    }
+   },
+   "pools": {
+    "BEN-T": {
+     "whitecos_0.1": 1025,
+     "retr_sum": 1025,
+     "retr_conj": 1025,
+     "lookup": 1025
+    },
+    "MME-T_scoped_n": 1186,
+    "MME-T_retrieval_not_defined": [
+     true,
+     true,
+     true
+    ],
+    "BEN-T_calibration_refused": true
+   },
+   "switches": {
+    "allow_silence": [
+     0,
+     0,
+     0
+    ],
+    "qdisjoint": [
+     "mask=qdisjoint",
+     "mask=qdisjoint",
+     "mask=qdisjoint,x=external"
+    ],
+    "BEN-S": [
+     "BEN-S",
+     "BEN-S"
+    ],
+    "MME-C_scoped": "MME-C",
+    "MME-C_retrieval_not_defined": true,
+    "null_sample_sharing_a_query_refused": true,
+    "unknown_switch_raises": true
+   },
+   "digests": {
+    "same_build_same_digest": true,
+    "request_digests_distinct": true,
+    "dedupe": true,
+    "mask_edits_refused": true,
+    "unthresholded": true
+   },
+   "ok": true
+  }
+ },
+ "validity": {
+  "retr_sum": {
+   "trials": 600,
+   "n": 200,
+   "n_test": 300,
+   "T": 30,
+   "alpha": 0.05,
+   "bound": 0.04950495049504951,
+   "mean_rate": 0.04986666666666667,
+   "se": 0.0010404993830743958,
+   "share_of_trials_above_alpha": 0.3983333333333333,
+   "ok": true
+  },
+  "retr_min": {
+   "trials": 600,
+   "n": 200,
+   "n_test": 300,
+   "T": 30,
+   "alpha": 0.05,
+   "bound": 0.04950495049504951,
+   "mean_rate": 0.04961111111111111,
+   "se": 0.0010484142736189594,
+   "share_of_trials_above_alpha": 0.4,
+   "mean_rate_with_statistics_from_both_blocks": 0.048405555555555556,
+   "ok": true
+  }
+ },
+ "selection": {
+  "missing_file_raises": true,
+  "real_file_exists_now": false,
+  "complete": true,
+  "partial_or_invalid_raise": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ]
+ },
+ "not_defined": {
+  "TB-Q100-mmke-l2_3": {
+   "cos_centred": true,
+   "white_0.1": true,
+   "whitecos_1_shared": true,
+   "rescope_nullW": true,
+   "cos_null": false,
+   "retr_conj": false,
+   "retr_sum": false,
+   "retr_min": false,
+   "lookup": false,
+   "rescope_x": true,
+   "cosine_x": true,
+   "build_raises_NotDefined": true,
+   "rowset_marks_not_defined": true
+  },
+  "TB-Q100-onehop-l2_3": {
+   "cos_centred": true,
+   "white_0.1": true,
+   "whitecos_1_shared": true,
+   "rescope_nullW": true,
+   "cos_null": false,
+   "retr_conj": true,
+   "retr_sum": true,
+   "retr_min": true,
+   "lookup": true,
+   "rescope_x": true,
+   "cosine_x": true,
+   "build_raises_NotDefined": true,
+   "rowset_marks_not_defined": true
+  },
+  "TB-B100-ae": {
+   "cos_centred": true,
+   "white_0.1": true,
+   "whitecos_1_shared": true,
+   "rescope_nullW": true,
+   "cos_null": false,
+   "retr_conj": true,
+   "retr_sum": true,
+   "retr_min": true,
+   "lookup": true,
+   "rescope_x": true,
+   "cosine_x": true,
+   "build_raises_NotDefined": true,
+   "rowset_marks_not_defined": true
+  },
+  "always": {
+   "retr_sum_x": true,
+   "retr_conj_x": true,
+   "lookup_x": true,
+   "cosine_shared_x": true,
+   "white_0.1_shared_x": true
+  },
+  "unknown": [
+   true,
+   true,
+   true,
+   true
+  ]
+ },
+ "ok": true,
+ "test": "rules",
+ "seconds": 20.8598051071167,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:12:32"
+}

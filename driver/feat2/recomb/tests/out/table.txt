@@ -1,0 +1,53 @@
+TESTS of feat2/recomb (python tests/run_tests.py; details: tests/out/<group>.json, logs: tests/out/*.log)
+  select: 20/20 passed (2026-11-11 07:43:44); core: 7/7 passed (2026-11-11 07:41:55); real: 16/16 passed (2026-11-11 07:43:17); store: 3/3 passed (2026-11-11 07:42:13)
+
+== core: 7 of 7 passed (5 s)
+   [ok] a1_without_recombinations_identical_to_library: {"n_comparisons_bitwise_identical": 432, "capped_edits_seen_in_total": 1080}
+   [ok] a2_with_recombinations_reference: {"n": 72, "n_raised": 1470}
+   [ok] a3_strict_event_on_block2: {"block2_queries_with_a_candidate": [4, 4, 4, 4, 4, 4, 4, 4, 4], "n2_minus_rank": 4, "n_allowed_of_n2_plus_1": 5}
+   [ok] a4_bound_holds: {"none": {"mean_false_firing": 0.0986, "se": 0.0024, "bound": 0.0976}, "own_rows(large)": {"mean_false_firing": 0.0979, "se": 0.0024, "bound": 0.0976}, "small": {"mean_false_firing": 0.0983, "se": 0.0024, "bound": 0.0976}, "mixed": {"mean_false_firing": 0.0987, "se": 0.0026, "bound": 0.0976}}
+   [ok] a5_record_and_validation: {"record_fields_ok": true, "invalid_inputs_refused": 6}
+   [ok] a6_own_scores: {"n_rows": 480, "max_abs_dev_from_direct_formula": 0.0, "variants_bitwise": ["feature name", "gate", "plain gate", "callable", "matrix"], "x_min_median_max": [1.0428871979106475, 1.1345550603119459, 1.312109604641999], "decide_rows_eta": -0.6074376039291618, "decide_rows_fired": 480}
+   [ok] a7_rows_of_a_log: {"usable_rows_T30": {"X-I": 120, "X-Q": 120, "X-X": 79}, "foreign_logs_refused": 4}
+== store: 3 of 3 passed (18 s)
+   [ok] s1_parts_resumable: {"parts": ["part_0000.pt", "part_0001.pt", "part_0002.pt", "part_0003.pt", "part_0004.pt"], "rows": 900}
+   [ok] s2_assembly_deterministic: {"keys_md5": "c5e415ee3e24c8f39ee8b8eb71a1549b", "n_rows": 900}
+   [ok] s3_refusals: {"refused": ["no --out", "part of another rows.jsonl", "missing part"], "published_directory_untouched": true}
+== real: 16 of 16 passed (64 s)
+   [ok] r1_store[qwen25vl]: {"dir": "[redacted: local path]/02_research/experiments/10_final/cache2/recomb/qwen25vl", "backbone": "qwen25vl", "family": "Q", "layer": 20, "T_stream": 2000, "n_rows": 24000, "d": 11008, "n_by_kind": {"X-I": 8000, "X-Q": 8000, "X-X": 8000}, "rows_sha256": "59a5a489767f0bcd23b1e394b89b8d90f2771de65202df18c8f301ac5194f8f7", "keys_md5": "918b044f90ba2035b3bf61a3a1d99bc4", "capture_verified_bitwise": true
+   [ok] r2_logs_served[qwen25vl]: {"served": {"TB-Q100-ae-l2_3": 1200, "TB-Q100-ae": 1200, "TB-Q100-ae-l2_1": 1200, "TB-Q200-ae-l2_3": 2400, "TB-Q500-ae-l2_3": 6000, "TB-Q100-memitw": 1200, "TB-Q200-memitw": 2400, "TB-Q500-memitw": 6000, "TB-Q1000-memitw": 12000, "TB-Q2000-memitw": 24000, "TB-Q1000-ae-l2_3": 12000, "TB-Q2000-ae-l2_3": 24000}, "refused": ["TB-Q100-mmke-l2_3", "TB-Q100-onehop-l2_3", "TB-Q500-ae", "TB-Q500-mmke-l2_3", "TB-Q500-onehop-l2
+   [ok] r3_baseline_dev[qwen25vl]: {"n_rows": 1200, "max_abs_dev_from_direct_formula": 4.440892098500626e-16, "x_min_median_max": [0.15513262979040823, 0.4874679826509633, 0.9202621128527848], "x_sha1": "b1722db2df13", "x_sha1_in_fresh_processes_with_1_3_8_threads": {"1": "b1722db2df13", "3": "b1722db2df13", "8": "b1722db2df13"}}
+   [ok] r4_without_equals_driver[qwen25vl]: {"n_methods_bitwise_identical_to_the_driver": 12}
+   [ok] r5_with_dev[qwen25vl]: {"draw0": {"eta": -0.01119613003337383, "n_capped": 0, "n_baselines_raised": 98, "own_candidates_on_own_rows": 103, "key": "51646e9f8162"}, "draw1": {"eta": -0.04173583474296458, "n_capped": 0, "n_baselines_raised": 99, "own_candidates_on_own_rows": 141, "key": "363144d5356c"}}
+   [ok] r6_cosine_x_dev[qwen25vl]: {"x_min_median_max": [0.7980519651575682, 0.9092356064812557, 0.9923330151822377], "n_baselines_raised": 88, "n_capped": 13}
+   [ok] r7_scale_synthetic_detectors[qwen25vl]: {"T": 2000, "n_rows": 24000, "own_baseline_seconds": 16.0, "calibrate_seconds": 4.2, "peak_rss_gb": 2.39, "threads": 4}
+   [ok] r8_score_functions_of_package_white[qwen25vl]: {"cos_centred": {"x_min_median_max": [0.6389561623517526, 0.8182720216955949, 0.9841594842973441], "max_dev_gate_vs_builder": 0.0, "n_baselines_raised": 89, "gate_class": "TCosLog"}, "whitecos_0.1": {"x_min_median_max": [0.13441443855751573, 0.4483546426685303, 0.9331600377012794], "max_dev_gate_vs_builder": 0.0, "n_baselines_raised": 97, "gate_class": "TCosLog"}, "white_0.1": {"x_min_median_max": [0.2274292189589849
+   [ok] r1_store[llava]: {"dir": "[redacted: local path]/02_research/experiments/10_final/cache2/recomb/llava", "backbone": "llava", "family": "L", "layer": 16, "T_stream": 1000, "n_rows": 12000, "d": 11008, "n_by_kind": {"X-I": 4000, "X-Q": 4000, "X-X": 4000}, "rows_sha256": "f06e1856f9ad544cc0e8cfb142eb393c7f32794d827de9efc2dd3f8e19b33d07", "keys_md5": "4bbc8dd943431eb29293a5d116d84637", "capture_verified_bitwise": true, "rec
+   [ok] r2_logs_served[llava]: {"served": {"TB-L100-ae-l2_3": 1200, "TB-L100-ae": 1200, "TB-L200-ae-l2_3": 2400, "TB-L500-ae-l2_3": 6000, "TB-L100-memitw": 1200, "TB-L200-memitw": 2400, "TB-L500-memitw": 6000, "TB-L1000-memitw": 12000, "TB-L1000-ae-l2_3": 12000}, "refused": []}
+   [ok] r3_baseline_dev[llava]: {"n_rows": 1200, "max_abs_dev_from_direct_formula": 4.440892098500626e-16, "x_min_median_max": [0.06782866602541508, 0.5481118662563993, 0.9895284225502666], "x_sha1": "5951f33cd5cc", "x_sha1_in_fresh_processes_with_1_3_8_threads": {"1": "5951f33cd5cc", "3": "5951f33cd5cc", "8": "5951f33cd5cc"}}
+   [ok] r4_without_equals_driver[llava]: {"n_methods_bitwise_identical_to_the_driver": 12}
+   [ok] r5_with_dev[llava]: {"draw0": {"eta": 0.0023765889643545535, "n_capped": 0, "n_baselines_raised": 93, "own_candidates_on_own_rows": 0, "key": "3a9ae73676ff"}, "draw1": {"eta": 0.025299060150580366, "n_capped": 1, "n_baselines_raised": 97, "own_candidates_on_own_rows": 0, "key": "a50e844c17ba"}}
+   [ok] r6_cosine_x_dev[llava]: {"x_min_median_max": [0.37820246574111727, 0.9239889159218644, 0.9938710533675839], "n_baselines_raised": 85, "n_capped": 36}
+   [ok] r7_scale_synthetic_detectors[llava]: {"T": 1000, "n_rows": 12000, "own_baseline_seconds": 4.5, "calibrate_seconds": 1.0, "peak_rss_gb": 3.01, "threads": 4}
+   [ok] r8_score_functions_of_package_white[llava]: {"cos_centred": {"x_min_median_max": [0.3186596517863172, 0.8801899268275284, 0.9920862094209664], "max_dev_gate_vs_builder": 0.0, "n_baselines_raised": 84, "gate_class": "TCosLog"}, "whitecos_0.1": {"x_min_median_max": [0.07584678806436303, 0.6228554036701736, 0.9587112491225188], "max_dev_gate_vs_builder": 0.0, "n_baselines_raised": 95, "gate_class": "TCosLog"}, "white_0.1": {"x_min_median_max": [0.0351167455333427
+== select: 20 of 20 passed (26 s)
+   [ok] reproduced_byte_for_byte[qwen25vl]: {"rows_sha256": "59a5a489767f0bcd23b1e394b89b8d90f2771de65202df18c8f301ac5194f8f7", "bytes": 23179328}
+   [ok] caches_compared(information)[qwen25vl]: {"caches_present": ["QO", "blip2", "llava", "qwen25vl"], "caches_of_the_selection": ["qwen25vl", "llava", "QO", "blip2"], "caches_that_appeared_after_the_selection": []}
+   [ok] image_md5_recomputed_from_files[qwen25vl]: {"n_image_files": 10491, "n_distinct_contents": 10186, "n_differing": 0, "recomputed": false, "seconds": 0.1}
+   [ok] disjoint_from_every_test_query[qwen25vl]: {"n_recombination_rows": 24000, "n_test_rows_with_an_image": 42400, "n_distinct_test_queries_exact": 17238, "n_distinct_test_queries_normalised": 17238, "n_rows_equal_to_a_test_query_exact": 0, "n_rows_equal_to_a_test_query_normalised": 0}
+   [ok] text_queries_of_the_caches_have_no_image(information)[qwen25vl]: {"n_distinct_text_queries": 2689}
+   [ok] source_pool_recomputed[qwen25vl]: {"n_items": 1051, "n_sources_of_new_hard_negatives": 725, "all_in_pool": true}
+   [ok] rules[qwen25vl]: {"n_rows": 24000, "n_edits": 2000, "violations": {}, "first_examples": {}}
+   [ok] query_ids[qwen25vl]: {"n_distinct_queries": 23762, "n_rows_in_duplicate_groups": 456, "duplicate_groups_by_kinds": {"X-Q": 218}, "duplicates_are_between_different_edits_only": true}
+   [ok] solver_batches_are_position_decades[qwen25vl]: {"master_log": "TB-Q2000-ae-l2_3", "n_batches": 200}
+   [ok] rows_usable_by_log_length[qwen25vl]: {}
+   [ok] reproduced_byte_for_byte[llava]: {"rows_sha256": "f06e1856f9ad544cc0e8cfb142eb393c7f32794d827de9efc2dd3f8e19b33d07", "bytes": 11573477}
+   [ok] caches_compared(information)[llava]: {"caches_present": ["QO", "blip2", "llava", "qwen25vl"], "caches_of_the_selection": ["qwen25vl", "llava", "QO", "blip2"], "caches_that_appeared_after_the_selection": []}
+   [ok] image_md5_recomputed_from_files[llava]: {"n_image_files": 10487, "n_distinct_contents": 10182, "n_differing": 0, "recomputed": false, "seconds": 0.0}
+   [ok] disjoint_from_every_test_query[llava]: {"n_recombination_rows": 12000, "n_test_rows_with_an_image": 39400, "n_distinct_test_queries_exact": 17238, "n_distinct_test_queries_normalised": 17238, "n_rows_equal_to_a_test_query_exact": 0, "n_rows_equal_to_a_test_query_normalised": 0}
+   [ok] text_queries_of_the_caches_have_no_image(information)[llava]: {"n_distinct_text_queries": 2689}
+   [ok] source_pool_recomputed[llava]: {"n_items": 1051, "n_sources_of_new_hard_negatives": 718, "all_in_pool": true}
+   [ok] rules[llava]: {"n_rows": 12000, "n_edits": 1000, "violations": {}, "first_examples": {}}
+   [ok] query_ids[llava]: {"n_distinct_queries": 11942, "n_rows_in_duplicate_groups": 116, "duplicate_groups_by_kinds": {"X-Q": 58}, "duplicates_are_between_different_edits_only": true}
+   [ok] solver_batches_are_position_decades[llava]: {"master_log": "TB-L1000-ae-l2_3", "n_batches": 100}
+   [ok] rows_usable_by_log_length[llava]: {}

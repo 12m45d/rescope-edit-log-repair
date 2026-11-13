@@ -1,0 +1,42 @@
+{
+ "pass": true,
+ "per_log": {
+  "TB-Q100-ae-l2_3": {
+   "same_library_version_as_e0": true,
+   "calibration_queries_equal": true,
+   "rows_compared": 2232,
+   "rows_here": 2232,
+   "thresholds_bitwise_equal": true,
+   "rows_with_other_decision": 0,
+   "table_draw0_equal": true,
+   "table_20_draw_cells_equal": "44 of 44",
+   "driver_imported": true,
+   "driver_thresholds_bitwise_equal": true,
+   "driver_gate_level_identical": "10 of 10"
+  },
+  "TB-L100-ae-l2_3": {
+   "same_library_version_as_e0": true,
+   "calibration_queries_equal": true,
+   "rows_compared": 2249,
+   "rows_here": 2249,
+   "thresholds_bitwise_equal": true,
+   "rows_with_other_decision": 0,
+   "table_draw0_equal": true,
+   "table_20_draw_cells_equal": "44 of 44",
+   "driver_imported": true,
+   "driver_thresholds_bitwise_equal": true,
+   "driver_gate_level_identical": "10 of 10"
+  }
+ },
+ "note": "both logs, draw 0: thresholds of rescope / cosine x two-block / shared bitwise equal to e0's, 0 of 2232 (Qwen) rows decided otherwise, eta / capped of e0's table equal, 20-draw cells 44 of 44 (Qwen) and 44 of 44 (LLaVA) reproduced; driver rows bitwise equal; fx.gate.decide == KeyCache.decide for the new gates: True",
+ "test": "m1_agrees_with_e0_and_driver",
+ "group": "mechanics",
+ "what": "the registered rows of the mechanics check agree with the sanity experiment e0 (per-row file, table.txt) and with the shared driver's rows",
+ "seconds": 0.006117343902587891,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

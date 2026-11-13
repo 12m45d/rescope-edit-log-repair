@@ -1,0 +1,64 @@
+{
+ "pass": true,
+ "per_gate": {
+  "cos_centred": {
+   "n_fired": 8,
+   "n_silent": 4,
+   "bad": 0,
+   "weight_restored": true
+  },
+  "cos_null": {
+   "n_fired": 8,
+   "n_silent": 4,
+   "bad": 0,
+   "weight_restored": true
+  },
+  "white_0.01": {
+   "n_fired": 8,
+   "n_silent": 4,
+   "bad": 0,
+   "weight_restored": true
+  },
+  "white_0.1": {
+   "n_fired": 8,
+   "n_silent": 4,
+   "bad": 0,
+   "weight_restored": true
+  },
+  "white_1": {
+   "n_fired": 8,
+   "n_silent": 4,
+   "bad": 0,
+   "weight_restored": true
+  },
+  "whitecos_0.01": {
+   "n_fired": 8,
+   "n_silent": 4,
+   "bad": 0,
+   "weight_restored": true
+  },
+  "whitecos_0.1": {
+   "n_fired": 8,
+   "n_silent": 4,
+   "bad": 0,
+   "weight_restored": true
+  },
+  "whitecos_1": {
+   "n_fired": 8,
+   "n_silent": 4,
+   "bad": 0,
+   "weight_restored": true
+  }
+ },
+ "note": "8 gates x 12 sequences on a synthetic log: hook firing / releasing edit == the gate's scores, output == W_0 k + v_e bit for bit, silent sequences untouched, a later position with another edit's key ignored: True",
+ "test": "c8_hook_cpu",
+ "group": "scores",
+ "what": "the forward hook (rescope.Hook on a linear module, CPU) with every new gate: firing, releasing edit and output W_0 k + v_e as the gate's scores say; silent sequences untouched",
+ "seconds": 0.05693864822387695,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

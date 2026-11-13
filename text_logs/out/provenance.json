@@ -1,0 +1,488 @@
+{
+ "written": "2026-11-11 09:20:54 UTC",
+ "rome_repo": {
+  "url": "https://github.com/kmeng01/rome",
+  "path": "[redacted: local path]/02_research/ext/third_party/rome",
+  "commit": "0874014cd9837e4365f3e6f3c71400ef11509e04",
+  "commit_date": "2022-10-14 05:16:00 -0400",
+  "commit_subject": "Update README.md",
+  "shallow_clone": true,
+  "working_tree_clean": true,
+  "status_porcelain": "",
+  "commit_archive": {
+   "file": "[redacted: local path]/02_research/ext/third_party/_tarballs/rome-0874014cd9837e4365f3e6f3c71400ef11509e04.tar.gz",
+   "sha256": "93784cd2f616be4ae399751c1658e4c268722737dfc07beb7ecacd37b467a7ab",
+   "note": "archive of the same commit from codeload.github.com; `diff -r` against the clone: identical"
+  }
+ },
+ "memit_repo": {
+  "url": "https://github.com/kmeng01/memit",
+  "path": "[redacted: local path]/02_research/ext/third_party/memit",
+  "commit": "80426fd9316cf9a50c5ba15e0912f2c2c5bfe84b",
+  "commit_date": "2022-11-14 05:23:21 -0500",
+  "commit_subject": "Change sweep behavior: add max_records",
+  "shallow_clone": true,
+  "working_tree_clean": true,
+  "status_porcelain": "",
+  "commit_archive": {
+   "file": "[redacted: local path]/02_research/ext/third_party/_tarballs/memit-80426fd9316cf9a50c5ba15e0912f2c2c5bfe84b.tar.gz",
+   "sha256": "b9428dcb0777988a115233ed8782d884e1e1867f6dcd8856b2e347363e5c34c9",
+   "note": "archive of the same commit from codeload.github.com; `diff -r` against the clone: identical"
+  }
+ },
+ "rome_files_identical_in_memit_repo": {
+  "rome/rome_main.py": false,
+  "rome/compute_u.py": true,
+  "rome/compute_v.py": true,
+  "rome/repr_tools.py": false,
+  "rome/layer_stats.py": false,
+  "rome/tok_dataset.py": true,
+  "rome/rome_hparams.py": true,
+  "util/generate.py": true,
+  "util/nethook.py": true,
+  "util/runningstats.py": true,
+  "util/globals.py": false,
+  "util/hparams.py": true,
+  "hparams/ROME/gpt2-xl.json": true,
+  "dsets/counterfact.py": false,
+  "experiments/py/eval_utils_counterfact.py": false,
+  "experiments/summarize.py": false,
+  "globals.yml": false
+ },
+ "hparams": {
+  "file": "[redacted: local path]/02_research/ext/third_party/rome/hparams/ROME/gpt2-xl.json",
+  "sha256": "81a98b788b8fbb89718288a8831441200e7d824fd057f62cb7d913ae4da5cf42",
+  "content": {
+   "layers": [
+    17
+   ],
+   "fact_token": "subject_last",
+   "v_num_grad_steps": 20,
+   "v_lr": 0.5,
+   "v_loss_layer": 47,
+   "v_weight_decay": 0.5,
+   "clamp_norm_factor": 4,
+   "kl_factor": 0.0625,
+   "mom2_adjustment": true,
+   "context_template_length_params": [
+    [
+     5,
+     10
+    ],
+    [
+     10,
+     10
+    ]
+   ],
+   "rewrite_module_tmp": "transformer.h.{}.mlp.c_proj",
+   "layer_module_tmp": "transformer.h.{}",
+   "mlp_module_tmp": "transformer.h.{}.mlp",
+   "attn_module_tmp": "transformer.h.{}.attn",
+   "ln_f_module": "transformer.ln_f",
+   "lm_head_module": "transformer.wte",
+   "mom2_dataset": "wikipedia",
+   "mom2_n_samples": 100000,
+   "mom2_dtype": "float32"
+  },
+  "tracked_file_unmodified": true
+ },
+ "model": {
+  "repo": "openai-community/gpt2-xl",
+  "revision": "15ea56dee5df4983c59b2538573817e1667135e2",
+  "endpoint": "https://hf-mirror.com",
+  "path": "[redacted: local path]/02_research/ext/models/gpt2-xl",
+  "files": {
+   "README.md": {
+    "size_expected": 11973,
+    "size_on_disk": 11973,
+    "lfs_sha256": null
+   },
+   "config.json": {
+    "size_expected": 689,
+    "size_on_disk": 689,
+    "lfs_sha256": null
+   },
+   "generation_config.json": {
+    "size_expected": 124,
+    "size_on_disk": 124,
+    "lfs_sha256": null
+   },
+   "merges.txt": {
+    "size_expected": 456318,
+    "size_on_disk": 456318,
+    "lfs_sha256": null
+   },
+   "model.safetensors": {
+    "size_expected": 6431829964,
+    "size_on_disk": 6431829964,
+    "lfs_sha256": "0f8b28eb05a8075f48b61b6f35332978c74fc7763fa9fb4051a1c30511736a6a"
+   },
+   "pytorch_model.bin": {
+    "size_expected": 6431878936,
+    "size_on_disk": 6431878936,
+    "lfs_sha256": "cd2a29e31040ef64d9362cb96801969c9f67b9e0bdbd6e00b9dda57cdbe17435"
+   },
+   "tokenizer.json": {
+    "size_expected": 1355256,
+    "size_on_disk": 1355256,
+    "lfs_sha256": null
+   },
+   "tokenizer_config.json": {
+    "size_expected": 26,
+    "size_on_disk": 26,
+    "lfs_sha256": null
+   },
+   "vocab.json": {
+    "size_expected": 1042301,
+    "size_on_disk": 1042301,
+    "lfs_sha256": null
+   }
+  },
+  "complete": true,
+  "model.safetensors_sha256": "0f8b28eb05a8075f48b61b6f35332978c74fc7763fa9fb4051a1c30511736a6a",
+  "model.safetensors_sha256_matches_hub_lfs": true,
+  "dtype": "float32",
+  "config": {
+   "activation_function": "gelu_new",
+   "architectures": [
+    "GPT2LMHeadModel"
+   ],
+   "attn_pdrop": 0.1,
+   "bos_token_id": 50256,
+   "embd_pdrop": 0.1,
+   "eos_token_id": 50256,
+   "initializer_range": 0.02,
+   "layer_norm_epsilon": 1e-05,
+   "model_type": "gpt2",
+   "n_ctx": 1024,
+   "n_embd": 1600,
+   "n_head": 25,
+   "n_layer": 48,
+   "n_positions": 1024,
+   "output_past": true,
+   "resid_pdrop": 0.1,
+   "summary_activation": null,
+   "summary_first_dropout": 0.1,
+   "summary_proj_to_labels": true,
+   "summary_type": "cls_index",
+   "summary_use_proj": true,
+   "task_specific_params": {
+    "text-generation": {
+     "do_sample": true,
+     "max_length": 50
+    }
+   },
+   "vocab_size": 50257
+  }
+ },
+ "gpt_j": {
+  "repo": "EleutherAI/gpt-j-6b",
+  "revision": "47e169305d2e8376be1d31e765533382721b2cc1",
+  "path": "[redacted: local path]/02_research/ext/models/gpt-j-6b",
+  "complete": true,
+  "files": {
+   "README.md": {
+    "size_expected": 10996,
+    "size_on_disk": 10996,
+    "lfs_sha256": null
+   },
+   "added_tokens.json": {
+    "size_expected": 4039,
+    "size_on_disk": 4039,
+    "lfs_sha256": null
+   },
+   "config.json": {
+    "size_expected": 930,
+    "size_on_disk": 930,
+    "lfs_sha256": null
+   },
+   "merges.txt": {
+    "size_expected": 456356,
+    "size_on_disk": 456356,
+    "lfs_sha256": null
+   },
+   "pytorch_model.bin": {
+    "size_expected": 24207819307,
+    "size_on_disk": 24207819307,
+    "lfs_sha256": "0e183edc2025ecfdba4429ba43c960224103b3c3dc26616503cdc2158a3d6c93"
+   },
+   "special_tokens_map.json": {
+    "size_expected": 357,
+    "size_on_disk": 357,
+    "lfs_sha256": null
+   },
+   "tokenizer.json": {
+    "size_expected": 1373465,
+    "size_on_disk": 1373465,
+    "lfs_sha256": null
+   },
+   "tokenizer_config.json": {
+    "size_expected": 619,
+    "size_on_disk": 619,
+    "lfs_sha256": null
+   },
+   "vocab.json": {
+    "size_expected": 798156,
+    "size_on_disk": 798156,
+    "lfs_sha256": null
+   }
+  },
+  "bytes_on_disk": 24210465421,
+  "note": "downloaded for a later task; no GPU work was done with it",
+  "pytorch_model.bin_sha256": "0e183edc2025ecfdba4429ba43c960224103b3c3dc26616503cdc2158a3d6c93",
+  "pytorch_model.bin_sha256_matches_hub_lfs": true
+ },
+ "counterfact": {
+  "file": "[redacted: local path]/02_research/ext/data/counterfact/counterfact.json",
+  "url": "https://rome.baulab.info/data/dsets/counterfact.json (the URL of the public loader dsets/counterfact.py)",
+  "sha256": "d017056125178a13728594e66a801357a8db9ed7973a7425554bb4271de9fc6f",
+  "bytes": 45108470,
+  "n_records": 21919,
+  "keys": [
+   "attribute_prompts",
+   "case_id",
+   "generation_prompts",
+   "neighborhood_prompts",
+   "paraphrase_prompts",
+   "pararel_idx",
+   "requested_rewrite"
+  ],
+  "case_ids_are_0_to_n_minus_1": true,
+  "n_paraphrase_prompts": [
+   2
+  ],
+  "n_neighborhood_prompts": [
+   10
+  ],
+  "n_generation_prompts": [
+   10
+  ],
+  "first_record": {
+   "case_id": 0,
+   "requested_rewrite": {
+    "prompt": "The mother tongue of {} is",
+    "relation_id": "P103",
+    "target_new": {
+     "str": "English",
+     "id": "Q1860"
+    },
+    "target_true": {
+     "str": "French",
+     "id": "Q150"
+    },
+    "subject": "Danielle Darrieux"
+   }
+  },
+  "targets_with_leading_or_trailing_space": 0,
+  "object_token_counts": {
+   "target_new": {
+    "1": 21919
+   },
+   "target_true": {
+    "1": 21919
+   },
+   "note": "number of GPT-2 tokens of ' ' + object, over all records"
+  }
+ },
+ "stats": {
+  "source": "authors' precomputed file (rome.baulab.info), not recomputed",
+  "file": "[redacted: local path]/02_research/ext/data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz",
+  "url": "https://rome.baulab.info/data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz",
+  "sha256": "376f29d29b05fed1f5c48daa47b40edb87a239ec817a51bfe4cf68659749bc78",
+  "bytes": 163841186,
+  "mom2_shape": [
+   6400,
+   6400
+  ],
+  "mom2_dtype": "float32",
+  "token_count": 44068071,
+  "sample_size": 100000,
+  "constructor": "util.runningstats.SecondMoment()"
+ },
+ "eval_aux": {
+  "attribute_snippets.json": {
+   "bytes": 926285719
+  },
+  "idf.npy": {
+   "bytes": 11042168
+  },
+  "tfidf_vocab.json": {
+   "bytes": 31639072
+  },
+  "note": "attribute snippets / tf-idf files serve the consistency and essence scores only, which are not computed (attribute_snippets.json: 926285719 bytes on the server)"
+ },
+ "paper": {
+  "arxiv": "2202.05262v5",
+  "e_print": "[redacted: local path]/02_research/ext/data/paper_rome/2202.05262_eprint",
+  "e_print_sha256": "b98f9baa6bfa132ea1a8e63cbd604a604cf8214832809efa0ba170228d5a911e",
+  "table_file": "[redacted: local path]/02_research/ext/data/paper_rome/src/tables/cf-results.tex"
+ },
+ "versions": {
+  "python": "3.11.16",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.23.1",
+  "tokenizers": "0.13.3",
+  "numpy": "2.4.6",
+  "nltk": "3.10.4",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.1",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "cuda": "12.8"
+ },
+ "python_env": "[redacted: local path]",
+ "pydeps": {
+  "nltk": "[redacted: local path]/02_research/ext/pydeps",
+  "transformers_stack": "[redacted: local path]/02_research/ext/pydeps_tf4",
+  "public_env_pins": {
+   "rome.yml": "python 3.9.7, pytorch 1.10.2, transformers 4.15.0, tokenizers 0.10.3, nltk 3.6.5",
+   "memit.yml": "python 3.9.7, pytorch 1.12.1, transformers 4.23.1, nltk 3.7"
+  }
+ },
+ "nltk_data": [
+  "punkt_tab",
+  "punkt_tab.zip"
+ ],
+ "runs": {
+  "dev": {
+   "started": "2026-11-11 05:23:48 UTC",
+   "finished": "2026-11-11 05:31:16 UTC",
+   "T_planned": 3,
+   "T_done": 100,
+   "seed": 0,
+   "resumed": [
+    {
+     "at": "2026-11-11 05:25:24 UTC",
+     "n_have": 3
+    }
+   ],
+   "context_templates": [
+    "{}",
+    "In the last few. {}",
+    "The following is a. {}",
+    "I have been working. {}",
+    "A man was arrested. {}",
+    "The U.S. {}",
+    "I have been working. {}",
+    "I've been working. {}",
+    "\"I have to. {}",
+    "In this week's. {}",
+    "I've been working. {}",
+    "The U.S. government's National Ocean. {}",
+    "\"The best way to describe it would be. {}",
+    "A man in the US who has been living. {}",
+    "A new study has found a link between the. {}",
+    "In the past few decades, a growing number. {}",
+    "I've seen a lot of people complaining about. {}",
+    "I'm trying to get my hands on an. {}",
+    "The first thing that comes to mind when hearing. {}",
+    "The first day of the 2016 season has officially. {}",
+    "A man was killed when he was struck by. {}"
+   ],
+   "peak_alloc_MiB": 9908.193359375,
+   "versions": {
+    "python": "3.11.16",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.23.1",
+    "tokenizers": "0.13.3",
+    "numpy": "2.4.6",
+    "nltk": "3.10.4",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.1",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "cuda": "12.8"
+   }
+  },
+  "stream": {
+   "started": "2026-11-11 05:31:42 UTC",
+   "finished": "2026-11-11 07:31:43 UTC",
+   "T_planned": 2000,
+   "T_done": 2000,
+   "seed": 0,
+   "resumed": [
+    {
+     "at": "2026-11-11 06:57:34 UTC",
+     "n_have": 1531
+    }
+   ],
+   "context_templates": [
+    "{}",
+    "In the last few. {}",
+    "The following is a. {}",
+    "I have been working. {}",
+    "A man was arrested. {}",
+    "The U.S. {}",
+    "I have been working. {}",
+    "I've been working. {}",
+    "\"I have to. {}",
+    "In this week's. {}",
+    "I've been working. {}",
+    "The U.S. government's National Ocean. {}",
+    "\"The best way to describe it would be. {}",
+    "A man in the US who has been living. {}",
+    "A new study has found a link between the. {}",
+    "In the past few decades, a growing number. {}",
+    "I've seen a lot of people complaining about. {}",
+    "I'm trying to get my hands on an. {}",
+    "The first thing that comes to mind when hearing. {}",
+    "The first day of the 2016 season has officially. {}",
+    "A man was killed when he was struck by. {}"
+   ],
+   "peak_alloc_MiB": 9563.0400390625,
+   "versions": {
+    "python": "3.11.16",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.23.1",
+    "tokenizers": "0.13.3",
+    "numpy": "2.4.6",
+    "nltk": "3.10.4",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.1",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "cuda": "12.8"
+   }
+  },
+  "single": {
+   "started": "2026-11-11 05:36:01 UTC",
+   "finished": "2026-11-11 06:31:26 UTC",
+   "seed": 0,
+   "resumed": null,
+   "context_templates": [
+    "{}",
+    "In the last few. {}",
+    "The following is a. {}",
+    "I have been working. {}",
+    "A man was arrested. {}",
+    "The U.S. {}",
+    "I have been working. {}",
+    "I've been working. {}",
+    "\"I have to. {}",
+    "In this week's. {}",
+    "I've been working. {}",
+    "The U.S. government's National Ocean. {}",
+    "\"The best way to describe it would be. {}",
+    "A man in the US who has been living. {}",
+    "A new study has found a link between the. {}",
+    "In the past few decades, a growing number. {}",
+    "I've seen a lot of people complaining about. {}",
+    "I'm trying to get my hands on an. {}",
+    "The first thing that comes to mind when hearing. {}",
+    "The first day of the 2016 season has officially. {}",
+    "A man was killed when he was struck by. {}"
+   ],
+   "n_case_files": 1000,
+   "peak_alloc_MiB": 9784.966796875,
+   "versions": {
+    "python": "3.11.16",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.23.1",
+    "tokenizers": "0.13.3",
+    "numpy": "2.4.6",
+    "nltk": "3.10.4",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.1",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "cuda": "12.8"
+   }
+  }
+ }
+}

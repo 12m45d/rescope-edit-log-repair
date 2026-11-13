@@ -1,0 +1,92 @@
+{
+ "VerifyT100BehaviourRowDifferences": {
+  "value": 0,
+  "file": "out/compare.json",
+  "key": "behaviour.TX-G2XL-rome-T100.*.row_level_differences.*.n_differ (sum)"
+ },
+ "VerifyT100BehaviourValuesCompared": {
+  "value": 59200,
+  "file": "out/compare.json",
+  "key": "behaviour.TX-G2XL-rome-T100.*.row_level_differences.*.n_compared (sum)"
+ },
+ "VerifyT500BehaviourRowDifferences": {
+  "value": 0,
+  "file": "out/compare.json",
+  "key": "behaviour.TX-G2XL-rome-T500.*.row_level_differences.*.n_differ (sum)"
+ },
+ "VerifyT500BehaviourValuesCompared": {
+  "value": 219000,
+  "file": "out/compare.json",
+  "key": "behaviour.TX-G2XL-rome-T500.*.row_level_differences.*.n_compared (sum)"
+ },
+ "VerifyPublicMaxProbabilityDifference": {
+  "value": 0.0,
+  "file": "out/compare.json",
+  "key": "public.*.*.max_abs_probability_difference (max)"
+ },
+ "VerifyCertificateChecked": {
+  "value": 800,
+  "file": "out/compare.json",
+  "key": "certificate.*.rows.*.n_checked (sum)"
+ },
+ "VerifyCertificateViolations": {
+  "value": 0,
+  "file": "out/compare.json",
+  "key": "certificate.*.rows.*.n_violations (sum)"
+ },
+ "VerifyEqualRbSuffixTStar": {
+  "value": 2,
+  "file": "out/equal/TX-G2XL-rome-T100/rb_suffix__n10_s0.json",
+  "key": "meta.t_star"
+ },
+ "VerifyEqualLeastHeldoutDOne": {
+  "value": 17.555555555555557,
+  "file": "out/equal/TX-G2XL-rome-T100/least_sacrificing__n10_s0.json",
+  "key": "stats.heldout.D1_tf.value"
+ },
+ "VerifyRelDiagnosisPasses": {
+  "value": 608,
+  "file": "out/r22/TX-G2XL-rome-T100.json",
+  "key": "diagnosis.diagnosis_passes"
+ },
+ "VerifyRelLeastRef": {
+  "value": 96.68,
+  "file": "out/r22/TX-G2XL-rome-T100.json",
+  "key": "rows.least_sacrificing.scores.reference_preservation.pct"
+ },
+ "VerifyScreenT2000Flagged": {
+  "value": 31,
+  "file": "out/screening_T2000.json",
+  "key": "logs.TX-G2XL-rome-T2000.n_flagged"
+ },
+ "VerifyScreenT2000TieEdits": {
+  "value": 12,
+  "file": "out/screening_T2000.json",
+  "key": "ties_T2000.n_tie_edits"
+ },
+ "VerifyCellsReproduced": {
+  "value": 30,
+  "file": "out/cells.json",
+  "key": "n_reproduced"
+ },
+ "VerifyMainTableCells": {
+  "value": 550,
+  "file": "out/cells.json",
+  "key": "main_table.n_cells"
+ },
+ "VerifyMainTableCellsDiffering": {
+  "value": 0,
+  "file": "out/cells.json",
+  "key": "main_table.n_cells_differ"
+ },
+ "VerifyChecksPassed": {
+  "value": 12,
+  "file": "verdicts.json",
+  "key": "n_pass"
+ },
+ "VerifyChecksFailed": {
+  "value": 2,
+  "file": "verdicts.json",
+  "key": "n_fail"
+ }
+}

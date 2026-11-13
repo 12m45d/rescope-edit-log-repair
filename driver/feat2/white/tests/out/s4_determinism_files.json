@@ -1,0 +1,37 @@
+{
+ "pass": true,
+ "runs": {
+  "1 threads": {
+   "exit": 0,
+   "lines": [
+    "qwen25vl: stats.pt reproduced byte for byte; meta.json reproduced byte for byte; threads 1",
+    "llava: stats.pt reproduced byte for byte; meta.json reproduced byte for byte; threads 1"
+   ]
+  },
+  "2 threads": {
+   "exit": 0,
+   "lines": [
+    "qwen25vl: stats.pt reproduced byte for byte; meta.json reproduced byte for byte; threads 2",
+    "llava: stats.pt reproduced byte for byte; meta.json reproduced byte for byte; threads 2"
+   ]
+  },
+  "4 threads": {
+   "exit": 0,
+   "lines": [
+    "qwen25vl: stats.pt reproduced byte for byte; meta.json reproduced byte for byte; threads 4",
+    "llava: stats.pt reproduced byte for byte; meta.json reproduced byte for byte; threads 4"
+   ]
+  }
+ },
+ "note": "stats.pt + meta.json of 2 backbones rebuilt under 1 / 2 / 4 threads: byte-identical: True",
+ "test": "s4_determinism_files",
+ "group": "stats",
+ "what": "determinism: fresh processes with 1, 2 and 4 BLAS threads reproduce stats.pt and meta.json byte for byte",
+ "seconds": 30.55514883995056,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

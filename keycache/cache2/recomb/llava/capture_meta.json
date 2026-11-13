@@ -1,0 +1,847 @@
+{
+ "backbone": "llava",
+ "family": "L",
+ "layer": 16,
+ "module": "input of model.language_model.layers.16.mlp.down_proj",
+ "module_dtype": "torch.float16",
+ "d_in": 11008,
+ "master_log": "TB-L1000-ae-l2_3",
+ "n_rows": 12000,
+ "n_by_kind": {
+  "X-I": 4000,
+  "X-Q": 4000,
+  "X-X": 4000
+ },
+ "keys_md5": "4bbc8dd943431eb29293a5d116d84637",
+ "keys_bytes": 528803049,
+ "keys_shape": [
+  12000,
+  11008
+ ],
+ "rows_sha256": "f06e1856f9ad544cc0e8cfb142eb393c7f32794d827de9efc2dd3f8e19b33d07",
+ "complete": true,
+ "position": "last prompt token of the prompt-only sequence (no answer tokens); pre-edit model; B = 1",
+ "checks": {
+  "last_prompt_index_is_last_token": true,
+  "duplicate_query_groups_with_identical_keys": [
+   58,
+   58
+  ],
+  "X-I_X-X_rows_with_the_image_token_count_of_the_edit's_own_sequence": [
+   8000,
+   8000
+  ],
+  "X-Q_rows_with_the_text_token_count_of_the_edit's_own_prompt": [
+   4000,
+   4000
+  ],
+  "key_norm_min_median_max": [
+   8.112019204266652,
+   10.374773550661365,
+   14.54719353826277
+  ]
+ },
+ "checks_ok": true,
+ "verify": {
+  "ok": true,
+  "ok_prompt_only_key": true,
+  "ok_teacher_forced_key": true,
+  "batch_size": 1,
+  "n_rows": 100,
+  "summary": {
+   "hard_negatives": {
+    "n": 50,
+    "by_kind": {
+     "hn_i": 22,
+     "hn_q": 21,
+     "hn_x": 7
+    },
+    "by_ptype": {
+     "image": 50,
+     "text": 0
+    },
+    "existing_new": [
+     17,
+     33
+    ],
+    "prompt_key_bitwise": [
+     50,
+     50
+    ],
+    "last_prompt_index_equal": [
+     50,
+     50
+    ],
+    "tf_key_bitwise": [
+     50,
+     50
+    ],
+    "tf_key_equals_hn_keys_pt": [
+     50,
+     50
+    ],
+    "n_lp_shift": 0
+   },
+   "probes": {
+    "n": 50,
+    "by_kind": {
+     "probe": 50
+    },
+    "by_ptype": {
+     "image": 18,
+     "text": 32
+    },
+    "existing_new": null,
+    "prompt_key_bitwise": [
+     50,
+     50
+    ],
+    "last_prompt_index_equal": [
+     50,
+     50
+    ],
+    "tf_key_bitwise": [
+     50,
+     50
+    ],
+    "tf_key_equals_hn_keys_pt": [
+     0,
+     0
+    ],
+    "n_lp_shift": 0
+   }
+  },
+  "master_log": "TB-L1000-ae-l2_3",
+  "module_dtype": "torch.float16",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "torch": "2.8.0+cu128",
+  "time": "2026-11-11 06:45:07",
+  "code": {
+   "evaluate.py": "1d0862a33db2",
+   "scoped.py": "049827450bbd",
+   "fc_capture.py": "a9d5c6742cbc",
+   "rc_capture.py": "808750acfecf"
+  },
+  "what": "seeded sample of existing hard-negative rows and probe rows of the key cache, re-captured with rc_capture.prompt_key (prompt-only key; compared with 10_final/cache/<backbone>/keys_decode.pt[row_decode]) and with Evaluator.capture(it, True) (teacher-forced key; compared with keys_tf.pt[row_tf] and hard_negatives/<backbone>/keys.pt); bit for bit on the float32 images"
+ },
+ "recheck": {
+  "ok": true,
+  "n": 96,
+  "n_bitwise": 96,
+  "by_kind": {
+   "X-I": [
+    32,
+    32
+   ],
+   "X-Q": [
+    32,
+    32
+   ],
+   "X-X": [
+    32,
+    32
+   ]
+  },
+  "what": "seeded sample of recombination rows captured a second time WITHOUT the vision-feature memo and compared bit for bit with the stored parts",
+  "second_capture": {
+   "gpu": "NVIDIA GeForce RTX 5090",
+   "cuda_visible": "0",
+   "pid": 558141,
+   "time": "2026-11-11 07:01:40"
+  },
+  "same_process_as_first_capture": [
+   96,
+   96
+  ]
+ },
+ "last_prompt_idx_min_median_max": [
+  589,
+  593,
+  602
+ ],
+ "n_image_tokens_min_median_max": [
+  576,
+  576,
+  576
+ ],
+ "capture": {
+  "n_parts": 60,
+  "gpu_seconds": 984.5,
+  "gpus": [
+   "NVIDIA GeForce RTX 5090"
+  ],
+  "torch": [
+   "2.8.0+cu128"
+  ],
+  "cuda_visible_devices": [
+   "0"
+  ],
+  "first": "2026-11-11 06:45:22",
+  "last": "2026-11-11 07:01:33",
+  "seconds_per_row": 0.082,
+  "parts": [
+   {
+    "part": "part_0000",
+    "n": 200,
+    "seconds": 14.7,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:45:22",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0001",
+    "n": 200,
+    "seconds": 13.9,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:45:36",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0002",
+    "n": 200,
+    "seconds": 13.7,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:45:50",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0003",
+    "n": 200,
+    "seconds": 14.4,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:46:04",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0004",
+    "n": 200,
+    "seconds": 14.5,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:46:19",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0005",
+    "n": 200,
+    "seconds": 14.3,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:46:33",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0006",
+    "n": 200,
+    "seconds": 15.0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:46:48",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0007",
+    "n": 200,
+    "seconds": 14.1,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:47:02",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0008",
+    "n": 200,
+    "seconds": 14.9,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:47:17",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0009",
+    "n": 200,
+    "seconds": 14.3,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:47:31",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0010",
+    "n": 200,
+    "seconds": 15.0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:47:46",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0011",
+    "n": 200,
+    "seconds": 13.4,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:48:00",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0012",
+    "n": 200,
+    "seconds": 14.5,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:48:14",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0013",
+    "n": 200,
+    "seconds": 14.7,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:48:29",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0014",
+    "n": 200,
+    "seconds": 13.8,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:48:43",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0015",
+    "n": 200,
+    "seconds": 14.2,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:48:57",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0016",
+    "n": 200,
+    "seconds": 13.2,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:49:10",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0017",
+    "n": 200,
+    "seconds": 13.5,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:49:24",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0018",
+    "n": 200,
+    "seconds": 13.5,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:49:37",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0019",
+    "n": 200,
+    "seconds": 21.2,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:49:58",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0020",
+    "n": 200,
+    "seconds": 14.6,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:50:13",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0021",
+    "n": 200,
+    "seconds": 13.5,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:50:27",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0022",
+    "n": 200,
+    "seconds": 9.1,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:50:36",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0023",
+    "n": 200,
+    "seconds": 10.4,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:50:46",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0024",
+    "n": 200,
+    "seconds": 9.1,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:50:55",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0025",
+    "n": 200,
+    "seconds": 11.0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:51:06",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0026",
+    "n": 200,
+    "seconds": 9.6,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:51:16",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0027",
+    "n": 200,
+    "seconds": 10.9,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:51:27",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0028",
+    "n": 200,
+    "seconds": 13.8,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:51:41",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0029",
+    "n": 200,
+    "seconds": 15.3,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:51:56",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0030",
+    "n": 200,
+    "seconds": 12.7,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:52:09",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0031",
+    "n": 200,
+    "seconds": 13.0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:52:22",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0032",
+    "n": 200,
+    "seconds": 16.9,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:52:39",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0033",
+    "n": 200,
+    "seconds": 16.1,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:52:55",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0034",
+    "n": 200,
+    "seconds": 10.7,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:53:05",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0035",
+    "n": 200,
+    "seconds": 14.2,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:53:20",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0036",
+    "n": 200,
+    "seconds": 16.2,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:53:36",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0037",
+    "n": 200,
+    "seconds": 17.5,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:53:53",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0038",
+    "n": 200,
+    "seconds": 8.5,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:54:02",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0039",
+    "n": 200,
+    "seconds": 13.8,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:54:16",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0040",
+    "n": 200,
+    "seconds": 19.1,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:54:35",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0041",
+    "n": 200,
+    "seconds": 15.8,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:54:51",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0042",
+    "n": 200,
+    "seconds": 16.5,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:55:07",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0043",
+    "n": 200,
+    "seconds": 15.2,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:55:22",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0044",
+    "n": 200,
+    "seconds": 18.3,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:55:41",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0045",
+    "n": 200,
+    "seconds": 14.9,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:55:56",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0046",
+    "n": 200,
+    "seconds": 17.0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:56:13",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0047",
+    "n": 200,
+    "seconds": 26.2,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:56:39",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0048",
+    "n": 200,
+    "seconds": 30.0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:57:09",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0049",
+    "n": 200,
+    "seconds": 30.1,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:57:39",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0050",
+    "n": 200,
+    "seconds": 26.0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:58:05",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0051",
+    "n": 200,
+    "seconds": 31.9,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:58:37",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0052",
+    "n": 200,
+    "seconds": 28.3,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:59:05",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0053",
+    "n": 200,
+    "seconds": 29.2,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 06:59:34",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0054",
+    "n": 200,
+    "seconds": 32.0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 07:00:06",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0055",
+    "n": 200,
+    "seconds": 20.5,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 07:00:27",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0056",
+    "n": 200,
+    "seconds": 18.3,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 07:00:45",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0057",
+    "n": 200,
+    "seconds": 15.0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 07:01:00",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0058",
+    "n": 200,
+    "seconds": 18.1,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 07:01:18",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   },
+   {
+    "part": "part_0059",
+    "n": 200,
+    "seconds": 14.4,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "cuda_visible": "0",
+    "time": "2026-11-11 07:01:33",
+    "master": "TB-L1000-ae-l2_3",
+    "pid": 558141
+   }
+  ]
+ },
+ "assembled": "2026-11-11 07:40:00",
+ "code": "02_research/experiments/10_final/feat2/recomb/{rc_select,rc_check,rc_capture,rc_assemble}.py"
+}

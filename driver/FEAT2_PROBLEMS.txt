@@ -1,0 +1,71 @@
+FEAT2_PROBLEMS.txt -- what the second builder of the driver extension (stage 2, fx.review1, 2026-11-11) found while wiring the feature packages
+10_final/feat2/{white, retr, recomb}.  The packages were not modified.  Each item says what was done about it in fx/review1.py.
+Numbers: development logs TB-Q100-ae-l2_3 (Q) and TB-L100-ae-l2_3 (L), calibration draw 0, alpha = 0.05 (tests/out/table_r1.txt, r1_cpu_*.json).
+
+A. THINGS THAT ARE WRONG OR STALE
+
+1. white: the mechanics table (white/out/mechanics.txt, mechanics_<log>.json) is stale for the rows rescope_null and cos_null.
+   It was computed when fx.draws.null_sample separated the null-repair sample from the calibration draw by ROW (positions 200 .. 299 of the
+   draw's ranking); the driver now separates them by QUERY (PROTOCOL.md, clarification (1) of 09:03).  The table's header line "null sample ==
+   positions 200 .. 299 of the draw's ranking: True" and the sentence "(positions 200 .. 299 of the draw's ranking)" in white/USAGE.txt (WIRING,
+   cos_null) no longer describe what fx.draws.null_sample returns, and `python -m white.mechanics check` (re-run and compare) can no longer
+   reproduce these rows.
+   Shown once (test mech): with the ROW rule, built through the library directly, all four cells (two gates x two calibrations) of both logs
+   are reproduced exactly (thresholds bitwise, every read-out).  With the driver's QUERY rule 6 (Q) / 3 (L) of the 100 null rows are replaced and
+   the cells move by (driver minus table, percentage points; eta in score units):
+     Q cos_null      two-block  fire -1.29, T-Gen -11, I-Gen -3, HN-I -13.3, HN-Q -8.5, HN-X -12.1, eta +0.046 (largest threshold change 0.26)
+     Q cos_null      shared     fire +0.22, T-Gen -1,  I-Gen  0, HN-I +1.2,  eta +0.003
+     Q rescope_null  two-block  fire +0.65, T-Gen +2,  I-Gen  0, HN-I -0.3,  HN-X -3.0, eta -0.004
+     Q rescope_null  shared     fire  0.00, T-Gen  0,  I-Gen  0, HN-I -2.0,  eta +0.006
+     L cos_null      two-block  fire  0.00, T-Gen -2,  I-Gen -2, HN-I -1.9,  capped +1, eta +0.004
+     L cos_null      shared     fire  0.00, T-Gen -1,  I-Gen  0, HN-I +0.5,  eta +0.003
+     L rescope_null  two-block  fire +1.28, T-Gen  0,  I-Gen  0, HN-I +0.5,  eta -0.003
+     L rescope_null  shared     fire -1.07, T-Gen -4,  I-Gen  0, HN-I -1.2,  HN-Q -3.5, eta +0.019
+   So the difference is not always slight: the two-block cos_null on Qwen loses 11 points of text-rephrase coverage and 13 points of HN-I firing
+   at this draw.  Every other row of the table (20 cells per log, rescope_nullW included) is reproduced exactly through the driver.
+   Done: the driver uses the QUERY rule (fx.draws.null_sample, the sample of rescope_null in the same draw); nothing to work around.
+
+2. feat2/verify/verdicts.json does not exist.  The experiment tasks (tools/workflows/final_*_lean.js, block "REVIEW ROUND 1") tell the agents that
+   "verify/verdicts.json lists residual risks"; feat2/verify/ holds two scripts and out/v1_parts.json only.  Nothing in the driver depends on it.
+
+3. retr: `import retr` puts feat2/retr FIRST on sys.path (retr.py, line 63).  That directory holds modules called tests, mechanics, embed,
+   encoders, rcommon, stoplist: after the import, `import tests` or `import mechanics` in an experiment script resolves to the package's files.
+   Done (exact): fx.review1.package("retr") moves the directory to the END of sys.path after the import.
+
+B. LIMITS OF THE DATA THAT DECIDE WHERE A GATE IS DEFINED (not errors; the driver raises fx.review1.NotDefined with the reason)
+
+4. retr: no attribute table / embeddings for the rows of the MME capture (cache2/mme).  The retrieval family and lookup therefore cannot be
+   evaluated on MME-T or calibrated on MME-C; the E1 and E3 tasks ask for false firing on MME-T "for every calibrated gate": not obtainable for
+   retr_conj / retr_sum / retr_min.
+5. retr: 111 (Q) / 109 (L) of the 1200 recombination images of a T = 100 log and 2 of their question strings have no embedding: an _x form of a
+   retrieval rule cannot be built (the protocol compares retr in the first pair's form only, so nothing registered is lost).
+6. recomb: the second form of the near-scope read-outs (test hard negatives whose foreign part occurs in no recombination row) is nearly empty
+   for HN-X: every edit asks for four X-X partners, so nearly every edit is the partner of some X-X row.  Kept / all on the development logs:
+   HN-I 186 / 588 (Q), 178 / 590 (L); HN-Q 434 / 591, 465 / 597; HN-X 4 / 99, 1 / 99.  (Reading used: HN-I question string in no recombination
+   row; HN-Q image md5 in no recombination row; HN-X partner edit is the PARTNER of no X-X row -- as owner every edit occurs in its own rows.)
+
+C. WIRING NOTES
+
+7. recomb.calibrate_two_block_x stamps the gate's calibration record with op = 'calibrate_two_block_x'; fx.sweeps recovers the literal thresholds
+   of CAPPED edits only for the library's ops, so a capped gate from that function cannot be raised along its scale with guards kept (checked:
+   cosine_x on Q, 13 capped edits, built by recomb.calibrate_two_block_x: fx.sweeps.h3 raises ValueError; the uncapped rescope_x is not affected).
+   Done (exact): the driver enters x through the stage-1 hook (one more block-1 row handed to rescope.calibrate_two_block); thresholds and
+   baselines are bitwise those of recomb.calibrate_two_block_x for all 13 _x gates on both logs (test naive).
+8. white: `import white` sets sys.dont_write_bytecode = True for the whole process and pins BLAS threads while detectors are built (documented in
+   its USAGE; no effect on results).  TCosLog gates (cos_centred, whitecos) need feat2 on sys.path wherever they are unpickled.
+9. white.scores.null_w nulls the PROMPT-ONLY keys of the BEN-W rows (documented there); rescope_nullW in the driver is exactly that.
+10. white and retr switch bytecode writing off only AFTER their first modules were compiled: a process that imports them with the flag unset
+    creates feat2/white/__pycache__ (__init__, common) and feat2/retr/__pycache__ (retr, rcommon).  The first test processes of stage 2 did so
+    (15:27 and 15:57 UTC); these four files and the two directories were removed again (they did not exist before; nothing else under feat2
+    was written or changed).  Done (exact): fx.review1.package sets sys.dont_write_bytecode = True before the first import.
+
+D. OBSERVATIONS AT ONE DRAW (not analysed further; the 20 draws of E1 decide)
+
+11. cos_null with the two-block rule fires on 12.15 % of heldout_disjoint on L at draw 0 (bound 4.95 %; 8 edits capped; the same rate under
+    both null-sample rules; the white table gives the same rate for the literal rule without caps and 9.3 % on the REPAIR rows outside the
+    calibration and null samples).  Draw 0 is a high draw on L on those REPAIR rows for the default method as well (9.3 % in the same table),
+    so this may be the draw; a structural candidate is that heldout_disjoint rows by definition share no query with the REPAIR pool, from
+    which the null-repair keys of cos_null / rescope_null are taken.
+12. retr_conj caps 59 (Q) / 58 (L) of 100 edits on the question attribute (its USAGE, section H); retr_min (built in the driver on the package's
+    score matrices) caps 45 / 44 edits and fires on 7.3 % (Q) of heldout_disjoint at draw 0; its validity on exchangeable synthetic scores is
+    4.96 +- 0.10 % against the bound 4.95 % (test rules).

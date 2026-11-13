@@ -1,0 +1,84 @@
+{
+ "T": 2000,
+ "prompts": {
+  "request": 2000,
+  "paraphrase": 4000,
+  "neighborhood": 20000,
+  "heldout": 3000
+ },
+ "positions": {
+  "stream": 423942,
+  "repair": 75922,
+  "heldout": 76928
+ },
+ "texts": {
+  "stream": 20949,
+  "repair": 3000,
+  "heldout": 2999
+ },
+ "fraction_benign_like_run_dev": {
+  "rescope": 0.05125,
+  "rescope_shared": 0.0415,
+  "rescope_null": 0.053,
+  "cosine": 0.047,
+  "cosine_published": 0.01275,
+  "exact": 0.00025,
+  "where_logonly": 0.62775,
+  "where_twoblock": 0.05125
+ },
+ "seconds": {
+  "key_cache": 76.724382896631,
+  "gate_level_A": {
+   "cpu": 4271.835509958792,
+   "cuda": 3208.7821694490776
+  },
+  "gate_level_B": {
+   "cpu": 11185.007684504319,
+   "cuda": 10121.954343994605
+  },
+  "weight_row": 508.400977452596,
+  "gate_row_A": {
+   "rescope": 101.12351392060518,
+   "rescope_shared": 97.93446441113949,
+   "rescope_null": 101.69590742230415,
+   "cosine": 99.7334154164791,
+   "cosine_published": 88.53085688322783,
+   "exact": 84.44233187109232,
+   "where_logonly": 289.6862874802947,
+   "where_twoblock": 101.12351392060518
+  },
+  "gate_row_B": 411.44256234169006,
+  "public_weight_row": 254.30059432983398,
+  "public_gate_row": 270.869779586792,
+  "generation_weight_row": 243.17047595977783,
+  "generation_gate_row": 251.21161341667175,
+  "retention_A": 396.67342888871826,
+  "retention_B": 525.7854935328165,
+  "total_A": 5790.85766580989,
+  "total_B": 8247.239937861761,
+  "further_draw_A": 1855.9597130250932,
+  "further_draw_B": 3411.5617096424103
+ },
+ "rows": [
+  "deployed",
+  "preedit",
+  "rescope",
+  "rescope_shared",
+  "rescope_null",
+  "cosine",
+  "cosine_published",
+  "exact",
+  "where_logonly",
+  "where_twoblock"
+ ],
+ "note": "A: the share of benign / neighbourhood prompts that ran on the DEVELOPMENT log; B: every prompt runs (upper bound)",
+ "mem_MiB": 13000,
+ "peak_alloc_MiB": 8740.08984375,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ }
+}

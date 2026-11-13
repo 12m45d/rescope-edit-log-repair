@@ -1,0 +1,796 @@
+{
+ "audited_logs": {
+  "audit_file": "[redacted: local path]/02_research/experiments/09_testbed_scale/text_public/audit/verdicts.json",
+  "audit_verdicts": {
+   "TX-G2XL-rome-dev100": "safe",
+   "TX-G2XL-rome-T100": "safe",
+   "TX-G2XL-rome-T500": "safe",
+   "TX-G2XL-rome-T1000": "safe",
+   "TX-G2XL-rome-T2000": "safe"
+  },
+  "audit_checks": {
+   "1_provenance": "PASS",
+   "2_condition_1_reconstruction_orientation_key_determinism": "PASS",
+   "3_condition_2_single_edit": "PASS",
+   "4_condition_3_data_traps": "PASS",
+   "5_pools": "PASS",
+   "6_discipline": "PASS",
+   "7_table_of_deployed_logs": "PASS"
+  },
+  "logs_named_in_the_experiment_outputs": [
+   "TX-G2XL-rome-T100",
+   "TX-G2XL-rome-T1000",
+   "TX-G2XL-rome-T2000",
+   "TX-G2XL-rome-T500",
+   "TX-G2XL-rome-dev100"
+  ],
+  "all_safe": true,
+  "prefix_logs_of_the_stream": [
+   "TX-G2XL-rome-T2000@150",
+   "TX-G2XL-rome-T2000@170",
+   "TX-G2XL-rome-T2000@172",
+   "TX-G2XL-rome-T2000@173",
+   "TX-G2XL-rome-T2000@174",
+   "TX-G2XL-rome-T2000@175",
+   "TX-G2XL-rome-T2000@180",
+   "TX-G2XL-rome-T2000@200",
+   "TX-G2XL-rome-T2000@250",
+   "TX-G2XL-rome-T2000@300",
+   "TX-G2XL-rome-T2000@400"
+  ]
+ },
+ "pools": {
+  "behaviour_records": {
+   "n_method_records": 193,
+   "n_calibrated": 57,
+   "n_calibrated_not_from_REPAIR_pool": 0,
+   "n_calibrated_with_other_alpha_or_n": 0,
+   "alphas": [
+    0.05
+   ],
+   "n_values": [
+    200
+   ],
+   "draws": [
+    0,
+    1,
+    2
+   ],
+   "draws_by_block": {
+    "behave": [
+     0,
+     1,
+     2
+    ],
+    "equal": [],
+    "stream": [
+     0
+    ]
+   },
+   "hook_mismatch_total": {
+    "hook_mismatch": 0,
+    "hook_mismatch_dec": 0
+   }
+  },
+  "equal_complaints": {
+   "TX-G2XL-rome-T100": {
+    "n_sets": 7,
+    "sets": [
+     "n100_s0",
+     "n10_s0",
+     "n10_s1",
+     "n10_s2",
+     "n1_s0",
+     "n1_s1",
+     "n1_s2"
+    ],
+    "n_complaints": 133,
+    "n_not_in_REPAIR_pool": 0,
+    "n_D1_complaints_available": 2788
+   },
+   "TX-G2XL-rome-T500": {
+    "n_sets": 7,
+    "sets": [
+     "n100_s0",
+     "n10_s0",
+     "n10_s1",
+     "n10_s2",
+     "n1_s0",
+     "n1_s1",
+     "n1_s2"
+    ],
+    "n_complaints": 133,
+    "n_not_in_REPAIR_pool": 0,
+    "n_D1_complaints_available": 3000
+   }
+  },
+  "rows": {
+   "TX-G2XL-rome-T100": {
+    "n_heldout_rows": 3000,
+    "heldout_rows_not_in_HELDOUT_pool": 0,
+    "heldout_rows_in_REPAIR_pool": 0,
+    "n_neighborhood_rows": 1000,
+    "neighborhood_rows_not_of_logged_requests": 0,
+    "n_heldout_near_scope": 12,
+    "n_neighborhood_near_scope": 5,
+    "near_scope_reported_separately_in_summary": true
+   },
+   "TX-G2XL-rome-T500": {
+    "n_heldout_rows": 3000,
+    "heldout_rows_not_in_HELDOUT_pool": 0,
+    "heldout_rows_in_REPAIR_pool": 0,
+    "n_neighborhood_rows": 5000,
+    "neighborhood_rows_not_of_logged_requests": 0,
+    "n_heldout_near_scope": 53,
+    "n_neighborhood_near_scope": 79,
+    "near_scope_reported_separately_in_summary": true
+   }
+  },
+  "r3_statistics": {
+   "rule": "REPAIR-pool prompts in none of the 20 calibration draws; seeded sample of 500 (experiment's seed 20261111)",
+   "n_repair_prompts_in_no_draw": 764,
+   "sha1_recomputed": "1951c821d950",
+   "sha1_in_gate_files": {
+    "TX-G2XL-rome-T100": "1951c821d950",
+    "TX-G2XL-rome-T500": "1951c821d950",
+    "TX-G2XL-rome-T1000": "1951c821d950",
+    "TX-G2XL-rome-T2000": "1951c821d950",
+    "TX-G2XL-rome-dev100": "1951c821d950"
+   },
+   "same": true
+  },
+  "table_has_near_scope_columns": true
+ },
+ "nothing_tuned": {
+  "best_gate": {
+   "selected": "whitecos_0.1",
+   "recomputed_argmax_paraphrase_coverage_on_dev": "whitecos_0.1",
+   "coverage_dev": {
+    "cos_centred": 94.725,
+    "cos_null": 94.975,
+    "white_0.01": 94.5,
+    "white_0.1": 94.525,
+    "white_1": 94.625,
+    "whitecos_0.01": 95.65,
+    "whitecos_0.1": 95.775,
+    "whitecos_1": 95.4
+   },
+   "same": true,
+   "selection_log": "TX-G2XL-rome-dev100",
+   "file_written": "2026-11-11 13:17:37",
+   "dev_gate_file_written": "2026-11-11 13:14:20",
+   "first_outcome_shard_of_the_store": "2026-11-11 13:22:56",
+   "first_behavioural_output_file": "2026-11-11 13:23:20",
+   "first_gate_level_file_of_a_reported_log": "2026-11-11 13:43:40",
+   "written_before_any_outcome_on_a_reported_log": true
+  },
+  "split": {
+   "split_position": 173,
+   "is_173": true,
+   "written": "2026-11-11 13:17:37"
+  },
+  "logs": {
+   "files": {
+    "behave_T100.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "behave_T500.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "cache_T2000.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "cache_T500.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "cert_T100.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "cert_T500.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "equal_T100.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "equal_T500.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "gate_T100.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "gate_T1000.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "gate_T2000.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "gate_T500.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "gate_dev.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "gen_T100.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "gen_T500.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "overhead.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "r22_T100.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "r22_T500.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "stream.out": {
+     "queued": 1,
+     "exit_codes": [
+      "0"
+     ],
+     "tracebacks": 0
+    },
+    "summarise.out": {
+     "queued": 0,
+     "exit_codes": [],
+     "tracebacks": 0
+    }
+   },
+   "n_files": 20,
+   "n_with_more_than_one_queue_entry": 0,
+   "n_nonzero_exit": 0,
+   "n_tracebacks": 0
+  },
+  "store": {
+   "n_signatures_in_store": 139,
+   "n_gates": 89,
+   "n_weights": 48,
+   "n_lookup": 2,
+   "n_recorded_method_signatures": 126,
+   "n_matched_to_a_method_record": 126,
+   "n_matched_to_a_deployed_or_pre_edit_weight": 16,
+   "unmatched": [],
+   "n_unmatched": 0
+  },
+  "code_files_modified_after_the_first_outcome": {
+   "check_numbers.py": "2026-11-11 15:19:11",
+   "diag_eta.py": "2026-11-11 13:43:23",
+   "r22.sql": "2026-11-11 13:26:28",
+   "render.py": "2026-11-11 15:18:58",
+   "render2.py": "2026-11-11 15:38:20",
+   "run_cert.py": "2026-11-11 13:38:23",
+   "run_equal.py": "2026-11-11 13:30:20",
+   "run_gate.py": "2026-11-11 13:31:17",
+   "run_gen.py": "2026-11-11 13:38:23",
+   "run_logdesc.py": "2026-11-11 13:37:15",
+   "run_overhead.py": "2026-11-11 13:50:11",
+   "run_r22.py": "2026-11-11 13:28:52",
+   "run_stream.py": "2026-11-11 13:38:23",
+   "summarise.py": "2026-11-11 15:17:47",
+   "xcommon.py": "2026-11-11 13:33:20",
+   "xeval.py": "2026-11-11 13:30:20",
+   "xrepair.py": "2026-11-11 13:26:28",
+   "xview.py": "2026-11-11 13:24:57"
+  },
+  "tests_boot_written": "2026-11-11 13:33:27",
+  "jobs": {
+   "behave_T100.out": {
+    "script": "run_behave.py",
+    "started": "2026-11-11 13:27:27",
+    "imports": [
+     "run_behave.py",
+     "xcommon.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {
+     "xcommon.py": "2026-11-11 13:33:20"
+    }
+   },
+   "behave_T500.out": {
+    "script": "run_behave.py",
+    "started": "2026-11-11 13:21:55",
+    "imports": [
+     "run_behave.py",
+     "xcommon.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {
+     "xcommon.py": "2026-11-11 13:33:20"
+    }
+   },
+   "cert_T100.out": {
+    "script": "run_cert.py",
+    "started": "2026-11-11 15:07:00",
+    "imports": [
+     "run_cert.py",
+     "xcommon.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {}
+   },
+   "cert_T500.out": {
+    "script": "run_cert.py",
+    "started": "2026-11-11 15:15:04",
+    "imports": [
+     "run_cert.py",
+     "xcommon.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {}
+   },
+   "equal_T100.out": {
+    "script": "run_equal.py",
+    "started": "2026-11-11 13:57:52",
+    "imports": [
+     "run_equal.py",
+     "xcommon.py",
+     "xeval.py",
+     "xmeth.py",
+     "xrepair.py"
+    ],
+    "modified_after_the_start": {}
+   },
+   "equal_T500.out": {
+    "script": "run_equal.py",
+    "started": "2026-11-11 14:13:15",
+    "imports": [
+     "run_equal.py",
+     "xcommon.py",
+     "xeval.py",
+     "xmeth.py",
+     "xrepair.py"
+    ],
+    "modified_after_the_start": {}
+   },
+   "gate_T100.out": {
+    "script": "run_gate.py",
+    "started": "2026-11-11 14:13:00",
+    "imports": [
+     "run_gate.py",
+     "xcommon.py",
+     "xgate.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {}
+   },
+   "gate_T1000.out": {
+    "script": "run_gate.py",
+    "started": "2026-11-11 13:33:04",
+    "imports": [
+     "run_gate.py",
+     "xcommon.py",
+     "xgate.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {
+     "xcommon.py": "2026-11-11 13:33:20"
+    }
+   },
+   "gate_T2000.out": {
+    "script": "run_gate.py",
+    "started": "2026-11-11 13:31:33",
+    "imports": [
+     "run_gate.py",
+     "xcommon.py",
+     "xgate.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {
+     "xcommon.py": "2026-11-11 13:33:20"
+    }
+   },
+   "gate_T500.out": {
+    "script": "run_gate.py",
+    "started": "2026-11-11 13:43:45",
+    "imports": [
+     "run_gate.py",
+     "xcommon.py",
+     "xgate.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {}
+   },
+   "gate_dev.out": {
+    "script": "run_gate.py",
+    "started": "2026-11-11 13:09:47",
+    "imports": [
+     "run_gate.py",
+     "xcommon.py",
+     "xgate.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {
+     "run_gate.py": "2026-11-11 13:31:17",
+     "xcommon.py": "2026-11-11 13:33:20"
+    }
+   },
+   "gen_T100.out": {
+    "script": "run_gen.py",
+    "started": "2026-11-11 15:18:22",
+    "imports": [
+     "run_gen.py",
+     "xcommon.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {}
+   },
+   "gen_T500.out": {
+    "script": "run_gen.py",
+    "started": "2026-11-11 15:21:10",
+    "imports": [
+     "run_gen.py",
+     "xcommon.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {}
+   },
+   "overhead.out": {
+    "script": "run_overhead.py",
+    "started": "2026-11-11 15:33:44",
+    "imports": [
+     "run_overhead.py",
+     "xcommon.py",
+     "xmeth.py",
+     "xview.py"
+    ],
+    "modified_after_the_start": {}
+   },
+   "r22_T100.out": {
+    "script": "run_r22.py",
+    "started": "2026-11-11 13:31:24",
+    "imports": [
+     "run_r22.py",
+     "xcommon.py",
+     "xmeth.py",
+     "xrepair.py",
+     "xview.py"
+    ],
+    "modified_after_the_start": {
+     "xcommon.py": "2026-11-11 13:33:20"
+    }
+   },
+   "r22_T500.out": {
+    "script": "run_r22.py",
+    "started": "2026-11-11 13:35:20",
+    "imports": [
+     "run_r22.py",
+     "xcommon.py",
+     "xmeth.py",
+     "xrepair.py",
+     "xview.py"
+    ],
+    "modified_after_the_start": {}
+   },
+   "stream.out": {
+    "script": "run_stream.py",
+    "started": "2026-11-11 14:44:02",
+    "imports": [
+     "run_stream.py",
+     "xcommon.py",
+     "xeval.py",
+     "xmeth.py"
+    ],
+    "modified_after_the_start": {}
+   }
+  },
+  "files_modified_after_a_job_that_imports_them_started": [
+   "run_gate.py",
+   "xcommon.py"
+  ],
+  "jobs_started_before_such_a_modification": [
+   "behave_T100.out",
+   "behave_T500.out",
+   "gate_T1000.out",
+   "gate_T2000.out",
+   "gate_dev.out",
+   "r22_T100.out"
+  ],
+  "method_and_behaviour_code_last_modified": {
+   "xmeth.py": "2026-11-11 13:07:26",
+   "run_behave.py": "2026-11-11 13:12:29",
+   "xgate.py": "2026-11-11 13:08:08",
+   "select_best.py": "2026-11-11 13:13:11"
+  },
+  "first_outcome": "2026-11-11 13:22:56",
+  "code_constants": {
+   "ALPHA, N_CAL, N_DRAWS, BEHAVE_DRAWS line": "ALPHA, N_CAL, N_DRAWS, BEHAVE_DRAWS = 0.05, 200, 20, (0, 1, 2)",
+   "files_that_mention_another_alpha": []
+  },
+  "behaviour_instances": {
+   "T100_as_planned": true,
+   "T500_as_planned": true,
+   "n_T100": 18,
+   "n_T500": 31,
+   "extra_T100": [],
+   "extra_T500": []
+  }
+ },
+ "public_code_path": {
+  "experiment_calls": {
+   "run_behave.py": [
+    "e10t.public._summarise",
+    "e10t.public.scores"
+   ],
+   "xeval.py": [
+    "e10t.public._summarise",
+    "e10t.public.scores"
+   ],
+   "run_gen.py": [
+    "e10t.public.generation",
+    "e10t.public.generation_summary"
+   ]
+  },
+  "experiment_defines_its_own_probability_test": false,
+  "adapter_calls_public_function": true,
+  "adapter_uses_public_summariser": true,
+  "builder_wrapper_calls_public_function": true
+ },
+ "r21_expectations": {
+  "false_firing_heldout_mean_over_20_draws": {
+   "TX-G2XL-rome-T500": {
+    "rescope|gon": {
+     "mean": 100.0,
+     "min": 100.0,
+     "max": 100.0
+    },
+    "rescope|goff": {
+     "mean": 5.913333333333333,
+     "min": 2.033333333333333,
+     "max": 10.566666666666666
+    },
+    "where_twoblock|gon": {
+     "mean": 100.0,
+     "min": 100.0,
+     "max": 100.0
+    },
+    "where_twoblock|goff": {
+     "mean": 5.913333333333333,
+     "min": 2.033333333333333,
+     "max": 10.566666666666666
+    },
+    "cosine|gon": {
+     "mean": 6.741666666666665,
+     "min": 2.5,
+     "max": 14.299999999999999
+    },
+    "cosine|goff": {
+     "mean": 6.640000000000001,
+     "min": 2.4,
+     "max": 14.2
+    },
+    "whitecos_0.1|gon": {
+     "mean": 6.6450000000000005,
+     "min": 2.7,
+     "max": 11.933333333333334
+    },
+    "whitecos_0.1|goff": {
+     "mean": 6.62,
+     "min": 2.6,
+     "max": 11.933333333333334
+    }
+   },
+   "TX-G2XL-rome-T1000": {
+    "rescope|gon": {
+     "mean": 100.0,
+     "min": 100.0,
+     "max": 100.0
+    },
+    "rescope|goff": {
+     "mean": 4.936666666666666,
+     "min": 1.7999999999999998,
+     "max": 9.933333333333334
+    },
+    "where_twoblock|gon": {
+     "mean": 100.0,
+     "min": 100.0,
+     "max": 100.0
+    },
+    "where_twoblock|goff": {
+     "mean": 4.936666666666666,
+     "min": 1.7999999999999998,
+     "max": 9.933333333333334
+    },
+    "cosine|gon": {
+     "mean": 5.3133333333333335,
+     "min": 1.3,
+     "max": 11.166666666666666
+    },
+    "cosine|goff": {
+     "mean": 5.206666666666666,
+     "min": 1.1333333333333333,
+     "max": 11.066666666666666
+    },
+    "whitecos_0.1|gon": {
+     "mean": 5.903333333333333,
+     "min": 1.4666666666666666,
+     "max": 18.633333333333333
+    },
+    "whitecos_0.1|goff": {
+     "mean": 5.828333333333333,
+     "min": 1.3666666666666667,
+     "max": 18.633333333333333
+    }
+   },
+   "TX-G2XL-rome-T2000": {
+    "rescope|gon": {
+     "mean": 100.0,
+     "min": 100.0,
+     "max": 100.0
+    },
+    "rescope|goff": {
+     "mean": 4.346666666666666,
+     "min": 1.3333333333333335,
+     "max": 7.433333333333334
+    },
+    "where_twoblock|gon": {
+     "mean": 100.0,
+     "min": 100.0,
+     "max": 100.0
+    },
+    "where_twoblock|goff": {
+     "mean": 4.346666666666666,
+     "min": 1.3333333333333335,
+     "max": 7.433333333333334
+    },
+    "cosine|gon": {
+     "mean": 5.051666666666668,
+     "min": 2.0,
+     "max": 15.299999999999999
+    },
+    "cosine|goff": {
+     "mean": 4.821666666666666,
+     "min": 1.7333333333333332,
+     "max": 15.133333333333333
+    },
+    "whitecos_0.1|gon": {
+     "mean": 5.25,
+     "min": 1.5333333333333332,
+     "max": 17.266666666666666
+    },
+    "whitecos_0.1|goff": {
+     "mean": 5.071666666666667,
+     "min": 1.3333333333333335,
+     "max": 17.266666666666666
+    }
+   }
+  },
+  "eta": {
+   "TX-G2XL-rome-T500": {
+    "n_draws_eta_ge_1_from_gate_file": 1,
+    "eta_draw0": 1.2885664332223428,
+    "rebuilt_etas": [
+     1.2885664332223428,
+     0.6012876734975389,
+     0.39981237017283794,
+     0.6359928008958895,
+     0.6123454964698811,
+     0.5031846968655138,
+     0.5596900453142406,
+     0.33794931155092023,
+     0.887017325495266,
+     0.42866275818824034,
+     0.4219836616884398,
+     0.3029699308953251,
+     0.3869102919881953,
+     0.951013224192323,
+     0.6232632444084483,
+     0.26888405445702385,
+     0.28678268938692164,
+     0.2847067234620173,
+     0.35078702855468347,
+     0.39633072961852145
+    ],
+    "n_draws_eta_ge_1_rebuilt": 1,
+    "own_requests_silenced_guards_off_per_draw": [
+     499,
+     22,
+     15,
+     19,
+     25,
+     21,
+     19,
+     13,
+     311,
+     13,
+     14,
+     5,
+     12,
+     499,
+     27,
+     6,
+     11,
+     12,
+     7,
+     9
+    ],
+    "own_requests_silenced_draws_0_1_2": [
+     499,
+     22,
+     15
+    ]
+   },
+   "TX-G2XL-rome-T1000": {
+    "n_draws_eta_ge_1_from_gate_file": 3,
+    "eta_draw0": 4.435219504319505
+   },
+   "TX-G2XL-rome-T2000": {
+    "n_draws_eta_ge_1_from_gate_file": 12,
+    "eta_draw0": 4.925923616424512
+   }
+  }
+ }
+}

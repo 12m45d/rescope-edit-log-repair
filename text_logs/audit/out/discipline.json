@@ -1,0 +1,541 @@
+{
+ "written": "2026-11-11 10:53:16 UTC",
+ "gpu_jobs": {
+  "builder(tx_*)": {
+   "tx_smoke": [
+    "2026-11-11 05:11:09",
+    "2026-11-11 05:18:00",
+    "2026-11-11 05:19:35"
+   ],
+   "tx_dev_test": [
+    "2026-11-11 05:23:32"
+   ],
+   "tx_dev": [
+    "2026-11-11 05:25:09"
+   ],
+   "tx_stream": [
+    "2026-11-11 05:31:27",
+    "2026-11-11 06:57:19"
+   ],
+   "tx_single": [
+    "2026-11-11 05:35:45"
+   ],
+   "tx_precont": [
+    "2026-11-11 05:52:32",
+    "2026-11-11 06:05:37"
+   ],
+   "tx_libcheck": [
+    "2026-11-11 06:02:01"
+   ],
+   "tx_descA": [
+    "2026-11-11 06:16:44"
+   ],
+   "tx_descD1": [
+    "2026-11-11 06:37:02"
+   ],
+   "tx_genG1": [
+    "2026-11-11 06:37:49",
+    "2026-11-11 06:54:34",
+    "2026-11-11 07:14:27",
+    "2026-11-11 07:22:13",
+    "2026-11-11 07:41:20",
+    "2026-11-11 07:56:46"
+   ],
+   "tx_d1curve": [
+    "2026-11-11 07:39:14"
+   ],
+   "tx_descD2": [
+    "2026-11-11 07:42:09"
+   ],
+   "tx_genG2": [
+    "2026-11-11 07:55:31",
+    "2026-11-11 08:34:32"
+   ],
+   "tx_genG3": [
+    "2026-11-11 08:47:32"
+   ],
+   "tx_selfcheck": [
+    "2026-11-11 08:52:52"
+   ],
+   "tx_collapse": [
+    "2026-11-11 09:06:08"
+   ]
+  },
+  "audit(e10aud_*)": {
+   "e10aud_det": [
+    "2026-11-11 09:35:33"
+   ],
+   "e10aud_single0": [
+    "2026-11-11 09:37:32"
+   ],
+   "e10aud_devfull": [
+    "2026-11-11 09:47:02"
+   ],
+   "e10aud_eval": [
+    "2026-11-11 09:48:30"
+   ],
+   "e10aud_single1": [
+    "2026-11-11 09:55:39"
+   ],
+   "e10aud_pubcmp": [
+    "2026-11-11 09:57:07"
+   ],
+   "e10aud_strm30": [
+    "2026-11-11 10:05:29"
+   ],
+   "e10aud_uc": [
+    "2026-11-11 10:10:17"
+   ],
+   "e10aud_xstack": [
+    "2026-11-11 10:13:15"
+   ],
+   "e10aud_envx": [
+    "2026-11-11 10:16:20"
+   ],
+   "e10aud_strmT100": [
+    "2026-11-11 10:29:07"
+   ],
+   "e10aud_indep": [
+    "2026-11-11 10:31:47"
+   ],
+   "e10aud_misc": [
+    "2026-11-11 10:41:35"
+   ]
+  },
+  "other_agents(e10t_*)": {
+   "e10t_smoke": [
+    "2026-11-11 09:37:55"
+   ],
+   "e10t_cache": [
+    "2026-11-11 10:05:58"
+   ],
+   "e10t_s3": [
+    "2026-11-11 10:20:20"
+   ],
+   "e10t_test": [
+    "2026-11-11 10:30:26"
+   ],
+   "e10t_dev": [
+    "2026-11-11 10:46:22"
+   ],
+   "e10t_gen": [
+    "2026-11-11 10:46:22"
+   ],
+   "e10t_cost": [
+    "2026-11-11 10:52:18"
+   ]
+  }
+ },
+ "builder_job_commands": {
+  "tx_collapse": [
+   "collapse_point.py"
+  ],
+  "tx_d1curve": [
+   "d1_curve_dev.py"
+  ],
+  "tx_descA": [
+   "describe.py --tags W0 dev100 T100 T500 --"
+  ],
+  "tx_descD1": [
+   "describe.py --tags W0 dev100 T100 T500 T1"
+  ],
+  "tx_descD2": [
+   "code/describe.py --tags T2000 --parts dec,edit,public"
+  ],
+  "tx_dev": [
+   "run_stream.py --name dev"
+  ],
+  "tx_dev_test": [
+   "run_stream.py --name dev --limit 3"
+  ],
+  "tx_genG1": [
+   "describe.py --tags W0 T500 T1000 --parts",
+   "describe.py --tags dev100 T100 W0 --parts",
+   "describe.py --tags dev100 T100 W0 T500 T1"
+  ],
+  "tx_genG2": [
+   "code/describe.py --tags T2000 --parts gen"
+  ],
+  "tx_genG3": [
+   "code/describe.py --tags dev100 T100 W0 T500 T1000 T2000 --parts gen"
+  ],
+  "tx_libcheck": [
+   "check_library.py"
+  ],
+  "tx_precont": [
+   "pre_cont.py"
+  ],
+  "tx_selfcheck": [
+   "code/selfcheck.py"
+  ],
+  "tx_single": [
+   "run_single.py"
+  ],
+  "tx_smoke": [
+   "smoke.py"
+  ],
+  "tx_stream": [
+   "run_stream.py --name stream"
+  ]
+ },
+ "builder_jobs_without_a_logged_command": [],
+ "builder_code": {
+  "check_library.py": {
+   "gate_words_in_executable_text": [
+    "ScopedLog",
+    "from rescope",
+    "rebase",
+    "tau"
+   ],
+   "imports_rescope": true,
+   "uses_ScopedLog_or_Hook": true,
+   "log_selection": [
+    "NAME = TX . DEV_LOG"
+   ],
+   "asserts_dev_log": true
+  },
+  "export_library_format.py": {
+   "gate_words_in_executable_text": [
+    "from rescope"
+   ],
+   "imports_rescope": true,
+   "uses_ScopedLog_or_Hook": false,
+   "log_selection": [
+    "TX . available ( )"
+   ],
+   "asserts_dev_log": false
+  },
+  "tx_public.py": {
+   "gate_words_in_executable_text": [
+    "from rescope"
+   ],
+   "imports_rescope": true,
+   "uses_ScopedLog_or_Hook": false,
+   "log_selection": [],
+   "asserts_dev_log": false
+  }
+ },
+ "builder_scripts_using_a_gate_object": [
+  "check_library.py"
+ ],
+ "builder_scripts_using_a_gate_object_all_restricted_to_dev_log": true,
+ "builder_outputs_with_gate_words": {
+  "logs/check_library.out": {
+   "words": [
+    "released",
+    "scopedlog",
+    "threshold"
+   ],
+   "reported_log_names_in_file": [],
+   "first_contexts": [
+    "brary.py [06:05:25] log TX-G2XL-rome-dev100 through rescope.EditLog / ScopedLog / Hook (library unchanged): own coordinate max |s",
+    "ror 2.3e-07 (not rebased: median 0.16, max 0.63) [06:05:25] hook with thresholds +inf: 400 of 400 prompts bitwise equal to the pr",
+    "twise equal to the pre-edit model [06:05:25] linear replay (all edits released everywhere) vs deployed model: max |logit diff| 6"
+   ]
+  },
+  "out/INDEX.txt": {
+   "words": [
+    "scopedlog"
+   ],
+   "reported_log_names_in_file": [],
+   "first_contexts": [
+    "ck_library.py development log through rescope.EditLog / ScopedLog / Hook (format check) 12.1 kB [redacted: local path]"
+   ]
+  },
+  "out/library_check.json": {
+   "words": [
+    "released",
+    "scopedlog",
+    "threshold"
+   ],
+   "reported_log_names_in_file": [],
+   "first_contexts": [
+    ": 13.284940719604492 }, \"f_repl_own_key\": { \"n_requests\": 100, \"threshold\": 0.999, \"n_own_edit_released\": 100, \"max_rel",
+    "_own_key\": { \"n_requests\": 100, \"threshold\": 0.999, \"n_own_edit_released\": 100, \"max_rel_err_output_vs_target\": 2.747208",
+    "99963, \"own_coordinate_max\": 1.0000000000000058, \"n_other_or_none_released\": 0, \"others\": [] }, \"summary_lines\": [ \"lo"
+   ]
+  },
+  "out/log_audit.json": {
+   "words": [
+    "released"
+   ],
+   "reported_log_names_in_file": [],
+   "first_contexts": [
+    "\": 2, \"n_target_tokens\": 1, \"subject\": \"The Loner\", \"prompt\": \"{} was released on\", \"target_new\": \"HBO\"}, {\"index\": 40, \"case_id",
+    "\"n_target_tokens\": 1, \"subject\": \"The Yellow Rose\", \"prompt\": \"{} was released on\", \"target_new\": \"CBS\"}, {\"index\": 148, \"case_i",
+    "t_tokens\": 1, \"subject\": \"The Million Second Quiz\", \"prompt\": \"{} was released on\", \"target_new\": \"CBS\"}, {\"index\": 166, \"case_i"
+   ]
+  },
+  "out/prompt_texts.json": {
+   "words": [
+    "fires",
+    "released"
+   ],
+   "reported_log_names_in_file": [],
+   "first_contexts": [
+    "ux, a native\", \"An album was recorded for Capitol Nashville but never released. Danielle Darrieux spoke the language\", \"The moth",
+    " is produced by\", \"Robert William Muench is a\", \"The first volume was released on July 15, 2008. Robert William Muench has the p",
+    " DJ is produced by\", \"Jeep Cherokee (XJ), created by\", \"The Loner was released on\", \"This reportedly includes for the overseas "
+   ]
+  },
+  "out/text_logs_table.txt": {
+   "words": [
+    "released",
+    "scopedlog",
+    "threshold"
+   ],
+   "reported_log_names_in_file": [],
+   "first_contexts": [
+    "rary_check.json) log TX-G2XL-rome-dev100 through rescope.EditLog / ScopedLog / Hook (library unchanged): own coordinate max |s",
+    " rel. error 2.3e-07 (not rebased: median 0.16, max 0.63) hook with thresholds +inf: 400 of 400 prompts bitwise equal to the pr",
+    "ompts bitwise equal to the pre-edit model linear replay (all edits released everywhere) vs deployed model: max |logit diff| 6"
+   ]
+  }
+ },
+ "library_check": {
+  "log": "TX-G2XL-rome-dev100",
+  "is_development_log": true,
+  "sections": [
+   "a_own",
+   "b_delta",
+   "c_rebase",
+   "d_off",
+   "e_linear_replay",
+   "f_repl_own_key"
+  ]
+ },
+ "table_gate_lines": {
+  "lines": [
+   [
+    210,
+    "rebase lemma: rebased value vs residual to the pre-edit weight, max rel. error 2.3e-07 (not rebased: median 0.16, max 0.63)"
+   ],
+   [
+    211,
+    "hook with thresholds +inf: 400 of 400 prompts bitwise equal to the pre-edit model"
+   ],
+   [
+    212,
+    "linear replay (all edits released everywhere) vs deployed model: max |logit diff| 6.10e-05 (deployed vs pre-edit, median of max: 13.3); same argmax at"
+   ],
+   [
+    213,
+    "replacement response at the request's own key (threshold 0.999): own edit released on 100 of 100 requests, module output vs logged target max rel. err"
+   ]
+  ],
+  "all_inside_section_7(development log only)": true
+ },
+ "detector_quantities_on_the_reported_stream": {
+  "per_update_scalars_in_logs_edit/stream/factors.pt": [
+   "w_dot_k_request",
+   "w_dot_k_avg",
+   "coord_templates_min",
+   "coord_templates_max",
+   "coord_templates"
+  ],
+  "n_updates": 2000,
+  "n_values_per_update(coord_templates)": 21,
+  "what": "normalised coordinate <left, k> / <left, k_request> of the edit's OWN subject token under the editor's own 21 context templates (the request prompt behind 20 sampled prefixes), recorded while the edit was written; their mean is the 'template-averaged key' coordinate printed for all five logs in section 1 of out/text_logs_table.txt (q05 / median / q95 / max, share within 1 % / 10 %)",
+  "is_a_gate_decision": false,
+  "threshold_applied": false,
+  "model_run_under_a_gate": false,
+  "library_constructor_on_reported_logs": "export_library_format.py: rescope.loglib.from_testbed(<dir>) for all five logs, then own() (= 1) and delta() (= W_E - W_0): format check of the stored factors; no ScopedLog, no Hook, no calibration"
+ },
+ "other_agents": {
+  "scan_time": "2026-11-11 10:53:17 UTC",
+  "10_final/e10_text": {
+   "n_files": 1163,
+   "out_dir_files": [
+    "out/dev/gen/TX-G2XL-rome-dev100__deployed.json.partial",
+    "out/dev/gen/TX-G2XL-rome-dev100__preedit.json",
+    "out/dev/parts/behave.json",
+    "out/dev/parts/gate.json",
+    "out/dev/parts/gen.json",
+    "out/dev/parts/public.json",
+    "out/dev/parts/retention.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15000.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15001.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15002.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15003.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15004.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15005.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15006.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15007.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15008.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15009.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15010.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15011.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15012.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15013.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15014.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15015.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15016.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15017.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15018.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15019.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15020.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15021.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15022.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15023.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15024.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15025.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15026.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15027.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15028.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15029.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15030.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15031.json",
+    "out/dev/public/TX-G2XL-rome-dev100/cosine__d0/run_000/case_15032.json"
+   ],
+   "store_files": [
+    "store/gpt2-xl/dec__G0477ec114826c3d4/shard_ustc_728648_1794394131851.jsonl",
+    "store/gpt2-xl/dec__G8573aafbd8392ac8/shard_ustc_728648_1794394119457.jsonl",
+    "store/gpt2-xl/dec__G98f156bbd9c80edf/shard_ustc_728648_1794394099553.jsonl",
+    "store/gpt2-xl/dec__Ga11668dbc0b8cf0d/shard_ustc_728648_1794394143160.jsonl",
+    "store/gpt2-xl/dec__Ga2de75ff6d7589ae/shard_ustc_728648_1794394246073.jsonl",
+    "store/gpt2-xl/dec__Ge019cb3fc42a5015/shard_ustc_728648_1794394111958.jsonl",
+    "store/gpt2-xl/dec__Gec500f4e96fb8fae/shard_ustc_728648_1794394148492.jsonl",
+    "store/gpt2-xl/dec__Gf6fde5e29189deb2/shard_ustc_728648_1794394256937.jsonl",
+    "store/gpt2-xl/dec__W72a58e4ecddf9a41/shard_ustc_728648_1794394251104.jsonl",
+    "store/gpt2-xl/dec__W7f2f9e161ee00c15/shard_ustc_728648_1794394240282.jsonl",
+    "store/gpt2-xl/dec__Wb71aefa6a72077e5/shard_ustc_728648_1794394001214.jsonl",
+    "store/gpt2-xl/dec__Wbbe32e5f27329a0c/shard_ustc_728648_1794394050206.jsonl",
+    "store/gpt2-xl/tf__G0477ec114826c3d4/shard_ustc_728648_1794394130701.jsonl",
+    "store/gpt2-xl/tf__G8573aafbd8392ac8/shard_ustc_728648_1794394118284.jsonl",
+    "store/gpt2-xl/tf__G98f156bbd9c80edf/shard_ustc_728648_1794394098393.jsonl",
+    "store/gpt2-xl/tf__Ga11668dbc0b8cf0d/shard_ustc_728648_1794394142020.jsonl",
+    "store/gpt2-xl/tf__Ga2de75ff6d7589ae/shard_ustc_728648_1794394245443.jsonl",
+    "store/gpt2-xl/tf__Ge019cb3fc42a5015/shard_ustc_728648_1794394110784.jsonl",
+    "store/gpt2-xl/tf__Gec500f4e96fb8fae/shard_ustc_728648_1794394147855.jsonl",
+    "store/gpt2-xl/tf__Gf6fde5e29189deb2/shard_ustc_728648_1794394256309.jsonl",
+    "store/gpt2-xl/tf__W72a58e4ecddf9a41/shard_ustc_728648_1794394250507.jsonl",
+    "store/gpt2-xl/tf__W7f2f9e161ee00c15/shard_ustc_728648_1794394239680.jsonl",
+    "store/gpt2-xl/tf__Wb71aefa6a72077e5/shard_ustc_728648_1794394000227.jsonl",
+    "store/gpt2-xl/tf__Wbbe32e5f27329a0c/shard_ustc_728648_1794394049089.jsonl"
+   ],
+   "logs": [
+    "logs/build_keycache.out",
+    "logs/project_cost.out",
+    "logs/run_dev_behave.out",
+    "logs/run_dev_gen.out",
+    "logs/run_gate.out",
+    "logs/s1.out",
+    "logs/s1.pid",
+    "logs/s3.out",
+    "logs/t_gpu.out"
+   ],
+   "tests": [
+    "tests/out/cpu_cache.json",
+    "tests/out/cpu_calib.json",
+    "tests/out/cpu_draws.json",
+    "tests/out/cpu_gate.json",
+    "tests/out/cpu_log.json",
+    "tests/out/cpu_null0.json",
+    "tests/out/cpu_rebase.json",
+    "tests/out/cpu_rows.json",
+    "tests/out/gpu_batch.json",
+    "tests/out/gpu_cache.json",
+    "tests/out/gpu_hook.json",
+    "tests/out/gpu_linear.json",
+    "tests/out/gpu_null0.json",
+    "tests/out/gpu_public.json",
+    "tests/out/gpu_silent.json",
+    "tests/out/gpu_store.json",
+    "tests/out/gpu_target.json",
+    "tests/render.py",
+    "tests/scratch/gen_rescope.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/deployed/run_000/case_15000.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/deployed/run_000/case_15001.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/deployed/run_000/case_15002.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/deployed/run_000/case_15003.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/deployed/run_000/case_15004.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/deployed/run_000/case_15005.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/deployed/run_000/case_15006.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/deployed/run_000/case_15007.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/deployed/run_000/case_15008.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/deployed/run_000/case_15009.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/rescope/run_000/case_15000.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/rescope/run_000/case_15001.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/rescope/run_000/case_15002.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/rescope/run_000/case_15003.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/rescope/run_000/case_15004.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/rescope/run_000/case_15005.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/rescope/run_000/case_15006.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/rescope/run_000/case_15007.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/rescope/run_000/case_15008.json",
+    "tests/scratch/pub/TX-G2XL-rome-dev100/rescope/run_000/case_15009.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15000.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15001.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15002.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15003.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15004.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15005.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15006.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15007.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15008.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15009.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15010.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15011.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15012.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15013.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15014.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15015.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15016.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15017.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15018.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15019.json",
+    "tests/scratch/public_test/TX-G2XL-rome-dev100/deployed/run_000/case_15020.json"
+   ],
+   "non_code_files_naming_a_reported_log": {
+    "USAGE.template.txt": [
+     "TX-G2XL-rome-T500",
+     "TX-G2XL-rome-T2000"
+    ]
+   },
+   "logs_opened_by_test_and_script_files": {
+    "tests/t_cpu.py": [
+     "e10t.DEV_LOG",
+     "e10t.DEV_LOG, T=50"
+    ],
+    "tests/t_gpu.py": [
+     "e10t.DEV_LOG"
+    ],
+    "tests/render.py": [],
+    "tests/scratch/s1.py": [
+     "TX.DEV_LOG"
+    ],
+    "tests/scratch/s2.py": [
+     "e10t.DEV_LOG"
+    ],
+    "tests/scratch/s3.py": [
+     "e10t.DEV_LOG"
+    ],
+    "scripts/build_keycache.py": [
+     "NAME",
+     "TX-G2XL-rome-T500"
+    ],
+    "scripts/run_rowset.py": [
+     "args.log",
+     "args.log, T=T"
+    ],
+    "scripts/render_table.py": [],
+    "scripts/project_cost.py": [
+     "e10t.DEV_LOG"
+    ]
+   },
+   "method_modules_are_placeholders": {
+    "gate.py": false,
+    "methods.py": false,
+    "behave.py": false
+   }
+  },
+  "10_final/cache/text/gpt2-xl parts": [
+   "dev",
+   "pools"
+  ],
+  "key_cache_parts_of_the_reported_stream": []
+ },
+ "verdict_inputs": {
+  "gate_or_repair_on_reported_log_by_builder": false
+ }
+}

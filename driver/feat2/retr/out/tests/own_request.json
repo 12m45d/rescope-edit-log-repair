@@ -1,0 +1,65 @@
+{
+ "ok": true,
+ "summary": "qwen25vl/Q: 2000 edits, | score - 1 | <= 1.5e-07; qwen25vl/QK: 500 edits, | score - 1 | <= 1.5e-07; llava/L: 1000 edits, | score - 1 | <= 1.5e-07; retr.scores on the Rel sequences of the development logs: diagonal == 1 (bitwise the own-request scores)",
+ "families": {
+  "qwen25vl/Q": {
+   "T": 2000,
+   "image_score_min_max": [
+    0.9999998916760156,
+    1.0000001052244833
+   ],
+   "question_score_min_max": [
+    0.9999998458128516,
+    1.000000145661577
+   ],
+   "max_abs_dev_from_1": 1.5418714838233427e-07,
+   "rel_sequence_has_the_request_attributes": true,
+   "rel_sequence_scores_bitwise_equal": true,
+   "edits_are_a_prefix_of_the_family": true,
+   "ok": true
+  },
+  "qwen25vl/QK": {
+   "T": 500,
+   "image_score_min_max": [
+    0.9999998921874251,
+    1.0000001012386832
+   ],
+   "question_score_min_max": [
+    0.9999998578967038,
+    1.0000001531020537
+   ],
+   "max_abs_dev_from_1": 1.5310205370155927e-07,
+   "rel_sequence_has_the_request_attributes": true,
+   "rel_sequence_scores_bitwise_equal": true,
+   "edits_are_a_prefix_of_the_family": true,
+   "ok": true
+  },
+  "llava/L": {
+   "T": 1000,
+   "image_score_min_max": [
+    0.9999998916760156,
+    1.0000001002609835
+   ],
+   "question_score_min_max": [
+    0.9999998458128516,
+    1.0000001452326224
+   ],
+   "max_abs_dev_from_1": 1.5418714838233427e-07,
+   "rel_sequence_has_the_request_attributes": true,
+   "rel_sequence_scores_bitwise_equal": true,
+   "edits_are_a_prefix_of_the_family": true,
+   "ok": true
+  },
+  "TB-Q100-ae-l2_3": {
+   "diag_of_scores_equals_own_request_scores": true,
+   "max_abs_dev_from_1": 1.4566157702233795e-07
+  },
+  "TB-L100-ae-l2_3": {
+   "diag_of_scores_equals_own_request_scores": true,
+   "max_abs_dev_from_1": 1.0673244688064187e-07
+  }
+ },
+ "test": "own_request",
+ "seconds": 0.1,
+ "when": "2026-11-11 08:30:26 UTC"
+}

@@ -1,0 +1,577 @@
+{
+ "what": "selection of the MME rows: all rows; split by image into MME-C and MME-T, stratified by category; flags against the project's caches",
+ "protocol": "10_final/PROTOCOL.md, section 6, amendment 'Clarification of H3 (R6) and R17', item (2)",
+ "seed": 20261111,
+ "rule": "BY IMAGE (unit = image content, md5): MME-C (calibration source) and MME-T (test rows), 50 percent of the images each,\n          stratified by category.  Rule:\n            1. stratum of an image = the sorted set of the categories of its rows, joined by '+' (ten images are asked in two\n               categories: their strata are the four pairs that occur);\n            2. per stratum: the image md5s sorted as strings; perm = numpy.random.default_rng(useed('split', stratum)).permutation(n),\n               useed = first 32 bits of sha1('20261111|split|<stratum>');\n            3. the first n_C images of perm are MME-C, the rest MME-T; n_C = n // 2, plus 1 in every second stratum of odd size\n               (odd strata in name order: the 1st, 3rd, 5th get the extra image in MME-C, the 2nd, 4th in MME-T);\n            4. a row belongs to the part of its image: the rows of an image are never separated.",
+ "row_table_md5": "a8611ebef6cb995fd772c84668cb0929",
+ "n_rows": 2374,
+ "n_images": 1177,
+ "n_categories": 14,
+ "n_distinct_queries": 2374,
+ "query_id_range": [
+  1000000,
+  1002373
+ ],
+ "parts": {
+  "MME-C": {
+   "rows": 1188,
+   "images": 589,
+   "ref_yes": 594,
+   "ref_no": 594
+  },
+  "MME-T": {
+   "rows": 1186,
+   "images": 588,
+   "ref_yes": 593,
+   "ref_no": 593
+  }
+ },
+ "share_of_images": {
+  "MME-C": 0.500425,
+  "MME-T": 0.499575
+ },
+ "images_in_both_parts": 0,
+ "by_category": {
+  "code_reasoning": {
+   "MME-C": {
+    "rows": 20,
+    "images": 10,
+    "ref_yes": 10,
+    "ref_no": 10
+   },
+   "MME-T": {
+    "rows": 20,
+    "images": 10,
+    "ref_yes": 10,
+    "ref_no": 10
+   }
+  },
+  "artwork": {
+   "MME-C": {
+    "rows": 200,
+    "images": 100,
+    "ref_yes": 100,
+    "ref_no": 100
+   },
+   "MME-T": {
+    "rows": 200,
+    "images": 100,
+    "ref_yes": 100,
+    "ref_no": 100
+   }
+  },
+  "celebrity": {
+   "MME-C": {
+    "rows": 170,
+    "images": 85,
+    "ref_yes": 85,
+    "ref_no": 85
+   },
+   "MME-T": {
+    "rows": 170,
+    "images": 85,
+    "ref_yes": 85,
+    "ref_no": 85
+   }
+  },
+  "numerical_calculation": {
+   "MME-C": {
+    "rows": 20,
+    "images": 10,
+    "ref_yes": 10,
+    "ref_no": 10
+   },
+   "MME-T": {
+    "rows": 20,
+    "images": 10,
+    "ref_yes": 10,
+    "ref_no": 10
+   }
+  },
+  "text_translation": {
+   "MME-C": {
+    "rows": 20,
+    "images": 10,
+    "ref_yes": 10,
+    "ref_no": 10
+   },
+   "MME-T": {
+    "rows": 20,
+    "images": 10,
+    "ref_yes": 10,
+    "ref_no": 10
+   }
+  },
+  "count": {
+   "MME-C": {
+    "rows": 30,
+    "images": 15,
+    "ref_yes": 15,
+    "ref_no": 15
+   },
+   "MME-T": {
+    "rows": 30,
+    "images": 15,
+    "ref_yes": 15,
+    "ref_no": 15
+   }
+  },
+  "color": {
+   "MME-C": {
+    "rows": 30,
+    "images": 15,
+    "ref_yes": 15,
+    "ref_no": 15
+   },
+   "MME-T": {
+    "rows": 30,
+    "images": 15,
+    "ref_yes": 15,
+    "ref_no": 15
+   }
+  },
+  "commonsense_reasoning": {
+   "MME-C": {
+    "rows": 70,
+    "images": 35,
+    "ref_yes": 35,
+    "ref_no": 35
+   },
+   "MME-T": {
+    "rows": 70,
+    "images": 35,
+    "ref_yes": 35,
+    "ref_no": 35
+   }
+  },
+  "position": {
+   "MME-C": {
+    "rows": 28,
+    "images": 14,
+    "ref_yes": 14,
+    "ref_no": 14
+   },
+   "MME-T": {
+    "rows": 32,
+    "images": 16,
+    "ref_yes": 16,
+    "ref_no": 16
+   }
+  },
+  "OCR": {
+   "MME-C": {
+    "rows": 20,
+    "images": 10,
+    "ref_yes": 10,
+    "ref_no": 10
+   },
+   "MME-T": {
+    "rows": 20,
+    "images": 10,
+    "ref_yes": 10,
+    "ref_no": 10
+   }
+  },
+  "landmark": {
+   "MME-C": {
+    "rows": 200,
+    "images": 100,
+    "ref_yes": 100,
+    "ref_no": 100
+   },
+   "MME-T": {
+    "rows": 200,
+    "images": 100,
+    "ref_yes": 100,
+    "ref_no": 100
+   }
+  },
+  "scene": {
+   "MME-C": {
+    "rows": 200,
+    "images": 100,
+    "ref_yes": 100,
+    "ref_no": 100
+   },
+   "MME-T": {
+    "rows": 200,
+    "images": 100,
+    "ref_yes": 100,
+    "ref_no": 100
+   }
+  },
+  "existence": {
+   "MME-C": {
+    "rows": 32,
+    "images": 16,
+    "ref_yes": 16,
+    "ref_no": 16
+   },
+   "MME-T": {
+    "rows": 28,
+    "images": 14,
+    "ref_yes": 14,
+    "ref_no": 14
+   }
+  },
+  "posters": {
+   "MME-C": {
+    "rows": 148,
+    "images": 74,
+    "ref_yes": 74,
+    "ref_no": 74
+   },
+   "MME-T": {
+    "rows": 146,
+    "images": 73,
+    "ref_yes": 73,
+    "ref_no": 73
+   }
+  }
+ },
+ "strata": {
+  "OCR": {
+   "n_images": 20,
+   "MME-C": 10,
+   "MME-T": 10,
+   "seed": 890720491,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "artwork": {
+   "n_images": 200,
+   "MME-C": 100,
+   "MME-T": 100,
+   "seed": 2019586147,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "celebrity": {
+   "n_images": 170,
+   "MME-C": 85,
+   "MME-T": 85,
+   "seed": 2344374231,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "code_reasoning": {
+   "n_images": 20,
+   "MME-C": 10,
+   "MME-T": 10,
+   "seed": 23915098,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "color": {
+   "n_images": 28,
+   "MME-C": 14,
+   "MME-T": 14,
+   "seed": 2660316006,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "color+count": {
+   "n_images": 2,
+   "MME-C": 1,
+   "MME-T": 1,
+   "seed": 1133129228,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "commonsense_reasoning": {
+   "n_images": 70,
+   "MME-C": 35,
+   "MME-T": 35,
+   "seed": 1936948893,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "count": {
+   "n_images": 22,
+   "MME-C": 11,
+   "MME-T": 11,
+   "seed": 2773108704,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "count+existence": {
+   "n_images": 3,
+   "MME-C": 2,
+   "MME-T": 1,
+   "seed": 2764351101,
+   "odd": true,
+   "extra_image_in": "MME-C"
+  },
+  "count+position": {
+   "n_images": 3,
+   "MME-C": 1,
+   "MME-T": 2,
+   "seed": 456491051,
+   "odd": true,
+   "extra_image_in": "MME-T"
+  },
+  "existence": {
+   "n_images": 25,
+   "MME-C": 13,
+   "MME-T": 12,
+   "seed": 2149246833,
+   "odd": true,
+   "extra_image_in": "MME-C"
+  },
+  "existence+position": {
+   "n_images": 2,
+   "MME-C": 1,
+   "MME-T": 1,
+   "seed": 481503188,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "landmark": {
+   "n_images": 200,
+   "MME-C": 100,
+   "MME-T": 100,
+   "seed": 1728364904,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "numerical_calculation": {
+   "n_images": 20,
+   "MME-C": 10,
+   "MME-T": 10,
+   "seed": 2906469846,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "position": {
+   "n_images": 25,
+   "MME-C": 12,
+   "MME-T": 13,
+   "seed": 1330390782,
+   "odd": true,
+   "extra_image_in": "MME-T"
+  },
+  "posters": {
+   "n_images": 147,
+   "MME-C": 74,
+   "MME-T": 73,
+   "seed": 3764687451,
+   "odd": true,
+   "extra_image_in": "MME-C"
+  },
+  "scene": {
+   "n_images": 200,
+   "MME-C": 100,
+   "MME-T": 100,
+   "seed": 1024445973,
+   "odd": false,
+   "extra_image_in": null
+  },
+  "text_translation": {
+   "n_images": 20,
+   "MME-C": 10,
+   "MME-T": 10,
+   "seed": 3684884431,
+   "odd": false,
+   "extra_image_in": null
+  }
+ },
+ "question_strings_in_both_parts": 104,
+ "rows_whose_question_string_also_occurs_in_the_other_part": {
+  "MME-C": 213,
+  "MME-T": 195
+ },
+ "flags": {
+  "img_in_cache": {
+   "n_rows": 0,
+   "n_images": 0,
+   "by_reference_set": {
+    "benign:blip2": 0,
+    "benign:llava": 0,
+    "benign:qwen25vl": 0,
+    "hard_negatives:blip2": 0,
+    "hard_negatives:llava": 0,
+    "hard_negatives:qwen25vl": 0,
+    "index:QO": 0,
+    "index:blip2": 0,
+    "index:llava": 0,
+    "index:qwen25vl": 0,
+    "md5_memo_of_the_caches": 0
+   },
+   "reference_set_sizes(distinct image contents)": {
+    "benign:blip2": 1500,
+    "benign:llava": 1500,
+    "benign:qwen25vl": 1500,
+    "hard_negatives:blip2": 559,
+    "hard_negatives:llava": 816,
+    "hard_negatives:qwen25vl": 797,
+    "index:QO": 1453,
+    "index:blip2": 3402,
+    "index:llava": 4556,
+    "index:qwen25vl": 7720,
+    "md5_memo_of_the_caches": 12736
+   },
+   "hn_and_benign_files_hashed_here": {
+    "n_rows": 9400,
+    "n_files": 2920,
+    "n_rows_compared_with_index_md5": 9400,
+    "n_equal": 9400
+   }
+  },
+  "question": {
+   "q_in_edit": 0,
+   "q_in_edit_exact": 0,
+   "q_in_probe": 0,
+   "q_in_probe_exact": 0,
+   "query_in_probe": 0,
+   "img_in_edit": 0,
+   "img_in_probe": 0,
+   "q_without_suffix_in_edit_or_probe": 0,
+   "q_in_hn_or_benign_rows": 0
+  },
+  "by_cache_and_family": {
+   "QO": {
+    "QO": {
+     "q_in_edit": 0,
+     "q_in_edit_exact": 0,
+     "q_in_probe": 0,
+     "q_in_probe_exact": 0,
+     "query_in_probe": 0,
+     "img_in_edit": 0,
+     "img_in_probe": 0
+    }
+   },
+   "blip2": {
+    "B": {
+     "q_in_edit": 0,
+     "q_in_edit_exact": 0,
+     "q_in_probe": 0,
+     "q_in_probe_exact": 0,
+     "query_in_probe": 0,
+     "img_in_edit": 0,
+     "img_in_probe": 0
+    }
+   },
+   "llava": {
+    "L": {
+     "q_in_edit": 0,
+     "q_in_edit_exact": 0,
+     "q_in_probe": 0,
+     "q_in_probe_exact": 0,
+     "query_in_probe": 0,
+     "img_in_edit": 0,
+     "img_in_probe": 0
+    }
+   },
+   "qwen25vl": {
+    "Q": {
+     "q_in_edit": 0,
+     "q_in_edit_exact": 0,
+     "q_in_probe": 0,
+     "q_in_probe_exact": 0,
+     "query_in_probe": 0,
+     "img_in_edit": 0,
+     "img_in_probe": 0
+    },
+    "QK": {
+     "q_in_edit": 0,
+     "q_in_edit_exact": 0,
+     "q_in_probe": 0,
+     "q_in_probe_exact": 0,
+     "query_in_probe": 0,
+     "img_in_edit": 0,
+     "img_in_probe": 0
+    }
+   }
+  }
+ },
+ "reference_caches": {
+  "QO": {
+   "backbone": "qwen25vl",
+   "n_sequences": 2500,
+   "index_md5": "338f14e0d8d6018f87723b7fce973840",
+   "families": {
+    "QO": {
+     "n_edit_sequences": 1500,
+     "n_probe_rows": 1000,
+     "n_edit_question_strings": 630,
+     "n_edit_images": 1000,
+     "n_probe_question_strings": 778,
+     "n_probe_images": 453
+    }
+   }
+  },
+  "blip2": {
+   "backbone": "blip2",
+   "n_sequences": 6800,
+   "index_md5": "cf9a0fb20e6992ae647b70adcfb8aaa2",
+   "families": {
+    "B": {
+     "n_edit_sequences": 1500,
+     "n_probe_rows": 1000,
+     "n_edit_question_strings": 728,
+     "n_edit_images": 1000,
+     "n_probe_question_strings": 755,
+     "n_probe_images": 443
+    }
+   }
+  },
+  "llava": {
+   "backbone": "llava",
+   "n_sequences": 8800,
+   "index_md5": "a629f69ba71ef685108e1cb13e18d437",
+   "families": {
+    "L": {
+     "n_edit_sequences": 3000,
+     "n_probe_rows": 1000,
+     "n_edit_question_strings": 1226,
+     "n_edit_images": 1998,
+     "n_probe_question_strings": 755,
+     "n_probe_images": 443
+    }
+   }
+  },
+  "qwen25vl": {
+   "backbone": "qwen25vl",
+   "n_sequences": 14300,
+   "index_md5": "0ccb7c12c4e5cdc43c47ca6afe5d647f",
+   "families": {
+    "Q": {
+     "n_edit_sequences": 6000,
+     "n_probe_rows": 1000,
+     "n_edit_question_strings": 2282,
+     "n_edit_images": 3997,
+     "n_probe_question_strings": 755,
+     "n_probe_images": 443
+    },
+    "QK": {
+     "n_edit_sequences": 1500,
+     "n_probe_rows": 1000,
+     "n_edit_question_strings": 446,
+     "n_edit_images": 981,
+     "n_probe_question_strings": 810,
+     "n_probe_images": 500
+    }
+   }
+  }
+ },
+ "inputs_md5": {
+  "cache2/mme/mme_rows.jsonl": "a8611ebef6cb995fd772c84668cb0929",
+  "cache/QO/index.jsonl": "338f14e0d8d6018f87723b7fce973840",
+  "cache/blip2/index.jsonl": "cf9a0fb20e6992ae647b70adcfb8aaa2",
+  "cache/llava/index.jsonl": "a629f69ba71ef685108e1cb13e18d437",
+  "cache/qwen25vl/index.jsonl": "0ccb7c12c4e5cdc43c47ca6afe5d647f",
+  "cache/hard_negatives/blip2/rows.jsonl": "c1fe7c5bf12a5c8f65e7ec8f349fefea",
+  "cache/hard_negatives/llava/rows.jsonl": "206fa217dcc9494fcd20fdac2191663d",
+  "cache/hard_negatives/qwen25vl/rows.jsonl": "297761b0deb1fedd94a714745b3cd422",
+  "cache/benign/blip2/rows.jsonl": "1b65cbdbc4caaf6fd87eaf3a9073038a",
+  "cache/benign/llava/rows.jsonl": "34f40d9a3efd09e5eb67a7114a948e81",
+  "cache/benign/qwen25vl/rows.jsonl": "d5cb6171fbe2563c0ab2d328804f9423",
+  "cache/work/image_md5.json": "3e4949cf2c283af7fea0aae1032631b2"
+ },
+ "determinism": "the files of this directory are a function of the input files listed under inputs_md5 (and of the image files, whose names are their md5 sums); no time stamp, no dependence on directory listings or hash order",
+ "files": {
+  "selection.jsonl": "aff4f75c869890c642fdf5d9d44f6dba",
+  "manifest_qwen25vl.jsonl": "5ca3e694f242f50f5736dc799dc24d7a",
+  "manifest_llava.jsonl": "eb5bdee6dd33c903d9b503ee7ad95c7a"
+ }
+}

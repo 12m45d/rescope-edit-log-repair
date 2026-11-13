@@ -1,0 +1,132 @@
+{
+ "n_sequences": 300,
+ "gates": {
+  "retr_conj": {
+   "n_firing": 69,
+   "n_silent": 231,
+   "n_silent_not_bitwise_pre_edit": 0,
+   "n_library_route_flags_differ_from_decision": 0,
+   "n_fields_differ_driver_vs_library_route": 0,
+   "driver_forwards_first_pass": 0,
+   "driver_forwards_second_pass": 0,
+   "n_fields_differ_second_pass": 0,
+   "driver_sources": {
+    "memo": 69,
+    "pre": 231
+   },
+   "n_decodes": 9,
+   "n_decodes_differ": 0,
+   "hard_negatives_generate": {
+    "n": 40,
+    "n_decoded": 0,
+    "n_wrong_target": 0,
+    "flags_consistent": true
+   },
+   "seconds": 35.67349457740784,
+   "ok": true
+  },
+  "retr_sum": {
+   "n_firing": 161,
+   "n_silent": 139,
+   "n_silent_not_bitwise_pre_edit": 0,
+   "n_library_route_flags_differ_from_decision": 0,
+   "n_fields_differ_driver_vs_library_route": 0,
+   "driver_forwards_first_pass": 0,
+   "driver_forwards_second_pass": 0,
+   "n_fields_differ_second_pass": 0,
+   "driver_sources": {
+    "memo": 161,
+    "pre": 139
+   },
+   "n_decodes": 9,
+   "n_decodes_differ": 0,
+   "hard_negatives_generate": {
+    "n": 40,
+    "n_decoded": 18,
+    "n_wrong_target": 9,
+    "flags_consistent": true
+   },
+   "seconds": 36.14615774154663,
+   "ok": true
+  },
+  "retr_min": {
+   "n_firing": 88,
+   "n_silent": 212,
+   "n_silent_not_bitwise_pre_edit": 0,
+   "n_library_route_flags_differ_from_decision": 0,
+   "n_fields_differ_driver_vs_library_route": 0,
+   "driver_forwards_first_pass": 0,
+   "driver_forwards_second_pass": 0,
+   "n_fields_differ_second_pass": 0,
+   "driver_sources": {
+    "memo": 88,
+    "pre": 212
+   },
+   "n_decodes": 9,
+   "n_decodes_differ": 0,
+   "hard_negatives_generate": {
+    "n": 40,
+    "n_decoded": 1,
+    "n_wrong_target": 0,
+    "flags_consistent": true
+   },
+   "seconds": 35.25712275505066,
+   "ok": true
+  },
+  "lookup": {
+   "n_firing": 55,
+   "n_silent": 245,
+   "n_silent_not_bitwise_pre_edit": 0,
+   "n_library_route_flags_differ_from_decision": 0,
+   "n_fields_differ_driver_vs_library_route": 0,
+   "driver_forwards_first_pass": 0,
+   "driver_forwards_second_pass": 0,
+   "n_fields_differ_second_pass": 0,
+   "driver_sources": {
+    "memo": 55,
+    "pre": 245
+   },
+   "n_decodes": 9,
+   "n_decodes_differ": 0,
+   "hard_negatives_generate": {
+    "n": 40,
+    "n_decoded": 0,
+    "n_wrong_target": 0,
+    "flags_consistent": true
+   },
+   "seconds": 34.268096923828125,
+   "ok": true
+  }
+ },
+ "n_gates": 4,
+ "n_ok": 4,
+ "ok": true,
+ "hook_mismatch": 0,
+ "memo_conflicts": 0,
+ "forwards": 9600,
+ "hashed": 9600,
+ "test": "q_retrieval",
+ "log": "TB-L100-ae-l2_3",
+ "seconds": 170.80374336242676,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 18:04:29",
+ "session": {
+  "rows": 21215,
+  "pre": 7424,
+  "memo": 4191,
+  "run": 0,
+  "lib": 0,
+  "missing": 0,
+  "forwards": 9600,
+  "decodes": 0,
+  "hook_mismatch": 0,
+  "near": 82,
+  "near_changed_on_device": 0,
+  "seconds_model": 942.2144114971161,
+  "hashed": 9600
+ }
+}

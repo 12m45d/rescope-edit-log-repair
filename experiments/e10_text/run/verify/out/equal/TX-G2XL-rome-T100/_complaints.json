@@ -1,0 +1,45 @@
+{
+ "n_repair_prompts": 3000,
+ "n_D1_complaints_under_deployed": 2788,
+ "experiment_n_D1_complaints": 2788,
+ "mine": [
+  "repair:13526:request:0",
+  "repair:7000:paraphrase:1",
+  "repair:13061:request:0",
+  "repair:21509:request:0",
+  "repair:2626:paraphrase:1",
+  "repair:7597:paraphrase:1",
+  "repair:10329:paraphrase:0",
+  "repair:20918:request:0",
+  "repair:8730:request:0",
+  "repair:8237:request:0"
+ ],
+ "experiment": [
+  "repair:13526:request:0",
+  "repair:7000:paraphrase:1",
+  "repair:13061:request:0",
+  "repair:21509:request:0",
+  "repair:2626:paraphrase:1",
+  "repair:7597:paraphrase:1",
+  "repair:10329:paraphrase:0",
+  "repair:20918:request:0",
+  "repair:8730:request:0",
+  "repair:8237:request:0"
+ ],
+ "same_complaints": true,
+ "experiment_complaints_all_in_REPAIR_pool": true,
+ "experiment_complaints_are_D1_under_deployed_by_my_pass": true,
+ "used": [
+  "repair:13526:request:0",
+  "repair:7000:paraphrase:1",
+  "repair:13061:request:0",
+  "repair:21509:request:0",
+  "repair:2626:paraphrase:1",
+  "repair:7597:paraphrase:1",
+  "repair:10329:paraphrase:0",
+  "repair:20918:request:0",
+  "repair:8730:request:0",
+  "repair:8237:request:0"
+ ],
+ "note": "the experiment's set is used if the two differ (same cell), and the difference is reported"
+}

@@ -1,0 +1,184 @@
+{
+ "pass": true,
+ "per_log": {
+  "TB-Q100-ae-l2_3": {
+   "cos_centred": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 3.7359213459421377e-06,
+    "max_single_key_module_dtype_over_band": 3.7156938309495205e-07,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 2,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 6
+   },
+   "cos_null": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 2.4032032565660506e-06,
+    "max_single_key_module_dtype_over_band": 7.289340398855727e-08,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 10
+   },
+   "white_0.01": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 1.192619554683842e-06,
+    "max_single_key_module_dtype_over_band": 4.822164548831822e-08,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 10
+   },
+   "white_0.1": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 1.152928683446874e-06,
+    "max_single_key_module_dtype_over_band": 6.579341038026173e-08,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 1,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 7
+   },
+   "white_1": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 1.848163704936084e-06,
+    "max_single_key_module_dtype_over_band": 6.424527543300381e-08,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 7
+   },
+   "whitecos_0.01": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 1.5506611228992678e-06,
+    "max_single_key_module_dtype_over_band": 1.5548988849357628e-07,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 9
+   },
+   "whitecos_0.1": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 3.698789331823613e-06,
+    "max_single_key_module_dtype_over_band": 4.945522727007437e-07,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 7
+   },
+   "whitecos_1": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 1.2595421522819295e-05,
+    "max_single_key_module_dtype_over_band": 7.92269680965765e-07,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 9
+   },
+   "rescope_nullW": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 1.1383740498383887e-06,
+    "max_single_key_module_dtype_over_band": 5.218052580928464e-08,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 9
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "cos_centred": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 4.6629951159034405e-06,
+    "max_single_key_module_dtype_over_band": 5.841920968459077e-07,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 4,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 8
+   },
+   "cos_null": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 2.6939892972004893e-06,
+    "max_single_key_module_dtype_over_band": 1.5155735373826166e-07,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 10
+   },
+   "white_0.01": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 2.5210030304109265e-06,
+    "max_single_key_module_dtype_over_band": 1.7807659396279304e-07,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 9
+   },
+   "white_0.1": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 2.1552638020516285e-06,
+    "max_single_key_module_dtype_over_band": 1.8064252399832209e-07,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 7
+   },
+   "white_1": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 2.4068630100774045e-06,
+    "max_single_key_module_dtype_over_band": 9.552153695888549e-08,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 7
+   },
+   "whitecos_0.01": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 1.9493475168156103e-06,
+    "max_single_key_module_dtype_over_band": 9.039543452111178e-08,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 8
+   },
+   "whitecos_0.1": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 6.458498233318054e-06,
+    "max_single_key_module_dtype_over_band": 1.4682952480517334e-07,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 10
+   },
+   "whitecos_1": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 1.4855501137622447e-05,
+    "max_single_key_module_dtype_over_band": 4.5338922184205985e-07,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 7
+   },
+   "rescope_nullW": {
+    "class_and_device_kept": true,
+    "max_gpu_minus_cpu_over_band": 9.151725919763577e-07,
+    "max_single_key_module_dtype_over_band": 3.864630400115468e-08,
+    "rows_decided_otherwise_outside_band": 0,
+    "rows_near": 0,
+    "hook_sequences_bad": 0,
+    "hook_sequences_fired": 7
+   }
+  }
+ },
+ "device": "NVIDIA GeForce RTX 5090",
+ "peak_MiB": 474.5498046875,
+ "note": "2 logs x 9 gates on NVIDIA GeForce RTX 5090: |GPU - CPU| / decision band <= 1.5e-05; 0 of 8073 decisions differ outside the band; hook on a cuda linear module (bf16 / fp16, real width): firing, top edit and output == W_0 k + v_e with one cast, silent sequences bitwise untouched: True; peak 475 MiB",
+ "test": "g1_gpu_device",
+ "group": "gpu",
+ "what": "every new gate on the GPU (ScopedLog.to('cuda'), development-log keys): scores and decisions == CPU within the decision band; hook on a cuda module in the module dtype",
+ "seconds": 16.34358859062195,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

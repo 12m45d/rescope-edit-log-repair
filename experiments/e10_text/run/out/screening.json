@@ -1,0 +1,856 @@
+{
+ "definition": "E10: what the LOG ALONE shows (no model, no method): R21 (c) screening and the description of the stream (task 5, part 1).\n\n    python run_logdesc.py   ->  out/screening.json, out/stream/description.json\nScreening: self-separation margin of every edit = 1 - max over the other edits j of <W_i, k_j> / <W_i, k_i> (the largest normalised\ncoordinate of edit i at the solver key of another edit).  Flagged: margin <= 0.  Compared with (a) the updates of exploding norm\n(the audit's list: audit/out/recon.json, stream_updates.exploding: update norm > |W_0|_F) and (b) the requests whose subject is\nthe first token of the prompt (public lookup index 0): precision and recall, per reported log (prefix of the stream).\nDescription: per update the norm of the update, the norm of W - W_0 after it, the division factor (the coordinate of the solver key\nthe public code divides by), the own coordinate in the library's normalisation, the norm of the read-out vector.\n",
+ "audit_exploding_updates": [
+  173,
+  193,
+  240,
+  266,
+  341,
+  343,
+  462,
+  485,
+  531,
+  946,
+  1131,
+  1276,
+  1357,
+  1416,
+  1420,
+  1508,
+  1587,
+  1718,
+  1947,
+  1982
+ ],
+ "logs": {
+  "TX-G2XL-rome-T100": {
+   "T": 100,
+   "n_flagged": 0,
+   "flagged": [],
+   "margin_quantiles": {
+    "0": 0.360117110049467,
+    "0.01": 0.4518895698083162,
+    "0.05": 0.7254313097720365,
+    "0.5": 0.9043738519747202,
+    "0.95": 0.9517231471048812,
+    "1": 0.9676512936898517
+   },
+   "n_margin_below_0.5": 2,
+   "against": {
+    "exploding_norm": {
+     "n_reference": 0,
+     "reference": [],
+     "true_positives": [],
+     "false_positives": [],
+     "false_negatives": [],
+     "precision": null,
+     "recall": null,
+     "margins_of_reference": {}
+    },
+    "first_token_subject": {
+     "n_reference": 0,
+     "reference": [],
+     "true_positives": [],
+     "false_positives": [],
+     "false_negatives": [],
+     "precision": null,
+     "recall": null,
+     "margins_of_reference": {}
+    }
+   },
+   "flagged_detail": []
+  },
+  "TX-G2XL-rome-T500": {
+   "T": 500,
+   "n_flagged": 6,
+   "flagged": [
+    53,
+    173,
+    193,
+    240,
+    266,
+    485
+   ],
+   "margin_quantiles": {
+    "0": -82.65110270520269,
+    "0.01": -0.012096765015518507,
+    "0.05": 0.23929892603999992,
+    "0.5": 0.8500554700029093,
+    "0.95": 0.9253174978504066,
+    "1": 0.9474557373138628
+   },
+   "n_margin_below_0.5": 39,
+   "against": {
+    "exploding_norm": {
+     "n_reference": 8,
+     "reference": [
+      173,
+      193,
+      240,
+      266,
+      341,
+      343,
+      462,
+      485
+     ],
+     "true_positives": [
+      173,
+      193,
+      240,
+      266,
+      485
+     ],
+     "false_positives": [
+      53
+     ],
+     "false_negatives": [
+      341,
+      343,
+      462
+     ],
+     "precision": 83.33333333333333,
+     "recall": 62.5,
+     "margins_of_reference": {
+      "173": -82.65110270520269,
+      "193": -0.1582982334528351,
+      "240": -24.507261410295925,
+      "266": -37.44893106063599,
+      "341": 0.001377258478446164,
+      "343": 0.612097986065671,
+      "462": 0.4439555946439452,
+      "485": -0.11606670487952342
+     }
+    },
+    "first_token_subject": {
+     "n_reference": 3,
+     "reference": [
+      173,
+      240,
+      266
+     ],
+     "true_positives": [
+      173,
+      240,
+      266
+     ],
+     "false_positives": [
+      53,
+      193,
+      485
+     ],
+     "false_negatives": [],
+     "precision": 50.0,
+     "recall": 100.0,
+     "margins_of_reference": {
+      "173": -82.65110270520269,
+      "240": -24.507261410295925,
+      "266": -37.44893106063599
+     }
+    }
+   },
+   "flagged_detail": [
+    {
+     "edit": 53,
+     "margin": -0.011046563602750803,
+     "largest_coordinate_at_solver_key_of_edit": 109,
+     "solver_pos": 4,
+     "exploding": false,
+     "request": "Pochepsky District, which is located in -> India"
+    },
+    {
+     "edit": 173,
+     "margin": -82.65110270520269,
+     "largest_coordinate_at_solver_key_of_edit": 365,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Chicago is a twin city of -> Istanbul"
+    },
+    {
+     "edit": 193,
+     "margin": -0.1582982334528351,
+     "largest_coordinate_at_solver_key_of_edit": 120,
+     "solver_pos": 1,
+     "exploding": true,
+     "request": "Oslo is a twin city of -> Tehran"
+    },
+    {
+     "edit": 240,
+     "margin": -24.507261410295925,
+     "largest_coordinate_at_solver_key_of_edit": 8,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Arthur is located in -> California"
+    },
+    {
+     "edit": 266,
+     "margin": -37.44893106063599,
+     "largest_coordinate_at_solver_key_of_edit": 282,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Moscow is a twin city of -> Miami"
+    },
+    {
+     "edit": 485,
+     "margin": -0.11606670487952342,
+     "largest_coordinate_at_solver_key_of_edit": 414,
+     "solver_pos": 2,
+     "exploding": true,
+     "request": "Florence is a twin city of -> Florence"
+    }
+   ]
+  },
+  "TX-G2XL-rome-T1000": {
+   "T": 1000,
+   "n_flagged": 13,
+   "flagged": [
+    53,
+    64,
+    173,
+    193,
+    240,
+    251,
+    266,
+    341,
+    485,
+    885,
+    912,
+    922,
+    946
+   ],
+   "margin_quantiles": {
+    "0": -101.91422964577879,
+    "0.01": -0.011070257259447278,
+    "0.05": 0.23772795627445414,
+    "0.5": 0.8179019309428206,
+    "0.95": 0.9094135199624445,
+    "1": 0.9467449768797583
+   },
+   "n_margin_below_0.5": 94,
+   "against": {
+    "exploding_norm": {
+     "n_reference": 10,
+     "reference": [
+      173,
+      193,
+      240,
+      266,
+      341,
+      343,
+      462,
+      485,
+      531,
+      946
+     ],
+     "true_positives": [
+      173,
+      193,
+      240,
+      266,
+      341,
+      485,
+      946
+     ],
+     "false_positives": [
+      53,
+      64,
+      251,
+      885,
+      912,
+      922
+     ],
+     "false_negatives": [
+      343,
+      462,
+      531
+     ],
+     "precision": 53.84615384615385,
+     "recall": 70.0,
+     "margins_of_reference": {
+      "173": -82.65110270520269,
+      "193": -0.1582982334528351,
+      "240": -40.68288329255081,
+      "266": -59.46615125922088,
+      "341": -0.056508293650813,
+      "343": 0.612097986065671,
+      "462": 0.4439555946439452,
+      "485": -0.11606670487952342,
+      "531": 0.18745108629168095,
+      "946": -101.91422964577879
+     }
+    },
+    "first_token_subject": {
+     "n_reference": 4,
+     "reference": [
+      173,
+      240,
+      266,
+      946
+     ],
+     "true_positives": [
+      173,
+      240,
+      266,
+      946
+     ],
+     "false_positives": [
+      53,
+      64,
+      193,
+      251,
+      341,
+      485,
+      885,
+      912,
+      922
+     ],
+     "false_negatives": [],
+     "precision": 30.76923076923077,
+     "recall": 100.0,
+     "margins_of_reference": {
+      "173": -82.65110270520269,
+      "240": -40.68288329255081,
+      "266": -59.46615125922088,
+      "946": -101.91422964577879
+     }
+    }
+   },
+   "flagged_detail": [
+    {
+     "edit": 53,
+     "margin": -0.011046563602750803,
+     "largest_coordinate_at_solver_key_of_edit": 109,
+     "solver_pos": 4,
+     "exploding": false,
+     "request": "Pochepsky District, which is located in -> India"
+    },
+    {
+     "edit": 64,
+     "margin": -0.07652712576562237,
+     "largest_coordinate_at_solver_key_of_edit": 889,
+     "solver_pos": 3,
+     "exploding": false,
+     "request": "Gregg Edelman works as -> prophet"
+    },
+    {
+     "edit": 173,
+     "margin": -82.65110270520269,
+     "largest_coordinate_at_solver_key_of_edit": 365,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Chicago is a twin city of -> Istanbul"
+    },
+    {
+     "edit": 193,
+     "margin": -0.1582982334528351,
+     "largest_coordinate_at_solver_key_of_edit": 120,
+     "solver_pos": 1,
+     "exploding": true,
+     "request": "Oslo is a twin city of -> Tehran"
+    },
+    {
+     "edit": 240,
+     "margin": -40.68288329255081,
+     "largest_coordinate_at_solver_key_of_edit": 718,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Arthur is located in -> California"
+    },
+    {
+     "edit": 251,
+     "margin": -2.220446049250313e-16,
+     "largest_coordinate_at_solver_key_of_edit": 912,
+     "solver_pos": 2,
+     "exploding": false,
+     "request": "Where is PAX? It is located in -> Leeds"
+    },
+    {
+     "edit": 266,
+     "margin": -59.46615125922088,
+     "largest_coordinate_at_solver_key_of_edit": 796,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Moscow is a twin city of -> Miami"
+    },
+    {
+     "edit": 341,
+     "margin": -0.056508293650813,
+     "largest_coordinate_at_solver_key_of_edit": 584,
+     "solver_pos": 1,
+     "exploding": true,
+     "request": "Olot, located in -> India"
+    },
+    {
+     "edit": 485,
+     "margin": -0.11606670487952342,
+     "largest_coordinate_at_solver_key_of_edit": 414,
+     "solver_pos": 2,
+     "exploding": true,
+     "request": "Florence is a twin city of -> Florence"
+    },
+    {
+     "edit": 885,
+     "margin": -0.021904521700204738,
+     "largest_coordinate_at_solver_key_of_edit": 109,
+     "solver_pos": 3,
+     "exploding": false,
+     "request": "Borovsky District is located in -> Spain"
+    },
+    {
+     "edit": 912,
+     "margin": -2.220446049250313e-16,
+     "largest_coordinate_at_solver_key_of_edit": 251,
+     "solver_pos": 2,
+     "exploding": false,
+     "request": "Where is PAX? It is located in -> Louisiana"
+    },
+    {
+     "edit": 922,
+     "margin": -0.01341592927239832,
+     "largest_coordinate_at_solver_key_of_edit": 191,
+     "solver_pos": 3,
+     "exploding": false,
+     "request": "Honolulu International Airport, named for -> granite"
+    },
+    {
+     "edit": 946,
+     "margin": -101.91422964577879,
+     "largest_coordinate_at_solver_key_of_edit": 51,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Bay, which is located in -> Italy"
+    }
+   ]
+  },
+  "TX-G2XL-rome-T2000": {
+   "T": 2000,
+   "n_flagged": 29,
+   "flagged": [
+    53,
+    64,
+    173,
+    193,
+    240,
+    251,
+    266,
+    341,
+    410,
+    485,
+    546,
+    885,
+    912,
+    922,
+    946,
+    1191,
+    1214,
+    1219,
+    1220,
+    1221,
+    1354,
+    1416,
+    1420,
+    1508,
+    1516,
+    1718,
+    1807,
+    1928,
+    1947
+   ],
+   "margin_quantiles": {
+    "0": -101.91422964577879,
+    "0.01": -5.467395655855771e-05,
+    "0.05": 0.16360869292749983,
+    "0.5": 0.7874225917009681,
+    "0.95": 0.8913508296430308,
+    "1": 0.9275298870385607
+   },
+   "n_margin_below_0.5": 283,
+   "against": {
+    "exploding_norm": {
+     "n_reference": 20,
+     "reference": [
+      173,
+      193,
+      240,
+      266,
+      341,
+      343,
+      462,
+      485,
+      531,
+      946,
+      1131,
+      1276,
+      1357,
+      1416,
+      1420,
+      1508,
+      1587,
+      1718,
+      1947,
+      1982
+     ],
+     "true_positives": [
+      173,
+      193,
+      240,
+      266,
+      341,
+      485,
+      946,
+      1416,
+      1420,
+      1508,
+      1718,
+      1947
+     ],
+     "false_positives": [
+      53,
+      64,
+      251,
+      410,
+      546,
+      885,
+      912,
+      922,
+      1191,
+      1214,
+      1219,
+      1220,
+      1221,
+      1354,
+      1516,
+      1807,
+      1928
+     ],
+     "false_negatives": [
+      343,
+      462,
+      531,
+      1131,
+      1276,
+      1357,
+      1587,
+      1982
+     ],
+     "precision": 41.37931034482759,
+     "recall": 60.0,
+     "margins_of_reference": {
+      "173": -82.65110270520269,
+      "193": -0.1582982334528351,
+      "240": -40.68288329255081,
+      "266": -97.69895993469348,
+      "341": -0.40307996370995847,
+      "343": 0.612097986065671,
+      "462": 0.3523949242291855,
+      "485": -0.11606670487952342,
+      "531": 0.18745108629168095,
+      "946": -101.91422964577879,
+      "1131": 0.5684804941844642,
+      "1276": 0.32385127279241144,
+      "1357": 0.21621656356558439,
+      "1416": -45.39698022253724,
+      "1420": -22.692805369715003,
+      "1508": -36.48142008951552,
+      "1587": 0.16503050999853175,
+      "1718": -0.8750146696544454,
+      "1947": -15.22274467682626,
+      "1982": 0.23443044366766297
+     }
+    },
+    "first_token_subject": {
+     "n_reference": 8,
+     "reference": [
+      173,
+      240,
+      266,
+      946,
+      1416,
+      1420,
+      1508,
+      1947
+     ],
+     "true_positives": [
+      173,
+      240,
+      266,
+      946,
+      1416,
+      1420,
+      1508,
+      1947
+     ],
+     "false_positives": [
+      53,
+      64,
+      193,
+      251,
+      341,
+      410,
+      485,
+      546,
+      885,
+      912,
+      922,
+      1191,
+      1214,
+      1219,
+      1220,
+      1221,
+      1354,
+      1516,
+      1718,
+      1807,
+      1928
+     ],
+     "false_negatives": [],
+     "precision": 27.586206896551722,
+     "recall": 100.0,
+     "margins_of_reference": {
+      "173": -82.65110270520269,
+      "240": -40.68288329255081,
+      "266": -97.69895993469348,
+      "946": -101.91422964577879,
+      "1416": -45.39698022253724,
+      "1420": -22.692805369715003,
+      "1508": -36.48142008951552,
+      "1947": -15.22274467682626
+     }
+    }
+   },
+   "flagged_detail": [
+    {
+     "edit": 53,
+     "margin": -0.011046563602750803,
+     "largest_coordinate_at_solver_key_of_edit": 109,
+     "solver_pos": 4,
+     "exploding": false,
+     "request": "Pochepsky District, which is located in -> India"
+    },
+    {
+     "edit": 64,
+     "margin": -0.07652712576562237,
+     "largest_coordinate_at_solver_key_of_edit": 889,
+     "solver_pos": 3,
+     "exploding": false,
+     "request": "Gregg Edelman works as -> prophet"
+    },
+    {
+     "edit": 173,
+     "margin": -82.65110270520269,
+     "largest_coordinate_at_solver_key_of_edit": 365,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Chicago is a twin city of -> Istanbul"
+    },
+    {
+     "edit": 193,
+     "margin": -0.1582982334528351,
+     "largest_coordinate_at_solver_key_of_edit": 120,
+     "solver_pos": 1,
+     "exploding": true,
+     "request": "Oslo is a twin city of -> Tehran"
+    },
+    {
+     "edit": 240,
+     "margin": -40.68288329255081,
+     "largest_coordinate_at_solver_key_of_edit": 718,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Arthur is located in -> California"
+    },
+    {
+     "edit": 251,
+     "margin": -2.220446049250313e-16,
+     "largest_coordinate_at_solver_key_of_edit": 912,
+     "solver_pos": 2,
+     "exploding": false,
+     "request": "Where is PAX? It is located in -> Leeds"
+    },
+    {
+     "edit": 266,
+     "margin": -97.69895993469348,
+     "largest_coordinate_at_solver_key_of_edit": 1538,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Moscow is a twin city of -> Miami"
+    },
+    {
+     "edit": 341,
+     "margin": -0.40307996370995847,
+     "largest_coordinate_at_solver_key_of_edit": 1503,
+     "solver_pos": 1,
+     "exploding": true,
+     "request": "Olot, located in -> India"
+    },
+    {
+     "edit": 410,
+     "margin": -1.0237761349785046e-07,
+     "largest_coordinate_at_solver_key_of_edit": 1895,
+     "solver_pos": 3,
+     "exploding": false,
+     "request": "Manuel Roxas holds the position of -> pope"
+    },
+    {
+     "edit": 485,
+     "margin": -0.11606670487952342,
+     "largest_coordinate_at_solver_key_of_edit": 414,
+     "solver_pos": 2,
+     "exploding": true,
+     "request": "Florence is a twin city of -> Florence"
+    },
+    {
+     "edit": 546,
+     "margin": -2.220446049250313e-16,
+     "largest_coordinate_at_solver_key_of_edit": 1214,
+     "solver_pos": 6,
+     "exploding": false,
+     "request": "The law in Donetsk People's Republic declares the language -> English"
+    },
+    {
+     "edit": 885,
+     "margin": -0.021904521700204738,
+     "largest_coordinate_at_solver_key_of_edit": 109,
+     "solver_pos": 3,
+     "exploding": false,
+     "request": "Borovsky District is located in -> Spain"
+    },
+    {
+     "edit": 912,
+     "margin": -2.220446049250313e-16,
+     "largest_coordinate_at_solver_key_of_edit": 251,
+     "solver_pos": 2,
+     "exploding": false,
+     "request": "Where is PAX? It is located in -> Louisiana"
+    },
+    {
+     "edit": 922,
+     "margin": -0.029364650674176263,
+     "largest_coordinate_at_solver_key_of_edit": 1917,
+     "solver_pos": 3,
+     "exploding": false,
+     "request": "Honolulu International Airport, named for -> granite"
+    },
+    {
+     "edit": 946,
+     "margin": -101.91422964577879,
+     "largest_coordinate_at_solver_key_of_edit": 51,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Bay, which is located in -> Italy"
+    },
+    {
+     "edit": 1191,
+     "margin": -0.038994137047142496,
+     "largest_coordinate_at_solver_key_of_edit": 631,
+     "solver_pos": 4,
+     "exploding": false,
+     "request": "Esther Ralston's profession is a -> novelist"
+    },
+    {
+     "edit": 1214,
+     "margin": -2.220446049250313e-16,
+     "largest_coordinate_at_solver_key_of_edit": 546,
+     "solver_pos": 6,
+     "exploding": false,
+     "request": "The law in Donetsk People's Republic declares the language -> Finnish"
+    },
+    {
+     "edit": 1219,
+     "margin": -2.220446049250313e-16,
+     "largest_coordinate_at_solver_key_of_edit": 1807,
+     "solver_pos": 2,
+     "exploding": false,
+     "request": "Cleveland is a twin city of -> Tehran"
+    },
+    {
+     "edit": 1220,
+     "margin": -0.04771266243408445,
+     "largest_coordinate_at_solver_key_of_edit": 849,
+     "solver_pos": 9,
+     "exploding": false,
+     "request": "In Organization for Security and Co-operation in Europe, the language spoken is -> Portuguese"
+    },
+    {
+     "edit": 1221,
+     "margin": -2.043930407147343e-07,
+     "largest_coordinate_at_solver_key_of_edit": 11,
+     "solver_pos": 5,
+     "exploding": false,
+     "request": "Andreas Ivanschitz, the -> quarterback"
+    },
+    {
+     "edit": 1354,
+     "margin": -0.005447160744826096,
+     "largest_coordinate_at_solver_key_of_edit": 466,
+     "solver_pos": 5,
+     "exploding": false,
+     "request": "Boryspil International Airport, which was named for -> Aristotle"
+    },
+    {
+     "edit": 1416,
+     "margin": -45.39698022253724,
+     "largest_coordinate_at_solver_key_of_edit": 701,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Manchester is a twin city of -> Munich"
+    },
+    {
+     "edit": 1420,
+     "margin": -22.692805369715003,
+     "largest_coordinate_at_solver_key_of_edit": 612,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Life was originally aired on -> HBO"
+    },
+    {
+     "edit": 1508,
+     "margin": -36.48142008951552,
+     "largest_coordinate_at_solver_key_of_edit": 822,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Japan, in -> Antarctica"
+    },
+    {
+     "edit": 1516,
+     "margin": -1.5206175874027394e-07,
+     "largest_coordinate_at_solver_key_of_edit": 431,
+     "solver_pos": 2,
+     "exploding": false,
+     "request": "Orphan Black, created in -> Ireland"
+    },
+    {
+     "edit": 1718,
+     "margin": -0.8750146696544454,
+     "largest_coordinate_at_solver_key_of_edit": 1351,
+     "solver_pos": 1,
+     "exploding": true,
+     "request": "ISPF, developed by -> Sony"
+    },
+    {
+     "edit": 1807,
+     "margin": -2.220446049250313e-16,
+     "largest_coordinate_at_solver_key_of_edit": 1219,
+     "solver_pos": 2,
+     "exploding": false,
+     "request": "Cleveland is a twin city of -> Lisbon"
+    },
+    {
+     "edit": 1928,
+     "margin": -0.036390960689299146,
+     "largest_coordinate_at_solver_key_of_edit": 1917,
+     "solver_pos": 2,
+     "exploding": false,
+     "request": "Perth Airport, which was called after -> Stockholm"
+    },
+    {
+     "edit": 1947,
+     "margin": -15.22274467682626,
+     "largest_coordinate_at_solver_key_of_edit": 1351,
+     "solver_pos": 0,
+     "exploding": true,
+     "request": "Science's expertise is -> economics"
+    }
+   ]
+  }
+ }
+}

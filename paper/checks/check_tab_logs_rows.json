@@ -1,0 +1,547 @@
+{
+ "what": "Table tab:logs against the stored files of the testbed (own recomputation)",
+ "rows": {
+  "QAc": {
+   "log": "TB-Q100-ae-l2_3",
+   "paper_name": "Q-A100-r3",
+   "recomputed": {
+    "T": "100",
+    "Rel_testbed_count": "78/100",
+    "Rel": "78.0",
+    "Rel_count": "78/100",
+    "Rel_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TGen_testbed_count": "9/100",
+    "TGen": "9.0",
+    "TGen_count": "9/100",
+    "TGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "IGen_testbed_count": "23/100",
+    "IGen": "22.0",
+    "IGen_count": "22/100",
+    "IGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TLoc": "84.2",
+    "TLoc_stored": 84.2389127343022,
+    "ILoc": "87.9",
+    "ILoc_stored": 87.85935064935066,
+    "run_log_loc": [
+     "84.24",
+     "87.86"
+    ],
+    "Cmp": "54.2",
+    "Cmp_count": "252/465",
+    "pool": {
+     "items": 500,
+     "repair_items": 250,
+     "heldout_rows": 500,
+     "heldout_rows_with_a_repair_query": 25,
+     "heldout_valid_rows_with_a_repair_query": 25,
+     "heldout_disjoint_valid": 465
+    },
+    "backbone": "qwen25vl"
+   },
+   "printed": {
+    "T": "100",
+    "Rel": "78.0",
+    "TGen": "9.0",
+    "IGen": "22.0",
+    "TLoc": "84.2",
+    "ILoc": "87.9",
+    "Cmp": "54.2"
+   },
+   "ok": true,
+   "run_log_locality_agrees": true
+  },
+  "QAd": {
+   "log": "TB-Q500-ae-l2_3",
+   "paper_name": "Q-A500",
+   "recomputed": {
+    "T": "500",
+    "Rel_testbed_count": "282/500",
+    "Rel": "54.6",
+    "Rel_count": "273/500",
+    "Rel_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TGen_testbed_count": "24/500",
+    "TGen": "4.4",
+    "TGen_count": "22/500",
+    "TGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "IGen_testbed_count": "83/500",
+    "IGen": "16.0",
+    "IGen_count": "80/500",
+    "IGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TLoc": "58.8",
+    "TLoc_stored": 58.78661211545163,
+    "ILoc": "77.9",
+    "ILoc_stored": 77.9187950937951,
+    "run_log_loc": [
+     "58.79",
+     "77.92"
+    ],
+    "Cmp": "89.0",
+    "Cmp_count": "414/465",
+    "pool": {
+     "items": 500,
+     "repair_items": 250,
+     "heldout_rows": 500,
+     "heldout_rows_with_a_repair_query": 25,
+     "heldout_valid_rows_with_a_repair_query": 25,
+     "heldout_disjoint_valid": 465
+    },
+    "backbone": "qwen25vl"
+   },
+   "printed": {
+    "T": "500",
+    "Rel": "54.6",
+    "TGen": "4.4",
+    "IGen": "16.0",
+    "TLoc": "58.8",
+    "ILoc": "77.9",
+    "Cmp": "89.0"
+   },
+   "ok": true,
+   "run_log_locality_agrees": true
+  },
+  "LAc": {
+   "log": "TB-L100-ae-l2_3",
+   "paper_name": "L-A100-r3",
+   "recomputed": {
+    "T": "100",
+    "Rel_testbed_count": "88/100",
+    "Rel": "88.0",
+    "Rel_count": "88/100",
+    "Rel_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TGen_testbed_count": "29/100",
+    "TGen": "29.0",
+    "TGen_count": "29/100",
+    "TGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "IGen_testbed_count": "66/100",
+    "IGen": "66.0",
+    "IGen_count": "66/100",
+    "IGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TLoc": "77.9",
+    "TLoc_stored": 77.94153044530047,
+    "ILoc": "80.6",
+    "ILoc_stored": 80.63145077145077,
+    "run_log_loc": [
+     "77.94",
+     "80.63"
+    ],
+    "Cmp": "62.3",
+    "Cmp_count": "292/469",
+    "pool": {
+     "items": 500,
+     "repair_items": 250,
+     "heldout_rows": 500,
+     "heldout_rows_with_a_repair_query": 25,
+     "heldout_valid_rows_with_a_repair_query": 25,
+     "heldout_disjoint_valid": 469
+    },
+    "backbone": "llava"
+   },
+   "printed": {
+    "T": "100",
+    "Rel": "88.0",
+    "TGen": "29.0",
+    "IGen": "66.0",
+    "TLoc": "77.9",
+    "ILoc": "80.6",
+    "Cmp": "62.3"
+   },
+   "ok": true,
+   "run_log_locality_agrees": true
+  },
+  "LAd": {
+   "log": "TB-L500-ae-l2_3",
+   "paper_name": "L-A500",
+   "recomputed": {
+    "T": "500",
+    "Rel_testbed_count": "205/500",
+    "Rel": "40.6",
+    "Rel_count": "203/500",
+    "Rel_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TGen_testbed_count": "57/500",
+    "TGen": "11.4",
+    "TGen_count": "57/500",
+    "TGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "IGen_testbed_count": "168/500",
+    "IGen": "33.2",
+    "IGen_count": "166/500",
+    "IGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TLoc": "45.3",
+    "TLoc_stored": 45.304012405759124,
+    "ILoc": "47.3",
+    "ILoc_stored": 47.28486763236763,
+    "run_log_loc": [
+     "45.30",
+     "47.28"
+    ],
+    "Cmp": "91.9",
+    "Cmp_count": "431/469",
+    "pool": {
+     "items": 500,
+     "repair_items": 250,
+     "heldout_rows": 500,
+     "heldout_rows_with_a_repair_query": 25,
+     "heldout_valid_rows_with_a_repair_query": 25,
+     "heldout_disjoint_valid": 469
+    },
+    "backbone": "llava"
+   },
+   "printed": {
+    "T": "500",
+    "Rel": "40.6",
+    "TGen": "11.4",
+    "IGen": "33.2",
+    "TLoc": "45.3",
+    "ILoc": "47.3",
+    "Cmp": "91.9"
+   },
+   "ok": true,
+   "run_log_locality_agrees": true
+  },
+  "QWc": {
+   "log": "TB-Q100-memitw",
+   "paper_name": "Q-M100",
+   "recomputed": {
+    "T": "100",
+    "Rel_testbed_count": "53/100",
+    "Rel": "53.0",
+    "Rel_count": "53/100",
+    "Rel_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TGen_testbed_count": "11/100",
+    "TGen": "11.0",
+    "TGen_count": "11/100",
+    "TGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "IGen_testbed_count": "20/100",
+    "IGen": "19.0",
+    "IGen_count": "19/100",
+    "IGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TLoc": "73.3",
+    "TLoc_stored": 73.26535046903753,
+    "ILoc": "59.6",
+    "ILoc_stored": 59.595240870240865,
+    "run_log_loc": [
+     "73.27",
+     "59.60"
+    ],
+    "Cmp": "89.5",
+    "Cmp_count": "416/465",
+    "pool": {
+     "items": 500,
+     "repair_items": 250,
+     "heldout_rows": 500,
+     "heldout_rows_with_a_repair_query": 25,
+     "heldout_valid_rows_with_a_repair_query": 25,
+     "heldout_disjoint_valid": 465
+    },
+    "backbone": "qwen25vl"
+   },
+   "printed": {
+    "T": "100",
+    "Rel": "53.0",
+    "TGen": "11.0",
+    "IGen": "19.0",
+    "TLoc": "73.3",
+    "ILoc": "59.6",
+    "Cmp": "89.5"
+   },
+   "ok": true,
+   "run_log_locality_agrees": true
+  },
+  "QWmm": {
+   "log": "TB-Q2000-memitw",
+   "paper_name": "Q-M2000",
+   "recomputed": {
+    "T": "2000",
+    "Rel_testbed_count": "192/2000",
+    "Rel": "9.8",
+    "Rel_count": "196/2000",
+    "Rel_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TGen_testbed_count": "76/2000",
+    "TGen": "3.7",
+    "TGen_count": "74/2000",
+    "TGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "IGen_testbed_count": "91/2000",
+    "IGen": "4.7",
+    "IGen_count": "93/2000",
+    "IGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TLoc": "64.4",
+    "TLoc_stored": 64.37582946680126,
+    "ILoc": "58.0",
+    "ILoc_stored": 57.965457320457325,
+    "run_log_loc": [
+     "64.38",
+     "57.97"
+    ],
+    "Cmp": "97.6",
+    "Cmp_count": "454/465",
+    "pool": {
+     "items": 500,
+     "repair_items": 250,
+     "heldout_rows": 500,
+     "heldout_rows_with_a_repair_query": 25,
+     "heldout_valid_rows_with_a_repair_query": 25,
+     "heldout_disjoint_valid": 465
+    },
+    "backbone": "qwen25vl"
+   },
+   "printed": {
+    "T": "2000",
+    "Rel": "9.8",
+    "TGen": "3.7",
+    "IGen": "4.7",
+    "TLoc": "64.4",
+    "ILoc": "58.0",
+    "Cmp": "97.6"
+   },
+   "ok": true,
+   "run_log_locality_agrees": true
+  },
+  "LWc": {
+   "log": "TB-L100-memitw",
+   "paper_name": "L-M100",
+   "recomputed": {
+    "T": "100",
+    "Rel_testbed_count": "78/100",
+    "Rel": "78.0",
+    "Rel_count": "78/100",
+    "Rel_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TGen_testbed_count": "26/100",
+    "TGen": "26.0",
+    "TGen_count": "26/100",
+    "TGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "IGen_testbed_count": "64/100",
+    "IGen": "65.0",
+    "IGen_count": "65/100",
+    "IGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TLoc": "94.1",
+    "TLoc_stored": 94.06649745681075,
+    "ILoc": "56.8",
+    "ILoc_stored": 56.83986707736708,
+    "run_log_loc": [
+     "94.07",
+     "56.84"
+    ],
+    "Cmp": "77.8",
+    "Cmp_count": "365/469",
+    "pool": {
+     "items": 500,
+     "repair_items": 250,
+     "heldout_rows": 500,
+     "heldout_rows_with_a_repair_query": 25,
+     "heldout_valid_rows_with_a_repair_query": 25,
+     "heldout_disjoint_valid": 469
+    },
+    "backbone": "llava"
+   },
+   "printed": {
+    "T": "100",
+    "Rel": "78.0",
+    "TGen": "26.0",
+    "IGen": "65.0",
+    "TLoc": "94.1",
+    "ILoc": "56.8",
+    "Cmp": "77.8"
+   },
+   "ok": true,
+   "run_log_locality_agrees": true
+  },
+  "LWm": {
+   "log": "TB-L1000-memitw",
+   "paper_name": "L-M1000",
+   "recomputed": {
+    "T": "1000",
+    "Rel_testbed_count": "373/1000",
+    "Rel": "37.3",
+    "Rel_count": "373/1000",
+    "Rel_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TGen_testbed_count": "116/1000",
+    "TGen": "11.4",
+    "TGen_count": "114/1000",
+    "TGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "IGen_testbed_count": "297/1000",
+    "IGen": "29.6",
+    "IGen_count": "296/1000",
+    "IGen_source": "experiment E3, deployed rows (one sequence per forward pass)",
+    "TLoc": "83.9",
+    "TLoc_stored": 83.8657848153141,
+    "ILoc": "54.3",
+    "ILoc_stored": 54.26004023754024,
+    "run_log_loc": [
+     "83.87",
+     "54.26"
+    ],
+    "Cmp": "86.1",
+    "Cmp_count": "404/469",
+    "pool": {
+     "items": 500,
+     "repair_items": 250,
+     "heldout_rows": 500,
+     "heldout_rows_with_a_repair_query": 25,
+     "heldout_valid_rows_with_a_repair_query": 25,
+     "heldout_disjoint_valid": 469
+    },
+    "backbone": "llava"
+   },
+   "printed": {
+    "T": "1000",
+    "Rel": "37.3",
+    "TGen": "11.4",
+    "IGen": "29.6",
+    "TLoc": "83.9",
+    "ILoc": "54.3",
+    "Cmp": "86.1"
+   },
+   "ok": true,
+   "run_log_locality_agrees": true
+  }
+ },
+ "mismatches": [],
+ "rounding_ties": [],
+ "pool_counts_per_backbone": {
+  "qwen25vl": [
+   {
+    "heldout_disjoint_valid": 465,
+    "heldout_rows": 500,
+    "heldout_rows_with_a_repair_query": 25,
+    "heldout_valid_rows_with_a_repair_query": 25,
+    "items": 500,
+    "repair_items": 250
+   }
+  ],
+  "llava": [
+   {
+    "heldout_disjoint_valid": 469,
+    "heldout_rows": 500,
+    "heldout_rows_with_a_repair_query": 25,
+    "heldout_valid_rows_with_a_repair_query": 25,
+    "items": 500,
+    "repair_items": 250
+   }
+  ]
+ },
+ "text_macros": {
+  "prItems": "500",
+  "prTwins": "25",
+  "prQHeldValid": "465",
+  "prLHeldValid": "469"
+ },
+ "text_checks": [
+  {
+   "macro": "\\prQHeldValid",
+   "printed": "465",
+   "recomputed_over_the_logs": [
+    465
+   ],
+   "ok": true
+  },
+  {
+   "macro": "\\prLHeldValid",
+   "printed": "469",
+   "recomputed_over_the_logs": [
+    469
+   ],
+   "ok": true
+  },
+  {
+   "macro": "\\prTwins",
+   "printed": "25",
+   "recomputed_over_the_logs": [
+    25
+   ],
+   "ok": true
+  },
+  {
+   "macro": "\\prItems",
+   "printed": "500",
+   "recomputed_over_the_logs": [
+    500
+   ],
+   "ok": true
+  }
+ ],
+ "text_log_rows": {
+  "GRc": {
+   "log": "TX-G2XL-rome-T100",
+   "audit_verdict": "safe",
+   "audit_class": "clean reported log",
+   "printed": {
+    "T": "100",
+    "Rel": "97.0",
+    "TGen": "75.0",
+    "TLoc": "69.8",
+    "Cmp": "93.5"
+   },
+   "audit": {
+    "T": "100",
+    "Rel": "97.0",
+    "TGen": "75.0",
+    "TLoc": "69.8",
+    "Cmp": "93.5"
+   },
+   "ok": true
+  },
+  "GRd": {
+   "log": "TX-G2XL-rome-T500",
+   "audit_verdict": "safe",
+   "audit_class": "collapse log",
+   "printed": {
+    "T": "500",
+    "Rel": "2.8",
+    "TGen": "0.7",
+    "TLoc": "0.6",
+    "Cmp": "100.0"
+   },
+   "audit": {
+    "T": "500",
+    "Rel": "2.8",
+    "TGen": "0.7",
+    "TLoc": "0.6",
+    "Cmp": "100.0"
+   },
+   "ok": true
+  },
+  "GRm": {
+   "log": "TX-G2XL-rome-T1000",
+   "audit_verdict": "safe",
+   "audit_class": "collapse log",
+   "printed": {
+    "T": "1000",
+    "Rel": "1.4",
+    "TGen": "0.9",
+    "TLoc": "0.3",
+    "Cmp": "100.0"
+   },
+   "audit": {
+    "T": "1000",
+    "Rel": "1.4",
+    "TGen": "0.9",
+    "TLoc": "0.3",
+    "Cmp": "100.0"
+   },
+   "ok": true
+  },
+  "GRmm": {
+   "log": "TX-G2XL-rome-T2000",
+   "audit_verdict": "safe",
+   "audit_class": "collapse log",
+   "printed": {
+    "T": "2000",
+    "Rel": "0.9",
+    "TGen": "0.4",
+    "TLoc": "0.3",
+    "Cmp": "100.0"
+   },
+   "audit": {
+    "T": "2000",
+    "Rel": "0.9",
+    "TGen": "0.4",
+    "TLoc": "0.3",
+    "Cmp": "100.0"
+   },
+   "ok": true
+  }
+ },
+ "n_rows": 8,
+ "n_rows_with_locality_confirmed_by_run_log": 8,
+ "n_rows_identical": 8,
+ "status": "ALL_MATCH"
+}

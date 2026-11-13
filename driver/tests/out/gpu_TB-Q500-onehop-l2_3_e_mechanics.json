@@ -1,0 +1,67 @@
+{
+ "log": "TB-Q500-onehop-l2_3",
+ "role": "unseen_onehop",
+ "T": 500,
+ "seconds": {
+  "open": 0.1466381549835205,
+  "build_rescope": 1.1339712142944336,
+  "gate_level_pass": 0.33039426803588867,
+  "second_draw_build_and_gate_pass": 0.03809309005737305,
+  "load_model": 30.498541116714478,
+  "behaviour_50_sequences": 11.579111337661743,
+  "behaviour_50_sequences_second_pass": 0.0018086433410644531
+ },
+ "seconds_per_item": {
+  "forward_deployed_weight": 0.19362046718597412,
+  "forward_gate_role_last": 0.17965407848358153,
+  "forward_gate_role_all": 0.20259448289871215,
+  "decode_deployed_weight": 0.9088016033172608
+ },
+ "n_sequences": {
+  "edit": 1500,
+  "probe_heldout_disjoint": 469,
+  "hn_valid": 0
+ },
+ "n_gate_rows": {
+  "probe": 977,
+  "edit": 1500,
+  "hn": 0,
+  "benign": 0
+ },
+ "n_behaviour_rows": 50,
+ "rows_complete": true,
+ "second_pass_equal": true,
+ "forwards": 50,
+ "sources_first_pass": {
+  "pre": 0,
+  "memo": 0,
+  "run": 50
+ },
+ "sources_second_pass": {
+  "pre": 0,
+  "memo": 50,
+  "run": 0
+ },
+ "hook_mismatch": 0,
+ "peak_rss_gb_before_model": 0.9975700378417969,
+ "peak_rss_gb": 8.352947235107422,
+ "peak_gpu_gb": 7.633123397827148,
+ "load_info": {
+  "lean": true,
+  "seconds": 30.26386260986328,
+  "peak_rss_gb_before": 0.9975700378417969,
+  "peak_rss_gb": 8.352947235107422,
+  "T": 500,
+  "reused_model_of": null
+ },
+ "lean": true,
+ "note": "mechanics only: no metric of this log is computed, stored or printed",
+ "ok": true,
+ "test": "mechanics",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "19507c0dc9d6",
+  "fx_version": "fx-1.0 (2026-11-11)"
+ },
+ "time": "2026-11-11 09:53:51"
+}

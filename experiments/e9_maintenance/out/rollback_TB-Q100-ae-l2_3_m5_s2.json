@@ -1,0 +1,15 @@
+{
+ "edits": [
+  14,
+  41,
+  52,
+  76,
+  95
+ ],
+ "n": 5,
+ "whole_batches": [],
+ "rule": "harness HLog.rollback_weight: applied batch deltas of whole batches + rank-one solver terms of the other edits, subtracted from W_E - W_0 (fp32)",
+ "equals_deployed_weight": false,
+ "equals_pre_edit_weight": false,
+ "digest": "f8bd95c5b9a18692"
+}

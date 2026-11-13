@@ -1,0 +1,16 @@
+{
+ "pass": true,
+ "flipped_bit": "[redacted: local path]/02_research/experiments/10_final/feat2/white/tests/tmp/whiten/l",
+ "other_keys": "llava: the BEN-W keys of the key cache are not the keys the stored statistics were computed from",
+ "note": "copy loads: True; flipped bit refused: True; other cache keys refused: True",
+ "test": "s5_loader_detects_tampering",
+ "group": "stats",
+ "what": "the reader refuses a changed stats.pt (md5) and statistics whose keys are not the BEN-W keys of the key cache",
+ "seconds": 0.826749324798584,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

@@ -1,0 +1,267 @@
+{
+ "_about": "Extract of the authors' analysis file 03_analysis/theory/round4_review/P1b_capacity/predictions_P1b.json (the analysis material is not released): the fields that released code reads, logs.<log>.L1_predictions (+ d, T, rank_K_ans), unchanged. These are the predictions of the capacity statement for linear certification that experiments/e5_rescope/code/render.py, part (f), compares with the measured capacity curve (protocol, amendment R20: 'prediction written before the measurement') and that three macros of the paper's numbers file read (paper/scripts/numbers_manifest.json). rescope_paths.py mounts this file at the path of the working tree.",
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "d": 11008,
+   "T": 100,
+   "rank_K_ans": 400,
+   "L1_predictions": {
+    "s0": {
+     "rank_per_complaint": 458.3,
+     "N_all_T_edits_kept_own_keys__floor((d-T)/rate)": 23,
+     "N_all_edits_kept_K_ans_protected__floor((d-p)/rate)": 23,
+     "N_from_which_only_W0_certifies__ceil(d/rate)": 25
+    },
+    "s1": {
+     "rank_per_complaint": 451.2,
+     "N_all_T_edits_kept_own_keys__floor((d-T)/rate)": 24,
+     "N_all_edits_kept_K_ans_protected__floor((d-p)/rate)": 23,
+     "N_from_which_only_W0_certifies__ceil(d/rate)": 25
+    },
+    "s2": {
+     "rank_per_complaint": 311.7,
+     "N_all_T_edits_kept_own_keys__floor((d-T)/rate)": 34,
+     "N_all_edits_kept_K_ans_protected__floor((d-p)/rate)": 34,
+     "N_from_which_only_W0_certifies__ceil(d/rate)": 36
+    },
+    "pooled": {
+     "rank_per_complaint": 407.06666666666666,
+     "N_all_T_edits_kept_own_keys__floor((d-T)/rate)": 26,
+     "N_all_edits_kept_K_ans_protected__floor((d-p)/rate)": 26,
+     "N_from_which_only_W0_certifies__ceil(d/rate)": 28
+    },
+    "text_only": {
+     "keys_per_complaint": 40.266666666666666,
+     "N_all_T_edits_kept__floor((d-T)/L)": 270
+    },
+    "image_only": {
+     "keys_per_complaint": 793.2666666666667,
+     "N_all_T_edits_kept__floor((d-T)/L)": 13
+    },
+    "capacity_curve_at_rate_s0": [
+     {
+      "N": 1,
+      "rank_KQ_extrapolated": 458.3,
+      "edits_preservable": 100
+     },
+     {
+      "N": 5,
+      "rank_KQ_extrapolated": 2291.5,
+      "edits_preservable": 100
+     },
+     {
+      "N": 10,
+      "rank_KQ_extrapolated": 4583.0,
+      "edits_preservable": 100
+     },
+     {
+      "N": 15,
+      "rank_KQ_extrapolated": 6874.5,
+      "edits_preservable": 100
+     },
+     {
+      "N": 20,
+      "rank_KQ_extrapolated": 9166.0,
+      "edits_preservable": 100
+     },
+     {
+      "N": 21,
+      "rank_KQ_extrapolated": 9624.3,
+      "edits_preservable": 100
+     },
+     {
+      "N": 22,
+      "rank_KQ_extrapolated": 10082.6,
+      "edits_preservable": 100
+     },
+     {
+      "N": 23,
+      "rank_KQ_extrapolated": 10540.9,
+      "edits_preservable": 100
+     },
+     {
+      "N": 24,
+      "rank_KQ_extrapolated": 10999.2,
+      "edits_preservable": 8
+     },
+     {
+      "N": 25,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 26,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 30,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 35,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 36,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 40,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 50,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 100,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 297,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     }
+    ]
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "d": 11008,
+   "T": 100,
+   "rank_K_ans": 483,
+   "L1_predictions": {
+    "s0": {
+     "rank_per_complaint": 309.9,
+     "N_all_T_edits_kept_own_keys__floor((d-T)/rate)": 35,
+     "N_all_edits_kept_K_ans_protected__floor((d-p)/rate)": 33,
+     "N_from_which_only_W0_certifies__ceil(d/rate)": 36
+    },
+    "s1": {
+     "rank_per_complaint": 310.5,
+     "N_all_T_edits_kept_own_keys__floor((d-T)/rate)": 35,
+     "N_all_edits_kept_K_ans_protected__floor((d-p)/rate)": 33,
+     "N_from_which_only_W0_certifies__ceil(d/rate)": 36
+    },
+    "s2": {
+     "rank_per_complaint": 309.3,
+     "N_all_T_edits_kept_own_keys__floor((d-T)/rate)": 35,
+     "N_all_edits_kept_K_ans_protected__floor((d-p)/rate)": 34,
+     "N_from_which_only_W0_certifies__ceil(d/rate)": 36
+    },
+    "pooled": {
+     "rank_per_complaint": 309.9,
+     "N_all_T_edits_kept_own_keys__floor((d-T)/rate)": 35,
+     "N_all_edits_kept_K_ans_protected__floor((d-p)/rate)": 33,
+     "N_from_which_only_W0_certifies__ceil(d/rate)": 36
+    },
+    "text_only": {
+     "keys_per_complaint": 26.533333333333335,
+     "N_all_T_edits_kept__floor((d-T)/L)": 411
+    },
+    "image_only": {
+     "keys_per_complaint": 597.0666666666667,
+     "N_all_T_edits_kept__floor((d-T)/L)": 18
+    },
+    "capacity_curve_at_rate_s0": [
+     {
+      "N": 1,
+      "rank_KQ_extrapolated": 309.9,
+      "edits_preservable": 100
+     },
+     {
+      "N": 5,
+      "rank_KQ_extrapolated": 1549.5,
+      "edits_preservable": 100
+     },
+     {
+      "N": 10,
+      "rank_KQ_extrapolated": 3099.0,
+      "edits_preservable": 100
+     },
+     {
+      "N": 15,
+      "rank_KQ_extrapolated": 4648.5,
+      "edits_preservable": 100
+     },
+     {
+      "N": 20,
+      "rank_KQ_extrapolated": 6198.0,
+      "edits_preservable": 100
+     },
+     {
+      "N": 21,
+      "rank_KQ_extrapolated": 6507.9,
+      "edits_preservable": 100
+     },
+     {
+      "N": 22,
+      "rank_KQ_extrapolated": 6817.8,
+      "edits_preservable": 100
+     },
+     {
+      "N": 23,
+      "rank_KQ_extrapolated": 7127.7,
+      "edits_preservable": 100
+     },
+     {
+      "N": 24,
+      "rank_KQ_extrapolated": 7437.6,
+      "edits_preservable": 100
+     },
+     {
+      "N": 25,
+      "rank_KQ_extrapolated": 7747.5,
+      "edits_preservable": 100
+     },
+     {
+      "N": 26,
+      "rank_KQ_extrapolated": 8057.4,
+      "edits_preservable": 100
+     },
+     {
+      "N": 30,
+      "rank_KQ_extrapolated": 9297.0,
+      "edits_preservable": 100
+     },
+     {
+      "N": 35,
+      "rank_KQ_extrapolated": 10846.5,
+      "edits_preservable": 100
+     },
+     {
+      "N": 36,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 40,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 50,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 100,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     },
+     {
+      "N": 305,
+      "rank_KQ_extrapolated": 11008,
+      "edits_preservable": 0
+     }
+    ]
+   }
+  }
+ }
+}

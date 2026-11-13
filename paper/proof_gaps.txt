@@ -1,0 +1,268 @@
+proof_gaps.txt -- technical report of "Rollback, Compensate, or Rescope? Repairing Deployed Logs of Rank-One Model Edits" (v4)
+Directory: [redacted: local path]/01_paper/v4_rescope
+Files:     app_linear.tex (Appendix A), app_rescope.tex (Appendix B), compiled by techreport.tex
+Date:      2026-11-10; entries multi and conseq revised on 2026-11-11 (revision of Sec. 3 to its page budget);
+           REVISED 2026-11-11 after review round 1 (theory round 4): marker multi is CLOSED (proved and refereed), markers
+           mono and pseudo are NEW; the report gained three refereed subsections that carry no marker (Sec. app:lincert,
+           Sec. app:cm, Sec. app:mm with Sec. app:cc), transcribed with the fixes of their referees.
+           REVISED 2026-11-11, evening (external referee read of Secs. 2-4 of the paper; CHECK_LOG.tex, part VI): markers
+           mono and pseudo are CLOSED (checked by the coordinator; his corrections made: FIXES_FOR_FINAL_PASS.txt, F1, F2);
+           part E (new) lists the elementary remarks that were written for that revision and have no referee.
+           REVISED 2026-11-12 (final revision; _ext_review/TRIAGE_FINAL.txt, T38): the last four markers (cod, conseq,
+           indep, disj) are CLOSED: no \proofgap marker is left in either appendix file.
+
+PURPOSE
+  The report is assembled from proofs that already exist (transcription, one notation, referee fixes). This file
+  lists every place where the source has only a sketch or a bare claim, so that the argument printed in the report
+  was written during the transcription and has not been examined by a referee. Such a place carries a red marker
+  in the PDF, [GAP:<id> --- <reason>], produced by \proofgap{<id>}{<reason>} (defined with \providecommand at the top
+  of both appendix files). Find them with:  grep -n 'proofgap{' app_linear.tex app_rescope.tex
+  Every labelled statement of both files is followed by a comment "% source: ..." that names the source statement
+  and the referee fix that was applied. Paths below are relative to
+  ROOT = [redacted: local path] ; R3 = ROOT/03_analysis/theory/round3_rescope.
+
+========================================================================================================================
+A. OPEN MARKERS: NONE. CLOSED: multi; mono and pseudo (2026-11-11, evening); cod, conseq, indep, disj (2026-11-12)
+========================================================================================================================
+
+id multi   CLOSED on 2026-11-11. Example ex:app:twomodules, last sentence (the conjecture "no edit fires in the pass of
+           the scoped log iff no edit fires on the pre-edit keys of every module").
+           It is now Theorem thm:app:mm-certificate(b) of Sec. app:mm, proved by prover 2 of theory round 4
+           (03_analysis/theory/round4_review/P2_modules/results_P2.tex) and refereed (referee/verdicts.json: "thm:app:mm-certificate
+           (a)-(d)": correct; own toy transformers, 0 violations). The marker is removed from the report; the example
+           now points to Sec. app:mm. The paper states the extension in Remark rem:modules and claims one module only.
+
+id mono    CLOSED on 2026-11-11, evening (it was new on the same day). The coordinator checked the statement (item F1 of
+           FIXES_FOR_FINAL_PASS.txt: right, with Obj = wt(Clean) - lag wt(Unc)); his correction of the proof is made ("its
+           weighted error is AT MOST ..., with equality for thresholds among the coordinates of the instance and +infinity").
+           Tao and Wang (PODS 2021) was read again in the stored copy of its full text (bib/evidence_raw/round4/
+           taowang_pods2021/doc.txt, fetched 2026-11-11 from the first author's page; no new download): Theorem 4 is the
+           theorem ("Problem 2 can be solved in O(d n^2) + T_maxflow(n) time"), Problem 2 is passive weighted monotone
+           classification with POSITIVE finite weights, and the network of their Sec. 5.1 has the CONTENDING points as
+           vertices, source arcs of capacity weight(p) to the points of label 0, sink arcs of capacity weight(q) from the
+           points of label 1, and arcs of infinite capacity from p to q whenever p dominates q; "dominates" is defined for
+           different points. Three precisions were therefore added to the statement: points of weight zero are left out
+           (lambda = 0), the network is N_lambda without the complaints that have no out-arc and the pairs that have no
+           in-arc, and for T = 1 a second dimension separates the points of the two labels. No theory referee has examined
+           the proposition; the marker is removed on the coordinator's instruction. What follows is the entry as it was.
+           Proposition prop:app:monotone (Sec. app:cut, paragraph "Computation and attribution").
+           Claim: Scope-Cut is passive weighted monotone classification (Tao and Wang, PODS 2021, Problem 2) on an
+           embedded point set, and their flow network is the network of Theorem thm:app:cut.
+           Source: the literature sweep of 2026-11-11 (03_analysis/scope_lit/C_repair_provenance/records.json, record
+           tao2021monotone: derivation and proof sketch), checked exhaustively on 3000 random instances with ties
+           (checks/check_scopecut_is_monotone_classification.py: ALL_PASS). The proof printed in the report was written
+           during the transcription; no theory referee has examined it.
+           Used by the paper: in ONE status sentence (Thm. thm:hard(b): "we reduce it to passive weighted monotone
+           classification, one maximum flow"). Thm. thm:hard(b) itself does not depend on it (Theorem thm:app:cut,
+           refereed in round 3).
+
+id pseudo  CLOSED on 2026-11-11, evening. The coordinator checked the remark (item F2: correct). The clause that he asked
+           for is added ("the same table over integer vectors gives a pseudo-polynomial algorithm for every FIXED output
+           dimension", with the comparison of the two norms in exact arithmetic for p = infinity and integer p), so that the
+           last conclusion (strong NP-hardness needs an output dimension that grows with the instance) is proved as
+           stated; the marker is removed. What follows is the entry as it was.
+           Remark rem:app:pseudo (Sec. app:rollback-hard, before Sec. app:cond).
+           Claim: for one output dimension and integer contributions, Min-Rollback at every tolerance is solved by a
+           table over the attainable sums (pseudo-polynomial), so strong NP-hardness needs a growing output dimension.
+           Source: for tolerance 0, the last sentence of Proposition prop:app:cm-rollback(d) (round 4, P1a, refereed);
+           the sweep's inference (C_repair_provenance/summary.txt, finding 6(d)). The argument for a tolerance was
+           written for this revision; checked against brute force (scripts/final_spot_checks.py, check P: 300 instances).
+           Used by the paper: in ONE status sentence (Thm. thm:hard(a)).
+
+id cod     CLOSED on 2026-11-12: read by an external referee (_ext_review/answer_gaps.txt) and, for each fix, by the
+           coordinator: cod correct; conseq (i), (iii), (iv) and the second half of (ii) correct, the example of the first half of
+           (ii) lacked hypotheses and is corrected; indep (b) correct after one added justification; disj correct after bounds on the
+           auxiliary variables. The marker is removed. What follows is the entry as it was.
+           Remark rem:app:qr (B.9), last paragraph.
+           Claim: the least repair is the least fitting vector in the containment-of-difference order among ALL threshold
+           vectors, lowering allowed (not only among the raise-only ones).
+           Source: R3/A_semantics/referee/referee_report_A.tex, section "Query Repairs ... and the status of A3.1": stated
+           as a "free strengthening" that the referee checked by brute force only; no proof.
+           State in the report: complete four-line proof, written during the transcription (case tau_i >= tau0_i; case
+           tau_i < tau0_i). Not examined by a referee.
+           Used by the paper: no (the paper states the specialization, Thm. thm:least and its status paragraph).
+
+id conseq  CLOSED on 2026-11-12: read by an external referee (_ext_review/answer_gaps.txt) and, for each fix, by the
+           coordinator: cod correct; conseq (i), (iii), (iv) and the second half of (ii) correct, the example of the first half of
+           (ii) lacked hypotheses and is corrected; indep (b) correct after one added justification; disj correct after bounds on the
+           auxiliary variables. The marker is removed. What follows is the entry as it was.
+           Consequences (i)-(iv) after Proposition prop:app:union (B.10).
+           Claims: (i) thresholds on a fixed detector and one threshold per role have least repairs; (ii) a role set
+           chosen together with one threshold, and half-spaces with a free detector, have none; (iii) the tolerance
+           criterion has none (contributions +1, -1, +1, tolerance 1/2); (iv) mixed streams of wrong-answer and why-not
+           complaints end in the clamp of tau0 if the bounds are consistent, and depend on the order otherwise.
+           Source: R3/A_semantics/PROVER_RESULT_A.txt, "Consequences" after Prop A3.3: the four claims, with counts of
+           the prover's script as the only support ((iii) is an explicit example).
+           State in the report: a short complete argument for each item, written during the transcription. The referee
+           confirmed Prop A3.3 itself ("standard"), not these arguments.
+           Used by the paper: the sentence after Thm. thm:least ("a role set chosen together with a threshold admits two
+           incomparable repairs, and so does the tolerance criterion") rests on the first half of (ii) and on (iii).
+           Verified on 2026-11-10/11 (binding fix of the PI: keep the sentence only if both examples hold): exhaustive
+           enumeration in exact rational arithmetic, checks/check_lost_least_repairs.py -> check_lost_least_repairs.json,
+           ALL_PASS. Role set + threshold: exactly two maximal certifying scopes, incomparable, their union is no scope
+           of the class, also when the own request must stay covered. Tolerance criterion, contributions +1, -1, +1:
+           the feasible rollback sets are {1}, {3}, {1,2,3} for every tested tolerance in [0,1) and p in {1, 2, inf},
+           and the threshold repairs of the scoped log have two incomparable minimal elements. Both hold; the sentence
+           is kept. Not used by the paper and not checked by the script: the second half of (ii) (half-spaces with a
+           free detector) and (iv).
+
+id indep   CLOSED on 2026-11-12: read by an external referee (_ext_review/answer_gaps.txt) and, for each fix, by the
+           coordinator: cod correct; conseq (i), (iii), (iv) and the second half of (ii) correct, the example of the first half of
+           (ii) lacked hypotheses and is corrected; indep (b) correct after one added justification; disj correct after bounds on the
+           auxiliary variables. The marker is removed. What follows is the entry as it was.
+           Proposition prop:app:indep (B.15), part (b).
+           Claim: for lambda > 0, Unc(tau^I) contains Unc(tau^min) and Clean(tau^I) contains Clean(tau^min); if the entries
+           of tau^I are coordinates of pairs, tau^I >= tau^min; and tau^C <= tau^top for every optimal C.
+           Source: statement = "Corrected (b)" of R3/B_algorithms/B1_core/REFEREE_RESULT_B1.txt (the prover's (b),
+           PROVER_RESULT_B1.txt Theorem R4(b), was false as stated; the referee gives the corrected statement and tests
+           it numerically, without a proof).
+           State in the report: complete proof, adapted during the transcription from the prover's proof of R4(b) to the
+           corrected (set) form. Not examined by a referee.
+           Used by the paper: no. Thm. thm:cut(c) uses parts (a), (c), (d) of the proposition, which are the prover's
+           proofs, confirmed by the referee.
+
+id disj    CLOSED on 2026-11-12: read by an external referee (_ext_review/answer_gaps.txt) and, for each fix, by the
+           coordinator: cod correct; conseq (i), (iii), (iv) and the second half of (ii) correct, the example of the first half of
+           (ii) lacked hypotheses and is corrected; indep (b) correct after one added justification; disj correct after bounds on the
+           auxiliary variables. The marker is removed. What follows is the entry as it was.
+           Remark rem:app:disjcost (B.37).
+           Claim: with at most L detectors per edit, the cost form of the disjunction problem with true coverage is
+           (L+1)-approximable (LP rounding at 1/(L+1)).
+           Source: R3/B_algorithms/B3_rich/REFEREE.md, P4.3, "Fix": one line of the first referee.
+           State in the report: the linear program and the rounding argument are written out (complete), during the
+           transcription. The second referee did NOT examine this item (R3/second_referee/verdicts.json has S1-S5 only).
+           Used by the paper: NO LONGER. The sentence \reftwo{disj}{...} of Thm. thm:frontier(d)(iii) was removed from
+           sec_theory.tex by the final check of 2026-11-10 (CHECK_LOG.tex, C4), and the id was removed from the map
+           (scripts/theory_map_data.py: now under LEFT_OUT). Rule of the task (result R7): do not use it in the main
+           text until a second referee confirms it. The remark stays in the report with its marker.
+
+========================================================================================================================
+B. FORMER GAPS, NOW CONFIRMED BY THE SECOND REFEREE (no marker; R3/second_referee/verdicts.json)
+========================================================================================================================
+
+Prop. prop:app:exposed (B.21)   S1, CORRECT AFTER FIX. Statement and gadget of the first referee (REFEREE_RESULT_B2.txt,
+                                r4_h4_exposed.py). Fixes applied: "supported" instead of "exposed" (a budget is supported
+                                if it is the budget of some maximiser for some lambda >= 0; whether a budget is a VERTEX of
+                                the frontier is polynomial); the unit-weight complaints of the vertices are part of the
+                                gadget; membership in NP is proved (convexity of lambda -> max - objective).
+Prop. prop:app:tolclass (B.28)  S2, S3, CORRECT. Width 3 is NP-hard for every tolerance; width 2 with tolerance < 1/2 stays
+                                one minimum cut with zero-damage complaints. Conditions of the second referee are stated:
+                                tau0 feasible, lambda > 0 for the auxiliary pairs (the same cut serves lambda = 0), zero
+                                damage read literally, "exactly" means unless P = NP, worst case over the values.
+Prop. prop:app:conjforms (B.32) S5, CORRECT. Gain and cost of conjunctions on cubic graphs (lambda = 4, M = 5; constants
+                                7/3 and 25/3), 3-approximation of the cost by LP rounding.
+Prop. prop:app:twoblock (B.53)  S4, CORRECT. Two-block rule: validity (a) and coverage (c); notes of the second referee
+                                added after the proof (the split is essential; (c) is void for l2 = 0).
+
+========================================================================================================================
+C. ARGUMENTS WRITTEN BY A FIRST REFEREE AS A BINDING FIX (complete, transcribed, no marker, no second confirmation)
+========================================================================================================================
+
+Prop. prop:app:storable (B.43)     Storable floating-point threshold: statement, two-line proof and float64 example are
+                                   Proposition R1 / Example R1 of R3/C_statistics/referee/referee_C.tex. The example
+                                   (coordinate 0.03, reference 0.41) was recomputed in float64 during the transcription.
+Thm. thm:app:halfagnostic (B.34)   Native semantics (a benign key is satisfied iff the edit does not fire) and the two maps
+                                   between repairs and half-spaces: REFEREE.md of B3, P3(a), "Fix".
+Thm. thm:app:param(d) (B.13)       Corrected box of optimal thresholds (ends L_i, U_i): REFEREE_RESULT_B1.txt, "Corrected (d)";
+                                   the two directions of the proof follow the prover's argument.
+Lemma lem:app:nonlocal(d) (A.9)    Corrected "typical complaint" sentence (N > 4d): referee_report_A.tex / verdicts.json, A2;
+                                   derived from part (c) in one line.
+Remark after Thm. thm:app:twosided Joint, not conditional, bound: Example R2 of referee_C.tex.
+
+========================================================================================================================
+D. SMALL STEPS ADDED DURING THE TRANSCRIPTION FOR COMPLETENESS (no marker; each is a few lines and elementary)
+========================================================================================================================
+
+Thm. thm:app:param(e)              The majorant argument is written out (minimum of max + lambda*B over lambda; least concave
+                                   majorant; vertices). Source: PROVER_RESULT_B1.txt R2(e), shorter.
+Prop. prop:app:budgetfrontier(c)   One line from (b) and Thm. thm:app:param(e).
+Prop. prop:app:conjhard            Stated with lambda >= deg* + 1 and M = lambda + 1, which covers the prover's lambda = m + 1
+                                   and the constant parameters of the referees; the exchange argument is the prover's.
+Prop. prop:app:crossfire(c),(d)    The two examples (ordered scalar keys with a triangular matrix; two edits with cross
+                                   coordinates 1/2) make claims of A5.3 explicit.
+Prop. prop:app:width               A4 of the source states (1)-(3) with one-line justifications; the report spells them out.
+Gadgets of Sec. app:frontier       Thresholds of at most -1 (below every coordinate of a table) are treated explicitly.
+Sec. app:setting                   Convention: a coordinate -infinity in a derived instance means that the edit never fires
+                                   on the complaint (used in Props. prop:app:tolwidth(b), prop:app:tolclass(b)).
+Notation only                      Index letters follow notation.tex (i, j are edits only; t is a position only; p is the
+                                   norm index only; w is a contribution only). Renamed against the sources: chain index of
+                                   the frontier j -> l (script ell, as in the paper); index of queries, complaints and
+                                   random variables j -> h; pairs p -> pi or (i,q'); threshold value t -> vartheta;
+                                   weights w_lambda -> omega_lambda (as in the paper), residual weight w -> omega';
+                                   table entries m_i(q) -> zeta-tilde_i(q); optimum V(lambda) -> Phi*(lambda) (V is a
+                                   vertex set); population of keys k_j -> k^(l), beta(k) -> pi(k) (Lemma lem:app:nonlocal).
+                                   The two linear programs (Prop. prop:app:conjforms(b), Remark rem:app:disjcost) are
+                                   written with one variable per pair (i,q'). The full list is in the header comments
+                                   of the two appendix files.
+
+========================================================================================================================
+E. CITATIONS: STATEMENTS THAT REST ON AN ABSTRACT OR ON A SECOND SOURCE (no UNVERIFIED content is used)
+========================================================================================================================
+All 47 keys cited in the two appendix files (45 before the final check of 2026-11-10) are entries of refs.bib (bib/evidence_v4.json has the record of each).
+  arora1997hardness        content not opened; the result is cited through Amaldi and Kann 1998, Sec. 3.1 (body opened in
+                           round 1, 03_analysis/theory/THEORY_FINAL.md Thm 5.9), as in the previous draft.
+  khot2008vertexcover      abstract only.
+  alimonti1997cubic        abstract only (APX-hardness of maximum cut on cubic graphs).
+  picard1976closure        abstract; the construction is taken from Hochbaum 2004, Sec. 2.2 (body opened).
+  hochbaum1994monotone     abstract; the chain graph is taken from Hochbaum 2004, Sec. 2.4 (body opened).
+  guruswami2009halfspaces  Defs. 2.2, 2.3 and Theorem 8.1 are numbers of the authors' full version (said in the text).
+  vovk2013conditional      Thm. 1(a), Cor. 1(a) of the journal version = Props. 2b, 2a of arXiv:1209.2673v2 (opened by the
+                           referee of part C, R3/C_statistics/referee/rf2_citations.json).
+  zhang2017rethinking      Theorem 1 / Lemma 1 (triangular matrix) opened by the referee of part A.
+  Hoeffding's inequality   used by name in Thm. thm:app:conditional(c) without a citation (the 1963 paper was not opened).
+
+========================================================================================================================
+F. RESULTS OF THE SOURCES THAT ARE NOT TRANSCRIBED (the paper does not state them and no kept proof needs them)
+========================================================================================================================
+  previous draft / rounds 1-2 (v3 appendix_proofs.tex, ROLLBACK_TOLERANCE.md, THEORY_ROUND2.md, THEORY_FINAL.md):
+      scalar and rational scalar data; cancellation-free greedy bound; the dichotomy and all of its lemmas; norm
+      spread; fixed-dimension bicriteria scheme; cost bounds (b), (c) of the closed form; dominance; batches (only the
+      minimum-norm characterisation is kept, Lemma lem:app:minnorm, which the sacrifice results use); cocircuits and
+      parts (3), (4) of the dictionary; separation corollary; escape fraction. Fixes 2.4-2.7 of CHECK2.md concern
+      these dropped results; fixes 2.1 (gamma > 0), 2.2 (nu <= 2), 2.3 (samplable noise) and 2.8 (numbers of the real
+      logs, as generated macros) are applied in app_linear.tex.
+  A (semantics): A2 beyond Lemma lem:app:nonlocal; A3.2; A3.4 (duplicate of B1 R1); A5.4; A6.
+  B1: R2(f)(i); R3; remarks on zero weights and coordinate ascent; examples E1, E2 (dropped as the referee advises).
+  B2: H1.2; H1.3(b),(c); H3.5; H4.
+  B3: P1.2; P2.2; P2.4; P2.5(b),(c); P3(b); fixed dimension; P4.1.
+  C:  C3 (ROC, VC, learning (b),(c)); Corollary C6 (crossover); C4; C5; all comparisons with measured numbers.
+
+========================================================================================================================
+G. NUMBERS
+========================================================================================================================
+  No experimental number is typed in the appendix files. app_linear.tex uses only macros of theory_numbers.tex
+  (generated by gen_theory_numbers.py from the check JSONs of rounds 1 and 2): Remark rem:app:reallog and
+  Sec. app:checks. app_rescope.tex quotes no count of a check script and no measured value; constants of statements
+  and of examples are part of the mathematics.
+
+========================================================================================================================
+E. ELEMENTARY REMARKS WRITTEN ON 2026-11-11 (EVENING) FOR THE EXTERNAL REFEREE READ OF SECS. 2-4 (no marker)
+   STATUS, 2026-11-12 (W4; decision of the coordinator on F22): READ BY AN EXTERNAL REFEREE, 2026-11-11
+   (_ext_review/prompt_remarks.txt -> answer_remarks.txt) and by the coordinator; no statement is wrong; the clauses of
+   FIXES_FOR_FINAL_PASS.txt, F31 (a)-(g), are applied (CHECK_LOG.tex, part VIII.6). The list below is kept as a record.
+========================================================================================================================
+Each was written to make a corrected sentence of the paper a proved one; each is a few lines and says in its source
+comment on which refereed statement it rests. They are listed here for the coordinator (FIXES_FOR_FINAL_PASS.txt, F22).
+
+Remark rem:app:lineage (Sec. app:certificate)   Pre-edit firing set against lineage: (i) is Prop. prop:app:certificate(d),
+                                   (ii) its part (a), (iii) (equal when all eligible positions lie in the prompt) is (H1),
+                                   (iv) is Example ex:app:generation. Used by: Def. def:fire of the paper.
+Remark rem:app:topone (Sec. app:certificate)    Top-1 selection: (H4) holds for the selecting module, so the proposition
+                                   holds with "fires" read as "is a candidate"; the selected edit is not monotone; a covered
+                                   pair need not be selected. Used by: Sec. 4, paragraph "The migration".
+Remark rem:app:bystander, last three sentences  The least repair need not minimise the set of changed answers (two edits
+                                   with cancelling contributions on a query that is no complaint). Used by: Thm. thm:least(c).
+Remark rem:app:guard(iii), last sentences       The update with a band xi > 0 is a conservative repair, not the least one.
+                                   Used by: Sec. 4, paragraph "The repair".
+Remark rem:app:tolpos (Sec. app:tolerance)      Prop. prop:app:tolrow at a reported position of a longer trace: the proof of
+                                   its part (a) uses the module output at one position only. Used by: Thm. thm:criteria(e).
+Remark rem:app:format (Sec. app:conformal)      Prop. prop:app:storable for the difference fl(a - b_i) (rounded subtraction
+                                   of a constant is monotone: same proof); infinite scale; the bounds are those of the
+                                   computed scores. Used by: Algorithm alg:calib, line 6. Check: check_method_pseudocode.py, A1, S.
+Remark rem:app:capped (Sec. app:separation)     After the guards the bounds hold for the event that an UNCAPPED edit fires
+                                   (the vector with the capped edits masked dominates the calibrated one). Used by: Sec. 4.
+Sec. app:logonly, Sec. app:variants             No theorem: the implementation of the log-only rules, guards, refusals and
+                                   recalibration, and the definitions of the registered variants (moved from Sec. 4), with the
+                                   argument why their bounds are kept (conditional exchangeability; Prop. prop:app:twoblock(a)).
+Sec. app:frontier, paragraph "Two detectors per edit"   Restates the former part (c) of Thm. thm:hard of the paper from
+                                   Props. prop:app:conjhard, prop:app:conjforms and Thm. thm:app:disjunction (refereed).

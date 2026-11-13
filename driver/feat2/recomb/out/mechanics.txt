@@ -1,0 +1,146 @@
+MECHANICS CHECK of the variant rescope_x (PROTOCOL.md section 6, amendment "Review round 1", item R5: log-derived near-scope calibration)
+Development logs only (TB-Q100-ae-l2_3, TB-L100-ae-l2_3): the only logs on which a gate decision, a coverage or a firing rate may be looked at.
+A mechanics check, NOT a result: nothing was tuned or selected; m = 4, the three kinds and the rule are fixed by the amendment.  One calibration
+draw (draw 0): the numbers of section (3) carry the draw-to-draw spread of every calibrated gate (not shown here) and no interval.
+
+without = the default method (fx.methods.rescope: two-block rule; baseline b_i = largest coordinate of edit i over the 100 block-1 queries);
+with    = the same gate, same draw, same blocks, with b_i = max(block-1 baseline, x_i), x_i = the largest coordinate of edit i on ITS OWN
+          recombination rows (4 X-I + 4 X-Q + 4 X-X per edit; cache2/recomb/<backbone>); block 2, the quantile and the guards unchanged
+          (recomb.calibrate_two_block_x = rescope.calibrate_two_block with x as one more block-1 row).  An edit fires iff it is the top-1 edit by
+          r_i - b_i and r_i - b_i > eta: only the DIFFERENCES between the edits' baselines matter once eta is re-estimated on block 2.
+
+== TB-Q100-ae-l2_3 (qwen25vl, T = 100) ==  calibration draw 0, alpha = 0.05, n = 200 (block 1 = 100 queries, block 2 = 100, rank 96)
+   'without' is fx.methods.rescope bit for bit: True;   rows used: X-I 400, X-Q 400, X-X 400   (keys: prompt only, last prompt position)
+
+(1) own-recombination coordinates r_i(k) = <W_i, k> / s_i next to the block-1 baselines (quantiles over the edits)
+quantity                                               min      q25      median   q75      max      edits > b1  rows > b1
+-----------------------------------------------------  -------  -------  -------  -------  -------  ----------  ----------
+block-1 baseline b1_i (max over block 1)                 0.036    0.082    0.113    0.166    0.449
+X-I: max over the edit's rows                            0.059    0.250    0.364    0.473    0.883  92 of 100   312 of 400
+X-Q: max over the edit's rows                           -0.045    0.157    0.227    0.317    0.730  73 of 100   211 of 400
+X-X: max over the edit's rows                            0.066    0.232    0.358    0.480    0.920  92 of 100   312 of 400
+all kinds: x_i                                           0.155    0.388    0.487    0.582    0.920  98 of 100
+x_i - b1_i                                              -0.137    0.260    0.337    0.441    0.803
+X-I: single rows                                        -0.027    0.147    0.227    0.325    0.883
+X-Q: single rows                                        -0.145    0.052    0.133    0.222    0.730
+X-X: single rows                                         0.002    0.143    0.224    0.328    0.920
+for reference: own coordinate, own prompt (Rel)          0.950    0.989    0.995    1.002    1.022
+for reference: own coordinate, text rephrase (T-Gen)     0.042    0.238    0.349    0.475    0.724
+for reference: own coordinate, image rephrase (I-Gen)    0.076    0.312    0.517    0.674    0.983
+for reference: calibration queries, max over edits       0.046    0.132    0.162    0.205    0.449
+    kind that attains x_i: X-I 36, X-Q 25, X-X 39
+
+(2) calibration                                        without      with recombinations
+    eta (block-2 quantile of max_i (r_i - b_i))          0.1622      -0.0112
+    baseline b_i            min / median / max         0.036 /  0.113 /  0.449     0.155 /  0.487 /  0.920
+    literal threshold       min / median / max         0.198 /  0.275 /  0.611     0.144 /  0.476 /  0.909
+    installed threshold     min / median / max         0.198 /  0.275 /  0.611     0.144 /  0.476 /  0.909
+    literal thresholds with recombinations: higher for 87 edits, lower for 13; installed (after guards): higher 87, lower 13, equal 0; change min / median / max -0.173 /  0.164 /  0.630
+    capped edits (guards; bound void for them)                0            0        (capped in both: 0; guards the literal rule would silence: 0 / 0)
+    bound on benign false firing                          4.95 %       4.95 %
+
+(3) gate level, teacher-forced keys of the test rows (% of rows)        n    without       with
+    false firing, heldout_disjoint (valid rows)                      465       4.95       2.15
+        image rows                                                   224      10.27       4.46
+        text rows                                                    241       0.00       0.00
+        rows whose question an edit of the log asks                   28      25.00      14.29
+        other rows                                                   437       3.66       1.37
+    for reference: REPAIR pool (calibration rows are drawn from it)   489       4.09       3.07
+    coverage, text rephrases (T-Gen: the own edit releases)          100      60.00      18.00
+        another edit releases                                                  9.00      14.00
+    coverage, image rephrases (I-Gen: the own edit releases)         100      70.00      56.00
+        another edit releases                                                  6.00       5.00
+    own prompts (Rel: the own edit releases)                         100     100.00     100.00
+        another edit releases                                                  0.00       0.00
+    test hard negatives HN-I: an edit fires                          588      37.24       9.01
+        the own edit releases                                                 31.63       8.16
+    test hard negatives HN-Q: an edit fires                          591      23.35       6.94
+        the own edit releases                                                 17.77       5.58
+    test hard negatives HN-X: an edit fires                           99      51.52      16.16
+        the own edit releases                                                 32.32      10.10
+        the edit whose question is asked releases                             10.10       6.06
+    test hard negatives, all kinds: an edit fires                   1278      31.92       8.61
+    for reference: benign pool, prompt-only keys                    3000       5.23       2.27
+    recombination rows X-I (prompt-only keys): an edit fires         400      39.50      11.00
+        the own edit is a candidate                                           35.50       9.50
+    recombination rows X-Q (prompt-only keys): an edit fires         400      23.50       7.00
+        the own edit is a candidate                                           18.25       6.00
+    recombination rows X-X (prompt-only keys): an edit fires         400      52.75      17.00
+        the own edit is a candidate                                           31.50      10.25
+        the edit whose question is asked releases                             17.50       7.00
+
+(4) calibration quantities over the 20 registered draws (calibration rows and guards only; no test row): min / median / max
+    eta           without  0.1079 /  0.1540 /  0.2147      with -0.0641 / -0.0317 /  0.0445      draws with eta < 0: 0 without, 15 with
+    capped edits  without 0 / 0 / 0      with 0 / 0 / 0      baselines raised by the recombinations: 92 / 98 / 100 of 100
+    recombination rows (of 1200) on which their OWN edit is a candidate, with: 0 / 122 / 164
+    (eta < 0 means that an edit fires BELOW its baseline, hence possibly on its own recombinations; a capped edit can as well; the bound on
+     benign queries holds either way)
+
+== TB-L100-ae-l2_3 (llava, T = 100) ==  calibration draw 0, alpha = 0.05, n = 200 (block 1 = 100 queries, block 2 = 100, rank 96)
+   'without' is fx.methods.rescope bit for bit: True;   rows used: X-I 400, X-Q 400, X-X 400   (keys: prompt only, last prompt position)
+
+(1) own-recombination coordinates r_i(k) = <W_i, k> / s_i next to the block-1 baselines (quantiles over the edits)
+quantity                                               min      q25      median   q75      max      edits > b1  rows > b1
+-----------------------------------------------------  -------  -------  -------  -------  -------  ----------  ----------
+block-1 baseline b1_i (max over block 1)                 0.044    0.114    0.170    0.233    0.703
+X-I: max over the edit's rows                            0.006    0.095    0.191    0.354    0.972  54 of 100   89 of 400
+X-Q: max over the edit's rows                           -0.055    0.125    0.257    0.496    0.881  59 of 100   185 of 400
+X-X: max over the edit's rows                            0.001    0.104    0.212    0.420    0.990  55 of 100   98 of 400
+all kinds: x_i                                           0.068    0.371    0.548    0.782    0.990  93 of 100
+x_i - b1_i                                              -0.339    0.221    0.379    0.591    0.841
+X-I: single rows                                        -0.059    0.034    0.075    0.153    0.972
+X-Q: single rows                                        -0.224    0.034    0.151    0.409    0.881
+X-X: single rows                                        -0.023    0.037    0.077    0.153    0.990
+for reference: own coordinate, own prompt (Rel)          0.991    0.999    1.000    1.001    1.006
+for reference: own coordinate, text rephrase (T-Gen)     0.017    0.154    0.286    0.444    0.689
+for reference: own coordinate, image rephrase (I-Gen)    0.037    0.598    0.784    0.866    1.035
+for reference: calibration queries, max over edits       0.044    0.123    0.198    0.273    0.703
+    kind that attains x_i: X-I 24, X-Q 44, X-X 32
+
+(2) calibration                                        without      with recombinations
+    eta (block-2 quantile of max_i (r_i - b_i))          0.1001       0.0024
+    baseline b_i            min / median / max         0.044 /  0.170 /  0.703     0.101 /  0.558 /  0.990
+    literal threshold       min / median / max         0.144 /  0.270 /  0.803     0.103 /  0.561 /  0.992
+    installed threshold     min / median / max         0.144 /  0.270 /  0.803     0.103 /  0.561 /  0.992
+    literal thresholds with recombinations: higher for 86 edits, lower for 14; installed (after guards): higher 86, lower 14, equal 0; change min / median / max -0.098 /  0.281 /  0.743
+    capped edits (guards; bound void for them)                0            0        (capped in both: 0; guards the literal rule would silence: 0 / 0)
+    bound on benign false firing                          4.95 %       4.95 %
+
+(3) gate level, teacher-forced keys of the test rows (% of rows)        n    without       with
+    false firing, heldout_disjoint (valid rows)                      469       5.33       2.99
+        image rows                                                   223       5.83       1.79
+        text rows                                                    246       4.88       4.07
+        rows whose question an edit of the log asks                   39       7.69       5.13
+        other rows                                                   430       5.12       2.79
+    for reference: REPAIR pool (calibration rows are drawn from it)   494       6.48       6.07
+    coverage, text rephrases (T-Gen: the own edit releases)          100      51.00      16.00
+        another edit releases                                                 12.00       1.00
+    coverage, image rephrases (I-Gen: the own edit releases)         100      96.00      71.00
+        another edit releases                                                  1.00       2.00
+    own prompts (Rel: the own edit releases)                         100     100.00     100.00
+        another edit releases                                                  0.00       0.00
+    test hard negatives HN-I: an edit fires                          590      26.10       5.59
+        the own edit releases                                                  7.80       3.90
+    test hard negatives HN-Q: an edit fires                          597      45.39      11.06
+        the own edit releases                                                 37.52       8.54
+    test hard negatives HN-X: an edit fires                           99      54.55      15.15
+        the own edit releases                                                  7.07       3.03
+        the edit whose question is asked releases                             38.38       9.09
+    test hard negatives, all kinds: an edit fires                   1286      37.25       8.86
+    for reference: benign pool, prompt-only keys                    3000       7.17       6.40
+    recombination rows X-I (prompt-only keys): an edit fires         400      20.50       2.25
+        the own edit is a candidate                                           10.25       0.00
+    recombination rows X-Q (prompt-only keys): an edit fires         400      44.00       2.25
+        the own edit is a candidate                                           36.50       0.00
+    recombination rows X-X (prompt-only keys): an edit fires         400      55.25       8.75
+        the own edit is a candidate                                           15.25       0.00
+        the edit whose question is asked releases                             35.00       7.50
+
+(4) calibration quantities over the 20 registered draws (calibration rows and guards only; no test row): min / median / max
+    eta           without  0.0879 /  0.1399 /  0.2692      with -0.0240 /  0.0036 /  0.0892      draws with eta < 0: 0 without, 8 with
+    capped edits  without 0 / 0 / 1      with 0 / 0 / 9      baselines raised by the recombinations: 92 / 94 / 97 of 100
+    recombination rows (of 1200) on which their OWN edit is a candidate, with: 0 / 0 / 111
+    (eta < 0 means that an edit fires BELOW its baseline, hence possibly on its own recombinations; a capped edit can as well; the bound on
+     benign queries holds either way)
+
+written by feat2/recomb/rc_mechanics.py (no time stamp: a re-run reproduces this file); numbers: out/mechanics.json; recombination store: qwen25vl rows sha256 59a5a489767f keys md5 918b044f90ba2035b3bf61a3a1d99bc4; llava rows sha256 f06e1856f9ad keys md5 4bbc8dd943431eb29293a5d116d84637

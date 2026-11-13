@@ -1,0 +1,66 @@
+{
+ "name": "c_gate",
+ "pass": true,
+ "what": "gate-level decisions (per query and per position) = the library's ScopedLog.firing on the cached keys",
+ "detail": {
+  "rescope": {
+   "n_queries": 1689,
+   "n_fired": 373,
+   "n_in_band": 0,
+   "fired_mismatch": 0,
+   "released_pattern_mismatch": 0,
+   "candidate_edit_count_mismatch": 0
+  },
+  "rescope_shared": {
+   "n_queries": 1689,
+   "n_fired": 359,
+   "n_in_band": 0,
+   "fired_mismatch": 0,
+   "released_pattern_mismatch": 0,
+   "candidate_edit_count_mismatch": 0
+  },
+  "cosine": {
+   "n_queries": 1689,
+   "n_fired": 361,
+   "n_in_band": 0,
+   "fired_mismatch": 0,
+   "released_pattern_mismatch": 0,
+   "candidate_edit_count_mismatch": 0
+  },
+  "cosine_published": {
+   "n_queries": 1689,
+   "n_fired": 305,
+   "n_in_band": 0,
+   "fired_mismatch": 0,
+   "released_pattern_mismatch": 0,
+   "candidate_edit_count_mismatch": 0
+  },
+  "exact": {
+   "n_queries": 1689,
+   "n_fired": 100,
+   "n_in_band": 0,
+   "fired_mismatch": 0,
+   "released_pattern_mismatch": 0,
+   "candidate_edit_count_mismatch": 0
+  },
+  "where_twoblock": {
+   "n_queries": 1689,
+   "n_fired": 373,
+   "n_in_band": 0,
+   "fired_mismatch": 0,
+   "released_pattern_mismatch": 0,
+   "candidate_edit_count_mismatch": 0
+  }
+ },
+ "error": null,
+ "seconds": 8.6133553981781,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "written": "2026-11-11 11:57:12 UTC"
+}

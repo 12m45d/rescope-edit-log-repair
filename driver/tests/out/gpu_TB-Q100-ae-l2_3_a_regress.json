@@ -1,0 +1,276 @@
+{
+ "available": true,
+ "sets": [
+  "draw0",
+  "draw1",
+  "draw2",
+  "static"
+ ],
+ "n_rows": 32688,
+ "n_fields": 392256,
+ "n_rows_differing": 0,
+ "by_method": {
+  "M1": {
+   "n_rows": 6129,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "M2": {
+   "n_rows": 6129,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "M3": {
+   "n_rows": 6129,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "M4": {
+   "n_rows": 6129,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "M5": {
+   "n_rows": 2043,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "M6": {
+   "n_rows": 2043,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "deployed": {
+   "n_rows": 2043,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "pre-edit": {
+   "n_rows": 2043,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  }
+ },
+ "differing": [],
+ "headline": {
+  "M1/draw0": {
+   "fx": {
+    "rel": 100.0,
+    "tgen": 57.0,
+    "igen": 69.0,
+    "D1": 4.946236559139785,
+    "fired": 4.946236559139785,
+    "T-Loc*": 100.0,
+    "I-Loc*": 98.19444463189159,
+    "hn_D1": 31.455399061032864,
+    "hn_fired": 31.92488262910798
+   },
+   "e0": {
+    "rel": 100.0,
+    "tgen": 57.0,
+    "igen": 69.0,
+    "D1": 4.946236559139785,
+    "fired": 4.946236559139785,
+    "T-Loc*": 100.0,
+    "I-Loc*": 98.19444463189159,
+    "hn_D1": 31.455399061032864,
+    "hn_fired": 31.92488262910798
+   }
+  },
+  "M3/draw0": {
+   "fx": {
+    "rel": 98.0,
+    "tgen": 9.0,
+    "igen": 49.0,
+    "D1": 3.010752688172043,
+    "fired": 3.010752688172043,
+    "T-Loc*": 100.0,
+    "I-Loc*": 98.99801601256642,
+    "hn_D1": 7.355242566510172,
+    "hn_fired": 7.511737089201878
+   },
+   "e0": {
+    "rel": 98.0,
+    "tgen": 9.0,
+    "igen": 49.0,
+    "D1": 3.010752688172043,
+    "fired": 3.010752688172043,
+    "T-Loc*": 100.0,
+    "I-Loc*": 98.99801601256642,
+    "hn_D1": 7.355242566510172,
+    "hn_fired": 7.511737089201878
+   }
+  },
+  "deployed/static": {
+   "fx": {
+    "rel": 78.0,
+    "tgen": 9.0,
+    "igen": 22.0,
+    "D1": 54.193548387096776,
+    "fired": null,
+    "T-Loc*": 92.20378191144634,
+    "I-Loc*": 92.07837437944752,
+    "hn_D1": 77.93427230046949,
+    "hn_fired": null
+   },
+   "e0": {
+    "rel": 78.0,
+    "tgen": 9.0,
+    "igen": 22.0,
+    "D1": 54.193548387096776,
+    "fired": null,
+    "T-Loc*": 92.20378191144634,
+    "I-Loc*": 92.07837437944752,
+    "hn_D1": 77.93427230046949,
+    "hn_fired": null
+   }
+  }
+ },
+ "numbers": {
+  "source": "[redacted: local path]/02_research/experiments/10_final/e0_sanity/out/results.json",
+  "n_compared": 832,
+  "n_differing": 0,
+  "max_abs_diff": 1.4210854715202004e-14,
+  "differing": [],
+  "available": true
+ },
+ "row_sets": {
+  "edits": {
+   "n_fx": 300,
+   "n_library": 300,
+   "same_set": true,
+   "same_order": true
+  },
+  "hard negatives (valid)": {
+   "n_fx": 1278,
+   "n_library": 1278,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes repair (valid)": {
+   "n_fx": 489,
+   "n_library": 489,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes repair (pre-correct: D2)": {
+   "n_fx": 146,
+   "n_library": 146,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout (valid)": {
+   "n_fx": 490,
+   "n_library": 490,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout (pre-correct: D2)": {
+   "n_fx": 120,
+   "n_library": 120,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout_disjoint (valid)": {
+   "n_fx": 465,
+   "n_library": 465,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout_disjoint (pre-correct: D2)": {
+   "n_fx": 107,
+   "n_library": 107,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout_strict (valid)": {
+   "n_fx": 375,
+   "n_library": 375,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout_strict (pre-correct: D2)": {
+   "n_fx": 82,
+   "n_library": 82,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes all (valid)": {
+   "n_fx": 979,
+   "n_library": 979,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes all (pre-correct: D2)": {
+   "n_fx": 266,
+   "n_library": 266,
+   "same_set": true,
+   "same_order": true
+  }
+ },
+ "row_sets_equal": true,
+ "seconds": 704.6908860206604,
+ "forwards": 4184,
+ "hook_mismatch": 0,
+ "n_unexplained": 0,
+ "n_explained": 0,
+ "cause": "rows that differ are re-run with a gate built as the sanity agent built it (log factors, rebased values and thresholds computed on the GPU, calibration queries scored one by one); 'explained' = that gate reproduces the sanity agent's row, i.e. the difference is the last-bit difference between CPU-built (fx) and GPU-built values / thresholds",
+ "ok": true,
+ "shared_memo": {
+  "n_rows": 32688,
+  "n_rows_differing": 0,
+  "n_unexplained": 0,
+  "numbers_differing": 0,
+  "forwards": 0,
+  "ok": true
+ },
+ "test": "regress",
+ "log": "TB-Q100-ae-l2_3",
+ "seconds_test": 706.4309349060059,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 18:03:17",
+ "session_stats": {
+  "rows": 32688,
+  "pre": 23190,
+  "memo": 9498,
+  "run": 0,
+  "lib": 0,
+  "missing": 0,
+  "forwards": 0,
+  "decodes": 0,
+  "hook_mismatch": 0,
+  "near": 12,
+  "near_changed_on_device": 0,
+  "seconds_model": 0.0
+ },
+ "peak_gpu_gb": 8.33730173110962,
+ "peak_rss_gb": 8.110694885253906
+}

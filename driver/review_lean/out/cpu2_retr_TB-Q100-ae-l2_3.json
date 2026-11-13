@@ -1,0 +1,168 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "lookup": {
+  "content_digest_has_stop_sha": true,
+  "fixed_at": "2026-11-11 06:27 UTC",
+  "n": 2043,
+  "n_decisions_differ": 0,
+  "n_firing": 217,
+  "n_stop_words": 226,
+  "own_requests_released": 100,
+  "stop_list_file_mtime": "2026-11-11 06:27:05",
+  "stop_list_sha1": "08f4a4b05448"
+ },
+ "n_text_rows": 485,
+ "ok": true,
+ "requests_equal_own_rel_sequences": [
+  100,
+  100
+ ],
+ "rules": {
+  "retr_conj": {
+   "0": {
+    "blocks_equal_mine": true,
+    "draw_sids_equal_cosine": true,
+    "eta_abs_diff": 0.0,
+    "forced_gate_role_fire_response": [
+     "last",
+     "top1",
+     "repl"
+    ],
+    "forced_gate_values_equal_cosine_gate": true,
+    "n": 300,
+    "n_capped_driver": 59,
+    "n_capped_mine": 59,
+    "n_decisions_differ": 0,
+    "n_firing": 59,
+    "own_request_candidate_driver": 100,
+    "own_request_candidate_mine": 100,
+    "own_request_released_by_own_edit_driver": 100,
+    "same_at_prompt_and_decode": true,
+    "text_rows_firing_driver": 0,
+    "text_rows_firing_mine": 0
+   },
+   "1": {
+    "blocks_equal_mine": true,
+    "draw_sids_equal_cosine": true,
+    "eta_abs_diff": 0.0,
+    "forced_gate_role_fire_response": [
+     "last",
+     "top1",
+     "repl"
+    ],
+    "forced_gate_values_equal_cosine_gate": true,
+    "n": 300,
+    "n_capped_driver": 47,
+    "n_capped_mine": 47,
+    "n_decisions_differ": 0,
+    "n_firing": 63,
+    "own_request_candidate_driver": 100,
+    "own_request_candidate_mine": 100,
+    "own_request_released_by_own_edit_driver": 100,
+    "same_at_prompt_and_decode": true,
+    "text_rows_firing_driver": 0,
+    "text_rows_firing_mine": 0
+   }
+  },
+  "retr_min": {
+   "0": {
+    "blocks_equal_mine": true,
+    "draw_sids_equal_cosine": true,
+    "eta_abs_diff": 0.0,
+    "forced_gate_role_fire_response": [
+     "last",
+     "top1",
+     "repl"
+    ],
+    "forced_gate_values_equal_cosine_gate": true,
+    "n": 300,
+    "n_block1_with_image": 49,
+    "n_capped_driver": 45,
+    "n_capped_mine": 45,
+    "n_decisions_differ": 0,
+    "n_firing": 80,
+    "own_request_candidate_driver": 100,
+    "own_request_candidate_mine": 100,
+    "own_request_released_by_own_edit_driver": 86,
+    "same_at_prompt_and_decode": true,
+    "standardisation_max_abs_diff": 0.0,
+    "text_rows_firing_driver": 0,
+    "text_rows_firing_mine": 0,
+    "top1_by_raw_score_would_differ_on": 6
+   },
+   "1": {
+    "blocks_equal_mine": true,
+    "draw_sids_equal_cosine": true,
+    "eta_abs_diff": 0.0,
+    "forced_gate_role_fire_response": [
+     "last",
+     "top1",
+     "repl"
+    ],
+    "forced_gate_values_equal_cosine_gate": true,
+    "n": 300,
+    "n_block1_with_image": 49,
+    "n_capped_driver": 49,
+    "n_capped_mine": 49,
+    "n_decisions_differ": 0,
+    "n_firing": 77,
+    "own_request_candidate_driver": 100,
+    "own_request_candidate_mine": 100,
+    "own_request_released_by_own_edit_driver": 96,
+    "same_at_prompt_and_decode": true,
+    "standardisation_max_abs_diff": 0.0,
+    "text_rows_firing_driver": 0,
+    "text_rows_firing_mine": 0,
+    "top1_by_raw_score_would_differ_on": 5
+   }
+  },
+  "retr_sum": {
+   "0": {
+    "blocks_equal_mine": true,
+    "draw_sids_equal_cosine": true,
+    "eta_abs_diff": 0.0,
+    "forced_gate_role_fire_response": [
+     "last",
+     "top1",
+     "repl"
+    ],
+    "forced_gate_values_equal_cosine_gate": true,
+    "n": 300,
+    "n_capped_driver": 0,
+    "n_capped_mine": 0,
+    "n_decisions_differ": 0,
+    "n_firing": 117,
+    "own_request_candidate_driver": 100,
+    "own_request_candidate_mine": 100,
+    "own_request_released_by_own_edit_driver": 100,
+    "same_at_prompt_and_decode": true,
+    "text_rows_firing_driver": 0,
+    "text_rows_firing_mine": 0,
+    "top1_by_raw_score_would_differ_on": 0
+   },
+   "1": {
+    "blocks_equal_mine": true,
+    "draw_sids_equal_cosine": true,
+    "eta_abs_diff": 0.0,
+    "forced_gate_role_fire_response": [
+     "last",
+     "top1",
+     "repl"
+    ],
+    "forced_gate_values_equal_cosine_gate": true,
+    "n": 300,
+    "n_capped_driver": 0,
+    "n_capped_mine": 0,
+    "n_decisions_differ": 0,
+    "n_firing": 137,
+    "own_request_candidate_driver": 100,
+    "own_request_candidate_mine": 100,
+    "own_request_released_by_own_edit_driver": 100,
+    "same_at_prompt_and_decode": true,
+    "text_rows_firing_driver": 0,
+    "text_rows_firing_mine": 0,
+    "top1_by_raw_score_would_differ_on": 1
+   }
+  }
+ }
+}

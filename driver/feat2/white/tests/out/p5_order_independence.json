@@ -1,0 +1,15 @@
+{
+ "pass": true,
+ "n_items_changing_part_when_one_item_is_removed": 358,
+ "note": "shuffled rows / de-duplicated uids / repeated uids give the same split: True",
+ "test": "p5_order_independence",
+ "group": "parts",
+ "what": "the split depends on the SET of uids only (row order, repeated uids)",
+ "seconds": 0.03919029235839844,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

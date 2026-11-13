@@ -1,0 +1,260 @@
+{
+ "name": "c_rows",
+ "pass": true,
+ "what": "the eight rows build; calibrated rows depend on the draw, the others do not; own requests are candidates; undefined rows are refused with their reason",
+ "detail": {
+  "labels": [
+   "deployed",
+   "preedit",
+   "rescope",
+   "rescope_shared",
+   "rescope_null",
+   "cosine",
+   "cosine_published",
+   "exact"
+  ],
+  "kinds": [
+   "deployed",
+   "preedit",
+   "gate",
+   "gate",
+   "gate",
+   "gate",
+   "gate",
+   "gate"
+  ],
+  "keys": [
+   "22e8be0ce39a",
+   "e57b6cb25c36",
+   "106699b56957",
+   "31e0ee6dd37b",
+   "7ab8fe5e0c5a",
+   "ee0971706147",
+   "6e55c7a3f613",
+   "24f06e5e3011"
+  ],
+  "own_requests": {
+   "rescope": {
+    "n": 100,
+    "n_not_candidate": 0,
+    "n_not_released": 0,
+    "n_other_released": 1,
+    "n_in_band": 0,
+    "not_candidate_edits": []
+   },
+   "rescope_shared": {
+    "n": 100,
+    "n_not_candidate": 0,
+    "n_not_released": 0,
+    "n_other_released": 2,
+    "n_in_band": 0,
+    "not_candidate_edits": []
+   },
+   "rescope_null": {
+    "n": 100,
+    "n_not_candidate": 0,
+    "n_not_released": 0,
+    "n_other_released": 1,
+    "n_in_band": 0,
+    "not_candidate_edits": []
+   },
+   "cosine": {
+    "n": 100,
+    "n_not_candidate": 0,
+    "n_not_released": 0,
+    "n_other_released": 3,
+    "n_in_band": 0,
+    "not_candidate_edits": []
+   },
+   "cosine_published": {
+    "n": 100,
+    "n_not_candidate": 0,
+    "n_not_released": 0,
+    "n_other_released": 0,
+    "n_in_band": 0,
+    "not_candidate_edits": []
+   },
+   "exact": {
+    "n": 100,
+    "n_not_candidate": 0,
+    "n_not_released": 0,
+    "n_other_released": 0,
+    "n_in_band": 0,
+    "not_candidate_edits": []
+   }
+  },
+  "capped_edits": {
+   "rescope": 0,
+   "rescope_shared": 0,
+   "rescope_null": 0,
+   "cosine": 0
+  },
+  "undefined": {
+   "where_logonly": "DEFINED, outside the eight rows: ReScope-W is registered for E10 by amendment R14 with log-only and with two-block thresholds; built here as the rows where_logonly / where_twoblock (e10t.methods.ROWSET_R14).",
+   "cosine_shared": "DEFINED, not registered for E10: e10t.methods.cosine(L, 'shared').",
+   "cosine_default": "UNDEFINED: the retrofit of the cosine gate to the write position (0.65 at role 'last') needs a marked position; ROME writes at the last subject token, which a served prompt does not mark.  Its all-positions form is the row cosine_published.",
+   "ball": "NOT REGISTERED for E10: the GRACE-style gate queries the final prompt token by definition, where a subject-token key of these logs is never presented, so its published form cannot release anything here; an all-positions retrofit is constructible (e10t.methods.scoped(L, 'ball', feature='negdist')) but is not in the registered row list and was not built or run.",
+   "ball_default": "UNDEFINED in its published form (radius 1.0 at the final prompt token): as ball.",
+   "router": "UNDEFINED as defined: the WISE-style router decides at the last prompt position and serves the deployed output from there on (role 'last+answer'); these logs write at the last subject token, before that position, so a routed query would not receive its edit.",
+   "router_default": "UNDEFINED as defined: as router.",
+   "zscore": "DEFINABLE (the z-score gate looks at every position and needs the deployed weight), not in the registered row list of E10; not built.",
+   "zscore_default": "DEFINABLE, not in the registered row list of E10; not built.",
+   "dual": "DEFINABLE (answer match: two decodes per query); cut on unseen logs by amendment R19 (6); not built.",
+   "p12_comp_b_nall": "UNDEFINED: the linear repairs of P12 (COMP-B, REEDIT-B, RB-UNION, RB-TOT) are corrections that the vision-language harness (07_repair_v3) built from its complaint sets; neither the harness nor the saved corrections exist for a text log.  Their text counterparts (comp_min, rb_suffix, rb_lineage, blocklist) are registered separately by R14 and enter through e10t.methods.weight.",
+   "p12_reedit_b_nall": "UNDEFINED: as p12_comp_b_nall.",
+   "p12_rb_union_nall": "UNDEFINED: as p12_comp_b_nall.",
+   "p12_rb_tot_nall": "UNDEFINED: as p12_comp_b_nall."
+  },
+  "keys_change_with_draw": {
+   "deployed": false,
+   "preedit": false,
+   "rescope": true,
+   "rescope_shared": true,
+   "rescope_null": true,
+   "cosine": true,
+   "cosine_published": false,
+   "exact": false
+  },
+  "where": {
+   "none": {
+    "label": "where_all",
+    "fire": "all",
+    "response": "lin",
+    "thresholds": {
+     "n": 100,
+     "n_finite": 0,
+     "n_pos_inf": 0,
+     "n_neg_inf": 100,
+     "min": null,
+     "median": null,
+     "max": null,
+     "sha1": "5652e7b0d007"
+    },
+    "own_requests": {
+     "n": 100,
+     "n_not_candidate": 0,
+     "n_not_released": 0,
+     "n_other_released": 100,
+     "n_in_band": 0,
+     "not_candidate_edits": []
+    }
+   },
+   "two_block": {
+    "label": "where_twoblock",
+    "fire": "all",
+    "response": "lin",
+    "thresholds": {
+     "n": 100,
+     "n_finite": 100,
+     "n_pos_inf": 0,
+     "n_neg_inf": 0,
+     "min": 0.19455135122492095,
+     "median": 0.2722355410676979,
+     "max": 0.8550596932934427,
+     "sha1": "f768860238a7"
+    },
+    "own_requests": {
+     "n": 100,
+     "n_not_candidate": 0,
+     "n_not_released": 0,
+     "n_other_released": 3,
+     "n_in_band": 0,
+     "not_candidate_edits": []
+    }
+   },
+   "logonly": {
+    "label": "where_logonly",
+    "fire": "all",
+    "response": "lin",
+    "thresholds": {
+     "n": 100,
+     "n_finite": 100,
+     "n_pos_inf": 0,
+     "n_neg_inf": 0,
+     "min": 0.05346807923681393,
+     "median": 0.12390210450514559,
+     "max": 0.9999728585042499,
+     "sha1": "8ea0260dd4b8"
+    },
+    "own_requests": {
+     "n": 100,
+     "n_not_candidate": 0,
+     "n_not_released": 0,
+     "n_other_released": 17,
+     "n_in_band": 0,
+     "not_candidate_edits": []
+    }
+   }
+  },
+  "prefix_T50": {
+   "T": 50,
+   "own_requests": {
+    "n": 50,
+    "n_not_candidate": 0,
+    "n_not_released": 0,
+    "n_other_released": 0,
+    "n_in_band": 0,
+    "not_candidate_edits": []
+   },
+   "n_rows": {
+    "request": 50,
+    "paraphrase": 100,
+    "neighborhood": 500
+   }
+  },
+  "undefined_row_refused_with_reason": true,
+  "labels_r14": [
+   "deployed",
+   "preedit",
+   "rescope",
+   "rescope_shared",
+   "rescope_null",
+   "cosine",
+   "cosine_published",
+   "exact",
+   "where_logonly",
+   "where_twoblock"
+  ],
+  "where_rows": {
+   "where_logonly": {
+    "fire": "all",
+    "response": "lin",
+    "values": "rebased",
+    "own_requests": {
+     "n": 100,
+     "n_not_candidate": 0,
+     "n_not_released": 0,
+     "n_other_released": 17,
+     "n_in_band": 0,
+     "not_candidate_edits": []
+    },
+    "capped": 1
+   },
+   "where_twoblock": {
+    "fire": "all",
+    "response": "lin",
+    "values": "rebased",
+    "own_requests": {
+     "n": 100,
+     "n_not_candidate": 0,
+     "n_not_released": 0,
+     "n_other_released": 3,
+     "n_in_band": 0,
+     "not_candidate_edits": []
+    },
+    "capped": 0
+   }
+  }
+ },
+ "error": null,
+ "seconds": 6.160929203033447,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "written": "2026-11-11 11:57:18 UTC"
+}

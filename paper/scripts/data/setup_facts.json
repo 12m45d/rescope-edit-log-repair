@@ -1,0 +1,4027 @@
+{
+ "_about": "Facts of the experimental setup, collected by scripts/collect_setup.py from stored files; do not edit. See the docstring of that script for the inputs and for what is derived.",
+ "backbones": {
+  "llava": {
+   "d_in": 11008,
+   "families": {
+    "L": {
+     "dataset": "VLKEB",
+     "master_log": "TB-L1000-ae-l2_3"
+    }
+   },
+   "families_with_hard_negatives": [
+    "L"
+   ],
+   "layer": 16,
+   "module_dtype": "torch.float16"
+  },
+  "qwen25vl": {
+   "d_in": 11008,
+   "families": {
+    "Q": {
+     "dataset": "VLKEB",
+     "master_log": "TB-Q2000-ae-l2_3"
+    },
+    "QK": {
+     "dataset": "MMKE-Bench",
+     "master_log": "TB-Q500-mmke-l2_3"
+    }
+   },
+   "families_with_hard_negatives": [
+    "Q"
+   ],
+   "layer": 20,
+   "module_dtype": "torch.bfloat16"
+  }
+ },
+ "boundary_violations": [],
+ "common": {
+  "T_max": {
+   "llava": 1000,
+   "qwen25vl": 2000
+  },
+  "T_max_table": {
+   "alphaedit": 500,
+   "memit": 2000
+  },
+  "batch": 10,
+  "built_but_not_registered": [],
+  "d_in": 11008,
+  "definitions": {
+   "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+   "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+   "D2_at10": "same on the 10-token y0 / y_E",
+   "benign_drift_frac_of_D1": "D1 not D2 / D1",
+   "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+  },
+  "hn": {
+   "first100": {
+    "edits": 100,
+    "hn_i": 6,
+    "hn_q": 6,
+    "hn_x": 1
+   },
+   "later100": {
+    "edits": 100,
+    "hn_i": 2,
+    "hn_q": 2,
+    "hn_x": 1
+   },
+   "source_pool_items": 1051
+  },
+  "hn_rows_related_to_an_edit_max": 159,
+  "layer": {
+   "llava": 16,
+   "qwen25vl": 20
+  },
+  "n_built": 16,
+  "n_listed": 16,
+  "no_edit_is_a_probe_item": true,
+  "not_built": [],
+  "one_edit_stream_per_backbone_and_benchmark": true,
+  "probe_items": 500,
+  "probe_rows": 1000,
+  "ridge": {
+   "development": 3.0,
+   "unseen_alphaedit_rows": 3.0,
+   "working_points": [
+    10.0,
+    1.0
+   ]
+  },
+  "streams": {
+   "llava/VLKEB": {
+    "cache_family": "L",
+    "longest_log": "TB-L1000-memitw",
+    "n_logs": 7,
+    "not_a_prefix_of_it": []
+   },
+   "qwen25vl/VLKEB": {
+    "cache_family": "Q",
+    "longest_log": "TB-Q2000-memitw",
+    "n_logs": 9,
+    "not_a_prefix_of_it": []
+   }
+  }
+ },
+ "decoder": {
+  "_source": "definitions of complaints_v2.json (common to the listed image+text logs)",
+  "long_answer_tokens": 48,
+  "short_answer_tokens": 10
+ },
+ "generated": "2026-11-12 17:41:53",
+ "hard_negatives": {
+  "llava": {
+   "later_edits_per_prefix": {
+    "1000": 100,
+    "200": 16,
+    "500": 43
+   },
+   "rows": 1800,
+   "rows_drawn_earlier": 400,
+   "source_pool_items": 1051,
+   "types": {
+    "hn_i": {
+     "groups": {
+      "first100": {
+       "edits": 100,
+       "rows": 600,
+       "rows_per_edit": 6,
+       "valid": 590
+      },
+      "later100": {
+       "edits": 100,
+       "rows": 200,
+       "rows_per_edit": 2,
+       "valid": 199
+      }
+     },
+     "rows": 800,
+     "valid": 789
+    },
+    "hn_q": {
+     "groups": {
+      "first100": {
+       "edits": 100,
+       "rows": 600,
+       "rows_per_edit": 6,
+       "valid": 597
+      },
+      "later100": {
+       "edits": 100,
+       "rows": 200,
+       "rows_per_edit": 2,
+       "valid": 195
+      }
+     },
+     "rows": 800,
+     "valid": 792
+    },
+    "hn_x": {
+     "groups": {
+      "first100": {
+       "edits": 100,
+       "rows": 100,
+       "rows_per_edit": 1,
+       "valid": 99
+      },
+      "later100": {
+       "edits": 100,
+       "rows": 100,
+       "rows_per_edit": 1,
+       "valid": 97
+      }
+     },
+     "rows": 200,
+     "valid": 196
+    }
+   },
+   "valid": 1777
+  },
+  "qwen25vl": {
+   "later_edits_per_prefix": {
+    "1000": 47,
+    "200": 9,
+    "2000": 100,
+    "500": 26
+   },
+   "rows": 1800,
+   "rows_drawn_earlier": 400,
+   "source_pool_items": 1051,
+   "types": {
+    "hn_i": {
+     "groups": {
+      "first100": {
+       "edits": 100,
+       "rows": 600,
+       "rows_per_edit": 6,
+       "valid": 588
+      },
+      "later100": {
+       "edits": 100,
+       "rows": 200,
+       "rows_per_edit": 2,
+       "valid": 199
+      }
+     },
+     "rows": 800,
+     "valid": 787
+    },
+    "hn_q": {
+     "groups": {
+      "first100": {
+       "edits": 100,
+       "rows": 600,
+       "rows_per_edit": 6,
+       "valid": 591
+      },
+      "later100": {
+       "edits": 100,
+       "rows": 200,
+       "rows_per_edit": 2,
+       "valid": 195
+      }
+     },
+     "rows": 800,
+     "valid": 786
+    },
+    "hn_x": {
+     "groups": {
+      "first100": {
+       "edits": 100,
+       "rows": 100,
+       "rows_per_edit": 1,
+       "valid": 99
+      },
+      "later100": {
+       "edits": 100,
+       "rows": 100,
+       "rows_per_edit": 1,
+       "valid": 99
+      }
+     },
+     "rows": 200,
+     "valid": 198
+    }
+   },
+   "valid": 1771
+  }
+ },
+ "inputs": {
+  "02_research/experiments/06_testbed_v3/TB-L100-memitw/complaints_v2.json": {
+   "mtime": 1794505301,
+   "size": 2934
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-memitw/metrics.json": {
+   "mtime": 1794505301,
+   "size": 13652
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-memitw/per_edit_metrics.jsonl": {
+   "mtime": 1794502666,
+   "size": 59173
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-memitw/probe_records_v2.jsonl": {
+   "mtime": 1794502666,
+   "size": 999642
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-ae-l2_1/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-L100-ae-l2_1/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-L100-ae-l2_1/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-L100-ae-l2_1/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-L100-ae-l2_3/complaints_v2.json": {
+   "mtime": 1794505299,
+   "size": 2573
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-ae-l2_3/metrics.json": {
+   "mtime": 1794505299,
+   "size": 11374
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-ae-l2_3/per_edit_metrics.jsonl": {
+   "mtime": 1794502661,
+   "size": 59018
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-ae-l2_3/probe_records_v2.jsonl": {
+   "mtime": 1794502661,
+   "size": 973479
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-ae/complaints_v2.json": {
+   "mtime": 1794505299,
+   "size": 3597
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-ae/metrics.json": {
+   "mtime": 1794505299,
+   "size": 14521
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-ae/per_edit_metrics.jsonl": {
+   "mtime": 1794502665,
+   "size": 60005
+  },
+  "02_research/experiments/06_testbed_v3/TB-L100-ae/probe_records_v2.jsonl": {
+   "mtime": 1794502665,
+   "size": 966645
+  },
+  "02_research/experiments/06_testbed_v3/TB-L1000-memitw/complaints_v2.json": {
+   "mtime": 1794505302,
+   "size": 2935
+  },
+  "02_research/experiments/06_testbed_v3/TB-L1000-memitw/metrics.json": {
+   "mtime": 1794505302,
+   "size": 83389
+  },
+  "02_research/experiments/06_testbed_v3/TB-L1000-memitw/per_edit_metrics.jsonl": {
+   "mtime": 1794502667,
+   "size": 597631
+  },
+  "02_research/experiments/06_testbed_v3/TB-L1000-memitw/probe_records_v2.jsonl": {
+   "mtime": 1794502667,
+   "size": 1029029
+  },
+  "02_research/experiments/06_testbed_v3/TB-L1000-ae-l2_3/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-L1000-ae-l2_3/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-L1000-ae-l2_3/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-L1000-ae-l2_3/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-L200-memitw/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-L200-memitw/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-L200-memitw/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-L200-memitw/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-L200-ae-l2_3/complaints_v2.json": {
+   "mtime": 1794505300,
+   "size": 2934
+  },
+  "02_research/experiments/06_testbed_v3/TB-L200-ae-l2_3/metrics.json": {
+   "mtime": 1794505300,
+   "size": 21129
+  },
+  "02_research/experiments/06_testbed_v3/TB-L200-ae-l2_3/per_edit_metrics.jsonl": {
+   "mtime": 1794502666,
+   "size": 117762
+  },
+  "02_research/experiments/06_testbed_v3/TB-L200-ae-l2_3/probe_records_v2.jsonl": {
+   "mtime": 1794502666,
+   "size": 976735
+  },
+  "02_research/experiments/06_testbed_v3/TB-L500-memitw/complaints_v2.json": {
+   "mtime": 1794505301,
+   "size": 2932
+  },
+  "02_research/experiments/06_testbed_v3/TB-L500-memitw/metrics.json": {
+   "mtime": 1794505301,
+   "size": 44675
+  },
+  "02_research/experiments/06_testbed_v3/TB-L500-memitw/per_edit_metrics.jsonl": {
+   "mtime": 1794502667,
+   "size": 296099
+  },
+  "02_research/experiments/06_testbed_v3/TB-L500-memitw/probe_records_v2.jsonl": {
+   "mtime": 1794502667,
+   "size": 1019910
+  },
+  "02_research/experiments/06_testbed_v3/TB-L500-ae-l2_3/complaints_v2.json": {
+   "mtime": 1794505300,
+   "size": 2923
+  },
+  "02_research/experiments/06_testbed_v3/TB-L500-ae-l2_3/metrics.json": {
+   "mtime": 1794505300,
+   "size": 44296
+  },
+  "02_research/experiments/06_testbed_v3/TB-L500-ae-l2_3/per_edit_metrics.jsonl": {
+   "mtime": 1794502666,
+   "size": 295364
+  },
+  "02_research/experiments/06_testbed_v3/TB-L500-ae-l2_3/probe_records_v2.jsonl": {
+   "mtime": 1794502666,
+   "size": 997030
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-cf-l2_3/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-cf-l2_3/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-cf-l2_3/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-cf-l2_3/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-cfw/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-cfw/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-cfw/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-cfw/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-memit/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-memit/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-memit/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-memit/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-memitw/complaints_v2.json": {
+   "mtime": 1794505300,
+   "size": 2926
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-memitw/metrics.json": {
+   "mtime": 1794505300,
+   "size": 13644
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-memitw/per_edit_metrics.jsonl": {
+   "mtime": 1794502665,
+   "size": 57921
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-memitw/probe_records_v2.jsonl": {
+   "mtime": 1794502665,
+   "size": 1050437
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae-l2_1/complaints_v2.json": {
+   "mtime": 1794505299,
+   "size": 2574
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae-l2_1/metrics.json": {
+   "mtime": 1794505299,
+   "size": 11360
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae-l2_1/per_edit_metrics.jsonl": {
+   "mtime": 1794502663,
+   "size": 57161
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae-l2_1/probe_records_v2.jsonl": {
+   "mtime": 1794502663,
+   "size": 1106801
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae-l2_3/complaints_v2.json": {
+   "mtime": 1794505298,
+   "size": 2573
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae-l2_3/metrics.json": {
+   "mtime": 1794505298,
+   "size": 11341
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae-l2_3/per_edit_metrics.jsonl": {
+   "mtime": 1794502661,
+   "size": 57468
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae-l2_3/probe_records_v2.jsonl": {
+   "mtime": 1794502661,
+   "size": 1121235
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae/complaints_v2.json": {
+   "mtime": 1794505299,
+   "size": 3605
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae/metrics.json": {
+   "mtime": 1794505298,
+   "size": 14485
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae/per_edit_metrics.jsonl": {
+   "mtime": 1794502662,
+   "size": 58166
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-ae/probe_records_v2.jsonl": {
+   "mtime": 1794502662,
+   "size": 1132247
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q100-mmke-l2_3/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-mmke-l2_3/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-mmke-l2_3/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q100-mmke-l2_3/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q1000-memitw/complaints_v2.json": {
+   "mtime": 1794505301,
+   "size": 2910
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q1000-memitw/metrics.json": {
+   "mtime": 1794505300,
+   "size": 83028
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q1000-memitw/per_edit_metrics.jsonl": {
+   "mtime": 1794502666,
+   "size": 591501
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q1000-memitw/probe_records_v2.jsonl": {
+   "mtime": 1794502666,
+   "size": 1001809
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q1000-ae-l2_3/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q1000-ae-l2_3/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q1000-ae-l2_3/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q1000-ae-l2_3/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q200-memitw/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q200-memitw/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q200-memitw/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q200-memitw/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q200-ae-l2_3/complaints_v2.json": {
+   "mtime": 1794505299,
+   "size": 2931
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q200-ae-l2_3/metrics.json": {
+   "mtime": 1794505299,
+   "size": 20850
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q200-ae-l2_3/per_edit_metrics.jsonl": {
+   "mtime": 1794502665,
+   "size": 116313
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q200-ae-l2_3/probe_records_v2.jsonl": {
+   "mtime": 1794502665,
+   "size": 1099793
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q2000-memitw/complaints_v2.json": {
+   "mtime": 1794505301,
+   "size": 2916
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q2000-memitw/metrics.json": {
+   "mtime": 1794505301,
+   "size": 161359
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q2000-memitw/per_edit_metrics.jsonl": {
+   "mtime": 1794502666,
+   "size": 1186065
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q2000-memitw/probe_records_v2.jsonl": {
+   "mtime": 1794502666,
+   "size": 1022650
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q2000-ae-l2_3/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q2000-ae-l2_3/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q2000-ae-l2_3/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q2000-ae-l2_3/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-cf-l2_3/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-cf-l2_3/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-cf-l2_3/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-cf-l2_3/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-cfw/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-cfw/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-cfw/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-cfw/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-memit/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-memit/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-memit/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-memit/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-memitw/complaints_v2.json": {
+   "mtime": 1794505300,
+   "size": 2938
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q500-memitw/metrics.json": {
+   "mtime": 1794505300,
+   "size": 44471
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q500-memitw/per_edit_metrics.jsonl": {
+   "mtime": 1794502665,
+   "size": 296861
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q500-memitw/probe_records_v2.jsonl": {
+   "mtime": 1794502665,
+   "size": 1017859
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q500-ae-l2_3/complaints_v2.json": {
+   "mtime": 1794505299,
+   "size": 2926
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q500-ae-l2_3/metrics.json": {
+   "mtime": 1794505299,
+   "size": 43953
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q500-ae-l2_3/per_edit_metrics.jsonl": {
+   "mtime": 1794502665,
+   "size": 294744
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q500-ae-l2_3/probe_records_v2.jsonl": {
+   "mtime": 1794502665,
+   "size": 1072570
+  },
+  "02_research/experiments/06_testbed_v3/TB-Q500-ae/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-ae/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-ae/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-ae/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-mmke-l2_3/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-mmke-l2_3/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-mmke-l2_3/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/TB-Q500-mmke-l2_3/probe_records_v2.jsonl": null,
+  "02_research/experiments/06_testbed_v3/[redacted: describes a related submission under double-blind review]/complaints_v2.json": null,
+  "02_research/experiments/06_testbed_v3/[redacted: describes a related submission under double-blind review]/metrics.json": null,
+  "02_research/experiments/06_testbed_v3/[redacted: describes a related submission under double-blind review]/per_edit_metrics.jsonl": null,
+  "02_research/experiments/06_testbed_v3/[redacted: describes a related submission under double-blind review]/probe_records_v2.jsonl": null,
+  "02_research/experiments/07_repair_v3/harness/sampler.py": {
+   "mtime": 1794501452,
+   "size": 3898
+  },
+  "02_research/experiments/09_testbed_scale/registry.json": {
+   "mtime": 1794502192,
+   "size": 7706
+  },
+  "02_research/experiments/10_final/PROTOCOL.md": {
+   "mtime": 1794505247,
+   "size": 109717
+  },
+  "02_research/experiments/10_final/cache/cache_table.json": {
+   "mtime": 1794505216,
+   "size": 75180
+  },
+  "02_research/experiments/10_final/cache/hard_negatives/llava/rows.jsonl": {
+   "mtime": 1794503415,
+   "size": 3069230
+  },
+  "02_research/experiments/10_final/cache/hard_negatives/qwen25vl/rows.jsonl": {
+   "mtime": 1794503415,
+   "size": 3768535
+  },
+  "02_research/experiments/10_final/cache/llava/index.jsonl": {
+   "mtime": 1794503415,
+   "size": 11635617
+  },
+  "02_research/experiments/10_final/cache/qwen25vl/index.jsonl": {
+   "mtime": 1794503417,
+   "size": 19294665
+  }
+ },
+ "logs": {
+  "TB-L100-memitw": {
+   "T": 100,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "llava",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.float16",
+   "editor": "memit",
+   "edits": {
+    "igen": {
+     "exact": 64.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 89.67063564062119
+    },
+    "rel": {
+     "exact": 78.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 92.7349209189415
+    },
+    "tgen": {
+     "exact": 26.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 70.66266348958015
+    }
+   },
+   "exists": true,
+   "gamma": null,
+   "group": "LW",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 110,
+      "rows": 600,
+      "valid": 590
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 600,
+      "rows": 600,
+      "valid": 597
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 100,
+      "rows": 100,
+      "valid": 99
+     }
+    },
+    "rows": 1300,
+    "source_related_to_an_edit_of_the_log": 0,
+    "valid": 1286
+   },
+   "in_paper": true,
+   "in_table": true,
+   "lam_hat": 100.0,
+   "layer": 16,
+   "layer_name": "model.language_model.layers.16.mlp.down_proj",
+   "locality": {
+    "iloc": 56.83986707736708,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 94.06649745681075,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-L100-memitw",
+   "paper_name": "L-M100",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family L"
+   ],
+   "pre_edits": {
+    "igen": 1.0,
+    "rel": 1.0,
+    "tgen": 2.0
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 79.55465587044534,
+     "n_D1": 786,
+     "n_D2": 85,
+     "n_pre_correct": 185,
+     "n_rows": 1000,
+     "n_valid": 988
+    },
+    "heldout": {
+     "D1_rate": 78.34008097165992,
+     "n_D1": 387,
+     "n_D2": 34,
+     "n_pre_correct": 87,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "heldout_disjoint": {
+     "D1_rate": 77.82515991471216,
+     "n_D1": 365,
+     "n_D2": 30,
+     "n_pre_correct": 78,
+     "n_rows": 475,
+     "n_valid": 469
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 96.98189134808852,
+     "n_D1": 482,
+     "n_D2": 60,
+     "n_pre_correct": 78,
+     "n_rows": 500,
+     "n_valid": 497
+    },
+    "ptype_text": {
+     "D1_rate": 61.914460285132385,
+     "n_D1": 304,
+     "n_D2": 25,
+     "n_pre_correct": 107,
+     "n_rows": 500,
+     "n_valid": 491
+    },
+    "repair": {
+     "D1_rate": 80.76923076923077,
+     "n_D1": 399,
+     "n_D2": 51,
+     "n_pre_correct": 98,
+     "n_rows": 500,
+     "n_valid": 494
+    }
+   },
+   "registry": "registry.json",
+   "ridge": null,
+   "role": null,
+   "rule": "memit(lam=see README (related submission))",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "L",
+    "edit_uids_sha1": "d7b80fa8679f",
+    "n_edits_listed": 100,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "LWc",
+   "update_norm_over_W0": 0.46415120363235474,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-L100-ae": {
+   "T": 100,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "llava",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "probe uid prefix",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.float16",
+   "editor": "alphaedit",
+   "edits": {
+    "igen": {
+     "exact": 34.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 72.58647280931473
+    },
+    "rel": {
+     "exact": 51.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 82.79801678657532
+    },
+    "tgen": {
+     "exact": 13.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 58.52655231952667
+    }
+   },
+   "exists": true,
+   "gamma": "see README (related submission)",
+   "group": "LA",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 110,
+      "rows": 600,
+      "valid": 590
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 600,
+      "rows": 600,
+      "valid": 597
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 100,
+      "rows": 100,
+      "valid": 99
+     }
+    },
+    "rows": 1300,
+    "source_related_to_an_edit_of_the_log": 0,
+    "valid": 1286
+   },
+   "in_paper": true,
+   "in_table": false,
+   "lam_hat": null,
+   "layer": 16,
+   "layer_name": "model.language_model.layers.16.mlp.down_proj",
+   "locality": {
+    "iloc": 92.05829365079364,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 90.8729131521197,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-L100-ae",
+   "paper_name": "L-A100-r10",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family L"
+   ],
+   "pre_edits": {
+    "igen": 1.0,
+    "rel": 1.0,
+    "tgen": 2.0
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 35.4251012145749,
+     "n_D1": 350,
+     "n_D2": 21,
+     "n_pre_correct": 185,
+     "n_rows": 1000,
+     "n_valid": 988
+    },
+    "heldout": {
+     "D1_rate": 33.80566801619433,
+     "n_D1": 167,
+     "n_D2": 13,
+     "n_pre_correct": 87,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "heldout_disjoint": {
+     "D1_rate": 34.75479744136461,
+     "n_D1": 163,
+     "n_D2": 12,
+     "n_pre_correct": 78,
+     "n_rows": 475,
+     "n_valid": 469
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 25.553319919517104,
+     "n_D1": 127,
+     "n_D2": 3,
+     "n_pre_correct": 78,
+     "n_rows": 500,
+     "n_valid": 497
+    },
+    "ptype_text": {
+     "D1_rate": 45.41751527494908,
+     "n_D1": 223,
+     "n_D2": 18,
+     "n_pre_correct": 107,
+     "n_rows": 500,
+     "n_valid": 491
+    },
+    "repair": {
+     "D1_rate": 37.044534412955464,
+     "n_D1": 183,
+     "n_D2": 8,
+     "n_pre_correct": 98,
+     "n_rows": 500,
+     "n_valid": 494
+    }
+   },
+   "registry": null,
+   "ridge": 10.0,
+   "role": "wp",
+   "rule": "alphaedit(gamma=see README (related submission),L2=10)",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "L",
+    "edit_uids_sha1": "d7b80fa8679f",
+    "n_edits_listed": 100,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "LAcTen",
+   "update_norm_over_W0": 0.9115251898765564,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-L100-ae-l2_1": {
+   "T": null,
+   "T_source": null,
+   "backbone": null,
+   "complete": false,
+   "dataset": null,
+   "editor": null,
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-L100-ae-l2_1",
+   "paper_name": null,
+   "registry": null,
+   "role": null,
+   "statistics": null,
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "not among the working points of PROTOCOL.md, Section 1"
+  },
+  "TB-L100-ae-l2_3": {
+   "T": 100,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "llava",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "probe uid prefix",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.float16",
+   "editor": "alphaedit",
+   "edits": {
+    "igen": {
+     "exact": 66.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 88.48611173033714
+    },
+    "rel": {
+     "exact": 88.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 97.12261933088303
+    },
+    "tgen": {
+     "exact": 28.999999999999996,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 67.6126993894577
+    }
+   },
+   "exists": true,
+   "gamma": "see README (related submission)",
+   "group": "LA",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 110,
+      "rows": 600,
+      "valid": 590
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 600,
+      "rows": 600,
+      "valid": 597
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 100,
+      "rows": 100,
+      "valid": 99
+     }
+    },
+    "rows": 1300,
+    "source_related_to_an_edit_of_the_log": 0,
+    "valid": 1286
+   },
+   "in_paper": true,
+   "in_table": true,
+   "lam_hat": null,
+   "layer": 16,
+   "layer_name": "model.language_model.layers.16.mlp.down_proj",
+   "locality": {
+    "iloc": 80.63145077145077,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 77.94153044530047,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-L100-ae-l2_3",
+   "paper_name": "L-A100-r3",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family L"
+   ],
+   "pre_edits": {
+    "igen": 1.0,
+    "rel": 1.0,
+    "tgen": 2.0
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 61.63967611336032,
+     "n_D1": 609,
+     "n_D2": 63,
+     "n_pre_correct": 185,
+     "n_rows": 1000,
+     "n_valid": 988
+    },
+    "heldout": {
+     "D1_rate": 61.53846153846154,
+     "n_D1": 304,
+     "n_D2": 32,
+     "n_pre_correct": 87,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "heldout_disjoint": {
+     "D1_rate": 62.26012793176972,
+     "n_D1": 292,
+     "n_D2": 31,
+     "n_pre_correct": 78,
+     "n_rows": 475,
+     "n_valid": 469
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 48.69215291750503,
+     "n_D1": 242,
+     "n_D2": 12,
+     "n_pre_correct": 78,
+     "n_rows": 500,
+     "n_valid": 497
+    },
+    "ptype_text": {
+     "D1_rate": 74.74541751527495,
+     "n_D1": 367,
+     "n_D2": 51,
+     "n_pre_correct": 107,
+     "n_rows": 500,
+     "n_valid": 491
+    },
+    "repair": {
+     "D1_rate": 61.74089068825911,
+     "n_D1": 305,
+     "n_D2": 31,
+     "n_pre_correct": 98,
+     "n_rows": 500,
+     "n_valid": 494
+    }
+   },
+   "registry": null,
+   "ridge": 3.0,
+   "role": "dev",
+   "rule": "alphaedit(gamma=see README (related submission),L2=3)",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "L",
+    "edit_uids_sha1": "d7b80fa8679f",
+    "n_edits_listed": 100,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "LAc",
+   "update_norm_over_W0": 2.1541879177093506,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-L1000-memitw": {
+   "T": 1000,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "llava",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.float16",
+   "editor": "memit",
+   "edits": {
+    "igen": {
+     "exact": 29.7,
+     "n": 1000,
+     "nonfinite": 0,
+     "token": 70.2866505458951
+    },
+    "rel": {
+     "exact": 37.3,
+     "n": 1000,
+     "nonfinite": 0,
+     "token": 74.23017317056656
+    },
+    "tgen": {
+     "exact": 11.600000000000001,
+     "n": 1000,
+     "nonfinite": 0,
+     "token": 59.12037336230278
+    }
+   },
+   "exists": true,
+   "gamma": null,
+   "group": "LW",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 384,
+      "rows": 800,
+      "valid": 789
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 800,
+      "rows": 800,
+      "valid": 792
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 200,
+      "rows": 200,
+      "valid": 196
+     }
+    },
+    "rows": 1800,
+    "source_related_to_an_edit_of_the_log": 101,
+    "valid": 1777
+   },
+   "in_paper": true,
+   "in_table": true,
+   "lam_hat": 100.0,
+   "layer": 16,
+   "layer_name": "model.language_model.layers.16.mlp.down_proj",
+   "locality": {
+    "iloc": 54.26004023754024,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 83.8657848153141,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-L1000-memitw",
+   "paper_name": "L-M1000",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family L"
+   ],
+   "pre_edits": {
+    "igen": 1.0,
+    "rel": 1.0,
+    "tgen": 1.9
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 87.65182186234817,
+     "n_D1": 866,
+     "n_D2": 101,
+     "n_pre_correct": 185,
+     "n_rows": 1000,
+     "n_valid": 988
+    },
+    "heldout": {
+     "D1_rate": 86.23481781376518,
+     "n_D1": 426,
+     "n_D2": 45,
+     "n_pre_correct": 87,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "heldout_disjoint": {
+     "D1_rate": 86.1407249466951,
+     "n_D1": 404,
+     "n_D2": 40,
+     "n_pre_correct": 78,
+     "n_rows": 475,
+     "n_valid": 469
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 96.17706237424547,
+     "n_D1": 478,
+     "n_D2": 58,
+     "n_pre_correct": 78,
+     "n_rows": 500,
+     "n_valid": 497
+    },
+    "ptype_text": {
+     "D1_rate": 79.0224032586558,
+     "n_D1": 388,
+     "n_D2": 43,
+     "n_pre_correct": 107,
+     "n_rows": 500,
+     "n_valid": 491
+    },
+    "repair": {
+     "D1_rate": 89.06882591093117,
+     "n_D1": 440,
+     "n_D2": 56,
+     "n_pre_correct": 98,
+     "n_rows": 500,
+     "n_valid": 494
+    }
+   },
+   "registry": "registry.json",
+   "ridge": null,
+   "role": null,
+   "rule": "memit(lam=see README (related submission))",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "L",
+    "edit_uids_sha1": "a4d313c277c6",
+    "n_edits_listed": 1000,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "LWm",
+   "update_norm_over_W0": 1.177371859550476,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-L1000-ae-l2_3": {
+   "T": null,
+   "T_source": null,
+   "backbone": "llava",
+   "complete": false,
+   "dataset": "VLKEB",
+   "editor": "alphaedit",
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-L1000-ae-l2_3",
+   "paper_name": null,
+   "registry": "registry.json",
+   "role": null,
+   "statistics": "see README (related submission)",
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "amendment 17:40 (i), (iv): as TB-Q1000-ae-l2_3"
+  },
+  "TB-L200-memitw": {
+   "T": null,
+   "T_source": null,
+   "backbone": "llava",
+   "complete": false,
+   "dataset": "VLKEB",
+   "editor": "memit",
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-L200-memitw",
+   "paper_name": null,
+   "registry": "registry.json",
+   "role": null,
+   "statistics": "see README (related submission)",
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "as TB-Q200-memitw"
+  },
+  "TB-L200-ae-l2_3": {
+   "T": 200,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "llava",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.float16",
+   "editor": "alphaedit",
+   "edits": {
+    "igen": {
+     "exact": 51.0,
+     "n": 200,
+     "nonfinite": 0,
+     "token": 78.1596326828003
+    },
+    "rel": {
+     "exact": 70.0,
+     "n": 200,
+     "nonfinite": 0,
+     "token": 89.65319307893515
+    },
+    "tgen": {
+     "exact": 22.0,
+     "n": 200,
+     "nonfinite": 0,
+     "token": 61.274080850183964
+    }
+   },
+   "exists": true,
+   "gamma": "see README (related submission)",
+   "group": "LA",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 163,
+      "rows": 632,
+      "valid": 622
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 632,
+      "rows": 632,
+      "valid": 627
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 101,
+      "rows": 101,
+      "valid": 100
+     }
+    },
+    "rows": 1365,
+    "source_related_to_an_edit_of_the_log": 18,
+    "valid": 1349
+   },
+   "in_paper": true,
+   "in_table": false,
+   "lam_hat": null,
+   "layer": 16,
+   "layer_name": "model.language_model.layers.16.mlp.down_proj",
+   "locality": {
+    "iloc": 69.65199272949275,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 66.38908468920218,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-L200-ae-l2_3",
+   "paper_name": "L-A200",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family L"
+   ],
+   "pre_edits": {
+    "igen": 0.5,
+    "rel": 0.5,
+    "tgen": 2.0
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 75.20242914979757,
+     "n_D1": 743,
+     "n_D2": 102,
+     "n_pre_correct": 185,
+     "n_rows": 1000,
+     "n_valid": 988
+    },
+    "heldout": {
+     "D1_rate": 74.69635627530364,
+     "n_D1": 369,
+     "n_D2": 50,
+     "n_pre_correct": 87,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "heldout_disjoint": {
+     "D1_rate": 76.11940298507463,
+     "n_D1": 357,
+     "n_D2": 49,
+     "n_pre_correct": 78,
+     "n_rows": 475,
+     "n_valid": 469
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 62.97786720321932,
+     "n_D1": 313,
+     "n_D2": 24,
+     "n_pre_correct": 78,
+     "n_rows": 500,
+     "n_valid": 497
+    },
+    "ptype_text": {
+     "D1_rate": 87.57637474541751,
+     "n_D1": 430,
+     "n_D2": 78,
+     "n_pre_correct": 107,
+     "n_rows": 500,
+     "n_valid": 491
+    },
+    "repair": {
+     "D1_rate": 75.7085020242915,
+     "n_D1": 374,
+     "n_D2": 52,
+     "n_pre_correct": 98,
+     "n_rows": 500,
+     "n_valid": 494
+    }
+   },
+   "registry": "registry.json",
+   "ridge": 3.0,
+   "role": null,
+   "rule": "alphaedit(gamma=see README (related submission),L2=3)",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "L",
+    "edit_uids_sha1": "827084d5c058",
+    "n_edits_listed": 200,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "LAcc",
+   "update_norm_over_W0": 3.061884880065918,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-L500-memitw": {
+   "T": 500,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "llava",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.float16",
+   "editor": "memit",
+   "edits": {
+    "igen": {
+     "exact": 38.4,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 75.31277742385865
+    },
+    "rel": {
+     "exact": 45.6,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 78.80455668568611
+    },
+    "tgen": {
+     "exact": 13.4,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 59.62744126915932
+    }
+   },
+   "exists": true,
+   "gamma": null,
+   "group": "LW",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 264,
+      "rows": 686,
+      "valid": 676
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 686,
+      "rows": 686,
+      "valid": 681
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 121,
+      "rows": 121,
+      "valid": 120
+     }
+    },
+    "rows": 1493,
+    "source_related_to_an_edit_of_the_log": 54,
+    "valid": 1477
+   },
+   "in_paper": true,
+   "in_table": false,
+   "lam_hat": 100.0,
+   "layer": 16,
+   "layer_name": "model.language_model.layers.16.mlp.down_proj",
+   "locality": {
+    "iloc": 54.86330142080141,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 87.51052323765772,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-L500-memitw",
+   "paper_name": "L-M500",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family L"
+   ],
+   "pre_edits": {
+    "igen": 1.6,
+    "rel": 1.6,
+    "tgen": 2.1999999999999997
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 87.95546558704453,
+     "n_D1": 869,
+     "n_D2": 93,
+     "n_pre_correct": 185,
+     "n_rows": 1000,
+     "n_valid": 988
+    },
+    "heldout": {
+     "D1_rate": 87.04453441295547,
+     "n_D1": 430,
+     "n_D2": 40,
+     "n_pre_correct": 87,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "heldout_disjoint": {
+     "D1_rate": 86.99360341151386,
+     "n_D1": 408,
+     "n_D2": 36,
+     "n_pre_correct": 78,
+     "n_rows": 475,
+     "n_valid": 469
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 96.579476861167,
+     "n_D1": 480,
+     "n_D2": 55,
+     "n_pre_correct": 78,
+     "n_rows": 500,
+     "n_valid": 497
+    },
+    "ptype_text": {
+     "D1_rate": 79.22606924643584,
+     "n_D1": 389,
+     "n_D2": 38,
+     "n_pre_correct": 107,
+     "n_rows": 500,
+     "n_valid": 491
+    },
+    "repair": {
+     "D1_rate": 88.8663967611336,
+     "n_D1": 439,
+     "n_D2": 53,
+     "n_pre_correct": 98,
+     "n_rows": 500,
+     "n_valid": 494
+    }
+   },
+   "registry": "registry.json",
+   "ridge": null,
+   "role": null,
+   "rule": "memit(lam=see README (related submission))",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "L",
+    "edit_uids_sha1": "a47f524cb8b6",
+    "n_edits_listed": 500,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "LWd",
+   "update_norm_over_W0": 0.9040560722351074,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-L500-ae-l2_3": {
+   "T": 500,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "llava",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.float16",
+   "editor": "alphaedit",
+   "edits": {
+    "igen": {
+     "exact": 33.6,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 65.62443335056305
+    },
+    "rel": {
+     "exact": 41.0,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 74.67178774774075
+    },
+    "tgen": {
+     "exact": 11.4,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 47.412734100222586
+    }
+   },
+   "exists": true,
+   "gamma": "see README (related submission)",
+   "group": "LA",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 264,
+      "rows": 686,
+      "valid": 676
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 686,
+      "rows": 686,
+      "valid": 681
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 121,
+      "rows": 121,
+      "valid": 120
+     }
+    },
+    "rows": 1493,
+    "source_related_to_an_edit_of_the_log": 54,
+    "valid": 1477
+   },
+   "in_paper": true,
+   "in_table": true,
+   "lam_hat": null,
+   "layer": 16,
+   "layer_name": "model.language_model.layers.16.mlp.down_proj",
+   "locality": {
+    "iloc": 47.28486763236763,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 45.304012405759124,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-L500-ae-l2_3",
+   "paper_name": "L-A500",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family L"
+   ],
+   "pre_edits": {
+    "igen": 1.6,
+    "rel": 1.6,
+    "tgen": 2.1999999999999997
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 92.4089068825911,
+     "n_D1": 913,
+     "n_D2": 146,
+     "n_pre_correct": 185,
+     "n_rows": 1000,
+     "n_valid": 988
+    },
+    "heldout": {
+     "D1_rate": 91.70040485829959,
+     "n_D1": 453,
+     "n_D2": 68,
+     "n_pre_correct": 87,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "heldout_disjoint": {
+     "D1_rate": 91.89765458422175,
+     "n_D1": 431,
+     "n_D2": 64,
+     "n_pre_correct": 78,
+     "n_rows": 475,
+     "n_valid": 469
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 86.51911468812877,
+     "n_D1": 430,
+     "n_D2": 44,
+     "n_pre_correct": 78,
+     "n_rows": 500,
+     "n_valid": 497
+    },
+    "ptype_text": {
+     "D1_rate": 98.37067209775968,
+     "n_D1": 483,
+     "n_D2": 102,
+     "n_pre_correct": 107,
+     "n_rows": 500,
+     "n_valid": 491
+    },
+    "repair": {
+     "D1_rate": 93.11740890688259,
+     "n_D1": 460,
+     "n_D2": 78,
+     "n_pre_correct": 98,
+     "n_rows": 500,
+     "n_valid": 494
+    }
+   },
+   "registry": "registry.json",
+   "ridge": 3.0,
+   "role": null,
+   "rule": "alphaedit(gamma=see README (related submission),L2=3)",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "L",
+    "edit_uids_sha1": "a47f524cb8b6",
+    "n_edits_listed": 500,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "LAd",
+   "update_norm_over_W0": 4.583515644073486,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-Q100-cf-l2_3": {
+   "T": null,
+   "T_source": null,
+   "backbone": null,
+   "complete": false,
+   "dataset": null,
+   "editor": null,
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q100-cf-l2_3",
+   "paper_name": null,
+   "registry": null,
+   "role": null,
+   "statistics": null,
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "amendment of 2026-11-10 23:55, as TB-Q100-cfw"
+  },
+  "TB-Q100-cfw": {
+   "T": null,
+   "T_source": null,
+   "backbone": null,
+   "complete": false,
+   "dataset": null,
+   "editor": null,
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q100-cfw",
+   "paper_name": null,
+   "registry": null,
+   "role": null,
+   "statistics": null,
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "amendment of 2026-11-10 23:55: the text-only logs are dropped from E4; no number of these logs enters the paper (the paper states the restriction to vision-language logs written at the last prompt position as a limitation)"
+  },
+  "TB-Q100-memit": {
+   "T": null,
+   "T_source": null,
+   "backbone": "qwen25vl",
+   "complete": false,
+   "dataset": "VLKEB",
+   "editor": "memit",
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q100-memit",
+   "paper_name": null,
+   "registry": "registry.json",
+   "role": null,
+   "statistics": "see README (related submission)",
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "amendment 17:40 (iii): same backbone, data, stream and editor family as TB-Q100-memitw, [redacted: describes a related submission under double-blind review]. DECISION FOR THE PI (PROTOCOL.md, Section 1, lists the log as unseen)"
+  },
+  "TB-Q100-memitw": {
+   "T": 100,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "qwen25vl",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.bfloat16",
+   "editor": "memit",
+   "edits": {
+    "igen": {
+     "exact": 20.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 59.55277852714062
+    },
+    "rel": {
+     "exact": 53.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 81.91230207681656
+    },
+    "tgen": {
+     "exact": 11.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 53.95357219874859
+    }
+   },
+   "exists": true,
+   "gamma": null,
+   "group": "QW",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 74,
+      "rows": 600,
+      "valid": 588
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 600,
+      "rows": 600,
+      "valid": 591
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 100,
+      "rows": 100,
+      "valid": 99
+     }
+    },
+    "rows": 1300,
+    "source_related_to_an_edit_of_the_log": 0,
+    "valid": 1278
+   },
+   "in_paper": true,
+   "in_table": true,
+   "lam_hat": 100.0,
+   "layer": 20,
+   "layer_name": "model.language_model.layers.20.mlp.down_proj",
+   "locality": {
+    "iloc": 59.595240870240865,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 73.26535046903753,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-Q100-memitw",
+   "paper_name": "Q-M100",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family Q"
+   ],
+   "pre_edits": {
+    "igen": 0.0,
+    "rel": 0.0,
+    "tgen": 1.0
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 89.68335035750766,
+     "n_D1": 878,
+     "n_D2": 155,
+     "n_pre_correct": 266,
+     "n_rows": 1000,
+     "n_valid": 979
+    },
+    "heldout": {
+     "D1_rate": 89.79591836734694,
+     "n_D1": 440,
+     "n_D2": 66,
+     "n_pre_correct": 120,
+     "n_rows": 500,
+     "n_valid": 490
+    },
+    "heldout_disjoint": {
+     "D1_rate": 89.46236559139786,
+     "n_D1": 416,
+     "n_D2": 62,
+     "n_pre_correct": 107,
+     "n_rows": 475,
+     "n_valid": 465
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 99.19028340080972,
+     "n_D1": 490,
+     "n_D2": 122,
+     "n_pre_correct": 182,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "ptype_text": {
+     "D1_rate": 80.0,
+     "n_D1": 388,
+     "n_D2": 33,
+     "n_pre_correct": 84,
+     "n_rows": 500,
+     "n_valid": 485
+    },
+    "repair": {
+     "D1_rate": 89.57055214723927,
+     "n_D1": 438,
+     "n_D2": 89,
+     "n_pre_correct": 146,
+     "n_rows": 500,
+     "n_valid": 489
+    }
+   },
+   "registry": "registry.json",
+   "ridge": null,
+   "role": null,
+   "rule": "memit(lam=see README (related submission))",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "Q",
+    "edit_uids_sha1": "209e7ef5dc7a",
+    "n_edits_listed": 100,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "QWc",
+   "update_norm_over_W0": 0.726235032081604,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-Q100-ae": {
+   "T": 100,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "qwen25vl",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "probe uid prefix",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.bfloat16",
+   "editor": "alphaedit",
+   "edits": {
+    "igen": {
+     "exact": 6.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 46.62063565850258
+    },
+    "rel": {
+     "exact": 22.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 61.28611180186272
+    },
+    "tgen": {
+     "exact": 3.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 47.98174677789211
+    }
+   },
+   "exists": true,
+   "gamma": "see README (related submission)",
+   "group": "QA",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 74,
+      "rows": 600,
+      "valid": 588
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 600,
+      "rows": 600,
+      "valid": 591
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 100,
+      "rows": 100,
+      "valid": 99
+     }
+    },
+    "rows": 1300,
+    "source_related_to_an_edit_of_the_log": 0,
+    "valid": 1278
+   },
+   "in_paper": true,
+   "in_table": false,
+   "lam_hat": null,
+   "layer": 20,
+   "layer_name": "model.language_model.layers.20.mlp.down_proj",
+   "locality": {
+    "iloc": 95.14935786435787,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 93.16189952362375,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-Q100-ae",
+   "paper_name": "Q-A100-r10",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family Q"
+   ],
+   "pre_edits": {
+    "igen": 0.0,
+    "rel": 0.0,
+    "tgen": 1.0
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 33.810010214504594,
+     "n_D1": 331,
+     "n_D2": 28,
+     "n_pre_correct": 266,
+     "n_rows": 1000,
+     "n_valid": 979
+    },
+    "heldout": {
+     "D1_rate": 33.265306122448976,
+     "n_D1": 163,
+     "n_D2": 15,
+     "n_pre_correct": 120,
+     "n_rows": 500,
+     "n_valid": 490
+    },
+    "heldout_disjoint": {
+     "D1_rate": 32.68817204301075,
+     "n_D1": 152,
+     "n_D2": 14,
+     "n_pre_correct": 107,
+     "n_rows": 475,
+     "n_valid": 465
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 33.40080971659919,
+     "n_D1": 165,
+     "n_D2": 12,
+     "n_pre_correct": 182,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "ptype_text": {
+     "D1_rate": 34.22680412371134,
+     "n_D1": 166,
+     "n_D2": 16,
+     "n_pre_correct": 84,
+     "n_rows": 500,
+     "n_valid": 485
+    },
+    "repair": {
+     "D1_rate": 34.355828220858896,
+     "n_D1": 168,
+     "n_D2": 13,
+     "n_pre_correct": 146,
+     "n_rows": 500,
+     "n_valid": 489
+    }
+   },
+   "registry": null,
+   "ridge": 10.0,
+   "role": "wp",
+   "rule": "alphaedit(gamma=see README (related submission),L2=10)",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "Q",
+    "edit_uids_sha1": "209e7ef5dc7a",
+    "n_edits_listed": 100,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "QAcTen",
+   "update_norm_over_W0": 1.026059627532959,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-Q100-ae-l2_1": {
+   "T": 100,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "qwen25vl",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "probe uid prefix",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.bfloat16",
+   "editor": "alphaedit",
+   "edits": {
+    "igen": {
+     "exact": 37.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 65.92420682311058
+    },
+    "rel": {
+     "exact": 97.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 99.32142865657806
+    },
+    "tgen": {
+     "exact": 15.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 57.37936574220658
+    }
+   },
+   "exists": true,
+   "gamma": "see README (related submission)",
+   "group": "QA",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 74,
+      "rows": 600,
+      "valid": 588
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 600,
+      "rows": 600,
+      "valid": 591
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 100,
+      "rows": 100,
+      "valid": 99
+     }
+    },
+    "rows": 1300,
+    "source_related_to_an_edit_of_the_log": 0,
+    "valid": 1278
+   },
+   "in_paper": true,
+   "in_table": false,
+   "lam_hat": null,
+   "layer": 20,
+   "layer_name": "model.language_model.layers.20.mlp.down_proj",
+   "locality": {
+    "iloc": 82.35935064935065,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 75.34231870303861,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-Q100-ae-l2_1",
+   "paper_name": "Q-A100-r1",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family Q"
+   ],
+   "pre_edits": {
+    "igen": 0.0,
+    "rel": 0.0,
+    "tgen": 1.0
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 71.70582226762002,
+     "n_D1": 702,
+     "n_D2": 71,
+     "n_pre_correct": 266,
+     "n_rows": 1000,
+     "n_valid": 979
+    },
+    "heldout": {
+     "D1_rate": 70.81632653061224,
+     "n_D1": 347,
+     "n_D2": 31,
+     "n_pre_correct": 120,
+     "n_rows": 500,
+     "n_valid": 490
+    },
+    "heldout_disjoint": {
+     "D1_rate": 71.18279569892474,
+     "n_D1": 331,
+     "n_D2": 30,
+     "n_pre_correct": 107,
+     "n_rows": 475,
+     "n_valid": 465
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 71.05263157894737,
+     "n_D1": 351,
+     "n_D2": 35,
+     "n_pre_correct": 182,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "ptype_text": {
+     "D1_rate": 72.37113402061856,
+     "n_D1": 351,
+     "n_D2": 36,
+     "n_pre_correct": 84,
+     "n_rows": 500,
+     "n_valid": 485
+    },
+    "repair": {
+     "D1_rate": 72.59713701431492,
+     "n_D1": 355,
+     "n_D2": 40,
+     "n_pre_correct": 146,
+     "n_rows": 500,
+     "n_valid": 489
+    }
+   },
+   "registry": null,
+   "ridge": 1.0,
+   "role": "wp",
+   "rule": "alphaedit(gamma=see README (related submission),L2=1)",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "Q",
+    "edit_uids_sha1": "209e7ef5dc7a",
+    "n_edits_listed": 100,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "QAcOne",
+   "update_norm_over_W0": 3.2737855911254883,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-Q100-ae-l2_3": {
+   "T": 100,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "qwen25vl",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "probe uid prefix",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.bfloat16",
+   "editor": "alphaedit",
+   "edits": {
+    "igen": {
+     "exact": 23.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 59.3674609363079
+    },
+    "rel": {
+     "exact": 78.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 91.57936528325081
+    },
+    "tgen": {
+     "exact": 9.0,
+     "n": 100,
+     "nonfinite": 0,
+     "token": 52.2150800973177
+    }
+   },
+   "exists": true,
+   "gamma": "see README (related submission)",
+   "group": "QA",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 74,
+      "rows": 600,
+      "valid": 588
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 600,
+      "rows": 600,
+      "valid": 591
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 100,
+      "rows": 100,
+      "valid": 99
+     }
+    },
+    "rows": 1300,
+    "source_related_to_an_edit_of_the_log": 0,
+    "valid": 1278
+   },
+   "in_paper": true,
+   "in_table": true,
+   "lam_hat": null,
+   "layer": 20,
+   "layer_name": "model.language_model.layers.20.mlp.down_proj",
+   "locality": {
+    "iloc": 87.85935064935066,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 84.2389127343022,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-Q100-ae-l2_3",
+   "paper_name": "Q-A100-r3",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family Q"
+   ],
+   "pre_edits": {
+    "igen": 0.0,
+    "rel": 0.0,
+    "tgen": 1.0
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 57.711950970377934,
+     "n_D1": 565,
+     "n_D2": 43,
+     "n_pre_correct": 266,
+     "n_rows": 1000,
+     "n_valid": 979
+    },
+    "heldout": {
+     "D1_rate": 54.69387755102041,
+     "n_D1": 268,
+     "n_D2": 17,
+     "n_pre_correct": 120,
+     "n_rows": 500,
+     "n_valid": 490
+    },
+    "heldout_disjoint": {
+     "D1_rate": 54.193548387096776,
+     "n_D1": 252,
+     "n_D2": 17,
+     "n_pre_correct": 107,
+     "n_rows": 475,
+     "n_valid": 465
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 59.51417004048583,
+     "n_D1": 294,
+     "n_D2": 18,
+     "n_pre_correct": 182,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "ptype_text": {
+     "D1_rate": 55.876288659793815,
+     "n_D1": 271,
+     "n_D2": 25,
+     "n_pre_correct": 84,
+     "n_rows": 500,
+     "n_valid": 485
+    },
+    "repair": {
+     "D1_rate": 60.736196319018404,
+     "n_D1": 297,
+     "n_D2": 26,
+     "n_pre_correct": 146,
+     "n_rows": 500,
+     "n_valid": 489
+    }
+   },
+   "registry": null,
+   "ridge": 3.0,
+   "role": "dev",
+   "rule": "alphaedit(gamma=see README (related submission),L2=3)",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "Q",
+    "edit_uids_sha1": "209e7ef5dc7a",
+    "n_edits_listed": 100,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "QAc",
+   "update_norm_over_W0": 2.133888006210327,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-Q100-mmke-l2_3": {
+   "T": null,
+   "T_source": null,
+   "backbone": "qwen25vl",
+   "complete": false,
+   "dataset": "MMKE-Bench",
+   "editor": "alphaedit",
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q100-mmke-l2_3",
+   "paper_name": null,
+   "registry": "registry.json",
+   "role": null,
+   "statistics": "see README (related submission)",
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "PROTOCOL.md, amendment R19 (2): the MMKE-Bench logs are not run; no number of them enters the paper"
+  },
+  "TB-Q1000-memitw": {
+   "T": 1000,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "qwen25vl",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.bfloat16",
+   "editor": "memit",
+   "edits": {
+    "igen": {
+     "exact": 6.4,
+     "n": 1000,
+     "nonfinite": 0,
+     "token": 51.204437263309956
+    },
+    "rel": {
+     "exact": 15.1,
+     "n": 1000,
+     "nonfinite": 0,
+     "token": 58.752130669355395
+    },
+    "tgen": {
+     "exact": 4.7,
+     "n": 1000,
+     "nonfinite": 0,
+     "token": 48.35898159891367
+    }
+   },
+   "exists": true,
+   "gamma": null,
+   "group": "QW",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 317,
+      "rows": 694,
+      "valid": 681
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 694,
+      "rows": 694,
+      "valid": 683
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 120,
+      "rows": 120,
+      "valid": 119
+     }
+    },
+    "rows": 1508,
+    "source_related_to_an_edit_of_the_log": 56,
+    "valid": 1483
+   },
+   "in_paper": true,
+   "in_table": false,
+   "lam_hat": 100.0,
+   "layer": 20,
+   "layer_name": "model.language_model.layers.20.mlp.down_proj",
+   "locality": {
+    "iloc": 59.68838883338883,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 62.57239179452192,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-Q1000-memitw",
+   "paper_name": "Q-M1000",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family Q"
+   ],
+   "pre_edits": {
+    "igen": 0.0,
+    "rel": 0.0,
+    "tgen": 0.2
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 98.97854954034729,
+     "n_D1": 969,
+     "n_D2": 179,
+     "n_pre_correct": 266,
+     "n_rows": 1000,
+     "n_valid": 979
+    },
+    "heldout": {
+     "D1_rate": 98.9795918367347,
+     "n_D1": 485,
+     "n_D2": 79,
+     "n_pre_correct": 120,
+     "n_rows": 500,
+     "n_valid": 490
+    },
+    "heldout_disjoint": {
+     "D1_rate": 98.9247311827957,
+     "n_D1": 460,
+     "n_D2": 73,
+     "n_pre_correct": 107,
+     "n_rows": 475,
+     "n_valid": 465
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 100.0,
+     "n_D1": 494,
+     "n_D2": 120,
+     "n_pre_correct": 182,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "ptype_text": {
+     "D1_rate": 97.9381443298969,
+     "n_D1": 475,
+     "n_D2": 59,
+     "n_pre_correct": 84,
+     "n_rows": 500,
+     "n_valid": 485
+    },
+    "repair": {
+     "D1_rate": 98.97750511247443,
+     "n_D1": 484,
+     "n_D2": 100,
+     "n_pre_correct": 146,
+     "n_rows": 500,
+     "n_valid": 489
+    }
+   },
+   "registry": "registry.json",
+   "ridge": null,
+   "role": null,
+   "rule": "memit(lam=see README (related submission))",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "Q",
+    "edit_uids_sha1": "d2e0c2ac64ad",
+    "n_edits_listed": 1000,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "QWm",
+   "update_norm_over_W0": 1.7751274108886719,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-Q1000-ae-l2_3": {
+   "T": null,
+   "T_source": null,
+   "backbone": "qwen25vl",
+   "complete": false,
+   "dataset": "VLKEB",
+   "editor": "alphaedit",
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q1000-ae-l2_3",
+   "paper_name": null,
+   "registry": "registry.json",
+   "role": null,
+   "statistics": "see README (related submission)",
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "amendment 17:40 (i), (iv): AlphaEdit-style logs of the earlier configuration enter the paper only up to 500 edits; evaluated internally as a consistency check"
+  },
+  "TB-Q200-memitw": {
+   "T": null,
+   "T_source": null,
+   "backbone": "qwen25vl",
+   "complete": false,
+   "dataset": "VLKEB",
+   "editor": "memit",
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q200-memitw",
+   "paper_name": null,
+   "registry": "registry.json",
+   "role": null,
+   "statistics": "see README (related submission)",
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "PROTOCOL.md, amendment R19 (8): the logs with 200 edits of the MEMIT-style family are not run in E3"
+  },
+  "TB-Q200-ae-l2_3": {
+   "T": 200,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "qwen25vl",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.bfloat16",
+   "editor": "alphaedit",
+   "edits": {
+    "igen": {
+     "exact": 23.5,
+     "n": 200,
+     "nonfinite": 0,
+     "token": 59.11123802512884
+    },
+    "rel": {
+     "exact": 67.0,
+     "n": 200,
+     "nonfinite": 0,
+     "token": 86.664286211133
+    },
+    "tgen": {
+     "exact": 5.0,
+     "n": 200,
+     "nonfinite": 0,
+     "token": 48.847150944173336
+    }
+   },
+   "exists": true,
+   "gamma": "see README (related submission)",
+   "group": "QA",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 142,
+      "rows": 618,
+      "valid": 605
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 618,
+      "rows": 618,
+      "valid": 608
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 101,
+      "rows": 101,
+      "valid": 100
+     }
+    },
+    "rows": 1337,
+    "source_related_to_an_edit_of_the_log": 0,
+    "valid": 1313
+   },
+   "in_paper": true,
+   "in_table": false,
+   "lam_hat": null,
+   "layer": 20,
+   "layer_name": "model.language_model.layers.20.mlp.down_proj",
+   "locality": {
+    "iloc": 83.41847763347764,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 74.30521861964623,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-Q200-ae-l2_3",
+   "paper_name": "Q-A200",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family Q"
+   ],
+   "pre_edits": {
+    "igen": 0.0,
+    "rel": 0.0,
+    "tgen": 0.5
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 77.0173646578141,
+     "n_D1": 754,
+     "n_D2": 85,
+     "n_pre_correct": 266,
+     "n_rows": 1000,
+     "n_valid": 979
+    },
+    "heldout": {
+     "D1_rate": 77.14285714285714,
+     "n_D1": 378,
+     "n_D2": 46,
+     "n_pre_correct": 120,
+     "n_rows": 500,
+     "n_valid": 490
+    },
+    "heldout_disjoint": {
+     "D1_rate": 77.41935483870968,
+     "n_D1": 360,
+     "n_D2": 43,
+     "n_pre_correct": 107,
+     "n_rows": 475,
+     "n_valid": 465
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 79.75708502024291,
+     "n_D1": 394,
+     "n_D2": 47,
+     "n_pre_correct": 182,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "ptype_text": {
+     "D1_rate": 74.22680412371135,
+     "n_D1": 360,
+     "n_D2": 38,
+     "n_pre_correct": 84,
+     "n_rows": 500,
+     "n_valid": 485
+    },
+    "repair": {
+     "D1_rate": 76.89161554192229,
+     "n_D1": 376,
+     "n_D2": 39,
+     "n_pre_correct": 146,
+     "n_rows": 500,
+     "n_valid": 489
+    }
+   },
+   "registry": "registry.json",
+   "ridge": 3.0,
+   "role": null,
+   "rule": "alphaedit(gamma=see README (related submission),L2=3)",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "Q",
+    "edit_uids_sha1": "8f0b83c723d5",
+    "n_edits_listed": 200,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "QAcc",
+   "update_norm_over_W0": 3.004641532897949,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-Q2000-memitw": {
+   "T": 2000,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "qwen25vl",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.bfloat16",
+   "editor": "memit",
+   "edits": {
+    "igen": {
+     "exact": 4.55,
+     "n": 2000,
+     "nonfinite": 0,
+     "token": 49.06756009012461
+    },
+    "rel": {
+     "exact": 9.6,
+     "n": 2000,
+     "nonfinite": 0,
+     "token": 54.33602112531663
+    },
+    "tgen": {
+     "exact": 3.8,
+     "n": 2000,
+     "nonfinite": 0,
+     "token": 49.00471557304263
+    }
+   },
+   "exists": true,
+   "gamma": null,
+   "group": "QW",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 426,
+      "rows": 800,
+      "valid": 787
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 800,
+      "rows": 800,
+      "valid": 786
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 200,
+      "rows": 200,
+      "valid": 198
+     }
+    },
+    "rows": 1800,
+    "source_related_to_an_edit_of_the_log": 159,
+    "valid": 1771
+   },
+   "in_paper": true,
+   "in_table": true,
+   "lam_hat": 100.0,
+   "layer": 20,
+   "layer_name": "model.language_model.layers.20.mlp.down_proj",
+   "locality": {
+    "iloc": 57.965457320457325,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 64.37582946680126,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-Q2000-memitw",
+   "paper_name": "Q-M2000",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family Q"
+   ],
+   "pre_edits": {
+    "igen": 0.0,
+    "rel": 0.0,
+    "tgen": 0.2
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 97.75280898876404,
+     "n_D1": 957,
+     "n_D2": 191,
+     "n_pre_correct": 266,
+     "n_rows": 1000,
+     "n_valid": 979
+    },
+    "heldout": {
+     "D1_rate": 97.75510204081633,
+     "n_D1": 479,
+     "n_D2": 85,
+     "n_pre_correct": 120,
+     "n_rows": 500,
+     "n_valid": 490
+    },
+    "heldout_disjoint": {
+     "D1_rate": 97.63440860215054,
+     "n_D1": 454,
+     "n_D2": 78,
+     "n_pre_correct": 107,
+     "n_rows": 475,
+     "n_valid": 465
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 100.0,
+     "n_D1": 494,
+     "n_D2": 139,
+     "n_pre_correct": 182,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "ptype_text": {
+     "D1_rate": 95.4639175257732,
+     "n_D1": 463,
+     "n_D2": 52,
+     "n_pre_correct": 84,
+     "n_rows": 500,
+     "n_valid": 485
+    },
+    "repair": {
+     "D1_rate": 97.75051124744377,
+     "n_D1": 478,
+     "n_D2": 106,
+     "n_pre_correct": 146,
+     "n_rows": 500,
+     "n_valid": 489
+    }
+   },
+   "registry": "registry.json",
+   "ridge": null,
+   "role": null,
+   "rule": "memit(lam=see README (related submission))",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "Q",
+    "edit_uids_sha1": "08b26f22da82",
+    "n_edits_listed": 2000,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "QWmm",
+   "update_norm_over_W0": 2.2171692848205566,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-Q2000-ae-l2_3": {
+   "T": null,
+   "T_source": null,
+   "backbone": "qwen25vl",
+   "complete": false,
+   "dataset": "VLKEB",
+   "editor": "alphaedit",
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q2000-ae-l2_3",
+   "paper_name": null,
+   "registry": "registry.json",
+   "role": null,
+   "statistics": "see README (related submission)",
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "amendment 17:40 (i), (iv): as TB-Q1000-ae-l2_3"
+  },
+  "TB-Q500-cf-l2_3": {
+   "T": null,
+   "T_source": null,
+   "backbone": null,
+   "complete": false,
+   "dataset": null,
+   "editor": null,
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q500-cf-l2_3",
+   "paper_name": null,
+   "registry": null,
+   "role": null,
+   "statistics": null,
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "as TB-Q100-cf-l2_3"
+  },
+  "TB-Q500-cfw": {
+   "T": null,
+   "T_source": null,
+   "backbone": null,
+   "complete": false,
+   "dataset": null,
+   "editor": null,
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q500-cfw",
+   "paper_name": null,
+   "registry": null,
+   "role": null,
+   "statistics": null,
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "as TB-Q100-cfw"
+  },
+  "TB-Q500-memit": {
+   "T": null,
+   "T_source": null,
+   "backbone": "qwen25vl",
+   "complete": false,
+   "dataset": "VLKEB",
+   "editor": "memit",
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q500-memit",
+   "paper_name": null,
+   "registry": "registry.json",
+   "role": null,
+   "statistics": "see README (related submission)",
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "amendment 17:40 (iii): as TB-Q100-memit"
+  },
+  "TB-Q500-memitw": {
+   "T": 500,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "qwen25vl",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.bfloat16",
+   "editor": "memit",
+   "edits": {
+    "igen": {
+     "exact": 9.8,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 54.77285521328449
+    },
+    "rel": {
+     "exact": 25.8,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 65.6439684599638
+    },
+    "tgen": {
+     "exact": 6.2,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 52.39416617751122
+    }
+   },
+   "exists": true,
+   "gamma": null,
+   "group": "QW",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 236,
+      "rows": 652,
+      "valid": 639
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 652,
+      "rows": 652,
+      "valid": 641
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 106,
+      "rows": 106,
+      "valid": 105
+     }
+    },
+    "rows": 1410,
+    "source_related_to_an_edit_of_the_log": 0,
+    "valid": 1385
+   },
+   "in_paper": true,
+   "in_table": false,
+   "lam_hat": 100.0,
+   "layer": 20,
+   "layer_name": "model.language_model.layers.20.mlp.down_proj",
+   "locality": {
+    "iloc": 58.077919857919866,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 66.67084760467628,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-Q500-memitw",
+   "paper_name": "Q-M500",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family Q"
+   ],
+   "pre_edits": {
+    "igen": 0.0,
+    "rel": 0.0,
+    "tgen": 0.4
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 96.5270684371808,
+     "n_D1": 945,
+     "n_D2": 184,
+     "n_pre_correct": 266,
+     "n_rows": 1000,
+     "n_valid": 979
+    },
+    "heldout": {
+     "D1_rate": 96.73469387755102,
+     "n_D1": 474,
+     "n_D2": 80,
+     "n_pre_correct": 120,
+     "n_rows": 500,
+     "n_valid": 490
+    },
+    "heldout_disjoint": {
+     "D1_rate": 96.55913978494624,
+     "n_D1": 449,
+     "n_D2": 73,
+     "n_pre_correct": 107,
+     "n_rows": 475,
+     "n_valid": 465
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 99.79757085020243,
+     "n_D1": 493,
+     "n_D2": 137,
+     "n_pre_correct": 182,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "ptype_text": {
+     "D1_rate": 93.19587628865979,
+     "n_D1": 452,
+     "n_D2": 47,
+     "n_pre_correct": 84,
+     "n_rows": 500,
+     "n_valid": 485
+    },
+    "repair": {
+     "D1_rate": 96.31901840490798,
+     "n_D1": 471,
+     "n_D2": 104,
+     "n_pre_correct": 146,
+     "n_rows": 500,
+     "n_valid": 489
+    }
+   },
+   "registry": "registry.json",
+   "ridge": null,
+   "role": null,
+   "rule": "memit(lam=see README (related submission))",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "Q",
+    "edit_uids_sha1": "f56ddfd6d17b",
+    "n_edits_listed": 500,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "QWd",
+   "update_norm_over_W0": 1.3818700313568115,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-Q500-ae": {
+   "T": null,
+   "T_source": null,
+   "backbone": null,
+   "complete": false,
+   "dataset": null,
+   "editor": null,
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q500-ae",
+   "paper_name": null,
+   "registry": null,
+   "role": null,
+   "statistics": null,
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "not among the logs of PROTOCOL.md, Section 1"
+  },
+  "TB-Q500-ae-l2_3": {
+   "T": 500,
+   "T_source": "metrics.json:n_edits",
+   "backbone": "qwen25vl",
+   "batch": 10,
+   "complete": true,
+   "dataset": "VLKEB",
+   "dataset_source": "registry / metrics.json",
+   "definitions": {
+    "D1": "y0_valid AND y0 (10-token v2 greedy) not reproduced under teacher forcing by W_E",
+    "D2": "pre 48-token v2 answer contains ref AND composite 48-token v2 answer does not",
+    "D2_at10": "same on the 10-token y0 / y_E",
+    "benign_drift_frac_of_D1": "D1 not D2 / D1",
+    "y0_valid": "non-empty AND reproduced under teacher forcing by W0"
+   },
+   "dtype": "torch.bfloat16",
+   "editor": "alphaedit",
+   "edits": {
+    "igen": {
+     "exact": 16.6,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 56.83453396558762
+    },
+    "rel": {
+     "exact": 56.39999999999999,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 82.9403196632862
+    },
+    "tgen": {
+     "exact": 4.8,
+     "n": 500,
+     "nonfinite": 0,
+     "token": 49.20924325287342
+    }
+   },
+   "exists": true,
+   "gamma": "see README (related submission)",
+   "group": "QA",
+   "hard_negatives": {
+    "by_type": {
+     "HN-I": {
+      "question_of_an_edit_of_the_log": 236,
+      "rows": 652,
+      "valid": 639
+     },
+     "HN-Q": {
+      "question_of_an_edit_of_the_log": 652,
+      "rows": 652,
+      "valid": 641
+     },
+     "HN-X": {
+      "question_of_an_edit_of_the_log": 106,
+      "rows": 106,
+      "valid": 105
+     }
+    },
+    "rows": 1410,
+    "source_related_to_an_edit_of_the_log": 0,
+    "valid": 1385
+   },
+   "in_paper": true,
+   "in_table": true,
+   "lam_hat": null,
+   "layer": 20,
+   "layer_name": "model.language_model.layers.20.mlp.down_proj",
+   "locality": {
+    "iloc": 77.9187950937951,
+    "nonfinite": {
+     "edit_items_iloc": 0,
+     "edit_items_tloc": 0,
+     "probes_iloc": 0,
+     "probes_tloc": 0
+    },
+    "tloc": 58.78661211545163,
+    "what": "stored benchmark locality (vendor pass, reference answers, all probe items)"
+   },
+   "missing_files": [],
+   "modality": "image+text",
+   "name": "TB-Q500-ae-l2_3",
+   "paper_name": "Q-A500",
+   "pool_check": "recomputed split == key-cache index",
+   "pool_source": [
+    "recomputed (harness rule, numpy)",
+    "key-cache index, family Q"
+   ],
+   "pre_edits": {
+    "igen": 0.0,
+    "rel": 0.0,
+    "tgen": 0.4
+   },
+   "probes": {
+    "all": {
+     "D1_rate": 87.53830439223698,
+     "n_D1": 857,
+     "n_D2": 105,
+     "n_pre_correct": 266,
+     "n_rows": 1000,
+     "n_valid": 979
+    },
+    "heldout": {
+     "D1_rate": 88.16326530612245,
+     "n_D1": 432,
+     "n_D2": 47,
+     "n_pre_correct": 120,
+     "n_rows": 500,
+     "n_valid": 490
+    },
+    "heldout_disjoint": {
+     "D1_rate": 89.03225806451613,
+     "n_D1": 414,
+     "n_D2": 43,
+     "n_pre_correct": 107,
+     "n_rows": 475,
+     "n_valid": 465
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_items": 500,
+    "ptype_image": {
+     "D1_rate": 81.78137651821862,
+     "n_D1": 404,
+     "n_D2": 48,
+     "n_pre_correct": 182,
+     "n_rows": 500,
+     "n_valid": 494
+    },
+    "ptype_text": {
+     "D1_rate": 93.4020618556701,
+     "n_D1": 453,
+     "n_D2": 57,
+     "n_pre_correct": 84,
+     "n_rows": 500,
+     "n_valid": 485
+    },
+    "repair": {
+     "D1_rate": 86.9120654396728,
+     "n_D1": 425,
+     "n_D2": 58,
+     "n_pre_correct": 146,
+     "n_rows": 500,
+     "n_valid": 489
+    }
+   },
+   "registry": "registry.json",
+   "ridge": 3.0,
+   "role": null,
+   "rule": "alphaedit(gamma=see README (related submission),L2=3)",
+   "statistics": "see README (related submission)",
+   "stream": {
+    "cache_family": "Q",
+    "edit_uids_sha1": "f56ddfd6d17b",
+    "n_edits_listed": 500,
+    "n_edits_that_are_probe_items": 0
+   },
+   "summary_check": "probe rows == complaints_v2.json summary",
+   "tag": "QAd",
+   "update_norm_over_W0": 4.562640190124512,
+   "where": null,
+   "why_not_in_paper": null
+  },
+  "TB-Q500-mmke-l2_3": {
+   "T": null,
+   "T_source": null,
+   "backbone": "qwen25vl",
+   "complete": false,
+   "dataset": "MMKE-Bench",
+   "editor": "alphaedit",
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "TB-Q500-mmke-l2_3",
+   "paper_name": null,
+   "registry": "registry.json",
+   "role": null,
+   "statistics": "see README (related submission)",
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "as TB-Q100-mmke-l2_3"
+  },
+  "[redacted: describes a related submission under double-blind review]": {
+   "T": null,
+   "T_source": null,
+   "backbone": null,
+   "complete": false,
+   "dataset": null,
+   "editor": null,
+   "exists": false,
+   "group": null,
+   "in_paper": false,
+   "in_table": false,
+   "missing_files": [
+    "metrics.json",
+    "per_edit_metrics.jsonl",
+    "probe_records_v2.jsonl",
+    "complaints_v2.json"
+   ],
+   "name": "[redacted: describes a related submission under double-blind review]",
+   "paper_name": null,
+   "registry": null,
+   "role": null,
+   "statistics": null,
+   "tag": null,
+   "where": null,
+   "why_not_in_paper": "amendment 17:40 (iii): the legacy log is not used"
+  }
+ },
+ "pools": {
+  "llava": {
+   "L": {
+    "all": {
+     "distinct_queries_valid": 931,
+     "image_valid": 497,
+     "rows": 1000,
+     "text_valid": 491,
+     "valid": 988
+    },
+    "heldout": {
+     "distinct_queries_valid": 473,
+     "image_valid": 248,
+     "rows": 500,
+     "text_valid": 246,
+     "valid": 494
+    },
+    "heldout_disjoint": {
+     "distinct_queries_valid": 453,
+     "image_valid": 223,
+     "rows": 475,
+     "text_valid": 246,
+     "valid": 469
+    },
+    "heldout_strict": {
+     "distinct_queries_valid": 368,
+     "image_valid": 133,
+     "rows": 385,
+     "text_valid": 246,
+     "valid": 379
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_heldout_valid_with_a_repair_query": 25,
+    "repair": {
+     "distinct_queries_valid": 478,
+     "image_valid": 249,
+     "rows": 500,
+     "text_valid": 245,
+     "valid": 494
+    }
+   },
+   "benign": {
+    "by_ptype": {
+     "image": {
+      "answer_subset": 300,
+      "answer_subset_valid": 299,
+      "rows": 1500
+     },
+     "text": {
+      "answer_subset": 300,
+      "answer_subset_valid": 296,
+      "rows": 1500
+     }
+    },
+    "rows": 3000
+   }
+  },
+  "qwen25vl": {
+   "Q": {
+    "all": {
+     "distinct_queries_valid": 923,
+     "image_valid": 494,
+     "rows": 1000,
+     "text_valid": 485,
+     "valid": 979
+    },
+    "heldout": {
+     "distinct_queries_valid": 469,
+     "image_valid": 249,
+     "rows": 500,
+     "text_valid": 241,
+     "valid": 490
+    },
+    "heldout_disjoint": {
+     "distinct_queries_valid": 449,
+     "image_valid": 224,
+     "rows": 475,
+     "text_valid": 241,
+     "valid": 465
+    },
+    "heldout_strict": {
+     "distinct_queries_valid": 364,
+     "image_valid": 134,
+     "rows": 385,
+     "text_valid": 241,
+     "valid": 375
+    },
+    "n_heldout_rows_with_a_repair_query": 25,
+    "n_heldout_valid_with_a_repair_query": 25,
+    "repair": {
+     "distinct_queries_valid": 474,
+     "image_valid": 245,
+     "rows": 500,
+     "text_valid": 244,
+     "valid": 489
+    }
+   },
+   "QK": {
+    "all": {
+     "distinct_queries_valid": 993,
+     "image_valid": 499,
+     "rows": 1000,
+     "text_valid": 494,
+     "valid": 993
+    },
+    "heldout": {
+     "distinct_queries_valid": 498,
+     "image_valid": 250,
+     "rows": 500,
+     "text_valid": 248,
+     "valid": 498
+    },
+    "heldout_disjoint": {
+     "distinct_queries_valid": 498,
+     "image_valid": 250,
+     "rows": 500,
+     "text_valid": 248,
+     "valid": 498
+    },
+    "heldout_strict": {
+     "distinct_queries_valid": 390,
+     "image_valid": 142,
+     "rows": 392,
+     "text_valid": 248,
+     "valid": 390
+    },
+    "n_heldout_rows_with_a_repair_query": 0,
+    "n_heldout_valid_with_a_repair_query": 0,
+    "repair": {
+     "distinct_queries_valid": 495,
+     "image_valid": 249,
+     "rows": 500,
+     "text_valid": 246,
+     "valid": 495
+    }
+   },
+   "benign": {
+    "by_ptype": {
+     "image": {
+      "answer_subset": 300,
+      "answer_subset_valid": 298,
+      "rows": 1500
+     },
+     "text": {
+      "answer_subset": 300,
+      "answer_subset_valid": 289,
+      "rows": 1500
+     }
+    },
+    "rows": 3000
+   }
+  }
+ },
+ "protocol": {
+  "_file": "02_research/experiments/10_final/PROTOCOL.md",
+  "bootstrap": {
+   "_line": 152,
+   "_match": "percentile bootstrap, 2000 resamples",
+   "resamples": 2000
+  },
+  "boundary": {
+   "T_max_boundary": 500,
+   "_line": 208,
+   "_match": "enter the paper only for T <= 500"
+  },
+  "contamination": {
+   "_line": 240,
+   "_match": "contamination of the calibration sample by in-scope queries (0, 1, 5, 20 percent",
+   "percent": [
+    0,
+    1,
+    5,
+    20
+   ],
+   "percent_text": "0, 1, 5, 20"
+  },
+  "crossed_bootstrap": {
+   "_line": 514,
+   "_match": "crossed bootstrap over calibration draws and units (2000 resamples)",
+   "resamples": 2000
+  },
+  "d2": {
+   "_line": 86,
+   "_match": "whose 48-token answer loses the reference",
+   "long_answer_tokens": 48
+  },
+  "default_calibration": {
+   "_line": 53,
+   "_match": "Default alpha = 0.05, n = 200.",
+   "alpha": 0.05,
+   "n_cal": 200
+  },
+  "default_calibration_two_block": {
+   "_line": 193,
+   "_match": "Default n = 200, alpha = 0.05.",
+   "alpha": 0.05,
+   "n_cal": 200
+  },
+  "dual_scale": {
+   "_line": 247,
+   "_match": "first 100 edits, 200 sampled later edits",
+   "first_edits": 100,
+   "later_edits": 200
+  },
+  "duplicates": {
+   "_line": 78,
+   "_match": "contains 25 rows that duplicate REPAIR queries",
+   "n_heldout_rows_with_a_repair_query": 25
+  },
+  "e1": {
+   "_line": 107,
+   "_match": "ain comparison at a matched false-firing budget** (primary logs + working points). alpha in {0.01, 0.02, 0.05, 0.10, 0.20}, n = 200, 20 random calibration draws",
+   "alpha_grid": [
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+   ],
+   "alpha_grid_text": "0.01, 0.02, 0.05, 0.10, 0.20",
+   "draws": 20,
+   "n_cal": 200
+  },
+  "e2": {
+   "_line": 116,
+   "_match": "**E2 Evidence curves** (primary logs). Held-out D1 rate, Rel / T-Gen / I-Gen versus the amount of evidence n in {1, 2, 5, 10, 20, 50, 100, all}",
+   "evidence_grid": [
+    1,
+    2,
+    5,
+    10,
+    20,
+    50,
+    100
+   ],
+   "evidence_grid_text": "1, 2, 5, 10, 20, 50, 100, all"
+  },
+  "e2_seeds": {
+   "_line": 122,
+   "_match": "3 seeds for n <= 20, 1 seed above",
+   "n_small_max": 20,
+   "seeds_large": 1,
+   "seeds_small": 3
+  },
+  "e2_switch": {
+   "_line": 231,
+   "_match": "while n < 40, and switches to the two-block rule at alpha = 0.05 from n = 40 on",
+   "alpha": 0.05,
+   "n_switch": 40
+  },
+  "e3": {
+   "T_llava": [
+    100,
+    200,
+    500,
+    1000
+   ],
+   "T_llava_text": "100, 200, 500, 1000",
+   "T_qwen": [
+    100,
+    200,
+    500,
+    1000,
+    2000
+   ],
+   "T_qwen_text": "100, 200, 500, 1000, 2000",
+   "_line": 124,
+   "_match": "**E3 Scale** (unseen logs). T in {100, 200, 500, 1000, 2000} (Qwen), {100, 200, 500, 1000} (LLaVA)"
+  },
+  "e5c": {
+   "_line": 135,
+   "_match": "empirical false-firing rate versus alpha for n in {20, 50, 100, 200, 500}, 500 draws",
+   "draws": 500,
+   "n_grid": [
+    20,
+    50,
+    100,
+    200,
+    500
+   ],
+   "n_grid_text": "20, 50, 100, 200, 500"
+  },
+  "e9": {
+   "_line": 371,
+   "_match": "revocation sets R of m in {1, 5, 10, 20, 50} edits",
+   "m_grid": [
+    1,
+    5,
+    10,
+    20,
+    50
+   ],
+   "m_grid_text": "1, 5, 10, 20, 50"
+  },
+  "exact_gate": {
+   "_line": 96,
+   "_match": "EXACT (cosine >= 0.999)",
+   "cosine": 0.999
+  },
+  "freeze": {
+   "_line": 174,
+   "_match": "whatever logs exist on 2026-11-22 (results freeze)",
+   "date": "2026-11-22"
+  },
+  "h1": {
+   "_line": 485,
+   "_match": "nly thresholds) against the best linear repair of the same complaints; it \"helps\" if D1 is at most 10 percent with Rel exact within 2 points of the deployed log",
+   "d1_max_percent": 10,
+   "n_complaints": 10,
+   "rel_points": 2
+  },
+  "h3": {
+   "_line": 492,
+   "_match": "ldout_disjoint. Decision rule for the text: \"dominates\" only if ReScope exceeds the best gate of the cosine family by at least 10 points of H3 on both backbones",
+   "dominates_points": 10,
+   "fit_firing_max_percent": 10
+  },
+  "later_edits": {
+   "_line": 504,
+   "_match": "stream position >= 500 for Qwen, >= 100 for LLaVA",
+   "llava": 100,
+   "qwen": 500
+  },
+  "logonly_rule": {
+   "_line": 62,
+   "_match": "Thresholds: log-only rule (5 % above the largest coordinate on the other logged sequences)",
+   "margin_pct": 5
+  },
+  "pac": {
+   "_line": 512,
+   "_match": "calibration-conditional form, delta = 0.1",
+   "delta": 0.1
+  },
+  "prefixes": {
+   "_line": 528,
+   "_match": "Prefix logs of the two development streams after 10, 20 and 50 edits",
+   "a": 10,
+   "b": 20,
+   "c": 50
+  },
+  "public_default": {
+   "_line": 210,
+   "_match": "lam_hat = 100 fixed in advance",
+   "lam_hat": 100
+  },
+  "r19_e1": {
+   "_line": 728,
+   "_match": "(a) E1: behaviour at alpha = 0.05 for calibration draws 0 to 2",
+   "alpha": 0.05,
+   "draw_first": 0,
+   "draw_last": 2,
+   "n_draws": 3
+  },
+  "r22_diag": {
+   "_line": 829,
+   "_match": "under the deployed model (two forward passes per tuple)",
+   "passes_word": "two"
+  },
+  "r22_m": {
+   "_line": 834,
+   "_match": "m in {1, 3, 10} complained queries, 3 seeds",
+   "m_grid": [
+    1,
+    3,
+    10
+   ],
+   "m_grid_text": "1, 3, 10",
+   "seeds": 3
+  },
+  "r22_min": {
+   "_line": 818,
+   "_match": "For every relation r with at least 20 tuples: the selection view",
+   "tuples": 20
+  },
+  "r22_view": {
+   "_line": 806,
+   "_match": "any run: (a) *Relation.* Facts(subject, relation, value) over a finite set of records D: the requests of the log (edited tuples) and a VIEW pool of 5000 records",
+   "records": 5000
+  },
+  "ridges": {
+   "_line": 94,
+   "_match": "the same stream at ridge l2 = 10, 3, 1 |",
+   "ridges": [
+    10.0,
+    3.0,
+    1.0
+   ],
+   "ridges_text": "10, 3, 1"
+  },
+  "split": {
+   "_line": 76,
+   "_match": "harness split by item, seed 20261109",
+   "harness_seed": 20261109,
+   "seed": 20261109
+  },
+  "spread": {
+   "_line": 153,
+   "_match": "mean and 5th-95th percentile over draws",
+   "hi": 95,
+   "lo": 5
+  },
+  "synthetic_scale": {
+   "T_max": 100000,
+   "_line": 534,
+   "_match": "E8 adds synthetic logs with T up to 100000"
+  },
+  "text_decode": {
+   "_line": 421,
+   "_match": "the pre-edit greedy continuation of 10 tokens is not reproduced",
+   "tokens": 10
+  },
+  "text_equal_evidence": {
+   "_line": 541,
+   "_match": "Equal evidence, n in {1, 10, 100} reported D1 complaints",
+   "n_grid": [
+    1,
+    10,
+    100
+   ],
+   "n_grid_text": "1, 10, 100"
+  },
+  "text_split": {
+   "_line": 782,
+   "_match": "The split position is 173, from the audit",
+   "position": 173
+  }
+ },
+ "root": "${RESCOPE_ROOT}",
+ "warnings": []
+}

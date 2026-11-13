@@ -1,0 +1,435 @@
+{
+ "written": "2026-11-11 10:35:04 UTC",
+ "statistics_fresh_download": {
+  "url": "https://rome.baulab.info/data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz",
+  "bytes": 163841186,
+  "sha256": "376f29d29b05fed1f5c48daa47b40edb87a239ec817a51bfe4cf68659749bc78",
+  "local_sha256": "376f29d29b05fed1f5c48daa47b40edb87a239ec817a51bfe4cf68659749bc78",
+  "equal_to_local": true,
+  "at": "2026-11-11 10:35:05 UTC",
+  "note": "downloaded by the audit in resumed pieces (the first attempt of cpu_provenance.py timed out)"
+ },
+ "hash_chain": {
+  "dev": {
+   "n_recorded_hashes": 5,
+   "n_reproduced_by_audit_replay": 5,
+   "not_reproduced_at": [],
+   "recorded_at": [
+    3,
+    25,
+    50,
+    75,
+    100,
+    "...",
+    75,
+    100
+   ]
+  },
+  "stream": {
+   "n_recorded_hashes": 80,
+   "n_reproduced_by_audit_replay": 80,
+   "not_reproduced_at": [],
+   "recorded_at": [
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    "...",
+    1975,
+    2000
+   ]
+  }
+ },
+ "public_printouts": {
+  "dev": {
+   "n_blocks": 100,
+   "n_complete_blocks": 100,
+   "n_'Loading cached' (statistics read from the file)": 2,
+   "statistics_files_loaded": [
+    "[redacted: local path]/02_research/ext/data/rome_data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz"
+   ],
+   "n_'Attempting to download'": 0,
+   "n_'Computing locally'": 0,
+   "n_'Retrieving inverse covariance' (once per process)": 2,
+   "n_'Cached context templates' (templates sampled; once per process that sampled)": 1,
+   "rewrite_layers": [
+    "17"
+   ],
+   "loss_layers": [
+    "47"
+   ],
+   "optimisation_steps_per_update": {
+    "6": 1,
+    "7": 1,
+    "11": 2,
+    "17": 1,
+    "20": 95
+   }
+  },
+  "stream": {
+   "n_blocks": 2001,
+   "n_complete_blocks": 2001,
+   "n_'Loading cached' (statistics read from the file)": 2,
+   "statistics_files_loaded": [
+    "[redacted: local path]/02_research/ext/data/rome_data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz"
+   ],
+   "n_'Attempting to download'": 0,
+   "n_'Computing locally'": 0,
+   "n_'Retrieving inverse covariance' (once per process)": 2,
+   "n_'Cached context templates' (templates sampled; once per process that sampled)": 1,
+   "rewrite_layers": [
+    "17"
+   ],
+   "loss_layers": [
+    "47"
+   ],
+   "optimisation_steps_per_update": {
+    "4": 4,
+    "5": 3,
+    "7": 4,
+    "8": 1,
+    "10": 1,
+    "11": 1,
+    "14": 2,
+    "15": 1,
+    "16": 2,
+    "20": 1982
+   },
+   "requests_computed_more_than_once": [
+    {
+     "request": "[Pons Aemilius is in] -> [ Oslo]",
+     "stream_index": [
+      1531
+     ],
+     "n_computations": 2,
+     "all_printed_numbers_identical": true,
+     "n_printed_lines_compared": 23
+    }
+   ]
+  },
+  "single": {
+   "n_blocks": 1000,
+   "n_complete_blocks": 1000,
+   "n_'Loading cached' (statistics read from the file)": 1,
+   "statistics_files_loaded": [
+    "[redacted: local path]/02_research/ext/data/rome_data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz"
+   ],
+   "n_'Attempting to download'": 0,
+   "n_'Computing locally'": 0,
+   "n_'Retrieving inverse covariance' (once per process)": 1,
+   "n_'Cached context templates' (templates sampled; once per process that sampled)": 1,
+   "rewrite_layers": [
+    "17"
+   ],
+   "loss_layers": [
+    "47"
+   ],
+   "optimisation_steps_per_update": {
+    "6": 1,
+    "20": 999
+   }
+  }
+ },
+ "code_on_disk_vs_runs": {
+  "mtime": {
+   "tp_common.py": "2026-11-11 06:36:20 UTC",
+   "run_stream.py": "2026-11-11 06:36:20 UTC",
+   "run_single.py": "2026-11-11 05:22:20 UTC"
+  },
+  "runs": {
+   "dev": {
+    "started": "2026-11-11 05:23:48 UTC",
+    "first_update_written": "2026-11-11 05:23:56 UTC",
+    "last_update_written": "2026-11-11 05:31:16 UTC",
+    "resumed": [
+     {
+      "at": "2026-11-11 05:25:24 UTC",
+      "n_have": 3
+     }
+    ],
+    "pauses_longer_than_2_min(after update, from, to)": []
+   },
+   "stream": {
+    "started": "2026-11-11 05:31:42 UTC",
+    "first_update_written": "2026-11-11 05:31:50 UTC",
+    "last_update_written": "2026-11-11 07:31:43 UTC",
+    "resumed": [
+     {
+      "at": "2026-11-11 06:57:34 UTC",
+      "n_have": 1531
+     }
+    ],
+    "pauses_longer_than_2_min(after update, from, to)": [
+     [
+      1531,
+      "2026-11-11 06:50:21 UTC",
+      "2026-11-11 06:58:06 UTC"
+     ]
+    ]
+   },
+   "single": {
+    "started": "2026-11-11 05:36:01 UTC",
+    "finished": "2026-11-11 06:31:26 UTC"
+   }
+  },
+  "tp_common.py_modified_after_dev_log_complete": true,
+  "tp_common.py_modified_after_single_edit_run_finished": true,
+  "run_single.py_modified_after_single_edit_run_started": false,
+  "run_stream.py_modified_while_first_stream_process_was_running": true,
+  "stream_updates_written_by_the_process_started_before_the_last_modification": 1531,
+  "stream_updates_written_before_the_modification_time": 1229,
+  "earlier_versions_kept": [],
+  "statement": "tp_common.py and run_stream.py on disk were last modified during the first process of the reported stream; that process (updates 0 .. 1530), the development log and the single-edit run had loaded earlier versions, of which no copy is kept"
+ },
+ "collapsed_logs_exact_match_hits": {
+  "TX-G2XL-rome-T100": {
+   "objects_of_first_token_subject_updates": [],
+   "n_objects_of_exploding_updates": 0,
+   "request": {
+    "n": 100,
+    "n_exact": 97,
+    "n_exact_whose_target_is_an_object_of_a_first_token_subject_update": 0,
+    "n_exact_whose_target_is_an_object_of_an_exploding_update": 0,
+    "n_exact_that_the_pre_edit_model_also_has": 0,
+    "n_rows_whose_target_is_an_object_of_an_exploding_update": 0,
+    "n_exact_pre_edit": 0
+   },
+   "paraphrase": {
+    "n": 200,
+    "n_exact": 150,
+    "n_exact_whose_target_is_an_object_of_a_first_token_subject_update": 0,
+    "n_exact_whose_target_is_an_object_of_an_exploding_update": 0,
+    "n_exact_that_the_pre_edit_model_also_has": 1,
+    "n_rows_whose_target_is_an_object_of_an_exploding_update": 0,
+    "n_exact_pre_edit": 1
+   }
+  },
+  "TX-G2XL-rome-T500": {
+   "objects_of_first_token_subject_updates": [
+    "California",
+    "Istanbul",
+    "Miami"
+   ],
+   "n_objects_of_exploding_updates": 8,
+   "request": {
+    "n": 500,
+    "n_exact": 14,
+    "n_exact_whose_target_is_an_object_of_a_first_token_subject_update": 5,
+    "n_exact_whose_target_is_an_object_of_an_exploding_update": 5,
+    "n_exact_that_the_pre_edit_model_also_has": 0,
+    "n_rows_whose_target_is_an_object_of_an_exploding_update": 24,
+    "n_exact_pre_edit": 1
+   },
+   "paraphrase": {
+    "n": 1000,
+    "n_exact": 7,
+    "n_exact_whose_target_is_an_object_of_a_first_token_subject_update": 2,
+    "n_exact_whose_target_is_an_object_of_an_exploding_update": 2,
+    "n_exact_that_the_pre_edit_model_also_has": 0,
+    "n_rows_whose_target_is_an_object_of_an_exploding_update": 48,
+    "n_exact_pre_edit": 3
+   }
+  },
+  "TX-G2XL-rome-T1000": {
+   "objects_of_first_token_subject_updates": [
+    "California",
+    "Istanbul",
+    "Italy",
+    "Miami"
+   ],
+   "n_objects_of_exploding_updates": 10,
+   "request": {
+    "n": 1000,
+    "n_exact": 14,
+    "n_exact_whose_target_is_an_object_of_a_first_token_subject_update": 9,
+    "n_exact_whose_target_is_an_object_of_an_exploding_update": 9,
+    "n_exact_that_the_pre_edit_model_also_has": 0,
+    "n_rows_whose_target_is_an_object_of_an_exploding_update": 56,
+    "n_exact_pre_edit": 4
+   },
+   "paraphrase": {
+    "n": 2000,
+    "n_exact": 18,
+    "n_exact_whose_target_is_an_object_of_a_first_token_subject_update": 12,
+    "n_exact_whose_target_is_an_object_of_an_exploding_update": 12,
+    "n_exact_that_the_pre_edit_model_also_has": 0,
+    "n_rows_whose_target_is_an_object_of_an_exploding_update": 112,
+    "n_exact_pre_edit": 8
+   }
+  },
+  "TX-G2XL-rome-T2000": {
+   "objects_of_first_token_subject_updates": [
+    "Antarctica",
+    "California",
+    "HBO",
+    "Istanbul",
+    "Italy",
+    "Miami",
+    "Munich",
+    "economics"
+   ],
+   "n_objects_of_exploding_updates": 20,
+   "request": {
+    "n": 2000,
+    "n_exact": 18,
+    "n_exact_whose_target_is_an_object_of_a_first_token_subject_update": 17,
+    "n_exact_whose_target_is_an_object_of_an_exploding_update": 17,
+    "n_exact_that_the_pre_edit_model_also_has": 0,
+    "n_rows_whose_target_is_an_object_of_an_exploding_update": 174,
+    "n_exact_pre_edit": 6
+   },
+   "paraphrase": {
+    "n": 4000,
+    "n_exact": 17,
+    "n_exact_whose_target_is_an_object_of_a_first_token_subject_update": 16,
+    "n_exact_whose_target_is_an_object_of_an_exploding_update": 16,
+    "n_exact_that_the_pre_edit_model_also_has": 0,
+    "n_rows_whose_target_is_an_object_of_an_exploding_update": 348,
+    "n_exact_pre_edit": 16
+   }
+  }
+ },
+ "single_edit_files": {
+  "keys_of_case_files": {
+   "case_id,post,pre,requested_rewrite,time": 1000
+  },
+  "public_format_keys": "case_id,post,pre,requested_rewrite,time",
+  "pre_of_single_run_equals_pre_edit_description_pass": [
+   1000,
+   1000
+  ],
+  "exploding_single_edits": [
+   {
+    "record": 173,
+    "update_fro": 8149.566131875281,
+    "division_factor": 0.021807414812861303,
+    "ES": 1.0,
+    "PS": 1.0,
+    "NS": 0.0
+   },
+   {
+    "record": 240,
+    "update_fro": 6083.822629211271,
+    "division_factor": 0.026509990540904804,
+    "ES": 1.0,
+    "PS": 0.5,
+    "NS": 0.5
+   },
+   {
+    "record": 266,
+    "update_fro": 4560.230371430489,
+    "division_factor": 0.037099918952903876,
+    "ES": 1.0,
+    "PS": 1.0,
+    "NS": 0.0
+   },
+   {
+    "record": 946,
+    "update_fro": 9186.64509050835,
+    "division_factor": 0.017447209269158298,
+    "ES": 1.0,
+    "PS": 1.0,
+    "NS": 0.0
+   }
+  ]
+ },
+ "dev_meta_stale_fields": {
+  "what": "sequential ROME log 'dev': records 15000 .. 15002, one request per update, weight not restored between requests",
+  "T_planned": 3,
+  "T_done": 100,
+  "n_update_files": 100,
+  "stale": true
+ },
+ "driver_vs_public_calls": {
+  "public_evaluate.py": {
+   "params_class.from_json": [
+    "params_class.from_json(params_path)"
+   ],
+   "ds_class": [
+    "ds_class(DATA_DIR, size=dataset_size_limit, tok=tok)"
+   ],
+   "shutil.copyfile": [
+    "shutil.copyfile(params_path, run_dir / 'params.json')"
+   ],
+   "AutoTokenizer.from_pretrained": [
+    "AutoTokenizer.from_pretrained(model_name)"
+   ],
+   "apply_algo": [
+    "apply_algo(model, tok, [record['requested_rewrite']], hparams, copy=False, return_orig_weights=True, **args_conserve_memory)"
+   ],
+   "ds_eval_method": [
+    "ds_eval_method(model, tok, record, snips, vec)",
+    "ds_eval_method(edited_model, tok, record, snips, vec)"
+   ],
+   "AutoModelForCausalLM.from_pretrained": [
+    "AutoModelForCausalLM.from_pretrained(model_name)"
+   ],
+   "json.dump": [
+    "json.dump(metrics, f, indent=1)"
+   ],
+   "nethook.get_parameter": [
+    "nethook.get_parameter(model, k)"
+   ]
+  },
+  "builder_run_single.py": {
+   "C.load_model": [
+    "C.load_model()"
+   ],
+   "C.load_hparams": [
+    "C.load_hparams()"
+   ],
+   "C.load_counterfact": [
+    "C.load_counterfact()"
+   ],
+   "torch.manual_seed": [
+    "torch.manual_seed(C.SEED)"
+   ],
+   "C.jdump": [
+    "C.jdump(meta, meta_path)",
+    "C.jdump(metrics, case_path)",
+    "C.jdump(meta, meta_path)"
+   ],
+   "shutil.copyfile": [
+    "shutil.copyfile(C.HPARAMS_FILE, os.path.join(run_dir, 'params.json'))"
+   ],
+   "apply_rome_to_model": [
+    "apply_rome_to_model(model, tok, [record['requested_rewrite']], hparams, copy=False, return_orig_weights=True)"
+   ],
+   "compute_rewrite_quality_counterfact": [
+    "compute_rewrite_quality_counterfact(model, tok, record, snips, vec)",
+    "compute_rewrite_quality_counterfact(edited_model, tok, record, snips, vec)"
+   ],
+   "nethook.get_parameter": [
+    "nethook.get_parameter(model, k)"
+   ]
+  },
+  "builder_run_stream.py": {
+   "torch.manual_seed": [
+    "torch.manual_seed(C.SEED)"
+   ],
+   "apply_rome_to_model": [
+    "apply_rome_to_model(model, tok, [request], hparams, copy=False, return_orig_weights=False)"
+   ],
+   "C.public_prob_test": [
+    "C.public_prob_test(model, tok, record)"
+   ],
+   "upd_matrix_match_shape": [
+    "upd_matrix_match_shape(upd, W.shape)"
+   ],
+   "compute_u": [
+    "compute_u(model, tok, deepcopy(last['request']), hparams, hparams.layers[0], get_context_templates(model, tok, hparams.context_template_length_params))"
+   ]
+  },
+  "edit_call_equal_up_to_names": true,
+  "post_and_pre_evaluation_calls_equal_up_to_names": true,
+  "restore_statement_equal": true,
+  "sequential_call": [
+   "apply_rome_to_model(model, tok, [request], hparams, copy=False, return_orig_weights=False)"
+  ],
+  "replay_expression_in_builder_resume": true,
+  "public_write_expression": true
+ },
+ "finished": "2026-11-11 10:35:33 UTC"
+}

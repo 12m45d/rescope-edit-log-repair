@@ -1,0 +1,39 @@
+{
+ "pass": true,
+ "per_log": {
+  "TB-Q100-ae-l2_3": {
+   "cos_centred": true,
+   "cos_null": true,
+   "white_0.01": true,
+   "white_0.1": true,
+   "white_1": true,
+   "whitecos_0.01": true,
+   "whitecos_0.1": true,
+   "whitecos_1": true,
+   "rescope_nullW": true
+  },
+  "TB-L100-ae-l2_3": {
+   "cos_centred": true,
+   "cos_null": true,
+   "white_0.01": true,
+   "white_0.1": true,
+   "white_1": true,
+   "whitecos_0.01": true,
+   "whitecos_0.1": true,
+   "whitecos_1": true,
+   "rescope_nullW": true
+  }
+ },
+ "max_abs_score_difference_1_vs_4_threads": 8.881784197001252e-16,
+ "note": "detectors (det_w, det_s) of 8 variants + rescope_nullW bitwise equal under 1 / 4 threads: True; the SCORES of 200 keys (the library's batched product, not pinned) differ by at most 8.9e-16",
+ "test": "c10_detector_bits",
+ "group": "scores",
+ "what": "determinism of the detectors: built under 1 and 4 threads they are the same bits (every variant, both development logs)",
+ "seconds": 8.621997594833374,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

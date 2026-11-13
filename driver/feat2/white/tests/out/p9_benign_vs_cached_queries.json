@@ -1,0 +1,33 @@
+{
+ "pass": true,
+ "per_backbone": {
+  "qwen25vl": {
+   "benign_rows_equal_to_a_sequence_of_the_VLKEB_family": 0,
+   "benign_queries_occurring_twice_in_the_pool": 0,
+   "other_families": {
+    "QK probe:heldout / BEN-S": 45,
+    "QK probe:heldout / BEN-T": 41,
+    "QK probe:heldout / BEN-W": 22,
+    "QK probe:repair / BEN-S": 50,
+    "QK probe:repair / BEN-T": 37,
+    "QK probe:repair / BEN-W": 20
+   }
+  },
+  "llava": {
+   "benign_rows_equal_to_a_sequence_of_the_VLKEB_family": 0,
+   "benign_queries_occurring_twice_in_the_pool": 0,
+   "other_families": {}
+  }
+ },
+ "note": "no benign query is a probe / edit / hard-negative query of the VLKEB family (Qwen, LLaVA) and none repeats; on Qwen 215 benign rows ARE probe queries of the MMKE-Bench family (BEN-W 42, BEN-S 95, BEN-T 78; REPAIR and held-out): on TB-Q*-mmke logs the parts are not disjoint from the probes",
+ "test": "p9_benign_vs_cached_queries",
+ "group": "parts",
+ "what": "benign rows against the probe rows, edits and hard negatives of the key caches (same query = same image content + question): none in the VLKEB families; MMKE-Bench counted",
+ "seconds": 0.45392608642578125,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

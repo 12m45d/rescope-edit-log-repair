@@ -1,0 +1,120 @@
+{
+ "name": "g_hook",
+ "pass": true,
+ "what": "hook firing in real passes = gate-level decision from the key cache on every prompt of the development log; sparse evaluation = full evaluation",
+ "detail": {
+  "rescope": {
+   "n_rows": 4300,
+   "n_in_band": 0,
+   "hook_tf_vs_cache_mismatch": {
+    "fired": 0,
+    "n_fire_pos": 0,
+    "rel_edits": 0,
+    "n_cand_edits": 0,
+    "own_released": 0
+   },
+   "hook_mismatch_counter_full": 0,
+   "hook_mismatch_counter_sparse": 0,
+   "sparse_vs_full_rows_differing": 0,
+   "sequences_run_full": 8564,
+   "sequences_run_sparse": 1002,
+   "silent_sparse": 7562,
+   "n_rows_fired_tf": 502,
+   "n_rows_fired_dec": 502,
+   "n_rows_fired_dec_but_not_tf": 0,
+   "n_rows_fired_tf_but_not_dec": 0,
+   "n_rows_D1_tf_differs_from_dec": 0,
+   "seconds_full": 81.40341758728027,
+   "seconds_sparse": 12.42949390411377,
+   "seconds": 98.19579696655273
+  },
+  "cosine": {
+   "n_rows": 4300,
+   "n_in_band": 0,
+   "hook_tf_vs_cache_mismatch": {
+    "fired": 0,
+    "n_fire_pos": 0,
+    "rel_edits": 0,
+    "n_cand_edits": 0,
+    "own_released": 0
+   },
+   "hook_mismatch_counter_full": 0,
+   "hook_mismatch_counter_sparse": 0,
+   "sparse_vs_full_rows_differing": 0,
+   "sequences_run_full": 8564,
+   "sequences_run_sparse": 952,
+   "silent_sparse": 7612,
+   "n_rows_fired_tf": 477,
+   "n_rows_fired_dec": 477,
+   "n_rows_fired_dec_but_not_tf": 0,
+   "n_rows_fired_tf_but_not_dec": 0,
+   "n_rows_D1_tf_differs_from_dec": 0,
+   "seconds_full": 92.96355748176575,
+   "seconds_sparse": 10.070456504821777,
+   "seconds": 107.57233738899231
+  },
+  "cosine_published": {
+   "n_rows": 4300,
+   "n_in_band": 0,
+   "hook_tf_vs_cache_mismatch": {
+    "fired": 0,
+    "n_fire_pos": 0,
+    "rel_edits": 0,
+    "n_cand_edits": 0,
+    "own_released": 0
+   },
+   "hook_mismatch_counter_full": 0,
+   "hook_mismatch_counter_sparse": 0,
+   "sparse_vs_full_rows_differing": 0,
+   "sequences_run_full": 8564,
+   "sequences_run_sparse": 664,
+   "silent_sparse": 7900,
+   "n_rows_fired_tf": 333,
+   "n_rows_fired_dec": 333,
+   "n_rows_fired_dec_but_not_tf": 0,
+   "n_rows_fired_tf_but_not_dec": 0,
+   "n_rows_D1_tf_differs_from_dec": 0,
+   "seconds_full": 75.8627438545227,
+   "seconds_sparse": 9.057823657989502,
+   "seconds": 85.50901007652283
+  },
+  "where_twoblock": {
+   "n_rows": 4300,
+   "n_in_band": 0,
+   "hook_tf_vs_cache_mismatch": {
+    "fired": 0,
+    "n_fire_pos": 0,
+    "rel_edits": 0,
+    "n_cand_edits": 0,
+    "own_released": 0
+   },
+   "hook_mismatch_counter_full": 0,
+   "hook_mismatch_counter_sparse": 0,
+   "sparse_vs_full_rows_differing": 0,
+   "sequences_run_full": 8564,
+   "sequences_run_sparse": 1002,
+   "silent_sparse": 7562,
+   "n_rows_fired_tf": 502,
+   "n_rows_fired_dec": 502,
+   "n_rows_fired_dec_but_not_tf": 0,
+   "n_rows_fired_tf_but_not_dec": 0,
+   "n_rows_D1_tf_differs_from_dec": 0,
+   "seconds_full": 90.72627282142639,
+   "seconds_sparse": 12.055879831314087,
+   "seconds": 103.43485260009766
+  }
+ },
+ "error": null,
+ "seconds": 395.19649481773376,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "peak_alloc_MiB": 8253.4423828125,
+ "peak_reserved_MiB": 11788.0,
+ "written": "2026-11-11 12:21:38 UTC"
+}

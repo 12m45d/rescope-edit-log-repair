@@ -1,0 +1,196 @@
+{
+ "backbone": "llava",
+ "fast": false,
+ "checks": {
+  "reproduced_byte_for_byte": {
+   "ok": true,
+   "runs": [
+    {
+     "PYTHONHASHSEED": "1",
+     "returncode": 0,
+     "identical": {
+      "rows.jsonl": true,
+      "select_summary.json": true
+     }
+    },
+    {
+     "PYTHONHASHSEED": "20261111",
+     "returncode": 0,
+     "identical": {
+      "rows.jsonl": true,
+      "select_summary.json": true
+     }
+    }
+   ],
+   "rows_sha256": "f06e1856f9ad544cc0e8cfb142eb393c7f32794d827de9efc2dd3f8e19b33d07",
+   "bytes": 11573477
+  },
+  "caches_compared(information)": {
+   "ok": true,
+   "caches_present": [
+    "QO",
+    "blip2",
+    "llava",
+    "qwen25vl"
+   ],
+   "caches_of_the_selection": [
+    "qwen25vl",
+    "llava",
+    "QO",
+    "blip2"
+   ],
+   "caches_that_appeared_after_the_selection": [],
+   "note": "rule (b) of the selection used the caches of the selection; a cache that appeared later is compared below all the same, and a row that equals one of its queries fails 'disjoint_from_every_test_query'"
+  },
+  "image_md5_recomputed_from_files": {
+   "ok": true,
+   "n_image_files": 10487,
+   "n_distinct_contents": 10182,
+   "n_differing": 0,
+   "recomputed": true,
+   "seconds": 1.5
+  },
+  "disjoint_from_every_test_query": {
+   "ok": true,
+   "n_recombination_rows": 12000,
+   "n_test_rows_with_an_image": 39400,
+   "n_test_rows_by_source": {
+    "benign:blip2": 1500,
+    "benign:llava": 1500,
+    "benign:qwen25vl": 1500,
+    "hard_negatives:blip2": 1300,
+    "hard_negatives:llava": 1800,
+    "hard_negatives:qwen25vl": 1800,
+    "index:QO": 2000,
+    "index:blip2": 4800,
+    "index:llava": 6800,
+    "index:qwen25vl": 11800,
+    "onehop_portability": 1100,
+    "probe_records:TB-L1000-ae-l2_3": 500,
+    "stream:L": 3000
+   },
+   "n_distinct_test_queries_exact": 17238,
+   "n_distinct_test_queries_normalised": 17238,
+   "n_rows_equal_to_a_test_query_exact": 0,
+   "n_rows_equal_to_a_test_query_normalised": 0,
+   "examples": []
+  },
+  "text_queries_of_the_caches_have_no_image(information)": {
+   "ok": true,
+   "n_distinct_text_queries": 2689,
+   "note": "text rows (probe text rows, benign text rows) have no image; every recombination has one, so no recombination is a text query"
+  },
+  "source_pool_recomputed": {
+   "ok": true,
+   "n_items": 1051,
+   "n_sources_of_new_hard_negatives": 718,
+   "all_in_pool": true
+  },
+  "rules": {
+   "ok": true,
+   "n_rows": 12000,
+   "n_edits": 1000,
+   "violations": {},
+   "first_examples": {},
+   "rules": [
+    "4 rows per kind and edit in stream order",
+    "definitions of X-I / X-Q / X-X",
+    "partner items in the source pool",
+    "(a) own question",
+    "(c) X-X: no shared entity / name / answer",
+    "(d) no repeat within an edit",
+    "X-X scope: batch | group",
+    "min_T",
+    "flags",
+    "same_category",
+    "redraw bookkeeping"
+   ]
+  },
+  "query_ids": {
+   "ok": true,
+   "n_distinct_queries": 11942,
+   "n_rows_in_duplicate_groups": 116,
+   "duplicate_groups_by_kinds": {
+    "X-Q": 58
+   },
+   "duplicates_are_between_different_edits_only": true
+  },
+  "solver_batches_are_position_decades": {
+   "ok": true,
+   "master_log": "TB-L1000-ae-l2_3",
+   "n_batches": 100
+  },
+  "rows_usable_by_log_length": {
+   "ok": true,
+   "usable": {
+    "10": {
+     "X-I": 40,
+     "X-Q": 40,
+     "X-X": 21
+    },
+    "20": {
+     "X-I": 80,
+     "X-Q": 80,
+     "X-X": 45
+    },
+    "50": {
+     "X-I": 200,
+     "X-Q": 200,
+     "X-X": 142
+    },
+    "100": {
+     "X-I": 400,
+     "X-Q": 400,
+     "X-X": 400
+    },
+    "200": {
+     "X-I": 800,
+     "X-Q": 800,
+     "X-X": 800
+    },
+    "500": {
+     "X-I": 2000,
+     "X-Q": 2000,
+     "X-X": 2000
+    },
+    "1000": {
+     "X-I": 4000,
+     "X-Q": 4000,
+     "X-X": 4000
+    }
+   },
+   "note": "X-I / X-Q: 4 per edit at every length; X-X: 4 per edit at multiples of 100, at least the 2 batch partners per edit at 10 / 20 / 50"
+  }
+ },
+ "time": "2026-11-11 07:19:51",
+ "environment": {
+  "python": "3.11.16",
+  "numpy": "2.4.6",
+  "note": "the seeded permutations are numpy.random.default_rng(seed).permutation: reproduction is checked in this environment"
+ },
+ "ok": true,
+ "n_rows": 12000,
+ "n_by_kind": {
+  "X-I": 4000,
+  "X-Q": 4000,
+  "X-X": 4000
+ },
+ "redraws": {
+  "X-I": {
+   "n_redraws": 125,
+   "rows_with_redraw": 122,
+   "max": 2
+  },
+  "X-Q": {
+   "n_redraws": 47,
+   "rows_with_redraw": 43,
+   "max": 3
+  },
+  "X-X": {
+   "n_redraws": 174,
+   "rows_with_redraw": 157,
+   "max": 3
+  }
+ },
+ "rows_sha256": "f06e1856f9ad544cc0e8cfb142eb393c7f32794d827de9efc2dd3f8e19b33d07"
+}

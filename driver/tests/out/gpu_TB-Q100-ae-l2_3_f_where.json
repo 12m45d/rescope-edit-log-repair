@@ -1,0 +1,95 @@
+{
+ "ns": [
+  10,
+  50
+ ],
+ "where_least_n10": {
+  "n": 10,
+  "seconds_build": 0.9174187183380127,
+  "n_refused": 0,
+  "n_with_conflict": 0,
+  "n_resolved": 10,
+  "complaints_firing_after": 0,
+  "complaints_D1_after": 0,
+  "complaints_D1_deployed": 10,
+  "resolved_complaints_silent": true,
+  "order_independent": true,
+  "refused_set_order_independent": true
+ },
+ "where_least_n50": {
+  "n": 50,
+  "seconds_build": 3.8584136962890625,
+  "n_refused": 0,
+  "n_with_conflict": 0,
+  "n_resolved": 50,
+  "complaints_firing_after": 0,
+  "complaints_D1_after": 0,
+  "complaints_D1_deployed": 50,
+  "resolved_complaints_silent": true,
+  "order_independent": true,
+  "refused_set_order_independent": true
+ },
+ "where_least_n10_partial": {
+  "n_with_conflict": 0,
+  "n_refused": 0
+ },
+ "where_logonly": {
+  "capped_edits": 2,
+  "own_keys_silenced_by_literal_rule": 1,
+  "cached": true
+ },
+ "evidence_n0": {
+  "rule": "log_only",
+  "n_queries": 0,
+  "queries_firing_after": 0,
+  "n_refused": null,
+  "eta_infinite": null
+ },
+ "evidence_n10": {
+  "rule": "log_only",
+  "n_queries": 10,
+  "queries_firing_after": 0,
+  "n_refused": 0,
+  "eta_infinite": null
+ },
+ "evidence_n39": {
+  "rule": "log_only",
+  "n_queries": 39,
+  "queries_firing_after": 0,
+  "n_refused": 0,
+  "eta_infinite": null
+ },
+ "evidence_n40": {
+  "rule": "two_block",
+  "n_queries": 40,
+  "queries_firing_after": 0,
+  "n_refused": null,
+  "eta_infinite": false
+ },
+ "ok": true,
+ "test": "where",
+ "log": "TB-Q100-ae-l2_3",
+ "seconds_test": 13.900753498077393,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 18:06:01",
+ "session_stats": {
+  "rows": 79221,
+  "pre": 53115,
+  "memo": 26037,
+  "run": 9,
+  "lib": 60,
+  "missing": 0,
+  "forwards": 6,
+  "decodes": 3,
+  "hook_mismatch": 0,
+  "near": 55,
+  "near_changed_on_device": 3,
+  "seconds_model": 6.068049907684326
+ },
+ "peak_gpu_gb": 8.33730173110962,
+ "peak_rss_gb": 8.110694885253906
+}

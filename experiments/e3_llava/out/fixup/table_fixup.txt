@@ -1,0 +1,326 @@
+E3 FIX-UP (LLaVA-1.5-7B): ADDITIONS TO THE FINISHED AND VERIFIED EXPERIMENT (PROTOCOL.md, amendment of 2026-11-12 06:16 UTC)      rendered 2026-11-12 06:41:53 by code/fixup_render.py
+from out/fixup/*.json (written 2026-11-12 06:41:43 by code/fixup_compute.py through x_release/code/xlib.py; driver fx {'rescope': 'c76c4da16bd6', 'fx': '6a71f0d2cd71', 'fx_version': 'fx-1.2 stage 2 (2026-11-11)'}).  No existing file of the experiment was changed.
+One table per editor family; rows of the development log are marked (dev).  Status of every difference below: replication read-out on unseen logs, not the confirmatory family of R6.
+
+(F1a) H2: rephrase exact, (T-Gen + I-Gen) / 2, of ReScope (rescope) minus the reference; paired crossed bootstrap over calibration draws x edits (2000 resamples, seed 0)
+      reference = the gate of the cosine family selected for H2 on the development log (white_0.1_shared) and the retrieval reference (retr_sum); file out/fixup/endpoints.json
+      edits: all, and later edits only (R8: stream position >= 100); draws = behavioural calibration draws (R23: 1 from 1000 edits on: then the interval holds the unit component only);
+      p = two-sided bootstrap value (resolution 0.0005: '<=' marks a value at the resolution, an upper bound); per draw = the difference at each behavioural draw;
+      gate form = the same difference of the coverage of text and image rephrases (own edit released) over the 20 calibration draws x edits (R25 (3))
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+  log                    reference         edits             n  draws  rescope %  ref. %     difference [95 %]         p           per draw  gate form, 20 draws [95 %]  p (gate)
+  ---------------------  ----------------  --------------  ---  -----  ---------  ------  --------------------  --------  -----------------  --------------------------  --------
+  TB-L100-ae-l2_3 (dev)  white_0.1_shared  all             100      3       64.3    65.7     -1.3 [-8.0, +4.7]    0.6980     +3.0/-8.0/+1.0           +0.3 [-3.8, +4.6]    0.8870
+  TB-L100-ae-l2_3 (dev)  retr_sum          all             100      3       64.3    93.3  -29.0 [-39.0, -19.8]  <=0.0005  -23.5/-39.0/-24.5        -26.8 [-32.5, -21.3]  <=0.0005
+  TB-L200-ae-l2_3        white_0.1_shared  all             200      3       59.1    57.8     +1.2 [-5.1, +8.5]    0.7740     +8.3/-4.7/+0.2           +2.0 [-1.4, +5.4]    0.2570
+  TB-L200-ae-l2_3        white_0.1_shared  later (>= 100)  100      3       58.5    57.8     +0.7 [-6.7, +9.0]    0.9130     +8.5/-6.0/-0.5           +2.1 [-2.0, +6.5]    0.3150
+  TB-L200-ae-l2_3        retr_sum          all             200      3       59.1    89.3  -30.2 [-40.0, -21.2]  <=0.0005  -21.5/-40.0/-29.2        -29.3 [-34.5, -24.0]  <=0.0005
+  TB-L200-ae-l2_3        retr_sum          later (>= 100)  100      3       58.5    90.0  -31.5 [-42.8, -20.0]  <=0.0005  -20.5/-42.5/-31.5        -31.3 [-37.7, -24.8]  <=0.0005
+  TB-L500-ae-l2_3        white_0.1_shared  all             500      3       48.5    49.6     -1.1 [-4.4, +2.1]    0.5850     +0.5/-4.7/+0.9           -0.0 [-2.5, +2.5]    0.9830
+  TB-L500-ae-l2_3        white_0.1_shared  later (>= 100)  400      3       48.3    49.6     -1.3 [-5.1, +2.4]    0.5410     +0.6/-5.4/+0.9           -0.3 [-3.0, +2.5]    0.8480
+  TB-L500-ae-l2_3        retr_sum          all             500      3       48.5    81.4  -32.9 [-41.3, -23.6]  <=0.0005  -22.8/-41.7/-34.2        -34.3 [-40.1, -28.5]  <=0.0005
+  TB-L500-ae-l2_3        retr_sum          later (>= 100)  400      3       48.3    81.9  -33.5 [-42.2, -23.9]  <=0.0005  -23.2/-42.8/-34.6        -34.8 [-40.8, -28.8]  <=0.0005
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+  log              reference         edits              n  draws  rescope %  ref. %     difference [95 %]         p           per draw  gate form, 20 draws [95 %]  p (gate)
+  ---------------  ----------------  --------------  ----  -----  ---------  ------  --------------------  --------  -----------------  --------------------------  --------
+  TB-L100-memitw   white_0.1_shared  all              100      3       34.7    65.7  -31.0 [-40.2, -22.2]  <=0.0005  -24.0/-31.0/-38.0        -27.2 [-33.5, -21.2]  <=0.0005
+  TB-L100-memitw   retr_sum          all              100      3       34.7    93.3  -58.7 [-67.0, -50.0]  <=0.0005  -50.5/-62.0/-63.5        -54.3 [-59.8, -48.6]  <=0.0005
+  TB-L500-memitw   white_0.1_shared  all              500      3       31.8    49.6  -17.8 [-21.2, -14.7]  <=0.0005  -20.5/-17.5/-15.5        -16.4 [-19.1, -13.8]  <=0.0005
+  TB-L500-memitw   white_0.1_shared  later (>= 100)   400      3       33.7    49.6  -16.0 [-19.2, -12.5]  <=0.0005  -18.5/-15.8/-13.6        -14.3 [-16.9, -11.5]  <=0.0005
+  TB-L500-memitw   retr_sum          all              500      3       31.8    81.4  -49.6 [-55.0, -44.0]  <=0.0005  -43.8/-54.5/-50.6        -50.7 [-55.7, -45.4]  <=0.0005
+  TB-L500-memitw   retr_sum          later (>= 100)   400      3       33.7    81.9  -48.2 [-53.5, -42.5]  <=0.0005  -42.4/-53.1/-49.1        -48.8 [-54.2, -43.3]  <=0.0005
+  TB-L1000-memitw  white_0.1_shared  all             1000      1       30.1    40.2   -10.2 [-11.8, -8.7]  <=0.0005              -10.2         -12.4 [-14.9, -9.7]  <=0.0005
+  TB-L1000-memitw  white_0.1_shared  later (>= 100)   900      1       31.2    40.1    -8.9 [-10.4, -7.3]  <=0.0005               -8.9         -11.0 [-13.5, -8.4]  <=0.0005
+  TB-L1000-memitw  retr_sum          all             1000      1       30.1    68.4  -38.4 [-40.6, -36.2]  <=0.0005              -38.4        -48.1 [-53.2, -42.5]  <=0.0005
+  TB-L1000-memitw  retr_sum          later (>= 100)   900      1       31.2    68.8  -37.6 [-39.9, -35.4]  <=0.0005              -37.6        -47.0 [-52.1, -41.3]  <=0.0005
+
+(F1b) H3 (R6 with R25: common scale raised until the mean firing on the fit near-scope negatives is at most 10 percent; read on the odd edits): rephrase exact of a minus b
+      pair1 = rescope against white_1_shared; pair2_x = rescope_x against white_1_x (log-derived negatives); retr = rescope against retr_sum in the form of pair 1
+      unreach. a/b = behavioural draws on which the raise does not reach the limit (they count 0); at cap a/b = edits at their guard cap at the raised scale, mean over the draws (R25 (4));
+      gate form = coverage under the same constraint over the 20 calibration draws x odd edits; unr. gate a/b = draws of the 20 that are unreachable
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+  log                    pair     a - b                       n  draws   a %   b %     difference [95 %]         p           per draw  unreach. a/b  at cap a/b  gate form, 20 draws [95 %]  p (gate)  unr. gate a/b
+  ---------------------  -------  ------------------------  ---  -----  ----  ----  --------------------  --------  -----------------  ------------  ----------  --------------------------  --------  -------------
+  TB-L100-ae-l2_3 (dev)  pair1    rescope - white_1_shared   50      3  37.0  41.0     -4.0 [-9.7, +1.7]    0.1900     -3.0/-2.0/-7.0           0/0     1.0/0.0           -4.1 [-9.0, +0.5]    0.0870            0/0
+  TB-L100-ae-l2_3 (dev)  pair2_x  rescope_x - white_1_x      50      3  45.3  45.7     -0.3 [-6.0, +5.3]    0.9820     +0.0/-1.0/+0.0           0/0     0.3/7.3           +0.1 [-5.3, +5.5]    0.9940            0/0
+  TB-L100-ae-l2_3 (dev)  retr     rescope - retr_sum         50      3  37.0  49.7   -12.7 [-25.0, -0.3]    0.0450   -20.0/-8.0/-10.0           0/0    1.0/11.0         -17.5 [-27.2, -7.7]  <=0.0005            0/0
+  TB-L200-ae-l2_3        pair1    rescope - white_1_shared  100      3  35.8  40.0     -4.2 [-8.7, +0.0]    0.0520     -4.0/-2.5/-6.0           0/0     1.0/0.0           -4.7 [-8.7, -0.8]    0.0200            0/0
+  TB-L200-ae-l2_3        pair2_x  rescope_x - white_1_x     100      3  44.5  40.5     +4.0 [-0.5, +8.7]    0.1020     +4.5/+3.0/+4.5           0/0    3.7/18.0           +4.2 [+0.0, +8.5]    0.0500            0/0
+  TB-L200-ae-l2_3        retr     rescope - retr_sum        100      3  35.8  48.3   -12.5 [-20.5, -4.2]    0.0040   -18.0/-8.5/-11.0           0/0    1.0/16.3         -16.0 [-22.5, -9.6]  <=0.0005            0/0
+  TB-L500-ae-l2_3        pair1    rescope - white_1_shared  250      3  35.5  38.2     -2.7 [-6.0, +0.7]    0.1280     -2.6/-0.2/-5.2           0/0     1.7/0.0           -2.2 [-4.5, +0.2]    0.0690            0/0
+  TB-L500-ae-l2_3        pair2_x  rescope_x - white_1_x     250      3  40.1  34.3     +5.8 [+2.0, +9.9]    0.0020     +2.8/+8.6/+6.0           0/0   27.0/64.7           +6.1 [+3.0, +9.4]  <=0.0005            0/0
+  TB-L500-ae-l2_3        retr     rescope - retr_sum        250      3  35.5  51.0  -15.5 [-20.7, -10.3]  <=0.0005  -18.0/-11.8/-16.6           0/0    1.7/37.7        -18.1 [-22.3, -13.7]  <=0.0005            0/0
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+  log              pair     a - b                       n  draws   a %   b %     difference [95 %]         p           per draw  unreach. a/b   at cap a/b  gate form, 20 draws [95 %]  p (gate)  unr. gate a/b
+  ---------------  -------  ------------------------  ---  -----  ----  ----  --------------------  --------  -----------------  ------------  -----------  --------------------------  --------  -------------
+  TB-L100-memitw   pair1    rescope - white_1_shared   50      3  17.7  41.0  -23.3 [-32.3, -14.7]  <=0.0005  -17.0/-27.0/-26.0           0/0     44.7/0.0        -21.2 [-28.4, -14.5]  <=0.0005            0/0
+  TB-L100-memitw   pair2_x  rescope_x - white_1_x      50      3  31.0  45.7   -14.7 [-23.3, -6.3]  <=0.0005   -7.0/-18.0/-19.0           0/0     33.7/7.3          -9.2 [-15.1, -3.8]    0.0010            0/0
+  TB-L100-memitw   retr     rescope - retr_sum         50      3  17.7  49.7  -32.0 [-43.3, -21.0]  <=0.0005  -34.0/-33.0/-29.0           0/0    44.7/11.0        -34.6 [-43.7, -25.9]  <=0.0005            0/0
+  TB-L500-memitw   pair1    rescope - white_1_shared  250      3  23.3  38.2  -14.9 [-18.9, -11.1]  <=0.0005  -12.8/-14.2/-17.8           0/0    166.7/0.0        -14.4 [-17.2, -11.6]  <=0.0005            0/0
+  TB-L500-memitw   pair2_x  rescope_x - white_1_x     250      3  23.1  34.3   -11.2 [-14.8, -7.5]  <=0.0005   -11.2/-9.2/-13.2           0/0   186.0/64.7          -8.0 [-11.3, -4.8]  <=0.0005            0/0
+  TB-L500-memitw   retr     rescope - retr_sum        250      3  23.3  51.0  -27.7 [-32.5, -23.3]  <=0.0005  -28.2/-25.8/-29.2           0/0   166.7/37.7        -30.4 [-34.2, -26.2]  <=0.0005            0/0
+  TB-L1000-memitw  pair1    rescope - white_1_shared  500      1  27.7  36.7    -9.0 [-11.0, -6.9]  <=0.0005               -9.0           0/0    219.0/0.0         -11.0 [-12.9, -9.1]  <=0.0005            0/0
+  TB-L1000-memitw  pair2_x  rescope_x - white_1_x     500      1  23.0  27.2     -4.2 [-6.0, -2.4]  <=0.0005               -4.2           0/0  380.0/280.0           -3.9 [-6.1, -1.7]  <=0.0005            0/0
+  TB-L1000-memitw  retr     rescope - retr_sum        500      1  27.7  52.3  -24.6 [-27.9, -21.5]  <=0.0005              -24.6           0/0   219.0/66.0        -27.4 [-30.6, -24.3]  <=0.0005            0/0
+
+(F1c) Comparison with the verification's own values (e3_qwen/verify/out/claims_extra.json; the verification lists one decimal and drew its own resamples)
+      limit: 0.1 points for a value, 0.5 points for an interval end; '*' = at or above the limit (reason in the last column)
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+  log              quantity                                        field    here  verification  abs. diff.  limit                                                                                                                                     reason
+  ---------------  ----------------------------------------------  -----  ------  ------------  ----------  -----  -  --------------------------------------------------------------------------------------------------------------------------------------
+  TB-L200-ae-l2_3  H2 all edits, rescope minus white_0.1_shared    diff    +1.25          +1.2        0.05    0.1                                                                                                                                           
+  TB-L200-ae-l2_3  H2 all edits, rescope minus white_0.1_shared    ci_lo   -5.08          -5.2        0.12    0.5                                                                                                                                           
+  TB-L200-ae-l2_3  H2 all edits, rescope minus white_0.1_shared    ci_hi   +8.50          +8.5        0.00    0.5                                                                                                                                           
+  TB-L500-ae-l2_3  H2 all edits, rescope minus white_0.1_shared    diff    -1.10          -1.1        0.00    0.1                                                                                                                                           
+  TB-L500-ae-l2_3  H2 all edits, rescope minus white_0.1_shared    ci_lo   -4.40          -4.7        0.30    0.5                                                                                                                                           
+  TB-L500-ae-l2_3  H2 all edits, rescope minus white_0.1_shared    ci_hi   +2.13          +2.2        0.07    0.5                                                                                                                                           
+  TB-L200-ae-l2_3  H2 later edits, rescope minus white_0.1_shared  diff    +0.67          +0.7        0.03    0.1                                                                                                                                           
+  TB-L200-ae-l2_3  H2 later edits, rescope minus white_0.1_shared  ci_lo   -6.67          -7.0        0.33    0.5                                                                                                                                           
+  TB-L200-ae-l2_3  H2 later edits, rescope minus white_0.1_shared  ci_hi   +9.00          +9.5        0.50    0.5  *  interval end of another bootstrap (the verification drew its own resamples; this file uses the driver's crossed bootstrap with seed 0)
+  TB-L500-ae-l2_3  H2 later edits, rescope minus white_0.1_shared  diff    -1.29          -1.3        0.01    0.1                                                                                                                                           
+  TB-L500-ae-l2_3  H2 later edits, rescope minus white_0.1_shared  ci_lo   -5.08          -5.3        0.22    0.5                                                                                                                                           
+  TB-L500-ae-l2_3  H2 later edits, rescope minus white_0.1_shared  ci_hi   +2.37          +2.4        0.03    0.5                                                                                                                                           
+  TB-L200-ae-l2_3  H3 pair1                                        diff    -4.17          -4.2        0.03    0.1                                                                                                                                           
+  TB-L200-ae-l2_3  H3 pair2_x                                      diff    +4.00          +4.0        0.00    0.1                                                                                                                                           
+  TB-L200-ae-l2_3  H3 retr                                         diff   -12.50         -12.5        0.00    0.1                                                                                                                                           
+  TB-L500-ae-l2_3  H3 pair1                                        diff    -2.67          -2.7        0.03    0.1                                                                                                                                           
+  TB-L500-ae-l2_3  H3 pair2_x                                      diff    +5.80          +5.8        0.00    0.1                                                                                                                                           
+  TB-L500-ae-l2_3  H3 retr                                         diff   -15.47         -15.5        0.03    0.1                                                                                                                                           
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+  log              quantity                                        field    here  verification  abs. diff.  limit    reason
+  ---------------  ----------------------------------------------  -----  ------  ------------  ----------  -----    ------
+  TB-L100-memitw   H2 all edits, rescope minus white_0.1_shared    diff   -31.00         -31.0        0.00    0.1          
+  TB-L100-memitw   H2 all edits, rescope minus white_0.1_shared    ci_lo  -40.17         -39.7        0.47    0.5          
+  TB-L100-memitw   H2 all edits, rescope minus white_0.1_shared    ci_hi  -22.16         -22.0        0.16    0.5          
+  TB-L500-memitw   H2 all edits, rescope minus white_0.1_shared    diff   -17.83         -17.8        0.03    0.1          
+  TB-L500-memitw   H2 all edits, rescope minus white_0.1_shared    ci_lo  -21.20         -21.0        0.20    0.5          
+  TB-L500-memitw   H2 all edits, rescope minus white_0.1_shared    ci_hi  -14.67         -14.7        0.03    0.5          
+  TB-L1000-memitw  H2 all edits, rescope minus white_0.1_shared    diff   -10.20         -10.2        0.00    0.1          
+  TB-L1000-memitw  H2 all edits, rescope minus white_0.1_shared    ci_lo  -11.75         -11.7        0.05    0.5          
+  TB-L1000-memitw  H2 all edits, rescope minus white_0.1_shared    ci_hi   -8.70          -8.7        0.00    0.5          
+  TB-L500-memitw   H2 later edits, rescope minus white_0.1_shared  diff   -15.96         -16.0        0.04    0.1          
+  TB-L500-memitw   H2 later edits, rescope minus white_0.1_shared  ci_lo  -19.25         -19.3        0.05    0.5          
+  TB-L500-memitw   H2 later edits, rescope minus white_0.1_shared  ci_hi  -12.50         -12.7        0.20    0.5          
+  TB-L1000-memitw  H2 later edits, rescope minus white_0.1_shared  diff    -8.89          -8.9        0.01    0.1          
+  TB-L1000-memitw  H2 later edits, rescope minus white_0.1_shared  ci_lo  -10.39         -10.4        0.01    0.5          
+  TB-L1000-memitw  H2 later edits, rescope minus white_0.1_shared  ci_hi   -7.33          -7.4        0.07    0.5          
+  TB-L100-memitw   H3 pair1                                        diff   -23.33         -23.3        0.03    0.1          
+  TB-L100-memitw   H3 pair2_x                                      diff   -14.67         -14.7        0.03    0.1          
+  TB-L100-memitw   H3 retr                                         diff   -32.00         -32.0        0.00    0.1          
+  TB-L500-memitw   H3 pair1                                        diff   -14.93         -14.9        0.03    0.1          
+  TB-L500-memitw   H3 pair2_x                                      diff   -11.20         -11.2        0.00    0.1          
+  TB-L500-memitw   H3 retr                                         diff   -27.73         -27.7        0.03    0.1          
+  TB-L1000-memitw  H3 pair1                                        diff    -9.00          -9.0        0.00    0.1          
+  TB-L1000-memitw  H3 pair2_x                                      diff    -4.20          -4.2        0.00    0.1          
+  TB-L1000-memitw  H3 retr                                         diff   -24.60         -24.6        0.00    0.1          
+
+(F3) EXACT McNEMAR TESTS (PROTOCOL section 4; two-sided exact binomial test on the discordant pairs), per log and per calibration draw, from the per-row flags; file out/fixup/mcnemar.json
+      D1 = the pre-edit answer is not reproduced, valid heldout_disjoint rows; Rel = the request of an edit is answered with its target, all edits;
+      b = pairs with the outcome under the first row only, c = under the second row only; a row without calibration (deployed log, where_logonly) has one run and is paired with each draw
+      of a calibrated row; two calibrated rows are paired at the same draw index.  Descriptive per-log tests: no Holm family is formed over them.
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+  log                    outcome              first row      second row        draw  pairs  first %  second %    b    c  p (exact)
+  ---------------------  -------------------  -------------  ----------------  ----  -----  -------  --------  ---  ---  ---------
+  TB-L100-ae-l2_3 (dev)  D1 heldout_disjoint  where_logonly  deployed             -    469      2.8      62.3    2  281    5.2e-81
+  TB-L100-ae-l2_3 (dev)  D1 heldout_disjoint  rescope        deployed             0    469      5.3      62.3    6  273    1.3e-72
+  TB-L100-ae-l2_3 (dev)  D1 heldout_disjoint  rescope        deployed             1    469      0.2      62.3    0  291    5.0e-88
+  TB-L100-ae-l2_3 (dev)  D1 heldout_disjoint  rescope        deployed             2    469      3.6      62.3    5  280    5.0e-76
+  TB-L100-ae-l2_3 (dev)  Rel exact            where_logonly  deployed             -    100     92.0      88.0    6    2      0.289
+  TB-L100-ae-l2_3 (dev)  Rel exact            rescope        deployed             0    100     98.0      88.0   12    2      0.013
+  TB-L100-ae-l2_3 (dev)  Rel exact            rescope        deployed             1    100     98.0      88.0   12    2      0.013
+  TB-L100-ae-l2_3 (dev)  Rel exact            rescope        deployed             2    100     98.0      88.0   12    2      0.013
+  TB-L100-ae-l2_3 (dev)  D1 heldout_disjoint  rescope        white_0.1_shared     0    469      5.3       4.7   18   15      0.728
+  TB-L100-ae-l2_3 (dev)  D1 heldout_disjoint  rescope        white_0.1_shared     1    469      0.2       2.8    0   12     4.9e-4
+  TB-L100-ae-l2_3 (dev)  D1 heldout_disjoint  rescope        white_0.1_shared     2    469      3.6       3.8   12   13      1.000
+  TB-L100-ae-l2_3 (dev)  D1 heldout_disjoint  rescope        retr_sum             0    469      5.3       9.2   19   37      0.022
+  TB-L100-ae-l2_3 (dev)  D1 heldout_disjoint  rescope        retr_sum             1    469      0.2       6.4    1   30     3.0e-8
+  TB-L100-ae-l2_3 (dev)  D1 heldout_disjoint  rescope        retr_sum             2    469      3.6       4.5   14   18      0.597
+  TB-L200-ae-l2_3        D1 heldout_disjoint  where_logonly  deployed             -    469      3.4      76.1    1  342   3.8e-101
+  TB-L200-ae-l2_3        D1 heldout_disjoint  rescope        deployed             0    469      5.8      76.1    5  335    3.3e-92
+  TB-L200-ae-l2_3        D1 heldout_disjoint  rescope        deployed             1    469      0.4      76.1    0  355   2.7e-107
+  TB-L200-ae-l2_3        D1 heldout_disjoint  rescope        deployed             2    469      2.6      76.1    2  347   1.1e-100
+  TB-L200-ae-l2_3        Rel exact            where_logonly  deployed             -    200     89.0      70.0   41    3     1.6e-9
+  TB-L200-ae-l2_3        Rel exact            rescope        deployed             0    200     98.0      70.0   59    3    1.7e-14
+  TB-L200-ae-l2_3        Rel exact            rescope        deployed             1    200     98.0      70.0   59    3    1.7e-14
+  TB-L200-ae-l2_3        Rel exact            rescope        deployed             2    200     98.0      70.0   59    3    1.7e-14
+  TB-L200-ae-l2_3        D1 heldout_disjoint  rescope        white_0.1_shared     0    469      5.8       3.4   21   10      0.071
+  TB-L200-ae-l2_3        D1 heldout_disjoint  rescope        white_0.1_shared     1    469      0.4       3.4    1   15     5.2e-4
+  TB-L200-ae-l2_3        D1 heldout_disjoint  rescope        white_0.1_shared     2    469      2.6       3.6    8   13      0.383
+  TB-L200-ae-l2_3        D1 heldout_disjoint  rescope        retr_sum             0    469      5.8       3.8   24   15      0.200
+  TB-L200-ae-l2_3        D1 heldout_disjoint  rescope        retr_sum             1    469      0.4       5.1    2   24     1.0e-5
+  TB-L200-ae-l2_3        D1 heldout_disjoint  rescope        retr_sum             2    469      2.6       3.6   11   16      0.442
+  TB-L500-ae-l2_3        D1 heldout_disjoint  where_logonly  deployed             -    469     10.4      91.9    0  382   2.0e-115
+  TB-L500-ae-l2_3        D1 heldout_disjoint  rescope        deployed             0    469      1.7      91.9    0  423   9.2e-128
+  TB-L500-ae-l2_3        D1 heldout_disjoint  rescope        deployed             1    469      1.3      91.9    0  425   2.3e-128
+  TB-L500-ae-l2_3        D1 heldout_disjoint  rescope        deployed             2    469      2.6      91.9    0  419   1.5e-126
+  TB-L500-ae-l2_3        Rel exact            where_logonly  deployed             -    500     89.0      40.6  242    0    2.8e-73
+  TB-L500-ae-l2_3        Rel exact            rescope        deployed             0    500     98.8      40.6  293    2    1.4e-84
+  TB-L500-ae-l2_3        Rel exact            rescope        deployed             1    500     98.8      40.6  293    2    1.4e-84
+  TB-L500-ae-l2_3        Rel exact            rescope        deployed             2    500     98.8      40.6  293    2    1.4e-84
+  TB-L500-ae-l2_3        D1 heldout_disjoint  rescope        white_0.1_shared     0    469      1.7       2.8    1    6      0.125
+  TB-L500-ae-l2_3        D1 heldout_disjoint  rescope        white_0.1_shared     1    469      1.3       3.8    2   14      0.004
+  TB-L500-ae-l2_3        D1 heldout_disjoint  rescope        white_0.1_shared     2    469      2.6       3.4    6   10      0.454
+  TB-L500-ae-l2_3        D1 heldout_disjoint  rescope        retr_sum             0    469      1.7       3.2    7   14      0.189
+  TB-L500-ae-l2_3        D1 heldout_disjoint  rescope        retr_sum             1    469      1.3       6.4    5   29     3.9e-5
+  TB-L500-ae-l2_3        D1 heldout_disjoint  rescope        retr_sum             2    469      2.6       5.1   11   23      0.058
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+  log              outcome              first row      second row        draw  pairs  first %  second %    b    c  p (exact)
+  ---------------  -------------------  -------------  ----------------  ----  -----  -------  --------  ---  ---  ---------
+  TB-L100-memitw   D1 heldout_disjoint  where_logonly  deployed             -    469     17.5      77.8    0  283    1.3e-85
+  TB-L100-memitw   D1 heldout_disjoint  rescope        deployed             0    469      5.5      77.8    1  340   1.5e-100
+  TB-L100-memitw   D1 heldout_disjoint  rescope        deployed             1    469      0.6      77.8    0  362   2.1e-109
+  TB-L100-memitw   D1 heldout_disjoint  rescope        deployed             2    469      1.1      77.8    0  360   8.5e-109
+  TB-L100-memitw   Rel exact            where_logonly  deployed             -    100     81.0      78.0   15   12      0.701
+  TB-L100-memitw   Rel exact            rescope        deployed             0    100     97.0      78.0   21    2     6.6e-5
+  TB-L100-memitw   Rel exact            rescope        deployed             1    100     98.0      78.0   22    2     3.6e-5
+  TB-L100-memitw   Rel exact            rescope        deployed             2    100     98.0      78.0   22    2     3.6e-5
+  TB-L100-memitw   D1 heldout_disjoint  rescope        white_0.1_shared     0    469      5.5       4.7   19   15      0.608
+  TB-L100-memitw   D1 heldout_disjoint  rescope        white_0.1_shared     1    469      0.6       2.8    1   11      0.006
+  TB-L100-memitw   D1 heldout_disjoint  rescope        white_0.1_shared     2    469      1.1       3.8    4   17      0.007
+  TB-L100-memitw   D1 heldout_disjoint  rescope        retr_sum             0    469      5.5       9.2   14   31      0.016
+  TB-L100-memitw   D1 heldout_disjoint  rescope        retr_sum             1    469      0.6       6.4    2   29     4.6e-7
+  TB-L100-memitw   D1 heldout_disjoint  rescope        retr_sum             2    469      1.1       4.5    5   21      0.002
+  TB-L500-memitw   D1 heldout_disjoint  where_logonly  deployed             -    469     14.7      87.0    0  339   1.8e-102
+  TB-L500-memitw   D1 heldout_disjoint  rescope        deployed             0    469      1.9      87.0    0  399   1.5e-120
+  TB-L500-memitw   D1 heldout_disjoint  rescope        deployed             1    469      3.6      87.0    0  391   4.0e-118
+  TB-L500-memitw   D1 heldout_disjoint  rescope        deployed             2    469      3.6      87.0    0  391   4.0e-118
+  TB-L500-memitw   Rel exact            where_logonly  deployed             -    500     55.2      45.6   85   37     1.6e-5
+  TB-L500-memitw   Rel exact            rescope        deployed             0    500     98.2      45.6  268    5    1.6e-72
+  TB-L500-memitw   Rel exact            rescope        deployed             1    500     98.4      45.6  269    5    8.3e-73
+  TB-L500-memitw   Rel exact            rescope        deployed             2    500     98.6      45.6  269    4    3.0e-74
+  TB-L500-memitw   D1 heldout_disjoint  rescope        white_0.1_shared     0    469      1.9       2.8    4    8      0.388
+  TB-L500-memitw   D1 heldout_disjoint  rescope        white_0.1_shared     1    469      3.6       3.8    8    9      1.000
+  TB-L500-memitw   D1 heldout_disjoint  rescope        white_0.1_shared     2    469      3.6       3.4   13   12      1.000
+  TB-L500-memitw   D1 heldout_disjoint  rescope        retr_sum             0    469      1.9       3.2    6   12      0.238
+  TB-L500-memitw   D1 heldout_disjoint  rescope        retr_sum             1    469      3.6       6.4   13   26      0.053
+  TB-L500-memitw   D1 heldout_disjoint  rescope        retr_sum             2    469      3.6       5.1   13   20      0.296
+  TB-L1000-memitw  D1 heldout_disjoint  where_logonly  deployed             -    469     11.7      86.1    1  350   1.5e-103
+  TB-L1000-memitw  D1 heldout_disjoint  rescope        deployed             0    469      2.8      86.1    0  391   4.0e-118
+  TB-L1000-memitw  Rel exact            where_logonly  deployed             -   1000     47.9      37.3  167   61    1.4e-12
+  TB-L1000-memitw  Rel exact            rescope        deployed             0   1000     98.7      37.3  617    3   1.8e-179
+  TB-L1000-memitw  D1 heldout_disjoint  rescope        white_0.1_shared     0    469      2.8       2.8    5    5      1.000
+  TB-L1000-memitw  D1 heldout_disjoint  rescope        retr_sum             0    469      2.8       3.8    7   12      0.359
+
+(F4a) REPORTING NEXT TO FAR LOCALITY (amendment of 2026-11-12 06:16 UTC, decision 4); file out/fixup/reporting.json
+      near rows = valid heldout_disjoint probes that ask the question of an edit of the log; released = an edit is released on the row: behaviour (per-row files; mean and single runs)
+      and gate level (mean of the 20 calibration draws); above = calibration draws of 20 whose false-firing rate on heldout_disjoint exceeds the bound of the two-block rule (5 / 101 =
+      4.95 percent); fire = that rate, mean [5th, 95th percentile] and largest draw; capped = edits at their guard cap (for them the bound is void), mean / largest of the 20 draws.
+      where_logonly has thresholds from the log alone and no gate-level read-out ('-').
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+  log                    method            near rows  near released % (behaviour)            runs  near released % (gate)  above / 20  fire % mean [p05, p95]    max  capped mean  capped max
+  ---------------------  ----------------  ---------  ---------------------------  --------------  ----------------------  ----------  ----------------------  -----  -----------  ----------
+  TB-L100-ae-l2_3 (dev)  where_logonly            39                         25.6            25.6                       -           -                       -      -            -           -
+  TB-L100-ae-l2_3 (dev)  rescope                  39                          5.1     7.7/0.0/7.7                     4.1           3       3.09 [0.42, 7.46]   7.46         0.20           1
+  TB-L100-ae-l2_3 (dev)  rescope_shared           39                         13.7  15.4/12.8/12.8                    11.2           1       3.39 [2.30, 4.32]   5.33         0.00           0
+  TB-L100-ae-l2_3 (dev)  rescope_x                39                          4.3     5.1/2.6/5.1                     4.2           5       3.53 [1.25, 6.83]   7.04         1.05           9
+  TB-L100-ae-l2_3 (dev)  white_1_shared           39                         17.9  25.6/12.8/15.4                    17.2           5       3.29 [1.91, 5.76]   5.76         0.00           0
+  TB-L100-ae-l2_3 (dev)  white_0.1_shared         39                         12.8  12.8/12.8/12.8                    12.8           0       3.58 [2.13, 4.90]   4.90         0.00           0
+  TB-L100-ae-l2_3 (dev)  retr_sum                 39                         18.8  20.5/25.6/10.3                    20.8          14      7.16 [3.39, 12.39]  12.79         0.30           4
+  TB-L200-ae-l2_3        where_logonly            60                         30.0            30.0                       -           -                       -      -            -           -
+  TB-L200-ae-l2_3        rescope                  60                          4.4     8.3/0.0/5.0                     4.2           3       2.77 [0.63, 5.99]   6.40         0.25           1
+  TB-L200-ae-l2_3        rescope_shared           60                          8.9    10.0/8.3/8.3                     7.0           1       3.16 [1.71, 4.73]   5.54         0.00           0
+  TB-L200-ae-l2_3        rescope_x                60                          0.6     0.0/1.7/0.0                     1.2           6       4.19 [1.26, 8.13]   8.74         4.30          13
+  TB-L200-ae-l2_3        white_1_shared           60                         16.7  20.0/13.3/16.7                    16.3           1       3.35 [1.92, 4.65]   7.89         0.00           0
+  TB-L200-ae-l2_3        white_0.1_shared         60                         13.3  13.3/13.3/13.3                    14.1           1       3.72 [2.31, 4.83]   7.46         0.00           0
+  TB-L200-ae-l2_3        retr_sum                 60                         12.8   13.3/18.3/6.7                    14.0          10      5.76 [2.32, 11.93]  15.78         0.45           5
+  TB-L500-ae-l2_3        where_logonly            83                         27.7            27.7                       -           -                       -      -            -           -
+  TB-L500-ae-l2_3        rescope                  83                          3.2     2.4/3.6/3.6                     2.7           0       1.90 [0.42, 3.23]   3.84         1.35           3
+  TB-L500-ae-l2_3        rescope_shared           83                          8.0     9.6/4.8/9.6                     7.1           4       3.62 [2.13, 5.76]   5.76         0.00           0
+  TB-L500-ae-l2_3        rescope_x                83                          1.2     1.2/1.2/1.2                     1.0           2       2.43 [0.21, 6.63]   7.04        35.05          98
+  TB-L500-ae-l2_3        white_1_shared           83                          8.0     7.2/7.2/9.6                     6.0           0       2.35 [1.91, 3.00]   3.20         0.00           0
+  TB-L500-ae-l2_3        white_0.1_shared         83                          6.8     6.0/7.2/7.2                     6.4           0       3.08 [1.92, 3.84]   3.84         0.00           0
+  TB-L500-ae-l2_3        retr_sum                 83                          7.6    3.6/10.8/8.4                     7.8          14       5.86 [1.47, 9.49]  11.51         5.25          66
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+  log              method            near rows  near released % (behaviour)            runs  near released % (gate)  above / 20  fire % mean [p05, p95]    max  capped mean  capped max
+  ---------------  ----------------  ---------  ---------------------------  --------------  ----------------------  ----------  ----------------------  -----  -----------  ----------
+  TB-L100-memitw   where_logonly            39                         59.0            59.0                       -           -                       -      -            -           -
+  TB-L100-memitw   rescope                  39                          9.4    20.5/7.7/0.0                    11.3           9       4.06 [0.64, 7.68]   7.68        18.85          36
+  TB-L100-memitw   rescope_shared           39                         19.7  20.5/17.9/20.5                    21.2           0       2.59 [1.49, 3.84]   3.84         0.00           0
+  TB-L100-memitw   rescope_x                39                          8.5    12.8/5.1/7.7                    14.0           9       4.36 [1.48, 7.28]   7.89        24.10          41
+  TB-L100-memitw   white_1_shared           39                         17.9  25.6/12.8/15.4                    17.2           5       3.29 [1.91, 5.76]   5.76         0.00           0
+  TB-L100-memitw   white_0.1_shared         39                         12.8  12.8/12.8/12.8                    12.8           0       3.58 [2.13, 4.90]   4.90         0.00           0
+  TB-L100-memitw   retr_sum                 39                         18.8  20.5/25.6/10.3                    20.8          14      7.16 [3.39, 12.39]  12.79         0.30           4
+  TB-L500-memitw   where_logonly            83                         45.8            45.8                       -           -                       -      -            -           -
+  TB-L500-memitw   rescope                  83                          8.0     7.2/8.4/8.4                     6.0           0       2.75 [1.27, 4.70]   4.90        90.60         129
+  TB-L500-memitw   rescope_shared           83                         10.0   10.8/8.4/10.8                    10.2           0       2.41 [1.49, 3.21]   3.41         0.00           0
+  TB-L500-memitw   rescope_x                83                          8.0     9.6/8.4/6.0                     8.6           1       3.28 [1.92, 4.35]   5.97       170.60         234
+  TB-L500-memitw   white_1_shared           83                          8.0     7.2/7.2/9.6                     6.0           0       2.35 [1.91, 3.00]   3.20         0.00           0
+  TB-L500-memitw   white_0.1_shared         83                          6.8     6.0/7.2/7.2                     6.4           0       3.08 [1.92, 3.84]   3.84         0.00           0
+  TB-L500-memitw   retr_sum                 83                          7.6    3.6/10.8/8.4                     7.8          14       5.86 [1.47, 9.49]  11.51         5.25          66
+  TB-L1000-memitw  where_logonly           103                         48.5            48.5                       -           -                       -      -            -           -
+  TB-L1000-memitw  rescope                 103                          9.7             9.7                     7.1           1       3.26 [1.68, 4.97]   6.18       148.55         239
+  TB-L1000-memitw  rescope_shared          103                         11.7            11.7                    10.3           0       2.55 [1.49, 3.42]   3.62         0.00           0
+  TB-L1000-memitw  rescope_x               103                         12.6            12.6                     8.3           5       3.93 [1.71, 6.95]   9.38       410.85         519
+  TB-L1000-memitw  white_1_shared          103                          6.8             6.8                     7.2           0       2.96 [2.75, 3.43]   3.84         0.00           0
+  TB-L1000-memitw  white_0.1_shared        103                          6.8             6.8                     7.7           0       3.36 [2.56, 4.26]   4.26         0.00           0
+  TB-L1000-memitw  retr_sum                103                          7.8             7.8                     9.6          14      6.90 [2.72, 14.61]  16.63        12.50         123
+
+(F4d) Self-separation margin of the log (decision 5): smallest margin over the edits and number of edits with a non-positive margin
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+  log                      T  smallest margin  edits with margin <= 0                                          source
+  ---------------------  ---  ---------------  ----------------------  ----------------------------------------------
+  TB-L100-ae-l2_3 (dev)  100          +0.5295                       0  e3_llava/out/gate/TB-L100-ae-l2_3/_factor.json
+  TB-L200-ae-l2_3        200          +0.5295                       0  e3_llava/out/gate/TB-L200-ae-l2_3/_factor.json
+  TB-L500-ae-l2_3        500          +0.3855                       0  e3_llava/out/gate/TB-L500-ae-l2_3/_factor.json
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+  log                 T  smallest margin  edits with margin <= 0                                          source
+  ---------------  ----  ---------------  ----------------------  ----------------------------------------------
+  TB-L100-memitw    100          +0.0226                       0   e3_llava/out/gate/TB-L100-memitw/_factor.json
+  TB-L500-memitw    500          +0.0226                       0   e3_llava/out/gate/TB-L500-memitw/_factor.json
+  TB-L1000-memitw  1000          -0.1071                       2  e3_llava/out/gate/TB-L1000-memitw/_factor.json
+
+(F4e) Rel exact against the deployed log (R7): kept = the request is answered with the target under both, gained = only under the method, lost = only under the deployed log;
+      percent of the edits of the subset (all edits; the first 100 edits of the stream; the later edits, stream position >= 100); counts per run in brackets (kept/gained/lost)
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+  log                    method         edits             n  runs  kept %  gained %  lost %  counts per run (kept/gained/lost)
+  ---------------------  -------------  --------------  ---  ----  ------  --------  ------  ---------------------------------
+  TB-L100-ae-l2_3 (dev)  where_logonly  all             100     1    86.0       6.0     2.0                             86/6/2
+  TB-L100-ae-l2_3 (dev)  where_logonly  first 100       100     1    86.0       6.0     2.0                             86/6/2
+  TB-L100-ae-l2_3 (dev)  rescope        all             100     3    86.0      12.0     2.0          86/12/2  86/12/2  86/12/2
+  TB-L100-ae-l2_3 (dev)  rescope        first 100       100     3    86.0      12.0     2.0          86/12/2  86/12/2  86/12/2
+  TB-L200-ae-l2_3        where_logonly  all             200     1    68.5      20.5     1.5                           137/41/3
+  TB-L200-ae-l2_3        where_logonly  first 100       100     1    76.0      16.0     1.0                            76/16/1
+  TB-L200-ae-l2_3        where_logonly  later (>= 100)  100     1    61.0      25.0     2.0                            61/25/2
+  TB-L200-ae-l2_3        rescope        all             200     3    68.5      29.5     1.5       137/59/3  137/59/3  137/59/3
+  TB-L200-ae-l2_3        rescope        first 100       100     3    75.0      23.0     2.0          75/23/2  75/23/2  75/23/2
+  TB-L200-ae-l2_3        rescope        later (>= 100)  100     3    62.0      36.0     1.0          62/36/1  62/36/1  62/36/1
+  TB-L500-ae-l2_3        where_logonly  all             500     1    40.6      48.4     0.0                          203/242/0
+  TB-L500-ae-l2_3        where_logonly  first 100       100     1    48.0      44.0     0.0                            48/44/0
+  TB-L500-ae-l2_3        where_logonly  later (>= 100)  400     1    38.8      49.5     0.0                          155/198/0
+  TB-L500-ae-l2_3        rescope        all             500     3    40.2      58.6     0.4    201/293/2  201/293/2  201/293/2
+  TB-L500-ae-l2_3        rescope        first 100       100     3    47.0      51.0     1.0          47/51/1  47/51/1  47/51/1
+  TB-L500-ae-l2_3        rescope        later (>= 100)  400     3    38.5      60.5     0.2    154/242/1  154/242/1  154/242/1
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+  log              method         edits              n  runs  kept %  gained %  lost %  counts per run (kept/gained/lost)
+  ---------------  -------------  --------------  ----  ----  ------  --------  ------  ---------------------------------
+  TB-L100-memitw   where_logonly  all              100     1    66.0      15.0    12.0                           66/15/12
+  TB-L100-memitw   where_logonly  first 100        100     1    66.0      15.0    12.0                           66/15/12
+  TB-L100-memitw   rescope        all              100     3    76.0      21.7     2.0          76/21/2  76/22/2  76/22/2
+  TB-L100-memitw   rescope        first 100        100     3    76.0      21.7     2.0          76/21/2  76/22/2  76/22/2
+  TB-L500-memitw   where_logonly  all              500     1    38.2      17.0     7.4                          191/85/37
+  TB-L500-memitw   where_logonly  first 100        100     1    48.0      33.0     4.0                            48/33/4
+  TB-L500-memitw   where_logonly  later (>= 100)   400     1    35.8      13.0     8.2                          143/52/33
+  TB-L500-memitw   rescope        all              500     3    44.7      53.7     0.9    223/268/5  223/269/5  224/269/4
+  TB-L500-memitw   rescope        first 100        100     3    49.3      46.7     2.7          49/46/3  49/47/3  50/47/2
+  TB-L500-memitw   rescope        later (>= 100)   400     3    43.5      55.5     0.5    174/222/2  174/222/2  174/222/2
+  TB-L1000-memitw  where_logonly  all             1000     1    31.2      16.7     6.1                         312/167/61
+  TB-L1000-memitw  where_logonly  first 100        100     1    40.0      41.0     3.0                            40/41/3
+  TB-L1000-memitw  where_logonly  later (>= 100)   900     1    30.2      14.0     6.4                         272/126/58
+  TB-L1000-memitw  rescope        all             1000     1    37.0      61.7     0.3                          370/617/3
+  TB-L1000-memitw  rescope        first 100        100     1    41.0      55.0     2.0                            41/55/2
+  TB-L1000-memitw  rescope        later (>= 100)   900     1    36.6      62.4     0.1                          329/562/1
+

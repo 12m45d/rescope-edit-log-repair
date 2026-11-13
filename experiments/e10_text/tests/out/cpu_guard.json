@@ -1,0 +1,74 @@
+{
+ "name": "c_guard",
+ "pass": true,
+ "what": "guards as served: exactly the capped thresholds are lowered, by round-off-sized amounts; no own request is left inside the decision band",
+ "detail": {
+  "rescope": {
+   "n_capped": 11,
+   "n_lowered": 11,
+   "n_lowered_at_a_cap": 11,
+   "max_relative_lowering": 8.171273982104964e-05,
+   "own_requests_in_band_before": 11,
+   "own_requests_in_band_after": 0,
+   "own_not_candidate_after": 0,
+   "n_other_thresholds_changed": 0
+  },
+  "rescope_shared": {
+   "n_capped": 0,
+   "n_lowered": 0,
+   "n_lowered_at_a_cap": 0,
+   "max_relative_lowering": 0.0,
+   "own_requests_in_band_before": 0,
+   "own_requests_in_band_after": 0,
+   "own_not_candidate_after": 0,
+   "n_other_thresholds_changed": 0
+  },
+  "rescope_null": {
+   "n_capped": 4,
+   "n_lowered": 4,
+   "n_lowered_at_a_cap": 4,
+   "max_relative_lowering": 6.82448309011424e-05,
+   "own_requests_in_band_before": 4,
+   "own_requests_in_band_after": 0,
+   "own_not_candidate_after": 0,
+   "n_other_thresholds_changed": 0
+  },
+  "cosine": {
+   "n_capped": 3,
+   "n_lowered": 3,
+   "n_lowered_at_a_cap": 3,
+   "max_relative_lowering": 2.001900001011324e-05,
+   "own_requests_in_band_before": 3,
+   "own_requests_in_band_after": 0,
+   "own_not_candidate_after": 0,
+   "n_other_thresholds_changed": 0
+  },
+  "where_twoblock": {
+   "n_capped": 11,
+   "n_lowered": 11,
+   "n_lowered_at_a_cap": 11,
+   "max_relative_lowering": 8.171273982104964e-05,
+   "own_requests_in_band_before": 11,
+   "own_requests_in_band_after": 0,
+   "own_not_candidate_after": 0,
+   "n_other_thresholds_changed": 0
+  },
+  "where_logonly": {
+   "n_capped": 1,
+   "n_lowered": 1,
+   "own_requests_in_band_before": 1,
+   "own_requests_in_band_after": 0
+  }
+ },
+ "error": null,
+ "seconds": 75.16199851036072,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "written": "2026-11-11 11:56:55 UTC"
+}

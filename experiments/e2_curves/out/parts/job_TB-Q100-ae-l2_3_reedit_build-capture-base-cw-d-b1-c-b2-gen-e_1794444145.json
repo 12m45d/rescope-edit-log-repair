@@ -1,0 +1,61 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "blocks": [
+  "reedit_build",
+  "capture",
+  "base",
+  "cw",
+  "d",
+  "b1",
+  "c",
+  "b2",
+  "gen",
+  "e"
+ ],
+ "assert_clean": {
+  "hook_mismatch": 0,
+  "memo_conflicts": 0,
+  "forwards": 10434,
+  "rows": 154808
+ },
+ "hook_vs_vectors_total": {
+  "n_rows": 45961,
+  "n_fired_differs": 0,
+  "n_own_last_differs": 0
+ },
+ "seconds": 14415.645627975464,
+ "stats": {
+  "rows": 154808,
+  "pre": 56267,
+  "memo": 35414,
+  "run": 11251,
+  "lib": 51876,
+  "missing": 0,
+  "forwards": 10434,
+  "decodes": 3631,
+  "hook_mismatch": 0,
+  "near": 0,
+  "near_changed_on_device": 0,
+  "seconds_model": 13836.326609373093
+ },
+ "memo": {
+  "hits": 36231,
+  "misses": 21384,
+  "writes": 11251,
+  "shards": 32,
+  "shards_other_code": 0,
+  "entries": 37919,
+  "conflicts": 0,
+  "root": "[redacted: local path]/02_research/experiments/10_final/memo/qwen25vl",
+  "by_mode": {
+   "tf": 31622,
+   "decode": 6297
+  },
+  "code": "c76c4da16bd6",
+  "accepted_library_versions": [
+   "c76c4da16bd6"
+  ]
+ },
+ "time": "2026-11-12 00:42:25",
+ "smoke": 0
+}

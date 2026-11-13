@@ -1,0 +1,39 @@
+{
+ "backbone": "llava",
+ "log": "TB-L100-ae-l2_3",
+ "n_queries": 50,
+ "load_before": {
+  "gpu": "0",
+  "utilization_pct": 47.0,
+  "memory_used_MiB": 23099.0,
+  "n_compute_processes": 2,
+  "n_other_processes": 1,
+  "time": "22:35:58"
+ },
+ "preedit_one_generation": {
+  "seconds_total": 34.747985899448395,
+  "ms_per_query": 694.9597179889679,
+  "n_rows": 50,
+  "n_generations_per_query": 1
+ },
+ "dual_two_generations": {
+  "seconds_total": 66.91376757994294,
+  "ms_per_query": 1338.2753515988588,
+  "n_rows": 50,
+  "n_generations_per_query": 2
+ },
+ "deployed_one_generation": {
+  "seconds_total": 33.99974422156811,
+  "ms_per_query": 679.9948844313622,
+  "n_rows": 50,
+  "n_generations_per_query": 1
+ },
+ "load_after": {
+  "gpu": "0",
+  "utilization_pct": 97.0,
+  "memory_used_MiB": 23463.0,
+  "n_compute_processes": 2,
+  "n_other_processes": 1,
+  "time": "22:38:14"
+ }
+}

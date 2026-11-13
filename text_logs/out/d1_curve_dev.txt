@@ -1,0 +1,12 @@
+D1 on the HELD-OUT benign prompts along the DEVELOPMENT log TX-G2XL-rome-dev100 (deployed prefixes; 3000 valid rows)
+ updates    D1 tf   D1 dec  tok-loc  1st tok  |W-W0|_F
+       0      0.0      0.0    100.0      0.0       0.0
+       1      7.0      7.0     99.3      1.0       7.1
+       2      8.9      8.9     99.1      1.1      10.3
+       5     15.9     15.9     98.2      1.7      17.4
+      10     26.2     26.2     96.9      3.6      25.4
+      20     42.6     42.6     94.2      6.6      37.3
+      50     75.3     75.3     84.3     17.6      74.1
+     100     95.4     95.4     64.7     38.3     137.7
+D1 tf / dec: the pre-edit 10-token continuation is not reproduced (teacher-forced / decode); tok-loc: share of its tokens kept;
+1st tok: share of prompts whose FIRST continuation token changes.  All in percent.

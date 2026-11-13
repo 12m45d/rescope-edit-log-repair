@@ -1,0 +1,74 @@
+[
+ {
+  "when": "2026-11-10 10:17-10:21",
+  "card": "GPU 1 / GPU 0",
+  "what": "After restarting both workers (10:17) my LLaVA worker occupied GPU 1 while another agent's LLaVA job (08_rescope/p11_retrofit c_eval.py, gpu_wait.sh 1 17600) was waiting for it; I stopped my workers at 10:20-10:21 and re-queued them.",
+  "impact_on_others": "a delay of about 3 minutes for that job (it started on GPU 1 after my worker left); no failure",
+  "evidence": [
+   "08_rescope/p12_linear_streams/logs/streams_TB-L100-ae-l2_3.log (worker 3994782, 10:17:32-10:20:23)"
+  ],
+  "cause": "both cards were empty when my workers started (10:17:31); the other job was queued about a minute later and my workers had no automatic yield at that time.",
+  "fix": "stopped by hand after about 2 minutes; since 12:13 every worker runs the watchdog of p12_common.start_watchdog and my launcher (code/gpu_wait.sh + code/gpuq.py) defers to other agents' queued jobs."
+ },
+ {
+  "when": "2026-11-10 11:40:27-11:40:36",
+  "card": "GPU 0",
+  "what": "My Qwen worker (pid 4034376) and another agent's job (08_rescope/p11_retrofit, code/e_gen.py TB-Q100-ae-l2_3, started by its gpu_run.sh) were launched within one second of each other on the same free block (15637 MiB free seen by both launchers). Both ran out of memory while loading and exited.",
+  "impact_on_others": "one failed start of the other agent's job (its launcher counts it as try 1 of 6); the job was restarted by its own launcher at 11:43:37 and ran. No output of another agent was touched",
+  "evidence": [
+   "08_rescope/p11_retrofit/logs/nohup_E_Q.out lines 1-24 (their OOM message names process 4034376 with 7.22 GiB)",
+   "08_rescope/p12_linear_streams/logs/chain_Q.out (my traceback, 11:40:28-11:40:36)"
+  ],
+  "cause": "my launcher (code/gpu_wait.sh) only recognised other agents' gpu_wait.sh / wait_gpu.sh as queued jobs, not their gpu_run.sh / gpu_fill.sh / gpu_big.sh / gpu_any.sh; two launchers that had waited for the same memory fired together.",
+  "fix": "code/gpuq.py + code/gpu_wait.sh: my launcher adds the need of every other agent's waiting launcher that fits (or nearly fits) on the card to its own requirement; every worker runs a watchdog (p12_common.start_watchdog) and leaves the card when another agent's queued job is blocked only by it, or when the card is almost full."
+ },
+ {
+  "when": "2026-11-10 12:10",
+  "card": "GPU 1",
+  "what": "I stopped my LLaVA worker (pid 4037158, started 11:24) by hand because a queued job of another agent (09_testbed_scale, gpu_big.sh 15400, queued 11:57:53) seemed to fit on GPU 1 only without it. That job was in fact restricted to GPU 0 by its own environment (BIG_GPUS=0), so my worker had not delayed it. A different job of the same agent (gpu_big.sh 16300, queued about 12:13) started on GPU 1 at 12:14:50 in the memory my worker had released.",
+  "impact_on_others": "none",
+  "evidence": [
+   "08_rescope/p12_linear_streams/logs/streams_TB-L100-ae-l2_3.log (worker 4037158 ends after RB_UNION__n2__s0 at 12:10:23)",
+   "09_testbed_scale/logs/*.out (launch line 12:14:50)"
+  ],
+  "cause": "my queue inspector assumed gpu_big.sh may use any card; it now reads the card set from the launcher's environment.",
+  "fix": "code/gpuq.py; the interrupted configuration is redone on resume."
+ },
+ {
+  "when": "2026-11-10 12:21:50-12:24:08",
+  "card": "GPU 0",
+  "what": "Near miss caused by a decision of mine. To get my Qwen job started I narrowed the margin by which my launcher defers to other agents' queued jobs (gpuq.py NEAR_MIB 1500 -> 600 MiB), so that it would use memory a queued job of another agent (09_testbed_scale, gpu_big.sh 15400, 945 MiB short of fitting on GPU 0) was waiting for. My launcher fired at 12:23:25; a neighbour finished in the same seconds and that queued job was launched by its own launcher at 12:23:27 on the same card, while my worker (pid 4081724) was loading its model. My worker's boundary check found another queued job blocked by it and left the card at 12:23:32, 7 seconds after starting; it evaluated nothing.",
+  "impact_on_others": "no failure and no delay found (their job, pid 4084567, kept running; no out-of-memory message names my process). It is the same race as 11:40 and went well only because a third job had just released about 7.8 GiB",
+  "evidence": [
+   "08_rescope/p12_linear_streams/logs/chain_Q.out (launch line 12:23:25, exit 75 at 12:23:33)",
+   "09_testbed_scale/logs/*.out (their launch line 12:23:27: gpu0 free 23289 MiB)"
+  ],
+  "cause": "I loosened my own safety rule in the direction that lets my lower-priority job start next to a queue.",
+  "fix": "margin restored at 12:24:08, then removed altogether: gpuq.reserve() now blocks my launcher while ANY other agent's launcher is waiting for the card, whatever its distance from fitting. Consequence: my jobs start only when no other agent has anything queued for the card."
+ },
+ {
+  "when": "2026-11-10 12:33:00-12:33:36 (GPU 1) and 12:35:47-12:36:55 (GPU 0)",
+  "card": "GPU 1, GPU 0",
+  "what": "Twice my launcher (no other agent's launcher waiting on two looks, enough free memory) started a worker and, seconds later, another agent queued a job that fitted on the card only without it: the LLaVA D2 worker on GPU 1 (09_testbed_scale gpu_big.sh 16100 queued; my worker left at 12:33:36 at its first boundary check) and the Qwen stream worker on GPU 0 (08_rescope/p11_scopecut gpu_wait.sh 9700 and 09_testbed_scale gpu_fill.sh 12000 queued; my watchdog left the card at 12:36:55). Neither worker produced a record.",
+  "impact_on_others": "those jobs could start up to about a minute later than otherwise; no failure",
+  "evidence": [
+   "08_rescope/p12_linear_streams/logs/chain_L.out (yield line 12:33:35)",
+   "08_rescope/p12_linear_streams/logs/streams_TB-Q100-ae-l2_3.log (watchdog line 12:36:55)"
+  ],
+  "cause": "the other agents' chains queue their next job within seconds of a job ending, so a card that looks free between two of their jobs is not free for a lowest-priority job.",
+  "fix": "code/gpu_wait.sh now starts a job only after the card has been quiet (enough free memory, no other agent's launcher waiting, no memory growth) on 4 consecutive looks over about three minutes."
+ },
+ {
+  "when": "2026-11-10 17:40:46-17:43:58 (resume run)",
+  "card": "GPU 1",
+  "what": "My LLaVA worker of the resume (pid 81476, on GPU 1 since 17:19:58, 14.7-16.0 GiB) could not see a queued LLaVA job of another agent (02_research/code/rescope, tests/gpu_launch.sh, need 16000: it waits for 17024 MiB free on a card), whose launcher started at 17:40:46, and so did not leave the card for it. That launcher fired at 17:43:32, at a moment when my worker's usage was low (17441 MiB free); both jobs then shared the card with 1.5-2.7 GiB free until my worker left at its next configuration boundary, 17:43:58 (its tight-card rule).",
+  "impact_on_others": "no failure (their log runs to DONE at 17:48:55 without an out-of-memory message) and no delay that the logs show: that launcher appears to have waited for its own package's launch lock, held by its Qwen launcher until about 17:43:06 (inferred from launch_pre_Q.out: launch at 17:41:36 plus the 90 s hold of gpu_launch.sh), and fired 26 s later on its first pair of looks. The exposure was real all the same: their model loaded next to my worker with 1.5 GiB free, and with a slightly larger footprint of mine their launcher would have kept waiting behind a process that could not see it. Two earlier failures of the same agent's Qwen test job (17:37:47 on GPU 1, 17:41:04 on GPU 0) name my processes 81476 / 81477 in torch's message; both stopped at that job's own memory cap (`11.00 GiB allowed`, 10.90 and 10.93 GiB allocated, with 4.48 and 2.62 GiB still free on the card)",
+  "evidence": [
+   "02_research/code/rescope/tests/out/launch_pre_L.out (created 17:40:46; launch line 17:43:32; DONE 17:48:55)",
+   "08_rescope/p12_linear_streams/logs/streams_TB-L100-ae-l2_3.log (yield line 17:43:58)",
+   "02_research/code/rescope/tests/out/launch_smoke_Q.out line 105, launch_pre_Q.out line 102 (the two own-cap messages)"
+  ],
+  "cause": "code/gpuq.py recognised other agents' launchers by a fixed list of script names (gpu_wait.sh, wait_gpu.sh, gpu_run.sh, gpu_any.sh, gpu_fill.sh, gpu_big.sh). tests/gpu_launch.sh was not on it (nor 09_testbed_scale's code_text/gpu_text.sh, nor p11_retrofit/verify/run_gpu.sh), so neither my launcher nor my workers' watchdog saw that queue. The verifier's report (section 7) describes the same gap in its own inspector, fixed there at 16:02; I did not carry that fix over to code/gpuq.py before launching the resume.",
+  "fix": "18:14-18:26: code/gpuq.py treats ANY shell script of another agent whose name contains gpu / wait / launch / queue as a launcher (layouts read: <gpu|any> <need>, <g,g> <need>, <need>, run_gpu.sh, gpu_text.sh; an unreadable layout counts as a LLaVA-sized window on both cards; scripts that wait for a process are skipped until that process has ended) and reads --mem_gb as a declared cap. code/gpu_wait.sh uses it from its next look on. The LLaVA worker started at 18:14:25 had loaded it and left the card at 18:17:55, 21 s after the same agent queued a LLaVA job (18:17:34). The Qwen worker started at 17:20 keeps the old inspector in memory and is covered by code/ext_watchdog.py since 18:21 (it sends SIGTERM to that worker of mine, and to nothing else, when the current inspector finds a queued job blocked by it)."
+ }
+]

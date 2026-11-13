@@ -1,0 +1,40 @@
+{
+ "group": "t_store",
+ "time": "2026-11-11 07:42:13",
+ "tests": {
+  "s1_parts_resumable": {
+   "ok": true,
+   "seconds": 7.56,
+   "info": {
+    "parts": [
+     "part_0000.pt",
+     "part_0001.pt",
+     "part_0002.pt",
+     "part_0003.pt",
+     "part_0004.pt"
+    ],
+    "rows": 900
+   }
+  },
+  "s2_assembly_deterministic": {
+   "ok": true,
+   "seconds": 3.83,
+   "info": {
+    "keys_md5": "c5e415ee3e24c8f39ee8b8eb71a1549b",
+    "n_rows": 900
+   }
+  },
+  "s3_refusals": {
+   "ok": true,
+   "seconds": 5.35,
+   "info": {
+    "refused": [
+     "no --out",
+     "part of another rows.jsonl",
+     "missing part"
+    ],
+    "published_directory_untouched": true
+   }
+  }
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "info": {
+  "encoder": "all-MiniLM-L6-v2 (local)",
+  "checkpoint": "[redacted: local path]",
+  "backend": "sentence-transformers",
+  "modules": [
+   "Transformer",
+   "Pooling",
+   "Normalize"
+  ],
+  "recipe": "model card: tokenizer (BERT, uncased) -> token embeddings -> mean pooling over the attention mask -> L2 normalisation",
+  "max_seq_length": 256,
+  "input": "the question key = question.strip().lower()",
+  "batch": "one string per forward (no padding)",
+  "forward_dtype": "float32",
+  "device": "cpu",
+  "storage": "finalize: L2 normalisation in float64, components rounded to multiples of 2^-24, float32",
+  "versions": {
+   "torch": "2.8.0+cu128",
+   "transformers": "5.17.0",
+   "PIL": "12.3.0",
+   "numpy": "2.4.6",
+   "torchvision": "0.23.0+cu128",
+   "safetensors": "0.8.0",
+   "sentence_transformers": "6.1.0"
+  }
+ },
+ "seconds": 38.57506823539734,
+ "n_parts_done_now": 25,
+ "max_tokens_seen": 27
+}

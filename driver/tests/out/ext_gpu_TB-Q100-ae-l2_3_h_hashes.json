@@ -1,0 +1,63 @@
+{
+ "n_rows": 100,
+ "seconds_per_forward": 0.18688317775726318,
+ "n_firing": 61,
+ "n_silent": 39,
+ "deterministic": 0,
+ "silent_rows_not_bitwise_pre_edit": 0,
+ "firing_rows_bitwise_pre_edit": 0,
+ "released_differs_from_gate_level": 0,
+ "outcome_fields_differ_from_memo_path": 0,
+ "deployed_fields_differ_from_weights_path": 0,
+ "deployed_released_is_none": true,
+ "preedit_released_is_none": true,
+ "deployed_rows_bitwise_pre_edit": 0,
+ "sha_length": 20,
+ "where": {
+  "n": 12,
+  "released_sets": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "fired_consistent": true,
+  "n_cand_consistent": true,
+  "fields_differ_from_library_path": 0
+ },
+ "ok": true,
+ "hook_mismatch": 0,
+ "memo_conflicts": 0,
+ "test": "h",
+ "log": "TB-Q100-ae-l2_3",
+ "seconds": 60.98836278915405,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 17:47:15",
+ "stats": {
+  "rows": 464,
+  "pre": 39,
+  "memo": 81,
+  "run": 0,
+  "lib": 12,
+  "missing": 0,
+  "forwards": 332,
+  "decodes": 0,
+  "hook_mismatch": 0,
+  "near": 0,
+  "near_changed_on_device": 0,
+  "seconds_model": 60.738783836364746,
+  "hashed": 332
+ }
+}

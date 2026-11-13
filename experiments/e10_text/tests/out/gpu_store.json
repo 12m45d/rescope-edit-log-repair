@@ -1,0 +1,46 @@
+{
+ "name": "g_store",
+ "pass": true,
+ "what": "memoisation: silent prompts cost no forward; a second pass runs the model on nothing and returns the same rows",
+ "detail": {
+  "rescope": {
+   "n_rows": 260,
+   "first_pass_run": 150,
+   "first_pass_silent": 370,
+   "second_pass_run": 0,
+   "second_pass_from_store": 150,
+   "rows_differing": 0,
+   "store_writes": 150
+  },
+  "deployed": {
+   "n_rows": 260,
+   "first_pass_run": 520,
+   "first_pass_silent": 0,
+   "second_pass_run": 0,
+   "second_pass_from_store": 520,
+   "rows_differing": 0,
+   "store_writes": 520
+  },
+  "silent_rows_cost_no_forward": true,
+  "same_label": {
+   "weights_sig_differ": true,
+   "weights_rows_differing": 48,
+   "second_weight_from_store": 0,
+   "gates_sig_differ": true,
+   "replayed_prefix_sig_equals_prefix_log_deployed": true
+  }
+ },
+ "error": null,
+ "seconds": 20.007441997528076,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "peak_alloc_MiB": 8113.01708984375,
+ "peak_reserved_MiB": 9254.0,
+ "written": "2026-11-11 12:23:31 UTC"
+}

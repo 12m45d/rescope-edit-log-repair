@@ -1,0 +1,467 @@
+{
+ "written": "2026-11-11 10:56:57 UTC",
+ "1_exact_match_hits_of_collapsed_logs": {
+  "T500": {
+   "first_token_subject_requests": [
+    173,
+    240,
+    266
+   ],
+   "their_new_objects": [
+    "California",
+    "Istanbul",
+    "Miami"
+   ],
+   "request": {
+    "n_rows": 500,
+    "hits_total": 14,
+    "hits_on_the_first_token_subject_requests_themselves": 2,
+    "rows_of_other_edits_whose_target_is_in_S": 8,
+    "hits_among_them_observed": 3,
+    "hits_among_them_expected_if_output_is_independent_of_the_target": 1.159343942442534,
+    "poisson_sd_of_expected": 1.0767283512764647,
+    "observed_minus_expected_in_sd": 1.7094897291181779,
+    "hits_whose_target_is_not_in_S": 9,
+    "rows_whose_target_is_not_in_S": 489,
+    "per_object": {
+     "California": {
+      "n_requests_with_this_target": 2,
+      "hits": 2,
+      "rate_on_them": 1.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.21327967806841047
+     },
+     "Istanbul": {
+      "n_requests_with_this_target": 4,
+      "hits": 1,
+      "rate_on_them": 0.25,
+      "rate_of_this_token_on_requests_with_another_target": 0.024242424242424242
+     },
+     "Miami": {
+      "n_requests_with_this_target": 2,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.317907444668008
+     }
+    }
+   },
+   "paraphrase": {
+    "n_rows": 1000,
+    "hits_total": 7,
+    "hits_on_the_first_token_subject_requests_themselves": 0,
+    "rows_of_other_edits_whose_target_is_in_S": 16,
+    "hits_among_them_observed": 2,
+    "hits_among_them_expected_if_output_is_independent_of_the_target": 2.45125703717253,
+    "poisson_sd_of_expected": 1.5656490785525758,
+    "observed_minus_expected_in_sd": -0.2882236149557293,
+    "hits_whose_target_is_not_in_S": 5,
+    "rows_whose_target_is_not_in_S": 978,
+    "per_object": {
+     "California": {
+      "n_requests_with_this_target": 4,
+      "hits": 1,
+      "rate_on_them": 0.25,
+      "rate_of_this_token_on_requests_with_another_target": 0.306841046277666
+     },
+     "Istanbul": {
+      "n_requests_with_this_target": 8,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.01717171717171717
+     },
+     "Miami": {
+      "n_requests_with_this_target": 4,
+      "hits": 1,
+      "rate_on_them": 0.25,
+      "rate_of_this_token_on_requests_with_another_target": 0.2716297786720322
+     }
+    }
+   }
+  },
+  "T1000": {
+   "first_token_subject_requests": [
+    173,
+    240,
+    266,
+    946
+   ],
+   "their_new_objects": [
+    "California",
+    "Istanbul",
+    "Italy",
+    "Miami"
+   ],
+   "request": {
+    "n_rows": 1000,
+    "hits_total": 14,
+    "hits_on_the_first_token_subject_requests_themselves": 2,
+    "rows_of_other_edits_whose_target_is_in_S": 23,
+    "hits_among_them_observed": 7,
+    "hits_among_them_expected_if_output_is_independent_of_the_target": 4.748675972985248,
+    "poisson_sd_of_expected": 2.1791456979709385,
+    "observed_minus_expected_in_sd": 1.0331223052735852,
+    "hits_whose_target_is_not_in_S": 5,
+    "rows_whose_target_is_not_in_S": 973,
+    "per_object": {
+     "California": {
+      "n_requests_with_this_target": 5,
+      "hits": 2,
+      "rate_on_them": 0.4,
+      "rate_of_this_token_on_requests_with_another_target": 0.07042253521126761
+     },
+     "Istanbul": {
+      "n_requests_with_this_target": 7,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.016129032258064516
+     },
+     "Italy": {
+      "n_requests_with_this_target": 9,
+      "hits": 5,
+      "rate_on_them": 0.5555555555555556,
+      "rate_of_this_token_on_requests_with_another_target": 0.4414141414141414
+     },
+     "Miami": {
+      "n_requests_with_this_target": 2,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.15546639919759278
+     }
+    }
+   },
+   "paraphrase": {
+    "n_rows": 2000,
+    "hits_total": 18,
+    "hits_on_the_first_token_subject_requests_themselves": 2,
+    "rows_of_other_edits_whose_target_is_in_S": 46,
+    "hits_among_them_observed": 10,
+    "hits_among_them_expected_if_output_is_independent_of_the_target": 9.080538494632691,
+    "poisson_sd_of_expected": 3.0133931861993535,
+    "observed_minus_expected_in_sd": 0.3051249699435941,
+    "hits_whose_target_is_not_in_S": 6,
+    "rows_whose_target_is_not_in_S": 1946,
+    "per_object": {
+     "California": {
+      "n_requests_with_this_target": 10,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.079476861167002
+     },
+     "Istanbul": {
+      "n_requests_with_this_target": 14,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.011088709677419355
+     },
+     "Italy": {
+      "n_requests_with_this_target": 18,
+      "hits": 9,
+      "rate_on_them": 0.5,
+      "rate_of_this_token_on_requests_with_another_target": 0.4217171717171717
+     },
+     "Miami": {
+      "n_requests_with_this_target": 4,
+      "hits": 1,
+      "rate_on_them": 0.25,
+      "rate_of_this_token_on_requests_with_another_target": 0.13490471414242727
+     }
+    }
+   }
+  },
+  "T2000": {
+   "first_token_subject_requests": [
+    173,
+    240,
+    266,
+    946,
+    1416,
+    1420,
+    1508,
+    1947
+   ],
+   "their_new_objects": [
+    "Antarctica",
+    "California",
+    "HBO",
+    "Istanbul",
+    "Italy",
+    "Miami",
+    "Munich",
+    "economics"
+   ],
+   "request": {
+    "n_rows": 2000,
+    "hits_total": 18,
+    "hits_on_the_first_token_subject_requests_themselves": 2,
+    "rows_of_other_edits_whose_target_is_in_S": 73,
+    "hits_among_them_observed": 15,
+    "hits_among_them_expected_if_output_is_independent_of_the_target": 6.364009478911559,
+    "poisson_sd_of_expected": 2.5226988482400268,
+    "observed_minus_expected_in_sd": 3.4233140935999486,
+    "hits_whose_target_is_not_in_S": 1,
+    "rows_whose_target_is_not_in_S": 1919,
+    "per_object": {
+     "Antarctica": {
+      "n_requests_with_this_target": 24,
+      "hits": 1,
+      "rate_on_them": 0.041666666666666664,
+      "rate_of_this_token_on_requests_with_another_target": 0.02379746835443038
+     },
+     "California": {
+      "n_requests_with_this_target": 9,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.016080402010050253
+     },
+     "HBO": {
+      "n_requests_with_this_target": 7,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.0
+     },
+     "Istanbul": {
+      "n_requests_with_this_target": 10,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.009552538964303671
+     },
+     "Italy": {
+      "n_requests_with_this_target": 16,
+      "hits": 10,
+      "rate_on_them": 0.625,
+      "rate_of_this_token_on_requests_with_another_target": 0.248613212304589
+     },
+     "Miami": {
+      "n_requests_with_this_target": 2,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.06359539308963445
+     },
+     "Munich": {
+      "n_requests_with_this_target": 4,
+      "hits": 4,
+      "rate_on_them": 1.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.3619047619047619
+     },
+     "economics": {
+      "n_requests_with_this_target": 1,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.0
+     }
+    }
+   },
+   "paraphrase": {
+    "n_rows": 4000,
+    "hits_total": 17,
+    "hits_on_the_first_token_subject_requests_themselves": 2,
+    "rows_of_other_edits_whose_target_is_in_S": 146,
+    "hits_among_them_observed": 14,
+    "hits_among_them_expected_if_output_is_independent_of_the_target": 12.517102046168072,
+    "poisson_sd_of_expected": 3.5379516738033705,
+    "observed_minus_expected_in_sd": 0.4191402513527786,
+    "hits_whose_target_is_not_in_S": 1,
+    "rows_whose_target_is_not_in_S": 3838,
+    "per_object": {
+     "Antarctica": {
+      "n_requests_with_this_target": 48,
+      "hits": 2,
+      "rate_on_them": 0.041666666666666664,
+      "rate_of_this_token_on_requests_with_another_target": 0.018734177215189874
+     },
+     "California": {
+      "n_requests_with_this_target": 18,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.01457286432160804
+     },
+     "HBO": {
+      "n_requests_with_this_target": 14,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.0
+     },
+     "Istanbul": {
+      "n_requests_with_this_target": 20,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.0030165912518853697
+     },
+     "Italy": {
+      "n_requests_with_this_target": 32,
+      "hits": 10,
+      "rate_on_them": 0.3125,
+      "rate_of_this_token_on_requests_with_another_target": 0.25642965204236007
+     },
+     "Miami": {
+      "n_requests_with_this_target": 4,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.06359539308963445
+     },
+     "Munich": {
+      "n_requests_with_this_target": 8,
+      "hits": 2,
+      "rate_on_them": 0.25,
+      "rate_of_this_token_on_requests_with_another_target": 0.3543859649122807
+     },
+     "economics": {
+      "n_requests_with_this_target": 2,
+      "hits": 0,
+      "rate_on_them": 0.0,
+      "rate_of_this_token_on_requests_with_another_target": 0.0
+     }
+    }
+   }
+  }
+ },
+ "2_ngram_entropy_of_random_sequences": {
+  "stored_texts": {
+   "W0": {
+    "median_word_tokens_per_text": 90.0,
+    "stored_GE": 626.2595161314424
+   },
+   "T500": {
+    "median_word_tokens_per_text": 90.0,
+    "stored_GE": 578.591333599322
+   },
+   "T1000": {
+    "median_word_tokens_per_text": 93.0,
+    "stored_GE": 587.2810648739571
+   },
+   "T2000": {
+    "median_word_tokens_per_text": 85.0,
+    "stored_GE": 503.0726423567228
+   }
+  },
+  "public_formula_on_random_sequences(x100, mean of 400)": {
+   "90 tokens, 2 symbols (uniform)": 261.75637794451563,
+   "90 tokens, 3 symbols (uniform)": 405.19824373022936,
+   "90 tokens, 5 symbols (uniform)": 539.2041867761136,
+   "90 tokens, 10 symbols (uniform)": 615.5592909667266,
+   "90 tokens, 50 symbols (uniform)": 645.3833449498259,
+   "90 tokens, 1000 symbols (uniform)": 646.4846829488571,
+   "100 tokens, 2 symbols (uniform)": 262.4733115899734,
+   "100 tokens, 3 symbols (uniform)": 406.55052066076547,
+   "100 tokens, 5 symbols (uniform)": 544.8114986209023,
+   "100 tokens, 10 symbols (uniform)": 627.9688898866532,
+   "100 tokens, 50 symbols (uniform)": 660.640858478814,
+   "100 tokens, 1000 symbols (uniform)": 661.955843273634,
+   "90 tokens, 5 symbols (p = .5 .25 .15 .07 .03)": 437.33250031436353,
+   "100 tokens, 5 symbols (p = .5 .25 .15 .07 .03)": 440.3548848464661
+  },
+  "asymptotic_value_for_5_uniform_symbols(not attainable at this length)": 619.1808253032965
+ },
+ "3_magnitude_scores": {
+  "dev100": {
+   "deployed": {
+    "ES": 100.0,
+    "PS": 98.0,
+    "NS": 72.89999999999999,
+    "EM": 96.49960694182319,
+    "PM": 66.84671266056488,
+    "NM": 3.283942262839988,
+    "median_P(new object | request prompt)": 0.9922718297426132,
+    "share_P(new object | request prompt) > 0.5": 98.0
+   },
+   "pre_edit": {
+    "ES": 22.0,
+    "PS": 24.0,
+    "NS": 78.89999999999999,
+    "EM": -4.5158146163674635,
+    "PM": -3.0811646886194537,
+    "NM": 5.49660967288378,
+    "median_P(new object | request prompt)": 0.00015163896677077734,
+    "share_P(new object | request prompt) > 0.5": 0.0
+   }
+  },
+  "T100": {
+   "deployed": {
+    "ES": 100.0,
+    "PS": 98.5,
+    "NS": 66.80000000000001,
+    "EM": 94.89541653258107,
+    "PM": 66.5913526294158,
+    "NM": 5.101699435886608,
+    "median_P(new object | request prompt)": 0.9917822719517188,
+    "share_P(new object | request prompt) > 0.5": 97.0
+   },
+   "pre_edit": {
+    "ES": 17.0,
+    "PS": 22.0,
+    "NS": 78.80000000000001,
+    "EM": -5.661845587158862,
+    "PM": -4.916919626774232,
+    "NM": 7.0596171154294,
+    "median_P(new object | request prompt)": 0.00011632387126951966,
+    "share_P(new object | request prompt) > 0.5": 0.0
+   }
+  },
+  "T500": {
+   "deployed": {
+    "ES": 56.99999999999999,
+    "PS": 52.2,
+    "NS": 52.12,
+    "EM": 1.2839009054854382,
+    "PM": 0.39138536924436557,
+    "NM": -0.17726915932519313,
+    "median_P(new object | request prompt)": 4.2953472822330674e-06,
+    "share_P(new object | request prompt) > 0.5": 0.8
+   },
+   "pre_edit": {
+    "ES": 19.400000000000002,
+    "PS": 22.6,
+    "NS": 78.2,
+    "EM": -5.613044031720453,
+    "PM": -4.163012869732081,
+    "NM": 4.974913336464903,
+    "median_P(new object | request prompt)": 0.0001404066460074805,
+    "share_P(new object | request prompt) > 0.5": 0.0
+   }
+  },
+  "T1000": {
+   "deployed": {
+    "ES": 53.400000000000006,
+    "PS": 52.349999999999994,
+    "NS": 52.019999999999996,
+    "EM": 0.4192849641930758,
+    "PM": 0.24848192137815894,
+    "NM": -0.18208876884853728,
+    "median_P(new object | request prompt)": 3.3392710306757016e-06,
+    "share_P(new object | request prompt) > 0.5": 0.5
+   },
+   "pre_edit": {
+    "ES": 20.8,
+    "PS": 23.7,
+    "NS": 78.13000000000001,
+    "EM": -5.337817158164039,
+    "PM": -4.165323753159207,
+    "NM": 5.402992221905218,
+    "median_P(new object | request prompt)": 0.00012920350320694434,
+    "share_P(new object | request prompt) > 0.5": 0.0
+   }
+  },
+  "T2000": {
+   "deployed": {
+    "ES": 50.349999999999994,
+    "PS": 47.275,
+    "NS": 51.925,
+    "EM": 0.14990743043795757,
+    "PM": -0.15986420274484522,
+    "NM": -0.07971337639673622,
+    "median_P(new object | request prompt)": 3.2461760404620013e-06,
+    "share_P(new object | request prompt) > 0.5": 0.44999999999999996
+   },
+   "pre_edit": {
+    "ES": 22.35,
+    "PS": 25.0,
+    "NS": 77.53500000000001,
+    "EM": -4.91673382856041,
+    "PM": -4.11557247455091,
+    "NM": 5.141008869517267,
+    "median_P(new object | request prompt)": 0.00012910848843179865,
+    "share_P(new object | request prompt) > 0.5": 0.0
+   }
+  }
+ },
+ "finished": "2026-11-11 10:57:02 UTC"
+}

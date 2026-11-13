@@ -1,0 +1,135 @@
+{
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "readout_cos_0.65_equals_fixed_gate": true,
+   "readout_cos_0.999_equals_fixed_gate": true,
+   "ncoord": {
+    "n_grid": 501,
+    "n_curves": 42,
+    "seconds": 0.17552757263183594,
+    "grid_points_differing_from_readout": 0,
+    "curves_monotone": true,
+    "matched_coverage": [
+     {
+      "target": 25,
+      "reachable": true,
+      "threshold": 0.573457079869895,
+      "coverage": 25.0
+     },
+     {
+      "target": 50,
+      "reachable": true,
+      "threshold": 0.3757118350649823,
+      "coverage": 50.0
+     },
+     {
+      "target": 75,
+      "reachable": true,
+      "threshold": 0.2498248667111435,
+      "coverage": 75.0
+     }
+    ],
+    "matched_coverage_consistent": true,
+    "threshold_is_largest": true
+   },
+   "cos": {
+    "n_grid": 501,
+    "n_curves": 42,
+    "seconds": 0.01775050163269043,
+    "grid_points_differing_from_readout": 0,
+    "curves_monotone": true,
+    "matched_coverage": [
+     {
+      "target": 25,
+      "reachable": true,
+      "threshold": 0.930384870342525,
+      "coverage": 25.0
+     },
+     {
+      "target": 50,
+      "reachable": true,
+      "threshold": 0.8362364179926323,
+      "coverage": 50.0
+     },
+     {
+      "target": 75,
+      "reachable": false,
+      "largest_coverage": 54.5
+     }
+    ],
+    "matched_coverage_consistent": true,
+    "threshold_is_largest": true
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "readout_cos_0.65_equals_fixed_gate": true,
+   "readout_cos_0.999_equals_fixed_gate": true,
+   "ncoord": {
+    "n_grid": 501,
+    "n_curves": 42,
+    "seconds": 0.17975544929504395,
+    "grid_points_differing_from_readout": 0,
+    "curves_monotone": true,
+    "matched_coverage": [
+     {
+      "target": 25,
+      "reachable": true,
+      "threshold": 0.788063920915307,
+      "coverage": 25.0
+     },
+     {
+      "target": 50,
+      "reachable": true,
+      "threshold": 0.48978042506055247,
+      "coverage": 50.0
+     },
+     {
+      "target": 75,
+      "reachable": true,
+      "threshold": 0.2628381016529416,
+      "coverage": 75.0
+     }
+    ],
+    "matched_coverage_consistent": true,
+    "threshold_is_largest": true
+   },
+   "cos": {
+    "n_grid": 501,
+    "n_curves": 42,
+    "seconds": 0.018190622329711914,
+    "grid_points_differing_from_readout": 0,
+    "curves_monotone": true,
+    "matched_coverage": [
+     {
+      "target": 25,
+      "reachable": true,
+      "threshold": 0.9793864387310032,
+      "coverage": 25.0
+     },
+     {
+      "target": 50,
+      "reachable": true,
+      "threshold": 0.8925238560955236,
+      "coverage": 50.0
+     },
+     {
+      "target": 75,
+      "reachable": false,
+      "largest_coverage": 59.5
+     }
+    ],
+    "matched_coverage_consistent": true,
+    "threshold_is_largest": true
+   }
+  }
+ },
+ "ok": true,
+ "test": "frontier",
+ "seconds": 2.6469223499298096,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:15:08"
+}

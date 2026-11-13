@@ -1,0 +1,687 @@
+{
+ "stage": 2,
+ "date": "2026-11-11 19:42:56 UTC",
+ "code_fingerprint": "6a71f0d2cd71",
+ "library_fingerprint": "c76c4da16bd6",
+ "fx_version": "fx-1.2 stage 2 (2026-11-11)",
+ "fingerprint_rule": "sha1 (12 hex digits) over the names and bytes of fx/*.py in sorted order (fx.code_fingerprint)",
+ "source_files": {
+  "__init__.py": "33163b2b0c90",
+  "behave.py": "279581352f8f",
+  "draws.py": "a3ec417dfbd7",
+  "gate.py": "c08b964a8578",
+  "io.py": "26e6a1349917",
+  "logs.py": "ac530aa63b74",
+  "masks.py": "8d58cedb5acd",
+  "memo.py": "bb432d1e1699",
+  "methods.py": "077fc1c4469f",
+  "metrics.py": "cd4a0228bf87",
+  "pools.py": "fc50ae7f3c97",
+  "prefix.py": "422efbfbfeac",
+  "review1.py": "834fa88b95de",
+  "stats.py": "df6ab8cc2014",
+  "sweeps.py": "fd6770fecc21"
+ },
+ "reviewed_base": "b92d0532498f (review/patches.txt); the stage-1 extension and stage 2 (fx.review1) were reviewed independently on 2026-11-11 19:43:53 UTC: review_lean/verdicts.json",
+ "method_names": [
+  "deployed",
+  "preedit",
+  "rescope",
+  "rescope_shared",
+  "rescope_null",
+  "rescope_pac",
+  "rescope_logonly",
+  "where_logonly",
+  "where_least",
+  "cosine",
+  "ball",
+  "exact",
+  "router",
+  "zscore",
+  "dual",
+  "p12",
+  "cos_centred",
+  "cos_centred_shared",
+  "cos_null",
+  "cos_null_shared",
+  "white_0.01",
+  "white_0.01_shared",
+  "white_0.1",
+  "white_0.1_shared",
+  "white_1",
+  "white_1_shared",
+  "whitecos_0.01",
+  "whitecos_0.01_shared",
+  "whitecos_0.1",
+  "whitecos_0.1_shared",
+  "whitecos_1",
+  "whitecos_1_shared",
+  "cosine_shared",
+  "rescope_nullW",
+  "retr_conj",
+  "retr_sum",
+  "retr_min",
+  "lookup",
+  "rescope_x",
+  "rescope_null_x",
+  "rescope_nullW_x",
+  "cosine_x",
+  "ball_x",
+  "cos_centred_x",
+  "cos_null_x",
+  "white_0.01_x",
+  "white_0.1_x",
+  "white_1_x",
+  "whitecos_0.01_x",
+  "whitecos_0.1_x",
+  "whitecos_1_x"
+ ],
+ "e1_labels": [
+  "deployed",
+  "preedit",
+  "rescope",
+  "rescope_shared",
+  "rescope_null",
+  "where_logonly",
+  "cosine",
+  "cosine_shared",
+  "cosine_default",
+  "cosine_published",
+  "ball",
+  "ball_default",
+  "exact",
+  "router",
+  "router_default",
+  "zscore",
+  "zscore_default",
+  "dual",
+  "p12_comp_b_nall",
+  "p12_reedit_b_nall",
+  "p12_rb_union_nall",
+  "p12_rb_tot_nall"
+ ],
+ "e1_gate_level_only": [
+  "rescope_pac",
+  "rescope_nullW"
+ ],
+ "e3_labels": [
+  "deployed",
+  "rescope",
+  "rescope_shared",
+  "rescope_null",
+  "cosine",
+  "cosine_default",
+  "where_logonly"
+ ],
+ "functions_that_return_methods": [
+  "fx.methods.build",
+  "fx.methods.wrap",
+  "fx.methods.mask_edits",
+  "fx.methods.rollback",
+  "fx.sweeps.raised_method",
+  "fx.methods.recalibrate + wrap",
+  "fx.review1.build (through fx.methods.build)",
+  "fx.review1.e1_rowset_review1"
+ ],
+ "pools": {
+  "calibration_sources": [
+   "repair",
+   "BEN-S",
+   "MME-C"
+  ],
+  "test_only": [
+   "BEN-T",
+   "MME-T"
+  ],
+  "statistics_only": [
+   "BEN-W"
+  ],
+  "probe_pools": [
+   "repair",
+   "heldout",
+   "heldout_disjoint",
+   "heldout_strict",
+   "all"
+  ],
+  "key_level": [
+   "BEN-W",
+   "BEN-S",
+   "BEN-T",
+   "MME-C",
+   "MME-T"
+  ],
+  "refused": [
+   "benign (whole pool) as a calibration source"
+  ]
+ },
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "role": "development",
+   "exists": true,
+   "T": 100,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-L100-ae-l2_3": {
+   "role": "development",
+   "exists": true,
+   "T": 100,
+   "backbone": "llava",
+   "cut_by_R19": false
+  },
+  "TB-Q100-ae": {
+   "role": "working_point",
+   "exists": true,
+   "T": 100,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-Q100-ae-l2_1": {
+   "role": "working_point",
+   "exists": true,
+   "T": 100,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-L100-ae": {
+   "role": "working_point",
+   "exists": true,
+   "T": 100,
+   "backbone": "llava",
+   "cut_by_R19": false
+  },
+  "TB-Q200-ae-l2_3": {
+   "role": "unseen_alphaedit",
+   "exists": true,
+   "T": 200,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-Q500-ae-l2_3": {
+   "role": "unseen_alphaedit",
+   "exists": true,
+   "T": 500,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-L200-ae-l2_3": {
+   "role": "unseen_alphaedit",
+   "exists": true,
+   "T": 200,
+   "backbone": "llava",
+   "cut_by_R19": false
+  },
+  "TB-L500-ae-l2_3": {
+   "role": "unseen_alphaedit",
+   "exists": true,
+   "T": 500,
+   "backbone": "llava",
+   "cut_by_R19": false
+  },
+  "TB-Q100-memitw": {
+   "role": "unseen_memit",
+   "exists": true,
+   "T": 100,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-Q200-memitw": {
+   "role": "unseen_memit",
+   "exists": true,
+   "T": 200,
+   "backbone": "qwen25vl",
+   "cut_by_R19": true
+  },
+  "TB-Q500-memitw": {
+   "role": "unseen_memit",
+   "exists": true,
+   "T": 500,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-Q1000-memitw": {
+   "role": "unseen_memit",
+   "exists": true,
+   "T": 1000,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-Q2000-memitw": {
+   "role": "unseen_memit",
+   "exists": true,
+   "T": 2000,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-L100-memitw": {
+   "role": "unseen_memit",
+   "exists": true,
+   "T": 100,
+   "backbone": "llava",
+   "cut_by_R19": false
+  },
+  "TB-L200-memitw": {
+   "role": "unseen_memit",
+   "exists": true,
+   "T": 200,
+   "backbone": "llava",
+   "cut_by_R19": true
+  },
+  "TB-L500-memitw": {
+   "role": "unseen_memit",
+   "exists": true,
+   "T": 500,
+   "backbone": "llava",
+   "cut_by_R19": false
+  },
+  "TB-L1000-memitw": {
+   "role": "unseen_memit",
+   "exists": true,
+   "T": 1000,
+   "backbone": "llava",
+   "cut_by_R19": false
+  },
+  "TB-Q1000-ae-l2_3": {
+   "role": "internal",
+   "exists": true,
+   "T": 1000,
+   "backbone": "qwen25vl",
+   "cut_by_R19": true
+  },
+  "TB-Q2000-ae-l2_3": {
+   "role": "internal",
+   "exists": true,
+   "T": 2000,
+   "backbone": "qwen25vl",
+   "cut_by_R19": true
+  },
+  "TB-L1000-ae-l2_3": {
+   "role": "internal",
+   "exists": true,
+   "T": 1000,
+   "backbone": "llava",
+   "cut_by_R19": true
+  },
+  "TB-Q100-mmke-l2_3": {
+   "role": "stress",
+   "exists": true,
+   "T": 100,
+   "backbone": "qwen25vl",
+   "cut_by_R19": true
+  },
+  "TB-Q500-mmke-l2_3": {
+   "role": "stress",
+   "exists": true,
+   "T": 500,
+   "backbone": "qwen25vl",
+   "cut_by_R19": true
+  },
+  "TB-B100-ae": {
+   "role": "stress",
+   "exists": true,
+   "T": 100,
+   "backbone": "blip2",
+   "cut_by_R19": true
+  },
+  "TB-B200-ae": {
+   "role": "stress",
+   "exists": true,
+   "T": 200,
+   "backbone": "blip2",
+   "cut_by_R19": true
+  },
+  "TB-B500-ae": {
+   "role": "stress",
+   "exists": true,
+   "T": 500,
+   "backbone": "blip2",
+   "cut_by_R19": true
+  },
+  "TB-Q100-onehop-l2_3": {
+   "role": "unseen_onehop",
+   "exists": true,
+   "T": 100,
+   "backbone": "qwen25vl",
+   "cut_by_R19": true
+  },
+  "TB-Q500-onehop-l2_3": {
+   "role": "unseen_onehop",
+   "exists": true,
+   "T": 500,
+   "backbone": "qwen25vl",
+   "cut_by_R19": true
+  },
+  "TB-Q100-ae-l2_3-p10": {
+   "role": "prefix",
+   "exists": true,
+   "T": 10,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-Q100-ae-l2_3-p20": {
+   "role": "prefix",
+   "exists": true,
+   "T": 20,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-Q100-ae-l2_3-p50": {
+   "role": "prefix",
+   "exists": true,
+   "T": 50,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-Q100-ae-l2_3-p100": {
+   "role": "prefix_check",
+   "exists": true,
+   "T": 100,
+   "backbone": "qwen25vl",
+   "cut_by_R19": false
+  },
+  "TB-L100-ae-l2_3-p10": {
+   "role": "prefix",
+   "exists": true,
+   "T": 10,
+   "backbone": "llava",
+   "cut_by_R19": false
+  },
+  "TB-L100-ae-l2_3-p20": {
+   "role": "prefix",
+   "exists": true,
+   "T": 20,
+   "backbone": "llava",
+   "cut_by_R19": false
+  },
+  "TB-L100-ae-l2_3-p50": {
+   "role": "prefix",
+   "exists": true,
+   "T": 50,
+   "backbone": "llava",
+   "cut_by_R19": false
+  },
+  "TB-L100-ae-l2_3-p100": {
+   "role": "prefix_check",
+   "exists": true,
+   "T": 100,
+   "backbone": "llava",
+   "cut_by_R19": false
+  }
+ },
+ "programme_R19": {
+  "TB-Q100-ae-l2_3": "development",
+  "TB-L100-ae-l2_3": "development",
+  "TB-Q100-ae": "working_point",
+  "TB-Q100-ae-l2_1": "working_point",
+  "TB-L100-ae": "working_point",
+  "TB-Q200-ae-l2_3": "unseen_alphaedit",
+  "TB-Q500-ae-l2_3": "unseen_alphaedit",
+  "TB-Q100-memitw": "unseen_memit",
+  "TB-Q500-memitw": "unseen_memit",
+  "TB-Q1000-memitw": "unseen_memit",
+  "TB-Q2000-memitw": "unseen_memit",
+  "TB-L200-ae-l2_3": "unseen_alphaedit",
+  "TB-L500-ae-l2_3": "unseen_alphaedit",
+  "TB-L100-memitw": "unseen_memit",
+  "TB-L500-memitw": "unseen_memit",
+  "TB-L1000-memitw": "unseen_memit"
+ },
+ "prefix_logs": {
+  "TB-Q100-ae-l2_3-p10": true,
+  "TB-Q100-ae-l2_3-p20": true,
+  "TB-Q100-ae-l2_3-p50": true,
+  "TB-L100-ae-l2_3-p10": true,
+  "TB-L100-ae-l2_3-p20": true,
+  "TB-L100-ae-l2_3-p50": true
+ },
+ "masks": {
+  "later_edits_from": {
+   "Q": 500,
+   "L": 100
+  },
+  "question_disjoint": "fx.masks.question_disjoint"
+ },
+ "test_summary": {
+  "n_tests": 62,
+  "n_pass_present_code": 59,
+  "pass_on_older_code_not_rerun": [
+   "driver_gpu_TB-B500-ae_e_mechanics",
+   "driver_gpu_TB-Q2000-ae-l2_3_e_mechanics",
+   "driver_gpu_TB-Q500-onehop-l2_3_e_mechanics"
+  ],
+  "not_passing": {},
+  "digest_unchanged": true,
+  "stage2_tests": {
+   "r1_cpu_naive": "PASS",
+   "r1_cpu_mech": "PASS",
+   "r1_cpu_h3": "PASS",
+   "r1_cpu_rules": "PASS",
+   "r1_cpu_logs": "PASS",
+   "r1_cpu_grid": "PASS",
+   "r1_gpu_Q_c_scoped": "PASS",
+   "r1_gpu_Q_q_retrieval": "PASS",
+   "r1_gpu_Q_h_h3": "PASS",
+   "r1_gpu_L_c_scoped": "PASS",
+   "r1_gpu_L_q_retrieval": "PASS",
+   "r1_gpu_L_h_h3": "PASS"
+  },
+  "stage1_tests": {
+   "ext_cpu_null": "PASS",
+   "ext_cpu_samples": "PASS",
+   "ext_cpu_sweeps": "PASS",
+   "ext_cpu_rowset": "PASS",
+   "ext_cpu_calib": "PASS",
+   "ext_cpu_readouts": "PASS",
+   "ext_cpu_stats2": "PASS",
+   "ext_cpu_pools": "PASS",
+   "ext_cpu_prefix": "PASS",
+   "ext_cpu_maint": "PASS",
+   "ext_gpu_Q_h_hashes": "PASS",
+   "ext_gpu_Q_m_mask": "PASS",
+   "ext_gpu_Q_r_rollback": "PASS",
+   "ext_gpu_Q_s_h3_pac_rowset": "PASS",
+   "ext_gpu_Q_k_readouts": "PASS",
+   "ext_gpu_Q_p_prefix": "PASS",
+   "ext_gpu_L_h_hashes": "PASS",
+   "ext_gpu_L_m_mask": "PASS",
+   "ext_gpu_L_r_rollback": "PASS",
+   "ext_gpu_L_s_h3_pac_rowset": "PASS",
+   "ext_gpu_L_k_readouts": "PASS",
+   "ext_gpu_L_p_prefix": "PASS",
+   "driver_cpu_draws": "PASS",
+   "driver_cpu_frontier": "PASS",
+   "driver_cpu_gate": "PASS",
+   "driver_cpu_io_memo": "PASS",
+   "driver_cpu_methods": "PASS",
+   "driver_cpu_registry": "PASS",
+   "driver_cpu_regress_gate": "PASS",
+   "driver_cpu_scale": "PASS",
+   "driver_cpu_stats": "PASS",
+   "driver_gpu_TB-B500-ae_e_mechanics": "PASS (older code)",
+   "driver_gpu_TB-L100-ae-l2_3_a_regress": "PASS",
+   "driver_gpu_TB-L100-ae-l2_3_b_memo": "PASS",
+   "driver_gpu_TB-L100-ae-l2_3_c_hook": "PASS",
+   "driver_gpu_TB-L100-ae-l2_3_d_e1": "PASS",
+   "driver_gpu_TB-L100-ae-l2_3_d_e1_smoke": "PASS",
+   "driver_gpu_TB-L100-ae-l2_3_f_where": "PASS",
+   "driver_gpu_TB-L100-ae-l2_3_g_ablations": "PASS",
+   "driver_gpu_TB-L1000-memitw_e_mechanics": "PASS",
+   "driver_gpu_TB-Q100-ae-l2_3_a_regress": "PASS",
+   "driver_gpu_TB-Q100-ae-l2_3_b_memo": "PASS",
+   "driver_gpu_TB-Q100-ae-l2_3_c_hook": "PASS",
+   "driver_gpu_TB-Q100-ae-l2_3_d_e1": "PASS",
+   "driver_gpu_TB-Q100-ae-l2_3_d_e1_smoke": "PASS",
+   "driver_gpu_TB-Q100-ae-l2_3_f_where": "PASS",
+   "driver_gpu_TB-Q100-ae-l2_3_g_ablations": "PASS",
+   "driver_gpu_TB-Q2000-memitw_e_mechanics": "PASS",
+   "driver_gpu_TB-Q2000-ae-l2_3_e_mechanics": "PASS (older code)",
+   "driver_gpu_TB-Q500-onehop-l2_3_e_mechanics": "PASS (older code)"
+  }
+ },
+ "tables": [
+  "tests/out/table_r1.txt",
+  "tests/out/table_ext.txt",
+  "tests/out/table.txt",
+  "out/prefix_logs.txt"
+ ],
+ "usage": "USAGE.txt (rules at the top; sections EXTENSION (stage 1), GATES OF THE REVIEW ROUND (stage 2), EXPERIMENT TASKS)",
+ "stage1_fingerprint": "7f8236032d7b",
+ "method_names_stage1": [
+  "deployed",
+  "preedit",
+  "rescope",
+  "rescope_shared",
+  "rescope_null",
+  "rescope_pac",
+  "rescope_logonly",
+  "where_logonly",
+  "where_least",
+  "cosine",
+  "ball",
+  "exact",
+  "router",
+  "zscore",
+  "dual",
+  "p12"
+ ],
+ "method_names_review_round": [
+  "cos_centred",
+  "cos_centred_shared",
+  "cos_null",
+  "cos_null_shared",
+  "white_0.01",
+  "white_0.01_shared",
+  "white_0.1",
+  "white_0.1_shared",
+  "white_1",
+  "white_1_shared",
+  "whitecos_0.01",
+  "whitecos_0.01_shared",
+  "whitecos_0.1",
+  "whitecos_0.1_shared",
+  "whitecos_1",
+  "whitecos_1_shared",
+  "cosine_shared",
+  "rescope_nullW",
+  "retr_conj",
+  "retr_sum",
+  "retr_min",
+  "lookup",
+  "rescope_x",
+  "rescope_null_x",
+  "rescope_nullW_x",
+  "cosine_x",
+  "ball_x",
+  "cos_centred_x",
+  "cos_null_x",
+  "white_0.01_x",
+  "white_0.1_x",
+  "white_1_x",
+  "whitecos_0.01_x",
+  "whitecos_0.1_x",
+  "whitecos_1_x"
+ ],
+ "r1_labels": [
+  "cos_centred",
+  "cos_centred_shared",
+  "cos_null",
+  "cos_null_shared",
+  "white_0.01",
+  "white_0.01_shared",
+  "white_0.1",
+  "white_0.1_shared",
+  "white_1",
+  "white_1_shared",
+  "whitecos_0.01",
+  "whitecos_0.01_shared",
+  "whitecos_0.1",
+  "whitecos_0.1_shared",
+  "whitecos_1",
+  "whitecos_1_shared",
+  "rescope_x",
+  "retr_conj",
+  "retr_sum",
+  "retr_min",
+  "lookup"
+ ],
+ "e1_rowset_after_review": "fx.review1.e1_rowset_review1 (E1_LABELS + R1_LABELS; gate level only: rescope_pac, rescope_nullW)",
+ "cosine_family": [
+  "cosine",
+  "cosine_shared",
+  "cos_centred",
+  "cos_centred_shared",
+  "cos_null",
+  "cos_null_shared",
+  "white_0.01",
+  "white_0.01_shared",
+  "white_0.1",
+  "white_0.1_shared",
+  "white_1",
+  "white_1_shared",
+  "whitecos_0.01",
+  "whitecos_0.01_shared",
+  "whitecos_0.1",
+  "whitecos_0.1_shared",
+  "whitecos_1",
+  "whitecos_1_shared"
+ ],
+ "retrieval_family": [
+  "retr_conj",
+  "retr_sum",
+  "retr_min"
+ ],
+ "x_forms": [
+  "rescope_x",
+  "rescope_null_x",
+  "rescope_nullW_x",
+  "cosine_x",
+  "ball_x",
+  "cos_centred_x",
+  "cos_null_x",
+  "white_0.01_x",
+  "white_0.1_x",
+  "white_1_x",
+  "whitecos_0.01_x",
+  "whitecos_0.1_x",
+  "whitecos_1_x"
+ ],
+ "selection_file": {
+  "path": "[redacted: local path]/02_research/experiments/10_final/e1_main/out/best_cosine_gate.json",
+  "exists": false,
+  "reader": "fx.review1.read_selection / selected",
+  "writer": "fx.review1.write_selection"
+ },
+ "feature_packages": {
+  "dir": "[redacted: local path]/02_research/experiments/10_final/feat2",
+  "problems": "FEAT2_PROBLEMS.txt",
+  "not_defined": "fx.review1.NotDefined / why_not(L, name)"
+ },
+ "lines_touched_in_existing_files": [
+  "fx/__init__.py: docstring (4 lines), VERSION, import of review1 (1 line)",
+  "fx/gate.py decide(): 2 lines (an object with decide_rows decides itself: retrieval rules)",
+  "fx/methods.py content_digest(): 2 lines (an object with content_digest hashes itself); build(): 4 lines (names of fx.review1; the KeyError text)",
+  "fx/behave.py Session.tf(): 3 lines, Session.generate(): 3 lines (kind 'request' -> fx.review1.session_tf / session_generate); hard_negatives(): 1 line (a retrieval method decodes only the rows on which it releases); tf_hashed(): 2 lines (TypeError for kind 'request')",
+  "tests/t_ext_cpu.py, tests/render_ext.py: unchanged; originals of the four fx files: review/orig_stage2/"
+ ],
+ "reviewed": true,
+ "review": {
+  "record": "review_lean/verdicts.json",
+  "patches": "review_lean/patches.txt (none to fx/*.py)",
+  "date": "2026-11-11 19:43:53 UTC",
+  "code_fingerprint": "6a71f0d2cd71",
+  "library_fingerprint": "c76c4da16bd6",
+  "verdicts": {
+   "1_new_gates": "pass",
+   "2_retrieval_family": "pass",
+   "3_x_construction": "pass",
+   "4_h3": "pass",
+   "5_null_pac_bootstrap_holm": "pass",
+   "6_pools_masks": "pass",
+   "7_prefix_maintenance": "pass",
+   "8_unchanged_behaviour": "pass",
+   "9_names_of_the_task_texts": "pass",
+   "10_feature_layer": "pass"
+  },
+  "n_residual_risks": 14
+ }
+}

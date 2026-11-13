@@ -1,0 +1,181 @@
+{
+ "name": "g_guard",
+ "pass": true,
+ "what": "guards as served: every capped edit is a candidate on its own request in live padded passes (teacher forced and decode)",
+ "detail": {
+  "n_cases": 30,
+  "with_margin": {
+   "tf_own_candidate": 30,
+   "dec_own_candidate": 30
+  },
+  "library_thresholds_only": {
+   "tf_own_candidate": 22,
+   "dec_own_candidate": 22
+  },
+  "cases": [
+   [
+    "rescope",
+    2,
+    85
+   ],
+   [
+    "rescope_null",
+    2,
+    85
+   ],
+   [
+    "cosine",
+    2,
+    85
+   ],
+   [
+    "where_twoblock",
+    2,
+    85
+   ],
+   [
+    "rescope",
+    4,
+    12
+   ],
+   [
+    "where_twoblock",
+    4,
+    12
+   ],
+   [
+    "rescope",
+    5,
+    85
+   ],
+   [
+    "where_twoblock",
+    5,
+    85
+   ],
+   [
+    "rescope",
+    7,
+    82
+   ],
+   [
+    "where_twoblock",
+    7,
+    82
+   ],
+   [
+    "rescope",
+    8,
+    85
+   ],
+   [
+    "rescope_null",
+    8,
+    85
+   ],
+   [
+    "where_twoblock",
+    8,
+    85
+   ],
+   [
+    "rescope",
+    9,
+    82
+   ],
+   [
+    "where_twoblock",
+    9,
+    82
+   ],
+   [
+    "rescope",
+    10,
+    77
+   ],
+   [
+    "where_twoblock",
+    10,
+    77
+   ],
+   [
+    "rescope",
+    13,
+    85
+   ],
+   [
+    "rescope_null",
+    13,
+    85
+   ],
+   [
+    "cosine",
+    13,
+    85
+   ],
+   [
+    "where_twoblock",
+    13,
+    85
+   ],
+   [
+    "rescope",
+    16,
+    85
+   ],
+   [
+    "where_twoblock",
+    16,
+    85
+   ],
+   [
+    "rescope",
+    18,
+    82
+   ],
+   [
+    "rescope_null",
+    18,
+    82
+   ],
+   [
+    "cosine",
+    18,
+    82
+   ],
+   [
+    "where_twoblock",
+    18,
+    82
+   ],
+   [
+    "rescope",
+    19,
+    11
+   ],
+   [
+    "where_twoblock",
+    19,
+    11
+   ],
+   [
+    "where_logonly",
+    0,
+    14
+   ]
+  ]
+ },
+ "error": null,
+ "seconds": 147.43730068206787,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "peak_alloc_MiB": 6517.49462890625,
+ "peak_reserved_MiB": 9254.0,
+ "written": "2026-11-11 12:25:58 UTC"
+}

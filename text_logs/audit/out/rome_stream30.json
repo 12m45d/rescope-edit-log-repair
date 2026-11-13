@@ -1,0 +1,1711 @@
+{
+ "written": "2026-11-11 10:05:44 UTC",
+ "tag": "stream30",
+ "plan": "stream:41:1,stream:47:1,stream:91:1,stream:188:1,stream:263:1,stream:264:1,stream:334:1,stream:475:1,stream:518:1,stream:521:1,stream:687:1,stream:732:1,stream:811:1,stream:852:1,stream:865:1,stream:881:1,stream:903:1,stream:995:1,stream:1053:1,stream:1102:1,stream:1201:1,stream:1333:1,stream:1551:1,stream:1735:1,stream:1758:1,stream:1828:1,stream:1829:1,stream:1853:1,stream:1896:1,stream:1934:1",
+ "seed": 0,
+ "transformers": "4.23.1",
+ "torch": "2.8.0+cu128",
+ "gpu": "NVIDIA GeForce RTX 5090",
+ "cap_bytes": 13002342400,
+ "pre_edit_weight_of_loaded_model_equals_builder_W0_file_bitwise": true,
+ "pre_edit_weight_sha256": "bd483af64b575f9dbd9330262b555d8bb4a74eb36e55b13ccbb0a0b9c9ef22a3",
+ "items": [
+  {
+   "source": "stream",
+   "state_after_updates": 41,
+   "n_updates_rerun": 1,
+   "state_sha256": "85c6dd7d19af019db67be704e8c81ff8d0b75253c40d1d09396e03f6a7aa1cfd",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 41,
+     "record": 41,
+     "case_id": 41,
+     "request": "Mahmoud Fawzi has a citizenship from -> Germany",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 9.415994705162353,
+     "update_fro_stored": 9.415994705162356,
+     "division_factor_audit_key": 9.613918224462685,
+     "division_factor_stored": 9.613918224462685,
+     "readout_dot_key_minus_1": -1.1102230246251565e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.32520662961916746,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 9.933004495622392e-08,
+     "output_after_vs_stored_target_rel": 1.3155195100379388e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 7.921702314283173e-08,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "a8585132e3b449da3071558ad24951c25e3e2d88ba18e5cb6b40dea302d2cdc9",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 47,
+   "n_updates_rerun": 1,
+   "state_sha256": "cbabbaced24d08240f11846db3eda0b8893bd3846462175da5b7750b749255ec",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 47,
+     "record": 47,
+     "case_id": 47,
+     "request": "The language used by Jean-Baptiste Marchand is -> German",
+     "subject_last_token_index_audit": 10,
+     "subject_last_token_index_builder": 10,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 8.698226826548337,
+     "update_fro_stored": 8.698226826548337,
+     "division_factor_audit_key": 10.994968176630618,
+     "division_factor_stored": 10.994968176630618,
+     "readout_dot_key_minus_1": -1.1102230246251565e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.14046428526145202,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.1879954614518916e-08,
+     "output_after_vs_stored_target_rel": 1.1500333666960243e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 8.310966838202062e-08,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "15c78b1efe020767042c9417eeb1e9d57c9eed67032ab10794b70238d268bc3d",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 91,
+   "n_updates_rerun": 1,
+   "state_sha256": "b58847d2189574b3b2c2634ed34ff1a6da21bef2bf1f451e733a540f77d18269",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 91,
+     "record": 91,
+     "case_id": 91,
+     "request": "LeRoy Collins worked in the city of -> Moscow",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 13.55103954486714,
+     "update_fro_stored": 13.55103954486714,
+     "division_factor_audit_key": 9.591232458902992,
+     "division_factor_stored": 9.591232458902992,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.401199195602276,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.086954364836381e-08,
+     "output_after_vs_stored_target_rel": 1.0551811968239122e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 8.442225164334476e-08,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "3d05a73ae3138f646335b10322eb5bcc5c2a245a4d3d64aaeab65132fa9a9650",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 188,
+   "n_updates_rerun": 1,
+   "state_sha256": "94c1db723fee9c11f710afd0f042e4c9ec8684684a786907828458b4ed584782",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 188,
+     "record": 188,
+     "case_id": 188,
+     "request": "Sandy Bridge was a product of -> Apple",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 24.65815273923628,
+     "update_fro_stored": 24.65815273923625,
+     "division_factor_audit_key": 12.17963474982299,
+     "division_factor_stored": 12.17963474982299,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.5428524098546708,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 6.004840539550882e-08,
+     "output_after_vs_stored_target_rel": 1.9918960073964971e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 1.42231861940592e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "acb8865901ae885cfd209093b3f123183bc722fcac596a1456dd2c2e429d312f",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 263,
+   "n_updates_rerun": 1,
+   "state_sha256": "c723574bfc9c5224d55da532b62ddcfde11d21097648b284f4f225f2ccd2645b",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 263,
+     "record": 263,
+     "case_id": 263,
+     "request": "Onufri works in the field of -> astronomy",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 29.2494062319026,
+     "update_fro_stored": 29.249406231902576,
+     "division_factor_audit_key": 11.403660550863878,
+     "division_factor_stored": 11.403660550863878,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.34598062555103837,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 2.991658693937673e-08,
+     "output_after_vs_stored_target_rel": 3.4348226440977216e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 2.489525081165592e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "5d412b1e3b27ed991fb9542741682e708d74dec24be5442af45c24f262a83017",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 264,
+   "n_updates_rerun": 1,
+   "state_sha256": "5d412b1e3b27ed991fb9542741682e708d74dec24be5442af45c24f262a83017",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 264,
+     "record": 264,
+     "case_id": 264,
+     "request": "Toyota RAV4 is created by -> Volvo",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 29.562080151061018,
+     "update_fro_stored": 29.56208015106098,
+     "division_factor_audit_key": 11.724561283117286,
+     "division_factor_stored": 11.724561283117286,
+     "readout_dot_key_minus_1": -2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.32250676674945306,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.320963669503393e-08,
+     "output_after_vs_stored_target_rel": 4.873812371513845e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 3.486334939758225e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "a40852d6ce0a334e783a622ab44e826f1e086c587c6df1e2ef8167c4d20763b8",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 334,
+   "n_updates_rerun": 1,
+   "state_sha256": "3b22a052bac031238cc292d274f543211b53310e05806a04f7f6f7bccdb88787",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 334,
+     "record": 334,
+     "case_id": 334,
+     "request": "CBS Storybreak was released on -> MTV",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 29.39794372633932,
+     "update_fro_stored": 29.397943726339307,
+     "division_factor_audit_key": 11.156971161751741,
+     "division_factor_stored": 11.156971161751741,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.4834929834048052,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 7.371333199945625e-08,
+     "output_after_vs_stored_target_rel": 6.521349907031859e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 4.6379422804195554e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "257d82aea9d5539e7254dba04c84afd152883507ea0a48b2a657044510a4554f",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 475,
+   "n_updates_rerun": 1,
+   "state_sha256": "af1301af45e25b3672cd231f5179567656681107ffd5734cea7b25d364b577dc",
+   "state_sha256_recorded_by_builder": "af1301af45e25b3672cd231f5179567656681107ffd5734cea7b25d364b577dc",
+   "updates": [
+    {
+     "index": 475,
+     "record": 475,
+     "case_id": 475,
+     "request": "The capital of Democratic Republic of Afghanistan is -> Florence",
+     "subject_last_token_index_audit": 6,
+     "subject_last_token_index_builder": 6,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 35.40036179789163,
+     "update_fro_stored": 35.40036179789163,
+     "division_factor_audit_key": 10.073440594503182,
+     "division_factor_stored": 10.073440594503182,
+     "readout_dot_key_minus_1": 2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.18752066562073869,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 1.9389139431756368e-08,
+     "output_after_vs_stored_target_rel": 1.7630170876915656e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 1.2654505016671082e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "state_equals_builder_recorded_hash": true,
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "2ef2820a0f51aedfdb23afc92cfc8cefe1a022ccd07408617cb63ff08846ed0b",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 518,
+   "n_updates_rerun": 1,
+   "state_sha256": "f02f518d85e65a0a1deca3f78043ec70520c3acb80ea03ea53874729d9115c72",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 518,
+     "record": 518,
+     "case_id": 518,
+     "request": "Filippa K formed in -> Montreal",
+     "subject_last_token_index_audit": 3,
+     "subject_last_token_index_builder": 3,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 39.41318008775003,
+     "update_fro_stored": 39.413180087749986,
+     "division_factor_audit_key": 9.145222065025083,
+     "division_factor_stored": 9.145222065025083,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.3071875336548253,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.976189809061103e-08,
+     "output_after_vs_stored_target_rel": 3.5200742790965915e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 2.5746182981188446e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "688766c41ffc41698ea944ab44409efae51d1e5983d7e7e657fd4112e2df6c69",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 521,
+   "n_updates_rerun": 1,
+   "state_sha256": "a1198abe6c5e178a6570b5d0d51826f8560c5d778dbe107fad07a1e56ccf1eb8",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 521,
+     "record": 521,
+     "case_id": 521,
+     "request": "Eddie Barefield plays -> trance",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 46.39040424994413,
+     "update_fro_stored": 46.390404249944076,
+     "division_factor_audit_key": 7.8328375577445275,
+     "division_factor_stored": 7.8328375577445275,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.4608406919149879,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 6.36287952343378e-08,
+     "output_after_vs_stored_target_rel": 3.195808992475101e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 2.1966727647605282e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "1f5c0538aa2e85261bb2f10389e3a688bdd0d461b5634e509733e0df68ff3227",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 687,
+   "n_updates_rerun": 1,
+   "state_sha256": "afa4ab54ecfff60d5e977b9e037a6ee8304c4a558d8df9c3b4d1b66dc0bfc272",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 687,
+     "record": 687,
+     "case_id": 687,
+     "request": "Pierre Curie's area of work is -> medicine",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 25.51588829772038,
+     "update_fro_stored": 25.515888297720366,
+     "division_factor_audit_key": 13.624014481039044,
+     "division_factor_stored": 13.624014481039044,
+     "readout_dot_key_minus_1": 2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.3149964769965492,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.918245970652053e-08,
+     "output_after_vs_stored_target_rel": 4.6063664311214295e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 3.2592744904479356e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "16ede40651778c69d3318e361cda6d14893d1ffec78f09f729b0a63bd506b1ba",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 732,
+   "n_updates_rerun": 1,
+   "state_sha256": "c9563cc9a0d286bd5b4446603ed910f1b17fd8352f1ece00076b9a4af8dde2d9",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 732,
+     "record": 732,
+     "case_id": 732,
+     "request": "Queen Charlotte Mountains is located in the country of -> Greece",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 39.116653046726825,
+     "update_fro_stored": 39.11665304672676,
+     "division_factor_audit_key": 9.137882483698178,
+     "division_factor_stored": 9.137882483698178,
+     "readout_dot_key_minus_1": -2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.3672347759581746,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.302226528989312e-08,
+     "output_after_vs_stored_target_rel": 4.6533566585015544e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 3.253236134245206e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "a53431cb7f90ac7e8719bfa9f945bbbcf695f644e5fe6e1eb8c5cb2f8997bbaf",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 811,
+   "n_updates_rerun": 1,
+   "state_sha256": "3afbbfb140ce51dda4c6edb512330802eb9c86ed62ed49730f792e2928ee5103",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 811,
+     "record": 811,
+     "case_id": 811,
+     "request": "Hot Chip started in -> Sweden",
+     "subject_last_token_index_audit": 1,
+     "subject_last_token_index_builder": 1,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 32.62383022349376,
+     "update_fro_stored": 32.62383022349374,
+     "division_factor_audit_key": 11.155899176716794,
+     "division_factor_stored": 11.155899176716794,
+     "readout_dot_key_minus_1": -1.1102230246251565e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.5817811622279143,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 2.476291314856856e-08,
+     "output_after_vs_stored_target_rel": 2.900403201351197e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 2.0801781754605168e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "252d659738a6b62f964638b30ada7dbff1c628eaac6abd3825e6153e8efbd581",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 852,
+   "n_updates_rerun": 1,
+   "state_sha256": "bbad111ed30e9e3ad94b0ce25d7a8349cfeb0c98354fdad5cb7bbdfda0b4f9ce",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 852,
+     "record": 852,
+     "case_id": 852,
+     "request": "Paul Personne speaks the language -> English",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 25.36271889470445,
+     "update_fro_stored": 25.362718894704425,
+     "division_factor_audit_key": 14.33220162772487,
+     "division_factor_stored": 14.33220162772487,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.2916106971285561,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.593946148844236e-08,
+     "output_after_vs_stored_target_rel": 4.317990105736181e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 3.016002001943751e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "5b51b50b1154e1f1cdedd8ae1715a18758f287aa3697d90b8f3aaa4134320287",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 865,
+   "n_updates_rerun": 1,
+   "state_sha256": "1ce4f9242e8c4c6d63d948af09199c363b331f2614fb63211c3625599a07b9d4",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 865,
+     "record": 865,
+     "case_id": 865,
+     "request": "Pierre Janssen is a citizen of -> Australia",
+     "subject_last_token_index_audit": 3,
+     "subject_last_token_index_builder": 3,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 35.16305921740344,
+     "update_fro_stored": 35.16305921740342,
+     "division_factor_audit_key": 10.464440508681879,
+     "division_factor_stored": 10.464440508681879,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.3467377747250072,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 2.760175918817101e-08,
+     "output_after_vs_stored_target_rel": 5.280076444562071e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 3.779513632384766e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "195eef5dea7aff8de478c875f5be9af08fa15be81dfb9e9ee1fc7407cd2879ef",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 881,
+   "n_updates_rerun": 1,
+   "state_sha256": "3587c082868c647ea78f2350638c1bbe5cb5fcf77e8a76c4f8f8b260cd07e79e",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 881,
+     "record": 881,
+     "case_id": 881,
+     "request": "Kotturpuram can be found in -> California",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 33.90272997477167,
+     "update_fro_stored": 33.902729974771646,
+     "division_factor_audit_key": 9.295616098812753,
+     "division_factor_stored": 9.295616098812753,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.32547279903101417,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 2.6786510442632048e-08,
+     "output_after_vs_stored_target_rel": 2.917535011480973e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 2.139588663529335e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "945d1bf43a4cbfe5ee17dffe80124b525723f91a06aa523647198490871d36ba",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 903,
+   "n_updates_rerun": 1,
+   "state_sha256": "4ce5592f02898c106bef743db9a396e408e364cb74383a9046487fe713d450e1",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 903,
+     "record": 903,
+     "case_id": 903,
+     "request": "Gregory of Nazianzus's position is -> cardinal",
+     "subject_last_token_index_audit": 6,
+     "subject_last_token_index_builder": 6,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 31.283803379610905,
+     "update_fro_stored": 31.283803379610895,
+     "division_factor_audit_key": 11.243689019736363,
+     "division_factor_stored": 11.243689019736363,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.29292280179123187,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.6185322891209504e-08,
+     "output_after_vs_stored_target_rel": 6.576062217580642e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 4.818144227202951e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "9cca7faf50e9232064f3607ccce041a3f0614149d13e8fd099faec807c07e8ff",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 995,
+   "n_updates_rerun": 1,
+   "state_sha256": "7a7df5ec2347bee9bfc0b09dea3ddbde248bff79e06e38ad07970a00b799bb3b",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 995,
+     "record": 995,
+     "case_id": 995,
+     "request": "Kosi Zone, located in -> Albania",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 74.11275512563184,
+     "update_fro_stored": 74.11275512563181,
+     "division_factor_audit_key": 4.379079745899263,
+     "division_factor_stored": 4.379079745899263,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.8285165272967243,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.654396023885922e-08,
+     "output_after_vs_stored_target_rel": 1.1650598734308229e-06,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 8.204940081761321e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "b0aa9bd0309c2cc3036565bc1b89c2a3371beac236814df41ebbf2082ff68c1e",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1053,
+   "n_updates_rerun": 1,
+   "state_sha256": "45caab95aed4741842e504b8047d1d38108706328e6beef58e539a583e3d7ea8",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1053,
+     "record": 1053,
+     "case_id": 1053,
+     "request": "Aleksejs Saramotins, who holds a citizenship from -> Philippines",
+     "subject_last_token_index_audit": 7,
+     "subject_last_token_index_builder": 7,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 36.36741544249555,
+     "update_fro_stored": 36.36741544249554,
+     "division_factor_audit_key": 9.529197562287159,
+     "division_factor_stored": 9.529197562287159,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.3616916455398895,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.5752060219081823e-08,
+     "output_after_vs_stored_target_rel": 5.774415634884835e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 4.0586061503887253e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "eac098bab90d21069c1799e1fa10b38e90db24ff7fd408afe0421b13c892a5e2",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1102,
+   "n_updates_rerun": 1,
+   "state_sha256": "c7d15ddb0fd9654fc1766a4eab611e46b745d716d257715240083067e72c2bea",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1102,
+     "record": 1102,
+     "case_id": 1102,
+     "request": "Pawn Stars debuted on -> NBC",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 30.19764338915296,
+     "update_fro_stored": 30.197643389152923,
+     "division_factor_audit_key": 11.930331671956072,
+     "division_factor_stored": 11.930331671956072,
+     "readout_dot_key_minus_1": -2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.48168671066011454,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.4729830921077745e-08,
+     "output_after_vs_stored_target_rel": 1.01181414822875e-06,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 7.11504196337305e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "aa3a124f263192069728641194768d608f45f5f82ac2d2dd6ba7cc312db37202",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1201,
+   "n_updates_rerun": 1,
+   "state_sha256": "7c4f0d680df683bb5498d3bc7a1279f984f58d6b4aa28147c93fe5008190aeff",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1201,
+     "record": 1201,
+     "case_id": 1201,
+     "request": "Guy Deghy, who has a citizenship from -> Canada",
+     "subject_last_token_index_audit": 3,
+     "subject_last_token_index_builder": 3,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 28.795404144297414,
+     "update_fro_stored": 28.795404144297393,
+     "division_factor_audit_key": 11.90429895187022,
+     "division_factor_stored": 11.90429895187022,
+     "readout_dot_key_minus_1": 2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.3277936433336405,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.1860682237054096e-08,
+     "output_after_vs_stored_target_rel": 1.7486600417975074e-06,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 1.2147976889230667e-06,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "c47b389de8ff7f432beab576fb93578f5a570a0a80a3b9de84a6f2392ce1e5ab",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1333,
+   "n_updates_rerun": 1,
+   "state_sha256": "8e44a2d04f2d5d512f1b46314d04d29995116fd78381d12f580e33b1401fce73",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1333,
+     "record": 1333,
+     "case_id": 1333,
+     "request": "George-Daniel de Monfreid speaks -> Spanish",
+     "subject_last_token_index_audit": 6,
+     "subject_last_token_index_builder": 6,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 26.47887184221264,
+     "update_fro_stored": 26.478871842212637,
+     "division_factor_audit_key": 12.07748770732384,
+     "division_factor_stored": 12.07748770732384,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.18263710615517526,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.080943372738099e-08,
+     "output_after_vs_stored_target_rel": 3.3170314393654374e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 2.2861079492519988e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "5dbe61d7f4e79fbd34be8f961d2706861264f497d8ea2f63429e52f22e017193",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1551,
+   "n_updates_rerun": 1,
+   "state_sha256": "df43ab308bd620b9d3c9662a51884aed512c15f22e3fd7174a536b9d80da5339",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1551,
+     "record": 1551,
+     "case_id": 1551,
+     "request": "Alexandrine grammarians is in -> Cologne",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 43.10206694231207,
+     "update_fro_stored": 43.10206694231199,
+     "division_factor_audit_key": 8.75393385620131,
+     "division_factor_stored": 8.75393385620131,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.43450810164965903,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.200758633391254e-08,
+     "output_after_vs_stored_target_rel": 2.3391883063430548e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 1.7092056115142196e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "6caa10e8161d8b73f8314fe70eff1a50b426c934c7e6a9bee1f12933e1a05cbd",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1735,
+   "n_updates_rerun": 1,
+   "state_sha256": "94b28a1c6f73fbcd15dacaa77f3bf9a5f4815eca869e0f2562843ad90a9fe7ac",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1735,
+     "record": 1735,
+     "case_id": 1735,
+     "request": "Senki Zesshō Symphogear was created in -> Netherlands",
+     "subject_last_token_index_audit": 9,
+     "subject_last_token_index_builder": 9,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 30.13859635325648,
+     "update_fro_stored": 30.138596353256457,
+     "division_factor_audit_key": 11.233681898961184,
+     "division_factor_stored": 11.233681898961184,
+     "readout_dot_key_minus_1": -1.1102230246251565e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.2228937353938404,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 6.826791135292743e-08,
+     "output_after_vs_stored_target_rel": 4.246991597235436e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 3.1172160756134837e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "cd33caee044099bd32d2fb199658774d31baf13038a4de0f1516cfea26396fcd",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1758,
+   "n_updates_rerun": 1,
+   "state_sha256": "938c134996f1a61d5ed0b65539f8fc9fc869031058b50e394a90b9a051f5a234",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1758,
+     "record": 1758,
+     "case_id": 1758,
+     "request": "Michael Romanoff, who works as -> journalist",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 35.715431557181184,
+     "update_fro_stored": 35.71543155718118,
+     "division_factor_audit_key": 10.32513602313255,
+     "division_factor_stored": 10.32513602313255,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.3659699219466639,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 2.6129556765820253e-08,
+     "output_after_vs_stored_target_rel": 4.852633615967547e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 3.4931840604590315e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "ba81a728d2a0bd15ea7f7982c30f75edbacc68382ded3aeac6b9e541821b4dc3",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1828,
+   "n_updates_rerun": 1,
+   "state_sha256": "cfbdacfb79d1b9a81a418cf4d43527bdb8bfd692c354b37f0b792d6efff0d06a",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1828,
+     "record": 1828,
+     "case_id": 1828,
+     "request": "Geo Metro, produced by -> Honda",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 43.48558144852353,
+     "update_fro_stored": 43.485581448523455,
+     "division_factor_audit_key": 8.118458966686205,
+     "division_factor_stored": 8.118458966686205,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.5788199448101475,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.0912390742826806e-08,
+     "output_after_vs_stored_target_rel": 7.625881042633476e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 5.386469487802254e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "4c05cb6588a9ae7f37168393c7c0e86bd24666c09b6de5be83f586ebc92e0463",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1829,
+   "n_updates_rerun": 1,
+   "state_sha256": "4c05cb6588a9ae7f37168393c7c0e86bd24666c09b6de5be83f586ebc92e0463",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1829,
+     "record": 1829,
+     "case_id": 1829,
+     "request": "Rankuh District, in -> Switzerland",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 56.83123930716819,
+     "update_fro_stored": 56.83123930716812,
+     "division_factor_audit_key": 6.587354025994628,
+     "division_factor_stored": 6.587354025994628,
+     "readout_dot_key_minus_1": -1.1102230246251565e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.6257646943065375,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.401572256599439e-08,
+     "output_after_vs_stored_target_rel": 3.493413718656446e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 2.448937411658974e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "0472ab8e6ccb85c4a052ecc2bee1633617c5a65dcf51bc940e794cc1db81a6ba",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1853,
+   "n_updates_rerun": 1,
+   "state_sha256": "f59f13002176c20dbf4a04733f8b34d4b5eeec7e61b26c0fd7c89fbd3f723f57",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1853,
+     "record": 1853,
+     "case_id": 1853,
+     "request": "Shahdol district is a part of the continent of -> Antarctica",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 54.286493887656576,
+     "update_fro_stored": 54.286493887656505,
+     "division_factor_audit_key": 6.8914444461573945,
+     "division_factor_stored": 6.8914444461573945,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.49613419450066815,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.3874513655294104e-08,
+     "output_after_vs_stored_target_rel": 2.6650611723827997e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 1.9527397343136925e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "9020eac4f2f7ba9ba70eaf486bfb34f3e39bb9bf7ff8446e1709036c48b72014",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1896,
+   "n_updates_rerun": 1,
+   "state_sha256": "b11b9f7f3b7588fc24077f9d27c3035a15cddf286be01391e217ef0ca7a52fde",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1896,
+     "record": 1896,
+     "case_id": 1896,
+     "request": "Theobald Boehm worked in the city of -> Berlin",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 29.51881109486795,
+     "update_fro_stored": 29.518811094867917,
+     "division_factor_audit_key": 11.062947561008574,
+     "division_factor_stored": 11.062947561008574,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.17156580787262962,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 6.367405252014199e-08,
+     "output_after_vs_stored_target_rel": 3.539774925368278e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 2.5168719789547375e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "a0966d0deb04e3a3182f6380a0b5396afe701d10f27849c4cdf0cc885173df63",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1934,
+   "n_updates_rerun": 1,
+   "state_sha256": "49fbf9a717149852b05952c855a842d2764328eef38ef5d38be0dd553a5154e5",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1934,
+     "record": 1934,
+     "case_id": 1934,
+     "request": "Cape Adriasola is in -> Africa",
+     "subject_last_token_index_audit": 5,
+     "subject_last_token_index_builder": 5,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 40.31674881128823,
+     "update_fro_stored": 40.31674881128817,
+     "division_factor_audit_key": 9.17976410780205,
+     "division_factor_stored": 9.17976410780205,
+     "readout_dot_key_minus_1": -1.1102230246251565e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.4455648185293252,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 7.721721043325439e-08,
+     "output_after_vs_stored_target_rel": 2.361002142437824e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 1.7167895871556046e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "6fd54b547c1fadd7430ba2f1eecf3a5b33db45df9c83e8c9650332846caf3233",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 1,
+   "n_right_bitwise": 1,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  }
+ ],
+ "other_parameters": {
+  "n_tensors": 676,
+  "sha256_before": "4ec989853b9b16408c8c8934b94d8b9a658a109ca25e2886adc6d27e65b4123d",
+  "sha256_after": "4ec989853b9b16408c8c8934b94d8b9a658a109ca25e2886adc6d27e65b4123d",
+  "unchanged": true
+ },
+ "context_templates": {
+  "audit": [
+   "{}",
+   "In the last few. {}",
+   "The following is a. {}",
+   "I have been working. {}",
+   "A man was arrested. {}",
+   "The U.S. {}",
+   "I have been working. {}",
+   "I've been working. {}",
+   "\"I have to. {}",
+   "In this week's. {}",
+   "I've been working. {}",
+   "The U.S. government's National Ocean. {}",
+   "\"The best way to describe it would be. {}",
+   "A man in the US who has been living. {}",
+   "A new study has found a link between the. {}",
+   "In the past few decades, a growing number. {}",
+   "I've seen a lot of people complaining about. {}",
+   "I'm trying to get my hands on an. {}",
+   "The first thing that comes to mind when hearing. {}",
+   "The first day of the 2016 season has officially. {}",
+   "A man was killed when he was struck by. {}"
+  ],
+  "n": 21,
+  "equal_to_builder": {
+   "dev": true,
+   "stream": true,
+   "single": true
+  },
+  "n_equal_positionwise": {
+   "dev": 21,
+   "stream": 21,
+   "single": 21
+  }
+ },
+ "templates_cache_unchanged": true,
+ "peak_alloc_MiB": 9314.1171875,
+ "peak_reserved_MiB": 9716.0,
+ "finished": "2026-11-11 10:08:41 UTC"
+}

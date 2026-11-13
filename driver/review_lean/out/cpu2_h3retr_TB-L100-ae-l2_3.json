@@ -1,0 +1,186 @@
+{
+ "log": "TB-L100-ae-l2_3",
+ "ok": true,
+ "rules": {
+  "retr_conj": {
+   "0": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 98.0,
+     "tgen": 8.0
+    },
+    "coverage_mine": {
+     "igen": 98.0,
+     "tgen": 8.0
+    },
+    "delta_driver": 0.0,
+    "delta_mine": 0.0,
+    "fit_at_raise_driver": 0.22522522522522523,
+    "fit_just_above_mine": 0.22522522522522523,
+    "fit_just_below_mine": null,
+    "heldout_driver": 0.0,
+    "heldout_mine": 0.0,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 0.0,
+     "HN-Q": 0.0,
+     "HN-X": 0.0
+    },
+    "test_mine": {
+     "HN-I": 0.0,
+     "HN-Q": 0.0,
+     "HN-X": 0.0
+    }
+   },
+   "1": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 98.0,
+     "tgen": 18.0
+    },
+    "coverage_mine": {
+     "igen": 98.0,
+     "tgen": 18.0
+    },
+    "delta_driver": 0.0,
+    "delta_mine": 0.0,
+    "fit_at_raise_driver": 1.003748715158111,
+    "fit_just_above_mine": 1.003748715158111,
+    "fit_just_below_mine": null,
+    "heldout_driver": 0.0,
+    "heldout_mine": 0.0,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 0.0,
+     "HN-Q": 0.0,
+     "HN-X": 0.0
+    },
+    "test_mine": {
+     "HN-I": 0.0,
+     "HN-Q": 0.0,
+     "HN-X": 0.0
+    }
+   }
+  },
+  "retr_min": {
+   "0": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 88.0,
+     "tgen": 14.000000000000002
+    },
+    "coverage_mine": {
+     "igen": 88.0,
+     "tgen": 14.000000000000002
+    },
+    "delta_driver": 0.0,
+    "delta_mine": 0.0,
+    "fit_at_raise_driver": 8.48560977084467,
+    "fit_just_above_mine": 8.48560977084467,
+    "fit_just_below_mine": null,
+    "heldout_driver": 6.609808102345416,
+    "heldout_mine": 6.609808102345416,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 4.761904761904762,
+     "HN-Q": 6.688963210702341,
+     "HN-X": 10.204081632653061
+    },
+    "test_mine": {
+     "HN-I": 4.761904761904762,
+     "HN-Q": 6.688963210702341,
+     "HN-X": 10.204081632653061
+    }
+   },
+   "1": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 92.0,
+     "tgen": 16.0
+    },
+    "coverage_mine": {
+     "igen": 92.0,
+     "tgen": 16.0
+    },
+    "delta_driver": 0.08224978583255305,
+    "delta_mine": 0.08224978583255299,
+    "fit_at_raise_driver": 9.945038998730274,
+    "fit_just_above_mine": 9.945038998730274,
+    "fit_just_below_mine": 10.056895821996493,
+    "heldout_driver": 6.396588486140725,
+    "heldout_mine": 6.396588486140725,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 6.802721088435375,
+     "HN-Q": 9.03010033444816,
+     "HN-X": 12.244897959183673
+    },
+    "test_mine": {
+     "HN-I": 6.802721088435375,
+     "HN-Q": 9.03010033444816,
+     "HN-X": 12.244897959183673
+    }
+   }
+  },
+  "retr_sum": {
+   "0": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 74.0,
+     "tgen": 46.0
+    },
+    "coverage_mine": {
+     "igen": 74.0,
+     "tgen": 46.0
+    },
+    "delta_driver": 0.33169611864019183,
+    "delta_mine": 0.33169611864019183,
+    "fit_at_raise_driver": 9.945159925025697,
+    "fit_just_above_mine": 9.945159925025697,
+    "fit_just_below_mine": 10.611826591692363,
+    "heldout_driver": 0.0,
+    "heldout_mine": 0.0,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 14.285714285714285,
+     "HN-Q": 0.6688963210702341,
+     "HN-X": 18.367346938775512
+    },
+    "test_mine": {
+     "HN-I": 14.285714285714285,
+     "HN-Q": 0.6688963210702341,
+     "HN-X": 18.367346938775512
+    }
+   },
+   "1": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 57.99999999999999,
+     "tgen": 40.0
+    },
+    "coverage_mine": {
+     "igen": 57.99999999999999,
+     "tgen": 40.0
+    },
+    "delta_driver": 0.38819138456455343,
+    "delta_mine": 0.38819138456455343,
+    "fit_at_raise_driver": 9.936150916016688,
+    "fit_just_above_mine": 9.936150916016688,
+    "fit_just_below_mine": 10.0487635286293,
+    "heldout_driver": 0.0,
+    "heldout_mine": 0.0,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 8.16326530612245,
+     "HN-Q": 0.33444816053511706,
+     "HN-X": 12.244897959183673
+    },
+    "test_mine": {
+     "HN-I": 8.16326530612245,
+     "HN-Q": 0.33444816053511706,
+     "HN-X": 12.244897959183673
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,966 @@
+{
+ "written": "2026-11-11 09:45:46 UTC",
+ "logs": {
+  "TX-G2XL-rome-dev100": {
+   "name": "TX-G2XL-rome-dev100",
+   "source": "dev",
+   "T": 100,
+   "records": [
+    15000,
+    15099
+   ],
+   "requests_equal_dataset_records": true,
+   "deployed_sha256": "e7c3301d08e42a2485206b46f5b48b979b02e5b28fc120801bb8feb106b0fda7",
+   "replay_sha256": "e7c3301d08e42a2485206b46f5b48b979b02e5b28fc120801bb8feb106b0fda7",
+   "float32_replay_equals_deployed_bitwise": true,
+   "n_entries_differing_from_replay": 0,
+   "reconstruction_fp64": {
+    "max_abs": 6.151998280731763e-07,
+    "fro": 3.677299187903499e-05,
+    "rel_fro_vs_update": 2.6714670948098356e-07,
+    "rel_fro_vs_W0": 3.1395212508096937e-07,
+    "update_fro": 137.65092577961406,
+    "W0_fro": 117.12929756264941,
+    "WE_max_abs": 2.0076024532318115,
+    "float32_ulp_at_WE_max_abs": 2.384185791015625e-07,
+    "max_abs_in_ulps_at_max": 2.5803350996866357,
+    "WE_finite": true
+   },
+   "shapes": {
+    "W": [
+     6400,
+     1600
+    ],
+    "left": [
+     100,
+     6400
+    ],
+    "right": [
+     100,
+     1600
+    ],
+    "outer_left_right_matches_W_without_transpose": true
+   },
+   "key_identity": {
+    "max_abs_w_dot_k_minus_1": 2.220446049250313e-16,
+    "n_negative_s": 0,
+    "min_abs_s": 2.642184738390609,
+    "s": {
+     "min": 2.642184738390609,
+     "q05": 6.280770498821584,
+     "median": 9.598052690014715,
+     "q95": 13.007463963070144,
+     "max": 14.794359423760557
+    },
+    "w_dot_k_template_mean": {
+     "min": 0.9296072770331202,
+     "q05": 0.9605328414277948,
+     "median": 1.0108158019427298,
+     "q95": 1.5439495107755516,
+     "max": 3.0404703921983773
+    },
+    "share_template_mean_within_1pct": 0.18,
+    "share_template_mean_within_10pct": 0.82,
+    "max_out_before_vs_cur_output_rel": 8.417599140836435e-07,
+    "max_out_after_vs_target_rel": 2.1883278067363385e-07,
+    "max_right_s_vs_residual_rel": 1.3173379108998358e-07,
+    "left_norm_minus_1_max": 6.881064518182711e-08
+   },
+   "updates": {
+    "fro": {
+     "min": 5.898155687132695,
+     "q05": 7.167408202470413,
+     "median": 10.573812195589646,
+     "q95": 18.510667027175835,
+     "max": 51.873420926424934
+    },
+    "exploding(>|W0|_F)": [],
+    "subject_is_first_token": [],
+    "subject_index_audit_equals_builder": 100,
+    "min_s_among_other_requests": 2.642184738390609,
+    "s_of_first_token_requests": [],
+    "p_new_median": 0.9960199296474457,
+    "share_p_new_below_0.5": 0.0
+   },
+   "math_orientation": {
+    "sum_outer(right,left)_shape": [
+     1600,
+     6400
+    ],
+    "rel_fro_vs_(WE-W0)^T": 2.6714670948097933e-07
+   },
+   "library_format": {
+    "shapes": {
+     "U": [
+      100,
+      1600
+     ],
+     "W": [
+      100,
+      6400
+     ],
+     "K1_solver": [
+      100,
+      6400
+     ]
+    },
+    "dtype": "torch.float64",
+    "U_equals_right_times_s_max_rel": 0.0,
+    "W_equals_left_over_s_max_rel": 0.0,
+    "K_equals_k_request_bitwise": true,
+    "max_abs_<W_i,K_i>_minus_1": 2.220446049250313e-16,
+    "sum_outer(U,W)_vs_(WE-W0)^T_rel_fro": 2.671467094808541e-07,
+    "sum_outer(U,W)_vs_(WE-W0)^T_max_abs": 6.15199828024604e-07,
+    "uids_first_last": [
+     "cf15000",
+     "cf15099"
+    ],
+    "n": 100,
+    "metrics_deployed_sha256_equal": true,
+    "per_batch_is_one_edit_per_batch": true
+   }
+  },
+  "TX-G2XL-rome-T100": {
+   "name": "TX-G2XL-rome-T100",
+   "source": "stream",
+   "T": 100,
+   "records": [
+    0,
+    99
+   ],
+   "requests_equal_dataset_records": true,
+   "deployed_sha256": "9cc93368e5bf547279d97c090917e5975495d56e08e730376ad58fc7d99c135e",
+   "replay_sha256": "9cc93368e5bf547279d97c090917e5975495d56e08e730376ad58fc7d99c135e",
+   "float32_replay_equals_deployed_bitwise": true,
+   "n_entries_differing_from_replay": 0,
+   "reconstruction_fp64": {
+    "max_abs": 6.198326337192306e-07,
+    "fro": 3.5724001593110374e-05,
+    "rel_fro_vs_update": 3.051426881033738e-07,
+    "rel_fro_vs_W0": 3.04996293297179e-07,
+    "update_fro": 117.07310378352597,
+    "W0_fro": 117.12929756264941,
+    "WE_max_abs": 2.33841872215271,
+    "float32_ulp_at_WE_max_abs": 2.384185791015625e-07,
+    "max_abs_in_ulps_at_max": 2.5997664949391037,
+    "WE_finite": true
+   },
+   "shapes": {
+    "W": [
+     6400,
+     1600
+    ],
+    "left": [
+     100,
+     6400
+    ],
+    "right": [
+     100,
+     1600
+    ],
+    "outer_left_right_matches_W_without_transpose": true
+   },
+   "key_identity": {
+    "max_abs_w_dot_k_minus_1": 3.3306690738754696e-16,
+    "n_negative_s": 0,
+    "min_abs_s": 4.845785348662033,
+    "s": {
+     "min": 4.845785348662033,
+     "q05": 6.816113182581739,
+     "median": 9.565491982494631,
+     "q95": 13.180481912550746,
+     "max": 14.790653263227618
+    },
+    "w_dot_k_template_mean": {
+     "min": 0.8954066050472795,
+     "q05": 0.9475612691495687,
+     "median": 1.0182123527370273,
+     "q95": 1.2210860872964868,
+     "max": 1.6145756804542422
+    },
+    "share_template_mean_within_1pct": 0.17,
+    "share_template_mean_within_10pct": 0.82,
+    "max_out_before_vs_cur_output_rel": 2.6501577375660937e-07,
+    "max_out_after_vs_target_rel": 1.50811937666737e-07,
+    "max_right_s_vs_residual_rel": 1.404398885308768e-07,
+    "left_norm_minus_1_max": 8.771233850346505e-08
+   },
+   "updates": {
+    "fro": {
+     "min": 6.837927414419287,
+     "q05": 7.704942600122058,
+     "median": 10.514097111536792,
+     "q95": 16.865461029256235,
+     "max": 20.28216318256704
+    },
+    "exploding(>|W0|_F)": [],
+    "subject_is_first_token": [],
+    "subject_index_audit_equals_builder": 100,
+    "min_s_among_other_requests": 4.845785348662033,
+    "s_of_first_token_requests": [],
+    "p_new_median": 0.9940485656261444,
+    "share_p_new_below_0.5": 0.0
+   },
+   "math_orientation": {
+    "sum_outer(right,left)_shape": [
+     1600,
+     6400
+    ],
+    "rel_fro_vs_(WE-W0)^T": 3.0514268810337016e-07
+   },
+   "library_format": {
+    "shapes": {
+     "U": [
+      100,
+      1600
+     ],
+     "W": [
+      100,
+      6400
+     ],
+     "K1_solver": [
+      100,
+      6400
+     ]
+    },
+    "dtype": "torch.float64",
+    "U_equals_right_times_s_max_rel": 0.0,
+    "W_equals_left_over_s_max_rel": 0.0,
+    "K_equals_k_request_bitwise": true,
+    "max_abs_<W_i,K_i>_minus_1": 3.3306690738754696e-16,
+    "sum_outer(U,W)_vs_(WE-W0)^T_rel_fro": 3.051426881030768e-07,
+    "sum_outer(U,W)_vs_(WE-W0)^T_max_abs": 6.198326336637194e-07,
+    "uids_first_last": [
+     "cf0",
+     "cf99"
+    ],
+    "n": 100,
+    "metrics_deployed_sha256_equal": true,
+    "per_batch_is_one_edit_per_batch": true
+   }
+  },
+  "TX-G2XL-rome-T500": {
+   "name": "TX-G2XL-rome-T500",
+   "source": "stream",
+   "T": 500,
+   "records": [
+    0,
+    499
+   ],
+   "requests_equal_dataset_records": true,
+   "deployed_sha256": "7a0ff74456586616d27232a7bc304902287ab7ebef397b186031d4b615c0d881",
+   "replay_sha256": "7a0ff74456586616d27232a7bc304902287ab7ebef397b186031d4b615c0d881",
+   "float32_replay_equals_deployed_bitwise": true,
+   "n_entries_differing_from_replay": 0,
+   "reconstruction_fp64": {
+    "max_abs": 0.0002139012418922448,
+    "fro": 0.006345399533566414,
+    "rel_fro_vs_update": 4.13341850163523e-07,
+    "rel_fro_vs_W0": 5.4174315611962285e-05,
+    "update_fro": 15351.456744716505,
+    "W0_fro": 117.12929756264941,
+    "WE_max_abs": 186.665283203125,
+    "float32_ulp_at_WE_max_abs": 1.52587890625e-05,
+    "max_abs_in_ulps_at_max": 14.018231788650155,
+    "WE_finite": true
+   },
+   "shapes": {
+    "W": [
+     6400,
+     1600
+    ],
+    "left": [
+     500,
+     6400
+    ],
+    "right": [
+     500,
+     1600
+    ],
+    "outer_left_right_matches_W_without_transpose": true
+   },
+   "key_identity": {
+    "max_abs_w_dot_k_minus_1": 1.0658141036401503e-14,
+    "n_negative_s": 0,
+    "min_abs_s": 0.021807414812861303,
+    "s": {
+     "min": 0.021807414812861303,
+     "q05": 6.074959904298559,
+     "median": 9.811067319301808,
+     "q95": 12.955389623358748,
+     "max": 16.94747062978392
+    },
+    "w_dot_k_template_mean": {
+     "min": 0.8920171885423719,
+     "q05": 0.9552535420814938,
+     "median": 1.0191297588071702,
+     "q95": 1.3746785838692535,
+     "max": 234.31684018261444
+    },
+    "share_template_mean_within_1pct": 0.15,
+    "share_template_mean_within_10pct": 0.798,
+    "max_out_before_vs_cur_output_rel": 3.838944414100271e-06,
+    "max_out_after_vs_target_rel": 2.928634287848742e-06,
+    "max_right_s_vs_residual_rel": 2.6213743372245624e-06,
+    "left_norm_minus_1_max": 9.553273438989152e-08
+   },
+   "updates": {
+    "fro": {
+     "min": 4.18321982596436,
+     "q05": 8.038705933120434,
+     "median": 29.06813864016388,
+     "q95": 50.56019853105814,
+     "max": 11154.75002507185
+    },
+    "exploding(>|W0|_F)": [
+     173,
+     193,
+     240,
+     266,
+     341,
+     343,
+     462,
+     485
+    ],
+    "subject_is_first_token": [
+     173,
+     240,
+     266
+    ],
+    "subject_index_audit_equals_builder": 500,
+    "min_s_among_other_requests": 1.012318564638633,
+    "s_of_first_token_requests": [
+     0.0218,
+     0.0265,
+     0.0371
+    ],
+    "p_new_median": 0.007436075480654836,
+    "share_p_new_below_0.5": 0.628
+   },
+   "math_orientation": {
+    "sum_outer(right,left)_shape": [
+     1600,
+     6400
+    ],
+    "rel_fro_vs_(WE-W0)^T": 4.1334185016736885e-07
+   },
+   "library_format": {
+    "shapes": {
+     "U": [
+      500,
+      1600
+     ],
+     "W": [
+      500,
+      6400
+     ],
+     "K1_solver": [
+      500,
+      6400
+     ]
+    },
+    "dtype": "torch.float64",
+    "U_equals_right_times_s_max_rel": 0.0,
+    "W_equals_left_over_s_max_rel": 0.0,
+    "K_equals_k_request_bitwise": true,
+    "max_abs_<W_i,K_i>_minus_1": 1.509903313490213e-14,
+    "sum_outer(U,W)_vs_(WE-W0)^T_rel_fro": 4.133418501678288e-07,
+    "sum_outer(U,W)_vs_(WE-W0)^T_max_abs": 0.0002139012418638231,
+    "uids_first_last": [
+     "cf0",
+     "cf499"
+    ],
+    "n": 500,
+    "metrics_deployed_sha256_equal": true,
+    "per_batch_is_one_edit_per_batch": true
+   }
+  },
+  "TX-G2XL-rome-T1000": {
+   "name": "TX-G2XL-rome-T1000",
+   "source": "stream",
+   "T": 1000,
+   "records": [
+    0,
+    999
+   ],
+   "requests_equal_dataset_records": true,
+   "deployed_sha256": "8d56e8b6a9a1a896f9f8b1dc11d4668d6e81fbe0a93ac103395fef128d600232",
+   "replay_sha256": "8d56e8b6a9a1a896f9f8b1dc11d4668d6e81fbe0a93ac103395fef128d600232",
+   "float32_replay_equals_deployed_bitwise": true,
+   "n_entries_differing_from_replay": 0,
+   "reconstruction_fp64": {
+    "max_abs": 0.0003938236073963708,
+    "fro": 0.011391946221965174,
+    "rel_fro_vs_update": 4.847517343466465e-07,
+    "rel_fro_vs_W0": 9.725957944784837e-05,
+    "update_fro": 23500.57857414241,
+    "W0_fro": 117.12929756264941,
+    "WE_max_abs": 445.00628662109375,
+    "float32_ulp_at_WE_max_abs": 3.0517578125e-05,
+    "max_abs_in_ulps_at_max": 12.904811967164278,
+    "WE_finite": true
+   },
+   "shapes": {
+    "W": [
+     6400,
+     1600
+    ],
+    "left": [
+     1000,
+     6400
+    ],
+    "right": [
+     1000,
+     1600
+    ],
+    "outer_left_right_matches_W_without_transpose": true
+   },
+   "key_identity": {
+    "max_abs_w_dot_k_minus_1": 1.4210854715202004e-14,
+    "n_negative_s": 0,
+    "min_abs_s": 0.017447209269158298,
+    "s": {
+     "min": 0.017447209269158298,
+     "q05": 6.325413216359947,
+     "median": 9.82104789170229,
+     "q95": 12.949743039755491,
+     "max": 18.48962716282315
+    },
+    "w_dot_k_template_mean": {
+     "min": 0.8920171885423719,
+     "q05": 0.9508005307493349,
+     "median": 1.021569982374094,
+     "q95": 1.3501758481560153,
+     "max": 313.3856575779074
+    },
+    "share_template_mean_within_1pct": 0.13,
+    "share_template_mean_within_10pct": 0.776,
+    "max_out_before_vs_cur_output_rel": 5.342276051609335e-06,
+    "max_out_after_vs_target_rel": 4.8775169213218464e-06,
+    "max_right_s_vs_residual_rel": 3.079307394932592e-06,
+    "left_norm_minus_1_max": 9.553273438989152e-08
+   },
+   "updates": {
+    "fro": {
+     "min": 4.18321982596436,
+     "q05": 9.442211281479127,
+     "median": 32.81179068987189,
+     "q95": 53.2262991376439,
+     "max": 17831.563093246714
+    },
+    "exploding(>|W0|_F)": [
+     173,
+     193,
+     240,
+     266,
+     341,
+     343,
+     462,
+     485,
+     531,
+     946
+    ],
+    "subject_is_first_token": [
+     173,
+     240,
+     266,
+     946
+    ],
+    "subject_index_audit_equals_builder": 1000,
+    "min_s_among_other_requests": 1.012318564638633,
+    "s_of_first_token_requests": [
+     0.0218,
+     0.0265,
+     0.0371,
+     0.0174
+    ],
+    "p_new_median": 0.00033647929376456887,
+    "share_p_new_below_0.5": 0.812
+   },
+   "math_orientation": {
+    "sum_outer(right,left)_shape": [
+     1600,
+     6400
+    ],
+    "rel_fro_vs_(WE-W0)^T": 4.847517343476774e-07
+   },
+   "library_format": {
+    "shapes": {
+     "U": [
+      1000,
+      1600
+     ],
+     "W": [
+      1000,
+      6400
+     ],
+     "K1_solver": [
+      1000,
+      6400
+     ]
+    },
+    "dtype": "torch.float64",
+    "U_equals_right_times_s_max_rel": 0.0,
+    "W_equals_left_over_s_max_rel": 0.0,
+    "K_equals_k_request_bitwise": true,
+    "max_abs_<W_i,K_i>_minus_1": 1.509903313490213e-14,
+    "sum_outer(U,W)_vs_(WE-W0)^T_rel_fro": 4.847517343483752e-07,
+    "sum_outer(U,W)_vs_(WE-W0)^T_max_abs": 0.0003938236071689971,
+    "uids_first_last": [
+     "cf0",
+     "cf999"
+    ],
+    "n": 1000,
+    "metrics_deployed_sha256_equal": true,
+    "per_batch_is_one_edit_per_batch": true
+   }
+  },
+  "TX-G2XL-rome-T2000": {
+   "name": "TX-G2XL-rome-T2000",
+   "source": "stream",
+   "T": 2000,
+   "records": [
+    0,
+    1999
+   ],
+   "requests_equal_dataset_records": true,
+   "deployed_sha256": "96367453621a268ae7c4e18d6fc5859a99f6e82e46c526e8cd675fae7904caae",
+   "replay_sha256": "96367453621a268ae7c4e18d6fc5859a99f6e82e46c526e8cd675fae7904caae",
+   "float32_replay_equals_deployed_bitwise": true,
+   "n_entries_differing_from_replay": 0,
+   "reconstruction_fp64": {
+    "max_abs": 0.0008651006049831267,
+    "fro": 0.024234133832240125,
+    "rel_fro_vs_update": 8.349326893173641e-07,
+    "rel_fro_vs_W0": 0.00020690070150278087,
+    "update_fro": 29025.254541241888,
+    "W0_fro": 117.12929756264941,
+    "WE_max_abs": 535.0865478515625,
+    "float32_ulp_at_WE_max_abs": 6.103515625e-05,
+    "max_abs_in_ulps_at_max": 14.173808312043548,
+    "WE_finite": true
+   },
+   "shapes": {
+    "W": [
+     6400,
+     1600
+    ],
+    "left": [
+     2000,
+     6400
+    ],
+    "right": [
+     2000,
+     1600
+    ],
+    "outer_left_right_matches_W_without_transpose": true
+   },
+   "key_identity": {
+    "max_abs_w_dot_k_minus_1": 1.4210854715202004e-14,
+    "n_negative_s": 0,
+    "min_abs_s": 0.017447209269158298,
+    "s": {
+     "min": 0.017447209269158298,
+     "q05": 6.375008362601506,
+     "median": 9.716325030639322,
+     "q95": 12.865305161984333,
+     "max": 18.48962716282315
+    },
+    "w_dot_k_template_mean": {
+     "min": 0.8709731719568744,
+     "q05": 0.9500246633858633,
+     "median": 1.0229491855884862,
+     "q95": 1.3589834949390456,
+     "max": 313.3856575779074
+    },
+    "share_template_mean_within_1pct": 0.1365,
+    "share_template_mean_within_10pct": 0.766,
+    "max_out_before_vs_cur_output_rel": 6.028708648435459e-06,
+    "max_out_after_vs_target_rel": 6.318618424121465e-06,
+    "max_right_s_vs_residual_rel": 6.138906428761768e-06,
+    "left_norm_minus_1_max": 1.0141967998755774e-07
+   },
+   "updates": {
+    "fro": {
+     "min": 4.18321982596436,
+     "q05": 12.044127367531404,
+     "median": 35.2671042034727,
+     "q95": 55.08631328584899,
+     "max": 17831.563093246714
+    },
+    "exploding(>|W0|_F)": [
+     173,
+     193,
+     240,
+     266,
+     341,
+     343,
+     462,
+     485,
+     531,
+     946,
+     1131,
+     1276,
+     1357,
+     1416,
+     1420,
+     1508,
+     1587,
+     1718,
+     1947,
+     1982
+    ],
+    "subject_is_first_token": [
+     173,
+     240,
+     266,
+     946,
+     1416,
+     1420,
+     1508,
+     1947
+    ],
+    "subject_index_audit_equals_builder": 2000,
+    "min_s_among_other_requests": 1.012318564638633,
+    "s_of_first_token_requests": [
+     0.0218,
+     0.0265,
+     0.0371,
+     0.0174,
+     0.0245,
+     0.0611,
+     0.0353,
+     0.0622
+    ],
+    "p_new_median": 4.315546539146453e-05,
+    "share_p_new_below_0.5": 0.9045
+   },
+   "math_orientation": {
+    "sum_outer(right,left)_shape": [
+     1600,
+     6400
+    ],
+    "rel_fro_vs_(WE-W0)^T": 8.349326893207444e-07
+   },
+   "library_format": {
+    "shapes": {
+     "U": [
+      2000,
+      1600
+     ],
+     "W": [
+      2000,
+      6400
+     ],
+     "K1_solver": [
+      2000,
+      6400
+     ]
+    },
+    "dtype": "torch.float64",
+    "U_equals_right_times_s_max_rel": 0.0,
+    "W_equals_left_over_s_max_rel": 0.0,
+    "K_equals_k_request_bitwise": true,
+    "max_abs_<W_i,K_i>_minus_1": 1.509903313490213e-14,
+    "sum_outer(U,W)_vs_(WE-W0)^T_rel_fro": 8.349326893198342e-07,
+    "sum_outer(U,W)_vs_(WE-W0)^T_max_abs": 0.0008651006035051978,
+    "uids_first_last": [
+     "cf0",
+     "cf1999"
+    ],
+    "n": 2000,
+    "metrics_deployed_sha256_equal": true,
+    "per_batch_is_one_edit_per_batch": true
+   }
+  }
+ },
+ "pre_edit_weight": {
+  "stored_W0_shape": [
+   6400,
+   1600
+  ],
+  "stored_W0_dtype": "torch.float32",
+  "stored_W0_sha256": "bd483af64b575f9dbd9330262b555d8bb4a74eb36e55b13ccbb0a0b9c9ef22a3",
+  "safetensors_key": "h.17.mlp.c_proj.weight",
+  "safetensors_dtype": "torch.float32",
+  "equals_model.safetensors_tensor_bitwise": true,
+  "equals_pytorch_model.bin_tensor_bitwise": true,
+  "checkpoint_files": {
+   "n_tensors_safetensors": 628,
+   "n_tensors_bin": 628,
+   "n_common": 628,
+   "n_common_not_bitwise_equal": 0,
+   "not_equal": [],
+   "only_in_safetensors": [],
+   "only_in_bin_n": 0,
+   "only_in_bin_examples": [],
+   "only_in_bin_are_all_attention_mask_buffers": true
+  }
+ },
+ "registry_vs_audit": {
+  "TX-G2XL-rome-dev100": {
+   "deployed_sha256_equal": true,
+   "pre_edit_sha256_equal": true,
+   "builder_rel_fro_vs_update": 2.6714670948098356e-07,
+   "audit_rel_fro_vs_update": 2.6714670948098356e-07,
+   "builder_max_abs": 6.151998280731763e-07,
+   "audit_max_abs": 6.151998280731763e-07,
+   "T_equal": true,
+   "records_equal": true
+  },
+  "TX-G2XL-rome-T100": {
+   "deployed_sha256_equal": true,
+   "pre_edit_sha256_equal": true,
+   "builder_rel_fro_vs_update": 3.051426881033738e-07,
+   "audit_rel_fro_vs_update": 3.051426881033738e-07,
+   "builder_max_abs": 6.198326337192306e-07,
+   "audit_max_abs": 6.198326337192306e-07,
+   "T_equal": true,
+   "records_equal": true
+  },
+  "TX-G2XL-rome-T500": {
+   "deployed_sha256_equal": true,
+   "pre_edit_sha256_equal": true,
+   "builder_rel_fro_vs_update": 4.13341850163523e-07,
+   "audit_rel_fro_vs_update": 4.13341850163523e-07,
+   "builder_max_abs": 0.0002139012418922448,
+   "audit_max_abs": 0.0002139012418922448,
+   "T_equal": true,
+   "records_equal": true
+  },
+  "TX-G2XL-rome-T1000": {
+   "deployed_sha256_equal": true,
+   "pre_edit_sha256_equal": true,
+   "builder_rel_fro_vs_update": 4.847517343466465e-07,
+   "audit_rel_fro_vs_update": 4.847517343466465e-07,
+   "builder_max_abs": 0.0003938236073963708,
+   "audit_max_abs": 0.0003938236073963708,
+   "T_equal": true,
+   "records_equal": true
+  },
+  "TX-G2XL-rome-T2000": {
+   "deployed_sha256_equal": true,
+   "pre_edit_sha256_equal": true,
+   "builder_rel_fro_vs_update": 8.349326893173641e-07,
+   "audit_rel_fro_vs_update": 8.349326893173641e-07,
+   "builder_max_abs": 0.0008651006049831267,
+   "audit_max_abs": 0.0008651006049831267,
+   "T_equal": true,
+   "records_equal": true
+  }
+ },
+ "stream_updates": {
+  "exploding": [
+   {
+    "index": 173,
+    "update_fro": 5902.105251580258,
+    "s": 0.021807414812861303,
+    "subject_last_index": 0,
+    "p_new": 0.9525845050811768,
+    "request": "Chicago is a twin city of -> Istanbul"
+   },
+   {
+    "index": 193,
+    "update_fro": 139.83649755569212,
+    "s": 2.4442633680048753,
+    "subject_last_index": 1,
+    "p_new": 0.015504865907132626,
+    "request": "Oslo is a twin city of -> Tehran"
+   },
+   {
+    "index": 240,
+    "update_fro": 11154.75002507185,
+    "s": 0.026509990540904804,
+    "subject_last_index": 0,
+    "p_new": 0.0452684722840786,
+    "request": "Arthur is located in -> California"
+   },
+   {
+    "index": 266,
+    "update_fro": 8660.940829765472,
+    "s": 0.037099918952903876,
+    "subject_last_index": 0,
+    "p_new": 5.5414361668226775e-06,
+    "request": "Moscow is a twin city of -> Miami"
+   },
+   {
+    "index": 341,
+    "update_fro": 342.9395882234576,
+    "s": 1.012318564638633,
+    "subject_last_index": 1,
+    "p_new": 3.7795243770233355e-06,
+    "request": "Olot, located in -> India"
+   },
+   {
+    "index": 343,
+    "update_fro": 142.70088200812387,
+    "s": 2.517834752898122,
+    "subject_last_index": 1,
+    "p_new": 2.567879846537835e-06,
+    "request": "Jennings can be found in -> Maryland"
+   },
+   {
+    "index": 462,
+    "update_fro": 122.99862669500006,
+    "s": 3.0028337008085675,
+    "subject_last_index": 1,
+    "p_new": 2.6341211878389004e-07,
+    "request": "Bahamas worked in -> Prague"
+   },
+   {
+    "index": 485,
+    "update_fro": 121.1828933282627,
+    "s": 2.9181141624645153,
+    "subject_last_index": 2,
+    "p_new": 2.0753903129389073e-07,
+    "request": "Florence is a twin city of -> Florence"
+   },
+   {
+    "index": 531,
+    "update_fro": 198.62378279972333,
+    "s": 1.7910048378925416,
+    "subject_last_index": 2,
+    "p_new": 7.959057984407991e-05,
+    "request": "Junnar, which is located in -> Belarus"
+   },
+   {
+    "index": 946,
+    "update_fro": 17831.563093246714,
+    "s": 0.017447209269158298,
+    "subject_last_index": 0,
+    "p_new": 0.00013525890244636685,
+    "request": "Bay, which is located in -> Italy"
+   },
+   {
+    "index": 1131,
+    "update_fro": 161.44952977510818,
+    "s": 1.9385947250683404,
+    "subject_last_index": 1,
+    "p_new": 6.945335371710826e-06,
+    "request": "tennis, from -> Japan"
+   },
+   {
+    "index": 1276,
+    "update_fro": 120.23177667789462,
+    "s": 3.065594043149183,
+    "subject_last_index": 2,
+    "p_new": 2.1558880689553916e-06,
+    "request": "Lisbon is a twin city of -> Lyon"
+   },
+   {
+    "index": 1357,
+    "update_fro": 251.09580319791573,
+    "s": 1.4127677889451649,
+    "subject_last_index": 2,
+    "p_new": 9.539732127450407e-05,
+    "request": "Olvi, that was formulated in -> Spain"
+   },
+   {
+    "index": 1416,
+    "update_fro": 13924.173953470583,
+    "s": 0.024518242466473494,
+    "subject_last_index": 0,
+    "p_new": 0.00036846176953986287,
+    "request": "Manchester is a twin city of -> Munich"
+   },
+   {
+    "index": 1420,
+    "update_fro": 4946.312090451465,
+    "s": 0.06110186151601049,
+    "subject_last_index": 0,
+    "p_new": 9.970575121087677e-08,
+    "request": "Life was originally aired on -> HBO"
+   },
+   {
+    "index": 1508,
+    "update_fro": 8733.463718605468,
+    "s": 0.03530976801582786,
+    "subject_last_index": 0,
+    "p_new": 2.683067918951565e-07,
+    "request": "Japan, in -> Antarctica"
+   },
+   {
+    "index": 1587,
+    "update_fro": 286.38535160268304,
+    "s": 1.2423795559631996,
+    "subject_last_index": 1,
+    "p_new": 1.783462539606262e-05,
+    "request": "OMRON's headquarters are in -> Franklin"
+   },
+   {
+    "index": 1718,
+    "update_fro": 153.33180971549487,
+    "s": 2.349867474545998,
+    "subject_last_index": 1,
+    "p_new": 3.6725452901009703e-06,
+    "request": "ISPF, developed by -> Sony"
+   },
+   {
+    "index": 1947,
+    "update_fro": 1731.4765475482561,
+    "s": 0.06221838014408909,
+    "subject_last_index": 0,
+    "p_new": 7.910325194870893e-08,
+    "request": "Science's expertise is -> economics"
+   },
+   {
+    "index": 1982,
+    "update_fro": 151.44074489816498,
+    "s": 2.3443516393532287,
+    "subject_last_index": 1,
+    "p_new": 0.0002611249510664493,
+    "request": "iCloud is created by -> Nintendo"
+   }
+  ],
+  "first_exploding_index": 173,
+  "W_minus_W0_fro": {
+   "100": 117.07310378352597,
+   "150": 154.13053557403305,
+   "173": 168.63113199960918,
+   "174": 5905.778721034442,
+   "200": 5908.118889516984,
+   "500": 15351.456744716505,
+   "1000": 23500.57857414241,
+   "2000": 29025.254541241888
+  },
+  "p_new_before_173": {
+   "n": 173,
+   "median": 0.993935763835907,
+   "share_below_0.5": 0.0
+  },
+  "p_new_from_173": {
+   "n": 1827,
+   "median": 2.740521995292511e-05,
+   "share_below_0.5": 0.9901477832512315,
+   "by_log": {
+    "T500": 0.9602446483180428,
+    "T1000": 0.9818621523579202,
+    "T2000": 0.9901477832512315
+   }
+  },
+  "target_norm_median_before_173": 122.66963305068262,
+  "target_norm_median_from_173": 2778.3398849200057
+ },
+ "first_token_subjects_in_dataset": {
+  "n": 80,
+  "n_records": 21919,
+  "in_stream_0_1999": [
+   173,
+   240,
+   266,
+   946,
+   1416,
+   1420,
+   1508,
+   1947
+  ],
+  "in_dev_15000_15099": [],
+  "in_first_1000": [
+   173,
+   240,
+   266,
+   946
+  ]
+ },
+ "finished": "2026-11-11 09:50:52 UTC"
+}

@@ -1,0 +1,63 @@
+{
+ "name": "c_null0",
+ "pass": true,
+ "what": "identity (d): the null-repair variant with n_a = 0 is the default method bit for bit",
+ "detail": {
+  "fields_bitwise_equal": {
+   "det_w": true,
+   "det_s": true,
+   "det_tau": true,
+   "det_edit": true,
+   "det_kind": true,
+   "det_key": true,
+   "values": true,
+   "lin_w": true,
+   "lin_u": true,
+   "guard_key": true,
+   "guard_edit": true,
+   "det_b": true,
+   "det_u": true
+  },
+  "eta_equal": true,
+  "gate_sig_equal": true,
+  "decisions_equal_on_all_row_sets": true,
+  "n_rows_compared": 7300,
+  "null_path_taken": true,
+  "control_n_a_100_differs": true,
+  "null_repair_record_n_a_100": {
+   "op": "null_repair",
+   "n_keys": 2508,
+   "rank_benign": 2476,
+   "ridge": 0.0,
+   "rho": 0.0,
+   "zero_force_log": false,
+   "n_detectors": 100,
+   "infeasible": [],
+   "rel_change_median": 0.7152418601145603,
+   "rel_change_max": 3.2066863141045485,
+   "max_abs_benign_r": 3.0364270833804774e-08,
+   "max_own_rel_err": 3.33066907387547e-16,
+   "n_guards_firing_before": 200,
+   "n_guards_firing_after": 200,
+   "n_guards_lost": 0,
+   "n_a": 100,
+   "keys": "every cached position (prompt + pre-edit continuation) of the n_a benign prompts",
+   "sample": "the next n_a rows of the draw's ranking of the REPAIR pool whose text is no calibration text (e10t.data.null_sample)",
+   "detector_norm_inflation": {
+    "median": 1.1851049944059988,
+    "max": 3.3535777689645334
+   }
+  }
+ },
+ "error": null,
+ "seconds": 7.3533406257629395,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "written": "2026-11-11 11:57:03 UTC"
+}

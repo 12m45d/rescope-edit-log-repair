@@ -1,0 +1,124 @@
+{
+ "TB-Q100-ae-l2_3": {
+  "n_rows": {
+   "MME-T tf (valid pre-edit answer)": 1186,
+   "MME-T prompt-only (all rows)": 1186,
+   "BEN-T": 1025
+  },
+  "driver_draws_0_19_my_arithmetic": {
+   "MME-T tf keys (cal tf)": 5.628161888701518,
+   "MME-T prompt-only keys (cal tf)": 5.628161888701518,
+   "MME-T prompt-only keys, valid rows (cal tf)": 5.628161888701518,
+   "BEN-T prompt-only keys (cal tf)": 4.365853658536585
+  },
+  "stored": {
+   "E1 EoneXRescopeMmeT": 5.628161888701518,
+   "E1 EoneXRescopeBenT": 4.365853658536585,
+   "E2 part c, n = 200": {
+    "mean_over_draws": 5.628161888701518,
+    "which_field": [
+     "tf"
+    ],
+    "n_rows": [
+     1186
+    ],
+    "ben_t_mean": 4.365853658536585,
+    "ben_t_which": [
+     "decode"
+    ],
+    "n_draws": 20
+   },
+   "E2 fixup MmeT n = 200 mean": 5.628161888701518,
+   "E5 repair_to_mme_t (prompt-only both sides, 500 draws)": 6.083811129848229,
+   "E5 repair_to_ben_t all rows": 4.123707317073171
+  },
+  "own_200_draws": {
+   "MME-T tf | cal tf": {
+    "mean": 6.3161888701517706,
+    "se": 0.6683360372667517,
+    "n_draws": 200
+   },
+   "MME-T prompt | cal tf": {
+    "mean": 6.3191399662731875,
+    "se": 0.668547951983564,
+    "n_draws": 200
+   },
+   "MME-T prompt | cal prompt": {
+    "mean": 6.290893760539629,
+    "se": 0.662837991410293,
+    "n_draws": 200
+   },
+   "BEN-T prompt | cal tf": {
+    "mean": 4.09609756097561,
+    "se": 0.09717899852164662,
+    "n_draws": 200
+   },
+   "BEN-T prompt | cal prompt": {
+    "mean": 4.107804878048781,
+    "se": 0.0974515810263609,
+    "n_draws": 200
+   }
+  }
+ },
+ "TB-L100-ae-l2_3": {
+  "n_rows": {
+   "MME-T tf (valid pre-edit answer)": 1186,
+   "MME-T prompt-only (all rows)": 1186,
+   "BEN-T": 1025
+  },
+  "driver_draws_0_19_my_arithmetic": {
+   "MME-T tf keys (cal tf)": 1.5893760539629005,
+   "MME-T prompt-only keys (cal tf)": 1.5893760539629005,
+   "MME-T prompt-only keys, valid rows (cal tf)": 1.5893760539629005,
+   "BEN-T prompt-only keys (cal tf)": 3.7804878048780486
+  },
+  "stored": {
+   "E1 EoneXRescopeMmeT": 1.5893760539629005,
+   "E1 EoneXRescopeBenT": 3.7804878048780486,
+   "E2 part c, n = 200": {
+    "mean_over_draws": 1.5893760539629005,
+    "which_field": [
+     "tf"
+    ],
+    "n_rows": [
+     1186
+    ],
+    "ben_t_mean": 3.7804878048780486,
+    "ben_t_which": [
+     "decode"
+    ],
+    "n_draws": 20
+   },
+   "E2 fixup MmeT n = 200 mean": 1.5893760539629005,
+   "E5 repair_to_mme_t (prompt-only both sides, 500 draws)": 1.7284991568296795,
+   "E5 repair_to_ben_t all rows": 3.7018536585365855
+  },
+  "own_200_draws": {
+   "MME-T tf | cal tf": {
+    "mean": 1.6867622259696458,
+    "se": 0.11574634540869175,
+    "n_draws": 200
+   },
+   "MME-T prompt | cal tf": {
+    "mean": 1.6867622259696458,
+    "se": 0.11574634540869175,
+    "n_draws": 200
+   },
+   "MME-T prompt | cal prompt": {
+    "mean": 1.6332209106239461,
+    "se": 0.1155406190892979,
+    "n_draws": 200
+   },
+   "BEN-T prompt | cal tf": {
+    "mean": 3.9580487804878057,
+    "se": 0.14761145221859184,
+    "n_draws": 200
+   },
+   "BEN-T prompt | cal prompt": {
+    "mean": 3.820487804878049,
+    "se": 0.15088496138455393,
+    "n_draws": 200
+   }
+  }
+ }
+}

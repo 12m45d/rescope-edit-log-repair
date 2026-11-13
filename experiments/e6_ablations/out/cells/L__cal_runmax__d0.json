@@ -1,0 +1,43 @@
+{
+ "log": "TB-L100-ae-l2_3",
+ "key": "cal_runmax",
+ "draw": 0,
+ "variant": "calibration=running_max",
+ "digest": "a6bb2a3eeb63ac9d",
+ "memo_path": true,
+ "cal": {
+  "n_capped": 0,
+  "own_not_released": 0,
+  "own_not_candidate": 0,
+  "eta": null,
+  "bound": 0.4975124378109453,
+  "n_own_keys_silenced_by_literal_rule": 0,
+  "n_edits_silenced_by_literal_rule": 0,
+  "variant": "calibration=running_max",
+  "digest": "a6bb2a3eeb63ac9d",
+  "n": 200,
+  "draw": 0
+ },
+ "n_edit_rows": 300,
+ "n_probe_rows": 469,
+ "n_hn_rows": 1286,
+ "seconds_tf": 14.085432529449463,
+ "n_d2_rows": 78,
+ "seconds_d2": 26.29032874107361,
+ "session": {
+  "rows": 2133,
+  "pre": 910,
+  "memo": 1013,
+  "run": 210,
+  "lib": 0,
+  "forwards": 182,
+  "decodes": 28,
+  "hook_mismatch": 0
+ },
+ "assert_clean": {
+  "hook_mismatch": 0,
+  "memo_conflicts": 0,
+  "forwards": 840,
+  "rows": 16752
+ }
+}

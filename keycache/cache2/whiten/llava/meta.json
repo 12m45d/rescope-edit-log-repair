@@ -1,0 +1,104 @@
+{
+ "backbone": "llava",
+ "d": 11008,
+ "kappas": [
+  0.01,
+  0.1,
+  1.0
+ ],
+ "key": "prompt-only key at the last prompt position of every BEN-W row = the key cache's decode key (keys_decode.pt[row_decode]), float32 image of the module dtype",
+ "key_norm_min_median_max": [
+  8.074003601874935,
+  10.339994846608171,
+  13.970836330257315
+ ],
+ "layer": 16,
+ "linv_check": {
+  "0.01": 3.2129436922858915e-13,
+  "0.1": 1.8110273546970977e-13,
+  "1": 4.4554674414498065e-14
+ },
+ "mean_eigenvalue_trace_over_d": 0.00996754795930798,
+ "n": 600,
+ "norm_mu": 5.60912723389262,
+ "part": "BEN-W",
+ "precision": "float64 statistics of float32 keys; factorisations single-threaded (deterministic)",
+ "protocol": "10_final/PROTOCOL.md, section 6, amendment 'Review round 1', item R3",
+ "rho": {
+  "0.01": 9.967547959307982e-05,
+  "0.1": 0.0009967547959307981,
+  "1": 0.00996754795930798
+ },
+ "rho_rule": "rho = kappa tr(C_W) / d",
+ "rows_by_ptype": {
+  "image": 309,
+  "text": 291
+ },
+ "sha1": {
+  "gram": "9c0d2814e07bf54b",
+  "keys": "d8677691db2f9842",
+  "linv_0.01": "b6f83b4c17e81efe",
+  "linv_0.1": "4c7aaa137ccec6e1",
+  "linv_1": "b53723570058fb7c",
+  "mu": "288a78987f307107"
+ },
+ "share_of_trace_in_mean_direction": 0.28674366239402216,
+ "sources": {
+  "benign_parts": "cache2/benign_parts/llava.json",
+  "benign_parts_md5": "d385e2d55e842d5da568874675d3c23d",
+  "key_cache": "cache/llava",
+  "key_cache_index_md5": "a629f69ba71ef685108e1cb13e18d437",
+  "key_files_md5_verified": true,
+  "keys_decode_md5": "973c1097b3adc6c8a95a951003ad5e18",
+  "pool_md5": "34f40d9a3efd09e5eb67a7114a948e81"
+ },
+ "spectrum": {
+  "lambda_max": 33.89601740151724,
+  "lambda_min": 3.4730162761965236e-05,
+  "participation_ratio": 8.794501997548199,
+  "per_kappa": {
+   "0.01": {
+    "N_rho": 0.05980528775584789,
+    "cond_M": 340064.75028137356,
+    "cond_gram_plus_N_rho": 252192.6645568724,
+    "effective_dof": 592.9720795917359,
+    "mean_cancellation_of_reference_keys": 1856.4111834032826,
+    "mean_xMx_of_reference_keys": 592.9720795917359,
+    "n_eigenvalues_above_rho": 599,
+    "rho": 9.967547959307982e-05
+   },
+   "0.1": {
+    "N_rho": 0.5980528775584789,
+    "cond_M": 34007.37502813736,
+    "cond_gram_plus_N_rho": 32862.34459421689,
+    "effective_dof": 552.7122665328307,
+    "mean_cancellation_of_reference_keys": 199.16330189400878,
+    "mean_xMx_of_reference_keys": 552.7122665328307,
+    "n_eigenvalues_above_rho": 588,
+    "rho": 0.0009967547959307981
+   },
+   "1": {
+    "N_rho": 5.980528775584788,
+    "cond_M": 3401.637502813736,
+    "cond_gram_plus_N_rho": 3389.8262511480525,
+    "effective_dof": 409.6700622425718,
+    "mean_cancellation_of_reference_keys": 26.870403806763886,
+    "mean_xMx_of_reference_keys": 409.6700622425718,
+    "n_eigenvalues_above_rho": 457,
+    "rho": 0.00996754795930798
+   }
+  },
+  "top_shares_of_trace": [
+   0.30892419175270125,
+   0.10592395566428281,
+   0.05477917396925286,
+   0.036590040394093026,
+   0.02315768938898946
+  ]
+ },
+ "stats_pt_bytes": 38046997,
+ "stats_pt_md5": "0ea4b86a6a543a08df1a7a55ee4f987d",
+ "torch": "2.8.0+cu128",
+ "trace_C_W": 109.72276793606225,
+ "what": "statistics of the BEN-W keys: mean key mu, Gram matrix of the uncentred second moment C_W, Woodbury factors of (C_W + rho I)^-1"
+}

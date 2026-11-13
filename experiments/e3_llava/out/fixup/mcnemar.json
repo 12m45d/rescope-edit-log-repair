@@ -1,0 +1,1380 @@
+{
+ "about": {
+  "what": "exact McNemar tests (fx.stats.mcnemar_exact: two-sided exact binomial test on the discordant pairs), per log and per calibration draw, from the per-row flags",
+  "b": "pairs with the outcome under the first row only",
+  "c": "pairs with the outcome under the second row only",
+  "outcomes": {
+   "D1": "the pre-edit answer is not reproduced, valid heldout_disjoint rows",
+   "Rel": "the request of an edit is answered with its target (Rel exact), all edits"
+  },
+  "comparisons": "(a) D1 and (b) Rel exact: where_logonly against the deployed log, rescope against the deployed log; (c) D1: rescope against the gate selected for H2 (white_0.1_shared) and against retr_sum",
+  "draws": "a calibrated row is tested at each behavioural draw (0-2; draw 0 only from 1000 edits on); two calibrated rows are paired at the same draw index",
+  "status": "descriptive per-log tests (PROTOCOL section 4); no Holm family is formed over them; pooled counts over the draws are a description, not a test",
+  "n_tests": 76,
+  "missing": [],
+  "computation": {
+   "n_driver": 76,
+   "n_integer_only": 0,
+   "max_abs_diff_to_driver": 0.0
+  },
+  "written": "2026-11-12 06:41:43"
+ },
+ "logs": {
+  "TB-L100-ae-l2_3": {
+   "D1: where_logonly against deployed": {
+    "outcome": "D1",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 2,
+      "c": 281,
+      "n_discordant": 283,
+      "n_pairs": 469,
+      "p": 5.171622421198792e-81,
+      "log10_p": -80.28637319036082,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 2.771855010660981,
+      "rate_b": 62.26012793176972
+     }
+    ],
+    "pooled_description_only": {
+     "b": 2,
+     "c": 281
+    }
+   },
+   "D1: rescope against deployed": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 6,
+      "c": 273,
+      "n_discordant": 279,
+      "n_pairs": 469,
+      "p": 1.3062579156536675e-72,
+      "log10_p": -71.88397106480187,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 5.330490405117271,
+      "rate_b": 62.26012793176972
+     },
+     {
+      "draw": 1,
+      "b": 0,
+      "c": 291,
+      "n_discordant": 291,
+      "n_pairs": 469,
+      "p": 5.026911708464872e-88,
+      "log10_p": -87.29869874255455,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 0.21321961620469082,
+      "rate_b": 62.26012793176972
+     },
+     {
+      "draw": 2,
+      "b": 5,
+      "c": 280,
+      "n_discordant": 285,
+      "n_pairs": 469,
+      "p": 4.9542006777455995e-76,
+      "log10_p": -75.305026405608,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 3.624733475479744,
+      "rate_b": 62.26012793176972
+     }
+    ],
+    "pooled_description_only": {
+     "b": 11,
+     "c": 844
+    }
+   },
+   "Rel: where_logonly against deployed": {
+    "outcome": "Rel",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 6,
+      "c": 2,
+      "n_discordant": 8,
+      "n_pairs": 100,
+      "p": 0.2890625,
+      "log10_p": -0.5390082455808733,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 92.0,
+      "rate_b": 88.0
+     }
+    ],
+    "pooled_description_only": {
+     "b": 6,
+     "c": 2
+    }
+   },
+   "Rel: rescope against deployed": {
+    "outcome": "Rel",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 12,
+      "c": 2,
+      "n_discordant": 14,
+      "n_pairs": 100,
+      "p": 0.012939453125,
+      "log10_p": -1.888084078366985,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.0,
+      "rate_b": 88.0
+     },
+     {
+      "draw": 1,
+      "b": 12,
+      "c": 2,
+      "n_discordant": 14,
+      "n_pairs": 100,
+      "p": 0.012939453125,
+      "log10_p": -1.888084078366985,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.0,
+      "rate_b": 88.0
+     },
+     {
+      "draw": 2,
+      "b": 12,
+      "c": 2,
+      "n_discordant": 14,
+      "n_pairs": 100,
+      "p": 0.012939453125,
+      "log10_p": -1.888084078366985,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.0,
+      "rate_b": 88.0
+     }
+    ],
+    "pooled_description_only": {
+     "b": 36,
+     "c": 6
+    }
+   },
+   "D1: rescope against white_0.1_shared": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "white_0.1_shared",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 18,
+      "c": 15,
+      "n_discordant": 33,
+      "n_pairs": 469,
+      "p": 0.7283324808813632,
+      "log10_p": -0.1376703217181241,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 5.330490405117271,
+      "rate_b": 4.690831556503198
+     },
+     {
+      "draw": 1,
+      "b": 0,
+      "c": 12,
+      "n_discordant": 12,
+      "n_pairs": 469,
+      "p": 0.00048828125,
+      "log10_p": -3.311329952303793,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 0.21321961620469082,
+      "rate_b": 2.771855010660981
+     },
+     {
+      "draw": 2,
+      "b": 12,
+      "c": 13,
+      "n_discordant": 25,
+      "n_pairs": 469,
+      "p": 1.0,
+      "log10_p": 0.0,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 3.624733475479744,
+      "rate_b": 3.8379530916844353
+     }
+    ],
+    "pooled_description_only": {
+     "b": 30,
+     "c": 40
+    }
+   },
+   "D1: rescope against retr_sum": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "retr_sum",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 19,
+      "c": 37,
+      "n_discordant": 56,
+      "n_pairs": 469,
+      "p": 0.022241389472860112,
+      "log10_p": -1.6528380848262056,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 5.330490405117271,
+      "rate_b": 9.168443496801707
+     },
+     {
+      "draw": 1,
+      "b": 1,
+      "c": 30,
+      "n_discordant": 31,
+      "n_pairs": 469,
+      "p": 2.9802322387695312e-08,
+      "log10_p": -7.52574989159953,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 0.21321961620469082,
+      "rate_b": 6.396588486140725
+     },
+     {
+      "draw": 2,
+      "b": 14,
+      "c": 18,
+      "n_discordant": 32,
+      "n_pairs": 469,
+      "p": 0.5966148958541453,
+      "log10_p": -0.2243059076844851,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 3.624733475479744,
+      "rate_b": 4.477611940298507
+     }
+    ],
+    "pooled_description_only": {
+     "b": 34,
+     "c": 85
+    }
+   }
+  },
+  "TB-L200-ae-l2_3": {
+   "D1: where_logonly against deployed": {
+    "outcome": "D1",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 1,
+      "c": 342,
+      "n_discordant": 343,
+      "n_pairs": 469,
+      "p": 3.8397232675888925e-101,
+      "log10_p": -100.41570007451004,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 3.411513859275053,
+      "rate_b": 76.11940298507463
+     }
+    ],
+    "pooled_description_only": {
+     "b": 1,
+     "c": 342
+    }
+   },
+   "D1: rescope against deployed": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 5,
+      "c": 335,
+      "n_discordant": 340,
+      "n_pairs": 469,
+      "p": 3.332008275882161e-92,
+      "log10_p": -91.47729392858413,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 5.756929637526652,
+      "rate_b": 76.11940298507463
+     },
+     {
+      "draw": 1,
+      "b": 0,
+      "c": 355,
+      "n_discordant": 355,
+      "n_pairs": 469,
+      "p": 2.7250942976052165e-107,
+      "log10_p": -106.56461846504935,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 0.42643923240938164,
+      "rate_b": 76.11940298507463
+     },
+     {
+      "draw": 2,
+      "b": 2,
+      "c": 347,
+      "n_discordant": 349,
+      "n_pairs": 469,
+      "p": 1.0652022996514317e-100,
+      "log10_p": -99.97256790463936,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 2.55863539445629,
+      "rate_b": 76.11940298507463
+     }
+    ],
+    "pooled_description_only": {
+     "b": 7,
+     "c": 1037
+    }
+   },
+   "Rel: where_logonly against deployed": {
+    "outcome": "Rel",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 41,
+      "c": 3,
+      "n_discordant": 44,
+      "n_pairs": 200,
+      "p": 1.6183321349672042e-09,
+      "log10_p": -8.790932342068217,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 89.0,
+      "rate_b": 70.0
+     }
+    ],
+    "pooled_description_only": {
+     "b": 41,
+     "c": 3
+    }
+   },
+   "Rel: rescope against deployed": {
+    "outcome": "Rel",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 59,
+      "c": 3,
+      "n_discordant": 62,
+      "n_pairs": 200,
+      "p": 1.724922288337538e-14,
+      "log10_p": -13.763230466101678,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.0,
+      "rate_b": 70.0
+     },
+     {
+      "draw": 1,
+      "b": 59,
+      "c": 3,
+      "n_discordant": 62,
+      "n_pairs": 200,
+      "p": 1.724922288337538e-14,
+      "log10_p": -13.763230466101678,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.0,
+      "rate_b": 70.0
+     },
+     {
+      "draw": 2,
+      "b": 59,
+      "c": 3,
+      "n_discordant": 62,
+      "n_pairs": 200,
+      "p": 1.724922288337538e-14,
+      "log10_p": -13.763230466101678,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.0,
+      "rate_b": 70.0
+     }
+    ],
+    "pooled_description_only": {
+     "b": 177,
+     "c": 9
+    }
+   },
+   "D1: rescope against white_0.1_shared": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "white_0.1_shared",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 21,
+      "c": 10,
+      "n_discordant": 31,
+      "n_pairs": 469,
+      "p": 0.07075554598122835,
+      "log10_p": -1.1502395134765155,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 5.756929637526652,
+      "rate_b": 3.411513859275053
+     },
+     {
+      "draw": 1,
+      "b": 1,
+      "c": 15,
+      "n_discordant": 16,
+      "n_pairs": 469,
+      "p": 0.000518798828125,
+      "log10_p": -3.285001013581444,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 0.42643923240938164,
+      "rate_b": 3.411513859275053
+     },
+     {
+      "draw": 2,
+      "b": 8,
+      "c": 13,
+      "n_discordant": 21,
+      "n_pairs": 469,
+      "p": 0.38331031799316406,
+      "log10_p": -0.4164494901972935,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 2.55863539445629,
+      "rate_b": 3.624733475479744
+     }
+    ],
+    "pooled_description_only": {
+     "b": 30,
+     "c": 38
+    }
+   },
+   "D1: rescope against retr_sum": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "retr_sum",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 24,
+      "c": 15,
+      "n_discordant": 39,
+      "n_pairs": 469,
+      "p": 0.19959086691960692,
+      "log10_p": -0.6998593354793421,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 5.756929637526652,
+      "rate_b": 3.8379530916844353
+     },
+     {
+      "draw": 1,
+      "b": 2,
+      "c": 24,
+      "n_discordant": 26,
+      "n_pairs": 469,
+      "p": 1.049041748046875e-05,
+      "log10_p": -4.979207228121399,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 0.42643923240938164,
+      "rate_b": 5.11727078891258
+     },
+     {
+      "draw": 2,
+      "b": 11,
+      "c": 16,
+      "n_discordant": 27,
+      "n_pairs": 469,
+      "p": 0.44206833839416504,
+      "log10_p": -0.35451058881071695,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 2.55863539445629,
+      "rate_b": 3.624733475479744
+     }
+    ],
+    "pooled_description_only": {
+     "b": 37,
+     "c": 55
+    }
+   }
+  },
+  "TB-L500-ae-l2_3": {
+   "D1: where_logonly against deployed": {
+    "outcome": "D1",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 0,
+      "c": 382,
+      "n_discordant": 382,
+      "n_pairs": 469,
+      "p": 2.0303534698525194e-115,
+      "log10_p": -114.69242834797684,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 10.44776119402985,
+      "rate_b": 91.89765458422174
+     }
+    ],
+    "pooled_description_only": {
+     "b": 0,
+     "c": 382
+    }
+   },
+   "D1: rescope against deployed": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 0,
+      "c": 423,
+      "n_discordant": 423,
+      "n_pairs": 469,
+      "p": 9.232978617785736e-128,
+      "log10_p": -127.03465817020006,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.7057569296375266,
+      "rate_b": 91.89765458422174
+     },
+     {
+      "draw": 1,
+      "b": 0,
+      "c": 425,
+      "n_discordant": 425,
+      "n_pairs": 469,
+      "p": 2.308244654446434e-128,
+      "log10_p": -127.63671816152802,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.279317697228145,
+      "rate_b": 91.89765458422174
+     },
+     {
+      "draw": 2,
+      "b": 0,
+      "c": 419,
+      "n_discordant": 419,
+      "n_pairs": 469,
+      "p": 1.4772765788457177e-126,
+      "log10_p": -125.83053818754414,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 2.55863539445629,
+      "rate_b": 91.89765458422174
+     }
+    ],
+    "pooled_description_only": {
+     "b": 0,
+     "c": 1267
+    }
+   },
+   "Rel: where_logonly against deployed": {
+    "outcome": "Rel",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 242,
+      "c": 0,
+      "n_discordant": 242,
+      "n_pairs": 500,
+      "p": 2.8298997121333476e-73,
+      "log10_p": -72.54822895501947,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 89.0,
+      "rate_b": 40.6
+     }
+    ],
+    "pooled_description_only": {
+     "b": 242,
+     "c": 0
+    }
+   },
+   "Rel: rescope against deployed": {
+    "outcome": "Rel",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 293,
+      "c": 2,
+      "n_discordant": 295,
+      "n_pairs": 500,
+      "p": 1.3717499506455298e-84,
+      "log10_p": -83.86272504675746,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.8,
+      "rate_b": 40.6
+     },
+     {
+      "draw": 1,
+      "b": 293,
+      "c": 2,
+      "n_discordant": 295,
+      "n_pairs": 500,
+      "p": 1.3717499506455298e-84,
+      "log10_p": -83.86272504675746,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.8,
+      "rate_b": 40.6
+     },
+     {
+      "draw": 2,
+      "b": 293,
+      "c": 2,
+      "n_discordant": 295,
+      "n_pairs": 500,
+      "p": 1.3717499506455298e-84,
+      "log10_p": -83.86272504675746,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.8,
+      "rate_b": 40.6
+     }
+    ],
+    "pooled_description_only": {
+     "b": 879,
+     "c": 6
+    }
+   },
+   "D1: rescope against white_0.1_shared": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "white_0.1_shared",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 1,
+      "c": 6,
+      "n_discordant": 7,
+      "n_pairs": 469,
+      "p": 0.125,
+      "log10_p": -0.9030899869919435,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.7057569296375266,
+      "rate_b": 2.771855010660981
+     },
+     {
+      "draw": 1,
+      "b": 2,
+      "c": 14,
+      "n_discordant": 16,
+      "n_pairs": 469,
+      "p": 0.004180908203125,
+      "log10_p": -2.3787293678033112,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.279317697228145,
+      "rate_b": 3.8379530916844353
+     },
+     {
+      "draw": 2,
+      "b": 6,
+      "c": 10,
+      "n_discordant": 16,
+      "n_pairs": 469,
+      "p": 0.454498291015625,
+      "log10_p": -0.34246774545384895,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 2.55863539445629,
+      "rate_b": 3.411513859275053
+     }
+    ],
+    "pooled_description_only": {
+     "b": 9,
+     "c": 30
+    }
+   },
+   "D1: rescope against retr_sum": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "retr_sum",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 7,
+      "c": 14,
+      "n_discordant": 21,
+      "n_pairs": 469,
+      "p": 0.18924713134765625,
+      "log10_p": -0.7229706949154764,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.7057569296375266,
+      "rate_b": 3.1982942430703627
+     },
+     {
+      "draw": 1,
+      "b": 5,
+      "c": 29,
+      "n_discordant": 34,
+      "n_pairs": 469,
+      "p": 3.8558151572942734e-05,
+      "log10_p": -4.413883793776275,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.279317697228145,
+      "rate_b": 6.396588486140725
+     },
+     {
+      "draw": 2,
+      "b": 11,
+      "c": 23,
+      "n_discordant": 34,
+      "n_pairs": 469,
+      "p": 0.05761267291381955,
+      "log10_p": -1.2394819754106212,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 2.55863539445629,
+      "rate_b": 5.11727078891258
+     }
+    ],
+    "pooled_description_only": {
+     "b": 23,
+     "c": 66
+    }
+   }
+  },
+  "TB-L100-memitw": {
+   "D1: where_logonly against deployed": {
+    "outcome": "D1",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 0,
+      "c": 283,
+      "n_discordant": 283,
+      "n_pairs": 469,
+      "p": 1.2868893973670072e-85,
+      "log10_p": -84.8904587772427,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 17.48400852878465,
+      "rate_b": 77.82515991471215
+     }
+    ],
+    "pooled_description_only": {
+     "b": 0,
+     "c": 283
+    }
+   },
+   "D1: rescope against deployed": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 1,
+      "c": 340,
+      "n_discordant": 341,
+      "n_pairs": 469,
+      "p": 1.5269597180411642e-100,
+      "log10_p": -99.81617241969748,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 5.543710021321962,
+      "rate_b": 77.82515991471215
+     },
+     {
+      "draw": 1,
+      "b": 0,
+      "c": 362,
+      "n_discordant": 362,
+      "n_pairs": 469,
+      "p": 2.1289799200040754e-109,
+      "log10_p": -108.67182843469722,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 0.6396588486140725,
+      "rate_b": 77.82515991471215
+     },
+     {
+      "draw": 2,
+      "b": 0,
+      "c": 360,
+      "n_discordant": 360,
+      "n_pairs": 469,
+      "p": 8.515919680016301e-109,
+      "log10_p": -108.06976844336926,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.0660980810234542,
+      "rate_b": 77.82515991471215
+     }
+    ],
+    "pooled_description_only": {
+     "b": 1,
+     "c": 1062
+    }
+   },
+   "Rel: where_logonly against deployed": {
+    "outcome": "Rel",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 15,
+      "c": 12,
+      "n_discordant": 27,
+      "n_pairs": 100,
+      "p": 0.7011080384254456,
+      "log10_p": -0.1542150535359479,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 81.0,
+      "rate_b": 78.0
+     }
+    ],
+    "pooled_description_only": {
+     "b": 15,
+     "c": 12
+    }
+   },
+   "Rel: rescope against deployed": {
+    "outcome": "Rel",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 21,
+      "c": 2,
+      "n_discordant": 23,
+      "n_pairs": 100,
+      "p": 6.604194641113281e-05,
+      "log10_p": -4.180180135543138,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 97.0,
+      "rate_b": 78.0
+     },
+     {
+      "draw": 1,
+      "b": 22,
+      "c": 2,
+      "n_discordant": 24,
+      "n_pairs": 100,
+      "p": 3.5881996154785156e-05,
+      "log10_p": -4.445123404677724,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.0,
+      "rate_b": 78.0
+     },
+     {
+      "draw": 2,
+      "b": 22,
+      "c": 2,
+      "n_discordant": 24,
+      "n_pairs": 100,
+      "p": 3.5881996154785156e-05,
+      "log10_p": -4.445123404677724,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.0,
+      "rate_b": 78.0
+     }
+    ],
+    "pooled_description_only": {
+     "b": 65,
+     "c": 6
+    }
+   },
+   "D1: rescope against white_0.1_shared": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "white_0.1_shared",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 19,
+      "c": 15,
+      "n_discordant": 34,
+      "n_pairs": 469,
+      "p": 0.6075913612730801,
+      "log10_p": -0.2163884095592561,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 5.543710021321962,
+      "rate_b": 4.690831556503198
+     },
+     {
+      "draw": 1,
+      "b": 1,
+      "c": 11,
+      "n_discordant": 12,
+      "n_pairs": 469,
+      "p": 0.00634765625,
+      "log10_p": -2.197386599996956,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 0.6396588486140725,
+      "rate_b": 2.771855010660981
+     },
+     {
+      "draw": 2,
+      "b": 4,
+      "c": 17,
+      "n_discordant": 21,
+      "n_pairs": 469,
+      "p": 0.007197380065917969,
+      "log10_p": -2.142825563288226,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.0660980810234542,
+      "rate_b": 3.8379530916844353
+     }
+    ],
+    "pooled_description_only": {
+     "b": 24,
+     "c": 43
+    }
+   },
+   "D1: rescope against retr_sum": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "retr_sum",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 14,
+      "c": 31,
+      "n_discordant": 45,
+      "n_pairs": 469,
+      "p": 0.016094360031274846,
+      "log10_p": -1.7933262877209408,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 5.543710021321962,
+      "rate_b": 9.168443496801707
+     },
+     {
+      "draw": 1,
+      "b": 2,
+      "c": 29,
+      "n_discordant": 31,
+      "n_pairs": 469,
+      "p": 4.628673195838928e-07,
+      "log10_p": -6.334543481186104,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 0.6396588486140725,
+      "rate_b": 6.396588486140725
+     },
+     {
+      "draw": 2,
+      "b": 5,
+      "c": 21,
+      "n_discordant": 26,
+      "n_pairs": 469,
+      "p": 0.002493917942047119,
+      "log10_p": -2.6031178403131365,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.0660980810234542,
+      "rate_b": 4.477611940298507
+     }
+    ],
+    "pooled_description_only": {
+     "b": 21,
+     "c": 81
+    }
+   }
+  },
+  "TB-L500-memitw": {
+   "D1: where_logonly against deployed": {
+    "outcome": "D1",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 0,
+      "c": 339,
+      "n_discordant": 339,
+      "n_pairs": 469,
+      "p": 1.7859177988785547e-102,
+      "log10_p": -101.74813853442565,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 14.712153518123666,
+      "rate_b": 86.99360341151386
+     }
+    ],
+    "pooled_description_only": {
+     "b": 0,
+     "c": 339
+    }
+   },
+   "D1: rescope against deployed": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 0,
+      "c": 399,
+      "n_discordant": 399,
+      "n_pairs": 469,
+      "p": 1.5490367659397273e-120,
+      "log10_p": -119.80993827426451,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.9189765458422177,
+      "rate_b": 86.99360341151386
+     },
+     {
+      "draw": 1,
+      "b": 0,
+      "c": 391,
+      "n_discordant": 391,
+      "n_pairs": 469,
+      "p": 3.965534120805702e-118,
+      "log10_p": -117.40169830895266,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 3.624733475479744,
+      "rate_b": 86.99360341151386
+     },
+     {
+      "draw": 2,
+      "b": 0,
+      "c": 391,
+      "n_discordant": 391,
+      "n_pairs": 469,
+      "p": 3.965534120805702e-118,
+      "log10_p": -117.40169830895266,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 3.624733475479744,
+      "rate_b": 86.99360341151386
+     }
+    ],
+    "pooled_description_only": {
+     "b": 0,
+     "c": 1181
+    }
+   },
+   "Rel: where_logonly against deployed": {
+    "outcome": "Rel",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 85,
+      "c": 37,
+      "n_discordant": 122,
+      "n_pairs": 500,
+      "p": 1.6489647149772912e-05,
+      "log10_p": -4.782788637414676,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 55.2,
+      "rate_b": 45.6
+     }
+    ],
+    "pooled_description_only": {
+     "b": 85,
+     "c": 37
+    }
+   },
+   "Rel: rescope against deployed": {
+    "outcome": "Rel",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 268,
+      "c": 5,
+      "n_discordant": 273,
+      "n_pairs": 500,
+      "p": 1.6352863212177633e-72,
+      "log10_p": -71.78640619600779,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.2,
+      "rate_b": 45.6
+     },
+     {
+      "draw": 1,
+      "b": 269,
+      "c": 5,
+      "n_discordant": 274,
+      "n_pairs": 500,
+      "p": 8.327830270584354e-73,
+      "log10_p": -72.0794681347583,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.4,
+      "rate_b": 45.6
+     },
+     {
+      "draw": 2,
+      "b": 269,
+      "c": 4,
+      "n_discordant": 273,
+      "n_pairs": 500,
+      "p": 3.0279732899107433e-74,
+      "log10_p": -73.51884796011501,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.6,
+      "rate_b": 45.6
+     }
+    ],
+    "pooled_description_only": {
+     "b": 806,
+     "c": 14
+    }
+   },
+   "D1: rescope against white_0.1_shared": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "white_0.1_shared",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 4,
+      "c": 8,
+      "n_discordant": 12,
+      "n_pairs": 469,
+      "p": 0.3876953125,
+      "log10_p": -0.41150944987669646,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.9189765458422177,
+      "rate_b": 2.771855010660981
+     },
+     {
+      "draw": 1,
+      "b": 8,
+      "c": 9,
+      "n_discordant": 17,
+      "n_pairs": 469,
+      "p": 1.0,
+      "log10_p": 0.0,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 3.624733475479744,
+      "rate_b": 3.8379530916844353
+     },
+     {
+      "draw": 2,
+      "b": 13,
+      "c": 12,
+      "n_discordant": 25,
+      "n_pairs": 469,
+      "p": 1.0,
+      "log10_p": 0.0,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 3.624733475479744,
+      "rate_b": 3.411513859275053
+     }
+    ],
+    "pooled_description_only": {
+     "b": 25,
+     "c": 29
+    }
+   },
+   "D1: rescope against retr_sum": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "retr_sum",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 6,
+      "c": 12,
+      "n_discordant": 18,
+      "n_pairs": 469,
+      "p": 0.237884521484375,
+      "log10_p": -0.6236338154348573,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 1.9189765458422177,
+      "rate_b": 3.1982942430703627
+     },
+     {
+      "draw": 1,
+      "b": 13,
+      "c": 26,
+      "n_discordant": 39,
+      "n_pairs": 469,
+      "p": 0.05325191409792751,
+      "log10_p": -1.2736647772370624,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 3.624733475479744,
+      "rate_b": 6.396588486140725
+     },
+     {
+      "draw": 2,
+      "b": 13,
+      "c": 20,
+      "n_discordant": 33,
+      "n_pairs": 469,
+      "p": 0.296206368599087,
+      "log10_p": -0.5284056081453059,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 3.624733475479744,
+      "rate_b": 5.11727078891258
+     }
+    ],
+    "pooled_description_only": {
+     "b": 32,
+     "c": 58
+    }
+   }
+  },
+  "TB-L1000-memitw": {
+   "D1: where_logonly against deployed": {
+    "outcome": "D1",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 1,
+      "c": 350,
+      "n_discordant": 351,
+      "n_pairs": 469,
+      "p": 1.534773108411258e-103,
+      "log10_p": -102.81395581891529,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 11.727078891257996,
+      "rate_b": 86.14072494669509
+     }
+    ],
+    "pooled_description_only": {
+     "b": 1,
+     "c": 350
+    }
+   },
+   "D1: rescope against deployed": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 0,
+      "c": 391,
+      "n_discordant": 391,
+      "n_pairs": 469,
+      "p": 3.965534120805702e-118,
+      "log10_p": -117.40169830895266,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 2.771855010660981,
+      "rate_b": 86.14072494669509
+     }
+    ],
+    "pooled_description_only": {
+     "b": 0,
+     "c": 391
+    }
+   },
+   "Rel: where_logonly against deployed": {
+    "outcome": "Rel",
+    "a": "where_logonly",
+    "b": "deployed",
+    "paired_on": "one run of each row (no calibration)",
+    "tests": [
+     {
+      "draw": null,
+      "b": 167,
+      "c": 61,
+      "n_discordant": 228,
+      "n_pairs": 1000,
+      "p": 1.3954128007908442e-12,
+      "log10_p": -11.855297297347036,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 47.9,
+      "rate_b": 37.3
+     }
+    ],
+    "pooled_description_only": {
+     "b": 167,
+     "c": 61
+    }
+   },
+   "Rel: rescope against deployed": {
+    "outcome": "Rel",
+    "a": "rescope",
+    "b": "deployed",
+    "paired_on": "the one run of the row without calibration against each draw of the calibrated row",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 617,
+      "c": 3,
+      "n_discordant": 620,
+      "n_pairs": 1000,
+      "p": 1.825837665625703e-179,
+      "log10_p": -178.7385378380049,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 98.7,
+      "rate_b": 37.3
+     }
+    ],
+    "pooled_description_only": {
+     "b": 617,
+     "c": 3
+    }
+   },
+   "D1: rescope against white_0.1_shared": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "white_0.1_shared",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 5,
+      "c": 5,
+      "n_discordant": 10,
+      "n_pairs": 469,
+      "p": 1.0,
+      "log10_p": 0.0,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 2.771855010660981,
+      "rate_b": 2.771855010660981
+     }
+    ],
+    "pooled_description_only": {
+     "b": 5,
+     "c": 5
+    }
+   },
+   "D1: rescope against retr_sum": {
+    "outcome": "D1",
+    "a": "rescope",
+    "b": "retr_sum",
+    "paired_on": "the same calibration draw index",
+    "tests": [
+     {
+      "draw": 0,
+      "b": 7,
+      "c": 12,
+      "n_discordant": 19,
+      "n_pairs": 469,
+      "p": 0.359283447265625,
+      "log10_p": -0.4445627909411778,
+      "p_from": "integer arithmetic; equals fx.stats.mcnemar_exact",
+      "rate_a": 2.771855010660981,
+      "rate_b": 3.8379530916844353
+     }
+    ],
+    "pooled_description_only": {
+     "b": 7,
+     "c": 12
+    }
+   }
+  }
+ }
+}

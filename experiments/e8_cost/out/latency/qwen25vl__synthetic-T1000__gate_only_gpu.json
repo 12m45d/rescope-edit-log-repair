@@ -1,0 +1,58 @@
+{
+ "backbone": "qwen25vl",
+ "T": 1000,
+ "kind": "synthetic",
+ "synthetic": {
+  "T": 1000,
+  "backbone": "qwen25vl",
+  "reference_log": "TB-Q2000-memitw",
+  "beta": 0.9,
+  "seed": 20262111,
+  "build_s": 0.47806596755981445,
+  "n_distinct_real_edits": 783,
+  "rule": " OF T EDITS (R13; \"random factors with the row norms and the coordinate distribution of a real log\").\nReference log = the longest MEMIT-style log of the backbone (TB-Q2000-memitw / TB-L1000-memitw), T_ref real edits.\nFor synthetic edit j (seeded, numpy default_rng(SEED + T)):\n    i(j)   a real edit drawn uniformly with replacement\n    w'_j   = |w_i| * unit(BETA * unit(w_i) + sqrt(1 - BETA^2) * g_j),  g_j a standard Gaussian direction made orthogonal to w_i\n             (a real read-out vector turned by the fixed angle arccos(BETA) in a random direction; its norm is the real one)\n    s'_j   = s_i  (the real own coordinate; the synthetic solver key is DEFINED as k_i + (s_i - <w'_j, k_i>) w'_j / |w'_j|^2 and is\n             never materialised: its normalised own coordinate is 1 by construction)\n    v'_j   = the released (rebased) value of real edit i (real value norms)\nBETA = 0.9 was fixed before any timing was looked at; costs depend on T, d and m only.  The distribution of the normalised\ncoordinates of the 200 calibration keys on the synthetic detectors is recorded next to the real one (quantiles).\nThe scoped log of a synthetic log has no guard keys (the own coordinate is 1 by const"
+ },
+ "calibration": {
+  "coords_s": 0.029401324689388275,
+  "rule_s": 0.0029807500541210175,
+  "caps_s": 0.00020529329776763916,
+  "total_s": 0.03258736804127693,
+  "n": 200,
+  "n_edits_capped": 4,
+  "eta": 0.39926888366701585,
+  "bound": 0.04950495049504951
+ },
+ "gate_only_ms": {
+  "median": 1.6375631093978882,
+  "p10": 0.38127005100250244,
+  "p90": 11.465629562735558,
+  "mean": 3.5423980007568994,
+  "n": 1500
+ },
+ "gate_only_ms_mean_of_min": 0.7607589165369669,
+ "n_keys": 30,
+ "runs_per_key": 50,
+ "gate_only_ms_median_of_min": 0.8468758314847946,
+ "n_keys_firing": 0,
+ "device": "NVIDIA GeForce RTX 5090",
+ "load_samples": [
+  {
+   "gpu": "0",
+   "utilization_pct": 77.0,
+   "memory_used_MiB": 15351.0,
+   "n_compute_processes": 2,
+   "n_other_processes": 1,
+   "time": "22:29:58"
+  },
+  {
+   "gpu": "0",
+   "utilization_pct": 98.0,
+   "memory_used_MiB": 15351.0,
+   "n_compute_processes": 2,
+   "n_other_processes": 1,
+   "time": "22:30:04"
+  }
+ ],
+ "peak_gpu_bytes": 114502144,
+ "note": "E8 extended: the gate alone on the GPU for synthetic logs (no model in the process), fp64 as evaluated.\n    gq run --mem 14500 --prio 2 -- python synth_gpu.py            (gq run --mem 3500 ... synth_gpu.py 10000: T <= 10000 only; finished T are skipped)\nFor both backbones and T in {1000, 10000, 100000}: the synthetic scoped log (synth.py), two-block thresholds from the 200 calibration\nkeys of draw 0 of the reference log, on the card in fp64; decision + response for one sequence with ONE eligible position (the\nteacher-forced last-prompt key of 30 REPAIR queries from the key cache, given as a (1, 1, d) module input), NRUN = 50 runs per key,\nCUDA-synchronised.  Reported: median [p10, p90] over all runs and the mean over keys of the per-key minimum (the library's convention for\nthe gate alone: the minimum is nearly free of contention by other processes on the card; a first run with 10 runs per key on a card at\n97 % utilisation with two other processes gave minima that were still inflated: kept under out/latency/superseded_10runs/).  The work of a role-last gate does not depend on the other positions of the sequence, so this is the 'gate alone'\nfigure of lat.py without the row selection from a captured sequence."
+}

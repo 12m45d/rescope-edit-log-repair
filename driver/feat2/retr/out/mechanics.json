@@ -1,0 +1,894 @@
+{
+ "what": "mechanics check, development logs only; not a result",
+ "alpha": 0.05,
+ "n": 200,
+ "draw": 0,
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "log": "TB-Q100-ae-l2_3",
+   "cache": "qwen25vl",
+   "T": 100,
+   "alpha": 0.05,
+   "n": 200,
+   "draw": 0,
+   "n_calibration_rows": 200,
+   "calibration": {
+    "op": "retr.calibrate",
+    "rule": "two_block",
+    "alpha": 0.05,
+    "alpha_exact": "1/20",
+    "n": 200,
+    "T": 100,
+    "split": [
+     1,
+     1
+    ],
+    "seed": 0,
+    "n_queries_with_image": 102,
+    "n_block1_queries_with_image": 49,
+    "n_block2_queries_with_image": 53,
+    "image": {
+     "eta": 0.17652794119551274,
+     "eta_infinite": false,
+     "rank": 96,
+     "n1": 100,
+     "n2": 100,
+     "n_allowed_above": 5,
+     "bound_false_firing": 0.04950495049504951,
+     "n_block2_queries_with_finite_margin": 53,
+     "baseline_min_median_max": [
+      0.22811817542783785,
+      0.4755291594128561,
+      0.6942107972600873
+     ],
+     "literal_threshold_min_median_max": [
+      0.40464611662335065,
+      0.652057100608369,
+      0.8707387384556001
+     ]
+    },
+    "question": {
+     "eta": 0.159159715452855,
+     "eta_infinite": false,
+     "rank": 96,
+     "n1": 100,
+     "n2": 100,
+     "n_allowed_above": 5,
+     "bound_false_firing": 0.04950495049504951,
+     "n_block2_queries_with_finite_margin": 100,
+     "baseline_min_median_max": [
+      0.2824338908705819,
+      0.8965236651208279,
+      1.0000000931359132
+     ],
+     "literal_threshold_min_median_max": [
+      0.44159360632343697,
+      1.0556833805736832,
+      1.1591598085887684
+     ]
+    },
+    "strict": true,
+    "bound_false_firing": 0.04950495049504951,
+    "bound": "P(a fresh benign query releases an edit) <= min over the two attributes of floor(alpha (n2 + 1)) / (n2 + 1) (conjunction; uncapped rule)",
+    "bound_false_firing_with_caps": 0.04950495049504951,
+    "guards": "the own request of every edit",
+    "allow_silence": false,
+    "n_own_requests_silenced_by_literal_rule": 59,
+    "own_requests_silenced_by_literal_rule": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     22,
+     23,
+     24,
+     25,
+     28,
+     32,
+     33,
+     37,
+     38,
+     40,
+     41,
+     42,
+     43,
+     47,
+     49,
+     50,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     62,
+     63,
+     64,
+     66,
+     67,
+     71,
+     73,
+     75,
+     76,
+     78,
+     79,
+     81,
+     82,
+     83,
+     84,
+     85,
+     88,
+     89,
+     91,
+     96
+    ],
+    "capped": true,
+    "n_edits_capped": 59,
+    "capped_edits": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     22,
+     23,
+     24,
+     25,
+     28,
+     32,
+     33,
+     37,
+     38,
+     40,
+     41,
+     42,
+     43,
+     47,
+     49,
+     50,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     62,
+     63,
+     64,
+     66,
+     67,
+     71,
+     73,
+     75,
+     76,
+     78,
+     79,
+     81,
+     82,
+     83,
+     84,
+     85,
+     88,
+     89,
+     91,
+     96
+    ],
+    "n_edits_capped_image": 0,
+    "n_edits_capped_question": 59,
+    "n_edits_capped_both": 0,
+    "guarantee": "holds through the image attribute, on which no edit is capped: P(release) <= 0.049505; 59 edit(s) are capped on the question attribute (their own question keeps passing)",
+    "top1": "largest (image score - image baseline) + (question score - question baseline); an exact tie goes to the lowest edit index",
+    "n_own_requests_passing": 100,
+    "fingerprint": "6bef81918c1b",
+    "log": "TB-Q100-ae-l2_3",
+    "cache": "qwen25vl",
+    "family": "Q",
+    "n_own_requests_released_by_own_edit": 100,
+    "own_requests_released_by_another_edit": []
+   },
+   "lookup_record": {
+    "op": "retr.lookup",
+    "log": "TB-Q100-ae-l2_3",
+    "T": 100,
+    "stop_list_sha1": "08f4a4b05448",
+    "stop_list_fixed_at": "2026-11-11 06:27 UTC",
+    "n_stop_words": 226,
+    "rule": "same image md5 AND >= 1 shared content word; top-1 = most shared content words, tie -> lowest edit index; no calibration",
+    "n_edits_without_content_word": 0,
+    "edits_without_content_word": [],
+    "n_edits_sharing_their_image_with_another_edit": 0
+   },
+   "rows": {
+    "probe": 979,
+    "edit": 300,
+    "hn": 1278,
+    "benign": 3000,
+    "heldout_disjoint": 465,
+    "repair": 489
+   },
+   "question_attribute": {
+    "n_edits_whose_question_string_is_asked_by_a_block1_query": 8,
+    "n_edits_with_question_baseline_ge_1-1e-6": 8,
+    "n_edits_whose_literal_question_threshold_exceeds_1": 59,
+    "n_calibration_queries_whose_question_is_an_edit_question_of_the_log": 14,
+    "installed_question_threshold_uncapped_edits_min_median_max": [
+     0.44159360632343697,
+     0.8603826541546483,
+     0.9930159766655963
+    ],
+    "installed_image_threshold_min_median_max": [
+     0.40464611662335065,
+     0.652057100608369,
+     0.8707387384556001
+    ]
+   },
+   "retr": {
+    "heldout_disjoint": {
+     "n": 465,
+     "fired_pct": 0.21505376344086022,
+     "n_fired": 1
+    },
+    "heldout_disjoint_image": {
+     "n": 224,
+     "fired_pct": 0.4464285714285714,
+     "n_fired": 1
+    },
+    "heldout_disjoint_text": {
+     "n": 241,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "repair": {
+     "n": 489,
+     "fired_pct": 0.2044989775051125,
+     "n_fired": 1
+    },
+    "repair_calibration_rows": {
+     "n": 200,
+     "fired_pct": 0.5,
+     "n_fired": 1
+    },
+    "heldout_disjoint_single_attribute": {
+     "image_alone_pct": 3.010752688172043,
+     "question_alone_pct": 9.032258064516128,
+     "both_some_edit_each_pct": 0.43010752688172044,
+     "conjunction_pct": 0.21505376344086022
+    },
+    "rel": {
+     "n": 100,
+     "fired_pct": 100.0,
+     "n_fired": 100,
+     "coverage_pct": 100.0,
+     "own_cand_pct": 100.0,
+     "other_edit_released_pct": 0.0
+    },
+    "tgen": {
+     "n": 100,
+     "fired_pct": 9.0,
+     "n_fired": 9,
+     "coverage_pct": 9.0,
+     "own_cand_pct": 9.0,
+     "other_edit_released_pct": 0.0
+    },
+    "igen": {
+     "n": 100,
+     "fired_pct": 94.0,
+     "n_fired": 94,
+     "coverage_pct": 94.0,
+     "own_cand_pct": 94.0,
+     "other_edit_released_pct": 0.0
+    },
+    "HN-I": {
+     "n": 588,
+     "fired_pct": 0.0,
+     "n_fired": 0,
+     "coverage_pct": 0.0,
+     "own_cand_pct": 0.0,
+     "other_edit_released_pct": 0.0
+    },
+    "HN-Q": {
+     "n": 591,
+     "fired_pct": 0.1692047377326565,
+     "n_fired": 1,
+     "coverage_pct": 0.0,
+     "own_cand_pct": 0.0,
+     "other_edit_released_pct": 0.1692047377326565
+    },
+    "HN-X": {
+     "n": 99,
+     "fired_pct": 0.0,
+     "n_fired": 0,
+     "coverage_pct": 0.0,
+     "own_cand_pct": 0.0,
+     "other_edit_released_pct": 0.0,
+     "question_edit_released_pct": 0.0
+    },
+    "benign": {
+     "n": 3000,
+     "fired_pct": 0.2,
+     "n_fired": 6
+    },
+    "benign_image": {
+     "n": 1500,
+     "fired_pct": 0.4,
+     "n_fired": 6
+    },
+    "benign_text": {
+     "n": 1500,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "n_capped_edits": 59,
+    "lineage": {
+     "n_firing_rows": 212,
+     "max_candidates": 2,
+     "pct_firing_rows_with_more_than_one_candidate": 0.9433962264150944
+    }
+   },
+   "lookup": {
+    "heldout_disjoint": {
+     "n": 465,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "heldout_disjoint_image": {
+     "n": 224,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "heldout_disjoint_text": {
+     "n": 241,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "repair": {
+     "n": 489,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "repair_calibration_rows": {
+     "n": 200,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "rel": {
+     "n": 100,
+     "fired_pct": 100.0,
+     "n_fired": 100,
+     "coverage_pct": 100.0,
+     "own_cand_pct": 100.0,
+     "other_edit_released_pct": 0.0
+    },
+    "tgen": {
+     "n": 100,
+     "fired_pct": 60.0,
+     "n_fired": 60,
+     "coverage_pct": 60.0,
+     "own_cand_pct": 60.0,
+     "other_edit_released_pct": 0.0
+    },
+    "igen": {
+     "n": 100,
+     "fired_pct": 0.0,
+     "n_fired": 0,
+     "coverage_pct": 0.0,
+     "own_cand_pct": 0.0,
+     "other_edit_released_pct": 0.0
+    },
+    "HN-I": {
+     "n": 588,
+     "fired_pct": 7.8231292517006805,
+     "n_fired": 46,
+     "coverage_pct": 7.8231292517006805,
+     "own_cand_pct": 7.8231292517006805,
+     "other_edit_released_pct": 0.0
+    },
+    "HN-Q": {
+     "n": 591,
+     "fired_pct": 0.0,
+     "n_fired": 0,
+     "coverage_pct": 0.0,
+     "own_cand_pct": 0.0,
+     "other_edit_released_pct": 0.0
+    },
+    "HN-X": {
+     "n": 99,
+     "fired_pct": 11.11111111111111,
+     "n_fired": 11,
+     "coverage_pct": 11.11111111111111,
+     "own_cand_pct": 11.11111111111111,
+     "other_edit_released_pct": 0.0,
+     "question_edit_released_pct": 0.0
+    },
+    "benign": {
+     "n": 3000,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "benign_image": {
+     "n": 1500,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "benign_text": {
+     "n": 1500,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "n_capped_edits": null,
+    "lineage": {
+     "n_firing_rows": 217,
+     "max_candidates": 1,
+     "pct_firing_rows_with_more_than_one_candidate": 0.0
+    }
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "log": "TB-L100-ae-l2_3",
+   "cache": "llava",
+   "T": 100,
+   "alpha": 0.05,
+   "n": 200,
+   "draw": 0,
+   "n_calibration_rows": 200,
+   "calibration": {
+    "op": "retr.calibrate",
+    "rule": "two_block",
+    "alpha": 0.05,
+    "alpha_exact": "1/20",
+    "n": 200,
+    "T": 100,
+    "split": [
+     1,
+     1
+    ],
+    "seed": 0,
+    "n_queries_with_image": 102,
+    "n_block1_queries_with_image": 49,
+    "n_block2_queries_with_image": 53,
+    "image": {
+     "eta": 0.16070120739896865,
+     "eta_infinite": false,
+     "rank": 96,
+     "n1": 100,
+     "n2": 100,
+     "n_allowed_above": 5,
+     "bound_false_firing": 0.04950495049504951,
+     "n_block2_queries_with_finite_margin": 53,
+     "baseline_min_median_max": [
+      0.19252114011345967,
+      0.4361542755017389,
+      0.7015119083555525
+     ],
+     "literal_threshold_min_median_max": [
+      0.35322234751242837,
+      0.5968554829007077,
+      0.8622131157545213
+     ]
+    },
+    "question": {
+     "eta": 0.16447311569046263,
+     "eta_infinite": false,
+     "rank": 96,
+     "n1": 100,
+     "n2": 100,
+     "n_allowed_above": 5,
+     "bound_false_firing": 0.04950495049504951,
+     "n_block2_queries_with_finite_margin": 100,
+     "baseline_min_median_max": [
+      0.21874989388903288,
+      0.8682705792579295,
+      1.0000000931359132
+     ],
+     "literal_threshold_min_median_max": [
+      0.38322300957949557,
+      1.0327436949483924,
+      1.164473208826376
+     ]
+    },
+    "strict": true,
+    "bound_false_firing": 0.04950495049504951,
+    "bound": "P(a fresh benign query releases an edit) <= min over the two attributes of floor(alpha (n2 + 1)) / (n2 + 1) (conjunction; uncapped rule)",
+    "bound_false_firing_with_caps": 0.04950495049504951,
+    "guards": "the own request of every edit",
+    "allow_silence": false,
+    "n_own_requests_silenced_by_literal_rule": 58,
+    "own_requests_silenced_by_literal_rule": [
+     0,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     9,
+     10,
+     12,
+     13,
+     15,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     24,
+     25,
+     27,
+     28,
+     30,
+     33,
+     34,
+     35,
+     36,
+     37,
+     40,
+     43,
+     45,
+     46,
+     47,
+     48,
+     50,
+     52,
+     54,
+     57,
+     60,
+     63,
+     64,
+     66,
+     67,
+     68,
+     73,
+     74,
+     75,
+     76,
+     78,
+     79,
+     81,
+     83,
+     86,
+     89,
+     90,
+     92,
+     97,
+     98
+    ],
+    "capped": true,
+    "n_edits_capped": 58,
+    "capped_edits": [
+     0,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     9,
+     10,
+     12,
+     13,
+     15,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     24,
+     25,
+     27,
+     28,
+     30,
+     33,
+     34,
+     35,
+     36,
+     37,
+     40,
+     43,
+     45,
+     46,
+     47,
+     48,
+     50,
+     52,
+     54,
+     57,
+     60,
+     63,
+     64,
+     66,
+     67,
+     68,
+     73,
+     74,
+     75,
+     76,
+     78,
+     79,
+     81,
+     83,
+     86,
+     89,
+     90,
+     92,
+     97,
+     98
+    ],
+    "n_edits_capped_image": 0,
+    "n_edits_capped_question": 58,
+    "n_edits_capped_both": 0,
+    "guarantee": "holds through the image attribute, on which no edit is capped: P(release) <= 0.049505; 58 edit(s) are capped on the question attribute (their own question keeps passing)",
+    "top1": "largest (image score - image baseline) + (question score - question baseline); an exact tie goes to the lowest edit index",
+    "n_own_requests_passing": 100,
+    "fingerprint": "1434f3d00515",
+    "log": "TB-L100-ae-l2_3",
+    "cache": "llava",
+    "family": "L",
+    "n_own_requests_released_by_own_edit": 100,
+    "own_requests_released_by_another_edit": []
+   },
+   "lookup_record": {
+    "op": "retr.lookup",
+    "log": "TB-L100-ae-l2_3",
+    "T": 100,
+    "stop_list_sha1": "08f4a4b05448",
+    "stop_list_fixed_at": "2026-11-11 06:27 UTC",
+    "n_stop_words": 226,
+    "rule": "same image md5 AND >= 1 shared content word; top-1 = most shared content words, tie -> lowest edit index; no calibration",
+    "n_edits_without_content_word": 0,
+    "edits_without_content_word": [],
+    "n_edits_sharing_their_image_with_another_edit": 0
+   },
+   "rows": {
+    "probe": 988,
+    "edit": 300,
+    "hn": 1286,
+    "benign": 3000,
+    "heldout_disjoint": 469,
+    "repair": 494
+   },
+   "question_attribute": {
+    "n_edits_whose_question_string_is_asked_by_a_block1_query": 11,
+    "n_edits_with_question_baseline_ge_1-1e-6": 11,
+    "n_edits_whose_literal_question_threshold_exceeds_1": 58,
+    "n_calibration_queries_whose_question_is_an_edit_question_of_the_log": 22,
+    "installed_question_threshold_uncapped_edits_min_median_max": [
+     0.38322300957949557,
+     0.840596687712731,
+     0.9823942170652914
+    ],
+    "installed_image_threshold_min_median_max": [
+     0.35322234751242837,
+     0.5968554829007077,
+     0.8622131157545213
+    ]
+   },
+   "retr": {
+    "heldout_disjoint": {
+     "n": 469,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "heldout_disjoint_image": {
+     "n": 223,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "heldout_disjoint_text": {
+     "n": 246,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "repair": {
+     "n": 494,
+     "fired_pct": 0.20242914979757085,
+     "n_fired": 1
+    },
+    "repair_calibration_rows": {
+     "n": 200,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "heldout_disjoint_single_attribute": {
+     "image_alone_pct": 5.330490405117271,
+     "question_alone_pct": 12.153518123667377,
+     "both_some_edit_each_pct": 1.4925373134328357,
+     "conjunction_pct": 0.0
+    },
+    "rel": {
+     "n": 100,
+     "fired_pct": 100.0,
+     "n_fired": 100,
+     "coverage_pct": 100.0,
+     "own_cand_pct": 100.0,
+     "other_edit_released_pct": 0.0
+    },
+    "tgen": {
+     "n": 100,
+     "fired_pct": 12.0,
+     "n_fired": 12,
+     "coverage_pct": 11.0,
+     "own_cand_pct": 11.0,
+     "other_edit_released_pct": 1.0
+    },
+    "igen": {
+     "n": 100,
+     "fired_pct": 98.0,
+     "n_fired": 98,
+     "coverage_pct": 97.0,
+     "own_cand_pct": 98.0,
+     "other_edit_released_pct": 1.0
+    },
+    "HN-I": {
+     "n": 590,
+     "fired_pct": 0.3389830508474576,
+     "n_fired": 2,
+     "coverage_pct": 0.3389830508474576,
+     "own_cand_pct": 0.3389830508474576,
+     "other_edit_released_pct": 0.0
+    },
+    "HN-Q": {
+     "n": 597,
+     "fired_pct": 0.0,
+     "n_fired": 0,
+     "coverage_pct": 0.0,
+     "own_cand_pct": 0.0,
+     "other_edit_released_pct": 0.0
+    },
+    "HN-X": {
+     "n": 99,
+     "fired_pct": 0.0,
+     "n_fired": 0,
+     "coverage_pct": 0.0,
+     "own_cand_pct": 0.0,
+     "other_edit_released_pct": 0.0,
+     "question_edit_released_pct": 0.0
+    },
+    "benign": {
+     "n": 3000,
+     "fired_pct": 0.3,
+     "n_fired": 9
+    },
+    "benign_image": {
+     "n": 1500,
+     "fired_pct": 0.6,
+     "n_fired": 9
+    },
+    "benign_text": {
+     "n": 1500,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "n_capped_edits": 58,
+    "lineage": {
+     "n_firing_rows": 222,
+     "max_candidates": 2,
+     "pct_firing_rows_with_more_than_one_candidate": 3.6036036036036037
+    }
+   },
+   "lookup": {
+    "heldout_disjoint": {
+     "n": 469,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "heldout_disjoint_image": {
+     "n": 223,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "heldout_disjoint_text": {
+     "n": 246,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "repair": {
+     "n": 494,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "repair_calibration_rows": {
+     "n": 200,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "rel": {
+     "n": 100,
+     "fired_pct": 100.0,
+     "n_fired": 100,
+     "coverage_pct": 100.0,
+     "own_cand_pct": 100.0,
+     "other_edit_released_pct": 0.0
+    },
+    "tgen": {
+     "n": 100,
+     "fired_pct": 59.0,
+     "n_fired": 59,
+     "coverage_pct": 59.0,
+     "own_cand_pct": 59.0,
+     "other_edit_released_pct": 0.0
+    },
+    "igen": {
+     "n": 100,
+     "fired_pct": 0.0,
+     "n_fired": 0,
+     "coverage_pct": 0.0,
+     "own_cand_pct": 0.0,
+     "other_edit_released_pct": 0.0
+    },
+    "HN-I": {
+     "n": 590,
+     "fired_pct": 5.593220338983051,
+     "n_fired": 33,
+     "coverage_pct": 5.593220338983051,
+     "own_cand_pct": 5.593220338983051,
+     "other_edit_released_pct": 0.0
+    },
+    "HN-Q": {
+     "n": 597,
+     "fired_pct": 0.0,
+     "n_fired": 0,
+     "coverage_pct": 0.0,
+     "own_cand_pct": 0.0,
+     "other_edit_released_pct": 0.0
+    },
+    "HN-X": {
+     "n": 99,
+     "fired_pct": 7.07070707070707,
+     "n_fired": 7,
+     "coverage_pct": 7.07070707070707,
+     "own_cand_pct": 7.07070707070707,
+     "other_edit_released_pct": 0.0,
+     "question_edit_released_pct": 0.0
+    },
+    "benign": {
+     "n": 3000,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "benign_image": {
+     "n": 1500,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "benign_text": {
+     "n": 1500,
+     "fired_pct": 0.0,
+     "n_fired": 0
+    },
+    "n_capped_edits": null,
+    "lineage": {
+     "n_firing_rows": 199,
+     "max_candidates": 1,
+     "pct_firing_rows_with_more_than_one_candidate": 0.0
+    }
+   }
+  }
+ }
+}

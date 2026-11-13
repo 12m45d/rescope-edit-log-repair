@@ -1,0 +1,431 @@
+{
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "n_variants": 39,
+   "built": 39,
+   "keys": {
+    "rescope": "7aa0cb00ec67",
+    "rescope/alpha=0.01": "1e18038d20f5",
+    "rescope/alpha=0.2/n=100": "d32f769b4824",
+    "rescope/split=(1, 3)": "aa45e45ab886",
+    "rescope/split=(3, 1)": "6c84b32e370e",
+    "rescope/baseline=0.98": "f32d3fa24616",
+    "rescope/feature=coord": "20a5610d71e4",
+    "rescope/rebase=False": "24b78bbb582f",
+    "rescope/fire=all": "6bfa697f3ee0",
+    "rescope/response=gain": "d341926c7fbc",
+    "rescope/response=lin": "146cba220f3b",
+    "rescope/role=last+answer/calibration=log_only": "29bd6ea9b39c",
+    "rescope/calibration=log_only": "52131b583779",
+    "rescope/calibration=self": "74c20ae2720f",
+    "rescope/calibration=running_max": "45cb1b2335b8",
+    "rescope/source=BEN-S": "58ba0f089cee",
+    "rescope/source=BEN-S/which=decode": "624f406ac4c6",
+    "rescope/contamination=0.05": "10a8d08a515a",
+    "rescope/guards=False": "57eb32d6ac06",
+    "rescope/allow_silence=True": "ae150e5c8ae8",
+    "rescope/which=all/guards=all": "f0946490638e",
+    "rescope/which=both": "bf261f078fb3",
+    "rescope_shared": "663419f6ef1a",
+    "rescope_null": "e6dd63502117",
+    "rescope_null/ridge=0.1": "838af63e1d77",
+    "rescope_logonly": "42919e502934",
+    "cosine": "849604bec225",
+    "cosine/calibration=shared": "4a92e067d434",
+    "cosine/calibration=default": "0d15d5b2508a",
+    "cosine/calibration=default/role=all": "4bce4fdffdd1",
+    "ball": "971ce0e8bf0b",
+    "ball/calibration=shared": "627f1fa5113b",
+    "ball/calibration=default": "8b1303223e99",
+    "ball/calibration=half_min": "331e65c84559",
+    "exact": "3a03ff9b0f45",
+    "deployed": "bc1e436a68fc",
+    "preedit": "7f58ac48cf76",
+    "dual": "86a3b361863c",
+    "dual/variant=contains": "6f3bcac54b66"
+   },
+   "records_complete": true,
+   "notes": {
+    "alpha_0.01_eta_finite": true,
+    "baseline_q98_below_max": true,
+    "running_max_silent_on_calibration": true,
+    "which_all": {
+     "block2_firing": {
+      "tf": 4,
+      "prompt": 4,
+      "steps": 4
+     },
+     "n_allowed": 5,
+     "n_guards": 1300,
+     "own_prompts_fire_in_every_decode_forward": 100,
+     "variant": "guards=all,which=all"
+    },
+    "which_all_bound_holds_on_block2": true,
+    "evidence_n5": {
+     "rule": "log_only",
+     "least": 5,
+     "n": 5
+    },
+    "evidence_n40": {
+     "rule": "two_block",
+     "n": 40,
+     "eta_finite": true
+    }
+   },
+   "wrap": {
+    "kinds": [
+     "scoped",
+     "scoped"
+    ],
+    "memo": [
+     true,
+     true
+    ],
+    "keys_differ": true,
+    "least_silences_complaints": true,
+    "null_repair_changes_features": true
+   },
+   "recalibrate": {
+    "equals_rescope_bitwise": true,
+    "excluded_rows_absent": true,
+    "excluded_queries_absent": true,
+    "n_excluded": 3,
+    "n_pool_rows_with_an_excluded_query": 3,
+    "eta_after_null_repair_finite": true
+   },
+   "rescope_null": {
+    "thresholds_bitwise_equal_independent_assembly": true,
+    "samples_disjoint": true,
+    "A_in_repair_pool": true,
+    "by_query": {
+     "n_draws": 20,
+     "naive_equal": 20,
+     "shared_queries_max": 0,
+     "distinct_queries_min": 100,
+     "old_rule_shared_calibration_rows": [
+      5,
+      3,
+      4,
+      0,
+      2,
+      1,
+      1,
+      2,
+      6,
+      5,
+      7,
+      3,
+      3,
+      2,
+      4,
+      5,
+      3,
+      5,
+      5,
+      2
+     ],
+     "rows_changed_vs_old_rule": [
+      6,
+      4,
+      4,
+      4,
+      4,
+      1,
+      2,
+      3,
+      5,
+      4,
+      7,
+      4,
+      2,
+      4,
+      4,
+      5,
+      4,
+      5,
+      5,
+      2
+     ],
+     "explicit_sample_with_a_calibration_query_refused": true,
+     "old_rule_shared_at_draw_0": 5,
+     "protocol_says_at_draw_0": 5,
+     "ok": true
+    },
+    "max_abs_feature_on_A": 9.595039087271353e-13,
+    "n_edits_capped": 0,
+    "norm_inflation_max": 1.0554730694367351,
+    "memo_path": true,
+    "variant": "",
+    "values_unchanged": true
+   },
+   "partition": {
+    "sizes": [
+     160,
+     160,
+     160
+    ],
+    "disjoint": true,
+    "first_part_is_the_plain_draw": true,
+    "cal_explicit_n": 160,
+    "variant": "cal=explicit",
+    "recalibrated_on_C1": true,
+    "e2e_variant": "null=30,null_ridge=0.1,cal=explicit",
+    "e2e_record": {
+     "n_a": 30,
+     "ridge": 0.1,
+     "detector_norm_inflation": {
+      "median": 0.9993077928134861,
+      "max": 1.0231921048035233
+     }
+    },
+    "e2e_capped": 0
+   },
+   "same_key_when_rebuilt": true,
+   "keys_distinct": true,
+   "e1_rowset_no_model": {
+    "deployed": "deployed",
+    "preedit": "preedit",
+    "rescope": "scoped",
+    "rescope_shared": "scoped",
+    "rescope_null": "scoped",
+    "where_logonly": "gate",
+    "cosine": "scoped",
+    "cosine_shared": "scoped",
+    "cosine_default": "scoped",
+    "cosine_published": "gate",
+    "ball": "scoped",
+    "ball_default": "scoped",
+    "exact": "scoped",
+    "router": "unavailable",
+    "router_default": "unavailable",
+    "zscore": "unavailable",
+    "zscore_default": "unavailable",
+    "dual": "dual",
+    "p12_comp_b_nall": "unavailable",
+    "p12_reedit_b_nall": "unavailable",
+    "p12_rb_union_nall": "unavailable",
+    "p12_rb_tot_nall": "unavailable"
+   },
+   "e1_labels_ok": true,
+   "e1_only_calibrated_rows_change": true
+  },
+  "TB-L100-ae-l2_3": {
+   "n_variants": 39,
+   "built": 39,
+   "keys": {
+    "rescope": "5e0b49bf9d77",
+    "rescope/alpha=0.01": "dfe5edd2f5bf",
+    "rescope/alpha=0.2/n=100": "06a0d9f516ae",
+    "rescope/split=(1, 3)": "bcd2fc6df3b0",
+    "rescope/split=(3, 1)": "4e1d097f178d",
+    "rescope/baseline=0.98": "901ae37599d6",
+    "rescope/feature=coord": "6fa0fd60a861",
+    "rescope/rebase=False": "232cf715de03",
+    "rescope/fire=all": "a6245f104e35",
+    "rescope/response=gain": "f2c553c5beec",
+    "rescope/response=lin": "0827b365ca6e",
+    "rescope/role=last+answer/calibration=log_only": "88d4dfef80c5",
+    "rescope/calibration=log_only": "e76a5c65ab31",
+    "rescope/calibration=self": "dff5e871c1e3",
+    "rescope/calibration=running_max": "cf49ee4b31ec",
+    "rescope/source=BEN-S": "bf22d76b97e9",
+    "rescope/source=BEN-S/which=decode": "8ca2922edddd",
+    "rescope/contamination=0.05": "dc2063971bbb",
+    "rescope/guards=False": "2fca86f5d390",
+    "rescope/allow_silence=True": "4ae5fed37b93",
+    "rescope/which=all/guards=all": "55d9a32707f4",
+    "rescope/which=both": "e6479f28d83a",
+    "rescope_shared": "2cffaa3c0a2b",
+    "rescope_null": "7312852f9cbd",
+    "rescope_null/ridge=0.1": "1b4ed5a50058",
+    "rescope_logonly": "072d8529da77",
+    "cosine": "9c8a3b1e29f8",
+    "cosine/calibration=shared": "ebbee90f8ada",
+    "cosine/calibration=default": "e7e8f462425f",
+    "cosine/calibration=default/role=all": "90cf1eeac0d8",
+    "ball": "72248a81aecd",
+    "ball/calibration=shared": "d10a05247601",
+    "ball/calibration=default": "71371b0cea72",
+    "ball/calibration=half_min": "d88cbb03d344",
+    "exact": "876aad60f92c",
+    "deployed": "e5ea5f19ec9e",
+    "preedit": "33276570a8a7",
+    "dual": "6e51d73a548b",
+    "dual/variant=contains": "b1e0a4c8485a"
+   },
+   "records_complete": true,
+   "notes": {
+    "alpha_0.01_eta_finite": true,
+    "baseline_q98_below_max": true,
+    "running_max_silent_on_calibration": true,
+    "which_all": {
+     "block2_firing": {
+      "tf": 4,
+      "prompt": 4,
+      "steps": 4
+     },
+     "n_allowed": 5,
+     "n_guards": 1289,
+     "own_prompts_fire_in_every_decode_forward": 99,
+     "variant": "guards=all,which=all"
+    },
+    "which_all_bound_holds_on_block2": true,
+    "evidence_n5": {
+     "rule": "log_only",
+     "least": 5,
+     "n": 5
+    },
+    "evidence_n40": {
+     "rule": "two_block",
+     "n": 40,
+     "eta_finite": true
+    }
+   },
+   "wrap": {
+    "kinds": [
+     "scoped",
+     "scoped"
+    ],
+    "memo": [
+     true,
+     true
+    ],
+    "keys_differ": true,
+    "least_silences_complaints": true,
+    "null_repair_changes_features": true
+   },
+   "recalibrate": {
+    "equals_rescope_bitwise": true,
+    "excluded_rows_absent": true,
+    "excluded_queries_absent": true,
+    "n_excluded": 3,
+    "n_pool_rows_with_an_excluded_query": 3,
+    "eta_after_null_repair_finite": true
+   },
+   "rescope_null": {
+    "thresholds_bitwise_equal_independent_assembly": true,
+    "samples_disjoint": true,
+    "A_in_repair_pool": true,
+    "by_query": {
+     "n_draws": 20,
+     "naive_equal": 20,
+     "shared_queries_max": 0,
+     "distinct_queries_min": 100,
+     "old_rule_shared_calibration_rows": [
+      3,
+      2,
+      2,
+      3,
+      2,
+      1,
+      3,
+      2,
+      0,
+      4,
+      4,
+      4,
+      1,
+      2,
+      3,
+      2,
+      3,
+      3,
+      3,
+      5
+     ],
+     "rows_changed_vs_old_rule": [
+      3,
+      3,
+      2,
+      4,
+      2,
+      1,
+      3,
+      2,
+      1,
+      4,
+      5,
+      3,
+      1,
+      3,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+     ],
+     "explicit_sample_with_a_calibration_query_refused": true,
+     "old_rule_shared_at_draw_0": 3,
+     "protocol_says_at_draw_0": 3,
+     "ok": true
+    },
+    "max_abs_feature_on_A": 8.474911263235972e-13,
+    "n_edits_capped": 0,
+    "norm_inflation_max": 1.0689872541865169,
+    "memo_path": true,
+    "variant": "",
+    "values_unchanged": true
+   },
+   "partition": {
+    "sizes": [
+     160,
+     160,
+     160
+    ],
+    "disjoint": true,
+    "first_part_is_the_plain_draw": true,
+    "cal_explicit_n": 160,
+    "variant": "cal=explicit",
+    "recalibrated_on_C1": true,
+    "e2e_variant": "null=30,null_ridge=0.1,cal=explicit",
+    "e2e_record": {
+     "n_a": 30,
+     "ridge": 0.1,
+     "detector_norm_inflation": {
+      "median": 0.9994668508566658,
+      "max": 1.0243104433434809
+     }
+    },
+    "e2e_capped": 0
+   },
+   "same_key_when_rebuilt": true,
+   "keys_distinct": true,
+   "e1_rowset_no_model": {
+    "deployed": "deployed",
+    "preedit": "preedit",
+    "rescope": "scoped",
+    "rescope_shared": "scoped",
+    "rescope_null": "scoped",
+    "where_logonly": "gate",
+    "cosine": "scoped",
+    "cosine_shared": "scoped",
+    "cosine_default": "scoped",
+    "cosine_published": "gate",
+    "ball": "scoped",
+    "ball_default": "scoped",
+    "exact": "scoped",
+    "router": "unavailable",
+    "router_default": "unavailable",
+    "zscore": "unavailable",
+    "zscore_default": "unavailable",
+    "dual": "dual",
+    "p12_comp_b_nall": "unavailable",
+    "p12_reedit_b_nall": "unavailable",
+    "p12_rb_union_nall": "unavailable",
+    "p12_rb_tot_nall": "unavailable"
+   },
+   "e1_labels_ok": true,
+   "e1_only_calibrated_rows_change": true
+  }
+ },
+ "ok": true,
+ "test": "methods",
+ "seconds": 4.738619327545166,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:15:05"
+}

@@ -1,0 +1,208 @@
+E5 (LINEAR PART) -- INDEPENDENT VERIFICATION OF THE NUMBERS QUOTED FOR THE THEORY SECTION
+rendered 2026-11-11 02:51:26 by verify/code/v_render.py from verify/verdicts.json and verify/out/verify_results.json; no number is typed by hand.
+Logs: Q = TB-Q100-ae-l2_3 (297 REPAIR-pool D1 complaints, decoder v2), L = TB-L100-ae-l2_3 (305).  Cells are 'Q | L'.
+Mine: own code (verify/code), fp64; contributions w_i = u_i <psi_i, k> as explicit vectors from edit_factors.pt; last prompt key from the final key cache (10_final/cache),
+not from the Track C capture that the report used (the two captures are bit for bit equal on every complaint); inner products and coordinates SIGNED, norms magnitudes.
+Scopes: 'sample' = 60 seeded complaints per log (30 image + 30 text, harness rule, seed 0); the medians in column 'mine' are over ALL complaints (what the report quotes);
+capacity: five complaints of the sample (numpy default_rng(5)), and every complaint as an extra.
+
+TABLE (the four tasks)
+quantity                              report         mine                                      agree  verdict                                                                                           note
+------------------------------------  -------------  ----------------------------------------  -----  ------------------------------------------------------------------------------------------------  --------------------------------------------------------------------------------------
+gamma, last key                       0.308 | 0.407  0.308 | 0.407                             yes    safe
+Gamma, last key                       17.7 | 7.36    17.7 | 7.36                               yes    safe
+Gamma/gamma, last key                 57.5 | 18.1    57.5 | 18.1                               yes    safe as a constant of the log, not as a median over complaints                                    one value for every complaint: the ratio of the cosine matrix of the write vectors
+negative-pair share, median           0.501 | 0.503  0.501 | 0.503 (sample 0.501 | 0.503)      yes    safe
+c=0.1: LF/FO deletions, median        72/70 | 72/71  72/70 | 72/71 (sample 70/69 | 71/70)      yes    safe                                                                                              counts equal for every complaint
+c=0.5: LF/FO deletions, median        23/19 | 24/23  23/19 | 24/23 (sample 23/20 | 24/22)      yes    safe                                                                                              counts equal for every complaint
+lower bound, median, c=0.1,0.5        59,3 | 62,7    59,3 | 62,7                               yes    safe only as mu(c^2|D|^2/gamma) of the report's sandwich (prop:app:cond); not as Prop. prop:cond  Prop. prop:cond as displayed gives OPT_c >= LF(c sqrt(Gamma/gamma)): median 8,0 | 30,0
+capacity, five complaints per log     37 | 18        37,37,37,37,37 | 18,18,18,18,18           yes    safe (floating point)                                                                             also equal for every complaint and both key definitions
+paper_numbers.json from results.json  464 values     0 differ; re-run from raw rows: 0 differ  yes    safe
+
+EXTRAS (numbers of the summary outside the four tasks)
+quantity                                                                                                     report                                                                        mine                                                                          agree  verdict                                                                                                                                  note
+-----------------------------------------------------------------------------------------------------------  ----------------------------------------------------------------------------  ----------------------------------------------------------------------------  -----  ---------------------------------------------------------------------------------------------------------------------------------------  --------------------------------------------------------------------------------------------------------------------------------------------
+Gamma/gamma, stacked keys, median [quartiles]                                                                10.1 [9.22, 11.1] | 5.03 [4.22, 7.19]                                         10.1 [9.22, 11.1] | 5.03 [4.22, 7.19]                                         yes    safe
+LF / bound, median, c=0.1, 0.3, 0.5; stacked c=0.1                                                           1.21 | 1.15; 2 | 1.63; 6.33 | 3.43; 1.03 | 1.03                               1.21 | 1.15; 2 | 1.63; 6.33 | 3.43; 1.03 | 1.03                               yes    safe with the bound named as in row 'bound'
+c=0.1: BI deletions, median; complaints on which BI deletes all                                              70 | 71; 0 | 1                                                                70 | 71; 0 | 1 (text_125 FO 73)                                               yes    safe
+least vertex cover number nu (exact)                                                                         40 | 61                                                                       40 | 61                                                                       yes    safe                                                                                                                                     integer program (HiGHS, optimal) and networkx clique number, every complaint
+s*_Z (z)                                                                                                     63 (15) | 82 (1)                                                              63 (15; bitwise z 0: 65) | 82 (1; bitwise z 1: 82)                            yes    safe for L; for Q only with the caveat that the prefix is shared approximately (no position bit for bit)                                 Q: 10 bitwise-distinct copies of the 15 prefix keys, relative difference up to 0.03; exact z = 0 gives s* = 65, above the measured sacrifice
+answer keys / last keys only: rank; complaints repairable                                                    400/100; 297/297 | 483/100; 305/305                                           400/100; 297/297 | 483/100; 305/305                                           yes    safe
+T, d_in; group sizes                                                                                         100, 11008; 289-1059 | 100, 11008; 595-610                                    100, 11008; 289-1059 | 100, 11008; 595-610                                    yes    safe
+L complaints whose teacher-forced last prompt position is one token after the decode's                       14                                                                            14                                                                            yes    safe
+optimum code: upper bounds that are feasible deletion sets of the stated size (finished rows)                107 | 52                                                                      107,107,107 | 52,52,52                                                        yes    safe
+optimum code: lower bounds confirmed by my solver-free certificate (complaints within the budget)            43 | 52                                                                       43,34,29 | 52,47,40                                                           yes    the confirmed ones safe; the others exceed my certified bound by at most 1: not refuted, they rest on the report's branch and bound      all finished rows: 107,89,72 | 52,47,40 of 107 | 52; my bound above the report's upper bound: 0
+BI / OPT, median over the complaints within the budget: at least; at most                                    1,1.02,1 | 1,1,1; 1.04,1.05,1.05 | 1.03,1.02,1                                1,1.02,1 | 1,1,1; 1.02,1.06,1.08 | 1.01,1.03,1.03                             yes    lower ends safe; upper ends: quote mine (certified without the solver) or the report's as 'by the optimum code'                          mine uses my certified lower bounds: tighter than the report at c = 0.1, wider at c = 0.5
+FO / OPT, median over the complaints within the budget: at least; at most                                    1,1,1 | 1,1,1; 1.04,1.05,1.05 | 1.03,1.03,1                                   1,1,1 | 1,1,1; 1.01,1.05,1.07 | 1.01,1.03,1.04                                yes    lower ends safe; upper ends: quote mine (certified without the solver) or the report's as 'by the optimum code'                          mine uses my certified lower bounds: tighter than the report at c = 0.1, wider at c = 0.5
+(bound of the proposition) / OPT, median within the budget: at least; at most                                0.846,0.568,0.167 | 0.877,0.635,0.319; 0.882,0.595,0.174 | 0.896,0.644,0.319  0.846,0.568,0.167 | 0.877,0.635,0.319; 0.862,0.595,0.174 | 0.884,0.643,0.326  yes    safe to two digits with my certified bounds (the bound is loose at c = 0.3, 0.5)
+optimum certified (complaints within the budget)                                                             0,3,20 | 0,15,38                                                              5,1,9 | 20,13,26                                                              n/a    not reproduced: the report's counts rest on its branch and bound; mine are what my certificate closes (at c = 0.1 more than the report)  'no optimum certified at c = 0.1' describes the report's solver, not the instances
+numbers quoted in the summary that are correct roundings of paper_numbers.json (derived ones: of my values)  104 quoted                                                                    104 correct                                                                   yes    safe
+
+DISCREPANCIES
+  [numerical] none: every recomputed number equals the report's, complaint by complaint
+  [meaning] the 'Prop. bound' (59,3 | 62,7) is mu(c^2|D|^2/gamma), the lower bound of the report's sandwich; Prop. prop:cond as displayed in sec_theory.tex only gives OPT_c >= LF(c sqrt(Gamma/gamma)), median 8,0 | 30,0  CAUSE: the measuring agent used the stronger statement of the technical report (prop:app:cond), which sec_theory.tex does not display
+  [meaning] Gamma/gamma at one key is the same number for every complaint  CAUSE: at one key w_i = <psi_i, k> u_i, so the scaled Gram matrix is the cosine matrix of the write vectors up to signs
+  [meaning] s*_Z of Q rests on z = 15 prefix positions that are not shared bit for bit by all sequences  CAUSE: the 15 prefix keys exist in 10 bitwise-distinct copies, one per range of sequence lengths (ranges disjoint: yes), 2.3-3.5 % apart in relative norm; the 150 copies span 150 dimensions, so no 15-dimensional subspace is common to all groups through them; why the copies differ was not investigated
+  [sampling] medians over my 60 complaints differ from the report's medians over all complaints (e.g. LF at c = 0.1: 70 | 71 against 72 | 72)  CAUSE: subsample; on the same complaints the report's rows give my medians, and over all complaints mine equal the report's
+
+######################################################################################################################################################
+TB-Q100-ae-l2_3
+######################################################################################################################################################
+complaints: mine 297 (155 image, 142 text), report 297 (155, 142), same set yes; my split and my sample against the harness sampler: candidates equal yes, sample equal yes; sample 60 (30 image, 30 text).
+last prompt keys (final key cache): same probe row and answer 297/297, REPAIR pool 297, bit for bit equal to the Track C capture 297/297 (sample 60/60); teacher-forced position one token after the decode's: 0 (report 0).
+log: T 100, d_in 11008, d_out 2048, 10 batches, module dtype torch.bfloat16; ||sum_i u_i psi_i^T - (W_E - W_0)||_F / ||W_E - W_0||_F = 5.11e-03; cosine matrix of the write vectors: gamma 0.3079, Gamma 17.72, ratio 57.53.
+
+(1) CONDITIONING AT THE COMPLAINT KEY   (medians [quartiles]; 'dev' = largest deviation from the report's row of the same complaint)
+    key      scope   n    gamma   Gamma  Gamma/gamma           report rows  neg. share  report rows  canc.-free  dev gamma, Gamma, ratio (rel)  dev share (abs)  eigvalsh vs SVD (rel)  distinct ratios
+    -------  ------  ---  ------  -----  --------------------  -----------  ----------  -----------  ----------  -----------------------------  ---------------  ---------------------  ---------------
+    last     sample  60   0.3079  17.72  57.53 [57.53, 57.53]  57.53        0.5013      0.5013       0           1.42e-14                       0.00e+00         8.29e-15               1
+    last     all     297  0.3079  17.72  57.53 [57.53, 57.53]  57.53        0.5012      0.5012       0           1.75e-14                       0.00e+00         9.01e-15               1
+    stacked  sample  60   0.512   5.372  10.35 [9.084, 11.43]  10.35        0.4994      0.4994       0           8.19e-15                       0.00e+00         4.79e-15               60
+    stacked  all     297  0.5128  5.186  10.14 [9.223, 11.13]  10.14        0.5002      0.5002       0           1.00e-14                       0.00e+00         6.18e-15               288
+    report (paper_numbers.json, all complaints): last key gamma 0.3079, Gamma 17.72, ratio 57.53, negative share 0.5012; stacked ratio 10.14 [9.223, 11.13].  sqrt(gamma/Gamma) = 0.1318; gamma T = 30.79.
+    factor form against the applied weight difference at the last key, median: mine 0.007102, report rows 0.007102; edits with a negative coordinate, median: 52; pairs with an inner product of exactly zero: 0.
+
+(2) ROLLBACK BY RULE AND THE BOUNDS   (deletions of T = 100; LF largest norm first, FO adaptive first-order greedy, BI best improvement; medians; '=' complaints with the report's count)
+    bound mu = max(1, mu(c^2 |D|^2 / gamma)): the lower bound of the technical report's sandwich (prop:app:cond); 'displayed' = LF(c sqrt(Gamma/gamma)): what Prop. prop:cond AS DISPLAYED in
+    sec_theory.tex gives for OPT_c; 'check' = complaints on which LF(c) <= the least rule at tolerance c sqrt(gamma/Gamma) (the displayed claim is not contradicted).
+    key      c    scope   n    LF  FO  BI    bound mu  LF / bound mu  displayed  displayed = 0  = LF/FO/BI/mu    check    least rel. margin of a stop  BI deletes all
+    -------  ---  ------  ---  --  --  ----  --------  -------------  ---------  -------------  ---------------  -------  ---------------------------  --------------
+    last     0.1  sample  60   70  69  69    58        1.212          8          0              60/60/60/60      60/60    1.35e-04                     -
+    last     0.1  all     297  72  70  70    59        1.21           8          0              297/297/297/297  297/297  4.89e-06                     -
+    last     0.1  report  all  72  70  70    59        1.21           n/a        n/a
+    last     0.3  sample  60   44  39  39    22        2              0          60             60/60/60/60      60/60    5.63e-07                     -
+    last     0.3  all     297  44  39  40    22        2              0          297            297/297/297/297  297/297  5.63e-07                     -
+    last     0.3  report  all  44  39  40    22        2              n/a        n/a
+    last     0.5  sample  60   23  20  20    3.5       6              0          60             60/60/60/60      60/60    7.58e-05                     -
+    last     0.5  all     297  23  19  19    3         6.333          0          297            297/297/297/297  297/297  1.59e-05                     -
+    last     0.5  report  all  23  19  19    3         6.333          n/a        n/a
+    stacked  0.1  sample  60   96  95  95    92        1.032          74         0              60/60/60/60      60/60    1.63e-04                     -
+    stacked  0.1  all     297  96  95  95    93        1.032          75         0              297/297/297/297  297/297  8.94e-06                     -
+    stacked  0.1  report  all  96  95  95    93        1.032          n/a        n/a
+    stacked  0.3  sample  60   76  74  74    63        1.208          2          19             60/60/60/60      60/60    1.27e-04                     -
+    stacked  0.3  all     297  76  74  74    63        1.21           3          76             297/297/297/297  297/297  2.76e-05                     -
+    stacked  0.3  report  all  76  74  74    63        1.21           n/a        n/a
+    stacked  0.5  sample  60   53  48  47.5  30        1.758          0          60             60/60/60/60      60/60    4.09e-06                     -
+    stacked  0.5  all     297  53  48  48    30        1.759          0          297            297/297/297/297  297/297  4.09e-06                     -
+    stacked  0.5  report  all  53  48  48    30        1.759          n/a        n/a
+
+(3) CAPACITY OF WHOLE-SEQUENCE PROTECTION   (n smallest edit sequences protected; a complaint is repairable iff every singular value of (I - P_n) K_q exceeds 1e-9 max ||k_q||)
+    edit-sequence keys: harness cache; against the final key cache (independent capture): uid, length and last prompt position equal 100/100, last prompt key bit for bit 100/100.  Group sizes 289-1059 (report 289-1059), full rank 100/100, ranks and order equal to the report's: yes, yes.
+    prefix: positions bit for bit equal in all 100 sequences 0 (report 0); positions within 10 % of edit 0 in every sequence 15 (report z = 15), largest relative difference there 0.0305; bitwise-distinct keys at the leading positions [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 100, 100, 100, 100, 100].
+    my method: exact de-duplication of the keys + ONE Householder QR; distinct keys = rank at every n: equal to the report's rank at 39 family points: yes; n_free = 37 (11402 keys, 10877 distinct, 2 prefix copies; report rank 10877); key space filled at n = 38 (report 38); a second prefix copy enters at n = 35; least |R_jj| / s_1 up to n_free 2.21e-05.
+    the capacity counts DISTINCT keys: at n = 37 the 11402 protected keys hold 10877 distinct ones (d_in = 11008); if no key were a bit-for-bit duplicate of another, 35 sequences would fit (the law with z = 0).  The keys at ALL positions of the edit sequences exist in ONE cache only (07_repair_v3/harness/cache, also the report's source); the independent capture covers the last prompt position.
+    prefix classes (sequences whose first 15 keys are bit for bit equal): 10; (size, shortest, longest sequence) by length: (34, 289, 320), (4, 322, 365), (1, 403, 403), (7, 424, 448), (3, 452, 484), (4, 521, 637), (1, 659, 659), (1, 698, 698), (13, 771, 1020), (32, 1025, 1059); the classes are disjoint ranges of the sequence length: yes; relative difference between the copies 0.0233 .. 0.0347; all copies together: 150 keys of rank 150; a second class enters the family at n = 35.
+    LAPACK singular values of the distinct keys at n = 37: 10877 values, largest 394.308 (with duplicates 395.883), smallest 1.95e-03, harness cut 1.00e-09, numerical rank 10877.
+    LAPACK singular values of the distinct keys at n = 38: 11227 values, largest 400.562 (with duplicates 402.138), smallest 4.99e-02, harness cut 1.05e-09, numerical rank 11008.
+    complaint  type   A   n_cap last: mine  report  n_cap stacked: mine  report  escape at n_cap: mine  report     rel. dev  escape at n_cap + 1: mine  report    agree
+    ---------  -----  --  ----------------  ------  -------------------  ------  ---------------------  ---------  --------  -------------------------  --------  -----
+    image_353  image  10  37                37      37                   37      0.0574143              0.0574143  7.25e-16  0.00e+00                   8.10e-32  yes
+    image_11   image  7   37                37      37                   37      0.0395059              0.0395059  2.11e-15  0.00e+00                   5.45e-32  yes
+    text_199   text   10  37                37      37                   37      0.0709474              0.0709474  9.78e-16  0.00e+00                   1.01e-31  yes
+    text_264   text   10  37                37      37                   37      0.0783867              0.0783867  1.59e-15  0.00e+00                   1.14e-31  yes
+    text_115   text   10  37                37      37                   37      0.0740668              0.0740668  9.37e-16  0.00e+00                   1.07e-31  yes
+    (my escape at n_cap + 1 is zero by the rank: the protected keys there have the full rank d_in, see the singular values above; the report's value is its round-off.)
+    every complaint (297): n_cap equal to the report's, last 297, stacked 297; my values [37] / [37]; escape of the last key at n_free: median 0.05371, least 0.0179; largest relative deviation of the escape from the report's up to n_free 1.07e-14.
+    law (a = 1), T - s*_Z / s*_Z: z0 (z = 0): 35 / 65; z_bitwise (z = 0): 35 / 65; z_near (z = 15): 37 / 63; report s*_Z 63, with z = 0 65, measured protectable edits 37; the prefix is shared exactly: NO.
+    K_ans only: 400 keys, rank 400 (report 400), complaints repairable 297 (report 297), median escape of the last key 0.442577 (report 0.442577).
+    K_last only: 100 keys, rank 100 (report 100), complaints repairable 297 (report 297), median escape of the last key 0.456146 (report 0.456146).
+    target of the compensation (applied weight difference): rank V = A for 297/297 complaints (sample 60/60), rank K_q = A for 297/297, V nonzero at the last key for 297/297; equal to the report's ranks for 297 and 297 complaints: 'repairable' (full column rank of (I - P) K_q) is then equivalent to the existence of an admissible correction.
+
+(extra) vertex cover number of the negative graph, last key, every complaint: min / median / max 40 / 50 / 54 (report 40 / 50 / 54); equal per complaint 297/297; integer program optimal 297/297, clique number agrees 297/297.
+
+(extra) OPTIMUM CODE, key 'last' (107 finished rows; 43 complaints within the report's budget).  Mine: R_best checked as a deletion set; lower bounds by a Lagrangian certificate
+    that needs no solver (verify/code/v_opt_lb.py: diagonal shift delta with G - Diag(delta) positive definite, multiplier, one point of the box; valid for every kept set).  'report LB - mine':
+    histogram over the finished rows of (report's lower bound) - (my certified lower bound): <= 0 confirms the report's bound; > 0 is NOT a refutation (the report's bound rests on its branch and bound).
+    c    UB feasible  report LB confirmed  report LB - mine                    my LB > report UB  confirmed, within budget  optimum certified: mine (report)  median LB..UB: mine (report)  BI / OPT: mine (report)      FO / OPT: mine (report)  LF / OPT: mine (report)      bound mu / OPT: mine (report)
+    ---  -----------  -------------------  ----------------------------------  -----------------  ------------------------  --------------------------------  ----------------------------  ---------------------------  -----------------------  ---------------------------  -------------------------------
+    0.1  107/107      107/107              -4: 4, -3: 9, -2: 38, -1: 48, 0: 8  0                  43/43                     5 (0)                             70..71 (68..71)               1..1.015 (1..1.043)          1..1.015 (1..1.041)      1.026..1.043 (1.026..1.059)  0.8462..0.8615 (0.8462..0.8824)
+    0.3  107/107      89/107               -1: 6, 0: 83, 1: 18                 0                  34/43                     1 (3)                             39..41 (39..41)               1.024..1.056 (1.024..1.053)  1..1.05 (1..1.049)       1.111..1.146 (1.111..1.143)  0.5682..0.5946 (0.5682..0.5946)
+    0.5  107/107      72/107               0: 72, 1: 35                        0                  29/43                     9 (20)                            19..20 (19..20)               1..1.077 (1..1.048)          1..1.071 (1..1.048)      1.226..1.31 (1.226..1.286)   0.1667..0.1739 (0.1667..0.1739)
+    medians over the complaints within the budget; self-test of the certificate: certified bound <= brute-force optimum in 320/320 checks on 80 random instances (equal in 273).
+    note: the shifts and the refinement rule of the certificate search were fixed after trials on five complaints of TB-L100-ae-l2_3; they decide how tight a certified bound is, never whether it is valid (any positive definite shift, any multiplier and any point of the box give a valid bound).
+
+######################################################################################################################################################
+TB-L100-ae-l2_3
+######################################################################################################################################################
+complaints: mine 305 (124 image, 181 text), report 305 (124, 181), same set yes; my split and my sample against the harness sampler: candidates equal yes, sample equal yes; sample 60 (30 image, 30 text).
+last prompt keys (final key cache): same probe row and answer 305/305, REPAIR pool 305, bit for bit equal to the Track C capture 305/305 (sample 60/60); teacher-forced position one token after the decode's: 14 (report 14).
+log: T 100, d_in 11008, d_out 4096, 10 batches, module dtype torch.float16; ||sum_i u_i psi_i^T - (W_E - W_0)||_F / ||W_E - W_0||_F = 6.37e-04; cosine matrix of the write vectors: gamma 0.4066, Gamma 7.358, ratio 18.1.
+
+(1) CONDITIONING AT THE COMPLAINT KEY   (medians [quartiles]; 'dev' = largest deviation from the report's row of the same complaint)
+    key      scope   n    gamma   Gamma  Gamma/gamma           report rows  neg. share  report rows  canc.-free  dev gamma, Gamma, ratio (rel)  dev share (abs)  eigvalsh vs SVD (rel)  distinct ratios
+    -------  ------  ---  ------  -----  --------------------  -----------  ----------  -----------  ----------  -----------------------------  ---------------  ---------------------  ---------------
+    last     sample  60   0.4066  7.358  18.1 [18.1, 18.1]     18.1         0.5031      0.5031       0           8.83e-15                       0.00e+00         3.82e-15               1
+    last     all     305  0.4066  7.358  18.1 [18.1, 18.1]     18.1         0.5026      0.5026       0           1.14e-14                       0.00e+00         6.01e-15               1
+    stacked  sample  60   0.6201  3.217  5.208 [4.1, 8.411]    5.208        0.503       0.503        0           9.25e-15                       0.00e+00         4.48e-15               55
+    stacked  all     305  0.619   3.06   5.032 [4.221, 7.188]  5.032        0.5024      0.5024       0           9.25e-15                       0.00e+00         5.11e-15               275
+    report (paper_numbers.json, all complaints): last key gamma 0.4066, Gamma 7.358, ratio 18.1, negative share 0.5026; stacked ratio 5.032 [4.221, 7.188].  sqrt(gamma/Gamma) = 0.2351; gamma T = 40.66.
+    factor form against the applied weight difference at the last key, median: mine 0.0007316, report rows 0.0007316; edits with a negative coordinate, median: 51; pairs with an inner product of exactly zero: 0.
+
+(2) ROLLBACK BY RULE AND THE BOUNDS   (deletions of T = 100; LF largest norm first, FO adaptive first-order greedy, BI best improvement; medians; '=' complaints with the report's count)
+    bound mu = max(1, mu(c^2 |D|^2 / gamma)): the lower bound of the technical report's sandwich (prop:app:cond); 'displayed' = LF(c sqrt(Gamma/gamma)): what Prop. prop:cond AS DISPLAYED in
+    sec_theory.tex gives for OPT_c; 'check' = complaints on which LF(c) <= the least rule at tolerance c sqrt(gamma/Gamma) (the displayed claim is not contradicted).
+    key      c    scope   n    LF  FO  BI  bound mu  LF / bound mu  displayed  displayed = 0  = LF/FO/BI/mu    check    least rel. margin of a stop  BI deletes all
+    -------  ---  ------  ---  --  --  --  --------  -------------  ---------  -------------  ---------------  -------  ---------------------------  --------------
+    last     0.1  sample  60   71  70  71  62        1.159          30         0              60/60/60/60      60/60    9.64e-05                     text_125
+    last     0.1  all     305  72  71  71  62        1.153          30         0              305/305/305/305  305/305  3.86e-05                     text_125
+    last     0.1  report  all  72  71  71  62        1.153          n/a        n/a
+    last     0.3  sample  60   42  41  40  26        1.648          0          60             60/60/60/60      60/60    3.99e-05                     -
+    last     0.3  all     305  43  42  42  26        1.63           0          305            305/305/305/305  305/305  3.68e-06                     -
+    last     0.3  report  all  43  42  42  26        1.63           n/a        n/a
+    last     0.5  sample  60   24  22  22  6         3.5            0          60             60/60/60/60      60/60    4.05e-05                     -
+    last     0.5  all     305  24  23  22  7         3.429          0          305            305/305/305/305  305/305  7.09e-06                     -
+    last     0.5  report  all  24  23  22  7         3.429          n/a        n/a
+    stacked  0.1  sample  60   94  94  94  92        1.033          81.5       0              60/60/60/60      60/60    6.51e-04                     -
+    stacked  0.1  all     305  94  94  94  91        1.033          81         0              305/305/305/305  305/305  4.16e-05                     -
+    stacked  0.1  report  all  94  94  94  91        1.033          n/a        n/a
+    stacked  0.3  sample  60   72  71  71  63.5      1.171          28         9              60/60/60/60      60/60    1.84e-04                     -
+    stacked  0.3  all     305  72  71  71  62        1.164          28         28             305/305/305/305  305/305  3.68e-06                     -
+    stacked  0.3  report  all  72  71  71  62        1.164          n/a        n/a
+    stacked  0.5  sample  60   48  46  46  32        1.514          0          47             60/60/60/60      60/60    2.39e-05                     -
+    stacked  0.5  all     305  48  46  45  31        1.517          0          255            305/305/305/305  305/305  2.39e-05                     -
+    stacked  0.5  report  all  48  46  45  31        1.517          n/a        n/a
+
+(3) CAPACITY OF WHOLE-SEQUENCE PROTECTION   (n smallest edit sequences protected; a complaint is repairable iff every singular value of (I - P_n) K_q exceeds 1e-9 max ||k_q||)
+    edit-sequence keys: harness cache; against the final key cache (independent capture): uid, length and last prompt position equal 100/100, last prompt key bit for bit 100/100.  Group sizes 595-610 (report 595-610), full rank 100/100, ranks and order equal to the report's: yes, yes.
+    prefix: positions bit for bit equal in all 100 sequences 1 (report 1); positions within 10 % of edit 0 in every sequence 1 (report z = 1), largest relative difference there 0; bitwise-distinct keys at the leading positions [1, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100].
+    my method: exact de-duplication of the keys + ONE Householder QR; distinct keys = rank at every n: equal to the report's rank at 20 family points: yes; n_free = 18 (10721 keys, 10704 distinct, 1 prefix copies; report rank 10704); key space filled at n = 19 (report 19); a second prefix copy enters at n = None; least |R_jj| / s_1 up to n_free 1.71e-05.
+    the capacity counts DISTINCT keys: at n = 18 the 10721 protected keys hold 10704 distinct ones (d_in = 11008); if no key were a bit-for-bit duplicate of another, 18 sequences would fit (the law with z = 0).  The keys at ALL positions of the edit sequences exist in ONE cache only (07_repair_v3/harness/cache, also the report's source); the independent capture covers the last prompt position.
+    prefix classes (sequences whose first 1 keys are bit for bit equal): 1; (size, shortest, longest sequence) by length: (100, 595, 610); the classes are disjoint ranges of the sequence length: yes; relative difference between the copies 0 .. 0; all copies together: 1 keys of rank 1; a second class enters the family at n = None.
+    LAPACK singular values of the distinct keys at n = 18: 10704 values, largest 352.043 (with duplicates 352.16), smallest 1.06e-03, harness cut 8.61e-10, numerical rank 10704.
+    LAPACK singular values of the distinct keys at n = 19: 11300 values, largest 360.686 (with duplicates 360.807), smallest 1.51e-03, harness cut 9.07e-10, numerical rank 11008.
+    complaint  type   A   n_cap last: mine  report  n_cap stacked: mine  report  escape at n_cap: mine  report     rel. dev  escape at n_cap + 1: mine  report    agree
+    ---------  -----  --  ----------------  ------  -------------------  ------  ---------------------  ---------  --------  -------------------------  --------  -----
+    image_344  image  6   18                18      18                   18      0.0286614              0.0286614  1.08e-14  0.00e+00                   4.45e-32  yes
+    image_16   image  7   18                18      18                   18      0.115272               0.115272   2.41e-14  0.00e+00                   1.78e-31  yes
+    text_191   text   10  18                18      18                   18      0.137918               0.137918   6.84e-15  0.00e+00                   2.15e-31  yes
+    text_272   text   10  18                18      18                   18      0.148916               0.148916   3.90e-14  0.00e+00                   2.30e-31  yes
+    text_113   text   10  18                18      18                   18      0.161052               0.161052   1.40e-14  0.00e+00                   2.51e-31  yes
+    (my escape at n_cap + 1 is zero by the rank: the protected keys there have the full rank d_in, see the singular values above; the report's value is its round-off.)
+    every complaint (305): n_cap equal to the report's, last 305, stacked 305; my values [18] / [18]; escape of the last key at n_free: median 0.1256, least 0.0198; largest relative deviation of the escape from the report's up to n_free 6.76e-14.
+    law (a = 1), T - s*_Z / s*_Z: z0 (z = 0): 18 / 82; z_bitwise (z = 1): 18 / 82; z_near (z = 1): 18 / 82; report s*_Z 82, with z = 0 82, measured protectable edits 18; the prefix is shared exactly: yes.
+    K_ans only: 483 keys, rank 483 (report 483), complaints repairable 305 (report 305), median escape of the last key 0.801263 (report 0.801263).
+    K_last only: 100 keys, rank 100 (report 100), complaints repairable 305 (report 305), median escape of the last key 0.827946 (report 0.827946).
+    target of the compensation (applied weight difference): rank V = A for 305/305 complaints (sample 60/60), rank K_q = A for 305/305, V nonzero at the last key for 305/305; equal to the report's ranks for 305 and 305 complaints: 'repairable' (full column rank of (I - P) K_q) is then equivalent to the existence of an admissible correction.
+
+(extra) vertex cover number of the negative graph, last key, every complaint: min / median / max 61 / 68 / 72 (report 61 / 68 / 72); equal per complaint 305/305; integer program optimal 305/305, clique number agrees 305/305.
+
+(extra) OPTIMUM CODE, key 'last' (52 finished rows; 52 complaints within the report's budget).  Mine: R_best checked as a deletion set; lower bounds by a Lagrangian certificate
+    that needs no solver (verify/code/v_opt_lb.py: diagonal shift delta with G - Diag(delta) positive definite, multiplier, one point of the box; valid for every kept set).  'report LB - mine':
+    histogram over the finished rows of (report's lower bound) - (my certified lower bound): <= 0 confirms the report's bound; > 0 is NOT a refutation (the report's bound rests on its branch and bound).
+    c    UB feasible  report LB confirmed  report LB - mine             my LB > report UB  confirmed, within budget  optimum certified: mine (report)  median LB..UB: mine (report)  BI / OPT: mine (report)  FO / OPT: mine (report)  LF / OPT: mine (report)      bound mu / OPT: mine (report)
+    ---  -----------  -------------------  ---------------------------  -----------------  ------------------------  --------------------------------  ----------------------------  -----------------------  -----------------------  ---------------------------  -------------------------------
+    0.1  52/52        52/52                -3: 2, -2: 3, -1: 37, 0: 10  0                  52/52                     20 (0)                            70..70 (69..70)               1..1.014 (1..1.027)      1..1.014 (1..1.028)      1.014..1.018 (1.014..1.03)   0.8768..0.8841 (0.8768..0.8955)
+    0.3  52/52        47/52                -1: 1, 0: 46, 1: 5           0                  47/52                     13 (15)                           40..40.5 (40..40.5)           1..1.026 (1..1.025)      1..1.025 (1..1.025)      1.042..1.066 (1.042..1.065)  0.6345..0.6427 (0.6345..0.6437)
+    0.5  52/52        40/52                0: 40, 1: 12                 0                  40/52                     26 (38)                           21..21.5 (21..21.5)           1..1.035 (1..1)          1..1.04 (1..1)           1.077..1.095 (1.077..1.083)  0.3191..0.3258 (0.3191..0.3191)
+    medians over the complaints within the budget; self-test of the certificate: certified bound <= brute-force optimum in 320/320 checks on 80 random instances (equal in 273).
+    note: the shifts and the refinement rule of the certificate search were fixed after trials on five complaints of TB-L100-ae-l2_3; they decide how tight a certified bound is, never whether it is valid (any positive definite shift, any multiplier and any point of the box give a valid bound).
+
+######################################################################################################################################################
+(4) paper_numbers.json IS DERIVED FROM results.json BY THE SCRIPT
+######################################################################################################################################################
+(a) stored results.json -> e5_aggregate.paper_numbers() -> is_core: 464 values against 464 stored, 0 differences; paper_numbers_all.json: 938 values, 0 differences; definitions: 0 differences; null values: 8 (c0.1.opt_median_certified, c0.1.opt_median_lf_over_opt_certified, c0.1.opt_median_fo_over_opt_certified, ...: no certified optimum at c = 0.1).
+(b) unmodified e5_aggregate.py re-run in a sandbox on copies of the raw inputs: results.json 21121 values, 0 differences (time stamps aside); paper_numbers.json byte for byte yes, paper_numbers_all.json yes, paper_numbers_doc.json yes.
+(c) unmodified e5_render.py re-run: table.txt 366 lines, differing lines [2] (line 2 carries the time stamps).
+(d) the measuring agent's files after the verification: out/ unchanged yes (19 files, md5), code/ unchanged yes (12 files).
+(e) numbers quoted in the summary against paper_numbers.json (7 derived ones against my values): 104/104 are correct roundings.
+

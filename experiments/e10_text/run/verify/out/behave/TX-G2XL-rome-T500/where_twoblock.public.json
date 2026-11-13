@@ -1,0 +1,104 @@
+{
+ "label": "where_twoblock",
+ "n_records": 300,
+ "case_files": "[redacted: local path]/02_research/experiments/10_final/e10_text/run/verify/out/public/TX-G2XL-rome-T500/where_twoblock/run_000",
+ "n_use_cache_false": 0,
+ "public_summariser": {
+  "all": {
+   "n": 300,
+   "ES": 55.67,
+   "PS": 45.5,
+   "NS": 55.87,
+   "EM": 1.1,
+   "PM": 0.6,
+   "NM": -0.27
+  },
+  "before": {
+   "n": 107,
+   "ES": 46.73,
+   "PS": 47.66,
+   "NS": 53.18,
+   "EM": 0.71,
+   "PM": 0.54,
+   "NM": -0.28
+  },
+  "from": {
+   "n": 193,
+   "ES": 60.62,
+   "PS": 44.3,
+   "NS": 57.36,
+   "EM": 1.31,
+   "PM": 0.63,
+   "NM": -0.27
+  }
+ },
+ "own_arithmetic": {
+  "all": {
+   "n": 300,
+   "n_records_with_nonfinite_prob": 0,
+   "ES": {
+    "value": 55.666666666666664,
+    "ci_lo": 50.0,
+    "ci_hi": 61.333333333333336,
+    "n_units": 300
+   },
+   "PS": {
+    "value": 45.5,
+    "ci_lo": 40.333333333333336,
+    "ci_hi": 50.833333333333336,
+    "n_units": 300
+   },
+   "NS": {
+    "value": 55.86666666666668,
+    "ci_lo": 51.7,
+    "ci_hi": 59.833333333333336,
+    "n_units": 300
+   }
+  },
+  "before": {
+   "n": 107,
+   "n_records_with_nonfinite_prob": 0,
+   "ES": {
+    "value": 46.728971962616825,
+    "ci_lo": 37.38317757009346,
+    "ci_hi": 56.074766355140184,
+    "n_units": 107
+   },
+   "PS": {
+    "value": 47.66355140186916,
+    "ci_lo": 38.78504672897196,
+    "ci_hi": 56.074766355140184,
+    "n_units": 107
+   },
+   "NS": {
+    "value": 53.177570093457945,
+    "ci_lo": 46.635514018691595,
+    "ci_hi": 60.002336448598115,
+    "n_units": 107
+   }
+  },
+  "from": {
+   "n": 193,
+   "n_records_with_nonfinite_prob": 0,
+   "ES": {
+    "value": 60.62176165803109,
+    "ci_lo": 53.8860103626943,
+    "ci_hi": 67.35751295336787,
+    "n_units": 193
+   },
+   "PS": {
+    "value": 44.30051813471503,
+    "ci_lo": 38.3419689119171,
+    "ci_hi": 50.51813471502591,
+    "n_units": 193
+   },
+   "NS": {
+    "value": 57.35751295336787,
+    "ci_lo": 52.433937823834185,
+    "ci_hi": 62.17746113989637,
+    "n_units": 193
+   }
+  }
+ },
+ "seconds": 61.370139837265015
+}

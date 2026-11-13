@@ -1,0 +1,93 @@
+E2 FIX-UP: ADDITIONS TO THE FINISHED AND VERIFIED EXPERIMENT (PROTOCOL.md, amendments of 2026-11-12 01:00 and 02:55 UTC)      rendered 2026-11-12 21:29:39 by code/fixup_render.py
+from out/fixup/*.json (written 2026-11-12 21:29:37 by code/fixup_compute.py; cw_check_200.json written 2026-11-12 03:14:09 by code/fixup_cw200.py; driver fx {'rescope': 'ec18057f0f60', 'fx': 'a7cfd4d450d1', 'fx_version': 'fx-1.2 stage 2 (2026-11-11)'}).
+No existing file of the experiment was changed; no model was run.
+
+(F4) POST HOC READ-OUT OF PART c' (ReScope-W with two-block thresholds): false firing of the literal rule without guards, alpha 0.05, n 200, gate level from the captured vectors;
+     mean of the per-draw rates over 200 seeded calibration draws (seeds 0 to 199) against the bound.  POST HOC read-out (cw_check.py was written after the result on heldout_disjoint had been seen; PROTOCOL.md, amendment of 2026-11-12 02:55 UTC, decision 4).
+     INTERVAL: 95 % percentile bootstrap over QUERY CLUSTERS with the draws nested, 2000 resamples: the clusters of the pool are resampled once per resample and the same resampled
+     clusters (with all their rows) are used under every one of the 200 draws; the per-draw thresholds are not recomputed and the draws are not resampled.  'crossed' = sensitivity
+     in which the 200 draws are resampled as well (not the reported interval).  'fresh REPAIR' = valid REPAIR rows whose query is not a calibration query of the draw.
+     log                                 pool (POST HOC read-out)  stored mean, 20 draws  first 20 of the 200  mean over 200 draws [95 %]  bound %                  interval  mean - bound  crossed [95 %]  5th / 95th pct over draws  % of draws above the bound
+     ---  -------------------------------------------------------  ---------------------  -------------------  --------------------------  -------  ------------------------  ------------  --------------  -------------------------  --------------------------
+     Q    fresh REPAIR rows (277-287 rows per draw; 474 clusters)                   4.52                 4.52           5.16 [3.78, 6.68]     4.95        contains the bound         +0.21    [3.71, 6.71]                1.76 / 9.98                        47.0
+     Q                  heldout_disjoint (465 rows; 449 clusters)                   5.57                 5.57           5.90 [4.26, 7.79]     4.95        contains the bound         +0.95    [4.22, 7.76]                2.80 / 9.68                        65.5
+     L    fresh REPAIR rows (281-292 rows per draw; 478 clusters)                   5.24                 5.24           5.03 [3.56, 6.73]     4.95        contains the bound         +0.07    [3.51, 6.76]                1.71 / 9.17                        45.0
+     L                  heldout_disjoint (469 rows; 453 clusters)                   3.03                 3.03           2.89 [1.72, 4.22]     4.95  entirely below the bound         -2.06    [1.72, 4.27]                1.48 / 4.91                         5.0
+     the first 20 draws reproduce the stored draws of out/parts/cw_check_<log>.json: Q yes, L yes
+
+(F5) H1 AS REGISTERED (R6), BOTH READINGS OF 'WITHIN 2 POINTS'
+     rule (PROTOCOL.md, section 6, amendment 'Review round 1' (2026-11-11 06:14 UTC, before any final run), R6):
+       "H1 (repair at equal evidence; E2 a, b): held-out D1 after n = 10 reported complaints, ReScope-W (least repair from the log-only thresholds) against the best linear repair of the same complaints; it "helps" if D1 is at most 10 percent with Rel exact within 2 points of the deployed log, on the development logs and on at least one mild prefix (R12)."
+     two-sided reading: Rel exact of the repair differs from Rel exact of the deployed log by at most 2 points in either direction;  one-sided reading: Rel exact of the repair is not more than 2 points below Rel exact of the deployed log.
+     the rule is not re-worded; both readings are reported (PROTOCOL.md, amendments of 2026-11-12 01:00 and 02:55 UTC); the one-sided reading was adopted after the run.
+     L: the readings differ because Rel exact of the repair is +4.0 points ABOVE the deployed log (the repair answers more requests than the deployed log).
+     log  D1 % repair [95 %] {streams 0/1/2}  D1 % deployed  Rel exact repair {streams}  Rel exact deployed  Rel repair - deployed  D1 <= 10 %  two-sided reading  one-sided reading
+     ---  ----------------------------------  -------------  --------------------------  ------------------  ---------------------  ----------  -----------------  -----------------
+     Q    1.00 [0.22, 2.00] {1.08/0.86/1.08}          54.19       78.0 {78.0/78.0/78.0}                78.0                   +0.0         yes                met                met
+     L    2.63 [1.28, 4.14] {2.35/2.77/2.77}          62.26       92.0 {92.0/92.0/92.0}                88.0                   +4.0         yes            NOT met                met
+     the repaired log against the deployed log (means over the three complaint streams) and the rows on which it still releases an edit:
+     log  Rel kept / gained / lost (edits of 100)  per stream kept ; gained ; lost  edit checks lost / gained  fire % heldout_disjoint [95 %] {streams}  NEAR fire % HN-I {streams}  NEAR fire % HN-Q {streams}  NEAR fire % HN-X {streams}
+     ---  ---------------------------------------  -------------------------------  -------------------------  ----------------------------------------  --------------------------  --------------------------  --------------------------
+     Q                           75.0 / 3.0 / 3.0         75/75/75 ; 3/3/3 ; 3/3/3          9.0 / 11.0 of 300  17.99 [14.52, 21.79] {18.28/17.20/18.49}           9.1 {9.2/9.0/9.2}       34.2 {34.7/33.0/35.0}       19.2 {19.2/19.2/19.2}
+     L                           86.0 / 6.0 / 2.0         86/86/86 ; 6/6/6 ; 2/2/2         12.0 / 17.0 of 300  23.74 [19.62, 28.57] {21.75/26.23/23.24}       30.2 {25.3/39.7/25.6}       52.0 {48.4/59.1/48.4}       48.1 {46.5/51.5/46.5}
+     differences to the linear repairs of the same complaints (D1 on heldout_disjoint, repair minus linear; the two differences to linear repairs on the two development logs (4 tests: backbones x the two choices of the best linear repair); resolution of a bootstrap p 0.0005, smallest Holm value 0.002; '<=' = upper bound):
+     log  choice of the best linear repair  linear repair  D1 % repair      D1 % linear {streams}        difference [95 %]  bootstrap p  Holm-adjusted p  Rel exact linear
+     ---  --------------------------------  -------------  -----------  -------------------------  -----------------------  -----------  ---------------  ----------------
+     Q                      best_lowest_d1       RB_UNION         1.00  45.45 {47.53/44.30/44.52}  -44.44 [-48.97, -40.13]    <= 0.0005         <= 0.002              52.7
+     Q                   best_rel_within_2         COMP_B         1.00  50.54 {50.75/49.68/51.18}  -49.53 [-54.07, -45.00]    <= 0.0005         <= 0.002              76.0
+     L                      best_lowest_d1       RB_UNION         2.63  52.74 {53.94/50.32/53.94}  -50.11 [-54.83, -45.36]    <= 0.0005         <= 0.002              59.7
+     L                   best_rel_within_2         COMP_B         2.63  62.83 {62.05/63.97/62.47}  -60.20 [-64.61, -55.84]    <= 0.0005         <= 0.002              88.0
+     DEVELOPMENT LOGS: two-sided reading met on both: NO; one-sided reading met on both: yes
+     PREFIX PART: COMPLETE -- copied from e2_prefix/out/h1_prefix.json (cells at n = 10 reported complaints; R12); file modified 2026-11-12 20:32:33 UTC, read 2026-11-12 21:29:37 UTC; 6 of 6 prefix logs complete at n = 10
+     prefix log           edits  cell at n = 10  D1 % repair [95 %]  D1 % deployed  Rel exact repair  Rel exact deployed  Rel repair - deployed  two-sided reading  one-sided reading
+     -------------------  -----  --------------  ------------------  -------------  ----------------  ------------------  ---------------------  -----------------  -----------------
+     TB-Q100-ae-l2_3-p10     10        complete   0.57 [0.00, 1.50]          23.87              80.0                80.0                   +0.0                met                met
+     TB-Q100-ae-l2_3-p20     20        complete   1.08 [0.22, 2.22]          29.89              75.0                75.0                   +0.0                met                met
+     TB-Q100-ae-l2_3-p50     50        complete   0.93 [0.21, 1.94]          43.01              78.0                82.0                   -4.0            NOT met            NOT met
+     TB-L100-ae-l2_3-p10     10        complete   0.50 [0.00, 1.32]          26.44              90.0                90.0                   +0.0                met                met
+     TB-L100-ae-l2_3-p20     20        complete   0.92 [0.21, 1.87]          35.39              90.0                90.0                   +0.0                met                met
+     TB-L100-ae-l2_3-p50     50        complete   1.85 [0.71, 3.18]          50.53              92.0                86.0                   +6.0            NOT met                met
+     RULE (the rule needs both development logs AND at least one mild prefix): two-sided reading: not met (the development-log part fails; the prefix part cannot change this);  one-sided reading: met
+
+(F6a) EDITS STILL RELEASED AFTER A LEAST REPAIR (low D1 of a repair that starts from the deployed log is a measurement, not a certificate): share of heldout_disjoint rows on which
+      an edit is still released (hook; crossed bootstrap) and near-scope firing per kind (gate level); means over the complaint streams {streams}
+      log                                                                           row  streams  D1 % heldout_disjoint [95 %]  fire % heldout_disjoint [95 %] {streams}           NEAR fire % HN-I        NEAR fire % HN-Q           NEAR fire % HN-X
+      ---  ----------------------------------------------------------------------------  -------  ----------------------------  ----------------------------------------  -------------------------  ----------------------  -------------------------
+      Q              H1 row: least repair of 10 complaints from the log-only thresholds        3             1.00 [0.22, 2.00]  17.99 [14.52, 21.79] {18.28/17.20/18.49}          9.1 {9.2/9.0/9.2}   34.2 {34.7/33.0/35.0}      19.2 {19.2/19.2/19.2}
+      Q     least repair of 10 complaints from the deployed start (all thresholds -inf)        3             6.38 [4.16, 8.85]  51.76 [46.80, 56.66] {50.97/49.68/54.62}     98.4 {97.8/97.4/100.0}  98.9 {99.2/97.6/100.0}     99.0 {98.0/99.0/100.0}
+      Q    least repair of 100 complaints from the deployed start (all thresholds -inf)        1             3.01 [1.31, 4.97]                      30.11 [25.88, 34.67]                       50.3                    53.1                       56.6
+      L              H1 row: least repair of 10 complaints from the log-only thresholds        3             2.63 [1.28, 4.14]  23.74 [19.62, 28.57] {21.75/26.23/23.24}      30.2 {25.3/39.7/25.6}   52.0 {48.4/59.1/48.4}      48.1 {46.5/51.5/46.5}
+      L     least repair of 10 complaints from the deployed start (all thresholds -inf)        3          18.12 [14.53, 21.84]  96.80 [95.12, 98.36] {97.65/96.16/96.59}  100.0 {100.0/100.0/100.0}  99.8 {99.8/100.0/99.5}  100.0 {100.0/100.0/100.0}
+      L    least repair of 100 complaints from the deployed start (all thresholds -inf)        1             4.69 [2.93, 6.75]                      50.32 [45.82, 54.89]                       71.4                    68.0                       84.8
+
+(F6b) FALSE FIRING OF THE LABEL-FREE MIGRATION (ReScope: last prompt position, top-1, rebased values) ON THE OUT-OF-BENCHMARK WORKLOAD MME-T, BY n BENIGN QUERIES; gate level;
+      mean [5th, 95th percentile over the draws] (draws); '*' = the mean exceeds the level of the two-block rule (5 %)
+      TB-Q100-ae-l2_3: keys: BEN-T / MME-T: fx.pools.firing, prompt-only keys, gates calibrated at teacher-forced REPAIR keys; cell field 'which' of MME-T: tf; rows: 1186; mean above the level at n = 40, 50, 200, ALL
+      TB-L100-ae-l2_3: keys: BEN-T / MME-T: fx.pools.firing, prompt-only keys, gates calibrated at teacher-forced REPAIR keys; cell field 'which' of MME-T: tf; rows: 1186; mean above the level at n = none
+      n                       rule  Q: MME-T fire % [5th, 95th] (draws)  Q: % of draws above 5 %  L: MME-T fire % [5th, 95th] (draws)  L: % of draws above 5 %
+      ---  -----------------------  -----------------------------------  -----------------------  -----------------------------------  -----------------------
+      0                   log-only                0.00 [0.00, 0.00] (1)                        -                0.17 [0.17, 0.17] (1)                        -
+      1    log-only + least repair                0.00 [0.00, 0.00] (3)                        -                0.17 [0.17, 0.17] (3)                        -
+      2    log-only + least repair                0.00 [0.00, 0.00] (3)                        -                0.17 [0.17, 0.17] (3)                        -
+      5    log-only + least repair                0.00 [0.00, 0.00] (3)                        -                0.17 [0.17, 0.17] (3)                        -
+      10   log-only + least repair                0.00 [0.00, 0.00] (3)                        -                0.17 [0.17, 0.17] (3)                        -
+      20   log-only + least repair                0.00 [0.00, 0.00] (3)                        -                0.17 [0.17, 0.17] (3)                        -
+      40                 two-block             5.56 [0.00, 15.08] (20)*                       25              2.72 [0.00, 12.51] (20)                       20
+      50                 two-block             6.32 [0.00, 41.07] (20)*                       20              2.50 [0.00, 13.50] (20)                       10
+      100                two-block              2.85 [0.00, 11.11] (20)                       20               1.24 [0.00, 5.01] (20)                        5
+      200                two-block             5.63 [0.08, 17.10] (20)*                       35               1.59 [0.16, 3.48] (20)                        0
+      ALL                two-block            12.55 [0.40, 32.18] (20)*                       75               1.70 [0.58, 2.99] (20)                        0
+      the level applies to the two-block rule (n >= 40); at n <= 20 the thresholds are log-only plus a least repair (no level).  The cell field 'which' of MME-T is copied as stored; the description of the keys is the one of the part file and of PROTOCOL.md (R25 (5)).
+
+(F6c) CAPPED EDITS OF PART c' WITH TWO DECIMALS (mean over the 20 gate-level draws [5th, 95th percentile]); table.txt of E2 prints one decimal
+      log  capped edits, two decimals  5th / 95th percentile  draws  as printed with one decimal
+      ---  --------------------------  ---------------------  -----  ---------------------------
+      Q                          2.10            1.00 / 3.00     20                          2.1
+      L                          0.05            0.00 / 0.05     20                          0.1
+
+(F6d) RUNNING EXAMPLE (TB-Q100-ae-l2_3): THE COMPLAINT'S EDIT AND THE WHY-NOT REPHRASE BELONG TO TWO DIFFERENT EDITS: yes
+      role                          stream position (0-based)  counted from 1                                    edit: question -> target                                                                                                      how it enters the example
+      ----------------------------  -------------------------  --------------  ----------------------------------------------------------  -----------------------------------------------------------------------------------------------------------------------------
+      edit of the complaint                                21              22  Who is the actor featured in this image? -> Richard Schiff  chosen by: largest normalised coordinate over all positions (the default calibrated method releases no edit on the complaint)
+      edit of the why-not rephrase                          2               3  What is the title of the movie in this picture? -> Lantana                               rephrase 'Which film does this scene belong to?': own coordinate 0.126 below its threshold 0.267
+      index of the edit in the edit stream of the log (0 = the first edit).  present them as two edits: the complaint is attributed to the edit with the largest coordinate (the default method releases no edit on the complaint); the why-not question is asked about another edit of the same log.

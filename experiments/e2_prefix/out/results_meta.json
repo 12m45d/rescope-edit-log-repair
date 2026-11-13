@@ -1,0 +1,37 @@
+{
+ "experiment": "E2P",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "started": "2026-11-12 04:10:54",
+ "logs": [
+  "TB-Q100-ae-l2_3-p10",
+  "TB-Q100-ae-l2_3-p20",
+  "TB-Q100-ae-l2_3-p50",
+  "TB-L100-ae-l2_3-p10",
+  "TB-L100-ae-l2_3-p20",
+  "TB-L100-ae-l2_3-p50"
+ ],
+ "rows_dir": "[redacted: local path]/02_research/experiments/10_final/e2_prefix/out/rows",
+ "cells_dir": "[redacted: local path]/02_research/experiments/10_final/e2_prefix/out/cells",
+ "conventions": "E2 on prefix logs: aggregate the cells and per-row files into the common schema, the H1 read-out and the rendered table.\n\n    python aggregate.py            (CPU; no log is opened: every number is recomputed from out/rows/*.jsonl.gz and out/cells/)\n\nWrites out/results.json (+ results_meta.json), out/summary.json, out/h1_prefix.json, out/status.json, out/paper_numbers.json,\nout/paper_numbers_doc.json and out/table.txt (rendered from the JSON files just written; no number is typed by hand).\n\nConventions of the records (fx.io schema): for complaint-driven cells (linear repairs, where_least, blocklist) `n` = number of\nreported complaints, `draw` = seed of the complaint stream, `variant` = 'n1' | 'n10' | 'n20' | 'nALL'; for calibrated rows\n(rescope, where_two_block) `alpha` = 0.05, `n` = 200 benign queries, `draw` = calibration draw.  Summaries over seeds / draws:\nmetric@mean (ci = 5th / 95th percentile over seeds or draws) and metric@crossed (crossed bootstrap over seeds or draws x units;\nunits = query clusters for probe metrics, edits for edit metrics; R10); a single-seed cell carries the unit bootstrap.",
+ "written": "2026-11-12 04:11:46",
+ "n_records": 32236,
+ "fields": [
+  "experiment",
+  "log",
+  "method",
+  "variant",
+  "alpha",
+  "n",
+  "draw",
+  "pool",
+  "metric",
+  "value",
+  "ci_lo",
+  "ci_hi",
+  "n_units"
+ ]
+}

@@ -1,0 +1,186 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "ok": true,
+ "rules": {
+  "retr_conj": {
+   "0": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 92.0,
+     "tgen": 10.0
+    },
+    "coverage_mine": {
+     "igen": 92.0,
+     "tgen": 10.0
+    },
+    "delta_driver": 0.0,
+    "delta_mine": 0.0,
+    "fit_at_raise_driver": 0.11261261261261261,
+    "fit_just_above_mine": 0.11261261261261261,
+    "fit_just_below_mine": null,
+    "heldout_driver": 0.21505376344086022,
+    "heldout_mine": 0.21505376344086022,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 0.0,
+     "HN-Q": 0.0,
+     "HN-X": 0.0
+    },
+    "test_mine": {
+     "HN-I": 0.0,
+     "HN-Q": 0.0,
+     "HN-X": 0.0
+    }
+   },
+   "1": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 94.0,
+     "tgen": 18.0
+    },
+    "coverage_mine": {
+     "igen": 94.0,
+     "tgen": 18.0
+    },
+    "delta_driver": 0.0,
+    "delta_mine": 0.0,
+    "fit_at_raise_driver": 0.11261261261261261,
+    "fit_just_above_mine": 0.11261261261261261,
+    "fit_just_below_mine": null,
+    "heldout_driver": 0.21505376344086022,
+    "heldout_mine": 0.21505376344086022,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 0.6756756756756757,
+     "HN-Q": 0.0,
+     "HN-X": 0.0
+    },
+    "test_mine": {
+     "HN-I": 0.6756756756756757,
+     "HN-Q": 0.0,
+     "HN-X": 0.0
+    }
+   }
+  },
+  "retr_min": {
+   "0": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 86.0,
+     "tgen": 18.0
+    },
+    "coverage_mine": {
+     "igen": 86.0,
+     "tgen": 18.0
+    },
+    "delta_driver": 0.0,
+    "delta_mine": 0.0,
+    "fit_at_raise_driver": 3.7315796366677,
+    "fit_just_above_mine": 3.7315796366677,
+    "fit_just_below_mine": null,
+    "heldout_driver": 7.311827956989248,
+    "heldout_mine": 7.311827956989248,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 5.405405405405405,
+     "HN-Q": 6.440677966101695,
+     "HN-X": 8.0
+    },
+    "test_mine": {
+     "HN-I": 5.405405405405405,
+     "HN-Q": 6.440677966101695,
+     "HN-X": 8.0
+    }
+   },
+   "1": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 94.0,
+     "tgen": 22.0
+    },
+    "coverage_mine": {
+     "igen": 94.0,
+     "tgen": 22.0
+    },
+    "delta_driver": 0.0,
+    "delta_mine": 0.0,
+    "fit_at_raise_driver": 3.625137578170847,
+    "fit_just_above_mine": 3.625137578170847,
+    "fit_just_below_mine": null,
+    "heldout_driver": 6.881720430107527,
+    "heldout_mine": 6.881720430107527,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 3.7162162162162162,
+     "HN-Q": 6.779661016949152,
+     "HN-X": 10.0
+    },
+    "test_mine": {
+     "HN-I": 3.7162162162162162,
+     "HN-Q": 6.779661016949152,
+     "HN-X": 10.0
+    }
+   }
+  },
+  "retr_sum": {
+   "0": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 76.0,
+     "tgen": 72.0
+    },
+    "coverage_mine": {
+     "igen": 76.0,
+     "tgen": 72.0
+    },
+    "delta_driver": 0.15756638423932393,
+    "delta_mine": 0.15756638423932398,
+    "fit_at_raise_driver": 9.894231665268848,
+    "fit_just_above_mine": 9.894231665268848,
+    "fit_just_below_mine": 10.0083869164104,
+    "heldout_driver": 0.6451612903225806,
+    "heldout_mine": 0.6451612903225806,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 15.202702702702704,
+     "HN-Q": 4.067796610169491,
+     "HN-X": 16.0
+    },
+    "test_mine": {
+     "HN-I": 15.202702702702704,
+     "HN-Q": 4.067796610169491,
+     "HN-X": 16.0
+    }
+   },
+   "1": {
+    "agree": true,
+    "coverage_driver": {
+     "igen": 62.0,
+     "tgen": 50.0
+    },
+    "coverage_mine": {
+     "igen": 62.0,
+     "tgen": 50.0
+    },
+    "delta_driver": 0.2676273262999302,
+    "delta_mine": 0.26762732629993025,
+    "fit_at_raise_driver": 9.895805786216746,
+    "fit_just_above_mine": 9.895805786216746,
+    "fit_just_below_mine": 10.009961037358297,
+    "heldout_driver": 0.6451612903225806,
+    "heldout_mine": 0.6451612903225806,
+    "reachable": true,
+    "test_driver": {
+     "HN-I": 15.878378378378377,
+     "HN-Q": 5.423728813559322,
+     "HN-X": 22.0
+    },
+    "test_mine": {
+     "HN-I": 15.878378378378377,
+     "HN-Q": 5.423728813559322,
+     "HN-X": 22.0
+    }
+   }
+  }
+ }
+}

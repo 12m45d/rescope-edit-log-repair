@@ -1,0 +1,88 @@
+{
+ "log": "TB-Q100-ae",
+ "split": {
+  "default_equals_frac_0.5": true,
+  "n_items": 500,
+  "n_repair_50": 250,
+  "n_repair_25": 125,
+  "nested_25_in_50": true,
+  "item_level_25": true,
+  "split_tag_25": [
+   0.25,
+   20261109
+  ],
+  "restored_equals_default": true,
+  "split_tag_restored_none": true,
+  "baseline_tag_default_unchanged": true
+ },
+ "comp_defaults_bitwise": true,
+ "per_item": {
+  "summary_identical": true,
+  "rel_exact_from_list": true,
+  "lost_from_rows": true,
+  "tloc_from_list": true
+ },
+ "sequential": {
+  "restore_rel_err_seq": [
+   4.250800078731136e-13,
+   3.5460807305333326e-13,
+   2.940579452557249e-14
+  ],
+  "restore_rel_err_batch": [
+   4.1765578388663305e-13,
+   3.8492089735713255e-13,
+   1.4366685486151283e-13
+  ],
+  "protect_leak_rel": 1.5726930556287623e-13,
+  "R_orthonormality_err": 6.661338147750939e-16,
+  "fro_seq": 5.579393004901336,
+  "fro_batch": 5.579393004901231,
+  "batch_le_seq": true,
+  "rank_seq": 25,
+  "rank_batch": 25,
+  "fro_meta_equals": true
+ },
+ "rollback_offload": {
+  "same_R": true,
+  "same_trajectory": true,
+  "same_W": true,
+  "flags_consistent": true,
+  "R": [
+   67,
+   82,
+   80
+  ]
+ },
+ "reedit_chunk": {
+  "text_only_chunk8_bitwise": true,
+  "mixed_installed": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "mixed_zopt_attempts": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "mixed_chunk1_vs_chunk8_rel_diff_update": 0.08246866518683588,
+  "mixed_solve_attainment": 0.41003834624646673,
+  "mixed_resolved": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "mixed_chunk1_resolved": [
+   true,
+   true,
+   true,
+   true
+  ]
+ },
+ "pass": true,
+ "seconds": 341.71582221984863,
+ "gpu": "NVIDIA GeForce RTX 5090"
+}

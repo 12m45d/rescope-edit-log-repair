@@ -1,0 +1,152 @@
+{
+ "n_sequences": 2574,
+ "methods": {
+  "rescope": {
+   "capped_edits": 0,
+   "tf": {
+    "n": 2574,
+    "seconds_full_pass": 241.58304142951965,
+    "n_fired_hook": 799,
+    "n_near": 1,
+    "cpu_vs_hook": 1,
+    "device_vs_hook": 0,
+    "rows_vs_hook": 0,
+    "differing": [
+     {
+      "what": "cpu_vs_hook",
+      "csid": "L:probe:text:304",
+      "fx": [
+       false,
+       -1,
+       null,
+       null,
+       null
+      ],
+      "hook": [
+       true,
+       81,
+       1,
+       null,
+       null
+      ],
+      "near": true
+     }
+    ]
+   },
+   "prompt": {
+    "n": 52,
+    "seconds_full_pass": 2.700946569442749,
+    "n_fired_hook": 11,
+    "n_near": 0,
+    "cpu_vs_hook": 0,
+    "device_vs_hook": 0,
+    "rows_vs_hook": 0,
+    "differing": []
+   }
+  },
+  "cosine": {
+   "capped_edits": 31,
+   "tf": {
+    "n": 2574,
+    "seconds_full_pass": 244.92151880264282,
+    "n_fired_hook": 654,
+    "n_near": 32,
+    "cpu_vs_hook": 0,
+    "device_vs_hook": 0,
+    "rows_vs_hook": 0,
+    "differing": []
+   },
+   "prompt": {
+    "n": 52,
+    "seconds_full_pass": 2.8853847980499268,
+    "n_fired_hook": 6,
+    "n_near": 0,
+    "cpu_vs_hook": 0,
+    "device_vs_hook": 0,
+    "rows_vs_hook": 0,
+    "differing": []
+   }
+  }
+ },
+ "dense": {
+  "router": {
+   "n": 858,
+   "threshold": 30.462765996070257,
+   "n_fired_hook": 84,
+   "rows_vs_hook": 0,
+   "differing": [],
+   "seconds_fast": 0.3123447895050049,
+   "seconds_full_pass": 81.55630683898926,
+   "sources": {
+    "pre": 774,
+    "memo": 84,
+    "run": 0,
+    "lib": 0,
+    "forwards": 0,
+    "captures": 0
+   }
+  },
+  "zscore": {
+   "n": 858,
+   "threshold": 4.746818903516223,
+   "n_fired_hook": 127,
+   "rows_vs_hook": 0,
+   "differing": [],
+   "seconds_fast": 20.326064109802246,
+   "seconds_full_pass": 115.6223497390747,
+   "sources": {
+    "pre": 730,
+    "memo": 0,
+    "run": 0,
+    "lib": 128,
+    "forwards": 128,
+    "captures": 0
+   }
+  },
+  "zscore_default": {
+   "n": 858,
+   "threshold": 2.2,
+   "n_fired_hook": 713,
+   "rows_vs_hook": 0,
+   "differing": [],
+   "seconds_fast": 83.44276642799377,
+   "seconds_full_pass": 82.83680176734924,
+   "sources": {
+    "pre": 145,
+    "memo": 0,
+    "run": 0,
+    "lib": 713,
+    "forwards": 713,
+    "captures": 0
+   }
+  }
+ },
+ "hook_mismatch": 0,
+ "note": "cpu_vs_hook = fx.gate.decide (CPU, key cache) against the hook; device_vs_hook = fx.behave's decision (CPU + the rows inside the decision band re-decided on the model's device); rows_vs_hook = the memo path's row against the row of the full pass",
+ "ok": true,
+ "test": "hook",
+ "log": "TB-L100-ae-l2_3",
+ "seconds_test": 876.951025724411,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 18:18:53",
+ "session_stats": {
+  "rows": 89809,
+  "pre": 59337,
+  "memo": 28847,
+  "run": 9,
+  "lib": 1616,
+  "missing": 0,
+  "forwards": 944,
+  "decodes": 3,
+  "hook_mismatch": 0,
+  "near": 286,
+  "near_changed_on_device": 8,
+  "seconds_model": 165.31117916107178
+ },
+ "peak_gpu_gb": 14.590985298156738,
+ "peak_rss_gb": 14.220821380615234
+}

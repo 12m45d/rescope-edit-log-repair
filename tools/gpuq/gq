@@ -1,0 +1,7 @@
+#!/bin/bash
+eval "$(python3 "${RESCOPE_HOME:?set RESCOPE_HOME to the clone of the repository}/rescope_paths.py" --sh)"   # locations: the one configuration point
+# gq -- shared GPU job queue (see README.txt).  Thin wrapper: exec keeps one process, so the pid of `gq run ... &`
+# is the process that owns the job and receives the signals.  -I: the job's PYTHONPATH etc. cannot break the queue.
+PY=${RESCOPE_PYTHON}
+[ -x "$PY" ] || PY=python3
+exec "$PY" -I "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/gq.py" "$@"

@@ -1,0 +1,32 @@
+{
+ "pass": true,
+ "per_backbone": {
+  "qwen25vl": {
+   "ok": true,
+   "n_rows": {
+    "BEN-W": 600,
+    "BEN-S": 1375,
+    "BEN-T": 1025
+   }
+  },
+  "llava": {
+   "ok": true,
+   "n_rows": {
+    "BEN-W": 600,
+    "BEN-S": 1375,
+    "BEN-T": 1025
+   }
+  }
+ },
+ "note": "sids(part) / rows(part, kc) / mask / unknown part refused: True",
+ "test": "p6_loader",
+ "group": "parts",
+ "what": "loader: verification passes; sids / rows of a part in pool order; rows(part, key cache) are the benign rows of the key cache",
+ "seconds": 0.8536100387573242,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "pass": true,
+ "deviations": {
+  "repeated twice (gram)": {
+   "mu": 2.487335761886532e-16,
+   "trace": 0.0,
+   "M": 5.489501763817291e-16,
+   "form": "gram"
+  },
+  "repeated three times (primal)": {
+   "mu": 3.7310036428297984e-16,
+   "trace": 0.0,
+   "M": 5.204047672098792e-14,
+   "form": "primal"
+  },
+  "permuted": {
+   "mu": 1.243667880943266e-16,
+   "trace": 0.0,
+   "M": 4.3916014110538325e-16,
+   "form": "gram"
+  }
+ },
+ "note": "mu, tr(C), M of repeated / permuted reference keys: worst relative deviation 5.2e-14; Gram form == primal form",
+ "test": "s2_same_moment_other_keys",
+ "group": "stats",
+ "what": "the same second moment from other key sets gives the same statistics: keys repeated (Gram form and primal form), keys permuted",
+ "seconds": 0.002876758575439453,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

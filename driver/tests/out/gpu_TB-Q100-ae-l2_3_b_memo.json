@@ -1,0 +1,112 @@
+{
+ "n_pairs_available": 2650,
+ "n_checked": 300,
+ "n_equal": 300,
+ "n_decision_equal": 300,
+ "differing": [],
+ "seconds_fresh": 62.99438214302063,
+ "deployed": {
+  "n": 60,
+  "n_equal": 60
+ },
+ "decode": {
+  "n": 41,
+  "n_equal": 41,
+  "n_fired": 31,
+  "n_from_pre_edit_decode": 10
+ },
+ "decode_deployed": {
+  "n": 12,
+  "n_equal": 12
+ },
+ "hn_decode_all": {
+  "n": 22,
+  "n_equal_library": 22,
+  "n_decoded_without_decode_all": 9,
+  "wrong_target_same_with_and_without_decode_all": true
+ },
+ "dual": {
+  "n": 14,
+  "n_equal": 14,
+  "n_released_deployed": 1
+ },
+ "dual_tf": {
+  "n": 8,
+  "n_equal": 8
+ },
+ "second_pass": {
+  "n_rows": 15383,
+  "forwards": 0,
+  "decodes": 0,
+  "forwards_between": 0,
+  "seconds": 0.31136012077331543,
+  "seconds_model": 0.0,
+  "rows_equal": true,
+  "sources": {
+   "pre": 9934,
+   "memo": 5408,
+   "run": 0
+  }
+ },
+ "hook_mismatch": 0,
+ "forced": {
+  "tf": {
+   "n": 6,
+   "counted": 6,
+   "rows_equal_true_rows": 6,
+   "stored_under_falsified_signature": 0
+  },
+  "decode": {
+   "n": 3,
+   "counted": 3,
+   "rows_equal_true_rows": 3,
+   "stored_under_falsified_signature": 0
+  },
+  "memo_writes": 0,
+  "ok": true
+ },
+ "memo": {
+  "hits": 26277,
+  "misses": 15,
+  "writes": 0,
+  "shards": 25,
+  "shards_other_code": 0,
+  "entries": 11986,
+  "conflicts": 0,
+  "root": "[redacted: local path]/02_research/experiments/10_final/memo/qwen25vl",
+  "by_mode": {
+   "tf": 11474,
+   "decode": 512
+  },
+  "code": "c76c4da16bd6",
+  "accepted_library_versions": [
+   "c76c4da16bd6"
+  ]
+ },
+ "ok": true,
+ "test": "memo",
+ "log": "TB-Q100-ae-l2_3",
+ "seconds_test": 149.84472155570984,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 18:05:47",
+ "session_stats": {
+  "rows": 79012,
+  "pre": 53026,
+  "memo": 25977,
+  "run": 9,
+  "lib": 0,
+  "missing": 0,
+  "forwards": 6,
+  "decodes": 3,
+  "hook_mismatch": 0,
+  "near": 54,
+  "near_changed_on_device": 3,
+  "seconds_model": 1.9764137268066406
+ },
+ "peak_gpu_gb": 8.33730173110962,
+ "peak_rss_gb": 8.110694885253906
+}

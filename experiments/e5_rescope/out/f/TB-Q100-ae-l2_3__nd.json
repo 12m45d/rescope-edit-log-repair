@@ -1,0 +1,15 @@
+{
+ "nd_tolerance": 1e-10,
+ "nd_rank_write_vectors": 100,
+ "nd_write_vectors_smallest_singular_value_rel": 0.07883308085518478,
+ "nd_coordinate_matrix_smallest_singular_value": 0.1003374829222973,
+ "nd_coordinate_matrix_largest_singular_value": 0.8626309546988095,
+ "nd_coordinate_matrix_condition_number": 8.597295144097272,
+ "nd_holds": true,
+ "nd_rank_deployed_outputs_at_solver_keys": 100,
+ "nd_note": "write vectors = the logged residuals U_i (T x m); coordinate matrix <w_i, k_j> of the read-out vectors against the stored solver keys; float64 SVD, a singular value counts if it exceeds 1e-10 x the largest; last entry: rank of (W_E - W_0) K_E, the deployed changes at the solver keys",
+ "T": 100,
+ "d_in": 11008,
+ "m_out": 2048,
+ "log": "TB-Q100-ae-l2_3"
+}

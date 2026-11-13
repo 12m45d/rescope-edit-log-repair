@@ -1,0 +1,30 @@
+{
+ "TB-L100-ae-l2_3": {
+  "keys_source": "experiment's capture (cache/heldout_anskeys)",
+  "rank_K_ans": 483,
+  "n_edit_answer_keys": 483,
+  "D_share_on_K_ans_span": 0.3786415247606606,
+  "fro_D": 266.48021375292666,
+  "s_complaints": 0.4343966309481367,
+  "s_noncomplaints": 0.6406310015145332,
+  "a_complaints": 0.8708628856186389,
+  "a_noncomplaints": 1.406992182478321,
+  "n_complaints": 292,
+  "n_noncomplaints": 177,
+  "frac_complaints_a_below_half": 0.003424657534246575,
+  "comp_b_all": {
+   "rank": 1973,
+   "norm_over_log": 0.46090323950530737,
+   "R_orthonormal_err": 7.324327776225825e-15,
+   "max_abs_Rt_Q_ans": 3.252539296921819e-13,
+   "X_on_edit_answer_keys_rel": 1.7053912993187742e-13,
+   "n_twins_of_reported": 12,
+   "max_rho_twins_of_reported": 5.762267785134369e-13,
+   "median_rho_complaints_disjoint": 0.9054111822101153,
+   "median_rho_noncomplaints_disjoint": 1.0487425140173798
+  }
+ },
+ "TB-Q100-ae-l2_3": {
+  "skipped": "the experiment captured no held-out answer keys for this log"
+ }
+}

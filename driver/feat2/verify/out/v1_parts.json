@@ -1,0 +1,201 @@
+{
+ "checks": {
+  "pool_same_rows_all_backbones": {
+   "ok": true,
+   "n_rows": {
+    "qwen25vl": 3000,
+    "llava": 3000,
+    "blip2": 3000
+   }
+  },
+  "qwen25vl:split_by_item": {
+   "ok": true,
+   "n_items": {
+    "BEN-T": 701,
+    "BEN-S": 901,
+    "BEN-W": 400
+   },
+   "n_rows": {
+    "BEN-S": 1375,
+    "BEN-W": 600,
+    "BEN-T": 1025
+   },
+   "percent_of_items": {
+    "BEN-T": 35.015,
+    "BEN-S": 45.005,
+    "BEN-W": 19.98
+   },
+   "items_in_two_parts": 0,
+   "rows_without_part": 0,
+   "rows_not_in_part_of_item": 0,
+   "sids_not_in_pool": 0
+  },
+  "qwen25vl:proportions": {
+   "ok": true,
+   "deviation_in_items": {
+    "BEN-W": -0.4,
+    "BEN-S": 0.1,
+    "BEN-T": 0.3
+   },
+   "n_items_total": 2002
+  },
+  "qwen25vl:rule_rederived": {
+   "ok": true,
+   "n_w": 400,
+   "n_s": 901,
+   "n_t": 701,
+   "seed": 20261111
+  },
+  "qwen25vl:rows_per_item": {
+   "ok": true,
+   "histogram": {
+    "2": 998,
+    "1": 1004
+   },
+   "items_image_only": 502
+  },
+  "llava:split_by_item": {
+   "ok": true,
+   "n_items": {
+    "BEN-T": 701,
+    "BEN-S": 901,
+    "BEN-W": 400
+   },
+   "n_rows": {
+    "BEN-S": 1375,
+    "BEN-W": 600,
+    "BEN-T": 1025
+   },
+   "percent_of_items": {
+    "BEN-T": 35.015,
+    "BEN-S": 45.005,
+    "BEN-W": 19.98
+   },
+   "items_in_two_parts": 0,
+   "rows_without_part": 0,
+   "rows_not_in_part_of_item": 0,
+   "sids_not_in_pool": 0
+  },
+  "llava:proportions": {
+   "ok": true,
+   "deviation_in_items": {
+    "BEN-W": -0.4,
+    "BEN-S": 0.1,
+    "BEN-T": 0.3
+   },
+   "n_items_total": 2002
+  },
+  "llava:rule_rederived": {
+   "ok": true,
+   "n_w": 400,
+   "n_s": 901,
+   "n_t": 701,
+   "seed": 20261111
+  },
+  "llava:rows_per_item": {
+   "ok": true,
+   "histogram": {
+    "2": 998,
+    "1": 1004
+   },
+   "items_image_only": null
+  },
+  "blip2:split_by_item": {
+   "ok": true,
+   "n_items": {
+    "BEN-T": 701,
+    "BEN-S": 901,
+    "BEN-W": 400
+   },
+   "n_rows": {
+    "BEN-S": 1375,
+    "BEN-W": 600,
+    "BEN-T": 1025
+   },
+   "percent_of_items": {
+    "BEN-T": 35.015,
+    "BEN-S": 45.005,
+    "BEN-W": 19.98
+   },
+   "items_in_two_parts": 0,
+   "rows_without_part": 0,
+   "rows_not_in_part_of_item": 0,
+   "sids_not_in_pool": 0
+  },
+  "blip2:proportions": {
+   "ok": true,
+   "deviation_in_items": {
+    "BEN-W": -0.4,
+    "BEN-S": 0.1,
+    "BEN-T": 0.3
+   },
+   "n_items_total": 2002
+  },
+  "blip2:rule_rederived": {
+   "ok": true,
+   "n_w": 400,
+   "n_s": 901,
+   "n_t": 701,
+   "seed": 20261111
+  },
+  "blip2:rows_per_item": {
+   "ok": true,
+   "histogram": {
+    "2": 998,
+    "1": 1004
+   },
+   "items_image_only": null
+  },
+  "same_item_split_all_backbones": {
+   "ok": true,
+   "n_items": 2002
+  },
+  "leakage_between_parts(counts)": {
+   "ok": true,
+   "BEN-T rows whose QUERY (ptype, question, image content) is in BEN-W": 0,
+   "BEN-T rows whose question string is in BEN-W (image rows / text rows)": [
+    230,
+    0
+   ],
+   "BEN-T image rows whose image content is in BEN-W": 0,
+   "BEN-T image rows whose image ENTITY directory (Freebase mid) is in BEN-W": 22,
+   "BEN-T rows whose QUERY (ptype, question, image content) is in BEN-S": 0,
+   "BEN-T rows whose question string is in BEN-S (image rows / text rows)": [
+    254,
+    0
+   ],
+   "BEN-T image rows whose image content is in BEN-S": 0,
+   "BEN-T image rows whose image ENTITY directory (Freebase mid) is in BEN-S": 35,
+   "BEN-S rows whose QUERY (ptype, question, image content) is in BEN-W": 0,
+   "BEN-S rows whose question string is in BEN-W (image rows / text rows)": [
+    329,
+    0
+   ],
+   "BEN-S image rows whose image content is in BEN-W": 0,
+   "BEN-S image rows whose image ENTITY directory (Freebase mid) is in BEN-W": 21,
+   "n_distinct_queries": 3000,
+   "n_rows": 3000
+  },
+  "qwen25vl:whitening_statistics_are_BEN-W_only": {
+   "ok": true,
+   "n": 600,
+   "parts_of_sids": {
+    "BEN-W": 600
+   },
+   "keys_equal_cache_decode_keys_bitwise": true,
+   "which": "decode",
+   "key_rows_equal": true
+  },
+  "llava:whitening_statistics_are_BEN-W_only": {
+   "ok": true,
+   "n": 600,
+   "parts_of_sids": {
+    "BEN-W": 600
+   },
+   "keys_equal_cache_decode_keys_bitwise": true,
+   "which": "decode",
+   "key_rows_equal": true
+  }
+ },
+ "ok": true
+}

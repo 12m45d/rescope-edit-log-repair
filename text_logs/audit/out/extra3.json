@@ -1,0 +1,252 @@
+{
+ "written": "2026-11-11 10:44:47 UTC",
+ "pip_target_packages": {
+  "huggingface_hub-0.11.1.dist-info": {
+   "root": "[redacted: local path]/02_research/ext/pydeps_tf4",
+   "n_files_with_hash": 57,
+   "n_equal_to_wheel_record": 56,
+   "n_missing": 1,
+   "modified_files": [],
+   "missing_are_only_bin_scripts": null,
+   "missing_files": [
+    "../../bin/huggingface-cli"
+   ]
+  },
+  "tokenizers-0.13.3.dist-info": {
+   "root": "[redacted: local path]/02_research/ext/pydeps_tf4",
+   "n_files_with_hash": 40,
+   "n_equal_to_wheel_record": 40,
+   "n_missing": 0,
+   "modified_files": [],
+   "missing_are_only_bin_scripts": null
+  },
+  "transformers-4.23.1.dist-info": {
+   "root": "[redacted: local path]/02_research/ext/pydeps_tf4",
+   "n_files_with_hash": 978,
+   "n_equal_to_wheel_record": 977,
+   "n_missing": 1,
+   "modified_files": [],
+   "missing_are_only_bin_scripts": null,
+   "missing_files": [
+    "../../bin/transformers-cli"
+   ]
+  },
+  "nltk-3.10.4.dist-info": {
+   "root": "[redacted: local path]/02_research/ext/pydeps",
+   "n_files_with_hash": 384,
+   "n_equal_to_wheel_record": 383,
+   "n_missing": 1,
+   "modified_files": [],
+   "missing_are_only_bin_scripts": null,
+   "missing_files": [
+    "../../bin/nltk"
+   ]
+  }
+ },
+ "pip_target_packages_unmodified": true,
+ "repeated_subjects": {
+  "TX-G2XL-rome-dev100": {
+   "T": 100,
+   "n_distinct_subjects": 100,
+   "n_requests_whose_subject_occurred_earlier": 0,
+   "n_requests_whose_request_prompt_occurred_earlier": 0,
+   "examples": []
+  },
+  "TX-G2XL-rome-T100": {
+   "T": 100,
+   "n_distinct_subjects": 100,
+   "n_requests_whose_subject_occurred_earlier": 0,
+   "n_requests_whose_request_prompt_occurred_earlier": 0,
+   "examples": []
+  },
+  "TX-G2XL-rome-T500": {
+   "T": 500,
+   "n_distinct_subjects": 498,
+   "n_requests_whose_subject_occurred_earlier": 2,
+   "n_requests_whose_request_prompt_occurred_earlier": 0,
+   "examples": [
+    [
+     "Johannesburg",
+     [
+      157,
+      314
+     ]
+    ],
+    [
+     "Florence",
+     [
+      414,
+      485
+     ]
+    ]
+   ]
+  },
+  "TX-G2XL-rome-T1000": {
+   "T": 1000,
+   "n_distinct_subjects": 996,
+   "n_requests_whose_subject_occurred_earlier": 4,
+   "n_requests_whose_request_prompt_occurred_earlier": 1,
+   "examples": [
+    [
+     "Johannesburg",
+     [
+      157,
+      314
+     ]
+    ],
+    [
+     "PAX",
+     [
+      251,
+      912
+     ]
+    ],
+    [
+     "Florence",
+     [
+      414,
+      485
+     ]
+    ],
+    [
+     "Shanghai",
+     [
+      701,
+      933
+     ]
+    ]
+   ]
+  },
+  "TX-G2XL-rome-T2000": {
+   "T": 2000,
+   "n_distinct_subjects": 1979,
+   "n_requests_whose_subject_occurred_earlier": 21,
+   "n_requests_whose_request_prompt_occurred_earlier": 5,
+   "examples": [
+    [
+     "Andreas Ivanschitz",
+     [
+      11,
+      1221
+     ]
+    ],
+    [
+     "Saint Petersburg",
+     [
+      16,
+      1325
+     ]
+    ],
+    [
+     "Johannesburg",
+     [
+      157,
+      314
+     ]
+    ],
+    [
+     "PAX",
+     [
+      251,
+      912
+     ]
+    ]
+   ]
+  }
+ },
+ "update_norm_concentration": {
+  "TX-G2XL-rome-dev100": {
+   "T": 100,
+   "sum_of_squared_update_norms": 18143.268040216113,
+   "sqrt_of_it": 134.6969488897804,
+   "first_token_subject_updates": [],
+   "their_share_of_the_summed_squared_norm_pct": 0.0,
+   "largest_update_share_pct": 14.831130712755586,
+   "largest_update_index": 82,
+   "median_update_norm": 10.573812195589646,
+   "max_update_norm": 51.873420926424934,
+   "deployed_minus_pre_edit_fro": 137.65092577961406
+  },
+  "TX-G2XL-rome-T100": {
+   "T": 100,
+   "sum_of_squared_update_norms": 13018.667554453365,
+   "sqrt_of_it": 114.09937578467888,
+   "first_token_subject_updates": [],
+   "their_share_of_the_summed_squared_norm_pct": 0.0,
+   "largest_update_share_pct": 3.1598175592367728,
+   "largest_update_index": 78,
+   "median_update_norm": 10.514097111536792,
+   "max_update_norm": 20.28216318256704,
+   "deployed_minus_pre_edit_fro": 117.07310378352597
+  },
+  "TX-G2XL-rome-T500": {
+   "T": 500,
+   "sum_of_squared_update_norms": 234922953.5024965,
+   "sqrt_of_it": 15327.196531084754,
+   "first_token_subject_updates": [
+    173,
+    240,
+    266
+   ],
+   "their_share_of_the_summed_squared_norm_pct": 99.72426580137503,
+   "largest_update_share_pct": 52.96564097578406,
+   "largest_update_index": 240,
+   "median_update_norm": 29.06813864016388,
+   "max_update_norm": 11154.75002507185,
+   "deployed_minus_pre_edit_fro": 15351.456744716505
+  },
+  "TX-G2XL-rome-T1000": {
+   "T": 1000,
+   "sum_of_squared_update_norms": 553674379.4744822,
+   "sqrt_of_it": 23530.286429928605,
+   "first_token_subject_updates": [
+    173,
+    240,
+    266,
+    946
+   ],
+   "their_share_of_the_summed_squared_norm_pct": 99.7409042932174,
+   "largest_update_share_pct": 57.428093864526154,
+   "largest_update_index": 946,
+   "median_update_norm": 32.81179068987189,
+   "max_update_norm": 17831.563093246714,
+   "deployed_minus_pre_edit_fro": 23500.57857414241
+  },
+  "TX-G2XL-rome-T2000": {
+   "T": 2000,
+   "sum_of_squared_update_norms": 853137414.8495767,
+   "sqrt_of_it": 29208.516135702215,
+   "first_token_subject_updates": [
+    173,
+    240,
+    266,
+    946,
+    1416,
+    1420,
+    1508,
+    1947
+   ],
+   "their_share_of_the_summed_squared_norm_pct": 99.61582287644913,
+   "largest_update_share_pct": 37.270038426869505,
+   "largest_update_index": 946,
+   "median_update_norm": 35.2671042034727,
+   "max_update_norm": 17831.563093246714,
+   "deployed_minus_pre_edit_fro": 29025.254541241888
+  }
+ },
+ "[redacted: related project]_files_modified_since_build_start": {
+  "n": 1,
+  "files": [
+   "[redacted: local path][T]e3_calib_killtest.jsonl"
+  ],
+  "with_mtime_in_the_future(not written today)": [
+   "[redacted: local path][T]e3_calib_killtest.jsonl"
+  ]
+ },
+ "home_cache_files_newer_than_build_start": {
+  "home": "[redacted: local path]",
+  "n": 0,
+  "files": []
+ },
+ "finished": "2026-11-11 10:44:51 UTC"
+}

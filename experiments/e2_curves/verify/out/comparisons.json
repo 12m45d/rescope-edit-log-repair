@@ -1,0 +1,3374 @@
+{
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "gpu_pass_complete": true,
+   "cells": {
+    "deployed": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 54.19354838709678,
+       "ci_lo": 49.23561544562037,
+       "ci_hi": 58.798602188750074,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 54.666666666666664,
+       "ci_lo": 49.46236559139785,
+       "ci_hi": 59.94625438521434,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 69.975,
+       "ci_hi": 85.02499999999986,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 9.0,
+       "ci_lo": 4.0,
+       "ci_hi": 15.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 22.0,
+       "ci_lo": 14.0,
+       "ci_hi": 30.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": null,
+      "fired": null
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 54.19354838709678,
+       "ci_lo": 49.564652438856264,
+       "ci_hi": 58.91304347826087,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 54.666666666666664,
+       "ci_lo": 49.333333333333336,
+       "ci_hi": 59.78694771062464,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 69.975,
+       "ci_hi": 85.02499999999986,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 9.0,
+       "ci_lo": 4.0,
+       "ci_hi": 15.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 22.0,
+       "ci_lo": 14.0,
+       "ci_hi": 30.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": null,
+      "fired": null
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 54.193548387096776,
+       "ci_lo": 49.564652438856264,
+       "ci_hi": 58.91304347826087
+      },
+      "D1_strict": {
+       "value": 54.666666666666664,
+       "ci_lo": 49.333333333333336,
+       "ci_hi": 59.78694771062464
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 70.0,
+       "ci_hi": 86.0
+      },
+      "tgen": {
+       "value": 9.0,
+       "ci_lo": 4.0,
+       "ci_hi": 15.0
+      },
+      "igen": {
+       "value": 22.0,
+       "ci_lo": 14.0,
+       "ci_hi": 30.0
+      },
+      "own_out": null,
+      "fired": null,
+      "n": {
+       "value": 465.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 765,
+      "n_theirs": 765,
+      "n_joined": 765,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 0,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 465,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 0,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": null,
+     "cell": "base/deployed",
+     "experiment_meta": {
+      "n_refused": null,
+      "n_reported_still_firing": null,
+      "n_thresholds_raised_total": null,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "wl_dep_n10": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 6.236559139784946,
+       "ci_lo": 3.829381536242337,
+       "ci_hi": 9.03406621269197,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 4.8,
+       "ci_lo": 2.406417112299465,
+       "ci_hi": 7.672466422466419,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 79.0,
+       "ci_lo": 71.0,
+       "ci_hi": 86.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 8.0,
+       "ci_lo": 3.0,
+       "ci_hi": 14.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 26.0,
+       "ci_lo": 18.0,
+       "ci_hi": 34.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 50.967741935483865
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 6.236559139784946,
+       "ci_lo": 3.6956521739130435,
+       "ci_hi": 9.0327447163515,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 4.8,
+       "ci_lo": 2.399840425531915,
+       "ci_hi": 7.8745337753833375,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 79.0,
+       "ci_lo": 71.0,
+       "ci_hi": 86.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 8.0,
+       "ci_lo": 3.0,
+       "ci_hi": 14.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 26.0,
+       "ci_lo": 18.0,
+       "ci_hi": 34.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 50.967741935483865
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 6.236559139784946,
+       "ci_lo": 3.6956521739130435,
+       "ci_hi": 9.0327447163515
+      },
+      "D1_strict": {
+       "value": 4.8,
+       "ci_lo": 2.399840425531915,
+       "ci_hi": 7.8745337753833375
+      },
+      "rel": {
+       "value": 79.0,
+       "ci_lo": 71.0,
+       "ci_hi": 86.0
+      },
+      "tgen": {
+       "value": 8.0,
+       "ci_lo": 3.0,
+       "ci_hi": 14.0
+      },
+      "igen": {
+       "value": 26.0,
+       "ci_lo": 18.0,
+       "ci_hi": 35.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 50.96774193548387,
+       "ci_lo": 46.25227372153531,
+       "ci_hi": 55.932203389830505
+      },
+      "n": {
+       "value": 465.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 765,
+      "n_theirs": 765,
+      "n_joined": 765,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 465,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 465,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "cell file",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 2.220446049250313e-16,
+      "max_rel_diff": 5.012113216828856e-16,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "n_refused": 0,
+       "n_raised_total": 333,
+       "still_firing": 0
+      }
+     },
+     "cell": "b/where_least__deployed__n10__s0",
+     "experiment_meta": {
+      "n_refused": 0,
+      "n_reported_still_firing": 0,
+      "n_thresholds_raised_total": 333,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "wl_dep_n100": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 3.010752688172043,
+       "ci_lo": 1.312910284463895,
+       "ci_hi": 5.042016806722689,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 2.666666666666667,
+       "ci_lo": 1.0609377850757162,
+       "ci_hi": 4.948239637728458,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 69.0,
+       "ci_hi": 86.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 6.0,
+       "ci_lo": 2.0,
+       "ci_hi": 11.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 26.0,
+       "ci_lo": 18.0,
+       "ci_hi": 34.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 30.107526881720432
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 3.010752688172043,
+       "ci_lo": 1.3043478260869565,
+       "ci_hi": 4.967602591792657,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 2.666666666666667,
+       "ci_lo": 1.0471204188481675,
+       "ci_hi": 4.898505423810925,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 69.0,
+       "ci_hi": 86.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 6.0,
+       "ci_lo": 2.0,
+       "ci_hi": 11.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 26.0,
+       "ci_lo": 18.0,
+       "ci_hi": 34.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 30.107526881720432
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 3.010752688172043,
+       "ci_lo": 1.3043478260869565,
+       "ci_hi": 4.967602591792657
+      },
+      "D1_strict": {
+       "value": 2.6666666666666665,
+       "ci_lo": 1.0471204188481675,
+       "ci_hi": 4.898505423810925
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 70.0,
+       "ci_hi": 85.02499999999986
+      },
+      "tgen": {
+       "value": 6.0,
+       "ci_lo": 2.0,
+       "ci_hi": 11.0
+      },
+      "igen": {
+       "value": 26.0,
+       "ci_lo": 18.0,
+       "ci_hi": 35.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 30.107526881720432,
+       "ci_lo": 25.53554095334164,
+       "ci_hi": 34.83067375886524
+      },
+      "n": {
+       "value": 465.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 765,
+      "n_theirs": 765,
+      "n_joined": 765,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 465,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 465,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "cell file",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 2.220446049250313e-16,
+      "max_rel_diff": 4.039212075049009e-16,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "n_refused": 0,
+       "n_raised_total": 541,
+       "still_firing": 0
+      }
+     },
+     "cell": "b/where_least__deployed__n100__s0",
+     "experiment_meta": {
+      "n_refused": 0,
+      "n_reported_still_firing": 0,
+      "n_thresholds_raised_total": 541,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "wl_log_n10": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 1.0752688172043012,
+       "ci_lo": 0.21551724137931033,
+       "ci_hi": 2.1739130434782608,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 1.0666666666666667,
+       "ci_lo": 0.26455026455026454,
+       "ci_hi": 2.156479930064835,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 69.0,
+       "ci_hi": 86.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 7.000000000000001,
+       "ci_lo": 2.9750000000000014,
+       "ci_hi": 13.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 26.0,
+       "ci_lo": 18.0,
+       "ci_hi": 34.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 18.27956989247312
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 1.0752688172043012,
+       "ci_lo": 0.21597108438221493,
+       "ci_hi": 2.1321961620469083,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 1.0666666666666667,
+       "ci_lo": 0.26246719160104987,
+       "ci_hi": 2.356020942408377,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 69.0,
+       "ci_hi": 86.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 7.000000000000001,
+       "ci_lo": 2.9750000000000014,
+       "ci_hi": 13.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 26.0,
+       "ci_lo": 18.0,
+       "ci_hi": 34.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 18.27956989247312
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 1.075268817204301,
+       "ci_lo": 0.21597108438221493,
+       "ci_hi": 2.1321961620469083
+      },
+      "D1_strict": {
+       "value": 1.0666666666666667,
+       "ci_lo": 0.26246719160104987,
+       "ci_hi": 2.356020942408377
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 70.0,
+       "ci_hi": 85.02499999999986
+      },
+      "tgen": {
+       "value": 7.0,
+       "ci_lo": 2.9750000000000014,
+       "ci_hi": 12.0
+      },
+      "igen": {
+       "value": 26.0,
+       "ci_lo": 18.0,
+       "ci_hi": 35.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 18.27956989247312,
+       "ci_lo": 14.774371328172185,
+       "ci_hi": 22.22222222222222
+      },
+      "n": {
+       "value": 465.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 765,
+      "n_theirs": 765,
+      "n_joined": 765,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 465,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 465,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "cell file",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 3.9968028886505635e-15,
+      "max_rel_diff": 4.08918050834315e-15,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "n_refused": 0,
+       "n_raised_total": 2,
+       "start_capped": 2,
+       "still_firing": 0
+      }
+     },
+     "cell": "b/where_least__logonly__n10__s0",
+     "experiment_meta": {
+      "n_refused": 0,
+      "n_reported_still_firing": 0,
+      "n_thresholds_raised_total": 2,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "comp_b_all": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 49.03225806451613,
+       "ci_lo": 44.39594529034184,
+       "ci_hi": 53.41954022988506,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 48.266666666666666,
+       "ci_lo": 43.1256451797901,
+       "ci_hi": 53.45790903401979,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 70.0,
+       "ci_hi": 86.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 10.0,
+       "ci_lo": 5.0,
+       "ci_hi": 16.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 25.0,
+       "ci_lo": 17.0,
+       "ci_hi": 33.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": null,
+      "fired": null
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 49.03225806451613,
+       "ci_lo": 44.08556588299617,
+       "ci_hi": 54.0092916778885,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 48.266666666666666,
+       "ci_lo": 43.01075268817204,
+       "ci_hi": 53.50741384599652,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 70.0,
+       "ci_hi": 86.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 10.0,
+       "ci_lo": 5.0,
+       "ci_hi": 16.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 25.0,
+       "ci_lo": 17.0,
+       "ci_hi": 33.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": null,
+      "fired": null
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 49.03225806451613,
+       "ci_lo": 44.08556588299617,
+       "ci_hi": 54.0092916778885
+      },
+      "D1_strict": {
+       "value": 48.266666666666666,
+       "ci_lo": 43.01075268817204,
+       "ci_hi": 53.50741384599652
+      },
+      "rel": {
+       "value": 78.0,
+       "ci_lo": 70.0,
+       "ci_hi": 86.0
+      },
+      "tgen": {
+       "value": 10.0,
+       "ci_lo": 5.0,
+       "ci_hi": 16.0
+      },
+      "igen": {
+       "value": 25.0,
+       "ci_lo": 16.0,
+       "ci_hi": 34.0
+      },
+      "own_out": null,
+      "fired": null,
+      "n": {
+       "value": 465.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 765,
+      "n_theirs": 765,
+      "n_joined": 765,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 0,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 465,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 0,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": null,
+     "cell": "d/COMP_B__nALL__s0",
+     "experiment_meta": {
+      "n_refused": null,
+      "n_reported_still_firing": null,
+      "n_thresholds_raised_total": null,
+      "n_edits_capped": null,
+      "flags_vs_record": {
+       "record": "COMP_B__nALL__s0",
+       "n_heldout": 490,
+       "n_heldout_differ": 0,
+       "n_heldout_disjoint_differ": 0,
+       "n_edit": 300,
+       "n_edit_differ": 0,
+       "differing": []
+      }
+     }
+    },
+    "c_n0": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 100.0,
+       "ci_lo": 100.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 6.0,
+       "ci_lo": 2.0,
+       "ci_hi": 11.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 28.000000000000004,
+       "ci_lo": 19.0,
+       "ci_hi": 37.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 0.0
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 100.0,
+       "ci_lo": 100.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 6.0,
+       "ci_lo": 2.0,
+       "ci_hi": 11.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 28.000000000000004,
+       "ci_lo": 19.0,
+       "ci_hi": 37.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 0.0
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0
+      },
+      "D1_strict": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0
+      },
+      "rel": {
+       "value": 100.0,
+       "ci_lo": 100.0,
+       "ci_hi": 100.0
+      },
+      "tgen": {
+       "value": 6.0,
+       "ci_lo": 2.0,
+       "ci_hi": 11.0
+      },
+      "igen": {
+       "value": 28.0,
+       "ci_lo": 20.0,
+       "ci_hi": 37.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0
+      },
+      "n": {
+       "value": 465.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 765,
+      "n_theirs": 765,
+      "n_joined": 765,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 465,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 465,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "driver constructor rebuilt on the CPU",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 1.6653345369377348e-15,
+      "max_rel_diff": 2.574792794245648e-15,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "theta": 0.6467839045765397,
+       "n_capped": 0
+      }
+     },
+     "cell": "c/rescope_n0__s0",
+     "experiment_meta": {
+      "n_refused": null,
+      "n_reported_still_firing": null,
+      "n_thresholds_raised_total": null,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "c_n10": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 100.0,
+       "ci_lo": 100.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 6.0,
+       "ci_lo": 2.0,
+       "ci_hi": 11.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 28.000000000000004,
+       "ci_lo": 19.0,
+       "ci_hi": 37.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 0.0
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 100.0,
+       "ci_lo": 100.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 6.0,
+       "ci_lo": 2.0,
+       "ci_hi": 11.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 28.000000000000004,
+       "ci_lo": 19.0,
+       "ci_hi": 37.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 0.0
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0
+      },
+      "D1_strict": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0
+      },
+      "rel": {
+       "value": 100.0,
+       "ci_lo": 100.0,
+       "ci_hi": 100.0
+      },
+      "tgen": {
+       "value": 6.0,
+       "ci_lo": 2.0,
+       "ci_hi": 11.0
+      },
+      "igen": {
+       "value": 28.0,
+       "ci_lo": 20.0,
+       "ci_hi": 37.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 0.0,
+       "ci_lo": 0.0,
+       "ci_hi": 0.0
+      },
+      "n": {
+       "value": 465.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 765,
+      "n_theirs": 765,
+      "n_joined": 765,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 465,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 465,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "driver constructor rebuilt on the CPU",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 1.6653345369377348e-15,
+      "max_rel_diff": 2.574792794245648e-15,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "n_refused": 0,
+       "n_raised_total": 0
+      }
+     },
+     "cell": "c/rescope_n10__s0",
+     "experiment_meta": {
+      "n_refused": null,
+      "n_reported_still_firing": null,
+      "n_thresholds_raised_total": null,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "c_n200": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 4.946236559139785,
+       "ci_lo": 3.0172413793103448,
+       "ci_hi": 6.971804225566195,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 3.733333333333334,
+       "ci_lo": 1.856763925729443,
+       "ci_hi": 5.898123324396783,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 100.0,
+       "ci_lo": 100.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 56.99999999999999,
+       "ci_lo": 48.0,
+       "ci_hi": 67.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 69.0,
+       "ci_lo": 60.0,
+       "ci_hi": 78.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 4.946236559139785
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 465,
+      "n_heldout_strict": 375,
+      "D1": {
+       "value": 4.946236559139785,
+       "ci_lo": 3.0170791620318873,
+       "ci_hi": 7.174269234304622,
+       "n_units": 449,
+       "n_rows": 465
+      },
+      "D1_strict": {
+       "value": 3.733333333333334,
+       "ci_lo": 1.8716577540106951,
+       "ci_hi": 6.052631578947368,
+       "n_units": 364,
+       "n_rows": 375
+      },
+      "rel": {
+       "value": 100.0,
+       "ci_lo": 100.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 56.99999999999999,
+       "ci_lo": 48.0,
+       "ci_hi": 67.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 69.0,
+       "ci_lo": 60.0,
+       "ci_hi": 78.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 4.946236559139785
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 4.946236559139785,
+       "ci_lo": 3.0170791620318873,
+       "ci_hi": 7.174269234304622
+      },
+      "D1_strict": {
+       "value": 3.7333333333333334,
+       "ci_lo": 1.8716577540106951,
+       "ci_hi": 6.052631578947368
+      },
+      "rel": {
+       "value": 100.0,
+       "ci_lo": 100.0,
+       "ci_hi": 100.0
+      },
+      "tgen": {
+       "value": 57.0,
+       "ci_lo": 47.0,
+       "ci_hi": 67.0
+      },
+      "igen": {
+       "value": 69.0,
+       "ci_lo": 60.0,
+       "ci_hi": 78.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 4.946236559139785,
+       "ci_lo": 3.0170791620318873,
+       "ci_hi": 7.174269234304622
+      },
+      "n": {
+       "value": 465.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 765,
+      "n_theirs": 765,
+      "n_joined": 765,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 465,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 465,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "driver constructor rebuilt on the CPU",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 2.1649348980190553e-15,
+      "max_rel_diff": 8.344825808939147e-15,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "eta": 0.16223278571144806,
+       "k": 96,
+       "n2": 100,
+       "n_capped": 0
+      }
+     },
+     "cell": "c/rescope_n200__d0",
+     "experiment_meta": {
+      "n_refused": null,
+      "n_reported_still_firing": null,
+      "n_thresholds_raised_total": null,
+      "n_edits_capped": 0,
+      "flags_vs_record": null
+     }
+    }
+   },
+   "comp_b_all_vs_p12_record": {
+    "n_heldout": 490,
+    "n_heldout_in_record": 490,
+    "n_heldout_differ": 0,
+    "n_heldout_disjoint_differ": 0,
+    "n_edit": 300,
+    "n_edit_differ": 0,
+    "solve_device": "see out/<log>/comp_b_all.pt (cpu as P12 on Qwen; the LLaVA build of this job ran on the GPU)"
+   },
+   "deployed_vs_p12_record": {
+    "n_heldout": 490,
+    "n_heldout_differ": 0
+   },
+   "linear_import": {
+    "n_cells": 104,
+    "n_numbers": 624,
+    "n_mismatch": 0,
+    "max_abs_diff": 1.4210854715202004e-14,
+    "examples": []
+   },
+   "linear_summary": {
+    "COMP_B@10": {
+     "n_seeds": 3,
+     "d1_mine": 50.53763440860215,
+     "d1_exp": 50.53763440860215,
+     "rel_mine": 76.0,
+     "rel_exp": 76.0
+    },
+    "RB_UNION@10": {
+     "n_seeds": 3,
+     "d1_mine": 45.448028673835125,
+     "d1_exp": 45.448028673835125,
+     "rel_mine": 52.666666666666664,
+     "rel_exp": 52.666666666666664
+    },
+    "REEDIT_B@10": {
+     "n_seeds": 3,
+     "d1_mine": 58.92473118279569,
+     "d1_exp": 58.924731182795696,
+     "rel_mine": 75.66666666666667,
+     "rel_exp": 75.66666666666667
+    },
+    "COMP_B@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 49.03225806451613,
+     "d1_exp": 49.03225806451613,
+     "rel_mine": 78.0,
+     "rel_exp": 78.0
+    },
+    "REEDIT_B@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 66.02150537634408,
+     "d1_exp": 66.02150537634408,
+     "rel_mine": 63.0,
+     "rel_exp": 63.0
+    },
+    "RB_UNION@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 6.236559139784946,
+     "d1_exp": 6.236559139784946,
+     "rel_mine": 1.0,
+     "rel_exp": 1.0
+    }
+   },
+   "h1": {
+    "d1_where_mine": 1.003584229390681,
+    "d1_where_exp": 1.003584229390681,
+    "rel_where_mine": 78.0,
+    "rel_where_exp": 78.0,
+    "rel_deployed_mine": 78.0,
+    "rel_deployed_exp": 78.0,
+    "best_linear": {
+     "registered_set_of_the_experiment": "RB_UNION",
+     "protocol_section_2_set": "RB_UNION",
+     "every_p12_method_with_3_seeds": "RB_UNION"
+    },
+    "candidates": {
+     "COMP_B": {
+      "d1": 50.53763440860215,
+      "rel": 76.0
+     },
+     "COMP_BP": {
+      "d1": 52.25806451612903,
+      "rel": 77.66666666666667
+     },
+     "COMP_B_ALLPOS": {
+      "d1": 56.63082437275986,
+      "rel": 76.66666666666667
+     },
+     "COMP_S": {
+      "d1": 50.53763440860215,
+      "rel": 76.0
+     },
+     "COMP_SP": {
+      "d1": 52.25806451612903,
+      "rel": 77.66666666666667
+     },
+     "RB_TOT": {
+      "d1": 46.236559139784944,
+      "rel": 54.666666666666664
+     },
+     "RB_UNION": {
+      "d1": 45.448028673835125,
+      "rel": 52.666666666666664
+     },
+     "REEDIT_B": {
+      "d1": 58.924731182795696,
+      "rel": 75.66666666666667
+     },
+     "REEDIT_S": {
+      "d1": 58.924731182795696,
+      "rel": 75.66666666666667
+     }
+    },
+    "comparisons": {
+     "best_lowest_d1": {
+      "linear_mine": "RB_UNION",
+      "linear_exp": "RB_UNION",
+      "d1_linear_mine": 45.448028673835125,
+      "d1_linear_exp": 45.448028673835125,
+      "diff_mine": {
+       "value": -44.44444444444445,
+       "ci_lo": -48.80732464106054,
+       "ci_hi": -39.95561198658313,
+       "p_two_sided": 0.0005,
+       "n_draws": 3,
+       "n_units": 449
+      },
+      "diff_exp": {
+       "value": -44.44444444444444,
+       "ci_lo": -48.965863592222604,
+       "ci_hi": -40.129753151219845,
+       "p_two_sided": 0.0005
+      }
+     },
+     "best_rel_within_2": {
+      "linear_mine": "COMP_B",
+      "linear_exp": "COMP_B",
+      "d1_linear_mine": 50.53763440860215,
+      "d1_linear_exp": 50.53763440860215,
+      "diff_mine": {
+       "value": -49.53405017921147,
+       "ci_lo": -53.80747126436781,
+       "ci_hi": -45.11032035940715,
+       "p_two_sided": 0.0005,
+       "n_draws": 3,
+       "n_units": 449
+      },
+      "diff_exp": {
+       "value": -49.53405017921147,
+       "ci_lo": -54.06959113834466,
+       "ci_hi": -45.0,
+       "p_two_sided": 0.0005
+      }
+     }
+    },
+    "d1_at_most_10": true,
+    "rel_within_2_two_sided": true,
+    "rel_not_more_than_2_below": true,
+    "literal_rule_helps_on_this_log_mine": true,
+    "literal_rule_helps_on_this_log_exp": true,
+    "one_sided_met_mine": true,
+    "one_sided_met_exp": true,
+    "where_d1_per_seed": [
+     1.0752688172043012,
+     0.8602150537634409,
+     1.0752688172043012
+    ],
+    "seed0_d1_mine_gpu": 1.0752688172043012,
+    "seed0_rel_mine_gpu": 78.0,
+    "deployed_rel_mine_gpu": 78.0
+   },
+   "sanity": {
+    "rows": [
+     {
+      "cell": "deployed",
+      "quantity": "D1 heldout_disjoint",
+      "e0": 54.193548387096776,
+      "mine": 54.19354838709678,
+      "abs_diff": 7.105427357601002e-15
+     },
+     {
+      "cell": "deployed",
+      "quantity": "D1 heldout_strict",
+      "e0": 54.666666666666664,
+      "mine": 54.666666666666664,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "deployed",
+      "quantity": "Rel",
+      "e0": 78.0,
+      "mine": 78.0,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "deployed",
+      "quantity": "T-Gen",
+      "e0": 9.0,
+      "mine": 9.0,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "deployed",
+      "quantity": "I-Gen",
+      "e0": 22.0,
+      "mine": 22.0,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "D1 heldout_disjoint",
+      "e0": 4.946236559139785,
+      "mine": 4.946236559139785,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "D1 heldout_strict",
+      "e0": 3.7333333333333334,
+      "mine": 3.733333333333334,
+      "abs_diff": 4.440892098500626e-16
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "Rel",
+      "e0": 100.0,
+      "mine": 100.0,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "T-Gen",
+      "e0": 57.0,
+      "mine": 56.99999999999999,
+      "abs_diff": 7.105427357601002e-15
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "I-Gen",
+      "e0": 69.0,
+      "mine": 69.0,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "fired heldout_disjoint",
+      "e0": 4.946236559139785,
+      "mine": 4.946236559139785,
+      "abs_diff": 0.0
+     }
+    ],
+    "max_abs_diff": 7.105427357601002e-15,
+    "n": 11
+   },
+   "counts": {
+    "mine": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 979,
+     "n_heldout_valid": 490,
+     "n_heldout_disjoint": 465,
+     "n_heldout_strict": 375,
+     "n_repair_valid": 489
+    },
+    "n_complaints_all_p12": 297,
+    "exp_probe_n_values": [
+     465.0
+    ],
+    "exp_strict_n_values": [
+     375.0
+    ],
+    "exp_edit_n_values": [
+     100.0
+    ],
+    "exp_n_records": 21067
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "gpu_pass_complete": true,
+   "cells": {
+    "deployed": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 62.26012793176972,
+       "ci_lo": 57.6271186440678,
+       "ci_hi": 66.8076109936575,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 66.75461741424802,
+       "ci_lo": 61.6,
+       "ci_hi": 71.46596858638743,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 88.0,
+       "ci_lo": 81.0,
+       "ci_hi": 94.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 28.999999999999996,
+       "ci_lo": 21.0,
+       "ci_hi": 38.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 66.0,
+       "ci_lo": 57.0,
+       "ci_hi": 75.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": null,
+      "fired": null
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 62.26012793176972,
+       "ci_lo": 57.505285412262154,
+       "ci_hi": 66.59530046926967,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 66.75461741424802,
+       "ci_lo": 61.96808510638298,
+       "ci_hi": 71.57992461259249,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 88.0,
+       "ci_lo": 81.0,
+       "ci_hi": 94.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 28.999999999999996,
+       "ci_lo": 21.0,
+       "ci_hi": 38.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 66.0,
+       "ci_lo": 57.0,
+       "ci_hi": 75.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": null,
+      "fired": null
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 62.26012793176972,
+       "ci_lo": 57.505285412262154,
+       "ci_hi": 66.59530046926967
+      },
+      "D1_strict": {
+       "value": 66.75461741424802,
+       "ci_lo": 61.96808510638298,
+       "ci_hi": 71.57992461259249
+      },
+      "rel": {
+       "value": 88.0,
+       "ci_lo": 81.0,
+       "ci_hi": 94.0
+      },
+      "tgen": {
+       "value": 29.0,
+       "ci_lo": 20.0,
+       "ci_hi": 37.024999999999864
+      },
+      "igen": {
+       "value": 66.0,
+       "ci_lo": 57.0,
+       "ci_hi": 75.0
+      },
+      "own_out": null,
+      "fired": null,
+      "n": {
+       "value": 469.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 769,
+      "n_theirs": 769,
+      "n_joined": 769,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 0,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 469,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 0,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": null,
+     "cell": "base/deployed",
+     "experiment_meta": {
+      "n_refused": null,
+      "n_reported_still_firing": null,
+      "n_thresholds_raised_total": null,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "wl_dep_n10": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 20.46908315565032,
+       "ci_lo": 16.66578947368421,
+       "ci_hi": 24.19153635091166,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 23.482849604221638,
+       "ci_lo": 19.312169312169313,
+       "ci_hi": 27.852223352130903,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 93.0,
+       "ci_lo": 87.0,
+       "ci_hi": 97.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 35.0,
+       "ci_lo": 27.0,
+       "ci_hi": 44.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 72.0,
+       "ci_lo": 63.0,
+       "ci_hi": 80.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 97.6545842217484
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 20.46908315565032,
+       "ci_lo": 16.84345370412376,
+       "ci_hi": 24.2425868123293,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 23.482849604221638,
+       "ci_lo": 19.473684210526315,
+       "ci_hi": 28.011267625141965,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 93.0,
+       "ci_lo": 87.0,
+       "ci_hi": 97.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 35.0,
+       "ci_lo": 27.0,
+       "ci_hi": 44.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 72.0,
+       "ci_lo": 63.0,
+       "ci_hi": 80.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 97.6545842217484
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 20.46908315565032,
+       "ci_lo": 16.84345370412376,
+       "ci_hi": 24.2425868123293
+      },
+      "D1_strict": {
+       "value": 23.482849604221634,
+       "ci_lo": 19.473684210526315,
+       "ci_hi": 28.011267625141965
+      },
+      "rel": {
+       "value": 93.0,
+       "ci_lo": 88.0,
+       "ci_hi": 97.0
+      },
+      "tgen": {
+       "value": 35.0,
+       "ci_lo": 26.0,
+       "ci_hi": 44.0
+      },
+      "igen": {
+       "value": 72.0,
+       "ci_lo": 63.0,
+       "ci_hi": 80.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 97.65458422174841,
+       "ci_lo": 96.17021276595744,
+       "ci_hi": 98.93622667931517
+      },
+      "n": {
+       "value": 469.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 769,
+      "n_theirs": 769,
+      "n_joined": 769,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 469,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 469,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "cell file",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 1.1102230246251565e-16,
+      "max_rel_diff": 3.1833443839000577e-16,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "n_refused": 0,
+       "n_raised_total": 300,
+       "still_firing": 0
+      }
+     },
+     "cell": "b/where_least__deployed__n10__s0",
+     "experiment_meta": {
+      "n_refused": 0,
+      "n_reported_still_firing": 0,
+      "n_thresholds_raised_total": 300,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "wl_dep_n100": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 4.690831556503198,
+       "ci_lo": 2.801423523753145,
+       "ci_hi": 6.780020871567884,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 5.277044854881266,
+       "ci_lo": 3.2,
+       "ci_hi": 7.572297103331372,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 93.0,
+       "ci_lo": 87.0,
+       "ci_hi": 97.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 31.0,
+       "ci_lo": 23.0,
+       "ci_hi": 40.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 69.0,
+       "ci_lo": 60.0,
+       "ci_hi": 77.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 50.31982942430704
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 4.690831556503198,
+       "ci_lo": 2.9659449242125633,
+       "ci_hi": 6.624286224125623,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 5.277044854881266,
+       "ci_lo": 3.182813355227148,
+       "ci_hi": 7.712765957446808,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 93.0,
+       "ci_lo": 87.0,
+       "ci_hi": 97.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 31.0,
+       "ci_lo": 23.0,
+       "ci_hi": 40.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 69.0,
+       "ci_lo": 60.0,
+       "ci_hi": 77.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 50.31982942430704
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 4.690831556503198,
+       "ci_lo": 2.9659449242125633,
+       "ci_hi": 6.624286224125623
+      },
+      "D1_strict": {
+       "value": 5.277044854881266,
+       "ci_lo": 3.182813355227148,
+       "ci_hi": 7.712765957446808
+      },
+      "rel": {
+       "value": 93.0,
+       "ci_lo": 88.0,
+       "ci_hi": 97.0
+      },
+      "tgen": {
+       "value": 31.0,
+       "ci_lo": 22.0,
+       "ci_hi": 40.0
+      },
+      "igen": {
+       "value": 69.0,
+       "ci_lo": 60.0,
+       "ci_hi": 78.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 50.31982942430704,
+       "ci_lo": 45.6093302685678,
+       "ci_hi": 55.0543092036508
+      },
+      "n": {
+       "value": 469.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 769,
+      "n_theirs": 769,
+      "n_joined": 769,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 469,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 469,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "cell file",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 1.1102230246251565e-16,
+      "max_rel_diff": 3.441498249144046e-16,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "n_refused": 0,
+       "n_raised_total": 529,
+       "still_firing": 0
+      }
+     },
+     "cell": "b/where_least__deployed__n100__s0",
+     "experiment_meta": {
+      "n_refused": 0,
+      "n_reported_still_firing": 0,
+      "n_thresholds_raised_total": 529,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "wl_log_n10": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 2.345415778251599,
+       "ci_lo": 1.0706638115631693,
+       "ci_hi": 3.8297872340425534,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 2.1108179419525066,
+       "ci_lo": 0.7915567282321899,
+       "ci_hi": 3.6553524804177546,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 92.0,
+       "ci_lo": 86.0,
+       "ci_hi": 97.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 28.000000000000004,
+       "ci_lo": 20.0,
+       "ci_hi": 37.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 68.0,
+       "ci_lo": 59.0,
+       "ci_hi": 77.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 21.748400852878465
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 2.345415778251599,
+       "ci_lo": 1.0660980810234542,
+       "ci_hi": 3.837953091684435,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 2.1108179419525066,
+       "ci_lo": 0.7936507936507936,
+       "ci_hi": 3.713527851458886,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 92.0,
+       "ci_lo": 86.0,
+       "ci_hi": 97.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 28.000000000000004,
+       "ci_lo": 20.0,
+       "ci_hi": 37.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 68.0,
+       "ci_lo": 59.0,
+       "ci_hi": 77.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 21.748400852878465
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 2.345415778251599,
+       "ci_lo": 1.0660980810234542,
+       "ci_hi": 3.837953091684435
+      },
+      "D1_strict": {
+       "value": 2.1108179419525066,
+       "ci_lo": 0.7936507936507936,
+       "ci_hi": 3.713527851458886
+      },
+      "rel": {
+       "value": 92.0,
+       "ci_lo": 86.0,
+       "ci_hi": 97.0
+      },
+      "tgen": {
+       "value": 28.0,
+       "ci_lo": 19.0,
+       "ci_hi": 37.0
+      },
+      "igen": {
+       "value": 68.0,
+       "ci_lo": 59.0,
+       "ci_hi": 77.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 21.748400852878465,
+       "ci_lo": 17.796255584710305,
+       "ci_hi": 25.542132286318328
+      },
+      "n": {
+       "value": 469.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 769,
+      "n_theirs": 769,
+      "n_joined": 769,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 469,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 469,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "cell file",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 1.1102230246251565e-16,
+      "max_rel_diff": 3.343744218410747e-16,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "n_refused": 0,
+       "n_raised_total": 3,
+       "start_capped": 0,
+       "still_firing": 0
+      }
+     },
+     "cell": "b/where_least__logonly__n10__s0",
+     "experiment_meta": {
+      "n_refused": 0,
+      "n_reported_still_firing": 0,
+      "n_thresholds_raised_total": 3,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "comp_b_all": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 59.70149253731343,
+       "ci_lo": 55.31845962961261,
+       "ci_hi": 64.33157972533527,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 63.58839050131926,
+       "ci_lo": 58.87054771505376,
+       "ci_hi": 68.88297872340425,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 86.0,
+       "ci_lo": 79.0,
+       "ci_hi": 92.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 32.0,
+       "ci_lo": 24.0,
+       "ci_hi": 41.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 66.0,
+       "ci_lo": 57.0,
+       "ci_hi": 75.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": null,
+      "fired": null
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 59.70149253731343,
+       "ci_lo": 54.95583738579428,
+       "ci_hi": 64.13531727588375,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 63.58839050131926,
+       "ci_lo": 58.72901002506266,
+       "ci_hi": 68.6842105263158,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 86.0,
+       "ci_lo": 79.0,
+       "ci_hi": 92.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 32.0,
+       "ci_lo": 24.0,
+       "ci_hi": 41.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 66.0,
+       "ci_lo": 57.0,
+       "ci_hi": 75.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": null,
+      "fired": null
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 59.701492537313435,
+       "ci_lo": 54.95583738579428,
+       "ci_hi": 64.13531727588375
+      },
+      "D1_strict": {
+       "value": 63.58839050131926,
+       "ci_lo": 58.72901002506266,
+       "ci_hi": 68.6842105263158
+      },
+      "rel": {
+       "value": 86.0,
+       "ci_lo": 79.0,
+       "ci_hi": 92.02499999999986
+      },
+      "tgen": {
+       "value": 32.0,
+       "ci_lo": 23.0,
+       "ci_hi": 41.0
+      },
+      "igen": {
+       "value": 66.0,
+       "ci_lo": 57.0,
+       "ci_hi": 75.0
+      },
+      "own_out": null,
+      "fired": null,
+      "n": {
+       "value": 469.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 769,
+      "n_theirs": 769,
+      "n_joined": 769,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 0,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 469,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 0,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": null,
+     "cell": "d/COMP_B__nALL__s0",
+     "experiment_meta": {
+      "n_refused": null,
+      "n_reported_still_firing": null,
+      "n_thresholds_raised_total": null,
+      "n_edits_capped": null,
+      "flags_vs_record": {
+       "record": "COMP_B__nALL__s0",
+       "n_heldout": 494,
+       "n_heldout_differ": 0,
+       "n_heldout_disjoint_differ": 0,
+       "n_edit": 300,
+       "n_edit_differ": 0,
+       "differing": []
+      }
+     }
+    },
+    "c_n0": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 1.279317697228145,
+       "ci_lo": 0.42283298097251587,
+       "ci_hi": 2.355586751339478,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 0.79155672823219,
+       "ci_lo": 0.0,
+       "ci_hi": 1.8276762402088773,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 98.0,
+       "ci_lo": 95.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 20.0,
+       "ci_lo": 13.0,
+       "ci_hi": 28.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 83.0,
+       "ci_lo": 75.0,
+       "ci_hi": 90.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 1.279317697228145
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 1.279317697228145,
+       "ci_lo": 0.42283298097251587,
+       "ci_hi": 2.3810814998450565,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 0.79155672823219,
+       "ci_lo": 0.0,
+       "ci_hi": 1.7999532601074992,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 98.0,
+       "ci_lo": 95.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 20.0,
+       "ci_lo": 13.0,
+       "ci_hi": 28.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 83.0,
+       "ci_lo": 75.0,
+       "ci_hi": 90.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 1.279317697228145
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 1.279317697228145,
+       "ci_lo": 0.42283298097251587,
+       "ci_hi": 2.3810814998450565
+      },
+      "D1_strict": {
+       "value": 0.7915567282321899,
+       "ci_lo": 0.0,
+       "ci_hi": 1.7999532601074992
+      },
+      "rel": {
+       "value": 98.0,
+       "ci_lo": 95.0,
+       "ci_hi": 100.0
+      },
+      "tgen": {
+       "value": 20.0,
+       "ci_lo": 12.0,
+       "ci_hi": 27.0
+      },
+      "igen": {
+       "value": 83.0,
+       "ci_lo": 75.0,
+       "ci_hi": 90.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 1.279317697228145,
+       "ci_lo": 0.42283298097251587,
+       "ci_hi": 2.3810814998450565
+      },
+      "n": {
+       "value": 469.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 769,
+      "n_theirs": 769,
+      "n_joined": 769,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 469,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 469,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "driver constructor rebuilt on the CPU",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 6.106226635438361e-16,
+      "max_rel_diff": 1.2979104496946163e-15,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "theta": 0.47046594292195426,
+       "n_capped": 0
+      }
+     },
+     "cell": "c/rescope_n0__s0",
+     "experiment_meta": {
+      "n_refused": null,
+      "n_reported_still_firing": null,
+      "n_thresholds_raised_total": null,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "c_n10": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 1.279317697228145,
+       "ci_lo": 0.42283298097251587,
+       "ci_hi": 2.355586751339478,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 0.79155672823219,
+       "ci_lo": 0.0,
+       "ci_hi": 1.8276762402088773,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 98.0,
+       "ci_lo": 95.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 20.0,
+       "ci_lo": 13.0,
+       "ci_hi": 28.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 83.0,
+       "ci_lo": 75.0,
+       "ci_hi": 90.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 1.279317697228145
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 1.279317697228145,
+       "ci_lo": 0.42283298097251587,
+       "ci_hi": 2.3810814998450565,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 0.79155672823219,
+       "ci_lo": 0.0,
+       "ci_hi": 1.7999532601074992,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 98.0,
+       "ci_lo": 95.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 20.0,
+       "ci_lo": 13.0,
+       "ci_hi": 28.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 83.0,
+       "ci_lo": 75.0,
+       "ci_hi": 90.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 1.279317697228145
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 1.279317697228145,
+       "ci_lo": 0.42283298097251587,
+       "ci_hi": 2.3810814998450565
+      },
+      "D1_strict": {
+       "value": 0.7915567282321899,
+       "ci_lo": 0.0,
+       "ci_hi": 1.7999532601074992
+      },
+      "rel": {
+       "value": 98.0,
+       "ci_lo": 95.0,
+       "ci_hi": 100.0
+      },
+      "tgen": {
+       "value": 20.0,
+       "ci_lo": 12.0,
+       "ci_hi": 27.0
+      },
+      "igen": {
+       "value": 83.0,
+       "ci_lo": 75.0,
+       "ci_hi": 90.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 1.279317697228145,
+       "ci_lo": 0.42283298097251587,
+       "ci_hi": 2.3810814998450565
+      },
+      "n": {
+       "value": 469.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 769,
+      "n_theirs": 769,
+      "n_joined": 769,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 469,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 469,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "driver constructor rebuilt on the CPU",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 1.2212453270876722e-15,
+      "max_rel_diff": 1.7376966527143028e-15,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "n_refused": 0,
+       "n_raised_total": 1
+      }
+     },
+     "cell": "c/rescope_n10__s0",
+     "experiment_meta": {
+      "n_refused": null,
+      "n_reported_still_firing": null,
+      "n_thresholds_raised_total": null,
+      "n_edits_capped": null,
+      "flags_vs_record": null
+     }
+    },
+    "c_n200": {
+     "mine": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 5.330490405117271,
+       "ci_lo": 3.411513859275053,
+       "ci_hi": 7.463085214950885,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 4.749340369393139,
+       "ci_lo": 2.6525198938992043,
+       "ci_hi": 7.027591560228633,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 98.0,
+       "ci_lo": 95.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 47.0,
+       "ci_lo": 38.0,
+       "ci_hi": 57.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 95.0,
+       "ci_lo": 90.0,
+       "ci_hi": 99.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 5.330490405117271
+     },
+     "theirs_rows": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint": 469,
+      "n_heldout_strict": 379,
+      "D1": {
+       "value": 5.330490405117271,
+       "ci_lo": 3.2327586206896552,
+       "ci_hi": 7.510729613733906,
+       "n_units": 453,
+       "n_rows": 469
+      },
+      "D1_strict": {
+       "value": 4.749340369393139,
+       "ci_lo": 2.673618538324421,
+       "ci_hi": 6.896551724137931,
+       "n_units": 368,
+       "n_rows": 379
+      },
+      "rel": {
+       "value": 98.0,
+       "ci_lo": 95.0,
+       "ci_hi": 100.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "tgen": {
+       "value": 47.0,
+       "ci_lo": 38.0,
+       "ci_hi": 57.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "igen": {
+       "value": 95.0,
+       "ci_lo": 90.0,
+       "ci_hi": 99.0,
+       "n_units": 100,
+       "n_rows": 100
+      },
+      "own_out": 0,
+      "fired": 5.330490405117271
+     },
+     "theirs_reported": {
+      "D1": {
+       "value": 5.330490405117271,
+       "ci_lo": 3.2327586206896552,
+       "ci_hi": 7.510729613733906
+      },
+      "D1_strict": {
+       "value": 4.74934036939314,
+       "ci_lo": 2.673618538324421,
+       "ci_hi": 6.896551724137931
+      },
+      "rel": {
+       "value": 98.0,
+       "ci_lo": 95.0,
+       "ci_hi": 100.0
+      },
+      "tgen": {
+       "value": 47.0,
+       "ci_lo": 37.0,
+       "ci_hi": 56.0
+      },
+      "igen": {
+       "value": 95.0,
+       "ci_lo": 91.0,
+       "ci_hi": 99.0
+      },
+      "own_out": {
+       "value": 0.0,
+       "ci_lo": null,
+       "ci_hi": null
+      },
+      "fired": {
+       "value": 5.330490405117271,
+       "ci_lo": 3.2327586206896552,
+       "ci_hi": 7.510729613733906
+      },
+      "n": {
+       "value": 469.0,
+       "ci_lo": null,
+       "ci_hi": null
+      }
+     },
+     "agreement": {
+      "n_mine": 769,
+      "n_theirs": 769,
+      "n_joined": 769,
+      "same_sids": true,
+      "edit_n": 300,
+      "edit_exact_differ": 0,
+      "edit_fired_n": 300,
+      "edit_fired_differ": 0,
+      "edit_differing": [],
+      "probe_n": 469,
+      "probe_exact_differ": 0,
+      "probe_fired_n": 469,
+      "probe_fired_differ": 0,
+      "probe_differing": [],
+      "own_fired_last_differ": 0
+     },
+     "thresholds": {
+      "source_of_theirs": "driver constructor rebuilt on the CPU",
+      "n": 100,
+      "n_both_finite": 100,
+      "n_inf_pattern_differs": 0,
+      "max_abs_diff": 2.9976021664879227e-15,
+      "max_rel_diff": 1.0773667007761524e-14,
+      "n_differ_more_than_1e-5_rel": 0,
+      "mine": {
+       "eta": 0.10010500899090827,
+       "k": 96,
+       "n2": 100,
+       "n_capped": 0
+      }
+     },
+     "cell": "c/rescope_n200__d0",
+     "experiment_meta": {
+      "n_refused": null,
+      "n_reported_still_firing": null,
+      "n_thresholds_raised_total": null,
+      "n_edits_capped": 0,
+      "flags_vs_record": null
+     }
+    }
+   },
+   "comp_b_all_vs_p12_record": {
+    "n_heldout": 494,
+    "n_heldout_in_record": 494,
+    "n_heldout_differ": 0,
+    "n_heldout_disjoint_differ": 0,
+    "n_edit": 300,
+    "n_edit_differ": 0,
+    "solve_device": "see out/<log>/comp_b_all.pt (cpu as P12 on Qwen; the LLaVA build of this job ran on the GPU)"
+   },
+   "deployed_vs_p12_record": {
+    "n_heldout": 494,
+    "n_heldout_differ": 0
+   },
+   "linear_import": {
+    "n_cells": 104,
+    "n_numbers": 624,
+    "n_mismatch": 0,
+    "max_abs_diff": 1.4210854715202004e-14,
+    "examples": []
+   },
+   "linear_summary": {
+    "COMP_B@10": {
+     "n_seeds": 3,
+     "d1_mine": 62.82871357498223,
+     "d1_exp": 62.82871357498223,
+     "rel_mine": 88.0,
+     "rel_exp": 88.0
+    },
+    "RB_UNION@10": {
+     "n_seeds": 3,
+     "d1_mine": 52.7363184079602,
+     "d1_exp": 52.7363184079602,
+     "rel_mine": 59.666666666666664,
+     "rel_exp": 59.666666666666664
+    },
+    "REEDIT_B@10": {
+     "n_seeds": 3,
+     "d1_mine": 66.09808102345416,
+     "d1_exp": 66.09808102345416,
+     "rel_mine": 87.66666666666667,
+     "rel_exp": 87.66666666666667
+    },
+    "COMP_B@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 59.70149253731343,
+     "d1_exp": 59.701492537313435,
+     "rel_mine": 86.0,
+     "rel_exp": 86.0
+    },
+    "REEDIT_B@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 78.03837953091684,
+     "d1_exp": 78.03837953091684,
+     "rel_mine": 74.0,
+     "rel_exp": 74.0
+    },
+    "RB_UNION@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 0.0,
+     "d1_exp": 0.0,
+     "rel_mine": 1.0,
+     "rel_exp": 1.0
+    }
+   },
+   "h1": {
+    "d1_where_mine": 2.6297085998578535,
+    "d1_where_exp": 2.6297085998578535,
+    "rel_where_mine": 92.0,
+    "rel_where_exp": 92.0,
+    "rel_deployed_mine": 88.0,
+    "rel_deployed_exp": 88.0,
+    "best_linear": {
+     "registered_set_of_the_experiment": "RB_UNION",
+     "protocol_section_2_set": "RB_UNION",
+     "every_p12_method_with_3_seeds": "RB_UNION"
+    },
+    "candidates": {
+     "COMP_B": {
+      "d1": 62.82871357498223,
+      "rel": 88.0
+     },
+     "COMP_BP": {
+      "d1": 63.75266524520256,
+      "rel": 88.0
+     },
+     "COMP_B_ALLPOS": {
+      "d1": 66.09808102345416,
+      "rel": 89.0
+     },
+     "COMP_S": {
+      "d1": 62.82871357498223,
+      "rel": 88.0
+     },
+     "COMP_SP": {
+      "d1": 63.75266524520256,
+      "rel": 88.0
+     },
+     "RB_TOT": {
+      "d1": 56.6453447050462,
+      "rel": 63.666666666666664
+     },
+     "RB_UNION": {
+      "d1": 52.736318407960205,
+      "rel": 59.666666666666664
+     },
+     "REEDIT_B": {
+      "d1": 66.09808102345416,
+      "rel": 87.66666666666667
+     },
+     "REEDIT_S": {
+      "d1": 66.09808102345416,
+      "rel": 87.66666666666667
+     }
+    },
+    "comparisons": {
+     "best_lowest_d1": {
+      "linear_mine": "RB_UNION",
+      "linear_exp": "RB_UNION",
+      "d1_linear_mine": 52.736318407960205,
+      "d1_linear_exp": 52.736318407960205,
+      "diff_mine": {
+       "value": -50.106609808102355,
+       "ci_lo": -54.823095401509946,
+       "ci_hi": -45.32412745474844,
+       "p_two_sided": 0.0005,
+       "n_draws": 3,
+       "n_units": 453
+      },
+      "diff_exp": {
+       "value": -50.10660980810234,
+       "ci_lo": -54.832442470659146,
+       "ci_hi": -45.35823521824849,
+       "p_two_sided": 0.0005
+      }
+     },
+     "best_rel_within_2": {
+      "linear_mine": "COMP_B",
+      "linear_exp": "COMP_B",
+      "d1_linear_mine": 62.82871357498223,
+      "d1_linear_exp": 62.82871357498223,
+      "diff_mine": {
+       "value": -60.19900497512438,
+       "ci_lo": -64.80716436212562,
+       "ci_hi": -55.554975643702164,
+       "p_two_sided": 0.0005,
+       "n_draws": 3,
+       "n_units": 453
+      },
+      "diff_exp": {
+       "value": -60.199004975124375,
+       "ci_lo": -64.60565334422114,
+       "ci_hi": -55.836277107251505,
+       "p_two_sided": 0.0005
+      }
+     }
+    },
+    "d1_at_most_10": true,
+    "rel_within_2_two_sided": false,
+    "rel_not_more_than_2_below": true,
+    "literal_rule_helps_on_this_log_mine": false,
+    "literal_rule_helps_on_this_log_exp": false,
+    "one_sided_met_mine": true,
+    "one_sided_met_exp": true,
+    "where_d1_per_seed": [
+     2.345415778251599,
+     2.771855010660981,
+     2.771855010660981
+    ],
+    "seed0_d1_mine_gpu": 2.345415778251599,
+    "seed0_rel_mine_gpu": 92.0,
+    "deployed_rel_mine_gpu": 88.0
+   },
+   "sanity": {
+    "rows": [
+     {
+      "cell": "deployed",
+      "quantity": "D1 heldout_disjoint",
+      "e0": 62.26012793176972,
+      "mine": 62.26012793176972,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "deployed",
+      "quantity": "D1 heldout_strict",
+      "e0": 66.75461741424802,
+      "mine": 66.75461741424802,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "deployed",
+      "quantity": "Rel",
+      "e0": 88.0,
+      "mine": 88.0,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "deployed",
+      "quantity": "T-Gen",
+      "e0": 29.0,
+      "mine": 28.999999999999996,
+      "abs_diff": 3.552713678800501e-15
+     },
+     {
+      "cell": "deployed",
+      "quantity": "I-Gen",
+      "e0": 66.0,
+      "mine": 66.0,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "D1 heldout_disjoint",
+      "e0": 5.330490405117271,
+      "mine": 5.330490405117271,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "D1 heldout_strict",
+      "e0": 4.74934036939314,
+      "mine": 4.749340369393139,
+      "abs_diff": 8.881784197001252e-16
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "Rel",
+      "e0": 98.0,
+      "mine": 98.0,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "T-Gen",
+      "e0": 47.0,
+      "mine": 47.0,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "I-Gen",
+      "e0": 95.0,
+      "mine": 95.0,
+      "abs_diff": 0.0
+     },
+     {
+      "cell": "c_n200",
+      "quantity": "fired heldout_disjoint",
+      "e0": 5.330490405117271,
+      "mine": 5.330490405117271,
+      "abs_diff": 0.0
+     }
+    ],
+    "max_abs_diff": 3.552713678800501e-15,
+    "n": 11
+   },
+   "counts": {
+    "mine": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 988,
+     "n_heldout_valid": 494,
+     "n_heldout_disjoint": 469,
+     "n_heldout_strict": 379,
+     "n_repair_valid": 494
+    },
+    "n_complaints_all_p12": 305,
+    "exp_probe_n_values": [
+     469.0
+    ],
+    "exp_strict_n_values": [
+     379.0
+    ],
+    "exp_edit_n_values": [
+     100.0
+    ],
+    "exp_n_records": 21079
+   }
+  }
+ },
+ "missing": [],
+ "example": {
+  "rows": [
+   {
+    "key": "complaint sid",
+    "experiment": "probe:image:486",
+    "mine": "probe:image:486",
+    "agree": true
+   },
+   {
+    "key": "stream position (seed 0)",
+    "experiment": 89,
+    "mine": 89,
+    "agree": true
+   },
+   {
+    "key": "complaint.query",
+    "experiment": "What town in New York is depicted in the image?",
+    "mine": "What town in New York is depicted in the image?",
+    "agree": true
+   },
+   {
+    "key": "complaint.pre_answer",
+    "experiment": "The image depicts Ithaca, New York.",
+    "mine": "The image depicts Ithaca, New York.",
+    "agree": true
+   },
+   {
+    "key": "complaint.deployed_answer",
+    "experiment": "The image depicts Ithaca Falls, located in",
+    "mine": "The image depicts Ithaca Falls, located in",
+    "agree": true
+   },
+   {
+    "key": "complaint.max_coordinate",
+    "experiment": 0.5833808636027424,
+    "mine": 0.5833808636027424,
+    "agree": true
+   },
+   {
+    "key": "edit index",
+    "experiment": 21,
+    "mine": 21,
+    "agree": true
+   },
+   {
+    "key": "edit.target",
+    "experiment": "Richard Schiff",
+    "mine": "Richard Schiff",
+    "agree": true
+   },
+   {
+    "key": "edit.question",
+    "experiment": "Who is the actor featured in this image?",
+    "mine": "Who is the actor featured in this image?",
+    "agree": true
+   },
+   {
+    "key": "rollback.n_deleted",
+    "experiment": 7,
+    "mine": 7,
+    "agree": true
+   },
+   {
+    "key": "rollback removal set",
+    "experiment": [
+     23,
+     34,
+     46,
+     56,
+     63,
+     93,
+     94
+    ],
+    "mine": [
+     23,
+     34,
+     46,
+     56,
+     63,
+     93,
+     94
+    ],
+    "agree": true
+   },
+   {
+    "key": "rollback.edits_broken",
+    "experiment": 1,
+    "mine": 1,
+    "agree": true
+   },
+   {
+    "key": "compensation.heldout_changed",
+    "experiment": 86,
+    "mine": 86,
+    "agree": true
+   },
+   {
+    "key": "heldout.n",
+    "experiment": 465,
+    "mine": 465,
+    "agree": true
+   },
+   {
+    "key": "rescope.own_requests_firing",
+    "experiment": 100,
+    "mine": 100,
+    "agree": true
+   },
+   {
+    "key": "whynot edit",
+    "experiment": 2,
+    "mine": 2,
+    "agree": true
+   },
+   {
+    "key": "whynot.query",
+    "experiment": "Which film does this scene belong to?",
+    "mine": "Which film does this scene belong to?",
+    "agree": true
+   },
+   {
+    "key": "whynot.answer",
+    "experiment": "This scene is from the film \"Bernie.\"",
+    "mine": "This scene is from the film \"Bernie.\"",
+    "agree": true
+   },
+   {
+    "key": "whynot.coordinate",
+    "experiment": 0.12600079675131734,
+    "mine": 0.1260007967513173,
+    "agree": true
+   },
+   {
+    "key": "whynot.threshold",
+    "experiment": 0.2673883577708882,
+    "mine": 0.26738835777088926,
+    "agree": true
+   }
+  ],
+  "two_copies_of_the_experiment_file_equal": true,
+  "mine_details": {
+   "rollback": {
+    "R": [
+     63,
+     94,
+     34,
+     93,
+     56,
+     23,
+     46
+    ],
+    "resolved_internal": true,
+    "whole_batches_in_R": [],
+    "my_weight_equals_harness_rollback_weight": true,
+    "max_abs_diff_to_harness_weight": 0.0,
+    "n_deleted": 7,
+    "edits_broken": 1,
+    "n_kept": 93,
+    "complaint_reproduced_after_rollback": true,
+    "complaint_D1_deployed": true,
+    "rel_exact_deployed": 78,
+    "rel_exact_after": 74
+   },
+   "rescope": {
+    "own_requests_firing": 100,
+    "own_requests_firing_gate_level": 100,
+    "refused": 0,
+    "n_raised": 100,
+    "rel_exact_after": 81,
+    "complaint_fires_after_repair": false,
+    "complaint_reproduced_after_repair": true
+   },
+   "compensation": {
+    "heldout_changed": 86,
+    "rank": 10,
+    "complaint_reproduced": true
+   },
+   "edit_chosen_by": "largest coordinate over all positions (default method releases nothing)"
+  },
+  "n_agree": 20,
+  "n": 20
+ },
+ "rerender": {
+  "ran": true,
+  "results_json_n_records": [
+   42146,
+   42146
+  ],
+  "results_json_equal": true,
+  "paper_numbers_equal": true,
+  "paper_numbers_n": 248,
+  "paper_numbers_differing": [],
+  "table_lines": [
+   457,
+   457
+  ],
+  "table_lines_differing_after_header": 0,
+  "h1_json_equal": true,
+  "linear_rows.json_equal": true,
+  "rescope_w_rows.json_equal": true,
+  "paper_numbers_all_documented": true,
+  "paper_numbers_not_found_in_results_or_h1": []
+ }
+}

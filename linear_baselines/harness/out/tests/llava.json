@@ -1,0 +1,158 @@
+{
+ "log": "TB-L100-ae-l2_3",
+ "suffix_equals_full": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "load_checks": {
+  "probe_uids_match_records": true,
+  "collapsed_working_point": false,
+  "WE_float_minus_W0_equals_stored_composite": true,
+  "C_equals_stored_composite": true,
+  "factor_uids_match_stream": true,
+  "rollback_empty_equals_WE": true
+ },
+ "baseline_checks": {
+  "heldout_reproduced_equals_stored_v2": true,
+  "n_heldout_rows": 494,
+  "n_heldout_items": 250,
+  "Rel_token_WE": 97.12261933088303,
+  "Rel_exact_WE": 88.0,
+  "Rel_B1_token_WE": 97.12261933088303,
+  "Rel_B1_exact_WE": 88.0,
+  "edits_B1_vs_b8_em_flags_differing": {
+   "rel": 0,
+   "tgen": 0,
+   "igen": 0
+  },
+  "Rel_matches_stored": true,
+  "fast_eval_equals_full": true
+ },
+ "rows": [
+  {
+   "method": "NONE",
+   "cfg": {},
+   "resolved": false,
+   "edits_broken": 0,
+   "lost": 0,
+   "fro": 0.0,
+   "passes": {
+    "full": 0,
+    "prefix": 0,
+    "fwd_bwd": 0,
+    "suffix": 0,
+    "suffix_grad": 0
+   },
+   "sec": 1.7099082469940186e-05
+  },
+  {
+   "method": "COMP",
+   "cfg": {},
+   "resolved": true,
+   "edits_broken": 0,
+   "lost": 7,
+   "fro": 4.887116678762839,
+   "passes": {
+    "full": 0,
+    "prefix": 1,
+    "fwd_bwd": 0,
+    "suffix": 0,
+    "suffix_grad": 0
+   },
+   "sec": 0.07217172160744667
+  },
+  {
+   "method": "COMP",
+   "cfg": {
+    "form": "merged",
+    "query": "all"
+   },
+   "resolved": true,
+   "edits_broken": 8,
+   "lost": 30,
+   "fro": 57.1740959399943,
+   "passes": {
+    "full": 0,
+    "prefix": 1,
+    "fwd_bwd": 0,
+    "suffix": 0,
+    "suffix_grad": 0
+   },
+   "sec": 0.5040323212742805
+  },
+  {
+   "method": "REEDIT",
+   "cfg": {},
+   "resolved": true,
+   "edits_broken": 0,
+   "lost": 5,
+   "fro": 15.313301119784416,
+   "passes": {
+    "full": 1,
+    "prefix": 2,
+    "fwd_bwd": 3,
+    "suffix": 0,
+    "suffix_grad": 0
+   },
+   "sec": 0.5270092450082302
+  },
+  {
+   "method": "ROLLBACK_FO",
+   "cfg": {
+    "budget": 10
+   },
+   "resolved": true,
+   "edits_broken": 2,
+   "lost": 4,
+   "fro": 16.874710781783122,
+   "passes": {
+    "full": 1,
+    "prefix": 0,
+    "fwd_bwd": 0,
+    "suffix": 1,
+    "suffix_grad": 1
+   },
+   "sec": 0.24162078648805618
+  },
+  {
+   "method": "ROLLBACK_BEH",
+   "cfg": {
+    "budget": 3
+   },
+   "resolved": true,
+   "edits_broken": 2,
+   "lost": 4,
+   "fro": 16.874710781783122,
+   "passes": {
+    "full": 1,
+    "prefix": 0,
+    "fwd_bwd": 0,
+    "suffix": 100,
+    "suffix_grad": 0
+   },
+   "sec": 2.6473214104771614
+  },
+  {
+   "method": "ROLLBACK_ALL",
+   "cfg": {},
+   "resolved": true,
+   "edits_broken": 180,
+   "lost": 0,
+   "fro": 266.4802137531081,
+   "passes": {
+    "full": 0,
+    "prefix": 0,
+    "fwd_bwd": 0,
+    "suffix": 0,
+    "suffix_grad": 0
+   },
+   "sec": 0.00012229382991790771
+  }
+ ],
+ "max_gpu_mem_GB": 16.037797376,
+ "pass": true,
+ "seconds": 290.78515577316284,
+ "gpu": "NVIDIA GeForce RTX 5090"
+}

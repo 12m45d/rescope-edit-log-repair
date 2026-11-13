@@ -1,0 +1,104 @@
+{
+ "label": "where_twoblock@goff",
+ "n_records": 300,
+ "case_files": "[redacted: local path]/02_research/experiments/10_final/e10_text/run/verify/out/public/TX-G2XL-rome-T500/where_twoblock@goff/run_000",
+ "n_use_cache_false": 0,
+ "public_summariser": {
+  "all": {
+   "n": 300,
+   "ES": 19.33,
+   "PS": 23.17,
+   "NS": 80.0,
+   "EM": -6.04,
+   "PM": -4.24,
+   "NM": 5.08
+  },
+  "before": {
+   "n": 107,
+   "ES": 20.56,
+   "PS": 25.23,
+   "NS": 77.76,
+   "EM": -7.67,
+   "PM": -5.32,
+   "NM": 6.31
+  },
+  "from": {
+   "n": 193,
+   "ES": 18.65,
+   "PS": 22.02,
+   "NS": 81.24,
+   "EM": -5.13,
+   "PM": -3.65,
+   "NM": 4.39
+  }
+ },
+ "own_arithmetic": {
+  "all": {
+   "n": 300,
+   "n_records_with_nonfinite_prob": 0,
+   "ES": {
+    "value": 19.333333333333332,
+    "ci_lo": 15.0,
+    "ci_hi": 23.666666666666668,
+    "n_units": 300
+   },
+   "PS": {
+    "value": 23.166666666666668,
+    "ci_lo": 19.166666666666668,
+    "ci_hi": 27.5,
+    "n_units": 300
+   },
+   "NS": {
+    "value": 80.0,
+    "ci_lo": 76.8325,
+    "ci_hi": 82.9,
+    "n_units": 300
+   }
+  },
+  "before": {
+   "n": 107,
+   "n_records_with_nonfinite_prob": 0,
+   "ES": {
+    "value": 20.560747663551403,
+    "ci_lo": 13.08411214953271,
+    "ci_hi": 28.037383177570092,
+    "n_units": 107
+   },
+   "PS": {
+    "value": 25.233644859813083,
+    "ci_lo": 18.69158878504673,
+    "ci_hi": 32.242990654205606,
+    "n_units": 107
+   },
+   "NS": {
+    "value": 77.75700934579439,
+    "ci_lo": 71.96261682242991,
+    "ci_hi": 83.36448598130839,
+    "n_units": 107
+   }
+  },
+  "from": {
+   "n": 193,
+   "n_records_with_nonfinite_prob": 0,
+   "ES": {
+    "value": 18.65284974093264,
+    "ci_lo": 13.458549222797927,
+    "ci_hi": 24.352331606217618,
+    "n_units": 193
+   },
+   "PS": {
+    "value": 22.020725388601036,
+    "ci_lo": 17.098445595854923,
+    "ci_hi": 27.46113989637306,
+    "n_units": 193
+   },
+   "NS": {
+    "value": 81.24352331606218,
+    "ci_lo": 77.56476683937822,
+    "ci_hi": 84.76813471502591,
+    "n_units": 193
+   }
+  }
+ },
+ "seconds": 58.54798150062561
+}

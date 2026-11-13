@@ -1,0 +1,56 @@
+{
+ "log": "TX-G2XL-rome-dev100",
+ "written": "2026-11-11 06:02:16 UTC",
+ "rescope_file": "[redacted: local path]/02_research/code/rescope/__init__.py",
+ "a_own": {
+  "request_max_abs_dev_from_1": 2.220446049250313e-16,
+  "template_mean": {
+   "min": 0.9296072770331204,
+   "median": 1.0104959298617449,
+   "max": 3.040470392198378
+  }
+ },
+ "b_delta": {
+  "max_abs": 6.15199828024604e-07,
+  "rel_fro": 2.671467094808541e-07,
+  "shape": [
+   1600,
+   6400
+  ]
+ },
+ "c_rebase": {
+  "rebased_max": 2.286033847793591e-07,
+  "rebased_median": 8.02992954724792e-08,
+  "not_rebased_max": 0.625946155076739,
+  "not_rebased_median": 0.1625322570337845,
+  "not_rebased_later_batches_median": 0.16318646164140296
+ },
+ "d_off": {
+  "n_prompts": 400,
+  "n_bitwise_equal_to_pre_edit": 400
+ },
+ "e_linear_replay": {
+  "n_prompts": 400,
+  "max_abs_logit_diff_to_deployed": 6.103515625e-05,
+  "median_abs_logit_diff_to_deployed": 1.52587890625e-05,
+  "n_same_argmax_at_every_position": 400,
+  "for_scale_median_max_abs_logit_diff_deployed_vs_pre_edit": 13.284940719604492
+ },
+ "f_repl_own_key": {
+  "n_requests": 100,
+  "threshold": 0.999,
+  "n_own_edit_released": 100,
+  "max_rel_err_output_vs_target": 2.747208766501863e-07,
+  "own_coordinate_min": 0.9999999999999963,
+  "own_coordinate_max": 1.0000000000000058,
+  "n_other_or_none_released": 0,
+  "others": []
+ },
+ "summary_lines": [
+  "log TX-G2XL-rome-dev100 through rescope.EditLog / ScopedLog / Hook (library unchanged): own coordinate max |s - 1| = 2.2e-16; delta() vs (W_E - W_0)^T rel. Frobenius 2.7e-07",
+  "rebase lemma: rebased value vs residual to the pre-edit weight, max rel. error 2.3e-07 (not rebased: median 0.16, max 0.63)",
+  "hook with thresholds +inf: 400 of 400 prompts bitwise equal to the pre-edit model",
+  "linear replay (all edits released everywhere) vs deployed model: max |logit diff| 6.10e-05 (deployed vs pre-edit, median of max: 13.3); same argmax at every position on 400 of 400 prompts",
+  "replacement response at the request's own key (threshold 0.999): own edit released on 100 of 100 requests, module output vs logged target max rel. error 2.7e-07; another or no edit released on 0"
+ ]
+}

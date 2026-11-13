@@ -1,0 +1,39 @@
+{
+ "backbone": "qwen25vl",
+ "log": "TB-Q100-ae-l2_3",
+ "n_queries": 50,
+ "load_before": {
+  "gpu": "0",
+  "utilization_pct": 68.0,
+  "memory_used_MiB": 16343.0,
+  "n_compute_processes": 2,
+  "n_other_processes": 1,
+  "time": "22:05:15"
+ },
+ "preedit_one_generation": {
+  "seconds_total": 54.74124105274677,
+  "ms_per_query": 1094.8248210549355,
+  "n_rows": 50,
+  "n_generations_per_query": 1
+ },
+ "dual_two_generations": {
+  "seconds_total": 102.82530350983143,
+  "ms_per_query": 2056.5060701966286,
+  "n_rows": 50,
+  "n_generations_per_query": 2
+ },
+ "deployed_one_generation": {
+  "seconds_total": 52.5071890167892,
+  "ms_per_query": 1050.143780335784,
+  "n_rows": 50,
+  "n_generations_per_query": 1
+ },
+ "load_after": {
+  "gpu": "0",
+  "utilization_pct": 96.0,
+  "memory_used_MiB": 16635.0,
+  "n_compute_processes": 2,
+  "n_other_processes": 1,
+  "time": "22:08:45"
+ }
+}

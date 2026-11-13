@@ -1,0 +1,67 @@
+{
+ "log": "TB-Q2000-memitw",
+ "role": "unseen_memit",
+ "T": 2000,
+ "seconds": {
+  "open": 0.8072161674499512,
+  "build_rescope": 13.945626497268677,
+  "gate_level_pass": 2.713437080383301,
+  "second_draw_build_and_gate_pass": 0.747133731842041,
+  "load_model": 36.29035830497742,
+  "behaviour_50_sequences": 7.648105144500732,
+  "behaviour_50_sequences_second_pass": 0.0030450820922851562
+ },
+ "seconds_per_item": {
+  "forward_deployed_weight": 0.10100965023040771,
+  "forward_gate_role_last": 0.10213952541351318,
+  "forward_gate_role_all": 0.11706721782684326,
+  "decode_deployed_weight": 0.29693677425384524
+ },
+ "n_sequences": {
+  "edit": 6000,
+  "probe_heldout_disjoint": 465,
+  "hn_valid": 1771
+ },
+ "n_gate_rows": {
+  "probe": 979,
+  "edit": 6000,
+  "hn": 1771,
+  "benign": 3000
+ },
+ "n_behaviour_rows": 50,
+ "rows_complete": true,
+ "second_pass_equal": true,
+ "forwards": 50,
+ "sources_first_pass": {
+  "pre": 0,
+  "memo": 0,
+  "run": 50
+ },
+ "sources_second_pass": {
+  "pre": 0,
+  "memo": 50,
+  "run": 0
+ },
+ "hook_mismatch": 0,
+ "peak_rss_gb_before_model": 2.7825279235839844,
+ "peak_rss_gb": 9.645088195800781,
+ "peak_gpu_gb": 8.511171340942383,
+ "load_info": {
+  "lean": true,
+  "seconds": 35.93686556816101,
+  "peak_rss_gb_before": 2.7825279235839844,
+  "peak_rss_gb": 9.645088195800781,
+  "T": 2000,
+  "reused_model_of": null
+ },
+ "lean": true,
+ "note": "mechanics only: no metric of this log is computed, stored or printed",
+ "ok": true,
+ "test": "mechanics",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 18:34:01"
+}

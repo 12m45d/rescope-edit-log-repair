@@ -1,0 +1,41 @@
+{
+ "definition": "Self-test of the E5 code (CPU, a minute): -> out/selftest.json.   usage: python e5_selftest.py\n\n(a) rules and bounds against the brute-force optimum on small random instances (all 2^T kept sets, fp64):\n    lb_cond <= OPT_c, lb_tri <= OPT_c, OPT_c <= every rule, lf <= lf_guar, and the last claim of Prop. prop:cond:\n    lf(c) <= OPT at tolerance c sqrt(gamma / Gamma);\n(b) the exact vertex cover number against networkx (clique number of the complement) and, for T <= 14, brute force;\n(c) this study's best-improvement and static first-order rules against Track C's ropt functions on real Gram matrices\n    of both logs (differences can only come from the incremental residual of the Track C code);\n(d) the capacity formula T - s*_Z (e5_capacity.kept_pred) against the brute-force minimum sacrifice on small random\n    groups in general position modulo a shared subspace (rank tests in fp64).\n",
+ "rules": {
+  "instances": 60,
+  "lb_cond_le_opt": 240,
+  "lb_tri_le_opt": 240,
+  "opt_le_rules": 240,
+  "lf_le_guar": 240,
+  "prop_last_claim": 240,
+  "rule_equals_opt": {
+   "lf": 193,
+   "fo": 225,
+   "bi": 208,
+   "fo_static": 181
+  },
+  "checks": 240
+ },
+ "vertex_cover": {
+  "graphs": 80,
+  "equal_networkx": 80,
+  "brute_force_graphs": 30,
+  "equal_brute_force": 30
+ },
+ "ropt": {
+  "TB-Q100-ae-l2_3": {
+   "bi": 120,
+   "fo_static": 120,
+   "n": 120
+  },
+  "TB-L100-ae-l2_3": {
+   "bi": 120,
+   "fo_static": 120,
+   "n": 120
+  }
+ },
+ "capacity_law": {
+  "instances": 40,
+  "opt_equals_T_minus_kept_pred": 40
+ },
+ "all_pass": true
+}

@@ -1,0 +1,9 @@
+E3 VERIFICATION, CHECK 2: my plain-Evaluator rows and my own thresholds (calibration draw 0) against the experiment's files
+mine = rescope.Evaluator, no driver / memo / key cache; thresholds from keys captured here by my own numpy rule.  exp = experiment (same rows).
+
+== TB-Q500-ae-l2_3  (T = 500; cache check, bitwise equal keys: own_rel 500/500, calibration 200/200, null_sample 100/100, rephrase_sample 10/10)
+method             eta mine      eta exp  cap m/e  thr diff |  hd n   fired m/e      D1 m/e flags diff f/D1 | edits       Rel m/e   T-Gen m/e   I-Gen m/e diff ex/own |  cov TG m/e  cov IG m/e    diff
+rescope          0.34633300   0.34633300   0/0      3.3e-16 |    10  0.00/0.00   0.00/0.00        0/0       |     5 100.00/100.00  0.00/0.00  40.00/40.00     0/0     | 24.80/24.80 57.60/57.60   0/0  
+rescope_null     0.32271078   0.32271078   0/0      7.7e-14 |    10  0.00/0.00   0.00/0.00        0/0       |     5 100.00/100.00 20.00/20.00 60.00/60.00     0/0     | 30.20/30.20 61.60/61.60   0/0  
+cosine_shared    0.94658854   0.94658854   0/0      4.4e-16 |    10 20.00/20.00 20.00/20.00       0/0       |     5 100.00/100.00  0.00/0.00  40.00/40.00     0/0     |  0.60/0.60  37.60/37.60   0/0  
+

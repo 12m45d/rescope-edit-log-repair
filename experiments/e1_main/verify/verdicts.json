@@ -1,0 +1,1137 @@
+{
+ "experiment": "E1 main comparison (with E1b, E1c, E7)",
+ "written": "2026-11-11 23:58:59",
+ "driver": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "method_of_verification": "own B = 1 forwards and decodes through the library's plain Evaluator (no driver, no memo, no key cache), gates built on the model's device; own crossed bootstrap on the experiment's per-row files; re-run of the experiment's analysis, rendering and frontier scripts on a private copy; gate-level cells rebuilt for 3 of 20 draws",
+ "claims": {
+  "decision_R6_R25_trade_off_for_every_pair": {
+   "verdict": "CONFIRMED",
+   "evidence": {
+    "mine": {
+     "pair1": "trade-off",
+     "pair2_x": "trade-off",
+     "retr": "trade-off"
+    },
+    "experiment": {
+     "pair1": "trade-off",
+     "pair2_x": "trade-off",
+     "retr": "trade-off"
+    },
+    "largest_H3_difference_of_a_cosine_family_pair_points": 2.0000000000000018,
+    "H3": {
+     "TB-Q100-ae-l2_3": {
+      "pair1": {
+       "a": "rescope",
+       "b": "white_1_shared",
+       "diff": -1.3333333333333364,
+       "ci_lo": -7.9999999999999964,
+       "ci_hi": 4.999999999999999,
+       "gate_diff": -0.9000000000000008,
+       "gate_ci_lo": -7.0512500000000005,
+       "gate_ci_hi": 5.449999999999999,
+       "n_edits_at_cap_a": [
+        0,
+        0,
+        0
+       ],
+       "n_edits_at_cap_b": [
+        0,
+        0,
+        0
+       ]
+      },
+      "pair2_x": {
+       "a": "rescope_x",
+       "b": "white_1_x",
+       "diff": 2.0000000000000018,
+       "ci_lo": -2.666666666666667,
+       "ci_hi": 7.000000000000001,
+       "gate_diff": 1.6500000000000015,
+       "gate_ci_lo": -3.799999999999998,
+       "gate_ci_hi": 6.701249999999994,
+       "n_edits_at_cap_a": [
+        0,
+        0,
+        0
+       ],
+       "n_edits_at_cap_b": [
+        0,
+        0,
+        0
+       ]
+      },
+      "retr": {
+       "a": "rescope",
+       "b": "retr_sum",
+       "diff": -22.333333333333332,
+       "ci_lo": -36.0,
+       "ci_hi": -8.666666666666673,
+       "gate_diff": -22.050000000000004,
+       "gate_ci_lo": -32.10124999999999,
+       "gate_ci_hi": -11.350000000000005,
+       "n_edits_at_cap_a": [
+        0,
+        0,
+        0
+       ],
+       "n_edits_at_cap_b": [
+        2,
+        6,
+        9
+       ]
+      }
+     },
+     "TB-L100-ae-l2_3": {
+      "pair1": {
+       "a": "rescope",
+       "b": "white_1_shared",
+       "diff": -3.9999999999999982,
+       "ci_lo": -9.999999999999998,
+       "ci_hi": 2.0000000000000018,
+       "gate_diff": -4.149999999999999,
+       "gate_ci_lo": -8.750000000000002,
+       "gate_ci_hi": 0.7000000000000006,
+       "n_edits_at_cap_a": [
+        2,
+        0,
+        1
+       ],
+       "n_edits_at_cap_b": [
+        0,
+        0,
+        0
+       ]
+      },
+      "pair2_x": {
+       "a": "rescope_x",
+       "b": "white_1_x",
+       "diff": -0.3333333333333355,
+       "ci_lo": -6.000000000000005,
+       "ci_hi": 5.000000000000004,
+       "gate_diff": 0.10000000000000009,
+       "gate_ci_lo": -5.501249999999999,
+       "gate_ci_hi": 5.501249999999993,
+       "n_edits_at_cap_a": [
+        0,
+        1,
+        0
+       ],
+       "n_edits_at_cap_b": [
+        4,
+        8,
+        10
+       ]
+      },
+      "retr": {
+       "a": "rescope",
+       "b": "retr_sum",
+       "diff": -12.666666666666664,
+       "ci_lo": -24.666666666666664,
+       "ci_hi": -0.33333333333332993,
+       "gate_diff": -17.550000000000004,
+       "gate_ci_lo": -27.45125,
+       "gate_ci_hi": -8.299999999999997,
+       "n_edits_at_cap_a": [
+        2,
+        0,
+        1
+       ],
+       "n_edits_at_cap_b": [
+        9,
+        12,
+        12
+       ]
+      }
+     }
+    }
+   },
+   "note": "recomputed from the H3 row files and the gate-level cells with an own crossed bootstrap; the rule applied literally gives trade-off for both pairs and for retr"
+  },
+  "selection_best_cosine_gate_and_retr": {
+   "verdict": "CONFIRMED",
+   "evidence": {
+    "TB-Q100-ae-l2_3": {
+     "cosine": {
+      "pick": {
+       "H3": {
+        "selected": "white_1_shared",
+        "value": 39.0,
+        "tied": [
+         "white_1_shared",
+         "whitecos_1_shared"
+        ],
+        "runner_up": [
+         38.0,
+         "whitecos_0.1_shared"
+        ]
+       },
+       "H2": {
+        "selected": "white_0.1_shared",
+        "value": 69.175,
+        "tied": [
+         "white_0.1_shared"
+        ],
+        "runner_up": [
+         68.35,
+         "white_0.01_shared"
+        ]
+       }
+      },
+      "experiment": {
+       "H3": "white_1_shared",
+       "H2": "white_0.1_shared"
+      }
+     },
+     "retr": {
+      "pick": {
+       "H3": {
+        "selected": "retr_sum",
+        "value": 60.15,
+        "tied": [
+         "retr_sum"
+        ],
+        "runner_up": [
+         55.2,
+         "retr_min"
+        ]
+       },
+       "H2": {
+        "selected": "retr_sum",
+        "value": 94.3,
+        "tied": [
+         "retr_sum"
+        ],
+        "runner_up": [
+         55.45,
+         "retr_min"
+        ]
+       }
+      },
+      "experiment": {
+       "H3": "retr_sum",
+       "H2": "retr_sum"
+      }
+     }
+    },
+    "TB-L100-ae-l2_3": {
+     "cosine": {
+      "pick": {
+       "H3": {
+        "selected": "white_1_shared",
+        "value": 41.0,
+        "tied": [
+         "white_1_shared"
+        ],
+        "runner_up": [
+         40.2,
+         "cos_centred_shared"
+        ]
+       },
+       "H2": {
+        "selected": "white_0.1_shared",
+        "value": 66.675,
+        "tied": [
+         "white_0.1_shared"
+        ],
+        "runner_up": [
+         66.4,
+         "white_0.01_shared"
+        ]
+       }
+      },
+      "experiment": {
+       "H3": "white_1_shared",
+       "H2": "white_0.1_shared"
+      }
+     },
+     "retr": {
+      "pick": {
+       "H3": {
+        "selected": "retr_sum",
+        "value": 54.4,
+        "tied": [
+         "retr_sum"
+        ],
+        "runner_up": [
+         53.85,
+         "retr_conj"
+        ]
+       },
+       "H2": {
+        "selected": "retr_sum",
+        "value": 93.775,
+        "tied": [
+         "retr_sum"
+        ],
+        "runner_up": [
+         54.85,
+         "retr_conj"
+        ]
+       }
+      },
+      "experiment": {
+       "H3": "retr_sum",
+       "H2": "retr_sum"
+      }
+     }
+    },
+    "timing": {
+     "equal": true,
+     "selection_file_older_than_first_behavioural_cell_of_a_selected_gate": true,
+     "seconds_between": 1163.1986320018768,
+     "ok": true
+    }
+   },
+   "note": "recomputed from the per-edit coverage flags of the 20 draws; on Qwen the H3 read-out is an exact tie between white_1_shared and whitecos_1_shared (the H3 coverage of a shared-scale gate does not depend on the calibration draw); the tie is broken by the experiment's own rule (registered order; e1c.py line 36, e1_select.py lines 46-50), which PROTOCOL.md does not contain"
+  },
+  "main_table_cells_of_the_summary": {
+   "verdict": "CONFIRMED",
+   "evidence": {
+    "cells_vs_results_json": {
+     "n_cells_compared": 410,
+     "largest_abs_diff": 7.105427357601002e-15,
+     "ok": true
+    },
+    "cells_vs_paper_numbers": {
+     "n_numbers_compared": 392,
+     "largest_abs_diff": 7.105427357601002e-15,
+     "ok": true
+    },
+    "own_forwards": {
+     "TB-Q100-ae-l2_3": {
+      "tf_complete": true,
+      "n_flags_compared": 36474,
+      "n_flags_differ": 0
+     },
+     "TB-L100-ae-l2_3": {
+      "tf_complete": true,
+      "n_flags_compared": 36690,
+      "n_flags_differ": 0
+     }
+    },
+    "gate_cells_rebuilt": {
+     "n_logs": 5,
+     "n_cells": 195,
+     "n_digest_differs": 0,
+     "largest_abs_diff": 0.0,
+     "ok": true
+    }
+   },
+   "note": "all cells of the summary's table are the rounded means of the row files; own forwards through the library's plain Evaluator (draw 0: rescope, rescope_shared, rescope_null, cosine_shared, deployed)"
+  },
+  "H2_confirmatory_comparisons": {
+   "verdict": "CONFIRMED",
+   "evidence": {
+    "check": {
+     "n_tests": 18,
+     "gate_form_largest_abs_diff_point_estimates": 1.4210854715202004e-14,
+     "gate_form_largest_abs_diff_interval_ends": 0.7243749999999984,
+     "largest_abs_diff_point_estimates": 1.3322676295501878e-14,
+     "largest_abs_diff_secondary_points": 7.993605777301127e-15,
+     "largest_abs_diff_interval_ends": 1.0041666666666735,
+     "intervals_exclude_0_in_the_same_cases": true,
+     "holm_rejections_equal": true,
+     "ok": true
+    },
+    "endpoint_draw0_from_own_forwards": {
+     "TB-Q100-ae-l2_3": {
+      "mine": {
+       "value": 36.5,
+       "ci_lo": 30.5,
+       "ci_hi": 42.5
+      },
+      "experiment_rows": {
+       "value": 36.5,
+       "ci_lo": 30.5,
+       "ci_hi": 42.5
+      }
+     },
+     "TB-L100-ae-l2_3": {
+      "mine": {
+       "value": 34.5,
+       "ci_lo": 28.0,
+       "ci_hi": 41.01249999999993
+      },
+      "experiment_rows": {
+       "value": 34.5,
+       "ci_lo": 28.0,
+       "ci_hi": 41.01249999999993
+      }
+     }
+    }
+   },
+   "note": "point estimates equal; interval ends within the Monte Carlo error of 2000 resamples; the same intervals exclude 0; the same Holm rejections.  The family lacks the calibrated z-score gate (protocol problem 2)"
+  },
+  "H3_comparisons": {
+   "verdict": "CONFIRMED",
+   "evidence": {
+    "mine": {
+     "pair1": "trade-off",
+     "pair2_x": "trade-off",
+     "retr": "trade-off"
+    },
+    "experiment": {
+     "pair1": "trade-off",
+     "pair2_x": "trade-off",
+     "retr": "trade-off"
+    },
+    "equal": true,
+    "largest_abs_diff_point_estimates": 7.105427357601002e-15,
+    "largest_abs_diff_interval_ends": 0.6012499999999941,
+    "raise_consistent": true,
+    "largest_H3_difference_points": 2.0000000000000018,
+    "ok": true
+   },
+   "note": "behavioural differences and gate-level coverage forms recomputed; the raise of the behavioural cells equals the gate-level raise; no unreachable draw"
+  },
+  "free_generation_D2_dual": {
+   "verdict": "CONFIRMED",
+   "evidence": {
+    "TB-Q100-ae-l2_3": {
+     "generation_done": true,
+     "generation_rows_that_differ": 0,
+     "d2_done": true,
+     "d2_rows_that_differ": 0,
+     "dual_decisions_or_composition_flags_that_differ": 0
+    },
+    "TB-L100-ae-l2_3": {
+     "generation_done": true,
+     "generation_rows_that_differ": 0,
+     "d2_done": true,
+     "d2_rows_that_differ": 0,
+     "dual_decisions_or_composition_flags_that_differ": 0
+    }
+   },
+   "note": "own decodes on seeded samples (60 edit prompts, 60 probes, 60 near-scope negatives, 60 pre-correct rows; dual on 60 probes + 40 edit prompts)"
+  },
+  "protocol_logs_pools_draws": {
+   "verdict": "CONFIRMED",
+   "evidence": {
+    "logs_in_results_json": [
+     "TB-L100-ae",
+     "TB-L100-ae-l2_3",
+     "TB-Q100-ae",
+     "TB-Q100-ae-l2_1",
+     "TB-Q100-ae-l2_3"
+    ],
+    "logs_with_behavioural_records": [
+     "TB-L100-ae-l2_3",
+     "TB-Q100-ae-l2_3"
+    ],
+    "draws": {
+     "n_draws_per_log": 20,
+     "draws_equal_to_own_seeded_draw": 20,
+     "rows_of_HELD-OUT_in_a_calibration_or_null_sample": 0,
+     "rescope_digest_equal_all_draws": 20,
+     "ok": true
+    },
+    "jobs": {
+     "TB-Q100-ae-l2_3": [
+      {
+       "hook_mismatch": 0,
+       "memo_conflicts": 0
+      }
+     ],
+     "TB-L100-ae-l2_3": [
+      {
+       "hook_mismatch": 0,
+       "memo_conflicts": 0
+      }
+     ]
+    },
+    "counts": {
+     "TB-Q100-ae-l2_3": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint_rows": 465,
+      "n_query_clusters": 449,
+      "n_hn": 1278,
+      "hn_by_kind": {
+       "HN-I": 588,
+       "HN-Q": 591,
+       "HN-X": 99
+      },
+      "hn_degenerate_y0": {
+       "HN-I": 0,
+       "HN-Q": 0,
+       "HN-X": 0
+      }
+     },
+     "TB-L100-ae-l2_3": {
+      "n_edit_rows": 300,
+      "n_heldout_disjoint_rows": 469,
+      "n_query_clusters": 453,
+      "n_hn": 1286,
+      "hn_by_kind": {
+       "HN-I": 590,
+       "HN-Q": 597,
+       "HN-X": 99
+      },
+      "hn_degenerate_y0": {
+       "HN-I": 188,
+       "HN-Q": 185,
+       "HN-X": 27
+      }
+     }
+    }
+   },
+   "note": "only the two development logs (behaviour) and the three working points (gate level) occur in code, logs and results; the 20 calibration draws are the seeded draws from the valid REPAIR rows (own re-derivation from the library's rows), the null-repair samples lie in REPAIR and share no row with the draw, no HELD-OUT row calibrates; locality on heldout_disjoint; BEN-T / MME-T through fx.pools.firing (e1_gate.py line 104), the benign part of fx.gate.evaluate is not used (line 64); hook_mismatch 0 and no memo conflict in every cell"
+  },
+  "sanity_run_e0_agreement": {
+   "verdict": "CONFIRMED",
+   "evidence": {
+    "n_cells_compared": 296,
+    "largest_abs_diff": 0.0,
+    "differing": [],
+    "ok": true
+   },
+   "note": "every shared cell (behaviour draws 0-2, gate level 20 draws) recomputed from the row files / cells"
+  },
+  "internal_consistency_results_table_paper_numbers": {
+   "verdict": "CONFIRMED",
+   "evidence": {
+    "rerun": {
+     "n_files": 9,
+     "n_identical": 9,
+     "ok": true
+    },
+    "counts": {
+     "ok": true
+    },
+    "identical": {
+     "endpoints.json": true,
+     "decision.json": true,
+     "paper_numbers.json": true,
+     "paper_numbers_doc.json": true,
+     "gate_draws.json": true,
+     "missing.json": true,
+     "results.json (records)": true,
+     "table.txt (all lines but the time stamp)": true,
+     "e2_rows_used.json (records)": true
+    }
+   },
+   "note": "the experiment's e1_analyze.py and e1_render.py re-run on a private copy give the same records, endpoints, decision, paper numbers and table"
+  },
+  "E1b_E1c_frontier_and_matched_coverage": {
+   "verdict": "CONFIRMED",
+   "evidence": {
+    "frontier_rerun": {
+     "n_logs": 2,
+     "n_identical": 2,
+     "ok": true
+    },
+    "E1c_own": {
+     "n_cells": 12,
+     "n_reachable": 10,
+     "reachability_equal": true,
+     "largest_abs_diff": 7.105427357601002e-15,
+     "ok": true
+    }
+   },
+   "note": "frontier.json is reproduced by a re-run with one log per process; the matched-coverage cells of the two registered features are reproduced by an own computation with the library's key cache"
+  },
+  "anomalies_list_of_the_summary": {
+   "verdict": "PARTLY CONFIRMED",
+   "evidence": {
+    "cosine_published_vs_last_position": {
+     "Q": {
+      "n": 2043,
+      "n_rows_differ": 0,
+      "n_rows_any_field": 0,
+      "n_released_differs": 0,
+      "n_outcome_differs": 0,
+      "n_exact_differs": 0
+     },
+     "L": {
+      "n": 2055,
+      "n_rows_differ": 8,
+      "n_rows_any_field": 10,
+      "n_released_differs": 8,
+      "n_outcome_differs": 5,
+      "n_exact_differs": 3
+     }
+    },
+    "prompt_position_LLaVA": {
+     "n_cells": 39,
+     "max_rows_differ": 15.0,
+     "largest_cell_change_points": 1.0660980810234542
+    },
+    "MME-T_firing_Qwen": {
+     "rescope": {
+      "mean": 5.628161888701518,
+      "min": 0.0,
+      "max": 23.18718381112985
+     },
+     "rescope_null": {
+      "mean": 23.376897133220915,
+      "min": 0.3372681281618887,
+      "max": 61.38279932546374
+     },
+     "rescope_shared": {
+      "mean": 0.290893760539629,
+      "min": 0.0,
+      "max": 0.927487352445194
+     },
+     "router": {
+      "mean": 87.30185497470488,
+      "min": 81.36593591905564,
+      "max": 93.84485666104553
+     }
+    },
+    "capped": {
+     "Q/cosine": 3.9,
+     "Q/retr_conj": 44.75,
+     "Q/retr_min": 42.9,
+     "Q/rescope": 0.0,
+     "Q/rescope_x": 0.0,
+     "L/cosine": 36.8,
+     "L/retr_conj": 50.6,
+     "L/retr_min": 44.85,
+     "L/rescope": 0.2,
+     "L/rescope_x": 1.05
+    },
+    "over_bound": {
+     "TB-Q100-ae-l2_3": {
+      "ball": {
+       "mean_fire_hd": 5.860215053763442,
+       "mean_literal": 5.860215053763442,
+       "bound": 4.9504950495049505,
+       "n_capped_mean": 0.0,
+       "p95": 9.731182795698926
+      },
+      "cos_null_shared": {
+       "mean_fire_hd": 5.010752688172043,
+       "mean_literal": 5.010752688172043,
+       "bound": 4.975124378109453,
+       "n_capped_mean": 0.0,
+       "p95": 7.096774193548387
+      },
+      "router": {
+       "mean_fire_hd": 5.774193548387098,
+       "dense": true
+      },
+      "white_0.01_shared": {
+       "mean_fire_hd": 6.774193548387098,
+       "mean_literal": 6.774193548387098,
+       "bound": 4.975124378109453,
+       "n_capped_mean": 0.0,
+       "p95": 8.172043010752688
+      },
+      "white_0.1_shared": {
+       "mean_fire_hd": 6.698924731182795,
+       "mean_literal": 6.698924731182795,
+       "bound": 4.975124378109453,
+       "n_capped_mean": 0.0,
+       "p95": 8.172043010752688
+      },
+      "white_1_shared": {
+       "mean_fire_hd": 6.268817204301077,
+       "mean_literal": 6.268817204301077,
+       "bound": 4.975124378109453,
+       "n_capped_mean": 0.0,
+       "p95": 9.67741935483871
+      },
+      "whitecos_0.01": {
+       "mean_fire_hd": 5.451612903225806,
+       "mean_literal": 5.451612903225806,
+       "bound": 4.9504950495049505,
+       "n_capped_mean": 0.0,
+       "p95": 8.182795698924732
+      },
+      "whitecos_0.01_shared": {
+       "mean_fire_hd": 6.021505376344086,
+       "mean_literal": 6.021505376344086,
+       "bound": 4.975124378109453,
+       "n_capped_mean": 0.0,
+       "p95": 8.838709677419354
+      },
+      "whitecos_0.1": {
+       "mean_fire_hd": 5.193548387096775,
+       "mean_literal": 5.193548387096775,
+       "bound": 4.9504950495049505,
+       "n_capped_mean": 0.0,
+       "p95": 8.38709677419355
+      },
+      "whitecos_0.1_shared": {
+       "mean_fire_hd": 6.215053763440861,
+       "mean_literal": 6.215053763440861,
+       "bound": 4.975124378109453,
+       "n_capped_mean": 0.0,
+       "p95": 8.849462365591398
+      },
+      "whitecos_1": {
+       "mean_fire_hd": 5.258064516129032,
+       "mean_literal": 5.258064516129032,
+       "bound": 4.9504950495049505,
+       "n_capped_mean": 0.0,
+       "p95": 7.784946236559141
+      },
+      "whitecos_1_shared": {
+       "mean_fire_hd": 6.408602150537634,
+       "mean_literal": 6.408602150537634,
+       "bound": 4.975124378109453,
+       "n_capped_mean": 0.0,
+       "p95": 9.043010752688172
+      }
+     },
+     "TB-L100-ae-l2_3": {
+      "cos_null": {
+       "mean_fire_hd": 5.053304904051172,
+       "mean_literal": 5.053304904051172,
+       "bound": 4.9504950495049505,
+       "n_capped_mean": 9.4,
+       "p95": 11.545842217484008
+      },
+      "retr_min": {
+       "mean_fire_hd": 6.897654584221749,
+       "mean_literal": 5.479744136460554,
+       "bound": 4.9504950495049505,
+       "n_capped_mean": 44.85,
+       "p95": 8.976545842217483
+      },
+      "retr_sum": {
+       "mean_fire_hd": 7.164179104477611,
+       "mean_literal": 7.164179104477611,
+       "bound": 4.9504950495049505,
+       "n_capped_mean": 0.3,
+       "p95": 12.388059701492537
+      }
+     }
+    }
+   },
+   "note": "bound, MME-T shift, capped edits and H3 reachability are as stated; two counts are imprecise: cosine 0.65 at all positions against the last-position form on LLaVA: 10 rows differ in some field, 8 in the release flag, 5 in the teacher-forced outcome (the summary's 5), 3 in exact / D1; at the decode's position up to 15 behavioural rows change in a cell and a cell moves by up to 1.07 points (summary: at most 12 rows, 1 point or less).  Not in the summary although the files show it: further gates exceed their bound on the 20-draw mean (Qwen: ball, router, two-block whitecos, cos_null_shared; LLaVA: cos_null, retr_min under the literal rule); the wrong-target rates and D2 of the generated answers; the spread of near-scope D1 over the three draws; the share of LLaVA near-scope negatives with a degenerate pre-edit answer (31 percent) and the D1 on them"
+  }
+ },
+ "protocol_problems": [
+  {
+   "id": 1,
+   "severity": "minor",
+   "where": "e1_main/code/e1_analyze.py lines 380-398 (endpoints)",
+   "what": "PROTOCOL.md section 4 asks for the exact McNemar test for binary paired outcomes; none is computed (Rel exact, near-scope D1, D1 against the deployed log are reported with the crossed bootstrap only)",
+   "effect": "no number changes; a registered statistic is missing (verification: discordant rows in checks.json, J)",
+   "evidence": {
+    "TB-Q100-ae-l2_3": {
+     "0": {
+      "only_deployed": 239,
+      "only_rescope": 10,
+      "p_exact": 4.849377940630808e-58
+     },
+     "1": {
+      "only_deployed": 242,
+      "only_rescope": 2,
+      "p_exact": 2.1147133073844473e-69
+     },
+     "2": {
+      "only_deployed": 238,
+      "only_rescope": 6,
+      "p_exact": 1.998985462781413e-62
+     }
+    },
+    "TB-L100-ae-l2_3": {
+     "0": {
+      "only_deployed": 273,
+      "only_rescope": 6,
+      "p_exact": 1.3062579156536675e-72
+     },
+     "1": {
+      "only_deployed": 291,
+      "only_rescope": 0,
+      "p_exact": 5.026911708464872e-88
+     },
+     "2": {
+      "only_deployed": 280,
+      "only_rescope": 5,
+      "p_exact": 4.9542006777455995e-76
+     }
+    }
+   }
+  },
+  {
+   "id": 2,
+   "severity": "moderate",
+   "where": "e1_main/code/e1_behave.py line 217 (list cal), e1_analyze.py line 363 (list base)",
+   "what": "the primary endpoint is registered against EACH calibrated baseline gate; the calibrated z-score gate (a row of the driver's E1 row set) has no behavioural run, so H2 lacks it; the published forms of the ball gate and of the router are gate level only as well",
+   "effect": "H2 has 18 instead of 20 tests; the Holm-adjusted values do not change materially if the missing comparisons sit at the resolution floor (0.009 would read 0.010); the summary states the omission"
+  },
+  {
+   "id": 3,
+   "severity": "moderate",
+   "where": "e1_main/code/e1_render.py lines 399-432 (e2_rows), table (2b)",
+   "what": "COMP-B, REEDIT-B and two-block ReScope-W are copied from e2_curves/out while E2 was running; R19 (a) asks for generated answers and D2 of COMP-B and REEDIT-B: D2 is there, the free-generation columns are absent; the registered secondary read-out 'D1 against the best linear repair' has no paired statistic (side by side only)",
+   "effect": "table (2b) may be stale; re-render after E2 and its verification are final (unchanged at the time of this verification)"
+  },
+  {
+   "id": 4,
+   "severity": "minor",
+   "where": "e1_main/code/e1_render.py lines 162-169 (table 2)",
+   "what": "R25 (3): the draws are to be listed where they disagree; the near-scope cells print only the mean of three draws with a crossed interval",
+   "effect": "the summary's near-scope D1 of ReScope hides a spread of up to 25 points over the draws",
+   "evidence": {
+    "TB-Q100-ae-l2_3": {
+     "rescope": {
+      "HN-I": [
+       36.224489795918366,
+       23.46938775510204,
+       37.244897959183675
+      ],
+      "HN-Q": [
+       23.3502538071066,
+       18.44331641285956,
+       29.272419627749578
+      ],
+      "HN-X": [
+       51.515151515151516,
+       39.39393939393939,
+       54.54545454545455
+      ]
+     },
+     "rescope_x": {
+      "HN-I": [
+       8.843537414965986,
+       12.244897959183673,
+       6.63265306122449
+      ],
+      "HN-Q": [
+       6.937394247038917,
+       9.306260575296108,
+       6.260575296108291
+      ],
+      "HN-X": [
+       16.161616161616163,
+       17.171717171717173,
+       14.141414141414142
+      ]
+     },
+     "cosine": {
+      "HN-I": [
+       5.1020408163265305,
+       13.775510204081632,
+       5.442176870748299
+      ],
+      "HN-Q": [
+       8.798646362098138,
+       23.519458544839257,
+       13.874788494077833
+      ],
+      "HN-X": [
+       12.121212121212121,
+       21.21212121212121,
+       15.151515151515152
+      ]
+     },
+     "white_1_shared": {
+      "HN-I": [
+       18.537414965986393,
+       18.537414965986393,
+       19.387755102040817
+      ],
+      "HN-Q": [
+       28.934010152284262,
+       28.934010152284262,
+       29.949238578680202
+      ],
+      "HN-X": [
+       36.36363636363637,
+       36.36363636363637,
+       38.38383838383838
+      ]
+     },
+     "retr_sum": {
+      "HN-I": [
+       40.64625850340136,
+       56.97278911564626,
+       58.673469387755105
+      ],
+      "HN-Q": [
+       7.4450084602368864,
+       19.79695431472081,
+       26.73434856175973
+      ],
+      "HN-X": [
+       36.36363636363637,
+       67.67676767676768,
+       62.62626262626262
+      ]
+     }
+    },
+    "TB-L100-ae-l2_3": {
+     "rescope": {
+      "HN-I": [
+       26.10169491525424,
+       11.186440677966102,
+       23.050847457627118
+      ],
+      "HN-Q": [
+       43.71859296482412,
+       24.79061976549414,
+       40.20100502512563
+      ],
+      "HN-X": [
+       52.525252525252526,
+       27.272727272727273,
+       47.474747474747474
+      ]
+     },
+     "rescope_x": {
+      "HN-I": [
+       5.593220338983051,
+       3.8983050847457625,
+       5.423728813559322
+      ],
+      "HN-Q": [
+       11.055276381909549,
+       6.867671691792295,
+       10.385259631490788
+      ],
+      "HN-X": [
+       15.151515151515152,
+       10.1010101010101,
+       15.151515151515152
+      ]
+     },
+     "cosine": {
+      "HN-I": [
+       21.016949152542374,
+       11.864406779661017,
+       31.1864406779661
+      ],
+      "HN-Q": [
+       38.69346733668342,
+       25.963149078726968,
+       47.403685092127304
+      ],
+      "HN-X": [
+       37.37373737373738,
+       28.282828282828284,
+       46.464646464646464
+      ]
+     },
+     "white_1_shared": {
+      "HN-I": [
+       20.0,
+       14.915254237288135,
+       15.254237288135593
+      ],
+      "HN-Q": [
+       55.108877721943045,
+       48.57621440536013,
+       48.91122278056952
+      ],
+      "HN-X": [
+       59.5959595959596,
+       49.494949494949495,
+       50.505050505050505
+      ]
+     },
+     "retr_sum": {
+      "HN-I": [
+       63.559322033898304,
+       63.728813559322035,
+       53.898305084745765
+      ],
+      "HN-Q": [
+       21.775544388609717,
+       21.608040201005025,
+       17.252931323283082
+      ],
+      "HN-X": [
+       72.72727272727273,
+       68.68686868686869,
+       64.64646464646465
+      ]
+     }
+    }
+   }
+  },
+  {
+   "id": 5,
+   "severity": "minor",
+   "where": "e1_main/code/e1c.py line 36, e1_select.py lines 46-50",
+   "what": "exact tie of the H3 selection on Qwen (white_1_shared, whitecos_1_shared); tie rule not in PROTOCOL.md; whitecos_1_shared has no behavioural run",
+   "effect": "none on the decision (trade-off with either gate at gate level)"
+  },
+  {
+   "id": 6,
+   "severity": "minor",
+   "where": "e1_main/out/paper_numbers.json; e1_analyze.py lines 502-564 (paper)",
+   "what": "no wrong-target rate, no D2 and no generation metric among the paper numbers; Holm p-values at the floor of the bootstrap (18 x 1 / 2000 = 0.009) are printed as values",
+   "effect": "numbers a paper would quote for E7 are missing; print floor values as upper bounds",
+   "evidence": {
+    "n": 691,
+    "n_names_with_wrong_target": 0,
+    "n_names_with_D2": 0,
+    "n_names_with_generation": 0
+   }
+  },
+  {
+   "id": 7,
+   "severity": "minor",
+   "where": "summary of the experiment agent (anomalies)",
+   "what": "two counts are inaccurate (see the claim anomalies_list_of_the_summary)",
+   "effect": "text only"
+  },
+  {
+   "id": 8,
+   "severity": "none",
+   "where": "e1_main/code/e1_frontier.py line 66, e1_analyze.py line 573",
+   "what": "both development logs are opened in one CPU process (the driver's rule 'one log per process' is about the model session)",
+   "effect": "none: frontier.json is identical when re-run with one log per process"
+  }
+ ],
+ "not_finished": [],
+ "checks": {
+  "A_cells_vs_results_json": {
+   "n_cells_compared": 410,
+   "largest_abs_diff": 7.105427357601002e-15,
+   "ok": true
+  },
+  "A_cells_vs_paper_numbers": {
+   "n_numbers_compared": 392,
+   "largest_abs_diff": 7.105427357601002e-15,
+   "ok": true
+  },
+  "B_H2": {
+   "n_tests": 18,
+   "gate_form_largest_abs_diff_point_estimates": 1.4210854715202004e-14,
+   "gate_form_largest_abs_diff_interval_ends": 0.7243749999999984,
+   "largest_abs_diff_point_estimates": 1.3322676295501878e-14,
+   "largest_abs_diff_secondary_points": 7.993605777301127e-15,
+   "largest_abs_diff_interval_ends": 1.0041666666666735,
+   "intervals_exclude_0_in_the_same_cases": true,
+   "holm_rejections_equal": true,
+   "ok": true
+  },
+  "C_H3_decision": {
+   "mine": {
+    "pair1": "trade-off",
+    "pair2_x": "trade-off",
+    "retr": "trade-off"
+   },
+   "experiment": {
+    "pair1": "trade-off",
+    "pair2_x": "trade-off",
+    "retr": "trade-off"
+   },
+   "equal": true,
+   "largest_abs_diff_point_estimates": 7.105427357601002e-15,
+   "largest_abs_diff_interval_ends": 0.6012499999999941,
+   "raise_consistent": true,
+   "largest_H3_difference_points": 2.0000000000000018,
+   "ok": true
+  },
+  "D_selection": {
+   "equal": true,
+   "selection_file_older_than_first_behavioural_cell_of_a_selected_gate": true,
+   "seconds_between": 1163.1986320018768,
+   "ok": true
+  },
+  "F_sanity_e0": {
+   "n_cells_compared": 296,
+   "largest_abs_diff": 0.0,
+   "differing": [],
+   "ok": true
+  },
+  "G_counts_and_discipline": {
+   "ok": true
+  },
+  "H_gate_level_paper_numbers": {
+   "n_numbers_compared": 136,
+   "largest_abs_diff": 0.0,
+   "ok": true
+  },
+  "I_rerun_of_analysis_and_rendering": {
+   "n_files": 9,
+   "n_identical": 9,
+   "ok": true
+  },
+  "I_gate_cells_rebuilt": {
+   "n_logs": 5,
+   "n_cells": 195,
+   "n_digest_differs": 0,
+   "largest_abs_diff": 0.0,
+   "ok": true
+  },
+  "I_frontier_rerun_one_log_per_process": {
+   "n_logs": 2,
+   "n_identical": 2,
+   "ok": true
+  },
+  "I_calibration_draws_from_REPAIR": {
+   "n_draws_per_log": 20,
+   "draws_equal_to_own_seeded_draw": 20,
+   "rows_of_HELD-OUT_in_a_calibration_or_null_sample": 0,
+   "rescope_digest_equal_all_draws": 20,
+   "ok": true
+  },
+  "I_E1c_matched_coverage_own_computation": {
+   "n_cells": 12,
+   "n_reachable": 10,
+   "reachability_equal": true,
+   "largest_abs_diff": 7.105427357601002e-15,
+   "ok": true
+  }
+ },
+ "own_forwards": {
+  "TB-Q100-ae-l2_3": {
+   "tf_complete": true,
+   "n_flags_compared": 36474,
+   "n_flags_differ": 0,
+   "generation_done": true,
+   "generation_rows_that_differ": 0,
+   "d2_done": true,
+   "d2_rows_that_differ": 0,
+   "dual_decisions_or_composition_flags_that_differ": 0,
+   "endpoint_draw0": {
+    "mine": {
+     "value": 36.5,
+     "ci_lo": 30.5,
+     "ci_hi": 42.5
+    },
+    "experiment_rows": {
+     "value": 36.5,
+     "ci_lo": 30.5,
+     "ci_hi": 42.5
+    }
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "tf_complete": true,
+   "n_flags_compared": 36690,
+   "n_flags_differ": 0,
+   "generation_done": true,
+   "generation_rows_that_differ": 0,
+   "d2_done": true,
+   "d2_rows_that_differ": 0,
+   "dual_decisions_or_composition_flags_that_differ": 0,
+   "endpoint_draw0": {
+    "mine": {
+     "value": 34.5,
+     "ci_lo": 28.0,
+     "ci_hi": 41.01249999999993
+    },
+    "experiment_rows": {
+     "value": 34.5,
+     "ci_lo": 28.0,
+     "ci_hi": 41.01249999999993
+    }
+   }
+  }
+ },
+ "to_fix_before_the_numbers_enter_a_paper": [
+  "re-render table (2b) from the final, verified E2 records; add the generated answers of COMP-B and REEDIT-B (R19 a) or state that they are not available",
+  "add the calibrated z-score gate to the behavioural rows and to H2, or record in PROTOCOL.md that it is gate level only",
+  "list the three calibration draws next to every near-scope cell; add wrong-target rates and D2 to paper_numbers.json; print Holm values at the bootstrap floor as upper bounds",
+  "add the exact McNemar test for the binary paired comparisons (section 4) or amend the protocol",
+  "state the tie rule of the selection in the paper's protocol text; correct the two counts of the anomalies list"
+ ],
+ "paths": {
+  "table": "[redacted: local path]/02_research/experiments/10_final/e1_main/verify/out/table.txt",
+  "checks": "[redacted: local path]/02_research/experiments/10_final/e1_main/verify/out/checks.json",
+  "results": "[redacted: local path]/02_research/experiments/10_final/e1_main/verify/out/results.json",
+  "rows": "[redacted: local path]/02_research/experiments/10_final/e1_main/verify/out/rows/",
+  "code": "[redacted: local path]/02_research/experiments/10_final/e1_main/verify/code/"
+ }
+}

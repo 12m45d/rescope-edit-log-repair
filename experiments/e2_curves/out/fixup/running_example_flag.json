@@ -1,0 +1,27 @@
+{
+ "what": "flag for out/running_example.json (that file is not changed): the edit of the example's complaint and the why-not rephrase belong to two different edits",
+ "two_different_edits": true,
+ "log": "TB-Q100-ae-l2_3",
+ "complaint_edit": {
+  "stream_position_0_based": 21,
+  "stream_position_1_based": 22,
+  "chosen_by": "largest normalised coordinate over all positions (the default calibrated method releases no edit on the complaint)",
+  "question": "Who is the actor featured in this image?",
+  "target": "Richard Schiff",
+  "coordinate_all_positions": 0.5833808636027424
+ },
+ "whynot_edit": {
+  "stream_position_0_based": 2,
+  "stream_position_1_based": 3,
+  "is_the_example_edit": false,
+  "question": "What is the title of the movie in this picture?",
+  "target": "Lantana",
+  "rephrase": "Which film does this scene belong to?",
+  "coordinate": 0.12600079675131734,
+  "threshold": 0.2673883577708882
+ },
+ "stream_position": "index of the edit in the edit stream of the log (0 = the first edit)",
+ "for_the_text": "present them as two edits: the complaint is attributed to the edit with the largest coordinate (the default method releases no edit on the complaint); the why-not question is asked about another edit of the same log",
+ "source": "out/running_example.json: _selection.edit_index, _selection.edit_chosen_by, _details.whynot",
+ "running_example_written": "2026-11-12 00:42:25"
+}

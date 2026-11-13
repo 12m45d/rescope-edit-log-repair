@@ -1,0 +1,1988 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "seed": 0,
+ "n": 10,
+ "gpu": "NVIDIA GeForce RTX 5090",
+ "processes_on_this_gpu_at_end": 1,
+ "torch_threads": 8,
+ "configs": {
+  "C02": {
+   "label": "COMP[K_last|answer|adapter]",
+   "sec_total_median": 0.04526051692664623,
+   "sec_total_p10": 0.02347470447421074,
+   "sec_total_p90": 0.11896781958639607,
+   "sec_solve_median": 0.00815802626311779,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "capture": 0.059251315891742706,
+      "solve": 0.008178822696208954,
+      "total": 0.06746461987495422
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2513755331344.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "capture": 0.06911438703536987,
+      "solve": 0.008164159953594208,
+      "total": 0.07731219381093979
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2914093404944.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "capture": 0.0636107362806797,
+      "solve": 0.0028576254844665527,
+      "total": 0.06650171428918839
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2545140790906.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "capture": 0.485682412981987,
+      "solve": 0.008151892572641373,
+      "total": 0.4938684515655041
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 8648871721744.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "capture": 0.06490717828273773,
+      "solve": 0.008132059127092361,
+      "total": 0.07307129725813866
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2551885598480.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "capture": 0.01557367667555809,
+      "solve": 0.008414465934038162,
+      "total": 0.02401931956410408
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 123765237520.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "capture": 0.015379820019006729,
+      "solve": 0.008185654878616333,
+      "total": 0.02359837293624878
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 120515101456.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "capture": 0.015103373676538467,
+      "solve": 0.008108280599117279,
+      "total": 0.02324279397726059
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 123765237520.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "capture": 0.015503037720918655,
+      "solve": 0.008185695856809616,
+      "total": 0.02372046560049057
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 127015717648.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "capture": 0.015402104705572128,
+      "solve": 0.008066464215517044,
+      "total": 0.0235004723072052
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 149778712336.0
+    }
+   ]
+  },
+  "C03": {
+   "label": "COMP[K_last|answer|merged]",
+   "sec_total_median": 0.04327595233917236,
+   "sec_total_p10": 0.023814475908875466,
+   "sec_total_p90": 0.09159195534884923,
+   "sec_solve_median": 0.009175624698400497,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "capture": 0.0572686530649662,
+      "solve": 0.009181346744298935,
+      "total": 0.06648456677794456
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2514206219024.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "capture": 0.06254563480615616,
+      "solve": 0.009224407374858856,
+      "total": 0.07180563360452652
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2914544292624.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "capture": 0.058700788766145706,
+      "solve": 0.0030962973833084106,
+      "total": 0.061831939965486526
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2545546589818.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "capture": 0.2604143023490906,
+      "solve": 0.009219426661729813,
+      "total": 0.2696688510477543
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 8649322609424.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "capture": 0.05911248177289963,
+      "solve": 0.009147945791482925,
+      "total": 0.06829490140080452
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2552336486160.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "capture": 0.014591295272111893,
+      "solve": 0.009153969585895538,
+      "total": 0.023778457194566727
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 124216125200.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "capture": 0.014749687165021896,
+      "solve": 0.009205099195241928,
+      "total": 0.023987524211406708
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 120965989136.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "capture": 0.014667317271232605,
+      "solve": 0.009120777249336243,
+      "total": 0.023818477988243103
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 124216125200.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "capture": 0.014644559472799301,
+      "solve": 0.009224198758602142,
+      "total": 0.023902904242277145
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 127466605328.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "capture": 0.015515659004449844,
+      "solve": 0.00916990265250206,
+      "total": 0.0247199647128582
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 150229600016.0
+    }
+   ]
+  },
+  "C04": {
+   "label": "COMP[K_last|all|adapter]",
+   "sec_total_median": 0.11975172162055969,
+   "sec_total_p10": 0.024592502042651176,
+   "sec_total_p90": 0.3414861794561145,
+   "sec_solve_median": 0.08444662019610405,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "capture": 0.05635160207748413,
+      "solve": 0.15268594399094582,
+      "total": 0.20906898751854897
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2536115954334.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "capture": 0.06152651831507683,
+      "solve": 0.19238733872771263,
+      "total": 0.25394756719470024
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2941069756346.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "capture": 0.057618722319602966,
+      "solve": 0.15934060141444206,
+      "total": 0.21699129790067673
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2567842936240.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "capture": 0.26174455136060715,
+      "solve": 0.867551401257515,
+      "total": 1.1293336898088455
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 8780435456046.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "capture": 0.05940605327486992,
+      "solve": 0.15758273750543594,
+      "total": 0.21703864261507988
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2574731509760.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "capture": 0.014197822660207748,
+      "solve": 0.0143301822245121,
+      "total": 0.02855963632464409
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 125245824880.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "capture": 0.014343123883008957,
+      "solve": 0.010102540254592896,
+      "total": 0.02447681501507759
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 121940893858.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "capture": 0.014135092496871948,
+      "solve": 0.014562875032424927,
+      "total": 0.02872757613658905
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 125245824880.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "capture": 0.01405656710267067,
+      "solve": 0.010517358779907227,
+      "total": 0.02460535615682602
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 128551242534.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "capture": 0.014196395874023438,
+      "solve": 0.016207296401262283,
+      "total": 0.03043445572257042
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 151702796848.0
+    }
+   ]
+  },
+  "C05": {
+   "label": "COMP[K_ans|answer|adapter]",
+   "sec_total_median": 0.04182119853794575,
+   "sec_total_p10": 0.022633836045861243,
+   "sec_total_p90": 0.09005189649760716,
+   "sec_solve_median": 0.008266391232609749,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "capture": 0.05592058226466179,
+      "solve": 0.008281093090772629,
+      "total": 0.06423206627368927
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2513887427344.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "capture": 0.061519548296928406,
+      "solve": 0.008214734494686127,
+      "total": 0.06976382434368134
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2914225500944.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "capture": 0.058495841920375824,
+      "solve": 0.0021633245050907135,
+      "total": 0.060691073536872864
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2545259677306.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "capture": 0.26432760059833527,
+      "solve": 0.008284267038106918,
+      "total": 0.2726445458829403
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 8649003817744.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "capture": 0.0587460957467556,
+      "solve": 0.008251689374446869,
+      "total": 0.0670393705368042
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2552017694480.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "capture": 0.0145358145236969,
+      "solve": 0.008221030235290527,
+      "total": 0.02278696745634079
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 123897333520.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "capture": 0.014441996812820435,
+      "solve": 0.008303090929985046,
+      "total": 0.022776704281568527
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 120647197456.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "capture": 0.014289386570453644,
+      "solve": 0.008339975029230118,
+      "total": 0.022659283131361008
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 123897333520.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "capture": 0.014085188508033752,
+      "solve": 0.008289013057947159,
+      "total": 0.022404812276363373
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 127147813648.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "capture": 0.014685187488794327,
+      "solve": 0.008235085755586624,
+      "total": 0.02295132353901863
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 149910808336.0
+    }
+   ]
+  },
+  "C06": {
+   "label": "COMP[K_seq:10|answer|adapter]",
+   "sec_total_median": 0.04396137595176697,
+   "sec_total_p10": 0.024002522230148315,
+   "sec_total_p90": 0.09166684113442891,
+   "sec_solve_median": 0.009717987850308418,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "capture": 0.0561496876180172,
+      "solve": 0.009719572961330414,
+      "total": 0.06589950993657112
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2514954763024.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "capture": 0.06193801388144493,
+      "solve": 0.009716402739286423,
+      "total": 0.07168477028608322
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2915292836624.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "capture": 0.057356178760528564,
+      "solve": 0.005724579095840454,
+      "total": 0.06311216950416565
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2546220279418.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "capture": 0.2617202661931515,
+      "solve": 0.009740553796291351,
+      "total": 0.2715054787695408
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 8650071153424.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "capture": 0.057923492044210434,
+      "solve": 0.009799182415008545,
+      "total": 0.06775252521038055
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2553085030160.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "capture": 0.015067242085933685,
+      "solve": 0.00971151888370514,
+      "total": 0.024810582399368286
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 124964669200.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "capture": 0.014678023755550385,
+      "solve": 0.009820062667131424,
+      "total": 0.024528853595256805
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 121714533136.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "capture": 0.014105085283517838,
+      "solve": 0.009824149310588837,
+      "total": 0.023961517959833145
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 124964669200.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "capture": 0.014260444790124893,
+      "solve": 0.009715475142002106,
+      "total": 0.024007078260183334
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 128215149328.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "capture": 0.014922894537448883,
+      "solve": 0.009713023900985718,
+      "total": 0.024666864424943924
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 150978144016.0
+    }
+   ]
+  },
+  "C07": {
+   "label": "COMP[K_last+probe:200|answer|adapter]",
+   "sec_total_median": 0.04220082052052021,
+   "sec_total_p10": 0.02327617071568966,
+   "sec_total_p90": 0.09067730940878384,
+   "sec_solve_median": 0.009177843108773232,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "capture": 0.05581830441951752,
+      "solve": 0.009178441017866135,
+      "total": 0.06502814963459969
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2514571684624.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "capture": 0.0615997351706028,
+      "solve": 0.00916704535484314,
+      "total": 0.07079636678099632
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2914909758224.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "capture": 0.05741357430815697,
+      "solve": 0.003365561366081238,
+      "total": 0.060826607048511505
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2545875508858.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "capture": 0.2603878155350685,
+      "solve": 0.009187016636133194,
+      "total": 0.2696057930588722
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 8649688075024.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "capture": 0.05846983566880226,
+      "solve": 0.009166527539491653,
+      "total": 0.06766777113080025
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2552701951760.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "capture": 0.014335349202156067,
+      "solve": 0.00918622687458992,
+      "total": 0.023552536964416504
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 124581590800.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "capture": 0.01434263214468956,
+      "solve": 0.009202387183904648,
+      "total": 0.023575033992528915
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 121331454736.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "capture": 0.01412283256649971,
+      "solve": 0.009249597787857056,
+      "total": 0.02340313047170639
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 124581590800.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "capture": 0.014071810990571976,
+      "solve": 0.009177245199680328,
+      "total": 0.02328004315495491
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 127832070928.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "capture": 0.014067552983760834,
+      "solve": 0.00914343073964119,
+      "total": 0.0232413187623024
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 150595065616.0
+    }
+   ]
+  },
+  "C08": {
+   "label": "COMP[none|answer|adapter]",
+   "sec_total_median": 0.03981679119169712,
+   "sec_total_p10": 0.019934296235442163,
+   "sec_total_p90": 0.08759221546351903,
+   "sec_solve_median": 0.0057892147451639175,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "capture": 0.05612005293369293,
+      "solve": 0.005830768495798111,
+      "total": 0.06198069453239441
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2513711299344.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "capture": 0.0616602823138237,
+      "solve": 0.00581563264131546,
+      "total": 0.06750568747520447
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2914049372944.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "capture": 0.05766110494732857,
+      "solve": 0.0017850734293460846,
+      "total": 0.059476956725120544
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2545101162106.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "capture": 0.26250113546848297,
+      "solve": 0.005835529416799545,
+      "total": 0.26837096735835075
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 8648827689744.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "capture": 0.05903896689414978,
+      "solve": 0.005739372223615646,
+      "total": 0.0648093968629837
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2551841566480.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "capture": 0.01417626440525055,
+      "solve": 0.005738753825426102,
+      "total": 0.019944507628679276
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 123721205520.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "capture": 0.014277946203947067,
+      "solve": 0.005836077034473419,
+      "total": 0.02015426754951477
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 120471069456.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "capture": 0.014253616333007812,
+      "solve": 0.005751200020313263,
+      "total": 0.02003476396203041
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 123721205520.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "capture": 0.014303546398878098,
+      "solve": 0.005822870880365372,
+      "total": 0.020156625658273697
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 126971685648.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "capture": 0.014048721641302109,
+      "solve": 0.005762796849012375,
+      "total": 0.019842393696308136
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 1,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 149734680336.0
+    }
+   ]
+  },
+  "C10": {
+   "label": "REEDIT[variant=k0+kp]",
+   "sec_total_median": 0.6154897063970566,
+   "sec_total_p10": 0.4352216571569443,
+   "sec_total_p90": 1.5285053610801689,
+   "sec_solve_median": 0.002293301746249199,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "install": 0.06173688545823097,
+      "solve": 0.002293940633535385,
+      "zopt": 0.9778725393116474,
+      "total": 1.0396405309438705
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 2,
+      "fwd_bwd": 10,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 55823657790266.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "install": 0.06732811033725739,
+      "solve": 0.0023018009960651398,
+      "zopt": 0.6795773841440678,
+      "total": 0.7469368427991867
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 2,
+      "fwd_bwd": 6,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 42505722395450.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "install": 0.06367494538426399,
+      "solve": 0.0022926628589630127,
+      "zopt": 1.2739386484026909,
+      "total": 1.3376449309289455
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 2,
+      "fwd_bwd": 13,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 70849459254074.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "install": 0.3436995968222618,
+      "solve": 0.0023209117352962494,
+      "zopt": 2.902516596019268,
+      "total": 3.246249232441187
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 2,
+      "fwd_bwd": 15,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 269271484826426.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "install": 0.06248622387647629,
+      "solve": 0.0022817514836788177,
+      "zopt": 0.4879561625421047,
+      "total": 0.550473265349865
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 2,
+      "fwd_bwd": 4,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 27724135805754.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "install": 0.01687130704522133,
+      "solve": 0.0022687986493110657,
+      "zopt": 0.4405199773609638,
+      "total": 0.45742278173565865
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 2,
+      "fwd_bwd": 8,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 3713369817914.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "install": 0.01720881089568138,
+      "solve": 0.002295978367328644,
+      "zopt": 0.447086364030838,
+      "total": 0.4643251970410347
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 2,
+      "fwd_bwd": 9,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 4015434281786.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "install": 0.01797410100698471,
+      "solve": 0.0022990740835666656,
+      "zopt": 0.2174072451889515,
+      "total": 0.23541153594851494
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 2,
+      "fwd_bwd": 4,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 2089094546234.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "install": 0.01688462868332863,
+      "solve": 0.002273082733154297,
+      "zopt": 0.44508732110261917,
+      "total": 0.4620111361145973
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 2,
+      "fwd_bwd": 9,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 4223453999930.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "install": 0.016757391393184662,
+      "solve": 0.0022778958082199097,
+      "zopt": 0.6637177392840385,
+      "total": 0.6805061474442482
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 2,
+      "fwd_bwd": 14,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 7390997095226.0
+    }
+   ]
+  },
+  "C11": {
+   "label": "ROLLBACK_FO[budget=10]",
+   "sec_total_median": 0.25196689181029797,
+   "sec_total_p10": 0.1905801571905613,
+   "sec_total_p90": 0.4609344325959682,
+   "sec_solve_median": null,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "total": 0.29082557186484337,
+      "scoring": 0.02415495738387108
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 5,
+      "suffix_grad": 5
+     },
+     "flops_total": 18342033670144.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "total": 0.25402921810746193,
+      "scoring": 0.019342944025993347
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 4,
+      "suffix_grad": 4
+     },
+     "flops_total": 17624047947776.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "total": 0.249904565513134,
+      "scoring": 0.019363638013601303
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 4,
+      "suffix_grad": 4
+     },
+     "flops_total": 15479968227328.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "total": 0.41097496822476387,
+      "scoring": 0.009675562381744385
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 2,
+      "suffix_grad": 2
+     },
+     "flops_total": 31121206251520.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "total": 0.20517777651548386,
+      "scoring": 0.014705561101436615
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 3,
+      "suffix_grad": 3
+     },
+     "flops_total": 12504770281472.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "total": 0.1122482679784298,
+      "scoring": 0.009651798754930496
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 2,
+      "suffix_grad": 2
+     },
+     "flops_total": 955187863552.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "total": 0.48594745993614197,
+      "scoring": 0.043182652443647385
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 10,
+      "suffix_grad": 10
+     },
+     "flops_total": 3806026756096.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "total": 0.45815520733594894,
+      "scoring": 0.043040357530117035
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 10,
+      "suffix_grad": 10
+     },
+     "flops_total": 3905812111360.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "total": 0.22445927932858467,
+      "scoring": 0.019365068525075912
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 4,
+      "suffix_grad": 4
+     },
+     "flops_total": 1736105586688.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "total": 0.19928370043635368,
+      "scoring": 0.019318662583827972
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 4,
+      "suffix_grad": 4
+     },
+     "flops_total": 2039063830528.0
+    }
+   ]
+  },
+  "C12": {
+   "label": "ROLLBACK_FO[budget=20]",
+   "sec_total_median": 0.25097900442779064,
+   "sec_total_p10": 0.1995509035885334,
+   "sec_total_p90": 0.6346061673015356,
+   "sec_solve_median": null,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "total": 0.2945796027779579,
+      "scoring": 0.024126172065734863
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 5,
+      "suffix_grad": 5
+     },
+     "flops_total": 18342033670144.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "total": 0.2518664225935936,
+      "scoring": 0.019294071942567825
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 4,
+      "suffix_grad": 4
+     },
+     "flops_total": 17624047947776.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "total": 0.2500915862619877,
+      "scoring": 0.019316062331199646
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 4,
+      "suffix_grad": 4
+     },
+     "flops_total": 15479968227328.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "total": 0.4117228500545025,
+      "scoring": 0.009651944041252136
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 2,
+      "suffix_grad": 2
+     },
+     "flops_total": 31121206251520.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "total": 0.20926795899868011,
+      "scoring": 0.01447167620062828
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 3,
+      "suffix_grad": 3
+     },
+     "flops_total": 12504770281472.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "total": 0.11209740489721298,
+      "scoring": 0.009655624628067017
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 2,
+      "suffix_grad": 2
+     },
+     "flops_total": 955187863552.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "total": 0.6448109298944473,
+      "scoring": 0.05876142159104347
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 14,
+      "suffix_grad": 14
+     },
+     "flops_total": 5243653402624.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "total": 0.6334723047912121,
+      "scoring": 0.05877544730901718
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 14,
+      "suffix_grad": 14
+     },
+     "flops_total": 5381124235264.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "total": 0.22327358275651932,
+      "scoring": 0.019366946071386337
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 4,
+      "suffix_grad": 4
+     },
+     "flops_total": 1736105586688.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "total": 0.2183222398161888,
+      "scoring": 0.019332721829414368
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 4,
+      "suffix_grad": 4
+     },
+     "flops_total": 2039063830528.0
+    }
+   ]
+  },
+  "C13": {
+   "label": "ROLLBACK_BEH[budget=20]",
+   "sec_total_median": 3.7175417840480804,
+   "sec_total_p10": 2.022322137653828,
+   "sec_total_p90": 11.564981026947498,
+   "sec_solve_median": null,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "total": 4.244056768715382
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 394,
+      "suffix_grad": 0
+     },
+     "flops_total": 300885926893568.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "total": 3.2127153426408768
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 297,
+      "suffix_grad": 0
+     },
+     "flops_total": 261464714181632.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "total": 4.2714307345449924
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 394,
+      "suffix_grad": 0
+     },
+     "flops_total": 303802295742464.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "total": 4.222368225455284
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 199,
+      "suffix_grad": 0
+     },
+     "flops_total": 510518480030720.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "total": 3.199073638767004
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 297,
+      "suffix_grad": 0
+     },
+     "flops_total": 231279241920512.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "total": 2.024025183171034
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 199,
+      "suffix_grad": 0
+     },
+     "flops_total": 18203333416960.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "total": 11.49585697054863
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 1134,
+      "suffix_grad": 0
+     },
+     "flops_total": 100020174198784.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "total": 12.187097534537315
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 1222,
+      "suffix_grad": 0
+     },
+     "flops_total": 110663007047680.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "total": 2.006994727998972
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 199,
+      "suffix_grad": 0
+     },
+     "flops_total": 18679910865920.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "total": 2.9915686622262
+     },
+     "passes": {
+      "full": 1,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 297,
+      "suffix_grad": 0
+     },
+     "flops_total": 32730961168384.0
+    }
+   ]
+  },
+  "C14": {
+   "label": "ROLLBACK_ALL",
+   "sec_total_median": 6.590783596038818e-05,
+   "sec_total_p10": 6.504468619823456e-05,
+   "sec_total_p90": 6.824284791946411e-05,
+   "sec_solve_median": null,
+   "rows": [
+    {
+     "group": "image_281",
+     "sec": {
+      "total": 6.351247429847717e-05
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 0.0
+    },
+    {
+     "group": "image_226",
+     "sec": {
+      "total": 6.821006536483765e-05
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 0.0
+    },
+    {
+     "group": "image_111",
+     "sec": {
+      "total": 6.540864706039429e-05
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 0.0
+    },
+    {
+     "group": "image_125",
+     "sec": {
+      "total": 6.521493196487427e-05
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 0.0
+    },
+    {
+     "group": "image_438",
+     "sec": {
+      "total": 6.756559014320374e-05
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 0.0
+    },
+    {
+     "group": "text_402",
+     "sec": {
+      "total": 6.585195660591125e-05
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 0.0
+    },
+    {
+     "group": "text_240",
+     "sec": {
+      "total": 6.85378909111023e-05
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 0.0
+    },
+    {
+     "group": "text_295",
+     "sec": {
+      "total": 6.796792149543762e-05
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 0.0
+    },
+    {
+     "group": "text_459",
+     "sec": {
+      "total": 6.525591015815735e-05
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 0.0
+    },
+    {
+     "group": "text_281",
+     "sec": {
+      "total": 6.596371531486511e-05
+     },
+     "passes": {
+      "full": 0,
+      "prefix": 0,
+      "fwd_bwd": 0,
+      "suffix": 0,
+      "suffix_grad": 0
+     },
+     "flops_total": 0.0
+    }
+   ]
+  }
+ }
+}

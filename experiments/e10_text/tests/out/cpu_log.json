@@ -1,0 +1,51 @@
+{
+ "name": "c_log",
+ "pass": true,
+ "what": "own coordinate 1; delta() = (W_E - W_0)^T up to the write round-off; float32 replay = deployed weight bit for bit",
+ "detail": {
+  "own_coordinate_max_abs_dev_from_1": 2.220446049250313e-16,
+  "delta_shape": [
+   1600,
+   6400
+  ],
+  "module_weight_shape": [
+   6400,
+   1600
+  ],
+  "delta_vs_WE_minus_W0_transposed_rel_fro": 2.671467094808541e-07,
+  "replay_bitwise_equals_deployed": true,
+  "prefix_replay_continued_bitwise_equals_deployed": true,
+  "prefix_log": {
+   "name": "TX-G2XL-rome-dev100@50",
+   "T": 50,
+   "development": true,
+   "source": "dev",
+   "prefix_of": "TX-G2XL-rome-dev100",
+   "n_request": 50,
+   "n_paraphrase": 100,
+   "n_neighborhood": 500,
+   "n_repair": 3000,
+   "n_heldout": 3000,
+   "n_heldout_clean": 2988,
+   "n_repair_clean": 2991,
+   "n_neighborhood_clean": 500,
+   "cache_parts": [
+    "dev",
+    "pools"
+   ]
+  },
+  "prefix_weight_equals_replay_50": true,
+  "batch_is_arange": true
+ },
+ "error": null,
+ "seconds": 2.661797285079956,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "written": "2026-11-11 11:55:40 UTC"
+}

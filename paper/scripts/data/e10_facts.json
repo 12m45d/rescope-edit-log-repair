@@ -1,0 +1,442 @@
+{
+ "what": "derived facts of experiment E10 for the paper (scripts/gen_tab_e10.py); every value names its source and rule",
+ "inputs": {
+  "02_research/experiments/10_final/e10_text/run/out/screening.json": {
+   "mtime": 1794501377,
+   "size": 19816
+  },
+  "02_research/experiments/10_final/e10_text/run/verify/out/screening_T2000.json": {
+   "mtime": 1794501433,
+   "size": 12823
+  },
+  "02_research/experiments/10_final/e10_text/run/verify/verdicts.json": {
+   "mtime": 1794502419,
+   "size": 26546
+  },
+  "02_research/experiments/10_final/e10_text/run/out/summary/behave_TX-G2XL-rome-T100.json": {
+   "mtime": 1794501401,
+   "size": 163616
+  },
+  "02_research/experiments/10_final/e10_text/run/out/summary/gate_TX-G2XL-rome-T100.json": {
+   "mtime": 1794501401,
+   "size": 109232
+  },
+  "02_research/experiments/10_final/e10_text/run/out/gate/TX-G2XL-rome-T100.json": {
+   "mtime": 1794501377,
+   "size": 924616
+  },
+  "02_research/experiments/10_final/e10_text/run/out/summary/equal_TX-G2XL-rome-T100.json": {
+   "mtime": 1794501401,
+   "size": 336882
+  },
+  "02_research/experiments/10_final/e10_text/run/out/summary/r22_TX-G2XL-rome-T100.json": {
+   "mtime": 1794502365,
+   "size": 49992
+  },
+  "02_research/experiments/10_final/e10_text/run/out/cert/TX-G2XL-rome-T100.json": {
+   "mtime": 1794501433,
+   "size": 3921
+  },
+  "02_research/experiments/10_final/e10_text/run/out/summary/behave_TX-G2XL-rome-T500.json": {
+   "mtime": 1794501401,
+   "size": 524162
+  },
+  "02_research/experiments/10_final/e10_text/run/out/summary/gate_TX-G2XL-rome-T500.json": {
+   "mtime": 1794501401,
+   "size": 176114
+  },
+  "02_research/experiments/10_final/e10_text/run/out/gate/TX-G2XL-rome-T500.json": {
+   "mtime": 1794501377,
+   "size": 1551163
+  },
+  "02_research/experiments/10_final/e10_text/run/out/summary/equal_TX-G2XL-rome-T500.json": {
+   "mtime": 1794501401,
+   "size": 593720
+  },
+  "02_research/experiments/10_final/e10_text/run/out/summary/r22_TX-G2XL-rome-T500.json": {
+   "mtime": 1794502365,
+   "size": 68923
+  },
+  "02_research/experiments/10_final/e10_text/run/out/cert/TX-G2XL-rome-T500.json": {
+   "mtime": 1794501433,
+   "size": 6625
+  }
+ },
+ "facts": {
+  "from_split_max": {
+   "value": 24.770642201834864,
+   "source": "summary/behave_, equal_, r22_TX-G2XL-rome-T500.json",
+   "rule": "max over 62 rows of request exact / retention from position 173 on; attained by 'relational: rb_screen'"
+  },
+  "from_split_max_row": {
+   "value": "relational: rb_screen",
+   "source": "as from_split_max",
+   "rule": "row that attains the maximum"
+  },
+  "from_split_max_behaviour": {
+   "value": 11.926605504587156,
+   "source": "summary/behave_TX-G2XL-rome-T500.json",
+   "rule": "max over the behavioural rows ('rescope')"
+  },
+  "goff_draws": {
+   "value": 20,
+   "source": "out/gate/TX-G2XL-rome-T500.json rows.rescope.goff.per_draw",
+   "rule": "calibration draws at gate level"
+  },
+  "goff_draws_majority_silenced": {
+   "value": 3,
+   "source": "same",
+   "rule": "draws in which more than half of the 500 own requests are silenced"
+  },
+  "goff_min_silenced_in_those": {
+   "value": 311,
+   "source": "same",
+   "rule": "fewest own requests silenced among those draws"
+  },
+  "goff_max_silenced_in_others": {
+   "value": 27,
+   "source": "same",
+   "rule": "most own requests silenced in the other draws"
+  },
+  "goff_silenced_sorted": {
+   "value": [
+    499,
+    499,
+    311,
+    27,
+    26,
+    23,
+    21,
+    20,
+    20,
+    16,
+    16,
+    15,
+    15,
+    14,
+    14,
+    12,
+    10,
+    8,
+    8,
+    5
+   ],
+   "source": "same",
+   "rule": "own requests silenced per draw, sorted"
+  },
+  "clean_close_par_min": {
+   "value": 71.0,
+   "source": "summary/behave_TX-G2XL-rome-T100.json",
+   "rule": "min of edit.paraphrase.exact over ['rescope', 'cosine', 'whitecos_0.1', 'cosine_published']"
+  },
+  "clean_close_par_max": {
+   "value": 73.66666666666667,
+   "source": "summary/behave_TX-G2XL-rome-T100.json",
+   "rule": "max of edit.paraphrase.exact over ['rescope', 'cosine', 'whitecos_0.1', 'cosine_published']"
+  },
+  "clean_close_done_min": {
+   "value": 1.0666666666666667,
+   "source": "summary/behave_TX-G2XL-rome-T100.json",
+   "rule": "min of heldout.D1_tf over ['rescope', 'cosine', 'whitecos_0.1', 'cosine_published']"
+  },
+  "clean_close_done_max": {
+   "value": 4.644444444444445,
+   "source": "summary/behave_TX-G2XL-rome-T100.json",
+   "rule": "max of heldout.D1_tf over ['rescope', 'cosine', 'whitecos_0.1', 'cosine_published']"
+  },
+  "clean_close_req_min": {
+   "value": 100.0,
+   "source": "summary/behave_TX-G2XL-rome-T100.json",
+   "rule": "min of edit.request.exact over ['rescope', 'cosine', 'whitecos_0.1', 'cosine_published']"
+  },
+  "clean_close_req_max": {
+   "value": 100.0,
+   "source": "summary/behave_TX-G2XL-rome-T100.json",
+   "rule": "max of edit.request.exact over ['rescope', 'cosine', 'whitecos_0.1', 'cosine_published']"
+  },
+  "collapsed_cosine_goff_max_change": {
+   "value": 0.9633911368015475,
+   "source": "summary/behave_, gate_TX-G2XL-rome-T500.json",
+   "rule": "largest absolute change of a printed cell of the rows ('cosine', 'whitecos_0.1') between guards on and guards off"
+  },
+  "equal_TOne_linear_done_min": {
+   "value": 68.9,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "min of held-out D1 over comp_min, rb_lineage, n = 1, 10, 100"
+  },
+  "equal_TOne_linear_done_max": {
+   "value": 93.45555555555555,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "max of the same"
+  },
+  "equal_TOne_prefix_lost_min": {
+   "value": 69.66666666666667,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "fewest edits lost by rb_suffix over n (mean of seeds)"
+  },
+  "equal_TOne_prefix_lost_max": {
+   "value": 100.0,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "most edits lost by rb_suffix over n"
+  },
+  "equal_TOne_least_n1_reported": {
+   "value": 3,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "reported complaints summed over the seeds"
+  },
+  "equal_TOne_least_n1_certified": {
+   "value": 3,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "reported complaints on which no edit is released as served (teacher-forced pass): total - round(total * complaints.fired / 100)"
+  },
+  "equal_TOne_least_n1_lost": {
+   "value": 0.0,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "edits lost, mean over seeds"
+  },
+  "equal_TOne_least_n10_reported": {
+   "value": 30,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "reported complaints summed over the seeds"
+  },
+  "equal_TOne_least_n10_certified": {
+   "value": 26,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "reported complaints on which no edit is released as served (teacher-forced pass): total - round(total * complaints.fired / 100)"
+  },
+  "equal_TOne_least_n10_lost": {
+   "value": 0.0,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "edits lost, mean over seeds"
+  },
+  "equal_TOne_least_n100_reported": {
+   "value": 100,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "reported complaints summed over the seeds"
+  },
+  "equal_TOne_least_n100_certified": {
+   "value": 99,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "reported complaints on which no edit is released as served (teacher-forced pass): total - round(total * complaints.fired / 100)"
+  },
+  "equal_TOne_least_n100_lost": {
+   "value": 0.0,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "edits lost, mean over seeds"
+  },
+  "equal_TFive_linear_done_min": {
+   "value": 100.0,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "min of held-out D1 over comp_min, rb_lineage, n = 1, 10, 100"
+  },
+  "equal_TFive_linear_done_max": {
+   "value": 100.0,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "max of the same"
+  },
+  "equal_TFive_prefix_lost_min": {
+   "value": 400.0,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "fewest edits lost by rb_suffix over n (mean of seeds)"
+  },
+  "equal_TFive_prefix_lost_max": {
+   "value": 500.0,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "most edits lost by rb_suffix over n"
+  },
+  "equal_TFive_least_n1_reported": {
+   "value": 3,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "reported complaints summed over the seeds"
+  },
+  "equal_TFive_least_n1_certified": {
+   "value": 3,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "reported complaints on which no edit is released as served (teacher-forced pass): total - round(total * complaints.fired / 100)"
+  },
+  "equal_TFive_least_n1_lost": {
+   "value": 9.0,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "edits lost, mean over seeds"
+  },
+  "equal_TFive_least_n10_reported": {
+   "value": 30,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "reported complaints summed over the seeds"
+  },
+  "equal_TFive_least_n10_certified": {
+   "value": 27,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "reported complaints on which no edit is released as served (teacher-forced pass): total - round(total * complaints.fired / 100)"
+  },
+  "equal_TFive_least_n10_lost": {
+   "value": 9.0,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "edits lost, mean over seeds"
+  },
+  "equal_TFive_least_n100_reported": {
+   "value": 100,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "reported complaints summed over the seeds"
+  },
+  "equal_TFive_least_n100_certified": {
+   "value": 97,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "reported complaints on which no edit is released as served (teacher-forced pass): total - round(total * complaints.fired / 100)"
+  },
+  "equal_TFive_least_n100_lost": {
+   "value": 9.0,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "edits lost, mean over seeds"
+  },
+  "equal_n_mid": {
+   "value": 10,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "complaints per seed at the middle grid point"
+  },
+  "equal_seeds_mid": {
+   "value": 3,
+   "source": "summary/equal_TX-G2XL-rome-T100.json",
+   "rule": "complaint seeds at the middle grid point"
+  },
+  "equal_TFive_protecting_reported": {
+   "value": 133,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "complaints given to the protecting form, all n and seeds"
+  },
+  "equal_TFive_protecting_refused": {
+   "value": 133,
+   "source": "summary/equal_TX-G2XL-rome-T500.json",
+   "rule": "of them refused"
+  },
+  "rel_TFive_q_max": {
+   "value": 0.0,
+   "source": "summary/r22_TX-G2XL-rome-T500.json",
+   "rule": "max of queries exact over all rows"
+  },
+  "rel_TOne_linear_q_max": {
+   "value": 2.0833333333333335,
+   "source": "summary/r22_TX-G2XL-rome-T100.json",
+   "rule": "max of queries exact over comp_min, rb_lineage, blocklist, m = 1, 3, 10"
+  },
+  "rel_TOne_prefix_q_max": {
+   "value": 4.166666666666667,
+   "source": "summary/r22_TX-G2XL-rome-T100.json",
+   "rule": "max of queries exact over rb_suffix, m = 1, 3, 10"
+  },
+  "screen_TOne_flagged": {
+   "value": 0,
+   "source": "out/screening.json",
+   "rule": "edits with a non-positive self-separation margin"
+  },
+  "screen_TOne_expl_ref": {
+   "value": 0,
+   "source": "out/screening.json",
+   "rule": "reference set exploding_norm"
+  },
+  "screen_TOne_expl_tp": {
+   "value": 0,
+   "source": "out/screening.json",
+   "rule": "flagged edits in exploding_norm"
+  },
+  "screen_TOne_first_ref": {
+   "value": 0,
+   "source": "out/screening.json",
+   "rule": "reference set first_token_subject"
+  },
+  "screen_TOne_first_tp": {
+   "value": 0,
+   "source": "out/screening.json",
+   "rule": "flagged edits in first_token_subject"
+  },
+  "screen_TOne_ties": {
+   "value": 0,
+   "source": "out/screening.json",
+   "rule": "flagged edits with |margin| < 1e-9"
+  },
+  "screen_TFive_flagged": {
+   "value": 6,
+   "source": "out/screening.json",
+   "rule": "edits with a non-positive self-separation margin"
+  },
+  "screen_TFive_expl_ref": {
+   "value": 8,
+   "source": "out/screening.json",
+   "rule": "reference set exploding_norm"
+  },
+  "screen_TFive_expl_tp": {
+   "value": 5,
+   "source": "out/screening.json",
+   "rule": "flagged edits in exploding_norm"
+  },
+  "screen_TFive_first_ref": {
+   "value": 3,
+   "source": "out/screening.json",
+   "rule": "reference set first_token_subject"
+  },
+  "screen_TFive_first_tp": {
+   "value": 3,
+   "source": "out/screening.json",
+   "rule": "flagged edits in first_token_subject"
+  },
+  "screen_TFive_ties": {
+   "value": 0,
+   "source": "out/screening.json",
+   "rule": "flagged edits with |margin| < 1e-9"
+  },
+  "screen_TTwoThousand_negative": {
+   "value": 23,
+   "source": "verify/out/screening_T2000.json",
+   "rule": "verifier's flagged edits without the tie edits (margin < -1e-9)"
+  },
+  "screen_TTwoThousand_ties": {
+   "value": 12,
+   "source": "verify/out/screening_T2000.json",
+   "rule": "edits with |margin| < 1e-9 (duplicate solver keys)"
+  },
+  "screen_TTwoThousand_tie_pairs": {
+   "value": 6,
+   "source": "verify/out/screening_T2000.json",
+   "rule": "groups of identical solver keys"
+  },
+  "screen_TTwoThousand_expl_ref": {
+   "value": 20,
+   "source": "verify/out/screening_T2000.json",
+   "rule": "audit's list of exploding updates"
+  },
+  "screen_TTwoThousand_expl_tp": {
+   "value": 12,
+   "source": "verify/out/screening_T2000.json",
+   "rule": "exploding updates with a negative margin"
+  },
+  "screen_TTwoThousand_first_ref": {
+   "value": 8,
+   "source": "verify/out/screening_T2000.json",
+   "rule": "requests whose subject is the first prompt token"
+  },
+  "screen_TTwoThousand_first_tp": {
+   "value": 8,
+   "source": "verify/out/screening_T2000.json",
+   "rule": "of them with a negative margin"
+  },
+  "cert_checked_total": {
+   "value": 84919,
+   "source": "out/cert/<log>.json total.n_checked_certified",
+   "rule": "sum over the two logs"
+  },
+  "cert_violations_total": {
+   "value": 0,
+   "source": "out/cert/<log>.json",
+   "rule": "violations, certified and in the band, both logs"
+  },
+  "cert_TFive_rows_certifying_nothing": {
+   "value": [
+    "rescope",
+    "where_twoblock"
+   ],
+   "source": "out/cert/TX-G2XL-rome-T500.json",
+   "rule": "rows with guards that certify no prompt in any draw"
+  }
+ },
+ "warnings": []
+}

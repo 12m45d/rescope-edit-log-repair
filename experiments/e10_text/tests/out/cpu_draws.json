@@ -1,0 +1,28 @@
+{
+ "name": "c_draws",
+ "pass": true,
+ "what": "calibration draws are the library's seeded samples of the REPAIR pool; the null sample shares no prompt text with them",
+ "detail": {
+  "n_draws": 20,
+  "n_pool": 3000,
+  "draw_equals_rescope_splits_sample": 20,
+  "null_sample_disjoint_by_text": 20,
+  "null_sample_sizes": [
+   100
+  ],
+  "nested_in_n": 20,
+  "null_sample_n0": 0,
+  "n_distinct_pool_texts": 3000
+ },
+ "error": null,
+ "seconds": 0.05093240737915039,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "written": "2026-11-11 11:56:55 UTC"
+}

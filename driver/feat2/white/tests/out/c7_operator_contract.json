@@ -1,0 +1,69 @@
+{
+ "pass": true,
+ "checks": {
+  "cos_centred": {
+   "class": "TCosLog",
+   "replace_keeps_class": true,
+   "to_keeps_class_and_fields": true,
+   "add_guards_keeps_class": true,
+   "guard_cache_kept_by_thresholds": true,
+   "guard_cache_reset_on_new_geometry": true,
+   "new_geometry_gets_new_detector_tensor": true,
+   "witness_detector_refused": true,
+   "witness_threshold_applied": true,
+   "library_null_repair_raises": true
+  },
+  "whitecos": {
+   "class": "TCosLog",
+   "replace_keeps_class": true,
+   "to_keeps_class_and_fields": true,
+   "add_guards_keeps_class": true,
+   "guard_cache_kept_by_thresholds": true,
+   "guard_cache_reset_on_new_geometry": true,
+   "new_geometry_gets_new_detector_tensor": true,
+   "witness_detector_refused": true,
+   "witness_threshold_applied": true,
+   "library_null_repair_raises": true
+  },
+  "library cosine gate": {
+   "library_null_repair_raises": true,
+   "error": "max(): Expected reduction dim to be specified for input.numel() == 0. Specify th"
+  },
+  "white": {
+   "class": "ScopedLog",
+   "null_repair_zero_on_keys": 4.110245509990697e-16,
+   "null_repair_own": 2.220446049250313e-16,
+   "least_repair_resolved": true
+  },
+  "cos_null": {
+   "class": "ScopedLog",
+   "kinds_cos": true,
+   "scale_1": true
+  },
+  "gates()": {
+   "labels": [
+    "cos_centred",
+    "cos_null",
+    "white_0.01",
+    "white_0.1",
+    "white_1",
+    "whitecos_0.01",
+    "whitecos_0.1",
+    "whitecos_1"
+   ],
+   "equal_to_variants": true,
+   "meta_feature": true
+  }
+ },
+ "note": "TCosLog survives replace / to / add_guards; witness detector refused; white is a plain 'lin' gate (null_repair, least_repair apply); library null_repair on a gate without 'lin' detectors raises RuntimeError (its own cosine gate too: True) -- documented, cos_null goes through the 'lin' reading",
+ "test": "c7_operator_contract",
+ "group": "scores",
+ "what": "library operators on the new gate classes: replace / to / add_guards keep the class; added detectors refused; null_repair / least_repair on the 'lin' gate (white)",
+ "seconds": 0.025423049926757812,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

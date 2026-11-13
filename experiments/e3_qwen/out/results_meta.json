@@ -1,0 +1,125 @@
+{
+ "experiment": "E3",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "started": "2026-11-12 05:31:49",
+ "logs": [
+  "TB-Q100-ae-l2_3",
+  "TB-Q200-ae-l2_3",
+  "TB-Q500-ae-l2_3",
+  "TB-Q100-memitw",
+  "TB-Q500-memitw",
+  "TB-Q1000-memitw",
+  "TB-Q2000-memitw"
+ ],
+ "alpha": 0.05,
+ "n": 200,
+ "n_gate_draws": 20,
+ "behavioural_draws": {
+  "TB-Q100-ae-l2_3": [
+   0,
+   1,
+   2
+  ],
+  "TB-Q200-ae-l2_3": [
+   0,
+   1,
+   2
+  ],
+  "TB-Q500-ae-l2_3": [
+   0,
+   1,
+   2
+  ],
+  "TB-Q100-memitw": [
+   0,
+   1,
+   2
+  ],
+  "TB-Q500-memitw": [
+   0,
+   1,
+   2
+  ],
+  "TB-Q1000-memitw": [
+   0
+  ],
+  "TB-Q2000-memitw": [
+   0
+  ]
+ },
+ "h3_unreachable_rule": "a calibration draw on which no raise of the scale reaches 10 percent mean firing on the fit hard negatives (guard caps keep edits in scope) contributes H3 coverage 0 for that draw, for every method alike (the rule of E1, stated there before any number); the number of such draws is reported next to every H3 number",
+ "qdisjoint": "second read-out (R8): calibration draw from the REPAIR rows whose question string is no question / text rephrase of any edit of the longest Qwen stream (driver switch mask='qdisjoint'); far test rows (heldout_disjoint, BEN-T) restricted by the same filter; edit sequences and hard negatives are in / near scope by construction and are read on all their rows under that calibration",
+ "selection": {
+  "TB-Q100-ae-l2_3": {
+   "cos_H3": "white_1_shared",
+   "cos_H3_x": "white_1_x",
+   "cos_H2": "white_0.1_shared",
+   "retr": "retr_sum",
+   "retr_H2": "retr_sum"
+  },
+  "TB-Q200-ae-l2_3": {
+   "cos_H3": "white_1_shared",
+   "cos_H3_x": "white_1_x",
+   "cos_H2": "white_0.1_shared",
+   "retr": "retr_sum",
+   "retr_H2": "retr_sum"
+  },
+  "TB-Q500-ae-l2_3": {
+   "cos_H3": "white_1_shared",
+   "cos_H3_x": "white_1_x",
+   "cos_H2": "white_0.1_shared",
+   "retr": "retr_sum",
+   "retr_H2": "retr_sum"
+  },
+  "TB-Q100-memitw": {
+   "cos_H3": "white_1_shared",
+   "cos_H3_x": "white_1_x",
+   "cos_H2": "white_0.1_shared",
+   "retr": "retr_sum",
+   "retr_H2": "retr_sum"
+  },
+  "TB-Q500-memitw": {
+   "cos_H3": "white_1_shared",
+   "cos_H3_x": "white_1_x",
+   "cos_H2": "white_0.1_shared",
+   "retr": "retr_sum",
+   "retr_H2": "retr_sum"
+  },
+  "TB-Q1000-memitw": {
+   "cos_H3": "white_1_shared",
+   "cos_H3_x": "white_1_x",
+   "cos_H2": "white_0.1_shared",
+   "retr": "retr_sum",
+   "retr_H2": "retr_sum"
+  },
+  "TB-Q2000-memitw": {
+   "cos_H3": "white_1_shared",
+   "cos_H3_x": "white_1_x",
+   "cos_H2": "white_0.1_shared",
+   "retr": "retr_sum",
+   "retr_H2": "retr_sum"
+  }
+ },
+ "statistics": "E3 (Qwen): statistics.  Reads the gate-level cells (out/gate), the behavioural row files (out/rows) with their cell records\n(out/behave) and the factor-level files (out/factor); writes out/results.json (schema of fx.io), out/gate_draws.json (every gate-level\nnumber of every calibration draw), out/endpoints.json, out/scale_series.json, out/retention_series.json, out/missing.json,\nout/paper_numbers.json + paper_numbers_doc.json and, for the development log, out/sanity_compare.json.  No number is typed by hand.\n\n    python e3_analyze.py [--no-cache]        (CPU; re-runnable after every block; per-log results are cached by the state of their inputs)\n\nStatistics (PROTOCOL.md section 4, R10, R25 (3)): crossed bootstrap over calibration draws x units (2000 resamples; probe units = query\nclusters, edit units = edits; hard negatives: the owning edit); every summary record carries n_draws and by_draw (the per-draw values).\nA method without calibration has one row set (n_draws = 1, calibrated = False).\n",
+ "written": "2026-11-12 05:34:17",
+ "n_records": 33120,
+ "fields": [
+  "experiment",
+  "log",
+  "method",
+  "variant",
+  "alpha",
+  "n",
+  "draw",
+  "pool",
+  "metric",
+  "value",
+  "ci_lo",
+  "ci_hi",
+  "n_units"
+ ]
+}

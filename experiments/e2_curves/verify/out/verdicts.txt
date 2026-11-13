@@ -1,0 +1,63 @@
+VERDICTS (verify/code/vverdict.py)
+  headline_cells_recomputed_with_the_plain_evaluator: CONFIRMED
+  imported_linear_cells_equal_the_p12_records: CONFIRMED
+  rebuilt_linear_rows_reproduce_the_p12_flags: CONFIRMED
+  part_b_no_refusal_own_prompts_in_scope_order_independent_floor: CONFIRMED
+  h1_json: CONFIRMED
+  c_prime_gate_level: CONFIRMED
+  agreement_with_the_sanity_run_e0: CONFIRMED
+  running_example: CONFIRMED
+  internal_consistency: CONFIRMED
+  unfavourable_items_in_the_files_missing_from_the_summary: PARTLY CONFIRMED (the summary's list is correct but incomplete)
+
+quantity                                                                                                      experiment                                  mine                                        agree                          
+Q deployed: D1 %; Rel/T-Gen/I-Gen                                                                             54.19; 78/9/22                              54.19; 78/9/22                              yes (flags differ 0/300, 0/465)
+Q wl_dep_n10: D1 %; Rel/T-Gen/I-Gen                                                                           6.24; 79/8/26                               6.24; 79/8/26                               yes (flags differ 0/300, 0/465)
+Q wl_dep_n100: D1 %; Rel/T-Gen/I-Gen                                                                          3.01; 78/6/26                               3.01; 78/6/26                               yes (flags differ 0/300, 0/465)
+Q wl_log_n10: D1 %; Rel/T-Gen/I-Gen                                                                           1.08; 78/7/26                               1.08; 78/7/26                               yes (flags differ 0/300, 0/465)
+Q comp_b_all: D1 %; Rel/T-Gen/I-Gen                                                                           49.03; 78/10/25                             49.03; 78/10/25                             yes (flags differ 0/300, 0/465)
+Q c_n0: D1 %; Rel/T-Gen/I-Gen                                                                                 0.00; 100/6/28                              0.00; 100/6/28                              yes (flags differ 0/300, 0/465)
+Q c_n10: D1 %; Rel/T-Gen/I-Gen                                                                                0.00; 100/6/28                              0.00; 100/6/28                              yes (flags differ 0/300, 0/465)
+Q c_n200: D1 %; Rel/T-Gen/I-Gen                                                                               4.95; 100/57/69                             4.95; 100/57/69                             yes (flags differ 0/300, 0/465)
+L deployed: D1 %; Rel/T-Gen/I-Gen                                                                             62.26; 88/29/66                             62.26; 88/29/66                             yes (flags differ 0/300, 0/469)
+L wl_dep_n10: D1 %; Rel/T-Gen/I-Gen                                                                           20.47; 93/35/72                             20.47; 93/35/72                             yes (flags differ 0/300, 0/469)
+L wl_dep_n100: D1 %; Rel/T-Gen/I-Gen                                                                          4.69; 93/31/69                              4.69; 93/31/69                              yes (flags differ 0/300, 0/469)
+L wl_log_n10: D1 %; Rel/T-Gen/I-Gen                                                                           2.35; 92/28/68                              2.35; 92/28/68                              yes (flags differ 0/300, 0/469)
+L comp_b_all: D1 %; Rel/T-Gen/I-Gen                                                                           59.70; 86/32/66                             59.70; 86/32/66                             yes (flags differ 0/300, 0/469)
+L c_n0: D1 %; Rel/T-Gen/I-Gen                                                                                 1.28; 98/20/83                              1.28; 98/20/83                              yes (flags differ 0/300, 0/469)
+L c_n10: D1 %; Rel/T-Gen/I-Gen                                                                                1.28; 98/20/83                              1.28; 98/20/83                              yes (flags differ 0/300, 0/469)
+L c_n200: D1 %; Rel/T-Gen/I-Gen                                                                               5.33; 98/47/95                              5.33; 98/47/95                              yes (flags differ 0/300, 0/469)
+Q linear COMP_B@10 (3 seeds): D1 %; Rel                                                                       50.54; 76.0                                 50.54; 76.0                                 yes                            
+Q linear RB_UNION@10 (3 seeds): D1 %; Rel                                                                     45.45; 52.7                                 45.45; 52.7                                 yes                            
+Q linear REEDIT_B@10 (3 seeds): D1 %; Rel                                                                     58.92; 75.7                                 58.92; 75.7                                 yes                            
+Q linear COMP_B@ALL (1 seeds): D1 %; Rel                                                                      49.03; 78.0                                 49.03; 78.0                                 yes                            
+Q linear REEDIT_B@ALL (1 seeds): D1 %; Rel                                                                    66.02; 63.0                                 66.02; 63.0                                 yes                            
+Q linear RB_UNION@ALL (1 seeds): D1 %; Rel                                                                    6.24; 1.0                                   6.24; 1.0                                   yes                            
+L linear COMP_B@10 (3 seeds): D1 %; Rel                                                                       62.83; 88.0                                 62.83; 88.0                                 yes                            
+L linear RB_UNION@10 (3 seeds): D1 %; Rel                                                                     52.74; 59.7                                 52.74; 59.7                                 yes                            
+L linear REEDIT_B@10 (3 seeds): D1 %; Rel                                                                     66.10; 87.7                                 66.10; 87.7                                 yes                            
+L linear COMP_B@ALL (1 seeds): D1 %; Rel                                                                      59.70; 86.0                                 59.70; 86.0                                 yes                            
+L linear REEDIT_B@ALL (1 seeds): D1 %; Rel                                                                    78.04; 74.0                                 78.04; 74.0                                 yes                            
+L linear RB_UNION@ALL (1 seeds): D1 %; Rel                                                                    0.00; 1.0                                   0.00; 1.0                                   yes                            
+Q COMP-B ALL rebuilt: flags differing from the P12 record (held-out; edits)                                   0/490; 0/300                                0/490; 0/300                                yes                            
+L COMP-B ALL rebuilt: flags differing from the P12 record (held-out; edits)                                   0/494; 0/300                                0/494; 0/300                                yes                            
+Q round-off floor: flags differing from the deployed weight (edits; held-out; hard negatives), from the rows  1; 13; 26                                   1; 13; 26                                   yes                            
+L round-off floor: flags differing from the deployed weight (edits; held-out; hard negatives), from the rows  0; 0; 1                                     0; 0; 1                                     yes                            
+Q H1: D1 % ReScope-W; Rel; Rel deployed                                                                       1.00; 78.0; 78.0                            1.00; 78.0; 78.0                            yes                            
+Q H1: difference to RB_UNION [95 %]                                                                           -44.44 [-48.97, -40.13]                     -44.44 [-48.81, -39.96]                     yes                            
+Q H1: literal rule helps / one-sided reading met                                                              True / True                                 True / True                                 yes                            
+L H1: D1 % ReScope-W; Rel; Rel deployed                                                                       2.63; 92.0; 88.0                            2.63; 92.0; 88.0                            yes                            
+L H1: difference to RB_UNION [95 %]                                                                           -50.11 [-54.83, -45.36]                     -50.11 [-54.82, -45.32]                     yes                            
+L H1: literal rule helps / one-sided reading met                                                              False / True                                False / True                                yes                            
+Q c' false firing % as run; literal; capped edits (20 draws)                                                  5.91; 5.57; 2.10                            5.91; 5.57; 2.10                            yes                            
+L c' false firing % as run; literal; capped edits (20 draws)                                                  3.03; 3.03; 0.05                            3.03; 3.03; 0.05                            yes                            
+example complaint.deployed_answer                                                                             The image depicts Ithaca Falls, located in  The image depicts Ithaca Falls, located in  yes                            
+example complaint.max_coordinate                                                                              0.5833808636027424                          0.5833808636027424                          yes                            
+example rollback.n_deleted                                                                                    7                                           7                                           yes                            
+example rollback.edits_broken                                                                                 1                                           1                                           yes                            
+example compensation.heldout_changed                                                                          86                                          86                                          yes                            
+example rescope.own_requests_firing                                                                           100                                         100                                         yes                            
+example whynot.answer                                                                                         This scene is from the film "Bernie."       This scene is from the film "Bernie."       yes                            
+example whynot.coordinate                                                                                     0.12600079675131734                         0.1260007967513173                          yes                            
+example whynot.threshold                                                                                      0.2673883577708882                          0.26738835777088926                         yes                            
+re-rendering: results.json / paper_numbers.json / table.txt / h1.json identical                               -                                           True / True / True / True                   yes                            

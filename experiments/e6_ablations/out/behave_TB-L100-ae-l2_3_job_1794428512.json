@@ -1,0 +1,59 @@
+{
+ "log": "TB-L100-ae-l2_3",
+ "assert_clean": {
+  "hook_mismatch": 0,
+  "memo_conflicts": 0,
+  "forwards": 983,
+  "rows": 39591
+ },
+ "memo": {
+  "hits": 9102,
+  "misses": 2005,
+  "writes": 1022,
+  "shards": 21,
+  "shards_other_code": 0,
+  "entries": 12577,
+  "conflicts": 0,
+  "root": "[redacted: local path]/02_research/experiments/10_final/memo/llava",
+  "by_mode": {
+   "tf": 12052,
+   "decode": 509,
+   "prompt": 16
+  },
+  "code": "c76c4da16bd6",
+  "accepted_library_versions": [
+   "c76c4da16bd6"
+  ]
+ },
+ "stats": {
+  "rows": 39591,
+  "pre": 23263,
+  "memo": 9063,
+  "run": 1022,
+  "lib": 6243,
+  "missing": 0,
+  "forwards": 983,
+  "decodes": 117,
+  "hook_mismatch": 0,
+  "near": 26,
+  "near_changed_on_device": 1,
+  "seconds_model": 842.662059545517
+ },
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "written": "2026-11-11 20:21:52",
+ "keys": [
+  "default",
+  "resp_lin",
+  "values_logged",
+  "cal_shared",
+  "cal_logonly",
+  "cal_runmax",
+  "guards_off",
+  "contam_20",
+  "role_all"
+ ]
+}

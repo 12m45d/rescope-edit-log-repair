@@ -1,0 +1,276 @@
+{
+ "available": true,
+ "sets": [
+  "draw0",
+  "draw1",
+  "draw2",
+  "static"
+ ],
+ "n_rows": 32880,
+ "n_fields": 394560,
+ "n_rows_differing": 0,
+ "by_method": {
+  "M1": {
+   "n_rows": 6165,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "M2": {
+   "n_rows": 6165,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "M3": {
+   "n_rows": 6165,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "M4": {
+   "n_rows": 6165,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "M5": {
+   "n_rows": 2055,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "M6": {
+   "n_rows": 2055,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "deployed": {
+   "n_rows": 2055,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  },
+  "pre-edit": {
+   "n_rows": 2055,
+   "n_differing": 0,
+   "n_decision_differing": 0,
+   "n_outcome_differing": 0,
+   "explained_by_gpu_built_gate": 0,
+   "unexplained": 0
+  }
+ },
+ "differing": [],
+ "headline": {
+  "M1/draw0": {
+   "fx": {
+    "rel": 98.0,
+    "tgen": 47.0,
+    "igen": 95.0,
+    "D1": 5.330490405117271,
+    "fired": 5.330490405117271,
+    "T-Loc*": 99.08875349333616,
+    "I-Loc*": 95.73243649283867,
+    "hn_D1": 36.314152410575424,
+    "hn_fired": 37.24727838258165
+   },
+   "e0": {
+    "rel": 98.0,
+    "tgen": 47.0,
+    "igen": 95.0,
+    "D1": 5.330490405117271,
+    "fired": 5.330490405117271,
+    "T-Loc*": 99.08875349333616,
+    "I-Loc*": 95.73243649283867,
+    "hn_D1": 36.314152410575424,
+    "hn_fired": 37.24727838258165
+   }
+  },
+  "M3/draw0": {
+   "fx": {
+    "rel": 97.0,
+    "tgen": 15.0,
+    "igen": 59.0,
+    "D1": 5.756929637526652,
+    "fired": 5.756929637526652,
+    "T-Loc*": 100.0,
+    "I-Loc*": 92.99701052663572,
+    "hn_D1": 30.48211508553655,
+    "hn_fired": 31.493001555209954
+   },
+   "e0": {
+    "rel": 97.0,
+    "tgen": 15.0,
+    "igen": 59.0,
+    "D1": 5.756929637526652,
+    "fired": 5.756929637526652,
+    "T-Loc*": 100.0,
+    "I-Loc*": 92.99701052663572,
+    "hn_D1": 30.48211508553655,
+    "hn_fired": 31.493001555209954
+   }
+  },
+  "deployed/static": {
+   "fx": {
+    "rel": 88.0,
+    "tgen": 29.0,
+    "igen": 66.0,
+    "D1": 62.26012793176972,
+    "fired": null,
+    "T-Loc*": 83.36011236154937,
+    "I-Loc*": 78.24240210612258,
+    "hn_D1": 65.0855365474339,
+    "hn_fired": null
+   },
+   "e0": {
+    "rel": 88.0,
+    "tgen": 29.0,
+    "igen": 66.0,
+    "D1": 62.26012793176972,
+    "fired": null,
+    "T-Loc*": 83.36011236154937,
+    "I-Loc*": 78.24240210612258,
+    "hn_D1": 65.0855365474339,
+    "hn_fired": null
+   }
+  }
+ },
+ "numbers": {
+  "source": "[redacted: local path]/02_research/experiments/10_final/e0_sanity/out/results.json",
+  "n_compared": 832,
+  "n_differing": 0,
+  "max_abs_diff": 1.4210854715202004e-14,
+  "differing": [],
+  "available": true
+ },
+ "row_sets": {
+  "edits": {
+   "n_fx": 300,
+   "n_library": 300,
+   "same_set": true,
+   "same_order": true
+  },
+  "hard negatives (valid)": {
+   "n_fx": 1286,
+   "n_library": 1286,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes repair (valid)": {
+   "n_fx": 494,
+   "n_library": 494,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes repair (pre-correct: D2)": {
+   "n_fx": 98,
+   "n_library": 98,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout (valid)": {
+   "n_fx": 494,
+   "n_library": 494,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout (pre-correct: D2)": {
+   "n_fx": 87,
+   "n_library": 87,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout_disjoint (valid)": {
+   "n_fx": 469,
+   "n_library": 469,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout_disjoint (pre-correct: D2)": {
+   "n_fx": 78,
+   "n_library": 78,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout_strict (valid)": {
+   "n_fx": 379,
+   "n_library": 379,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes heldout_strict (pre-correct: D2)": {
+   "n_fx": 72,
+   "n_library": 72,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes all (valid)": {
+   "n_fx": 988,
+   "n_library": 988,
+   "same_set": true,
+   "same_order": true
+  },
+  "probes all (pre-correct: D2)": {
+   "n_fx": 185,
+   "n_library": 185,
+   "same_set": true,
+   "same_order": true
+  }
+ },
+ "row_sets_equal": true,
+ "seconds": 430.63275241851807,
+ "forwards": 4140,
+ "hook_mismatch": 0,
+ "n_unexplained": 0,
+ "n_explained": 0,
+ "cause": "rows that differ are re-run with a gate built as the sanity agent built it (log factors, rebased values and thresholds computed on the GPU, calibration queries scored one by one); 'explained' = that gate reproduces the sanity agent's row, i.e. the difference is the last-bit difference between CPU-built (fx) and GPU-built values / thresholds",
+ "ok": true,
+ "shared_memo": {
+  "n_rows": 32880,
+  "n_rows_differing": 0,
+  "n_unexplained": 0,
+  "numbers_differing": 0,
+  "forwards": 0,
+  "ok": true
+ },
+ "test": "regress",
+ "log": "TB-L100-ae-l2_3",
+ "seconds_test": 433.22664642333984,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 17:57:20",
+ "session_stats": {
+  "rows": 32880,
+  "pre": 22936,
+  "memo": 9944,
+  "run": 0,
+  "lib": 0,
+  "missing": 0,
+  "forwards": 0,
+  "decodes": 0,
+  "hook_mismatch": 0,
+  "near": 110,
+  "near_changed_on_device": 0,
+  "seconds_model": 0.0
+ },
+ "peak_gpu_gb": 14.16447639465332,
+ "peak_rss_gb": 14.220821380615234
+}

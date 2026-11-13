@@ -1,0 +1,7 @@
+PATCHES OF THE LEAN REVIEW (review_lean; 2026-11-11 19:43:53 UTC)
+No line of fx/*.py was changed: the review found no defect in the driver or in the feature layer that needed a patch.
+Code fingerprint before and after: 6a71f0d2cd71 / 6a71f0d2cd71 (library c76c4da16bd6).
+Decision digest of the existing row set (both development logs, draw 0): review_lean/out/digest_before.json == digest_after.json (120 rows, 2616810 decisions, 0 differ); tests/digest.py: unchanged.
+Files written by the review: review_lean/ (code rl_*.py, out/, logs/, verdicts.json, this file); tests/out/gpu_<development log>_d_e1.json and e1_demo_<log>/ (the full test d, re-run on the
+present code), tests/out/*.json of the CPU suites (re-run), tests/out/table*.txt and READY.json (re-rendered; fields 'reviewed', 'review' added); USAGE.txt (the header and one line of KNOWN LIMITATIONS OF STAGE 2 now name the review).
+Memo: entries written by the review are outcomes of forwards under gates of the development logs (same keys as the experiments use).

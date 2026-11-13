@@ -1,0 +1,45 @@
+{
+ "pass": true,
+ "per_log": {
+  "TB-Q100-ae-l2_3": {
+   "cos_centred": 2.6645352591003757e-15,
+   "cos_null": 3.3306690738754696e-16,
+   "white_0.01": 4.440892098500626e-16,
+   "white_0.1": 4.440892098500626e-16,
+   "white_1": 4.440892098500626e-16,
+   "whitecos_0.01": 1.9095836023552692e-14,
+   "whitecos_0.1": 1.8762769116165146e-14,
+   "whitecos_1": 1.8096635301390052e-14,
+   "rescope_null": 4.440892098500626e-16,
+   "rescope_nullW": 2.220446049250313e-16,
+   "keys_are_the_cosine_gate_keys": true,
+   "cosine_gate_key_is_not_the_B1_key": true
+  },
+  "TB-L100-ae-l2_3": {
+   "cos_centred": 2.220446049250313e-15,
+   "cos_null": 4.440892098500626e-16,
+   "white_0.01": 3.3306690738754696e-16,
+   "white_0.1": 4.440892098500626e-16,
+   "white_1": 4.440892098500626e-16,
+   "whitecos_0.01": 3.608224830031759e-14,
+   "whitecos_0.1": 4.796163466380676e-14,
+   "whitecos_1": 2.375877272697835e-14,
+   "rescope_null": 3.3306690738754696e-16,
+   "rescope_nullW": 3.3306690738754696e-16,
+   "keys_are_the_cosine_gate_keys": true,
+   "cosine_gate_key_is_not_the_B1_key": true
+  }
+ },
+ "worst_abs_deviation_from_1": 4.796163466380676e-14,
+ "note": "2 logs x 10 gates x 100 edits: max |score(k_i)_i - 1| = 4.8e-14; k_i = EditLog.K = the file's K1_solver = det_key (and det_w |k_i|) of the library's cosine gate: True",
+ "test": "c2_own_key_real",
+ "group": "scores",
+ "what": "own-key value on the development logs: 8 registered variants, rescope_null (100 REPAIR keys) and rescope_nullW (600 BEN-W keys)",
+ "seconds": 2.414088726043701,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

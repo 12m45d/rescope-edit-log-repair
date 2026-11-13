@@ -1,0 +1,253 @@
+E0 VERIFICATION (independent)      rendered 2026-11-11 01:47:44 by code/render.py from out/*.json; no number is typed by hand
+
+======================================================================================================================================================
+CHECK 1  two-block / shared-scale calibration: library against my naive implementation of PROTOCOL.md section 6, and validity
+======================================================================================================================================================
+1a  firing decisions on every cached sequence of the log (probes, Rel / T-Gen / I-Gen, hard negatives, benign rows with an answer; teacher-forced key, and the
+    prompt-only key for seeds 0, 1): fired / releasing edit / own edit candidate / own edit released.  Features ncoord, cos; rules two-block, shared; alpha 1/100, 1/20, 1/5;
+    n = 200 (seeds 0-4) and n = 40 (seeds 0, 1); guards on (capped) and off (uncapped).  'structure' = cache rows == the log's probe records, pools re-derived, row sets equal.
+log              calibrations  decisions  differing  of them real  max |eta diff|  rank differs  capped sets differ  silenced counts differ  eta = inf  with capped edits  structure  verdict
+---------------  ------------  ---------  ---------  ------------  --------------  ------------  ------------------  ----------------------  ---------  -----------------  ---------  -------
+TB-Q100-ae-l2_3  84            3225600    0          0             1.2e-15         0             0                   0                       8          23                 yes        PASS
+TB-L100-ae-l2_3  84            3224928    0          0             1.1e-15         0             0                   0                       8          27                 yes        PASS
+
+1b  validity: 1000 random splits of the cached benign rows into n calibration rows and test rows; false-firing rate = share of test rows on which an edit is a candidate.
+    pools: 'benign' = the 3000 label-free benign rows of the cache (prompt-only key), 'probe' = the valid probe rows of the log (teacher-forced key).
+    cells: mean over splits in % (standard error); bound = floor(alpha (n2 + 1)) / (n2 + 1); capped = guards on (naive, 1000 splits) with the mean number of capped edits.
+    n = 40
+    log  feature  pool    rule       alpha  bound %  uncapped lib % (se)  naive %  excess / se  <= alpha + 3 se  capped %  edits capped
+    ---  -------  ------  ---------  -----  -------  -------------------  -------  -----------  ---------------  --------  ------------
+    L    cos      benign  two_block  1/20   4.76     4.91 (0.15)          4.91     +1.0         yes              4.91      52.5
+    L    cos      benign  two_block  1/5    19.05    19.19 (0.27)         19.19    +0.5         yes              19.19     20.2
+    L    cos      benign  shared     1/20   4.88     4.87 (0.11)          4.87     -0.1         yes              4.87      0.0
+    L    cos      benign  shared     1/5    19.51    19.24 (0.19)         19.24    -1.4         yes              19.24     0.0
+    L    cos      probe   two_block  1/20   4.76     4.77 (0.15)          4.77     +0.0         yes              4.77      52.4
+    L    cos      probe   two_block  1/5    19.05    19.35 (0.27)         19.35    +1.1         yes              19.35     20.1
+    L    cos      probe   shared     1/20   4.88     5.02 (0.11)          5.02     +1.3         yes              5.02      0.0
+    L    cos      probe   shared     1/5    19.51    19.39 (0.20)         19.39    -0.6         yes              19.39     0.0
+    L    ncoord   benign  two_block  1/20   4.76     4.82 (0.14)          4.82     +0.4         yes              4.82      0.1
+    L    ncoord   benign  two_block  1/5    19.05    19.01 (0.26)         19.01    -0.2         yes              19.01     0.0
+    L    ncoord   benign  shared     1/20   4.88     4.91 (0.11)          4.91     +0.3         yes              4.91      0.0
+    L    ncoord   benign  shared     1/5    19.51    19.34 (0.19)         19.34    -0.9         yes              19.34     0.0
+    L    ncoord   probe   two_block  1/20   4.76     4.87 (0.15)          4.87     +0.7         yes              4.87      0.3
+    L    ncoord   probe   two_block  1/5    19.05    19.23 (0.27)         19.23    +0.7         yes              19.23     0.0
+    L    ncoord   probe   shared     1/20   4.88     4.92 (0.11)          4.92     +0.4         yes              4.92      0.0
+    L    ncoord   probe   shared     1/5    19.51    19.47 (0.19)         19.47    -0.2         yes              19.47     0.0
+    Q    cos      benign  two_block  1/20   4.76     5.05 (0.15)          5.05     +1.9         yes              5.05      35.1
+    Q    cos      benign  two_block  1/5    19.05    19.35 (0.27)         19.35    +1.1         yes              19.35     5.8
+    Q    cos      benign  shared     1/20   4.88     4.73 (0.11)          4.73     -1.4         yes              4.73      0.0
+    Q    cos      benign  shared     1/5    19.51    19.64 (0.20)         19.64    +0.6         yes              19.64     0.0
+    Q    cos      probe   two_block  1/20   4.76     4.68 (0.14)          4.68     -0.6         yes              4.68      36.0
+    Q    cos      probe   two_block  1/5    19.05    18.93 (0.26)         18.93    -0.5         yes              18.93     6.2
+    Q    cos      probe   shared     1/20   4.88     5.00 (0.11)          5.00     +1.1         yes              5.00      0.0
+    Q    cos      probe   shared     1/5    19.51    19.57 (0.19)         19.57    +0.3         yes              19.57     0.0
+    Q    ncoord   benign  two_block  1/20   4.76     4.71 (0.15)          4.71     -0.4         yes              4.71      0.0
+    Q    ncoord   benign  two_block  1/5    19.05    19.07 (0.26)         19.07    +0.1         yes              19.07     0.0
+    Q    ncoord   benign  shared     1/20   4.88     4.84 (0.11)          4.84     -0.4         yes              4.84      0.0
+    Q    ncoord   benign  shared     1/5    19.51    19.47 (0.21)         19.47    -0.2         yes              19.47     0.0
+    Q    ncoord   probe   two_block  1/20   4.76     4.92 (0.15)          4.92     +1.1         yes              4.92      0.0
+    Q    ncoord   probe   two_block  1/5    19.05    19.32 (0.27)         19.32    +1.0         yes              19.32     0.0
+    Q    ncoord   probe   shared     1/20   4.88     5.06 (0.11)          5.06     +1.7         yes              5.06      0.0
+    Q    ncoord   probe   shared     1/5    19.51    19.61 (0.20)         19.61    +0.5         yes              19.61     0.0
+    n = 200
+    log  feature  pool    rule       alpha  bound %  uncapped lib % (se)  naive %  excess / se  <= alpha + 3 se  capped %  edits capped
+    ---  -------  ------  ---------  -----  -------  -------------------  -------  -----------  ---------------  --------  ------------
+    L    cos      benign  two_block  1/100  0.99     1.06 (0.03)          1.06     +2.1         yes              1.06      64.8
+    L    cos      benign  two_block  1/20   4.95     4.95 (0.07)          4.95     -0.0         yes              4.95      32.5
+    L    cos      benign  two_block  1/5    19.80    19.77 (0.13)         19.77    -0.3         yes              19.77     3.0
+    L    cos      benign  shared     1/100  1.00     1.03 (0.02)          1.03     +1.6         yes              1.03      0.0
+    L    cos      benign  shared     1/20   4.98     4.93 (0.05)          4.93     -0.9         yes              4.93      0.0
+    L    cos      benign  shared     1/5    19.90    19.83 (0.09)         19.83    -0.7         yes              19.83     0.0
+    L    cos      probe   two_block  1/100  0.99     0.97 (0.03)          0.97     -0.5         yes              0.97      64.4
+    L    cos      probe   two_block  1/20   4.95     4.93 (0.07)          4.93     -0.3         yes              4.93      34.1
+    L    cos      probe   two_block  1/5    19.80    19.54 (0.13)         19.54    -2.0         yes              19.54     3.0
+    L    cos      probe   shared     1/100  1.00     1.01 (0.03)          1.01     +0.5         yes              1.01      0.0
+    L    cos      probe   shared     1/20   4.98     5.06 (0.06)          5.06     +1.6         yes              5.06      0.0
+    L    cos      probe   shared     1/5    19.90    19.88 (0.10)         19.88    -0.2         yes              19.88     0.0
+    L    ncoord   benign  two_block  1/100  0.99     1.01 (0.03)          1.01     +0.5         yes              1.01      0.5
+    L    ncoord   benign  two_block  1/20   4.95     4.98 (0.07)          4.98     +0.4         yes              4.98      0.0
+    L    ncoord   benign  two_block  1/5    19.80    19.67 (0.12)         19.67    -1.1         yes              19.67     0.0
+    L    ncoord   benign  shared     1/100  1.00     1.01 (0.02)          1.01     +0.7         yes              1.01      0.0
+    L    ncoord   benign  shared     1/20   4.98     4.98 (0.05)          4.98     +0.2         yes              4.98      0.0
+    L    ncoord   benign  shared     1/5    19.90    19.88 (0.09)         19.88    -0.2         yes              19.88     0.0
+    L    ncoord   probe   two_block  1/100  0.99     0.98 (0.03)          0.98     -0.2         yes              0.98      2.0
+    L    ncoord   probe   two_block  1/20   4.95     4.94 (0.07)          4.94     -0.1         yes              4.94      0.0
+    L    ncoord   probe   two_block  1/5    19.80    19.83 (0.13)         19.83    +0.2         yes              19.83     0.0
+    L    ncoord   probe   shared     1/100  1.00     0.99 (0.02)          0.99     -0.2         yes              0.99      0.0
+    L    ncoord   probe   shared     1/20   4.98     5.06 (0.06)          5.06     +1.5         yes              5.06      0.0
+    L    ncoord   probe   shared     1/5    19.90    20.04 (0.09)         20.04    +1.5         yes              20.04     0.0
+    Q    cos      benign  two_block  1/100  0.99     1.01 (0.03)          1.01     +0.7         yes              1.01      24.4
+    Q    cos      benign  two_block  1/20   4.95     5.08 (0.07)          5.08     +1.9         yes              5.08      4.7
+    Q    cos      benign  two_block  1/5    19.80    20.00 (0.13)         20.00    +1.5         yes              20.00     0.2
+    Q    cos      benign  shared     1/100  1.00     0.94 (0.02)          0.94     -2.3         yes              0.94      0.0
+    Q    cos      benign  shared     1/20   4.98     4.96 (0.05)          4.96     -0.3         yes              4.96      0.0
+    Q    cos      benign  shared     1/5    19.90    20.06 (0.09)         20.06    +1.8         yes              20.06     0.0
+    Q    cos      probe   two_block  1/100  0.99     0.99 (0.03)          0.99     -0.1         yes              0.99      25.2
+    Q    cos      probe   two_block  1/20   4.95     5.03 (0.07)          5.03     +1.1         yes              5.03      5.2
+    Q    cos      probe   two_block  1/5    19.80    19.77 (0.13)         19.77    -0.2         yes              19.77     0.4
+    Q    cos      probe   shared     1/100  1.00     0.96 (0.03)          0.96     -1.2         yes              0.96      0.0
+    Q    cos      probe   shared     1/20   4.98     5.03 (0.06)          5.03     +1.0         yes              5.03      0.0
+    Q    cos      probe   shared     1/5    19.90    19.93 (0.10)         19.93    +0.3         yes              19.93     0.0
+    Q    ncoord   benign  two_block  1/100  0.99     0.99 (0.03)          0.99     +0.1         yes              0.99      0.3
+    Q    ncoord   benign  two_block  1/20   4.95     5.09 (0.07)          5.09     +2.0         yes              5.09      0.0
+    Q    ncoord   benign  two_block  1/5    19.80    19.85 (0.13)         19.85    +0.4         yes              19.85     0.0
+    Q    ncoord   benign  shared     1/100  1.00     0.98 (0.02)          0.98     -0.8         yes              0.98      0.0
+    Q    ncoord   benign  shared     1/20   4.98     4.95 (0.05)          4.95     -0.5         yes              4.95      0.0
+    Q    ncoord   benign  shared     1/5    19.90    19.82 (0.09)         19.82    -0.9         yes              19.82     0.0
+    Q    ncoord   probe   two_block  1/100  0.99     1.03 (0.03)          1.03     +1.1         yes              1.03      0.1
+    Q    ncoord   probe   two_block  1/20   4.95     4.95 (0.07)          4.95     +0.0         yes              4.95      0.0
+    Q    ncoord   probe   two_block  1/5    19.80    20.03 (0.13)         20.03    +1.7         yes              20.03     0.0
+    Q    ncoord   probe   shared     1/100  1.00     1.03 (0.02)          1.03     +1.3         yes              1.03      0.0
+    Q    ncoord   probe   shared     1/20   4.98     5.02 (0.05)          5.02     +0.8         yes              5.02      0.0
+    Q    ncoord   probe   shared     1/5    19.90    19.81 (0.10)         19.81    -0.9         yes              19.81     0.0
+    n = 40, alpha = 1/100: eta = +inf in all splits of all 16 cells (rank exceeds the block size), uncapped false firing 0, capped false firing 0.0000 % at most (every edit capped).
+    cells (library and naive): 192; above alpha + 3 se: 0; above the exact bound + 3 se: 0; largest excess over the bound: +2.1 se; library vs naive decisions differing: 0 of 215625600; capped-edit counts equal: True.   verdict 1b: PASS
+    capped rule next to the uncapped one: largest increase of the mean false-firing rate by the guard caps over all cells: 0.0000 points (largest mean number of capped edits in a cell with a finite eta: 64.8 of 100)
+    extra (x1): one seed is used for the draw and for the split.  Shared seed against an independently seeded split, default method, 2000 paired draws:
+      TB-Q100-ae-l2_3: firing 4.39 vs 4.45 % (diff -0.06, z -1.2); T-Gen coverage 60.9 vs 61.3 % (diff -0.41, z -2.2); block composition z: image share +0.6, pool position +1.0
+      TB-L100-ae-l2_3: firing 2.99 vs 3.01 % (diff -0.02, z -0.3); T-Gen coverage 44.0 vs 43.7 % (diff +0.29, z +1.7); block composition z: image share +1.2, pool position +1.1
+
+======================================================================================================================================================
+CHECK 2  key caches, benign pool, hard negatives
+======================================================================================================================================================
+qwen25vl  (14300 cached sequences)   verdict: PASS
+  re-capture with my own hook (own model instance; module weight == checkpoint file: True), seeded sample of 60 sequences, all kinds (Q|rel 4/4, Q|tgen 4/4, Q|igen 4/4, Q|probe 6/6, Q|hn_i 5/5, Q|hn_q 5/5, Q|hn_x 5/5, Q|benign 8/8, QK|rel 4/4, QK|tgen 4/4, QK|igen 4/4, QK|probe 7/7):
+    bitwise equal: teacher-forced key 56/56, prompt-only key 60/60, the 11 decode-step keys 60/60 sequences; lp_tf / lengths 56/56, lp_decode 60/60; pre-edit outcome 56/56
+    re-captured sequences from capture parts written before / after the last change of rescope/evaluate.py (2026-11-10 21:25:16): 44 / 16
+  last prompt indices re-derived with the tokenizer for EVERY sequence: teacher-forced differing 0/11900, prompt-only differing 0/14300; shifted 0 (index 0, same set: True), token at lp_tf {}, answers starting with a digit 0; by kind {}; shifted Rel edits []
+  index against the raw data: edit sequences differing from the stream {'rel': 0, 'tgen': 0, 'igen': 0} of {'rel': 2000, 'tgen': 2000, 'igen': 2000}; probe rows differing from their eval item 0/1000; probe set re-derived: {'long_stream': {'n_eligible': 3174, 'equal_cache_probe_uids': True}, 'first_100': {'n_eligible': 3174, 'equal_cache_probe_uids': True}}
+  benign pool (1500 image + 1500 text rows, 3000 distinct queries): rows whose item is a probe item 0, an edit item 0; rows equal to an edit query 0 (by file content 0), to a probe query 0 (by content 0)
+    image rows sharing the QUESTION string with an edit 812, with a probe 764; sharing the IMAGE with an edit 0 (content 0, Freebase MID 0), with a probe 0 (content 0); text rows sharing the question with an edit 0, with a probe 0
+    family QK of the same backbone: benign image rows that ARE a probe query 215 (REPAIR 107, HELD-OUT-DISJOINT 108; index flag overlap.QK.query_in_probe 215), an edit query 0
+  hard negatives, 30 seeded rows (12 HN-I, 12 HN-Q, 6 HN-X): image / question from the stated edit and source item, source unrelated (no probe item, no shared image, MID, name): 30/30; every row of the file, image / question against its edit(s): 1800/1800
+    pre-edit answer re-decoded with my decoder v2: y0 equal 30/30, 48-token text equal 30/30, validity equal 30/30 (29 valid); keys of the REAL decode against the cached step keys: 30/30 sequences (330 forwards)
+  md5 of 7426 image files against the index: 0 differing
+llava  (8800 cached sequences)   verdict: PASS
+  re-capture with my own hook (own model instance; module weight == checkpoint file: True), seeded sample of 60 sequences, all kinds (L|rel 7/7, L|tgen 7/7, L|igen 7/7, L|probe 8/8, L|hn_i 7/7, L|hn_q 7/7, L|hn_x 7/7, L|benign 10/10):
+    bitwise equal: teacher-forced key 55/55, prompt-only key 60/60, the 11 decode-step keys 60/60 sequences; lp_tf / lengths 55/55, lp_decode 60/60; pre-edit outcome 55/55
+    ALL 97 shifted sequences: key at lp_tf 97/97, key at the decode's token 97/97, prompt-only 97/97, steps 97/97; token at lp_tf ['▁'], at the decode's position [':']; cosine between the two keys 0.24 .. 0.66
+    re-captured sequences from capture parts written before / after the last change of rescope/evaluate.py (2026-11-10 21:25:16): 134 / 23
+  last prompt indices re-derived with the tokenizer for EVERY sequence: teacher-forced differing 0/6399, prompt-only differing 0/8800; shifted 97 (index 97, same set: True), token at lp_tf {'▁': 97}, answers starting with a digit 97; by kind {'rel': 8, 'tgen': 8, 'igen': 8, 'probe': 46, 'hn_i': 6, 'hn_q': 3, 'hn_x': 1, 'benign': 17}; shifted Rel edits [39, 208, 293, 630, 631, 782, 829, 894]
+  index against the raw data: edit sequences differing from the stream {'rel': 0, 'tgen': 0, 'igen': 0} of {'rel': 1000, 'tgen': 1000, 'igen': 1000}; probe rows differing from their eval item 0/1000; probe set re-derived: {'long_stream': {'n_eligible': 3174, 'equal_cache_probe_uids': True}, 'first_100': {'n_eligible': 3174, 'equal_cache_probe_uids': True}}
+  benign pool (1500 image + 1500 text rows, 3000 distinct queries): rows whose item is a probe item 0, an edit item 0; rows equal to an edit query 0 (by file content 0), to a probe query 0 (by content 0)
+    image rows sharing the QUESTION string with an edit 712, with a probe 764; sharing the IMAGE with an edit 0 (content 0, Freebase MID 0), with a probe 0 (content 0); text rows sharing the question with an edit 0, with a probe 0
+  hard negatives, 30 seeded rows (12 HN-I, 12 HN-Q, 6 HN-X): image / question from the stated edit and source item, source unrelated (no probe item, no shared image, MID, name): 30/30; every row of the file, image / question against its edit(s): 1800/1800
+    pre-edit answer re-decoded with my decoder v2: y0 equal 30/30, 48-token text equal 30/30, validity equal 30/30 (29 valid); keys of the REAL decode against the cached step keys: 30/30 sequences (103 forwards)
+  md5 of 3944 image files against the index: 0 differing
+
+======================================================================================================================================================
+CHECK 3  cached-key evaluation: rows of SparseEvaluator == rows of the full Evaluator (two gates: default method, cosine two-block; draw 0)
+======================================================================================================================================================
+log              group           gate position  items  rows (2 gates)  rows equal  fired G1/G2                   verdict
+---------------  --------------  -------------  -----  --------------  ----------  ----------------------------  -------
+TB-Q100-ae-l2_3  edits           tf             300    600             600         245/164                       PASS
+TB-Q100-ae-l2_3  probes          tf             979    1958            1958        46/34                         PASS
+TB-Q100-ae-l2_3  probes_invalid  tf             21     42              42          1/3                           PASS
+TB-Q100-ae-l2_3  shifted         prompt         0      0               0           0/0                           PASS
+TB-Q100-ae-l2_3  hn              tf             1278   2556            2556        408/96                        PASS
+TB-Q100-ae-l2_3  all                            2578   5156            5156        sparse forwards 999 of 5156   PASS
+TB-L100-ae-l2_3  edits           tf             300    600             600         260/196                       PASS
+TB-L100-ae-l2_3  probes          tf             988    1976            1976        59/53                         PASS
+TB-L100-ae-l2_3  probes_invalid  tf             11     22              22          0/0                           PASS
+TB-L100-ae-l2_3  shifted         prompt         52     104             104         11/6                          PASS
+TB-L100-ae-l2_3  hn              tf             1286   2572            2572        479/405                       PASS
+TB-L100-ae-l2_3  all                            2637   5274            5274        sparse forwards 1471 of 5274  PASS
+groups: edits = Rel / T-Gen / I-Gen of all edits; probes = every valid probe row (all pools); probes_invalid = rows with an invalid but scorable pre-edit answer;
+shifted = lp 'prompt' on the sequences whose teacher-forced last prompt position differs from the decode's; hn = valid hard negatives of the final set.  A row = the whole dict.
+
+======================================================================================================================================================
+CHECK 4  DUAL from my own generations; token-level locality of the deployed log
+======================================================================================================================================================
+TB-Q100-ae-l2_3   verdict: PASS   (weights: H.W0 == checkpoint file True, H.WE == my rebuild from the batch deltas True, composite delta True)
+  generations, mine against the library's (100 valid HELD-OUT-DISJOINT probe rows + 50 edit prompts): deployed 48-token text equal 150/150, 10-token answer 150/150; pre-edit 150/150, 150/150; degenerate outputs (library rows) {'deployed': 0, 'pre-edit': 0, 'dual': 0}
+  DUAL 'eq': released flag equal 150/150, matching edits equal 150/150, returned text equal 150/150; mine: deployed answer released on 0/100 probe rows and 11/50 edit prompts, own target returned 11/50 (library 0, 11, 11)
+  DUAL 'contains': released flag equal 150/150, matching edits equal 150/150, returned text equal 150/150; mine: deployed answer released on 3/100 probe rows and 16/50 edit prompts, own target returned 11/50 (library 3, 16, 11)
+  token-level locality of the deployed log, valid HELD-OUT-DISJOINT rows (text 241, image 224): T-Loc* mine 92.20 library 92.20; I-Loc* mine 92.08 library 92.08; per-row values differing 0/465; y0 reproduced by my W_0 465/465; D1 54.19 %, flags equal to the stored complaints 465/465; non-finite rows 0
+  stored benchmark locality (vendor pass, reference answers, padded batches of 8, all 500 items): T-Loc 84.24, I-Loc 87.86;  SIGNED difference T-Loc* - T-Loc = +7.96, I-Loc* - I-Loc = +4.22 (library: +7.96, +4.22)
+  the BENCHMARK quantity itself recomputed with my code at B = 1 (reference answers, benchmark formats, 500 items): T-Loc 84.50 (stored 84.24, diff +0.26), I-Loc 88.46 (stored 87.86, diff +0.60); non-finite 0 / 0
+  the same on ALL valid probe rows (979; the pool of the library's test b12 and of the library summary): T-Loc* mine 91.87 (library test 91.87), I-Loc* mine 90.97 (library test 90.97); difference to the stored benchmark +7.63 / +3.11 (library test +7.63 / +3.11)
+  decoder-v2 pre-edit answers of the 100 sampled probe rows re-decoded (library rows, equal to my generations): equal to the stored y0 on 100/100
+TB-L100-ae-l2_3   verdict: PASS   (weights: H.W0 == checkpoint file True, H.WE == my rebuild from the batch deltas True, composite delta True)
+  generations, mine against the library's (100 valid HELD-OUT-DISJOINT probe rows + 50 edit prompts): deployed 48-token text equal 150/150, 10-token answer 150/150; pre-edit 150/150, 150/150; degenerate outputs (library rows) {'deployed': 0, 'pre-edit': 0, 'dual': 0}
+  DUAL 'eq': released flag equal 150/150, matching edits equal 150/150, returned text equal 150/150; mine: deployed answer released on 2/100 probe rows and 21/50 edit prompts, own target returned 21/50 (library 2, 21, 21)
+  DUAL 'contains': released flag equal 150/150, matching edits equal 150/150, returned text equal 150/150; mine: deployed answer released on 2/100 probe rows and 24/50 edit prompts, own target returned 21/50 (library 2, 24, 21)
+  token-level locality of the deployed log, valid HELD-OUT-DISJOINT rows (text 246, image 223): T-Loc* mine 83.36 library 83.36; I-Loc* mine 78.24 library 78.24; per-row values differing 0/469; y0 reproduced by my W_0 469/469; D1 62.26 %, flags equal to the stored complaints 469/469; non-finite rows 0
+  stored benchmark locality (vendor pass, reference answers, padded batches of 8, all 500 items): T-Loc 77.94, I-Loc 80.63;  SIGNED difference T-Loc* - T-Loc = +5.42, I-Loc* - I-Loc = -2.39 (library: +5.42, -2.39)
+  the BENCHMARK quantity itself recomputed with my code at B = 1 (reference answers, benchmark formats, 500 items): T-Loc 77.77 (stored 77.94, diff -0.17), I-Loc 80.55 (stored 80.63, diff -0.08); non-finite 0 / 0
+  the same on ALL valid probe rows (988; the pool of the library's test b12 and of the library summary): T-Loc* mine 82.36 (library test 82.36), I-Loc* mine 77.47 (library test 77.47); difference to the stored benchmark +4.42 / -3.16 (library test +4.42 / -3.16)
+  decoder-v2 pre-edit answers of the 100 sampled probe rows re-decoded (library rows, equal to my generations): equal to the stored y0 on 100/100
+
+======================================================================================================================================================
+CHECK 5  sanity table: M1 and M3, gate level and behaviour, recomputed (my naive rule / my own replay hook) and compared with the reported rows
+======================================================================================================================================================
+TB-Q100-ae-l2_3   verdict: PASS
+  gate level: my decisions against the stored flags, M1 - M4 (20 draws, capped and uncapped), M5, M6: 0 of 1656936 differing; calibration rows differing in 0 of 20 draws; rows of the reported table reproduced from MY decisions: M1 yes, M2 yes, M3 yes, M4 yes, M5 yes, M6 yes
+    method  source               fire %[5th-95th]  cov T/I  sil before>after  HN any I/Q/X  HN own I/Q/X
+    ------  -------------------  -----------------------------------------------------------------------------------------------------------------------
+    M1      reported (20 draws)  4.65[2.56-7.13] 62.2/72.7 0.0>0 37/27/53 32/20/44
+    M1      mine (20 draws)      4.65[2.56-7.13] 62.2/72.7 0.0>0 37/27/53 32/20/44
+    M1      mine, draw 0         4.95 60.0/70.0 0>0 37.2/23.4/51.5 31.6/17.8/42.4   (eta 0.162233, capped edits 0, eta equal to the stored one to 3e-16)
+    M3      reported (20 draws)  4.72[2.94-7.57] 12.2/50.5 3.9>0 11/17/18 6/9/12
+    M3      mine (20 draws)      4.72[2.94-7.57] 12.2/50.5 3.9>0 11/17/18 6/9/12
+    M3      mine, draw 0         3.01 8.0/49.0 9>0 5.4/8.8/12.1 3.4/5.9/7.1   (eta 0.082434, capped edits 9, eta equal to the stored one to 1e-16)
+  behaviour: rows of the reported table (mean of draws 0 - 2) recomputed from the stored per-row flags: M1 yes, M2 yes, M3 yes, M4 yes, M5 yes, M6 yes, deployed yes
+  my own run of draw 0 (2043 sequences; own model instance, own hook, own rebased values, calibration from the cached keys on the CPU): keys bitwise equal to the cache 2043/2043
+    method  source                        Rel/T/I exact %  D1 % disj/strict  HN D1 % I/Q/X  T-Loc*/I-Loc*  per-sequence comparison with the stored rows
+    ------  ----------------------------  ---------------------------------------------------------------  ------------------------------------------------------------------------------------------
+    M1      reported (mean of draws 0-2)  100/56/68 3.94/3.11 32.3/23.7/48.5 100.00/98.50
+    M1      stored rows, draw 0           100/57/69 4.95/3.73 36.2/23.4/51.5 100.00/98.19
+    M1      mine, draw 0                  100/57/69 4.95/3.73 36.2/23.4/51.5 100.00/98.19                  flags differing 0 in 0 of 2043 rows; fired 676; thresholds max |diff| 1.1e-15, capped True
+    M3      reported (mean of draws 0-2)  99/13/49 4.23/3.91 8.1/15.4/16.2 100.00/98.68
+    M3      stored rows, draw 0           98/9/49 3.01/2.93 5.1/8.8/12.1 100.00/99.00
+    M3      mine, draw 0                  98/9/49 3.01/2.93 5.1/8.8/12.1 100.00/99.00                      flags differing 0 in 0 of 2043 rows; fired 274; thresholds max |diff| 3.3e-16, capped True
+TB-L100-ae-l2_3   verdict: PASS
+  gate level: my decisions against the stored flags, M1 - M4 (20 draws, capped and uncapped), M5, M6: 0 of 1667952 differing; calibration rows differing in 0 of 20 draws; rows of the reported table reproduced from MY decisions: M1 yes, M2 yes, M3 yes, M4 yes, M5 yes, M6 yes
+    method  source               fire %[5th-95th]  cov T/I  sil before>after  HN any I/Q/X  HN own I/Q/X
+    ------  -------------------  ------------------------------------------------------------------------------------------------------------------------
+    M1      reported (20 draws)  3.09[0.42-7.46] 43.2/90.8 0.2>0 19/38/44 7/33/39
+    M1      mine (20 draws)      3.09[0.42-7.46] 43.2/90.8 0.2>0 19/38/44 7/33/39
+    M1      mine, draw 0         5.33 51.0/96.0 0>0 26.1/45.4/54.5 7.8/37.5/45.5   (eta 0.100105, capped edits 0, eta equal to the stored one to 4e-16)
+    M3      reported (20 draws)  4.91[1.87-9.17] 13.2/52.1 36.8>0 18/38/39 1/21/25
+    M3      mine (20 draws)      4.91[1.87-9.17] 13.2/52.1 36.8>0 18/38/39 1/21/25
+    M3      mine, draw 0         5.76 14.0/60.0 31>0 21.2/40.4/39.4 0.7/25.8/30.3   (eta 0.125291, capped edits 31, eta equal to the stored one to 1e-16)
+  behaviour: rows of the reported table (mean of draws 0 - 2) recomputed from the stored per-row flags: M1 yes, M2 yes, M3 yes, M4 yes, M5 yes, M6 yes, deployed yes
+  my own run of draw 0 (2055 sequences; own model instance, own hook, own rebased values, calibration from the cached keys on the CPU): keys bitwise equal to the cache 2055/2055
+    method  source                        Rel/T/I exact %  D1 % disj/strict  HN D1 % I/Q/X  T-Loc*/I-Loc*  per-sequence comparison with the stored rows
+    ------  ----------------------------  ---------------------------------------------------------------  ------------------------------------------------------------------------------------------
+    M1      reported (mean of draws 0-2)  98/38/90 3.06/2.73 20.1/36.2/42.4 99.61/97.19
+    M1      stored rows, draw 0           98/47/95 5.33/4.75 26.1/43.7/52.5 99.09/95.73
+    M1      mine, draw 0                  98/47/95 5.33/4.75 26.1/43.7/52.5 99.09/95.73                    flags differing 0 in 0 of 2055 rows; fired 764; thresholds max |diff| 2.0e-15, capped True
+    M3      reported (mean of draws 0-2)  97/12/52 4.26/4.05 21.4/37.4/37.4 100.00/94.54
+    M3      stored rows, draw 0           97/15/59 5.76/5.28 21.0/38.7/37.4 100.00/93.00
+    M3      mine, draw 0                  97/15/59 5.76/5.28 21.0/38.7/37.4 100.00/93.00                   flags differing 0 in 0 of 2055 rows; fired 628; thresholds max |diff| 5.6e-16, capped True
+
+======================================================================================================================================================
+CHECK 6  scale mechanics on TB-Q2000-ae-l2_3 (unseen test log: pass / fail of the mechanics only)
+======================================================================================================================================================
+verdict: PASS
+  load through the library: lean True, 101 s, load checks ok True; peak resident memory after load 8.0 GB (before load 0.5 GB), at the end of the whole check 8.0 GB; peak GPU 8.39 GB
+  default method from the key cache, one calibration draw: 9400 cached sequences decided; calibration record ok True; calibration rows == mine True; decisions differing from my naive rule 0 of 37600; eta equal True; capped sets equal True
+  model: gate built on the GPU == CPU gate to 1e-12 True; 50 firing edit sequences: hook fired 50/50, releasing edit == CPU decision 50/50, own flags == CPU 50/50, finite logits 50/50, sparse rows == full rows 50/50, my own replay == library rows 50/50; 30 silent sequences: sparse == full 30/30, no forward run True
+
+======================================================================================================================================================
+EXTRA CHECKS (not in the assignment)
+======================================================================================================================================================
+x2  HELD-OUT-DISJOINT by image CONTENT (md5) instead of the image path: Q: 0 of 465 valid rows equal a REPAIR row, 90 share only its question string, 449 distinct queries; QK: 0 of 498 valid rows equal a REPAIR row, 108 share only its question string, 498 distinct queries; L: 0 of 469 valid rows equal a REPAIR row, 90 share only its question string, 453 distinct queries
+x3  free generation THROUGH the default gate (draw 0), library ev.generate against my decoder + my replay hook, TB-Q100-ae-l2_3: 80 items (30 edit prompts, 30 probes, 20 hard negatives): 48-token text equal 80/80, 10-token answer 80/80, fired flag equal 80/80 (34 fire), releasing edit equal 80/80; library position bookkeeping ok 80/80; shifted items 0   PASS
+x3  free generation THROUGH the default gate (draw 0), library ev.generate against my decoder + my replay hook, TB-L100-ae-l2_3: 80 items (30 edit prompts, 30 probes, 20 hard negatives): 48-token text equal 80/80, 10-token answer 80/80, fired flag equal 80/80 (37 fire), releasing edit equal 80/80; library position bookkeeping ok 80/80; shifted items 0   PASS
+x3s the same on EVERY evaluated LLaVA sequence whose teacher-forced last prompt position is one token after the decode's (28 items, 28 shifted): texts equal 28/28, fired flag equal 28/28 (7 fire in the decode); own edit fires in the decode of its shifted Rel prompt: [['edit:rel:39', False]]   PASS
+x4  TB-Q100-ae-l2_3: features coord / negdist, block ratios 1:3 and 3:1, rank 'r' (24 calibrations, capped and uncapped): 0 of 614400 decisions differ from the naive rule (real 0), capped sets differing 0; several keys per query (which = 'all', calibrated on them): 0 of 3200 sequences differ (737 fire, 737 on the teacher-forced key alone)
+x4  TB-L100-ae-l2_3: features coord / negdist, block ratios 1:3 and 3:1, rank 'r' (24 calibrations, capped and uncapped): 0 of 614208 decisions differ from the naive rule (real 0), capped sets differing 0; several keys per query (which = 'all', calibrated on them): 0 of 3199 sequences differ (836 fire, 833 on the teacher-forced key alone)
+x4  calibrate_dense (router / z-score baselines), shared and two-block, scores with ties: 0 of 636574 decisions differ from the strict defining comparison (800 calibrations); threshold != succ(eta): 0   PASS
+x5  TB-Q100-ae-l2_3: top-1 with CAPPED edits, library (best candidate releases) against the literal text of the protocol (argmax over all edits, then its threshold), 20 draws, mean number of sequences decided differently (of 2557): M1 0.00 (capped edits 0.0), M2 0.00 (capped edits 0.0), M3 0.20 (capped edits 3.9), M4 0.00 (capped edits 0.0); own Rel prompt released, M3: 99.5 vs 99.3 %
+x5  TB-L100-ae-l2_3: top-1 with CAPPED edits, library (best candidate releases) against the literal text of the protocol (argmax over all edits, then its threshold), 20 draws, mean number of sequences decided differently (of 2574): M1 0.00 (capped edits 0.2), M2 0.00 (capped edits 0.0), M3 1.45 (capped edits 36.8), M4 0.00 (capped edits 0.0); own Rel prompt released, M3: 98.8 vs 97.4 %
+x5  LLaVA edits with a shifted last prompt position [39, 208, 293, 630, 631, 782, 829, 894]: stored solver key against the cached B = 1 key at the teacher-forced position, cosine 0.99996 at least; at the decode's token 0.58 at most -> all written at the teacher-forced (bare-space) position: True
+x5  qwen25vl counts recounted: rel 2500 rows, valid/y0 0/0, dup 4, shifted 0, bare None/No 0, empty 0, 1 char 0; tgen 2500 rows, valid/y0 0/0, dup 0, shifted 0, bare None/No 0, empty 0, 1 char 0; igen 2500 rows, valid/y0 0/0, dup 39, shifted 0, bare None/No 0, empty 0, 1 char 0; probe 2000 rows, valid/y0 1972/2000, dup 464, shifted 0, bare None/No 0, empty 0, 1 char 0; hn_i 800 rows, valid/y0 787/800, dup 0, shifted 0, bare None/No 0, empty 0, 1 char 0; hn_q 800 rows, valid/y0 786/800, dup 8, shifted 0, bare None/No 0, empty 0, 1 char 0; hn_x 200 rows, valid/y0 198/200, dup 0, shifted 0, bare None/No 0, empty 0, 1 char 0; benign 3000 rows, valid/y0 587/600, dup 215, shifted 0, bare None/No 0, empty 0, 1 char 0
+      hard negatives: 400 existing + 1400 new; new HN-I same category 190/600, related_flag 158/600 (existing 38/200); existing rows whose source is related to a stream edit 159 (first at position 500; my rule 158, 1 row differs); source pool re-derived 1057 items, new rows with a source outside it 0/1200
+x5  llava counts recounted: rel 1000 rows, valid/y0 0/0, dup 2, shifted 8, bare None/No 0, empty 0, 1 char 0; tgen 1000 rows, valid/y0 0/0, dup 0, shifted 8, bare None/No 0, empty 0, 1 char 0; igen 1000 rows, valid/y0 0/0, dup 2, shifted 8, bare None/No 0, empty 0, 1 char 0; probe 1000 rows, valid/y0 988/1000, dup 101, shifted 46, bare None/No 32, empty 1, 1 char 3; hn_i 800 rows, valid/y0 789/800, dup 0, shifted 6, bare None/No 250, empty 0, 1 char 0; hn_q 800 rows, valid/y0 792/800, dup 6, shifted 3, bare None/No 242, empty 0, 1 char 0; hn_x 200 rows, valid/y0 196/200, dup 0, shifted 1, bare None/No 57, empty 0, 1 char 0; benign 3000 rows, valid/y0 595/600, dup 0, shifted 17, bare None/No 17, empty 0, 1 char 1
+      hard negatives: 400 existing + 1400 new; new HN-I same category 176/600, related_flag 81/600 (existing 14/200); existing rows whose source is related to a stream edit 101 (first at position 101; my rule 100, 1 row differs); source pool re-derived 1057 items, new rows with a source outside it 0/1200
+x6  synthetic: exact rank 0 of 36000 differing; float-safe thresholds on boundary inputs 0 of 838400 differing; two-block rule with ties and custom scales 0 of 130946 decisions, eta differing 0   PASS
+x7  TB-Q100-ae-l2_3: null_repair (detector step of the registered variant ReScope-N; mechanics only) against my closed form: detectors differ by 1.5e-13 (relative) at most, coordinate on the 100 benign keys 3.2e-13 at most, own coordinate kept to 6.4e-15; two-block calibration + decisions on the repaired gate: 0 of 3200 sequences differ from my naive rule; stored_metrics == my reading of the files: probes True, edits True, locality True
+x7  TB-L100-ae-l2_3: null_repair (detector step of the registered variant ReScope-N; mechanics only) against my closed form: detectors differ by 1.3e-12 (relative) at most, coordinate on the 100 benign keys 2.9e-12 at most, own coordinate kept to 4.7e-15; two-block calibration + decisions on the repaired gate: 0 of 3199 sequences differ from my naive rule; stored_metrics == my reading of the files: probes True, edits True, locality True
+x2  calibration pool (valid REPAIR rows): TB-Q100-ae-l2_3: 28 of 489 rows lie in duplicate-query groups; image rows that ask the question of a logged edit: REPAIR 38, HELD-OUT-DISJOINT 32 of 465; TB-L100-ae-l2_3: 30 of 494 rows lie in duplicate-query groups; image rows that ask the question of a logged edit: REPAIR 57, HELD-OUT-DISJOINT 39 of 469
+

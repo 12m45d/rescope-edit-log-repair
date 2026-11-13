@@ -1,0 +1,103 @@
+{
+ "log": "TB-L100-ae-l2_3",
+ "gates": {
+  "G1_ncoord_two_block": {
+   "eta": 0.10010500899090935,
+   "n1": 100,
+   "n2": 100,
+   "rank": 96,
+   "n_edits_capped": 0,
+   "bound_false_firing": 0.04950495049504951,
+   "guarantee": "exact"
+  },
+  "G2_cos_two_block": {
+   "eta": 0.12529091217360444,
+   "n1": 100,
+   "n2": 100,
+   "rank": 96,
+   "n_edits_capped": 31,
+   "bound_false_firing": 0.04950495049504951,
+   "guarantee": "void for 31 capped edit(s): their thresholds are below the conformal level"
+  }
+ },
+ "n_items": {
+  "edits": 300,
+  "probes": 988,
+  "probes_invalid": 11,
+  "shifted": 52,
+  "hn": 1286
+ },
+ "groups": {
+  "edits": {
+   "n_items": 300,
+   "n_rows": 600,
+   "n_rows_equal": 600,
+   "differing": [],
+   "n_fired": {
+    "G1_ncoord_two_block": 260,
+    "G2_cos_two_block": 196
+   },
+   "lp": "tf"
+  },
+  "probes": {
+   "n_items": 988,
+   "n_rows": 1976,
+   "n_rows_equal": 1976,
+   "differing": [],
+   "n_fired": {
+    "G1_ncoord_two_block": 59,
+    "G2_cos_two_block": 53
+   },
+   "lp": "tf"
+  },
+  "probes_invalid": {
+   "n_items": 11,
+   "n_rows": 22,
+   "n_rows_equal": 22,
+   "differing": [],
+   "n_fired": {
+    "G1_ncoord_two_block": 0,
+    "G2_cos_two_block": 0
+   },
+   "lp": "tf"
+  },
+  "shifted": {
+   "n_items": 52,
+   "n_rows": 104,
+   "n_rows_equal": 104,
+   "differing": [],
+   "n_fired": {
+    "G1_ncoord_two_block": 11,
+    "G2_cos_two_block": 6
+   },
+   "lp": "prompt"
+  },
+  "hn": {
+   "n_items": 1286,
+   "n_rows": 2572,
+   "n_rows_equal": 2572,
+   "differing": [],
+   "n_fired": {
+    "G1_ncoord_two_block": 479,
+    "G2_cos_two_block": 405
+   },
+   "lp": "tf"
+  }
+ },
+ "sparse_stats": {
+  "rows": 5274,
+  "silent_from_cache": 3803,
+  "silent_from_local": 0,
+  "run_fired_or_near": 1471,
+  "run_no_key": 0,
+  "run_other_method": 0,
+  "local_captures": 0,
+  "forwards": 1471
+ },
+ "seconds": 619.1516697406769,
+ "peak_gpu_gb": 14.16447639465332,
+ "module_weight_is_WE_after": true,
+ "rescope": "[redacted: local path]/02_research/code/rescope",
+ "n_rows": 5274,
+ "n_rows_equal": 5274
+}

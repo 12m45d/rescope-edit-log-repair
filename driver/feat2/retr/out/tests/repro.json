@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "summary": "7/7 files byte-identical on a re-run (attribute tables, key lists, mechanics.txt / .json, README.txt)",
+ "files": {
+  "qwen25vl/attributes.jsonl": {
+   "byte_identical": true,
+   "md5": "5f1c1c9e39c5a1468136b5d918567a28"
+  },
+  "llava/attributes.jsonl": {
+   "byte_identical": true,
+   "md5": "39c9c1b08ca145760a8f07ca98812972"
+  },
+  "emb/image_keys.jsonl": {
+   "byte_identical": true,
+   "md5": "311c4596e0f014326c1b7615ecb80230"
+  },
+  "emb/question_keys.jsonl": {
+   "byte_identical": true,
+   "md5": "673912223862f204fd1d1d8aa6423632"
+  },
+  "out/mechanics.txt": {
+   "byte_identical": true
+  },
+  "out/mechanics.json": {
+   "byte_identical": true
+  },
+  "README.txt": {
+   "byte_identical": true
+  }
+ },
+ "test": "repro",
+ "seconds": 12.2,
+ "when": "2026-11-11 08:41:23 UTC"
+}

@@ -1,0 +1,219 @@
+{
+ "log": "TB-L100-ae-l2_3",
+ "load_checks": {
+  "probe_uids_match_records": true,
+  "collapsed_working_point": false,
+  "WE_float_minus_W0_equals_stored_composite": true,
+  "C_equals_stored_composite": true,
+  "factor_uids_match_stream": true,
+  "rollback_empty_equals_WE": true
+ },
+ "weights": {
+  "checkpoint_key": "language_model.model.layers.16.mlp.down_proj.weight",
+  "H.W0_equals_checkpoint_file": true,
+  "H.WE_equals_my_rebuild": true,
+  "my_WE_minus_W0_equals_stored_composite": true,
+  "module_name": true
+ },
+ "dual": {
+  "n_items": 150,
+  "n_probe": 100,
+  "n_edit": 50,
+  "deployed_long_equal": 150,
+  "deployed_y_equal": 150,
+  "deployed_line_equal": 150,
+  "pre-edit_long_equal": 150,
+  "pre-edit_y_equal": 150,
+  "pre-edit_line_equal": 150,
+  "dual": {
+   "eq": {
+    "n": 150,
+    "released_equal": 150,
+    "matching_edits_equal": 150,
+    "returned_long_equal": 150,
+    "returned_y_equal": 150,
+    "own_eq_equal": [
+     50,
+     50
+    ],
+    "n_new_tokens_equal": 150,
+    "mine": {
+     "probe_released": [
+      2,
+      100
+     ],
+     "edit_released": [
+      21,
+      50
+     ],
+     "edit_own_target_returned": [
+      21,
+      50
+     ]
+    },
+    "library": {
+     "probe_released": [
+      2,
+      100
+     ],
+     "edit_released": [
+      21,
+      50
+     ],
+     "edit_own_target_returned": [
+      21,
+      50
+     ]
+    },
+    "differing": []
+   },
+   "contains": {
+    "n": 150,
+    "released_equal": 150,
+    "matching_edits_equal": 150,
+    "returned_long_equal": 150,
+    "returned_y_equal": 150,
+    "own_eq_equal": [
+     50,
+     50
+    ],
+    "n_new_tokens_equal": 150,
+    "mine": {
+     "probe_released": [
+      2,
+      100
+     ],
+     "edit_released": [
+      24,
+      50
+     ],
+     "edit_own_target_returned": [
+      21,
+      50
+     ]
+    },
+    "library": {
+     "probe_released": [
+      2,
+      100
+     ],
+     "edit_released": [
+      24,
+      50
+     ],
+     "edit_own_target_returned": [
+      21,
+      50
+     ]
+    },
+    "differing": []
+   }
+  },
+  "library_summarise_dual": {
+   "n": 150,
+   "released_deployed": 15.333333333333334,
+   "generations_per_query": 2.0,
+   "n_new_tokens": 4800
+  },
+  "degenerate_library_rows": {
+   "deployed": 0,
+   "pre-edit": 0,
+   "dual": 0
+  }
+ },
+ "locality": {
+  "T-Loc*": {
+   "n": 246,
+   "mine": 83.36011098206222,
+   "library": 83.36011236154935,
+   "n_library": 246
+  },
+  "I-Loc*": {
+   "n": 223,
+   "mine": 78.24240159441953,
+   "library": 78.24240210612258,
+   "n_library": 223
+  },
+  "n_rows": 469,
+  "rows_equal_library_rows": true,
+  "per_row_tok_loc_differing": 0,
+  "per_row_max_abs_diff": 6.811959407659884e-08,
+  "y0_reproduced_by_my_W0": [
+   469,
+   469
+  ],
+  "D1_mine": 62.26012793176972,
+  "D1_flags_equal_stored_complaints": [
+   469,
+   469
+  ],
+  "n_nonfinite": 0,
+  "stored_benchmark": {
+   "T-Loc": 77.94153044530047,
+   "I-Loc": 80.63145077145077,
+   "nonfinite": {
+    "probes_tloc": 0,
+    "probes_iloc": 0,
+    "edit_items_tloc": 0,
+    "edit_items_iloc": 0
+   }
+  },
+  "library_stored": {
+   "T-Loc": 77.94153044530047,
+   "I-Loc": 80.63145077145077,
+   "T-Loc_em": 30.599999999999998,
+   "I-Loc_em": 43.6,
+   "nonfinite": {
+    "probes_tloc": 0,
+    "probes_iloc": 0,
+    "edit_items_tloc": 0,
+    "edit_items_iloc": 0
+   }
+  },
+  "library_diff": {
+   "T-Loc": 5.418581916248883,
+   "I-Loc": -2.3890486653281897
+  },
+  "my_diff": {
+   "T-Loc": 5.418580536761752,
+   "I-Loc": -2.3890491770312394
+  },
+  "benchmark_quantity_recomputed_at_B1": {
+   "T-Loc": {
+    "n": 500,
+    "mine_B1": 77.76819711196713,
+    "stored_B8": 77.94153044530047,
+    "n_nonfinite": 0,
+    "mine_minus_stored": -0.17333333333334622
+   },
+   "I-Loc": {
+    "n": 500,
+    "mine_B1": 80.55287934287935,
+    "stored_B8": 80.63145077145077,
+    "n_nonfinite": 0,
+    "mine_minus_stored": -0.07857142857142208
+   }
+  },
+  "pool_all_valid_rows": {
+   "n_rows": 988,
+   "T-Loc": {
+    "n": 491,
+    "mine*": 82.36389939546763,
+    "library_test_b12*": 82.36390063027015,
+    "mine_minus_stored": 4.422368950167154,
+    "library_test_b12_diff": 4.4223701849696795
+   },
+   "I-Loc": {
+    "n": 497,
+    "mine*": 77.46854140717319,
+    "library_test_b12*": 77.46854202608228,
+    "mine_minus_stored": -3.1629093642775814,
+    "library_test_b12_diff": -3.1629087453684974
+   }
+  }
+ },
+ "seconds": 82.80104923248291,
+ "peak_gpu_gb": 14.511667251586914,
+ "module_weight_is_WE_after": true,
+ "rescope": "[redacted: local path]/02_research/code/rescope"
+}

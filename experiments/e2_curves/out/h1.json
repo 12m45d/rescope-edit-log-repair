@@ -1,0 +1,312 @@
+{
+ "what": "H1 (R6): held-out D1 after n = 10 reported complaints, ReScope-W (least repair from the log-only thresholds) against the best linear repair of the same complaints; development logs; paired crossed bootstrap over seeds (3) and query clusters; Holm over backbones and baselines",
+ "rule": "helps iff D1 <= 10 % with Rel exact within 2 points of the deployed log, on the development logs AND on at least one mild prefix (R12; the prefix part is experiment e2_prefix, not this file)",
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "log": "TB-Q100-ae-l2_3",
+   "n": 10,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "d1_where": 1.003584229390681,
+   "rel_where": 78.0,
+   "rel_deployed": 78.0,
+   "linear_candidates": {
+    "COMP_B": {
+     "d1": 50.53763440860215,
+     "rel": 76.0
+    },
+    "COMP_BP": {
+     "d1": 52.25806451612903,
+     "rel": 77.66666666666666
+    },
+    "COMP_B_ALLPOS": {
+     "d1": 56.63082437275986,
+     "rel": 76.66666666666667
+    },
+    "REEDIT_B": {
+     "d1": 58.924731182795696,
+     "rel": 75.66666666666667
+    },
+    "RB_TOT": {
+     "d1": 46.236559139784944,
+     "rel": 54.666666666666664
+    },
+    "RB_UNION": {
+     "d1": 45.448028673835125,
+     "rel": 52.666666666666664
+    }
+   },
+   "comparisons": {
+    "best_lowest_d1": {
+     "linear": "RB_UNION",
+     "d1_where": 1.003584229390681,
+     "d1_linear": 45.448028673835125,
+     "d1_diff": {
+      "value": -44.44444444444444,
+      "ci_lo": -48.965863592222604,
+      "ci_hi": -40.129753151219845,
+      "se": 2.260773371349426,
+      "p_two_sided": 0.0005,
+      "mean_a": 1.003584229390681,
+      "mean_b": 45.448028673835125,
+      "n_draws": 3,
+      "n_units": 449,
+      "n_boot": 2000,
+      "seed": 0,
+      "n_resamples_undefined": 0
+     },
+     "rel_where": 78.0,
+     "rel_linear": 52.666666666666664,
+     "rel_diff": {
+      "value": 25.333333333333336,
+      "ci_lo": 14.666666666666671,
+      "ci_hi": 36.0,
+      "se": 5.590385850455986,
+      "p_two_sided": 0.0005,
+      "mean_a": 78.0,
+      "mean_b": 52.666666666666664,
+      "n_draws": 3,
+      "n_units": 100,
+      "n_boot": 2000,
+      "seed": 0,
+      "n_resamples_undefined": 0
+     },
+     "d1_where_per_seed": [
+      1.0752688172043012,
+      0.8602150537634409,
+      1.0752688172043012
+     ],
+     "d1_linear_per_seed": [
+      47.52688172043011,
+      44.3010752688172,
+      44.516129032258064
+     ]
+    },
+    "best_rel_within_2": {
+     "linear": "COMP_B",
+     "d1_where": 1.003584229390681,
+     "d1_linear": 50.53763440860215,
+     "d1_diff": {
+      "value": -49.53405017921147,
+      "ci_lo": -54.06959113834466,
+      "ci_hi": -45.0,
+      "se": 2.2640999954286767,
+      "p_two_sided": 0.0005,
+      "mean_a": 1.003584229390681,
+      "mean_b": 50.53763440860215,
+      "n_draws": 3,
+      "n_units": 449,
+      "n_boot": 2000,
+      "seed": 0,
+      "n_resamples_undefined": 0
+     },
+     "rel_where": 78.0,
+     "rel_linear": 76.0,
+     "rel_diff": {
+      "value": 2.0,
+      "ci_lo": -3.3333333333333326,
+      "ci_hi": 7.333333333333325,
+      "se": 2.7373808171279532,
+      "p_two_sided": 0.499,
+      "mean_a": 78.0,
+      "mean_b": 76.0,
+      "n_draws": 3,
+      "n_units": 100,
+      "n_boot": 2000,
+      "seed": 0,
+      "n_resamples_undefined": 0
+     },
+     "d1_where_per_seed": [
+      1.0752688172043012,
+      0.8602150537634409,
+      1.0752688172043012
+     ],
+     "d1_linear_per_seed": [
+      50.752688172043015,
+      49.67741935483871,
+      51.182795698924735
+     ]
+    }
+   },
+   "d1_at_most_10": true,
+   "rel_within_2": true,
+   "rel_not_more_than_2_below_deployed": true,
+   "helps_on_this_log": true,
+   "rel_minus_deployed": 0.0,
+   "one_sided_reading_met_on_this_log": true,
+   "readings": "literal (fixed in the code before any ReScope-W cell existed): |Rel - Rel deployed| <= 2 points; one-sided: Rel >= Rel deployed - 2 points. The two differ only where the repair has a HIGHER Rel exact than the deployed log; which reading R6 means is the coordinator's decision.",
+   "selection_of_best_rel_within_2": "linear repairs whose mean Rel exact is not more than 2 points below the deployed log (one-sided: in favour of the baseline)",
+   "verdict_on_this_log": "helps (criteria of R6 met on this log)",
+   "linear_flags_from": "P12 records (harness evaluation); ReScope-W flags: driver at B = 1; the same heldout_disjoint rows"
+  },
+  "TB-L100-ae-l2_3": {
+   "log": "TB-L100-ae-l2_3",
+   "n": 10,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "d1_where": 2.6297085998578535,
+   "rel_where": 92.0,
+   "rel_deployed": 88.0,
+   "linear_candidates": {
+    "COMP_B": {
+     "d1": 62.82871357498223,
+     "rel": 88.0
+    },
+    "COMP_BP": {
+     "d1": 63.75266524520256,
+     "rel": 88.0
+    },
+    "COMP_B_ALLPOS": {
+     "d1": 66.09808102345416,
+     "rel": 89.0
+    },
+    "REEDIT_B": {
+     "d1": 66.09808102345416,
+     "rel": 87.66666666666667
+    },
+    "RB_TOT": {
+     "d1": 56.6453447050462,
+     "rel": 63.66666666666667
+    },
+    "RB_UNION": {
+     "d1": 52.736318407960205,
+     "rel": 59.66666666666667
+    }
+   },
+   "comparisons": {
+    "best_lowest_d1": {
+     "linear": "RB_UNION",
+     "d1_where": 2.6297085998578535,
+     "d1_linear": 52.736318407960205,
+     "d1_diff": {
+      "value": -50.10660980810234,
+      "ci_lo": -54.832442470659146,
+      "ci_hi": -45.35823521824849,
+      "se": 2.4359583048896543,
+      "p_two_sided": 0.0005,
+      "mean_a": 2.6297085998578535,
+      "mean_b": 52.7363184079602,
+      "n_draws": 3,
+      "n_units": 453,
+      "n_boot": 2000,
+      "seed": 0,
+      "n_resamples_undefined": 0
+     },
+     "rel_where": 92.0,
+     "rel_linear": 59.66666666666667,
+     "rel_diff": {
+      "value": 32.333333333333336,
+      "ci_lo": 21.999999999999996,
+      "ci_hi": 43.00000000000001,
+      "se": 5.419748872311286,
+      "p_two_sided": 0.0005,
+      "mean_a": 92.0,
+      "mean_b": 59.666666666666664,
+      "n_draws": 3,
+      "n_units": 100,
+      "n_boot": 2000,
+      "seed": 0,
+      "n_resamples_undefined": 0
+     },
+     "d1_where_per_seed": [
+      2.345415778251599,
+      2.771855010660981,
+      2.771855010660981
+     ],
+     "d1_linear_per_seed": [
+      53.94456289978679,
+      50.31982942430704,
+      53.94456289978679
+     ]
+    },
+    "best_rel_within_2": {
+     "linear": "COMP_B",
+     "d1_where": 2.6297085998578535,
+     "d1_linear": 62.82871357498223,
+     "d1_diff": {
+      "value": -60.199004975124375,
+      "ci_lo": -64.60565334422114,
+      "ci_hi": -55.836277107251505,
+      "se": 2.299860803197132,
+      "p_two_sided": 0.0005,
+      "mean_a": 2.6297085998578535,
+      "mean_b": 62.82871357498223,
+      "n_draws": 3,
+      "n_units": 453,
+      "n_boot": 2000,
+      "seed": 0,
+      "n_resamples_undefined": 0
+     },
+     "rel_where": 92.0,
+     "rel_linear": 88.0,
+     "rel_diff": {
+      "value": 4.0,
+      "ci_lo": -1.0000000000000009,
+      "ci_hi": 9.999999999999998,
+      "se": 2.8206761790488337,
+      "p_two_sided": 0.213,
+      "mean_a": 92.0,
+      "mean_b": 88.0,
+      "n_draws": 3,
+      "n_units": 100,
+      "n_boot": 2000,
+      "seed": 0,
+      "n_resamples_undefined": 0
+     },
+     "d1_where_per_seed": [
+      2.345415778251599,
+      2.771855010660981,
+      2.771855010660981
+     ],
+     "d1_linear_per_seed": [
+      62.046908315565034,
+      63.965884861407254,
+      62.47334754797441
+     ]
+    }
+   },
+   "d1_at_most_10": true,
+   "rel_within_2": false,
+   "rel_not_more_than_2_below_deployed": true,
+   "helps_on_this_log": false,
+   "rel_minus_deployed": 4.0,
+   "one_sided_reading_met_on_this_log": true,
+   "readings": "literal (fixed in the code before any ReScope-W cell existed): |Rel - Rel deployed| <= 2 points; one-sided: Rel >= Rel deployed - 2 points. The two differ only where the repair has a HIGHER Rel exact than the deployed log; which reading R6 means is the coordinator's decision.",
+   "selection_of_best_rel_within_2": "linear repairs whose mean Rel exact is not more than 2 points below the deployed log (one-sided: in favour of the baseline)",
+   "verdict_on_this_log": "does not help (criteria of R6 not met on this log)",
+   "linear_flags_from": "P12 records (harness evaluation); ReScope-W flags: driver at B = 1; the same heldout_disjoint rows"
+  }
+ },
+ "holm": {
+  "adjusted": {
+   "Q/best_lowest_d1": 0.002,
+   "Q/best_rel_within_2": 0.002,
+   "L/best_lowest_d1": 0.002,
+   "L/best_rel_within_2": 0.002
+  },
+  "reject": {
+   "Q/best_lowest_d1": true,
+   "Q/best_rel_within_2": true,
+   "L/best_lowest_d1": true,
+   "L/best_rel_within_2": true
+  },
+  "order": [
+   "Q/best_lowest_d1",
+   "Q/best_rel_within_2",
+   "L/best_lowest_d1",
+   "L/best_rel_within_2"
+  ],
+  "m": 4,
+  "alpha": 0.05
+ },
+ "helps_on_both_development_logs": false,
+ "one_sided_reading_met_on_both_development_logs": true,
+ "n_seeds": 3,
+ "note_intervals": "three seeds: the crossed bootstrap is too narrow where the seed-to-seed component matters (R25); per-seed values are listed"
+}

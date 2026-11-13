@@ -1,0 +1,49 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "n_sequences": 36,
+ "fx_version": "fx-1.0 (2026-11-11)",
+ "retr": {
+  "n_firing": 17,
+  "n_forced_gate_methods": 8,
+  "first_pass_sources": {
+   "run": 17
+  },
+  "second_pass_sources": {
+   "memo": 17
+  },
+  "second_pass_equal": true,
+  "n_driver_rows_equal_library_route": 17,
+  "n_silent_checked": 6,
+  "n_silent_cached_pre_edit_outcome_equal_library_route": 6,
+  "n_decodes": 2,
+  "n_decodes_driver_equal_library_route": 2,
+  "n_cpu_built_request_gate_rows_equal": "3/3",
+  "ok": true
+ },
+ "lookup": {
+  "n_firing": 12,
+  "n_forced_gate_methods": 8,
+  "first_pass_sources": {
+   "memo": 9,
+   "run": 3
+  },
+  "second_pass_sources": {
+   "memo": 12
+  },
+  "second_pass_equal": true,
+  "n_driver_rows_equal_library_route": 12,
+  "n_silent_checked": 6,
+  "n_silent_cached_pre_edit_outcome_equal_library_route": 6,
+  "n_decodes": 2,
+  "n_decodes_driver_equal_library_route": 2,
+  "n_cpu_built_request_gate_rows_equal": "3/3",
+  "ok": true
+ },
+ "hook_mismatch": 0,
+ "memo_conflicts": 0,
+ "ok": true,
+ "summary": "TB-Q100-ae-l2_3: retr: 17/17 firing rows of fx.behave (forced gates, memo path; first pass {'run': 17}, second pass {'memo': 17}) == library route, silent 6/6 == cached pre-edit outcome, decodes 2/2 equal; lookup: 12/12 firing rows of fx.behave (forced gates, memo path; first pass {'memo': 9, 'run': 3}, second pass {'memo': 12}) == library route, silent 6/6 == cached pre-edit outcome, decodes 2/2 equal; hook mismatches 0",
+ "test": "behaviour_fx",
+ "seconds": 22.4,
+ "when": "2026-11-11 08:29:57 UTC"
+}

@@ -1,0 +1,36 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "T": 100,
+ "n_heldout_disjoint": 465,
+ "n_repair_D1_complaints": 297,
+ "rules": {
+  "where_logonly": {
+   "rows_file": "TB-Q100-ae-l2_3__where_logonly.jsonl.gz",
+   "n_edits_capped": 2
+  },
+  "deployed_scoping": {
+   "rows_file": "TB-Q100-ae-l2_3__deployed_scoping.jsonl.gz",
+   "n_edits_capped": null
+  }
+ },
+ "session": {
+  "hook_mismatch": 0,
+  "memo_conflicts": 0,
+  "forwards": 0,
+  "rows": 1524
+ },
+ "stats": {
+  "rows": 1524,
+  "pre": 0,
+  "memo": 0,
+  "run": 0,
+  "lib": 1524,
+  "missing": 0,
+  "forwards": 0,
+  "decodes": 0,
+  "hook_mismatch": 0,
+  "near": 0,
+  "near_changed_on_device": 0,
+  "seconds_model": 197.0001962184906
+ }
+}

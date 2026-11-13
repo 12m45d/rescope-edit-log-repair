@@ -1,0 +1,445 @@
+{
+ "assert_clean": {
+  "forwards": 6,
+  "hook_mismatch": 0,
+  "memo_conflicts": 0,
+  "rows": 1029
+ },
+ "calls": {
+  "E6 behavioural ablations on 4 sequences (lin, gain, fire all, stored values, roles)": {
+   "info": {
+    "fire=all": [
+     4,
+     "scoped"
+    ],
+    "rebase=False": [
+     4,
+     "scoped"
+    ],
+    "response=gain": [
+     4,
+     "scoped"
+    ],
+    "response=lin": [
+     4,
+     "scoped"
+    ],
+    "role=all": [
+     4,
+     "gate"
+    ],
+    "role=last+answer": [
+     4,
+     "gate"
+    ]
+   },
+   "ok": true,
+   "s": 23.61
+  },
+  "E8: rescope.Hook(module, gate, record=False)": {
+   "info": "Hook",
+   "ok": true,
+   "s": 0.01
+  },
+  "LLaVA: lp='prompt' next to lp='tf'": {
+   "info": [
+    5,
+    3
+   ],
+   "ok": true,
+   "s": 0.0
+  },
+  "behavioural H3 of a retrieval rule": {
+   "info": [
+    6,
+    "request"
+   ],
+   "ok": true,
+   "s": 0.07
+  },
+  "behavioural H3: raised method on odd edits and test rows": {
+   "info": [
+    6,
+    6
+   ],
+   "ok": true,
+   "s": 0.16
+  },
+  "dual: ses.generate, ses.dual_tf": {
+   "info": {
+    "dual_tf": 3,
+    "fields": [
+     "contains",
+     "csid",
+     "degenerate",
+     "dual",
+     "edit",
+     "eq",
+     "eq10",
+     "fired",
+     "kind",
+     "line",
+     "long",
+     "long_stop",
+     "lp",
+     "lp_shift",
+     "metric",
+     "n_generations",
+     "n_long",
+     "n_new_tokens",
+     "near",
+     "sid",
+     "src",
+     "starts",
+     "stop",
+     "uid",
+     "y"
+    ],
+    "n": 3
+   },
+   "ok": true,
+   "s": 0.74
+  },
+  "full E1 row set with the model: labels returned": {
+   "info": [
+    "deployed",
+    "preedit",
+    "rescope",
+    "rescope_shared",
+    "rescope_null",
+    "where_logonly",
+    "cosine",
+    "cosine_shared",
+    "cosine_default",
+    "cosine_published",
+    "ball",
+    "ball_default",
+    "exact",
+    "router",
+    "router_default",
+    "zscore",
+    "zscore_default",
+    "dual",
+    "p12_comp_b_nall",
+    "p12_reedit_b_nall",
+    "p12_rb_union_nall",
+    "p12_rb_tot_nall",
+    "cos_centred",
+    "cos_centred_shared",
+    "cos_null",
+    "cos_null_shared",
+    "white_0.01",
+    "white_0.01_shared",
+    "white_0.1",
+    "white_0.1_shared",
+    "white_1",
+    "white_1_shared",
+    "whitecos_0.01",
+    "whitecos_0.01_shared",
+    "whitecos_0.1",
+    "whitecos_0.1_shared",
+    "whitecos_1",
+    "whitecos_1_shared",
+    "rescope_x",
+    "retr_conj",
+    "retr_sum",
+    "retr_min",
+    "lookup",
+    "rescope_pac",
+    "rescope_nullW"
+   ],
+   "ok": true,
+   "s": 4.16
+  },
+  "fx.metrics.grid + crossed_bootstrap(_diff), endpoint, holm on behavioural rows": {
+   "info": {
+    "d1_value": true,
+    "diff_keys": [
+     "ci_hi",
+     "ci_lo",
+     "mean_a",
+     "mean_b",
+     "n_boot",
+     "n_draws",
+     "n_resamples_undefined",
+     "n_units"
+    ],
+    "endpoint": [
+     "igen",
+     "rel",
+     "rephrase",
+     "tgen"
+    ],
+    "holm": {
+     "a": 0.022,
+     "b": 0.2
+    },
+    "probe_units": 453
+   },
+   "ok": true,
+   "s": 0.1
+  },
+  "item 10: attributes of 100 sequences against the rendered prompts": {
+   "info": {
+    "all_ok": true,
+    "benign_rows_checked": 30,
+    "benign_rows_ok": 30,
+    "by_kind": {
+     "hn_i": 23,
+     "hn_q": 23,
+     "hn_x": 3,
+     "igen": 1,
+     "probe": 37,
+     "rel": 10,
+     "tgen": 3
+    },
+    "image_md5_equal": 100,
+    "key_is_strip_lower": 100,
+    "n": 100,
+    "n_tokens_equal_cache": 100,
+    "question_equal": 100,
+    "question_in_rendered_prompt": 100,
+    "sid_equal": 100,
+    "text_row_has_no_image": 100
+   },
+   "ok": true,
+   "s": 2.4
+  },
+  "linear repairs of P12 at all complaints through the row set (2 sequences)": {
+   "info": {
+    "p12_comp_b_nall": [
+     "correction",
+     2
+    ],
+    "p12_rb_tot_nall": [
+     "weight",
+     2
+    ],
+    "p12_rb_union_nall": [
+     "weight",
+     2
+    ],
+    "p12_reedit_b_nall": [
+     "weight",
+     2
+    ]
+   },
+   "ok": true,
+   "s": 1.64
+  },
+  "router / zscore (calibrated and published forms) on 3 sequences": {
+   "info": {
+    "router": [
+     "router",
+     3,
+     "router_default"
+    ],
+    "zscore": [
+     "zscore",
+     3,
+     "zscore_default"
+    ]
+   },
+   "ok": true,
+   "s": 1.1
+  },
+  "ses.edits (subset), kept_gained, edit_stats": {
+   "info": {
+    "edit_stats": [
+     "igen",
+     "rel",
+     "rephrase",
+     "tgen"
+    ],
+    "fields": [
+     "csid",
+     "edit",
+     "exact",
+     "finite",
+     "fired",
+     "first_mismatch",
+     "kind",
+     "lp",
+     "lp_shift",
+     "metric",
+     "n_cand_edits",
+     "n_tok",
+     "near",
+     "own_fired_last",
+     "own_released_last",
+     "sid",
+     "src",
+     "token_acc",
+     "top_last",
+     "uid"
+    ],
+    "kept_gained": [
+     "igen",
+     "rel",
+     "tgen"
+    ],
+    "n_rows": 12,
+    "token_level": true
+   },
+   "ok": true,
+   "s": 0.2
+  },
+  "ses.generate, gen_stats, ses.d2(rows=), d2_stats(ci=True)": {
+   "info": {
+    "d2_n": 6,
+    "d2_stats": [
+     "D2",
+     "fired",
+     "n_D2",
+     "n_pre_correct"
+    ],
+    "deployed_gen": 3,
+    "gen_fields": [
+     "contains",
+     "csid",
+     "degenerate",
+     "edit",
+     "eq",
+     "eq10",
+     "fired",
+     "kind",
+     "line",
+     "long",
+     "long_stop",
+     "lp",
+     "lp_shift",
+     "metric",
+     "n_calls_last",
+     "n_fire_steps",
+     "n_long",
+     "near",
+     "own_released_last",
+     "sid",
+     "src",
+     "starts",
+     "stop",
+     "top_last",
+     "uid",
+     "y"
+    ],
+    "gen_stats": [
+     "rel",
+     "tgen"
+    ],
+    "n": 5
+   },
+   "ok": true,
+   "s": 2.68
+  },
+  "ses.hard_negatives(generate=True) on 14 rows, hn_stats, subset flags": {
+   "info": {
+    "n": 14,
+    "n2": 14,
+    "n_gen": 14,
+    "stats": [
+     "HN-I",
+     "HN-Q",
+     "HN-X",
+     "all"
+    ],
+    "subset_flags": [
+     "hn_type",
+     "y0_deg",
+     "related_flag",
+     "same_category",
+     "new",
+     "src_related_to_log"
+    ],
+    "wrong_target_in_gen": true
+   },
+   "ok": true,
+   "s": 5.14
+  },
+  "ses.probes heldout_disjoint / heldout_strict, probe_stats": {
+   "info": {
+    "fields": [
+     "D1",
+     "csid",
+     "disjoint",
+     "exact",
+     "finite",
+     "fired",
+     "first_mismatch",
+     "group",
+     "kind",
+     "lp",
+     "lp_shift",
+     "n_cand_edits",
+     "n_tok",
+     "near",
+     "near_edit",
+     "near_reph",
+     "pool",
+     "probe_idx",
+     "probe_query_id",
+     "ptype",
+     "query_id",
+     "question_in_repair",
+     "sid",
+     "src",
+     "strict",
+     "tok_loc",
+     "token_acc",
+     "top_last",
+     "uid",
+     "y0_deg",
+     "y0_valid"
+    ],
+    "has_near_edit": true,
+    "has_query_id": true,
+    "has_tok_loc": true,
+    "n": 469,
+    "n_strict": 379,
+    "stats": [
+     "D1",
+     "D1_given_fired",
+     "D1_y0_degenerate",
+     "D1_y0_not_degenerate",
+     "I-Loc*",
+     "T-Loc*",
+     "far",
+     "fired",
+     "n",
+     "n_D1",
+     "n_fired",
+     "n_image"
+    ]
+   },
+   "ok": true,
+   "s": 0.08
+  },
+  "where_logonly, where_least (logonly / deployed start), ses.blocklist": {
+   "info": {
+    "blocklist": [
+     5,
+     [
+      "blocklist(memo)",
+      "blocklist(pre)"
+     ]
+    ],
+    "where_least": [
+     "logonly/refuse",
+     "deployed/refuse",
+     3
+    ],
+    "where_logonly": [
+     3,
+     true
+    ]
+   },
+   "ok": true,
+   "s": 1.22
+  }
+ },
+ "fx": {
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)",
+  "rescope": "c76c4da16bd6"
+ },
+ "log": "TB-L100-ae-l2_3"
+}

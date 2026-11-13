@@ -1,0 +1,378 @@
+{
+ "definition": "Final message of the independent verification of E5 (linear part) as data; rendered by v_render.py into out/verify_table.txt and out/final_message.txt.",
+ "message_rows": [
+  [
+   "gamma,Gamma,Gamma/gamma (last key)",
+   "0.308,17.7,57.5 | 0.407,7.36,18.1",
+   "0.308,17.7,57.5 | 0.407,7.36,18.1",
+   "yes",
+   "safe, but the ratio is one constant per log (cosine matrix of the write vectors), not a median over complaints"
+  ],
+  [
+   "negative-pair share",
+   "0.501 | 0.503",
+   "0.501 | 0.503",
+   "yes",
+   "safe"
+  ],
+  [
+   "LF/FO deletions c=0.1",
+   "72/70 | 72/71",
+   "72/70 | 72/71",
+   "yes",
+   "safe"
+  ],
+  [
+   "LF/FO deletions c=0.5",
+   "23/19 | 24/23",
+   "23/19 | 24/23",
+   "yes",
+   "safe"
+  ],
+  [
+   "bound c=0.1,0.5",
+   "59,3 | 62,7",
+   "59,3 | 62,7",
+   "yes",
+   "safe only as the report's mu-bound: prop:cond as displayed gives 8,0 | 30,0"
+  ],
+  [
+   "capacity (5 complaints/log)",
+   "37 | 18",
+   "37 | 18",
+   "yes",
+   "safe"
+  ],
+  [
+   "paper_numbers.json (464 values)",
+   "from results.json",
+   "0 differences, re-run identical",
+   "yes",
+   "safe"
+  ]
+ ],
+ "message_parts": {
+  "numerical": "Discrepancies: none numerical (per complaint: counts equal, reals within 2e-14). Sample-of-60 medians differ by sampling only (LF/FO c=0.1: 70/69 | 71/70).",
+  "meaning": "Wording: Q's s*_Z=63 uses 15 prefix keys shared only approximately (bitwise z=0 gives 65).",
+  "extras": "Extras agree: stacked Gamma/gamma; LF/bound ratios; least nu 40 | 61; s*_Z; answer/last-key ranks; BI deletes all 100 on L text_125.",
+  "optimum": "Optimum code (my solver-free certificates; c=0.1,0.3,0.5): upper bounds all feasible; its lower bounds confirmed for 43,34,29 of 43 | 52,47,40 of 52; certified medians: BI/OPT at most 1.015,1.056,1.077 | 1.014,1.026,1.035 (report 1.043,1.053,1.048 | 1.027,1.025,1), bound/OPT 0.85-0.88,0.57-0.64,0.17-0.33 (report 0.85-0.90,0.57-0.64,0.17-0.32); its certified counts rest on its branch and bound."
+ },
+ "logs": {
+  "Q": "TB-Q100-ae-l2_3",
+  "L": "TB-L100-ae-l2_3"
+ },
+ "scopes": {
+  "sample": "60 seeded complaints per log (30 image, 30 text)",
+  "all": "every REPAIR-pool D1 complaint",
+  "five": "five of the 60 (capacity)"
+ },
+ "table": [
+  {
+   "id": "gamma",
+   "quantity": "gamma, last key",
+   "report": "0.308 | 0.407",
+   "mine": "0.308 | 0.407",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  },
+  {
+   "id": "Gamma",
+   "quantity": "Gamma, last key",
+   "report": "17.7 | 7.36",
+   "mine": "17.7 | 7.36",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  },
+  {
+   "id": "ratio",
+   "quantity": "Gamma/gamma, last key",
+   "report": "57.5 | 18.1",
+   "mine": "57.5 | 18.1",
+   "agree": true,
+   "verdict": "safe as a constant of the log, not as a median over complaints",
+   "note": "one value for every complaint: the ratio of the cosine matrix of the write vectors"
+  },
+  {
+   "id": "neg",
+   "quantity": "negative-pair share, median",
+   "report": "0.501 | 0.503",
+   "mine": "0.501 | 0.503 (sample 0.501 | 0.503)",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  },
+  {
+   "id": "rules_c0.1",
+   "quantity": "c=0.1: LF/FO deletions, median",
+   "report": "72/70 | 72/71",
+   "mine": "72/70 | 72/71 (sample 70/69 | 71/70)",
+   "agree": true,
+   "verdict": "safe",
+   "note": "counts equal for every complaint"
+  },
+  {
+   "id": "rules_c0.5",
+   "quantity": "c=0.5: LF/FO deletions, median",
+   "report": "23/19 | 24/23",
+   "mine": "23/19 | 24/23 (sample 23/20 | 24/22)",
+   "agree": true,
+   "verdict": "safe",
+   "note": "counts equal for every complaint"
+  },
+  {
+   "id": "bound",
+   "quantity": "lower bound, median, c=0.1,0.5",
+   "report": "59,3 | 62,7",
+   "mine": "59,3 | 62,7",
+   "agree": true,
+   "verdict": "safe only as mu(c^2|D|^2/gamma) of the report's sandwich (prop:app:cond); not as Prop. prop:cond",
+   "note": "Prop. prop:cond as displayed gives OPT_c >= LF(c sqrt(Gamma/gamma)): median 8,0 | 30,0"
+  },
+  {
+   "id": "capacity",
+   "quantity": "capacity, five complaints per log",
+   "report": "37 | 18",
+   "mine": "37,37,37,37,37 | 18,18,18,18,18",
+   "agree": true,
+   "verdict": "safe (floating point)",
+   "note": "also equal for every complaint and both key definitions"
+  },
+  {
+   "id": "derivation",
+   "quantity": "paper_numbers.json from results.json",
+   "report": "464 values",
+   "mine": "0 differ; re-run from raw rows: 0 differ",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  }
+ ],
+ "extras": [
+  {
+   "id": "stacked_ratio",
+   "quantity": "Gamma/gamma, stacked keys, median [quartiles]",
+   "report": "10.1 [9.22, 11.1] | 5.03 [4.22, 7.19]",
+   "mine": "10.1 [9.22, 11.1] | 5.03 [4.22, 7.19]",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  },
+  {
+   "id": "lf_over_lb",
+   "quantity": "LF / bound, median, c=0.1, 0.3, 0.5; stacked c=0.1",
+   "report": "1.21 | 1.15; 2 | 1.63; 6.33 | 3.43; 1.03 | 1.03",
+   "mine": "1.21 | 1.15; 2 | 1.63; 6.33 | 3.43; 1.03 | 1.03",
+   "agree": true,
+   "verdict": "safe with the bound named as in row 'bound'",
+   "note": ""
+  },
+  {
+   "id": "bi_c0.1",
+   "quantity": "c=0.1: BI deletions, median; complaints on which BI deletes all",
+   "report": "70 | 71; 0 | 1",
+   "mine": "70 | 71; 0 | 1 (text_125 FO 73)",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  },
+  {
+   "id": "nu",
+   "quantity": "least vertex cover number nu (exact)",
+   "report": "40 | 61",
+   "mine": "40 | 61",
+   "agree": true,
+   "verdict": "safe",
+   "note": "integer program (HiGHS, optimal) and networkx clique number, every complaint"
+  },
+  {
+   "id": "sstar",
+   "quantity": "s*_Z (z)",
+   "report": "63 (15) | 82 (1)",
+   "mine": "63 (15; bitwise z 0: 65) | 82 (1; bitwise z 1: 82)",
+   "agree": true,
+   "verdict": "safe for L; for Q only with the caveat that the prefix is shared approximately (no position bit for bit)",
+   "note": "Q: 10 bitwise-distinct copies of the 15 prefix keys, relative difference up to 0.03; exact z = 0 gives s* = 65, above the measured sacrifice"
+  },
+  {
+   "id": "points",
+   "quantity": "answer keys / last keys only: rank; complaints repairable",
+   "report": "400/100; 297/297 | 483/100; 305/305",
+   "mine": "400/100; 297/297 | 483/100; 305/305",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  },
+  {
+   "id": "groups",
+   "quantity": "T, d_in; group sizes",
+   "report": "100, 11008; 289-1059 | 100, 11008; 595-610",
+   "mine": "100, 11008; 289-1059 | 100, 11008; 595-610",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  },
+  {
+   "id": "lp_shift",
+   "quantity": "L complaints whose teacher-forced last prompt position is one token after the decode's",
+   "report": "14",
+   "mine": "14",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  },
+  {
+   "id": "opt_ub",
+   "quantity": "optimum code: upper bounds that are feasible deletion sets of the stated size (finished rows)",
+   "report": "107 | 52",
+   "mine": "107,107,107 | 52,52,52",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  },
+  {
+   "id": "opt_lb",
+   "quantity": "optimum code: lower bounds confirmed by my solver-free certificate (complaints within the budget)",
+   "report": "43 | 52",
+   "mine": "43,34,29 | 52,47,40",
+   "agree": true,
+   "verdict": "the confirmed ones safe; the others exceed my certified bound by at most 1: not refuted, they rest on the report's branch and bound",
+   "note": "all finished rows: 107,89,72 | 52,47,40 of 107 | 52; my bound above the report's upper bound: 0"
+  },
+  {
+   "id": "opt_bi",
+   "quantity": "BI / OPT, median over the complaints within the budget: at least; at most",
+   "report": "1,1.02,1 | 1,1,1; 1.04,1.05,1.05 | 1.03,1.02,1",
+   "mine": "1,1.02,1 | 1,1,1; 1.02,1.06,1.08 | 1.01,1.03,1.03",
+   "agree": true,
+   "verdict": "lower ends safe; upper ends: quote mine (certified without the solver) or the report's as 'by the optimum code'",
+   "note": "mine uses my certified lower bounds: tighter than the report at c = 0.1, wider at c = 0.5"
+  },
+  {
+   "id": "opt_fo",
+   "quantity": "FO / OPT, median over the complaints within the budget: at least; at most",
+   "report": "1,1,1 | 1,1,1; 1.04,1.05,1.05 | 1.03,1.03,1",
+   "mine": "1,1,1 | 1,1,1; 1.01,1.05,1.07 | 1.01,1.03,1.04",
+   "agree": true,
+   "verdict": "lower ends safe; upper ends: quote mine (certified without the solver) or the report's as 'by the optimum code'",
+   "note": "mine uses my certified lower bounds: tighter than the report at c = 0.1, wider at c = 0.5"
+  },
+  {
+   "id": "opt_lbratio",
+   "quantity": "(bound of the proposition) / OPT, median within the budget: at least; at most",
+   "report": "0.846,0.568,0.167 | 0.877,0.635,0.319; 0.882,0.595,0.174 | 0.896,0.644,0.319",
+   "mine": "0.846,0.568,0.167 | 0.877,0.635,0.319; 0.862,0.595,0.174 | 0.884,0.643,0.326",
+   "agree": true,
+   "verdict": "safe to two digits with my certified bounds (the bound is loose at c = 0.3, 0.5)",
+   "note": ""
+  },
+  {
+   "id": "opt_cert",
+   "quantity": "optimum certified (complaints within the budget)",
+   "report": "0,3,20 | 0,15,38",
+   "mine": "5,1,9 | 20,13,26",
+   "agree": false,
+   "verdict": "not reproduced: the report's counts rest on its branch and bound; mine are what my certificate closes (at c = 0.1 more than the report)",
+   "note": "'no optimum certified at c = 0.1' describes the report's solver, not the instances"
+  },
+  {
+   "id": "summary",
+   "quantity": "numbers quoted in the summary that are correct roundings of paper_numbers.json (derived ones: of my values)",
+   "report": "104 quoted",
+   "mine": "104 correct",
+   "agree": true,
+   "verdict": "safe",
+   "note": ""
+  }
+ ],
+ "discrepancies": [
+  {
+   "kind": "numerical",
+   "text": "none: every recomputed number equals the report's, complaint by complaint",
+   "cause": ""
+  },
+  {
+   "kind": "meaning",
+   "text": "the 'Prop. bound' (59,3 | 62,7) is mu(c^2|D|^2/gamma), the lower bound of the report's sandwich; Prop. prop:cond as displayed in sec_theory.tex only gives OPT_c >= LF(c sqrt(Gamma/gamma)), median 8,0 | 30,0",
+   "cause": "the measuring agent used the stronger statement of the technical report (prop:app:cond), which sec_theory.tex does not display"
+  },
+  {
+   "kind": "meaning",
+   "text": "Gamma/gamma at one key is the same number for every complaint",
+   "cause": "at one key w_i = <psi_i, k> u_i, so the scaled Gram matrix is the cosine matrix of the write vectors up to signs"
+  },
+  {
+   "kind": "meaning",
+   "text": "s*_Z of Q rests on z = 15 prefix positions that are not shared bit for bit by all sequences",
+   "cause": "the 15 prefix keys exist in 10 bitwise-distinct copies, one per range of sequence lengths (ranges disjoint: yes), 2.3-3.5 % apart in relative norm; the 150 copies span 150 dimensions, so no 15-dimensional subspace is common to all groups through them; why the copies differ was not investigated"
+  },
+  {
+   "kind": "sampling",
+   "text": "medians over my 60 complaints differ from the report's medians over all complaints (e.g. LF at c = 0.1: 70 | 71 against 72 | 72)",
+   "cause": "subsample; on the same complaints the report's rows give my medians, and over all complaints mine equal the report's"
+  }
+ ],
+ "n_complaints": {
+  "TB-Q100-ae-l2_3": 297,
+  "TB-L100-ae-l2_3": 305
+ },
+ "per_complaint_agreement": {
+  "TB-Q100-ae-l2_3": {
+   "conditioning_max_rel_dev": 1.7537191739526164e-14,
+   "counts_equal": {
+    "0.1": {
+     "lf": 297,
+     "fo": 297,
+     "bi": 297,
+     "lb_mu": 297
+    },
+    "0.3": {
+     "lf": 297,
+     "fo": 297,
+     "bi": 297,
+     "lb_mu": 297
+    },
+    "0.5": {
+     "lf": 297,
+     "fo": 297,
+     "bi": 297,
+     "lb_mu": 297
+    }
+   },
+   "min_rel_margin_of_a_stop_decision": 5.627980328292843e-07
+  },
+  "TB-L100-ae-l2_3": {
+   "conditioning_max_rel_dev": 1.138692233626691e-14,
+   "counts_equal": {
+    "0.1": {
+     "lf": 305,
+     "fo": 305,
+     "bi": 305,
+     "lb_mu": 305
+    },
+    "0.3": {
+     "lf": 305,
+     "fo": 305,
+     "bi": 305,
+     "lb_mu": 305
+    },
+    "0.5": {
+     "lf": 305,
+     "fo": 305,
+     "bi": 305,
+     "lb_mu": 305
+    }
+   },
+   "min_rel_margin_of_a_stop_decision": 3.6795337081298256e-06
+  }
+ },
+ "paths": {
+  "verdicts": "[redacted: local path]/02_research/experiments/10_final/e5_linear/verify/verdicts.json",
+  "table": "[redacted: local path]/02_research/experiments/10_final/e5_linear/verify/out/verify_table.txt",
+  "results": "[redacted: local path]/02_research/experiments/10_final/e5_linear/verify/out/verify_results.json",
+  "code": "[redacted: local path]/02_research/experiments/10_final/e5_linear/verify/code"
+ },
+ "message": "E5 linear part, independent check (own code; keys from the final key cache). Cells Q | L; medians over all 297 | 305 complaints, the seeded 60 included.\nquantity; report; mine; agree; verdict\ngamma,Gamma,Gamma/gamma (last key); 0.308,17.7,57.5 | 0.407,7.36,18.1; 0.308,17.7,57.5 | 0.407,7.36,18.1; yes; safe, but the ratio is one constant per log (cosine matrix of the write vectors), not a median over complaints\nnegative-pair share; 0.501 | 0.503; 0.501 | 0.503; yes; safe\nLF/FO deletions c=0.1; 72/70 | 72/71; 72/70 | 72/71; yes; safe\nLF/FO deletions c=0.5; 23/19 | 24/23; 23/19 | 24/23; yes; safe\nbound c=0.1,0.5; 59,3 | 62,7; 59,3 | 62,7; yes; safe only as the report's mu-bound: prop:cond as displayed gives 8,0 | 30,0\ncapacity (5 complaints/log); 37 | 18; 37 | 18; yes; safe\npaper_numbers.json (464 values); from results.json; 0 differences, re-run identical; yes; safe\nDiscrepancies: none numerical (per complaint: counts equal, reals within 2e-14). Sample-of-60 medians differ by sampling only (LF/FO c=0.1: 70/69 | 71/70).\nWording: Q's s*_Z=63 uses 15 prefix keys shared only approximately (bitwise z=0 gives 65).\nExtras agree: stacked Gamma/gamma; LF/bound ratios; least nu 40 | 61; s*_Z; answer/last-key ranks; BI deletes all 100 on L text_125.\nOptimum code (my solver-free certificates; c=0.1,0.3,0.5): upper bounds all feasible; its lower bounds confirmed for 43,34,29 of 43 | 52,47,40 of 52; certified medians: BI/OPT at most 1.015,1.056,1.077 | 1.014,1.026,1.035 (report 1.043,1.053,1.048 | 1.027,1.025,1), bound/OPT 0.85-0.88,0.57-0.64,0.17-0.33 (report 0.85-0.90,0.57-0.64,0.17-0.32); its certified counts rest on its branch and bound.\nFiles: [redacted: local path]/02_research/experiments/10_final/e5_linear/verify/verdicts.json ; [redacted: local path]/02_research/experiments/10_final/e5_linear/verify/out/verify_table.txt",
+ "message_words": 246
+}

@@ -1,0 +1,232 @@
+{
+ "TB-Q100-ae-l2_3": {
+  "R": [
+   12,
+   18,
+   24,
+   35,
+   51,
+   63,
+   70,
+   75,
+   76,
+   93
+  ],
+  "mine": {
+   "n_sequences": 765,
+   "frame": 741,
+   "violations": 0,
+   "touched": 24,
+   "touched_logits_changed": 24,
+   "other_edit_released_after_masking": 2,
+   "masked_gate_releases_a_revoked_edit": 0,
+   "kept_seqs_logits_changed_scoped": 2,
+   "probes_logits_changed_scoped": 0,
+   "kept_seqs_flag_changed_scoped": 2,
+   "probes_flag_changed_scoped": 0,
+   "scoped_revoked_after": {
+    "rel": 0.0,
+    "tgen": 0.0,
+    "igen": 0.0
+   },
+   "scoped_revoked_before": {
+    "rel": 100.0,
+    "tgen": 30.0,
+    "igen": 70.0
+   },
+   "scoped_kept_after": {
+    "rel": 100.0,
+    "tgen": 61.111111111111114,
+    "igen": 70.0
+   },
+   "scoped_kept_before": {
+    "rel": 100.0,
+    "tgen": 60.0,
+    "igen": 68.88888888888889
+   },
+   "linear_kept_after": {
+    "rel": 80.0,
+    "tgen": 8.88888888888889,
+    "igen": 22.22222222222222
+   },
+   "linear_kept_before": {
+    "rel": 76.66666666666667,
+    "tgen": 8.88888888888889,
+    "igen": 21.11111111111111
+   },
+   "linear_revoked_after": {
+    "rel": 0.0,
+    "tgen": 0.0,
+    "igen": 0.0
+   },
+   "linear_revoked_before": {
+    "rel": 90.0,
+    "tgen": 10.0,
+    "igen": 30.0
+   },
+   "linear_kept_seqs_flag_changed": 4,
+   "linear_kept_seqs_logits_changed": 270,
+   "linear_probes_logits_changed": 465,
+   "linear_probes_flag_changed": 51,
+   "D1_scoped_after": 4.946236559139785,
+   "D1_scoped_before": 4.946236559139785,
+   "D1_linear_after": 54.40860215053763,
+   "D1_linear_before": 54.19354838709678,
+   "rollback_weight_equals_harness_bitwise": true
+  },
+  "experiment_rows_same_set": {
+   "n_sequences": 1173,
+   "frame": 741,
+   "violations": 0,
+   "touched": 24,
+   "linear_kept_after": {
+    "rel": 80.0,
+    "tgen": 8.88888888888889,
+    "igen": 22.22222222222222
+   },
+   "linear_kept_before": {
+    "rel": 76.66666666666667,
+    "tgen": 8.88888888888889,
+    "igen": 21.11111111111111
+   },
+   "linear_kept_seqs_flag_changed": 4,
+   "D1_linear_after": 54.40860215053763,
+   "D1_scoped_after": 4.946236559139785,
+   "probes_logits_changed_scoped": 0,
+   "kept_seqs_logits_changed_scoped": 2
+  },
+  "my_logit_hashes_equal_to_experiment": {
+   "base_scoped": 765,
+   "scoped_m10_s0": 765,
+   "linear_m10_s0": 765,
+   "base_deployed": 765
+  },
+  "my_flags_equal_to_experiment": {
+   "base_scoped": 765,
+   "scoped_m10_s0": 765,
+   "linear_m10_s0": 765,
+   "base_deployed": 765
+  },
+  "released_sets_equal_to_experiment": {
+   "base_scoped": 765,
+   "scoped_m10_s0": 765
+  },
+  "violating_sids": [],
+  "counts_agree": true
+ },
+ "TB-L100-ae-l2_3": {
+  "R": [
+   12,
+   18,
+   24,
+   35,
+   51,
+   63,
+   70,
+   75,
+   76,
+   93
+  ],
+  "mine": {
+   "n_sequences": 769,
+   "frame": 739,
+   "violations": 0,
+   "touched": 30,
+   "touched_logits_changed": 30,
+   "other_edit_released_after_masking": 5,
+   "masked_gate_releases_a_revoked_edit": 0,
+   "kept_seqs_logits_changed_scoped": 2,
+   "probes_logits_changed_scoped": 3,
+   "kept_seqs_flag_changed_scoped": 0,
+   "probes_flag_changed_scoped": 2,
+   "scoped_revoked_after": {
+    "rel": 0.0,
+    "tgen": 0.0,
+    "igen": 0.0
+   },
+   "scoped_revoked_before": {
+    "rel": 100.0,
+    "tgen": 50.0,
+    "igen": 100.0
+   },
+   "scoped_kept_after": {
+    "rel": 97.77777777777777,
+    "tgen": 46.666666666666664,
+    "igen": 94.44444444444444
+   },
+   "scoped_kept_before": {
+    "rel": 97.77777777777777,
+    "tgen": 46.666666666666664,
+    "igen": 94.44444444444444
+   },
+   "linear_kept_after": {
+    "rel": 88.88888888888889,
+    "tgen": 33.33333333333333,
+    "igen": 68.88888888888889
+   },
+   "linear_kept_before": {
+    "rel": 87.77777777777777,
+    "tgen": 31.11111111111111,
+    "igen": 66.66666666666666
+   },
+   "linear_revoked_after": {
+    "rel": 0.0,
+    "tgen": 0.0,
+    "igen": 0.0
+   },
+   "linear_revoked_before": {
+    "rel": 90.0,
+    "tgen": 10.0,
+    "igen": 60.0
+   },
+   "linear_kept_seqs_flag_changed": 5,
+   "linear_kept_seqs_logits_changed": 270,
+   "linear_probes_logits_changed": 469,
+   "linear_probes_flag_changed": 37,
+   "D1_scoped_after": 4.904051172707889,
+   "D1_scoped_before": 5.330490405117271,
+   "D1_linear_after": 60.3411513859275,
+   "D1_linear_before": 62.26012793176972,
+   "rollback_weight_equals_harness_bitwise": true
+  },
+  "experiment_rows_same_set": {
+   "n_sequences": 1248,
+   "frame": 739,
+   "violations": 0,
+   "touched": 30,
+   "linear_kept_after": {
+    "rel": 88.88888888888889,
+    "tgen": 33.33333333333333,
+    "igen": 68.88888888888889
+   },
+   "linear_kept_before": {
+    "rel": 87.77777777777777,
+    "tgen": 31.11111111111111,
+    "igen": 66.66666666666666
+   },
+   "linear_kept_seqs_flag_changed": 5,
+   "D1_linear_after": 60.3411513859275,
+   "D1_scoped_after": 4.904051172707889,
+   "probes_logits_changed_scoped": 3,
+   "kept_seqs_logits_changed_scoped": 2
+  },
+  "my_logit_hashes_equal_to_experiment": {
+   "base_scoped": 769,
+   "scoped_m10_s0": 769,
+   "linear_m10_s0": 769,
+   "base_deployed": 769
+  },
+  "my_flags_equal_to_experiment": {
+   "base_scoped": 769,
+   "scoped_m10_s0": 769,
+   "linear_m10_s0": 769,
+   "base_deployed": 769
+  },
+  "released_sets_equal_to_experiment": {
+   "base_scoped": 769,
+   "scoped_m10_s0": 769
+  },
+  "violating_sids": [],
+  "counts_agree": true
+ }
+}

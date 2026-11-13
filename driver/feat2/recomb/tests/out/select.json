@@ -1,0 +1,207 @@
+{
+ "group": "select",
+ "tests": {
+  "reproduced_byte_for_byte[qwen25vl]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "rows_sha256": "59a5a489767f0bcd23b1e394b89b8d90f2771de65202df18c8f301ac5194f8f7",
+    "bytes": 23179328
+   }
+  },
+  "caches_compared(information)[qwen25vl]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "caches_present": [
+     "QO",
+     "blip2",
+     "llava",
+     "qwen25vl"
+    ],
+    "caches_of_the_selection": [
+     "qwen25vl",
+     "llava",
+     "QO",
+     "blip2"
+    ],
+    "caches_that_appeared_after_the_selection": []
+   }
+  },
+  "image_md5_recomputed_from_files[qwen25vl]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_image_files": 10491,
+    "n_distinct_contents": 10186,
+    "n_differing": 0,
+    "recomputed": false,
+    "seconds": 0.1
+   }
+  },
+  "disjoint_from_every_test_query[qwen25vl]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_recombination_rows": 24000,
+    "n_test_rows_with_an_image": 42400,
+    "n_distinct_test_queries_exact": 17238,
+    "n_distinct_test_queries_normalised": 17238,
+    "n_rows_equal_to_a_test_query_exact": 0,
+    "n_rows_equal_to_a_test_query_normalised": 0
+   }
+  },
+  "text_queries_of_the_caches_have_no_image(information)[qwen25vl]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_distinct_text_queries": 2689
+   }
+  },
+  "source_pool_recomputed[qwen25vl]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_items": 1051,
+    "n_sources_of_new_hard_negatives": 725,
+    "all_in_pool": true
+   }
+  },
+  "rules[qwen25vl]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_rows": 24000,
+    "n_edits": 2000,
+    "violations": {},
+    "first_examples": {}
+   }
+  },
+  "query_ids[qwen25vl]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_distinct_queries": 23762,
+    "n_rows_in_duplicate_groups": 456,
+    "duplicate_groups_by_kinds": {
+     "X-Q": 218
+    },
+    "duplicates_are_between_different_edits_only": true
+   }
+  },
+  "solver_batches_are_position_decades[qwen25vl]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "master_log": "TB-Q2000-ae-l2_3",
+    "n_batches": 200
+   }
+  },
+  "rows_usable_by_log_length[qwen25vl]": {
+   "ok": true,
+   "seconds": null,
+   "info": {}
+  },
+  "reproduced_byte_for_byte[llava]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "rows_sha256": "f06e1856f9ad544cc0e8cfb142eb393c7f32794d827de9efc2dd3f8e19b33d07",
+    "bytes": 11573477
+   }
+  },
+  "caches_compared(information)[llava]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "caches_present": [
+     "QO",
+     "blip2",
+     "llava",
+     "qwen25vl"
+    ],
+    "caches_of_the_selection": [
+     "qwen25vl",
+     "llava",
+     "QO",
+     "blip2"
+    ],
+    "caches_that_appeared_after_the_selection": []
+   }
+  },
+  "image_md5_recomputed_from_files[llava]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_image_files": 10487,
+    "n_distinct_contents": 10182,
+    "n_differing": 0,
+    "recomputed": false,
+    "seconds": 0.0
+   }
+  },
+  "disjoint_from_every_test_query[llava]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_recombination_rows": 12000,
+    "n_test_rows_with_an_image": 39400,
+    "n_distinct_test_queries_exact": 17238,
+    "n_distinct_test_queries_normalised": 17238,
+    "n_rows_equal_to_a_test_query_exact": 0,
+    "n_rows_equal_to_a_test_query_normalised": 0
+   }
+  },
+  "text_queries_of_the_caches_have_no_image(information)[llava]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_distinct_text_queries": 2689
+   }
+  },
+  "source_pool_recomputed[llava]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_items": 1051,
+    "n_sources_of_new_hard_negatives": 718,
+    "all_in_pool": true
+   }
+  },
+  "rules[llava]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_rows": 12000,
+    "n_edits": 1000,
+    "violations": {},
+    "first_examples": {}
+   }
+  },
+  "query_ids[llava]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "n_distinct_queries": 11942,
+    "n_rows_in_duplicate_groups": 116,
+    "duplicate_groups_by_kinds": {
+     "X-Q": 58
+    },
+    "duplicates_are_between_different_edits_only": true
+   }
+  },
+  "solver_batches_are_position_decades[llava]": {
+   "ok": true,
+   "seconds": null,
+   "info": {
+    "master_log": "TB-L1000-ae-l2_3",
+    "n_batches": 100
+   }
+  },
+  "rows_usable_by_log_length[llava]": {
+   "ok": true,
+   "seconds": null,
+   "info": {}
+  }
+ }
+}

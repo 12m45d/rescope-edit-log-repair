@@ -1,0 +1,2035 @@
+{
+ "written": "2026-11-12 04:48:54 UTC",
+ "driver": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "checks": {
+  "0": {
+   "check": "E5 (f) capacity curve: own capture of the all-position keys of 30 complaints (Qwen development log, order 0), own ranks and cap(n), float64 SVD",
+   "verdict": "pass",
+   "evidence": {
+    "captured_key_sets_bitwise_equal_to_the_experiment": "30 of 30",
+    "n=10": {
+     "n_keys": 4684,
+     "rank_KQ": 4583,
+     "cap": 100,
+     "cap_by_tolerance": {
+      "1e-10": 100,
+      "1e-09": 100,
+      "1e-08": 100
+     },
+     "experiment": {
+      "n_keys": 4684,
+      "rank_KQ": 4583,
+      "cap": 100,
+      "cap_by_tolerance": {
+       "1e-10": 100,
+       "1e-09": 100,
+       "1e-08": 100
+      }
+     }
+    },
+    "n=20": {
+     "n_keys": 8790,
+     "rank_KQ": 8570,
+     "cap": 100,
+     "cap_by_tolerance": {
+      "1e-10": 100,
+      "1e-09": 100,
+      "1e-08": 100
+     },
+     "experiment": {
+      "n_keys": 8790,
+      "rank_KQ": 8570,
+      "cap": 100,
+      "cap_by_tolerance": {
+       "1e-10": 100,
+       "1e-09": 100,
+       "1e-08": 100
+      }
+     }
+    },
+    "n=30": {
+     "n_keys": 12293,
+     "rank_KQ": 11008,
+     "cap": 0,
+     "cap_by_tolerance": {
+      "1e-10": 0,
+      "1e-09": 0,
+      "1e-08": 0
+     },
+     "experiment": {
+      "n_keys": 12293,
+      "rank_KQ": 11008,
+      "cap": 0,
+      "cap_by_tolerance": {
+       "1e-10": 0,
+       "1e-09": 0,
+       "1e-08": 0
+      }
+     }
+    }
+   },
+   "discrepancies": []
+  },
+  "1": {
+   "check": "E5 (c): empirical false firing of the two-block rule, n = 200, alpha = 0.05, 200 own draws; rank of the calibration-conditional variant by exact computation",
+   "verdict": "pass",
+   "evidence": {
+    "largest_abs_z_mine_vs_experiment": 1.6,
+    "comparison": {
+     "TB-Q100-ae-l2_3": {
+      "tf: REPAIR -> heldout_disjoint [literal]": {
+       "mine": 4.388,
+       "experiment": 4.586,
+       "diff": -0.198,
+       "z": -1.22
+      },
+      "tf: REPAIR -> heldout_disjoint [guards]": {
+       "mine": 4.388,
+       "experiment": 4.586,
+       "diff": -0.198,
+       "z": -1.22
+      },
+      "prompt: REPAIR -> heldout_disjoint [literal]": {
+       "mine": 4.378,
+       "experiment": 4.361,
+       "diff": 0.018,
+       "z": 0.11
+      },
+      "prompt: REPAIR -> heldout_disjoint [guards]": {
+       "mine": 4.378,
+       "experiment": 4.361,
+       "diff": 0.018,
+       "z": 0.11
+      },
+      "prompt: REPAIR -> BEN-T [literal]": {
+       "mine": 4.184,
+       "experiment": 4.124,
+       "diff": 0.06,
+       "z": 0.44
+      },
+      "prompt: REPAIR -> BEN-T [guards]": {
+       "mine": 4.184,
+       "experiment": 4.124,
+       "diff": 0.06,
+       "z": 0.44
+      },
+      "prompt: REPAIR -> MME-T [literal]": {
+       "mine": 7.691,
+       "experiment": 6.084,
+       "diff": 1.607,
+       "z": 1.6
+      },
+      "prompt: REPAIR -> MME-T [guards]": {
+       "mine": 7.691,
+       "experiment": 6.084,
+       "diff": 1.607,
+       "z": 1.6
+      },
+      "prompt: REPAIR -> BEN-T far rows [guards]": {
+       "mine": 2.531,
+       "experiment": 2.525,
+       "diff": 0.006
+      }
+     },
+     "TB-L100-ae-l2_3": {
+      "tf: REPAIR -> heldout_disjoint [literal]": {
+       "mine": 3.151,
+       "experiment": 3.003,
+       "diff": 0.148,
+       "z": 0.78
+      },
+      "tf: REPAIR -> heldout_disjoint [guards]": {
+       "mine": 3.151,
+       "experiment": 3.003,
+       "diff": 0.148,
+       "z": 0.78
+      },
+      "prompt: REPAIR -> heldout_disjoint [literal]": {
+       "mine": 2.845,
+       "experiment": 2.92,
+       "diff": -0.075,
+       "z": -0.4
+      },
+      "prompt: REPAIR -> heldout_disjoint [guards]": {
+       "mine": 2.845,
+       "experiment": 2.92,
+       "diff": -0.075,
+       "z": -0.4
+      },
+      "prompt: REPAIR -> BEN-T [literal]": {
+       "mine": 3.579,
+       "experiment": 3.702,
+       "diff": -0.123,
+       "z": -0.69
+      },
+      "prompt: REPAIR -> BEN-T [guards]": {
+       "mine": 3.579,
+       "experiment": 3.702,
+       "diff": -0.123,
+       "z": -0.69
+      },
+      "prompt: REPAIR -> MME-T [literal]": {
+       "mine": 1.568,
+       "experiment": 1.728,
+       "diff": -0.161,
+       "z": -1.01
+      },
+      "prompt: REPAIR -> MME-T [guards]": {
+       "mine": 1.568,
+       "experiment": 1.728,
+       "diff": -0.161,
+       "z": -1.01
+      },
+      "prompt: REPAIR -> BEN-T far rows [guards]": {
+       "mine": 3.24,
+       "experiment": 3.375,
+       "diff": -0.135
+      }
+     }
+    },
+    "pac_rank": {
+     "n2": 100,
+     "alpha": 0.05,
+     "delta": 0.1,
+     "rank_exact_rational": 99,
+     "rank_scipy_beta": 99,
+     "P[FF<=alpha] at ranks 96..100": {
+      "96": 0.564018699314288,
+      "97": 0.7421613408839836,
+      "98": 0.8817370188148791,
+      "99": 0.9629187906726447,
+      "100": 0.994079470779666
+     },
+     "two_block_rank": 96
+    },
+    "experiment_pac_rank": {
+     "TB-Q100-ae-l2_3": 99,
+     "TB-L100-ae-l2_3": 99
+    },
+    "bound_pct": 4.9504950495049505
+   },
+   "discrepancies": [],
+   "note": "z = (mine - experiment) / combined Monte Carlo SE (200 own draws against 500); REPAIR -> MME-T on the Qwen log is above 5 % in every estimate (experiment 6.1, mine 7.7 here and 6.3 in check 8 f) with a very wide spread over draws"
+  },
+  "2": {
+   "check": "E5 (a): error of the rebased and of the logged values against the cached clean-model targets, own arithmetic, one log per family",
+   "verdict": "pass",
+   "evidence": {
+    "TB-Q500-ae-l2_3": {
+     "mine": {
+      "err_rebased_max_pct": 1.8685374244766257,
+      "err_logged_max_pct": 72.95045401383501,
+      "err_rebased_median_pct": 0.895839402469599,
+      "err_logged_median_pct": 24.425275178681318,
+      "margin_min": 0.27499431860566703,
+      "n_margin_nonpositive": 0
+     },
+     "experiment": {
+      "err_rebased_max_pct": 1.8685374244766257,
+      "err_logged_max_pct": 72.95045401383501,
+      "err_rebased_median_pct": 0.895839402469599,
+      "err_logged_median_pct": 24.425275178681318,
+      "margin_min": 0.27499431860566725,
+      "n_margin_nonpositive": 0
+     },
+     "max_abs_diff": 2.220446049250313e-16
+    },
+    "TB-Q2000-memitw": {
+     "mine": {
+      "err_rebased_max_pct": 2.3795873894874053,
+      "err_logged_max_pct": 117.61163658263685,
+      "err_rebased_median_pct": 1.1312883719026896,
+      "err_logged_median_pct": 58.107518215272115,
+      "margin_min": -0.0117513520104644,
+      "n_margin_nonpositive": 1
+     },
+     "experiment": {
+      "err_rebased_max_pct": 2.3795873894874053,
+      "err_logged_max_pct": 117.61163658263685,
+      "err_rebased_median_pct": 1.131288371902689,
+      "err_logged_median_pct": 58.107518215272115,
+      "margin_min": -0.011751352010464622,
+      "n_margin_nonpositive": 1
+     },
+     "max_abs_diff": 6.661338147750939e-16
+    },
+    "TB-L500-ae-l2_3": {
+     "mine": {
+      "err_rebased_max_pct": 0.664329453030131,
+      "err_logged_max_pct": 34.902009855760035,
+      "err_rebased_median_pct": 0.11833128812944495,
+      "err_logged_median_pct": 13.008411564726874,
+      "margin_min": 0.38547991975585805,
+      "n_margin_nonpositive": 0
+     },
+     "experiment": {
+      "err_rebased_max_pct": 0.664329453030131,
+      "err_logged_max_pct": 34.902009855760035,
+      "err_rebased_median_pct": 0.11833128812944482,
+      "err_logged_median_pct": 13.008411564726874,
+      "margin_min": 0.38547991975585805,
+      "n_margin_nonpositive": 0
+     },
+     "max_abs_diff": 1.249000902703301e-16
+    },
+    "TB-L1000-memitw": {
+     "mine": {
+      "err_rebased_max_pct": 0.702904944950824,
+      "err_logged_max_pct": 61.297928515000436,
+      "err_rebased_median_pct": 0.11266624605687932,
+      "err_logged_median_pct": 39.713504191827084,
+      "margin_min": -0.10706204901728911,
+      "n_margin_nonpositive": 2
+     },
+     "experiment": {
+      "err_rebased_max_pct": 0.7029049449508243,
+      "err_logged_max_pct": 61.297928515000436,
+      "err_rebased_median_pct": 0.11266624605687962,
+      "err_logged_median_pct": 39.713504191827084,
+      "margin_min": -0.10706204901728911,
+      "n_margin_nonpositive": 2
+     },
+     "max_abs_diff": 3.3306690738754696e-16
+    }
+   },
+   "discrepancies": []
+  },
+  "3": {
+   "check": "E8: storage of the scoped log by my own count; one latency cell re-timed (TB-Q100-ae-l2_3, role last, fp64)",
+   "verdict": "pass",
+   "evidence": {
+    "storage": {
+     "TB-Q100-ae-l2_3": {
+      "mine": {
+       "storage_numbers": 1305900,
+       "storage_mb": 9.963226318359375,
+       "storage_mb_module_dtype": 2.4908065795898438,
+       "storage_share_of_module_numbers_pct": 5.792573440906613,
+       "T_at_module_size": 1726.3484187150625,
+       "guard_keys_not_counted": 2201600
+      },
+      "stored": {
+       "storage_numbers": 1305900,
+       "storage_mb": 9.963226318359375,
+       "storage_mb_module_dtype": 2.4908065795898438,
+       "storage_share_of_module_numbers_pct": 5.792573440906613
+      },
+      "ok": true
+     },
+     "TB-L100-ae-l2_3": {
+      "mine": {
+       "storage_numbers": 1510700,
+       "storage_mb": 11.525726318359375,
+       "storage_mb_module_dtype": 2.8814315795898438,
+       "storage_share_of_module_numbers_pct": 3.3505018367323767,
+       "T_at_module_size": 2984.6275236645265,
+       "guard_keys_not_counted": 2201600
+      },
+      "stored": {
+       "storage_numbers": 1510700,
+       "storage_mb": 11.525726318359375,
+       "storage_mb_module_dtype": 2.8814315795898438,
+       "storage_share_of_module_numbers_pct": 3.3505018367323767
+      },
+      "ok": true
+     }
+    },
+    "latency_mine": {
+     "plain_forward_ms": 67.29724816977978,
+     "gated_ms": 68.904222920537,
+     "overhead_end_to_end_pct": 2.463170743109,
+     "overhead_p10": -4.911943730865513,
+     "overhead_p90": 15.839842026878824,
+     "overhead_min_based_pct": 1.1412917610221118,
+     "gate_ms_per_forward_median": 0.32250769436359406,
+     "gate_ms_per_forward_min_based": 0.37938964863618213,
+     "gate_pct_of_forward_min_based": 0.5051595553074639,
+     "card_utilisation_pct_median": 37.0,
+     "n_sequences_firing": 7,
+     "model_parameters": 3754622976
+    },
+    "latency_stored": {
+     "plain_forward_ms": 105.91276735067368,
+     "overhead_end_to_end_pct": 4.975970858305234,
+     "overhead_end_to_end_pct_p10": -11.65303433404656,
+     "overhead_end_to_end_pct_p90": 35.16050527773826,
+     "overhead_end_to_end_pct_min_based": 0.47994386102605535,
+     "gate_ms_per_forward": 1.0498128831386566,
+     "gate_ms_per_forward_min_based": 0.5613057563702265,
+     "gate_pct_of_forward_min_based": 0.6495184184159962,
+     "card_utilisation_pct_median": 92.0
+    }
+   },
+   "discrepancies": [],
+   "note": "timings depend on the load of the shared card: my pass ran at a median utilisation of 37 % (experiment: 92 %); the gate alone and the overhead are of the same size, the experiment's medians are the larger ones"
+  },
+  "4": {
+   "check": "E6, calibration draw 0: rows linear response, logged values, role = all positions (plain Evaluator + own gate arithmetic)",
+   "verdict": "pass",
+   "evidence": {
+    "TB-Q100-ae-l2_3": {
+     "resp_lin": {
+      "mine": {
+       "FF": 4.946236559139785,
+       "D1": 2.5806451612903225,
+       "rel": 78.0,
+       "tgen": 8.0,
+       "igen": 26.0,
+       "n_probes": 465,
+       "n_edit_sequences": 300
+      },
+      "experiment_rows": {
+       "FF": 4.946236559139785,
+       "D1": 2.5806451612903225,
+       "rel": 78.0,
+       "tgen": 8.0,
+       "igen": 26.0,
+       "n_probes": 465,
+       "n_edit_sequences": 300
+      },
+      "own_gate_FF": 4.946236559139785,
+      "own_gate_vs_hook_rows_differing": 0,
+      "rows_differing_from_experiment": {
+       "fired": 0,
+       "exact": 0,
+       "D1": 0
+      },
+      "D1_on_rows_without_release": 0
+     },
+     "values_logged": {
+      "mine": {
+       "FF": 4.946236559139785,
+       "D1": 4.946236559139785,
+       "rel": 99.0,
+       "tgen": 56.00000000000001,
+       "igen": 68.0,
+       "n_probes": 465,
+       "n_edit_sequences": 300
+      },
+      "experiment_rows": {
+       "FF": 4.946236559139785,
+       "D1": 4.946236559139785,
+       "rel": 99.0,
+       "tgen": 56.00000000000001,
+       "igen": 68.0,
+       "n_probes": 465,
+       "n_edit_sequences": 300
+      },
+      "own_gate_FF": 4.946236559139785,
+      "own_gate_vs_hook_rows_differing": 0,
+      "rows_differing_from_experiment": {
+       "fired": 0,
+       "exact": 0,
+       "D1": 0
+      },
+      "D1_on_rows_without_release": 0
+     },
+     "role_all": {
+      "mine": {
+       "FF": 6.881720430107527,
+       "D1": 0.43010752688172044,
+       "rel": 100.0,
+       "tgen": 17.0,
+       "igen": 45.0,
+       "n_probes": 465,
+       "n_edit_sequences": 300
+      },
+      "experiment_rows": {
+       "FF": 6.881720430107527,
+       "D1": 0.43010752688172044,
+       "rel": 100.0,
+       "tgen": 17.0,
+       "igen": 45.0,
+       "n_probes": 465,
+       "n_edit_sequences": 300
+      },
+      "own_gate_FF": 6.881720430107527,
+      "own_gate_vs_hook_rows_differing": 0,
+      "rows_differing_from_experiment": {
+       "fired": 0,
+       "exact": 0,
+       "D1": 0
+      },
+      "D1_on_rows_without_release": 0
+     }
+    },
+    "TB-L100-ae-l2_3": {
+     "resp_lin": {
+      "mine": {
+       "FF": 5.330490405117271,
+       "D1": 2.1321961620469083,
+       "rel": 92.0,
+       "tgen": 32.0,
+       "igen": 69.0,
+       "n_probes": 469,
+       "n_edit_sequences": 300
+      },
+      "experiment_rows": {
+       "FF": 5.330490405117271,
+       "D1": 2.1321961620469083,
+       "rel": 92.0,
+       "tgen": 32.0,
+       "igen": 69.0,
+       "n_probes": 469,
+       "n_edit_sequences": 300
+      },
+      "own_gate_FF": 5.330490405117271,
+      "own_gate_vs_hook_rows_differing": 0,
+      "rows_differing_from_experiment": {
+       "fired": 0,
+       "exact": 0,
+       "D1": 0
+      },
+      "D1_on_rows_without_release": 0
+     },
+     "values_logged": {
+      "mine": {
+       "FF": 5.330490405117271,
+       "D1": 5.330490405117271,
+       "rel": 99.0,
+       "tgen": 48.0,
+       "igen": 96.0,
+       "n_probes": 469,
+       "n_edit_sequences": 300
+      },
+      "experiment_rows": {
+       "FF": 5.330490405117271,
+       "D1": 5.330490405117271,
+       "rel": 99.0,
+       "tgen": 48.0,
+       "igen": 96.0,
+       "n_probes": 469,
+       "n_edit_sequences": 300
+      },
+      "own_gate_FF": 5.330490405117271,
+      "own_gate_vs_hook_rows_differing": 0,
+      "rows_differing_from_experiment": {
+       "fired": 0,
+       "exact": 0,
+       "D1": 0
+      },
+      "D1_on_rows_without_release": 0
+     },
+     "role_all": {
+      "mine": {
+       "FF": 2.771855010660981,
+       "D1": 1.4925373134328357,
+       "rel": 92.0,
+       "tgen": 36.0,
+       "igen": 86.0,
+       "n_probes": 469,
+       "n_edit_sequences": 300
+      },
+      "experiment_rows": {
+       "FF": 2.771855010660981,
+       "D1": 1.4925373134328357,
+       "rel": 92.0,
+       "tgen": 36.0,
+       "igen": 86.0,
+       "n_probes": 469,
+       "n_edit_sequences": 300
+      },
+      "own_gate_FF": 2.771855010660981,
+      "own_gate_vs_hook_rows_differing": 0,
+      "rows_differing_from_experiment": {
+       "fired": 0,
+       "exact": 0,
+       "D1": 0
+      },
+      "D1_on_rows_without_release": 0
+     }
+    }
+   },
+   "discrepancies": []
+  },
+  "5": {
+   "check": "E9: revocation set of 10 edits (m = 10, s = 0) per development log: scoped log before / after masking bit for bit, frame rule, own linear rollback weight and the kept edits",
+   "verdict": "pass",
+   "evidence": {
+    "TB-Q100-ae-l2_3": {
+     "R": [
+      12,
+      18,
+      24,
+      35,
+      51,
+      63,
+      70,
+      75,
+      76,
+      93
+     ],
+     "mine": {
+      "n_sequences": 765,
+      "frame": 741,
+      "violations": 0,
+      "touched": 24,
+      "touched_logits_changed": 24,
+      "other_edit_released_after_masking": 2,
+      "masked_gate_releases_a_revoked_edit": 0,
+      "kept_seqs_logits_changed_scoped": 2,
+      "probes_logits_changed_scoped": 0,
+      "kept_seqs_flag_changed_scoped": 2,
+      "probes_flag_changed_scoped": 0,
+      "scoped_revoked_after": {
+       "rel": 0.0,
+       "tgen": 0.0,
+       "igen": 0.0
+      },
+      "scoped_revoked_before": {
+       "rel": 100.0,
+       "tgen": 30.0,
+       "igen": 70.0
+      },
+      "scoped_kept_after": {
+       "rel": 100.0,
+       "tgen": 61.111111111111114,
+       "igen": 70.0
+      },
+      "scoped_kept_before": {
+       "rel": 100.0,
+       "tgen": 60.0,
+       "igen": 68.88888888888889
+      },
+      "linear_kept_after": {
+       "rel": 80.0,
+       "tgen": 8.88888888888889,
+       "igen": 22.22222222222222
+      },
+      "linear_kept_before": {
+       "rel": 76.66666666666667,
+       "tgen": 8.88888888888889,
+       "igen": 21.11111111111111
+      },
+      "linear_revoked_after": {
+       "rel": 0.0,
+       "tgen": 0.0,
+       "igen": 0.0
+      },
+      "linear_revoked_before": {
+       "rel": 90.0,
+       "tgen": 10.0,
+       "igen": 30.0
+      },
+      "linear_kept_seqs_flag_changed": 4,
+      "linear_kept_seqs_logits_changed": 270,
+      "linear_probes_logits_changed": 465,
+      "linear_probes_flag_changed": 51,
+      "D1_scoped_after": 4.946236559139785,
+      "D1_scoped_before": 4.946236559139785,
+      "D1_linear_after": 54.40860215053763,
+      "D1_linear_before": 54.19354838709678,
+      "rollback_weight_equals_harness_bitwise": true
+     },
+     "experiment_rows_same_set": {
+      "n_sequences": 1173,
+      "frame": 741,
+      "violations": 0,
+      "touched": 24,
+      "linear_kept_after": {
+       "rel": 80.0,
+       "tgen": 8.88888888888889,
+       "igen": 22.22222222222222
+      },
+      "linear_kept_before": {
+       "rel": 76.66666666666667,
+       "tgen": 8.88888888888889,
+       "igen": 21.11111111111111
+      },
+      "linear_kept_seqs_flag_changed": 4,
+      "D1_linear_after": 54.40860215053763,
+      "D1_scoped_after": 4.946236559139785,
+      "probes_logits_changed_scoped": 0,
+      "kept_seqs_logits_changed_scoped": 2
+     },
+     "my_logit_hashes_equal_to_experiment": {
+      "base_scoped": 765,
+      "scoped_m10_s0": 765,
+      "linear_m10_s0": 765,
+      "base_deployed": 765
+     },
+     "released_sets_equal_to_experiment": {
+      "base_scoped": 765,
+      "scoped_m10_s0": 765
+     }
+    },
+    "TB-L100-ae-l2_3": {
+     "R": [
+      12,
+      18,
+      24,
+      35,
+      51,
+      63,
+      70,
+      75,
+      76,
+      93
+     ],
+     "mine": {
+      "n_sequences": 769,
+      "frame": 739,
+      "violations": 0,
+      "touched": 30,
+      "touched_logits_changed": 30,
+      "other_edit_released_after_masking": 5,
+      "masked_gate_releases_a_revoked_edit": 0,
+      "kept_seqs_logits_changed_scoped": 2,
+      "probes_logits_changed_scoped": 3,
+      "kept_seqs_flag_changed_scoped": 0,
+      "probes_flag_changed_scoped": 2,
+      "scoped_revoked_after": {
+       "rel": 0.0,
+       "tgen": 0.0,
+       "igen": 0.0
+      },
+      "scoped_revoked_before": {
+       "rel": 100.0,
+       "tgen": 50.0,
+       "igen": 100.0
+      },
+      "scoped_kept_after": {
+       "rel": 97.77777777777777,
+       "tgen": 46.666666666666664,
+       "igen": 94.44444444444444
+      },
+      "scoped_kept_before": {
+       "rel": 97.77777777777777,
+       "tgen": 46.666666666666664,
+       "igen": 94.44444444444444
+      },
+      "linear_kept_after": {
+       "rel": 88.88888888888889,
+       "tgen": 33.33333333333333,
+       "igen": 68.88888888888889
+      },
+      "linear_kept_before": {
+       "rel": 87.77777777777777,
+       "tgen": 31.11111111111111,
+       "igen": 66.66666666666666
+      },
+      "linear_revoked_after": {
+       "rel": 0.0,
+       "tgen": 0.0,
+       "igen": 0.0
+      },
+      "linear_revoked_before": {
+       "rel": 90.0,
+       "tgen": 10.0,
+       "igen": 60.0
+      },
+      "linear_kept_seqs_flag_changed": 5,
+      "linear_kept_seqs_logits_changed": 270,
+      "linear_probes_logits_changed": 469,
+      "linear_probes_flag_changed": 37,
+      "D1_scoped_after": 4.904051172707889,
+      "D1_scoped_before": 5.330490405117271,
+      "D1_linear_after": 60.3411513859275,
+      "D1_linear_before": 62.26012793176972,
+      "rollback_weight_equals_harness_bitwise": true
+     },
+     "experiment_rows_same_set": {
+      "n_sequences": 1248,
+      "frame": 739,
+      "violations": 0,
+      "touched": 30,
+      "linear_kept_after": {
+       "rel": 88.88888888888889,
+       "tgen": 33.33333333333333,
+       "igen": 68.88888888888889
+      },
+      "linear_kept_before": {
+       "rel": 87.77777777777777,
+       "tgen": 31.11111111111111,
+       "igen": 66.66666666666666
+      },
+      "linear_kept_seqs_flag_changed": 5,
+      "D1_linear_after": 60.3411513859275,
+      "D1_scoped_after": 4.904051172707889,
+      "probes_logits_changed_scoped": 3,
+      "kept_seqs_logits_changed_scoped": 2
+     },
+     "my_logit_hashes_equal_to_experiment": {
+      "base_scoped": 769,
+      "scoped_m10_s0": 769,
+      "linear_m10_s0": 769,
+      "base_deployed": 769
+     },
+     "released_sets_equal_to_experiment": {
+      "base_scoped": 769,
+      "scoped_m10_s0": 769
+     }
+    }
+   },
+   "discrepancies": []
+  },
+  "6": {
+   "check": "E2 on prefix logs (10- and 50-edit prefix of each stream): deployed weight rebuilt, one saved linear repair re-scored, thresholds-only repair rebuilt and re-scored, H1 verdict by the registered rule",
+   "verdict": "pass",
+   "evidence": {
+    "rescored": {
+     "TB-Q100-ae-l2_3-p10": {
+      "prefix_weight_equals_stored_composite": true,
+      "theta_max_abs_diff_to_experiment": 0.0,
+      "n_refused": 0,
+      "n_thresholds_raised": 6,
+      "linear_config": "REEDIT_B__n10__s0",
+      "linear": {
+       "mine": {
+        "D1_heldout_disjoint": 46.45161290322581,
+        "rel": 80.0,
+        "tgen": 0.0,
+        "igen": 20.0,
+        "complaints_D1": 0
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 46.45161290322581,
+        "rel": 80.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 495
+       }
+      },
+      "deployed_prefix": {
+       "mine": {
+        "D1_heldout_disjoint": 23.870967741935484,
+        "rel": 80.0,
+        "tgen": 0.0,
+        "igen": 20.0,
+        "complaints_D1": 10
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 23.870967741935484,
+        "rel": 80.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 495
+       }
+      },
+      "where_least": {
+       "mine": {
+        "D1_heldout_disjoint": 0.21505376344086022,
+        "rel": 80.0,
+        "tgen": 0.0,
+        "igen": 20.0,
+        "complaints_D1": 0,
+        "fired_heldout_disjoint": 9.89247311827957,
+        "complaints_released": 0,
+        "D1_on_rows_without_release": 0
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 0.21505376344086022,
+        "rel": 80.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 495,
+        "fired": 0
+       }
+      },
+      "h1_seed0_from_my_forwards": {
+       "D1_at_most_10": true,
+       "rel_diff": 0.0,
+       "two_sided": true,
+       "one_sided": true
+      }
+     },
+     "TB-Q100-ae-l2_3-p50": {
+      "prefix_weight_equals_stored_composite": true,
+      "theta_max_abs_diff_to_experiment": 1.1102230246251565e-15,
+      "n_refused": 0,
+      "n_thresholds_raised": 3,
+      "linear_config": "RB_UNION__n10__s0",
+      "linear": {
+       "mine": {
+        "D1_heldout_disjoint": 26.236559139784948,
+        "rel": 34.0,
+        "tgen": 4.0,
+        "igen": 14.000000000000002,
+        "complaints_D1": 2
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 26.236559139784948,
+        "rel": 34.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 615
+       }
+      },
+      "deployed_prefix": {
+       "mine": {
+        "D1_heldout_disjoint": 43.01075268817204,
+        "rel": 82.0,
+        "tgen": 8.0,
+        "igen": 28.000000000000004,
+        "complaints_D1": 10
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 43.01075268817204,
+        "rel": 82.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 615
+       }
+      },
+      "where_least": {
+       "mine": {
+        "D1_heldout_disjoint": 0.6451612903225806,
+        "rel": 78.0,
+        "tgen": 6.0,
+        "igen": 24.0,
+        "complaints_D1": 0,
+        "fired_heldout_disjoint": 17.8494623655914,
+        "complaints_released": 0,
+        "D1_on_rows_without_release": 0
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 0.6451612903225806,
+        "rel": 78.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 615,
+        "fired": 0
+       }
+      },
+      "h1_seed0_from_my_forwards": {
+       "D1_at_most_10": true,
+       "rel_diff": -4.0,
+       "two_sided": false,
+       "one_sided": false
+      }
+     },
+     "TB-L100-ae-l2_3-p10": {
+      "prefix_weight_equals_stored_composite": true,
+      "theta_max_abs_diff_to_experiment": 0.0,
+      "n_refused": 0,
+      "n_thresholds_raised": 1,
+      "linear_config": "REEDIT_B__n10__s0",
+      "linear": {
+       "mine": {
+        "D1_heldout_disjoint": 47.12153518123667,
+        "rel": 90.0,
+        "tgen": 0.0,
+        "igen": 80.0,
+        "complaints_D1": 1
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 47.12153518123667,
+        "rel": 90.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 499
+       }
+      },
+      "deployed_prefix": {
+       "mine": {
+        "D1_heldout_disjoint": 26.439232409381663,
+        "rel": 90.0,
+        "tgen": 10.0,
+        "igen": 80.0,
+        "complaints_D1": 10
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 26.439232409381663,
+        "rel": 90.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 499
+       }
+      },
+      "where_least": {
+       "mine": {
+        "D1_heldout_disjoint": 1.0660980810234542,
+        "rel": 90.0,
+        "tgen": 0.0,
+        "igen": 70.0,
+        "complaints_D1": 0,
+        "fired_heldout_disjoint": 24.093816631130064,
+        "complaints_released": 0,
+        "D1_on_rows_without_release": 0
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 1.0660980810234542,
+        "rel": 90.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 499,
+        "fired": 0
+       }
+      },
+      "h1_seed0_from_my_forwards": {
+       "D1_at_most_10": true,
+       "rel_diff": 0.0,
+       "two_sided": true,
+       "one_sided": true
+      }
+     },
+     "TB-L100-ae-l2_3-p50": {
+      "prefix_weight_equals_stored_composite": true,
+      "theta_max_abs_diff_to_experiment": 0.0,
+      "n_refused": 0,
+      "n_thresholds_raised": 1,
+      "linear_config": "RB_UNION__n10__s0",
+      "linear": {
+       "mine": {
+        "D1_heldout_disjoint": 40.511727078891255,
+        "rel": 56.00000000000001,
+        "tgen": 16.0,
+        "igen": 42.0,
+        "complaints_D1": 4
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 40.511727078891255,
+        "rel": 56.00000000000001
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 619
+       }
+      },
+      "deployed_prefix": {
+       "mine": {
+        "D1_heldout_disjoint": 50.53304904051173,
+        "rel": 86.0,
+        "tgen": 24.0,
+        "igen": 64.0,
+        "complaints_D1": 10
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 50.53304904051173,
+        "rel": 86.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 619
+       }
+      },
+      "where_least": {
+       "mine": {
+        "D1_heldout_disjoint": 1.9189765458422177,
+        "rel": 92.0,
+        "tgen": 24.0,
+        "igen": 60.0,
+        "complaints_D1": 0,
+        "fired_heldout_disjoint": 18.763326226012794,
+        "complaints_released": 0,
+        "D1_on_rows_without_release": 0
+       },
+       "experiment_rows": {
+        "D1_heldout_disjoint": 1.9189765458422177,
+        "rel": 92.0
+       },
+       "rows_differing": {
+        "exact": 0,
+        "D1": 0,
+        "n_compared": 619,
+        "fired": 0
+       }
+      },
+      "h1_seed0_from_my_forwards": {
+       "D1_at_most_10": true,
+       "rel_diff": 6.0,
+       "two_sided": false,
+       "one_sided": true
+      }
+     }
+    },
+    "h1_from_rows": {
+     "TB-Q100-ae-l2_3-p10": {
+      "D1_repair": 0.5734767025089607,
+      "rel_repair": 80.0,
+      "D1_deployed": 23.870967741935484,
+      "rel_deployed": 80.0,
+      "two_sided_met": true,
+      "one_sided_met": true,
+      "agrees_with_stored": true
+     },
+     "TB-Q100-ae-l2_3-p20": {
+      "D1_repair": 1.075268817204301,
+      "rel_repair": 75.0,
+      "D1_deployed": 29.89247311827957,
+      "rel_deployed": 75.0,
+      "two_sided_met": true,
+      "one_sided_met": true,
+      "agrees_with_stored": true
+     },
+     "TB-Q100-ae-l2_3-p50": {
+      "D1_repair": 0.931899641577061,
+      "rel_repair": 78.0,
+      "D1_deployed": 43.01075268817204,
+      "rel_deployed": 82.0,
+      "two_sided_met": false,
+      "one_sided_met": false,
+      "agrees_with_stored": true
+     },
+     "TB-L100-ae-l2_3-p10": {
+      "D1_repair": 0.4975124378109453,
+      "rel_repair": 90.0,
+      "D1_deployed": 26.439232409381663,
+      "rel_deployed": 90.0,
+      "two_sided_met": true,
+      "one_sided_met": true,
+      "agrees_with_stored": true
+     },
+     "TB-L100-ae-l2_3-p20": {
+      "D1_repair": 0.923951670220327,
+      "rel_repair": 90.0,
+      "D1_deployed": 35.39445628997868,
+      "rel_deployed": 90.0,
+      "two_sided_met": true,
+      "one_sided_met": true,
+      "agrees_with_stored": true
+     },
+     "TB-L100-ae-l2_3-p50": {
+      "D1_repair": 1.847903340440654,
+      "rel_repair": 92.0,
+      "D1_deployed": 50.53304904051173,
+      "rel_deployed": 86.0,
+      "two_sided_met": false,
+      "one_sided_met": true,
+      "agrees_with_stored": true
+     }
+    }
+   },
+   "discrepancies": []
+  },
+  "7": {
+   "check": "twenty numbers of each paper_numbers.json (E5, E8, E6, E9, E2 on prefix logs) from the per-row / per-draw / raw files; deviations from PROTOCOL.md stated in the reports",
+   "verdict": "pass (numbers: 100 of 100) / fail (deviation statements incomplete)",
+   "evidence": {
+    "numbers": {
+     "E9": {
+      "n": 20,
+      "n_ok": 20,
+      "not_ok": []
+     },
+     "E6": {
+      "n": 20,
+      "n_ok": 20,
+      "not_ok": []
+     },
+     "E2P": {
+      "n": 20,
+      "n_ok": 20,
+      "not_ok": []
+     },
+     "E5": {
+      "n": 20,
+      "n_ok": 20,
+      "not_ok": []
+     },
+     "E8": {
+      "n": 20,
+      "n_ok": 20,
+      "not_ok": []
+     }
+    },
+    "deviations_stated_in_the_reports": "E5 / E8: 6 items; E6 / E9: 4 items; E2 prefix: 4 items (read in _reports/)"
+   },
+   "discrepancies": [
+    "E8: latency and storage are reported for the paper's gate (role last in fp64 / module dtype, all-positions forms, ReScope-W) and the answer-match baseline; PROTOCOL section 3 E8 asks for 'each gate' (cosine, ball, router, z-score are not timed); not among the deviations of the E5 / E8 report",
+    "E6: behaviour is run for 8 of the 28 ablation rows; the table attributes this to R19, whose text holds no such list (GAIN response, selection = all and role last + answer have no behavioural cell, so the GAIN row equals the default row by construction); not among the deviations of the E6 / E9 report",
+    "E5 (c): the validity cells exist for 8 of the 13 logs of the report's table (the others print '-'); the report says nothing is missing and gives no reason",
+    "E5 (f): the thresholds-only repair starts from the log-only thresholds, R20 says 'of the deployed scoping' (the conclusion 'no edit silenced' holds a fortiori from thresholds -inf); stated in the code, not in the report",
+    "E9 (c) retention: not part of E9's output (the protocol reads it from E3); the E6 / E9 report does not mention it"
+   ],
+   "note": "none of the unstated items changes a number"
+  },
+  "8": {
+   "check": "additions of the fix-up agent to E1 and E2, and the questions (a) to (i)",
+   "verdict": "pass with two labelling failures (f: MME-T label of E2; g: draw label of E1 table (2b))",
+   "parts": {
+    "a": {
+     "verdict": "pass",
+     "evidence": [
+      {
+       "log": "TB-Q100-ae-l2_3",
+       "row": "deployed",
+       "draw": 0,
+       "outcome": "D1",
+       "mine": {
+        "b": 10,
+        "c": 239,
+        "p": 4.849377940630808e-58,
+        "p_holm_all_tests": 6.1587099846011255e-56,
+        "family_size": 150
+       },
+       "stored": {
+        "b": 10,
+        "c": 239,
+        "n": 465,
+        "p": 4.849377940630808e-58,
+        "p_holm_all_tests": 6.1587099846011255e-56
+       }
+      },
+      {
+       "log": "TB-L100-ae-l2_3",
+       "row": "retr_sum",
+       "draw": 1,
+       "outcome": "D1",
+       "mine": {
+        "b": 1,
+        "c": 30,
+        "p": 2.9802322387695312e-08,
+        "p_holm_all_tests": 3.5762786865234375e-06,
+        "family_size": 150
+       },
+       "stored": {
+        "b": 1,
+        "c": 30,
+        "n": 469,
+        "p": 2.9802322387695312e-08,
+        "p_holm_all_tests": 3.5762786865234375e-06
+       }
+      },
+      {
+       "log": "TB-L100-ae-l2_3",
+       "row": "deployed",
+       "draw": 0,
+       "outcome": "Rel",
+       "mine": {
+        "b": 12,
+        "c": 2,
+        "p": 0.012939453125,
+        "p_holm_all_tests": 1.0,
+        "family_size": 150
+       },
+       "stored": {
+        "b": 12,
+        "c": 2,
+        "n": 100,
+        "p": 0.012939453125,
+        "p_holm_all_tests": 1.0
+       }
+      }
+     ]
+    },
+    "b": {
+     "verdict": "pass",
+     "evidence": [
+      {
+       "name": "EoneFxLBestCosHNIWrongTarget (wrong-target rate, HN-I, white_1_shared, draw 0)",
+       "mine": 16.101694915254235,
+       "stored": 16.10169491525424,
+       "n_rows": 590,
+       "ok": true
+      },
+      {
+       "name": "EoneFxLDeployedDtwo (D2 rate of pre-correct heldout_disjoint rows, deployed)",
+       "mine": 39.743589743589745,
+       "stored": 39.743589743589745,
+       "n_rows": 78,
+       "ok": true
+      },
+      {
+       "name": "EoneFxLBestCosGenTGenEq (generated T-Gen answer equals the target, white_1_shared, draw 0)",
+       "mine": 27.0,
+       "stored": 27.0,
+       "n_rows": 100,
+       "ok": true
+      },
+      {
+       "name": "EoneFxLBallHNQFireDOne (HN-Q firing, ball, calibration draw 1)",
+       "mine": 22.110552763819097,
+       "stored": 22.110552763819097,
+       "n_rows": 597,
+       "ok": true
+      },
+      {
+       "name": "EoneFxLRowCompBAllGenTGenEq (row taken from E2: COMP-B at all complaints, generated T-Gen equals target)",
+       "mine": 28.999999999999996,
+       "stored": 29.0,
+       "n_rows": 100,
+       "ok": true
+      }
+     ]
+    },
+    "c": {
+     "verdict": "pass",
+     "evidence": {
+      "TB-Q100-ae-l2_3": {
+       "driver_draws_fresh_repair_mean": 5.159895942469159,
+       "stored_mean": 5.159895942469159,
+       "own_bootstrap_interval": {
+        "ci_lo": 3.753579256886773,
+        "ci_hi": 6.759073228264466,
+        "se": 0.7789082180337561
+       },
+       "stored_interval": [
+        3.7811513023243726,
+        6.681134872790787
+       ],
+       "monte_carlo_se": 0.18962673095599308,
+       "z_vs_bound": 1.1042794014774466,
+       "own_200_draws": {
+        "rest_rows": {
+         "mean": 4.948096885813149,
+         "mc_se": 0.17875729317355266,
+         "sd": 2.5280098837914164,
+         "n_draws": 200,
+         "share_above_bound": 0.43
+        },
+        "fresh_by_query": {
+         "mean": 5.017016597338402,
+         "mc_se": 0.18448484207330257,
+         "sd": 2.609009657123231,
+         "n_draws": 200,
+         "share_above_bound": 0.445
+        },
+        "heldout_disjoint": {
+         "mean": 5.953763440860215,
+         "mc_se": 0.13058607229382213,
+         "sd": 1.8467659449495673,
+         "n_draws": 200,
+         "share_above_bound": 0.635
+        }
+       }
+      },
+      "TB-L100-ae-l2_3": {
+       "driver_draws_fresh_repair_mean": 5.025117931810884,
+       "stored_mean": 5.025117931810884,
+       "own_bootstrap_interval": {
+        "ci_lo": 3.606231987443995,
+        "ci_hi": 6.614454902106126,
+        "se": 0.7866436583798312
+       },
+       "stored_interval": [
+        3.5636940671140067,
+        6.725391521309631
+       ],
+       "monte_carlo_se": 0.18364183435521458,
+       "z_vs_bound": 0.40635012478470645,
+       "own_200_draws": {
+        "rest_rows": {
+         "mean": 4.971088435374151,
+         "mc_se": 0.1631890407880985,
+         "sd": 2.307841547131851,
+         "n_draws": 200,
+         "share_above_bound": 0.445
+        },
+        "fresh_by_query": {
+         "mean": 5.016136166735239,
+         "mc_se": 0.16935221499049363,
+         "sd": 2.395001992574803,
+         "n_draws": 200,
+         "share_above_bound": 0.435
+        },
+        "heldout_disjoint": {
+         "mean": 2.9189765458422174,
+         "mc_se": 0.07577580530106104,
+         "sd": 1.071631715565036,
+         "n_draws": 200,
+         "share_above_bound": 0.05
+        }
+       }
+      }
+     },
+     "interval_method": "reproduced (same means, intervals within the resampling noise).  It is a bootstrap over the test rows' query clusters with the thresholds of every draw held fixed: sound as a description of the sampling of test rows, and it says itself that it leaves out the part of the threshold variability that comes from the REPAIR pool.  It is not the yardstick for the bound: for a fixed pool the expectation of the rate over random draws equals the bound, so the Monte Carlo error over draws applies (0.18 - 0.19 points for 200 draws, a quarter of the bootstrap's 0.74 - 0.80); 'the interval contains the bound' is therefore true and weak.  Draws that share queries are no problem for either statement (the draws are independent given the pool).  By the Monte Carlo error the means are compatible with the bound (z = +1.1 and +0.4 on the driver's draws; -0.0 to +0.4 on my own draws)."
+    },
+    "d": {
+     "verdict": "pass",
+     "evidence": {
+      "E1": {
+       "oldest_file_of_fixup_directory_utc": "2026-11-12 03:14:03",
+       "earliest_trace_of_the_fixup_utc (fix-up code / directory)": "2026-11-12 03:07:26",
+       "n_files_checked": 1304,
+       "existing_files_modified_after_the_oldest_fixup_file": [],
+       "existing_files_modified_after_the_earliest_trace": [],
+       "newest_non_fixup_file_utc": "2026-11-11 23:59:12",
+       "n_paper_numbers": 691,
+       "n_fixup_numbers": 3406,
+       "name_collisions": []
+      },
+      "E2": {
+       "oldest_file_of_fixup_directory_utc": "2026-11-12 03:14:09",
+       "earliest_trace_of_the_fixup_utc (fix-up code / directory)": "2026-11-12 03:13:28",
+       "n_files_checked": 1054,
+       "existing_files_modified_after_the_oldest_fixup_file": [],
+       "existing_files_modified_after_the_earliest_trace": [],
+       "newest_non_fixup_file_utc": "2026-11-12 01:32:05",
+       "n_paper_numbers": 248,
+       "n_fixup_numbers": 256,
+       "name_collisions": []
+      }
+     }
+    },
+    "e": {
+     "verdict": "pass (record correct for what it covers; its prefix part is stale and labelled provisional)",
+     "evidence": {
+      "rule_quoted_verbatim_from_PROTOCOL": true,
+      "development_log_numbers_and_readings_equal_my_recomputation_from_rows": {
+       "TB-Q100-ae-l2_3": true,
+       "TB-L100-ae-l2_3": true
+      },
+      "h1_json_agrees": {
+       "TB-Q100-ae-l2_3": true,
+       "TB-L100-ae-l2_3": true
+      },
+      "prefix_part_of_record": {
+       "source_file_modified": "2026-11-12 02:25:33 UTC",
+       "n_complete": 5,
+       "label": "prefix part: provisional"
+      },
+      "final_h1_prefix_json_modified_utc": "2026-11-12 04:11:47"
+     },
+     "final_prefix_outcome_stated_by_the_verification": {
+      "two_sided": "prefix part met on 4 of 6 (Q-p10, Q-p20, L-p10, L-p20); rule NOT met (development-log part fails on the LLaVA log, Rel +4.0)",
+      "one_sided": "prefix part met on 5 of 6; rule met (both development logs)",
+      "fails_under_both_readings": [
+       "TB-Q100-ae-l2_3-p50"
+      ],
+      "prefix_details": {
+       "TB-Q100-ae-l2_3-p10": {
+        "D1_repair": 0.5734767025089607,
+        "rel_repair": 80.0,
+        "D1_deployed": 23.870967741935484,
+        "rel_deployed": 80.0,
+        "rel_diff": 0.0,
+        "two_sided_met": true,
+        "one_sided_met": true
+       },
+       "TB-Q100-ae-l2_3-p20": {
+        "D1_repair": 1.075268817204301,
+        "rel_repair": 75.0,
+        "D1_deployed": 29.89247311827957,
+        "rel_deployed": 75.0,
+        "rel_diff": 0.0,
+        "two_sided_met": true,
+        "one_sided_met": true
+       },
+       "TB-Q100-ae-l2_3-p50": {
+        "D1_repair": 0.931899641577061,
+        "rel_repair": 78.0,
+        "D1_deployed": 43.01075268817204,
+        "rel_deployed": 82.0,
+        "rel_diff": -4.0,
+        "two_sided_met": false,
+        "one_sided_met": false
+       },
+       "TB-L100-ae-l2_3-p10": {
+        "D1_repair": 0.4975124378109453,
+        "rel_repair": 90.0,
+        "D1_deployed": 26.439232409381663,
+        "rel_deployed": 90.0,
+        "rel_diff": 0.0,
+        "two_sided_met": true,
+        "one_sided_met": true
+       },
+       "TB-L100-ae-l2_3-p20": {
+        "D1_repair": 0.923951670220327,
+        "rel_repair": 90.0,
+        "D1_deployed": 35.39445628997868,
+        "rel_deployed": 90.0,
+        "rel_diff": 0.0,
+        "two_sided_met": true,
+        "one_sided_met": true
+       },
+       "TB-L100-ae-l2_3-p50": {
+        "D1_repair": 1.847903340440654,
+        "rel_repair": 92.0,
+        "D1_deployed": 50.53304904051173,
+        "rel_deployed": 86.0,
+        "rel_diff": 6.0,
+        "two_sided_met": false,
+        "one_sided_met": true
+       }
+      }
+     }
+    },
+    "f": {
+     "verdict": "fail (label of E2; numbers unaffected)",
+     "evidence": {
+      "code": {
+       "E1": "fx.pools.firing(L, M, pool) with the driver's defaults: BEN-T at prompt-only keys, MME-T at the TEACHER-FORCED key of the MME rows; gates calibrated at teacher-forced REPAIR keys",
+       "E2 part c": "the same call: BEN-T prompt-only, MME-T teacher-forced (cell field which = 'tf')",
+       "E5 (c)": "fx.pools.get(L, pool, 'decode'): prompt-only key of every row on both sides, calibration included (R25 (5))"
+      },
+      "agreement": "E1 and E2 agree with each other; E5 uses another convention by registration; E1 / E2 deviate from R25 (5) for MME-T (teacher-forced instead of prompt-only keys)",
+      "labels": {
+       "E1": "right (table: 'MME-T at its teacher-forced key'); paper-number lines name the key for BEN-T only",
+       "E2": "WRONG for MME-T: table header and part file say 'BEN-T / MME-T at prompt-only keys'; the fix-up's paper-number lines repeat 'prompt-only' next to which = 'tf'; the amendment of 2026-11-12 02:55, item 5, says 'MME-T, prompt-only keys'",
+       "E5": "right"
+      },
+      "size_of_the_effect": {
+       "TB-Q100-ae-l2_3": {
+        "driver_draws": {
+         "MME-T tf keys (cal tf)": 5.628161888701518,
+         "MME-T prompt-only keys (cal tf)": 5.628161888701518,
+         "MME-T prompt-only keys, valid rows (cal tf)": 5.628161888701518,
+         "BEN-T prompt-only keys (cal tf)": 4.365853658536585
+        },
+        "stored": {
+         "E1 EoneXRescopeMmeT": 5.628161888701518,
+         "E1 EoneXRescopeBenT": 4.365853658536585,
+         "E2 part c, n = 200": {
+          "mean_over_draws": 5.628161888701518,
+          "which_field": [
+           "tf"
+          ],
+          "n_rows": [
+           1186
+          ],
+          "ben_t_mean": 4.365853658536585,
+          "ben_t_which": [
+           "decode"
+          ],
+          "n_draws": 20
+         },
+         "E2 fixup MmeT n = 200 mean": 5.628161888701518,
+         "E5 repair_to_mme_t (prompt-only both sides, 500 draws)": 6.083811129848229,
+         "E5 repair_to_ben_t all rows": 4.123707317073171
+        },
+        "own_200_draws": {
+         "MME-T tf | cal tf": {
+          "mean": 6.3161888701517706,
+          "se": 0.6683360372667517,
+          "n_draws": 200
+         },
+         "MME-T prompt | cal tf": {
+          "mean": 6.3191399662731875,
+          "se": 0.668547951983564,
+          "n_draws": 200
+         },
+         "MME-T prompt | cal prompt": {
+          "mean": 6.290893760539629,
+          "se": 0.662837991410293,
+          "n_draws": 200
+         },
+         "BEN-T prompt | cal tf": {
+          "mean": 4.09609756097561,
+          "se": 0.09717899852164662,
+          "n_draws": 200
+         },
+         "BEN-T prompt | cal prompt": {
+          "mean": 4.107804878048781,
+          "se": 0.0974515810263609,
+          "n_draws": 200
+         }
+        }
+       },
+       "TB-L100-ae-l2_3": {
+        "driver_draws": {
+         "MME-T tf keys (cal tf)": 1.5893760539629005,
+         "MME-T prompt-only keys (cal tf)": 1.5893760539629005,
+         "MME-T prompt-only keys, valid rows (cal tf)": 1.5893760539629005,
+         "BEN-T prompt-only keys (cal tf)": 3.7804878048780486
+        },
+        "stored": {
+         "E1 EoneXRescopeMmeT": 1.5893760539629005,
+         "E1 EoneXRescopeBenT": 3.7804878048780486,
+         "E2 part c, n = 200": {
+          "mean_over_draws": 1.5893760539629005,
+          "which_field": [
+           "tf"
+          ],
+          "n_rows": [
+           1186
+          ],
+          "ben_t_mean": 3.7804878048780486,
+          "ben_t_which": [
+           "decode"
+          ],
+          "n_draws": 20
+         },
+         "E2 fixup MmeT n = 200 mean": 1.5893760539629005,
+         "E5 repair_to_mme_t (prompt-only both sides, 500 draws)": 1.7284991568296795,
+         "E5 repair_to_ben_t all rows": 3.7018536585365855
+        },
+        "own_200_draws": {
+         "MME-T tf | cal tf": {
+          "mean": 1.6867622259696458,
+          "se": 0.11574634540869175,
+          "n_draws": 200
+         },
+         "MME-T prompt | cal tf": {
+          "mean": 1.6867622259696458,
+          "se": 0.11574634540869175,
+          "n_draws": 200
+         },
+         "MME-T prompt | cal prompt": {
+          "mean": 1.6332209106239461,
+          "se": 0.1155406190892979,
+          "n_draws": 200
+         },
+         "BEN-T prompt | cal tf": {
+          "mean": 3.9580487804878057,
+          "se": 0.14761145221859184,
+          "n_draws": 200
+         },
+         "BEN-T prompt | cal prompt": {
+          "mean": 3.820487804878049,
+          "se": 0.15088496138455393,
+          "n_draws": 200
+         }
+        }
+       }
+      }
+     }
+    },
+    "g": {
+     "verdict": "pass (gate-level cells use the 20-draw record); one label of E1 is imprecise",
+     "evidence": {
+      "duplicate_keys": 8,
+      "paper_numbers_reading_a_duplicated_key": {
+       "E2 paper_numbers.json": 0,
+       "E2 fixup": 0,
+       "E1 paper_numbers.json": 0,
+       "E1 fixup": 0
+      },
+      "E2 table part c' (gate-level near-scope firing)": "the 20-draw record (Q 11.1 / 13.4 / 14.3, L 24.6 / 34.4 / 49.2)",
+      "E1 table (2b), NEAR fire / D1 of the row 'ReScope-W, two-block thresholds'": "neither duplicated record: the behavioural record hn.<kind>.fired@mean with n_draws = 1, i.e. calibration draw 0 (Q 12.6 / 16.4 / 16.2, L 29.3 / 37.2 / 56.6), while the row is labelled 'draws 0-2'"
+     }
+    },
+    "h": {
+     "verdict": "pass (no defect of the rule; (i) compatible with the bound)",
+     "evidence": {
+      "TB-Q100-ae-l2_3-p50": {
+       "bound_pct": 4.9504950495049505,
+       "(i) REPAIR rows outside the draw, all remaining rows": {
+        "mean": 5.008650519031141,
+        "mc_se": 0.16851700928085517,
+        "sd": 2.383190400155381,
+        "n_draws": 200,
+        "share_above_bound": 0.4
+       },
+       "(i) the same, rows whose query is in no calibration draw": {
+        "mean": 5.018371537416893,
+        "mc_se": 0.17230156324027668,
+        "sd": 2.436712075524848,
+        "n_draws": 200,
+        "share_above_bound": 0.44
+       },
+       "z_vs_bound": {
+        "rest": 0.3451014812947874,
+        "fresh": 0.39394005855471137
+       },
+       "(ii) heldout_disjoint": {
+        "mean": 6.806451612903227,
+        "mc_se": 0.16662700825143945,
+        "sd": 2.356461749268393,
+        "n_draws": 200,
+        "share_above_bound": 0.73
+       },
+       "one_row_per_query_pool": {
+        "mean": 5.193430656934306,
+        "mc_se": 0.16794041436827659,
+        "sd": 2.3750361167017418,
+        "n_draws": 200,
+        "share_above_bound": 0.5,
+        "n_pool": 474,
+        "z_vs_bound": 1.4465583423929291
+       },
+       "driver_draws_reproduced": {
+        "first20_heldout_disjoint_literal": 6.806451612903226,
+        "with_guards_and_draws_above_bound": {
+         "heldout_disjoint_literal_mean_20_driver_draws": 6.806451612903226,
+         "with_guards_mean": 6.96774193548387,
+         "n_draws_above_bound_literal": 12,
+         "n_draws_above_bound_with_guards": 13,
+         "capped_edits_mean": 1.2
+        }
+       },
+       "implementation": {
+        "block1_mean_position (99.5 expected)": 99.67505000000001,
+        "queries_on_both_sides_of_the_split_per_draw": 1.165,
+        "tied_block2_scores_per_draw": 1.21
+       },
+       "composition": {
+        "pools": {
+         "repair": {
+          "image": 245,
+          "text": 244,
+          "near": 27,
+          "mean_answer_tokens": 9.905930470347649,
+          "mean_len": 375.66257668711654
+         },
+         "heldout_disjoint": {
+          "image": 224,
+          "text": 241,
+          "near": 16,
+          "mean_answer_tokens": 9.931182795698925,
+          "mean_len": 385.72903225806454
+         }
+        },
+        "by_modality": {
+         "rest_image": 9.735382881137774,
+         "rest_text": 0.2503563686804416,
+         "hd_image": 14.129464285714285,
+         "hd_text": 0.0
+        },
+        "difference_with_item_clustered_se": {
+         "value": 1.7844583768431717,
+         "se": 1.131600464021236,
+         "z": 1.576933231806879
+        },
+        "heldout_standardised_to_repair_composition": {
+         "rate": 6.299012634562384,
+         "covered_weight": 1.0,
+         "strata": "modality x near-scope x entity of an edit image x length tercile"
+        },
+        "strata": {
+         "text": {
+          "repair_n": 244,
+          "repair_rate": 0.2287457110179184,
+          "heldout_n": 241,
+          "heldout_rate": 0.0
+         },
+         "image, near (question of an edit)": {
+          "repair_n": 27,
+          "repair_rate": 9.869462908900688,
+          "heldout_n": 16,
+          "heldout_rate": 7.843750000000001
+         },
+         "image, far, entity of an edit image": {
+          "repair_n": 0,
+          "repair_rate": null,
+          "heldout_n": 0,
+          "heldout_rate": null
+         },
+         "image, far, other entity": {
+          "repair_n": 218,
+          "repair_rate": 9.78653780002145,
+          "heldout_n": 208,
+          "heldout_rate": 14.612980769230768
+         },
+         "image, short (len tercile 1)": {
+          "repair_n": 84,
+          "repair_rate": 2.88931799087472,
+          "heldout_n": 64,
+          "heldout_rate": 2.4921875
+         },
+         "image, len tercile 2": {
+          "repair_n": 79,
+          "repair_rate": 12.264201275777355,
+          "heldout_n": 79,
+          "heldout_rate": 17.0
+         },
+         "image, long (tercile 3)": {
+          "repair_n": 82,
+          "repair_rate": 14.492269840550081,
+          "heldout_n": 81,
+          "heldout_rate": 20.52469135802469
+         },
+         "image, answer < 10 tokens": {
+          "repair_n": 13,
+          "repair_rate": 3.009466421016469,
+          "heldout_n": 16,
+          "heldout_rate": 18.1875
+         },
+         "image, answer = 10 tokens": {
+          "repair_n": 232,
+          "repair_rate": 10.17593825634388,
+          "heldout_n": 208,
+          "heldout_rate": 13.817307692307693
+         }
+        },
+        "concentration": {
+         "heldout_rows_for_half_of_firing": 18,
+         "heldout_rows_firing_in_over_half_of_draws": 27,
+         "repair_rows_for_half_of_firing": 16,
+         "repair_rows_firing_in_over_half_of_draws": 20
+        },
+        "top_edits_heldout": [
+         {
+          "edit": 8,
+          "share_of_heldout_firing": 0.10537124802527745,
+          "share_of_repair_firing": 0.006217616580310879
+         },
+         {
+          "edit": 25,
+          "share_of_heldout_firing": 0.10142180094786822,
+          "share_of_repair_firing": 0.0037996545768566492
+         },
+         {
+          "edit": 23,
+          "share_of_heldout_firing": 0.09336492890995338,
+          "share_of_repair_firing": 0.013126079447322964
+         }
+        ]
+       }
+      },
+      "TB-Q100-ae-l2_3": {
+       "bound_pct": 4.9504950495049505,
+       "(i) REPAIR rows outside the draw, all remaining rows": {
+        "mean": 4.948096885813149,
+        "mc_se": 0.17875729317355266,
+        "sd": 2.5280098837914164,
+        "n_draws": 200,
+        "share_above_bound": 0.43
+       },
+       "(i) the same, rows whose query is in no calibration draw": {
+        "mean": 5.017016597338402,
+        "mc_se": 0.18448484207330257,
+        "sd": 2.609009657123231,
+        "n_draws": 200,
+        "share_above_bound": 0.445
+       },
+       "z_vs_bound": {
+        "rest": -0.013415752997968322,
+        "fresh": 0.36058001885607427
+       },
+       "(ii) heldout_disjoint": {
+        "mean": 5.953763440860215,
+        "mc_se": 0.13058607229382213,
+        "sd": 1.8467659449495673,
+        "n_draws": 200,
+        "share_above_bound": 0.635
+       },
+       "one_row_per_query_pool": {
+        "mean": 5.147810218978102,
+        "mc_se": 0.15313258253796352,
+        "sd": 2.1656217506640543,
+        "n_draws": 200,
+        "share_above_bound": 0.5,
+        "n_pool": 474,
+        "z_vs_bound": 1.2885250558889692
+       },
+       "driver_draws_reproduced": {
+        "first20_heldout_disjoint_literal": 5.56989247311828,
+        "with_guards_and_draws_above_bound": {
+         "heldout_disjoint_literal_mean_20_driver_draws": 5.56989247311828,
+         "with_guards_mean": 5.913978494623656,
+         "n_draws_above_bound_literal": 10,
+         "n_draws_above_bound_with_guards": 13,
+         "capped_edits_mean": 2.1
+        }
+       },
+       "implementation": {
+        "block1_mean_position (99.5 expected)": 99.67505000000001,
+        "queries_on_both_sides_of_the_split_per_draw": 1.165,
+        "tied_block2_scores_per_draw": 2.645
+       },
+       "composition": {
+        "pools": {
+         "repair": {
+          "image": 245,
+          "text": 244,
+          "near": 37,
+          "mean_answer_tokens": 9.905930470347649,
+          "mean_len": 375.66257668711654
+         },
+         "heldout_disjoint": {
+          "image": 224,
+          "text": 241,
+          "near": 28,
+          "mean_answer_tokens": 9.931182795698925,
+          "mean_len": 385.72903225806454
+         }
+        },
+        "by_modality": {
+         "rest_image": 9.72608817626321,
+         "rest_text": 0.14187744806543645,
+         "hd_image": 12.359375,
+         "hd_text": 0.0
+        },
+        "difference_with_item_clustered_se": {
+         "value": 0.9808381455212762,
+         "se": 1.099153598079644,
+         "z": 0.8923576716074264
+        },
+        "heldout_standardised_to_repair_composition": {
+         "rate": 5.2825824662723635,
+         "covered_weight": 1.0,
+         "strata": "modality x near-scope x entity of an edit image x length tercile"
+        },
+        "strata": {
+         "text": {
+          "repair_n": 244,
+          "repair_rate": 0.13470042281339994,
+          "heldout_n": 241,
+          "heldout_rate": 0.0
+         },
+         "image, near (question of an edit)": {
+          "repair_n": 37,
+          "repair_rate": 13.778830773490897,
+          "heldout_n": 28,
+          "heldout_rate": 9.982142857142858
+         },
+         "image, far, entity of an edit image": {
+          "repair_n": 0,
+          "repair_rate": null,
+          "heldout_n": 0,
+          "heldout_rate": null
+         },
+         "image, far, other entity": {
+          "repair_n": 208,
+          "repair_rate": 9.082100132861099,
+          "heldout_n": 196,
+          "heldout_rate": 12.698979591836734
+         },
+         "image, short (len tercile 1)": {
+          "repair_n": 84,
+          "repair_rate": 2.3163547164791813,
+          "heldout_n": 64,
+          "heldout_rate": 1.6796875000000002
+         },
+         "image, len tercile 2": {
+          "repair_n": 79,
+          "repair_rate": 13.446339744790528,
+          "heldout_n": 79,
+          "heldout_rate": 12.860759493670887
+         },
+         "image, long (tercile 3)": {
+          "repair_n": 82,
+          "repair_rate": 13.927547929653281,
+          "heldout_n": 81,
+          "heldout_rate": 20.308641975308646
+         },
+         "image, answer < 10 tokens": {
+          "repair_n": 13,
+          "repair_rate": 4.5783334189238785,
+          "heldout_n": 16,
+          "heldout_rate": 14.875
+         },
+         "image, answer = 10 tokens": {
+          "repair_n": 232,
+          "repair_rate": 10.083513930208023,
+          "heldout_n": 208,
+          "heldout_rate": 12.165865384615387
+         }
+        },
+        "concentration": {
+         "heldout_rows_for_half_of_firing": 15,
+         "heldout_rows_firing_in_over_half_of_draws": 25,
+         "repair_rows_for_half_of_firing": 16,
+         "repair_rows_firing_in_over_half_of_draws": 15
+        },
+        "top_edits_heldout": [
+         {
+          "edit": 8,
+          "share_of_heldout_firing": 0.0854253205707068,
+          "share_of_repair_firing": 0.0027972027972027985
+         },
+         {
+          "edit": 57,
+          "share_of_heldout_firing": 0.0854253205707068,
+          "share_of_repair_firing": 0.011888111888111888
+         },
+         {
+          "edit": 25,
+          "share_of_heldout_firing": 0.07946541448437835,
+          "share_of_repair_firing": 0.0
+         }
+        ]
+       }
+      }
+     },
+     "reading": "(i) equals the bound within the Monte Carlo error on both logs; no artefact of ties, of the split or of repeated queries was found (a pool with one row per query gives the same).  (ii) is higher because held-out IMAGE rows release more often than REPAIR image rows (text rows: 0); modality, near-scope status, sequence length and answer length explain about 0.5 of the 1.8 points on the prefix and 0.7 of 1.0 on the full log; the rest sits on a few held-out items close to a few edits (three edits carry 26 - 30 % of the held-out releases and 2 % of the REPAIR ones).  With items as units the difference (ii) - (i) is 1.8 +- 1.1 and 1.0 +- 1.1 points: not significant."
+    },
+    "i": {
+     "verdict": "pass (nothing changes)",
+     "evidence": {
+      "TB-Q100-ae-l2_3-p10": {
+       "one_sided_selection": "COMP_B",
+       "two_sided_selection": "COMP_B",
+       "D1_difference_repair_minus_linear": -19.354838709677423,
+       "per_seed": [
+        -19.78494623655914,
+        -18.9247311827957,
+        -19.35483870967742
+       ],
+       "selection_changes": false,
+       "sign_changes": false
+      },
+      "TB-Q100-ae-l2_3-p20": {
+       "one_sided_selection": "COMP_B",
+       "two_sided_selection": "COMP_B",
+       "D1_difference_repair_minus_linear": -27.598566308243733,
+       "per_seed": [
+        -25.806451612903228,
+        -27.741935483870968,
+        -29.247311827956988
+       ],
+       "selection_changes": false,
+       "sign_changes": false
+      },
+      "TB-Q100-ae-l2_3-p50": {
+       "one_sided_selection": "COMP_B",
+       "two_sided_selection": "COMP_B",
+       "D1_difference_repair_minus_linear": -35.62724014336917,
+       "per_seed": [
+        -36.12903225806451,
+        -34.19354838709677,
+        -36.55913978494623
+       ],
+       "selection_changes": false,
+       "sign_changes": false
+      },
+      "TB-L100-ae-l2_3-p10": {
+       "one_sided_selection": "COMP_BP",
+       "two_sided_selection": "COMP_BP",
+       "D1_difference_repair_minus_linear": -26.652452025586353,
+       "per_seed": [
+        -24.520255863539447,
+        -28.35820895522388,
+        -27.078891257995735
+       ],
+       "selection_changes": false,
+       "sign_changes": false
+      },
+      "TB-L100-ae-l2_3-p20": {
+       "one_sided_selection": "COMP_BP",
+       "two_sided_selection": "COMP_BP",
+       "D1_difference_repair_minus_linear": -35.678749111584935,
+       "per_seed": [
+        -35.39445628997868,
+        -35.820895522388064,
+        -35.820895522388064
+       ],
+       "selection_changes": false,
+       "sign_changes": false
+      },
+      "TB-L100-ae-l2_3-p50": {
+       "one_sided_selection": "COMP_B",
+       "two_sided_selection": "COMP_B",
+       "D1_difference_repair_minus_linear": -49.53802416488984,
+       "per_seed": [
+        -47.33475479744136,
+        -50.31982942430703,
+        -50.95948827292111
+       ],
+       "selection_changes": false,
+       "sign_changes": false
+      }
+     }
+    }
+   },
+   "discrepancies": [
+    "(f) E2 labels its MME-T cells 'prompt-only keys'; they are teacher-forced keys (identical firing in all 20 driver draws on both logs: no number changes); E1 / E2 deviate from R25 (5) for MME-T",
+    "(g) E1 table (2b): the near-scope fire / D1 cells of 'ReScope-W, two-block thresholds (draws 0-2)' are calibration draw 0 only",
+    "(e) the fix-up's H1 record is older than the final h1_prefix.json: final prefix part 4 of 6 (two-sided), 5 of 6 (one-sided); TB-Q100-ae-l2_3-p50 fails both"
+   ]
+  }
+ },
+ "residual_risks": [
+  "GPU checks (0, 4, 5, 6) use the library's plain Evaluator and the harness's model loader: they are independent of the driver, not of the library; the logits of 3,068 scoped / weight forwards equal the experiments' hashes bit for bit",
+  "check 0 covers the Qwen development log, complaint order 0, n <= 30; the LLaVA log and the other orders were not re-captured (their numbers were only reproduced from the per-complaint files)",
+  "check 3: timings depend on the load of the shared card; only the role-last fp64 cell of the Qwen development log was re-timed; synthetic logs were not re-run",
+  "E5 (b), (d), (e), E6 rows other than the three checked, E9 for other m and the lineage part were verified only through the paper numbers of check 7",
+  "REPAIR -> MME-T on the Qwen log: the mean over draws is dominated by a few draws (95th percentile about 24 %); three estimates (6.1, 6.3, 7.7 %) are all above the level",
+  "check 8 (h): the excess of heldout_disjoint over the bound on the 50-edit Qwen prefix (6.8 %) is a property of that pool of 224 image rows; with items as units it is 1.6 standard errors above the REPAIR rate: the bound is not claimed for this pool row by row"
+ ]
+}

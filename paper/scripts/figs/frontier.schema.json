@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rescope.fig.frontier/1",
+  "title": "Input of scripts/figs/fig_frontier.py: a two-panel trade-off (frontier) figure",
+  "description": "One panel per edit log. Every series is one method (an id of scripts/figs/style.py: METHODS) with marked points and / or a traced curve; a point is a pair (x, y) of two rates in percent, optionally with intervals. The experiment code writes this file from its result JSON (proposed: 02_research/experiments/10_final/out/figs/frontier.json from E1_main.json); nothing in it is typed by hand. The script validates the same constraints with its own code (function validate), so the python package jsonschema is not needed.",
+  "type": "object",
+  "required": [
+    "schema",
+    "synthetic",
+    "title",
+    "x",
+    "y",
+    "panels"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "rescope.fig.frontier/1"
+    },
+    "synthetic": {
+      "type": "boolean",
+      "description": "true ONLY for made-up example data. The figure then carries a watermark in every panel and can only be written below scripts/figs/example/; a file with real results must say false and must have 'source'."
+    },
+    "title": {
+      "type": "string",
+      "description": "one line, for the PDF metadata (not drawn)"
+    },
+    "note": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "description": "provenance of real data: required unless synthetic",
+      "required": [
+        "experiment",
+        "files"
+      ],
+      "properties": {
+        "experiment": {
+          "type": "string",
+          "description": "e.g. 'E1'"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "result JSON files, relative to project_3"
+        },
+        "code_version": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string"
+        }
+      }
+    },
+    "x": {
+      "$ref": "#/$defs/axis"
+    },
+    "y": {
+      "$ref": "#/$defs/axis"
+    },
+    "panels": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "log",
+          "title",
+          "series"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "log": {
+            "type": "string",
+            "description": "name of the log in the testbed"
+          },
+          "title": {
+            "type": "string",
+            "description": "panel title as printed (the paper name of the log)"
+          },
+          "series": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "method"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "description": "an id of style.METHODS: rescope, rescope_where, cosine, ball, router, zscore, exact, comp_b, reedit_b, rb_union, rb_tot, linear, editor, dual"
+                },
+                "variant": {
+                  "enum": [
+                    "default",
+                    "shared",
+                    "published"
+                  ],
+                  "description": "default: the method's default calibration (filled marker); shared: one shared scale (half-filled marker); published: the gate at its published threshold (hollow marker). Only for methods with a filled marker."
+                },
+                "curve": {
+                  "type": "boolean",
+                  "description": "true: the points are joined in the order given (one point per calibration level)"
+                },
+                "label_point": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "index of the point that gets a direct label with the method's name (use for at most four series per panel)"
+                },
+                "points": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "x",
+                      "y"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      },
+                      "x_lo": {
+                        "type": "number"
+                      },
+                      "x_hi": {
+                        "type": "number"
+                      },
+                      "y_lo": {
+                        "type": "number"
+                      },
+                      "y_hi": {
+                        "type": "number"
+                      },
+                      "level": {
+                        "type": "number",
+                        "description": "calibration level of the point, if any"
+                      },
+                      "setting": {
+                        "type": "string",
+                        "description": "setting of the result file (a05, default, fixed, nall, ...)"
+                      }
+                    }
+                  },
+                  "description": "marked points, one per calibration level or one for a method without levels"
+                },
+                "trace": {
+                  "type": "array",
+                  "minItems": 2,
+                  "description": "a curve without markers: one global threshold swept over a fine grid (PROTOCOL.md, amendment of 2026-11-11, E1b); the points of the same series lie on or beside it",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "x",
+                      "y"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      },
+                      "threshold": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              },
+              "anyOf": [
+                {
+                  "required": [
+                    "points"
+                  ]
+                },
+                {
+                  "required": [
+                    "trace"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "axis": {
+      "type": "object",
+      "required": [
+        "metric",
+        "label"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "metric": {
+          "type": "string",
+          "description": "metric id of the result file, e.g. d1, ff, gen"
+        },
+        "label": {
+          "type": "string",
+          "description": "axis label as printed, with the unit"
+        },
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

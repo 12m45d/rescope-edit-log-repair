@@ -1,0 +1,248 @@
+{
+ "LLaVA H2 (rescope minus white_0.1_shared, rephrase exact, all edits; my bootstrap)": {
+  "L200-ae-l2_3": [
+   1.2,
+   -5.2,
+   8.5
+  ],
+  "L500-ae-l2_3": [
+   -1.1,
+   -4.7,
+   2.2
+  ],
+  "L100-memitw": [
+   -31.0,
+   -39.7,
+   -22.0
+  ],
+  "L500-memitw": [
+   -17.8,
+   -21.0,
+   -14.7
+  ],
+  "L1000-memitw": [
+   -10.2,
+   -11.7,
+   -8.7
+  ]
+ },
+ "LLaVA H2, later edits": {
+  "L200-ae-l2_3": [
+   0.7,
+   -7.0,
+   9.5
+  ],
+  "L500-ae-l2_3": [
+   -1.3,
+   -5.3,
+   2.4
+  ],
+  "L500-memitw": [
+   -16.0,
+   -19.3,
+   -12.7
+  ],
+  "L1000-memitw": [
+   -8.9,
+   -10.4,
+   -7.4
+  ]
+ },
+ "LLaVA: rescope minus DEPLOYED, rephrase exact": {
+  "L100-ae-l2_3": 16.8,
+  "L200-ae-l2_3": 22.8,
+  "L500-ae-l2_3": 26.2,
+  "L100-memitw": -10.8,
+  "L500-memitw": 5.9,
+  "L1000-memitw": 9.5
+ },
+ "Qwen H3 pair 2 (rescope_x minus white_1_x), behaviour": {
+  "Q200-ae-l2_3": 4.8,
+  "Q500-ae-l2_3": 3.1,
+  "Q100-memitw": -9.3,
+  "Q500-memitw": -5.7,
+  "Q1000-memitw": -3.1,
+  "Q2000-memitw": -2.9
+ },
+ "Qwen H3 against retr_sum (rescope minus retr_sum), behaviour": {
+  "Q200-ae-l2_3": -15.5,
+  "Q500-ae-l2_3": -18.9,
+  "Q100-memitw": -32.3,
+  "Q500-memitw": -32.1,
+  "Q1000-memitw": -37.4,
+  "Q2000-memitw": -36.6
+ },
+ "LLaVA H3 pair 1 / pair 2 / retr, behaviour": {
+  "L200-ae-l2_3": [
+   -4.2,
+   4.0,
+   -12.5
+  ],
+  "L500-ae-l2_3": [
+   -2.7,
+   5.8,
+   -15.5
+  ],
+  "L100-memitw": [
+   -23.3,
+   -14.7,
+   -32.0
+  ],
+  "L500-memitw": [
+   -14.9,
+   -11.2,
+   -27.7
+  ],
+  "L1000-memitw": [
+   -9.0,
+   -4.2,
+   -24.6
+  ]
+ },
+ "Qwen: rescope, near-scope held-out probes released (behaviour %) / gate level": {
+  "Q100-ae-l2_3": [
+   22.6,
+   26.6
+  ],
+  "Q200-ae-l2_3": [
+   13.2,
+   14.2
+  ],
+  "Q500-ae-l2_3": [
+   6.1,
+   6.3
+  ],
+  "Q100-memitw": [
+   9.5,
+   15.7
+  ],
+  "Q500-memitw": [
+   5.3,
+   11.3
+  ],
+  "Q1000-memitw": [
+   5.0,
+   12.8
+  ],
+  "Q2000-memitw": [
+   8.9,
+   12.5
+  ]
+ },
+ "LLaVA: rescope, near-scope held-out probes released (behaviour %) / gate level": {
+  "L100-ae-l2_3": [
+   5.1,
+   4.1
+  ],
+  "L200-ae-l2_3": [
+   4.4,
+   4.2
+  ],
+  "L500-ae-l2_3": [
+   3.2,
+   2.7
+  ],
+  "L100-memitw": [
+   9.4,
+   11.3
+  ],
+  "L500-memitw": [
+   8.0,
+   6.0
+  ],
+  "L1000-memitw": [
+   9.7,
+   7.1
+  ]
+ },
+ "Qwen: rescope_null minus rescope, rephrase exact": {
+  "Q200-ae-l2_3": -2.8,
+  "Q500-ae-l2_3": 1.2,
+  "Q100-memitw": 9.0,
+  "Q500-memitw": 7.5,
+  "Q1000-memitw": 8.7,
+  "Q2000-memitw": 1.3
+ },
+ "LLaVA: rescope_null minus rescope, rephrase exact": {
+  "L200-ae-l2_3": 3.6,
+  "L500-ae-l2_3": 4.3,
+  "L100-memitw": 14.8,
+  "L500-memitw": 5.9,
+  "L1000-memitw": 7.4
+ },
+ "Qwen: rescope_shared minus rescope, rephrase exact": {
+  "Q200-ae-l2_3": -3.1,
+  "Q500-ae-l2_3": 4.9,
+  "Q100-memitw": -14.8,
+  "Q500-memitw": -10.5,
+  "Q1000-memitw": -7.5,
+  "Q2000-memitw": -6.7
+ },
+ "Qwen: draws above 4.95 % of 20, rescope": {
+  "Q100-ae-l2_3": 7,
+  "Q200-ae-l2_3": 5,
+  "Q500-ae-l2_3": 0,
+  "Q100-memitw": 7,
+  "Q500-memitw": 3,
+  "Q1000-memitw": 4,
+  "Q2000-memitw": 8
+ },
+ "LLaVA: self-separation margin min / edits with a non-positive margin": {
+  "L100-ae-l2_3": [
+   0.53,
+   0
+  ],
+  "L200-ae-l2_3": [
+   0.53,
+   0
+  ],
+  "L500-ae-l2_3": [
+   0.385,
+   0
+  ],
+  "L100-memitw": [
+   0.023,
+   0
+  ],
+  "L500-memitw": [
+   0.023,
+   0
+  ],
+  "L1000-memitw": [
+   -0.107,
+   2
+  ]
+ },
+ "LLaVA: BEN-T far firing (gate, 20 draws): rescope / rescope_shared / rescope_x": {
+  "L100-ae-l2_3": [
+   3.5,
+   5.6,
+   4.0
+  ],
+  "L200-ae-l2_3": [
+   3.5,
+   5.8,
+   6.0
+  ],
+  "L500-ae-l2_3": [
+   2.6,
+   4.1,
+   4.0
+  ],
+  "L100-memitw": [
+   3.0,
+   1.3,
+   2.0
+  ],
+  "L500-memitw": [
+   3.2,
+   1.2,
+   1.8
+  ],
+  "L1000-memitw": [
+   2.9,
+   1.2,
+   1.8
+  ]
+ }
+}

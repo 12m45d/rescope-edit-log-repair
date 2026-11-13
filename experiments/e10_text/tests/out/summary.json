@@ -1,0 +1,204 @@
+{
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "tests": {
+  "c_pack": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 0.025695085525512695,
+   "what": "edit sets in the hook's rows are lossless at any size; PAD positions of a padded batch never fire; key-value-cache steps continue the rows",
+   "evidence": "round trip of sets with 0 .. 700 edits: True; synthetic padded batch + cache step: fire positions [6, 4, 5] (real positions 5+1, 3+1, 4+1), 80 candidate edits per row as a mask: True, own flags [True, True]",
+   "written": "2026-11-11 11:55:37 UTC"
+  },
+  "c_guard": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 75.16199851036072,
+   "what": "guards as served: exactly the capped thresholds are lowered, by round-off-sized amounts; no own request is left inside the decision band",
+   "evidence": "rescope: capped 11, lowered 11, own requests in band 11 -> 0; rescope_shared: capped 0, lowered 0, own requests in band 0 -> 0; rescope_null: capped 4, lowered 4, own requests in band 4 -> 0; cosine: capped 3, lowered 3, own requests in band 3 -> 0; where_twoblock: capped 11, lowered 11, own requests in band 11 -> 0; where_logonly: capped 1, lowered 1, own requests in band 1 -> 0; largest relative lowering 8.2e-05",
+   "written": "2026-11-11 11:56:55 UTC"
+  },
+  "c_log": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 2.661797285079956,
+   "what": "own coordinate 1; delta() = (W_E - W_0)^T up to the write round-off; float32 replay = deployed weight bit for bit",
+   "evidence": "|delta - (W_E - W_0)^T| / |.| = 2.7e-07; float32 replay bitwise = deployed: True; prefix replay too",
+   "written": "2026-11-11 11:55:40 UTC"
+  },
+  "c_rebase": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 0.06364130973815918,
+   "what": "identity (c), algebraic: every edit attains its module-output target at its solver key with rebased values",
+   "evidence": "k W_0 + b + V = target: max rel. error 2.3e-07 over 100 edits (logged values instead: median 0.16); values vs rescope.rebase 5e-16, bitwise = the driver's released_values: True",
+   "written": "2026-11-11 11:56:55 UTC"
+  },
+  "c_draws": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 0.05093240737915039,
+   "what": "calibration draws are the library's seeded samples of the REPAIR pool; the null sample shares no prompt text with them",
+   "evidence": "20/20 draws = splits.sample; 20/20 null samples disjoint by text",
+   "written": "2026-11-11 11:56:55 UTC"
+  },
+  "c_calib": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 0.7292013168334961,
+   "what": "calibration from the cached per-query maxima = the library's calibration on the per-query key tensors; guards fire; block-2 firing within the allowed count",
+   "evidence": "thresholds from cached maxima vs library on key tensors: max |diff| 6e-17 (ncoord), 1e-16 (cos); block-2 queries firing 4 <= 5",
+   "written": "2026-11-11 11:56:56 UTC"
+  },
+  "c_null0": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 7.3533406257629395,
+   "what": "identity (d): the null-repair variant with n_a = 0 is the default method bit for bit",
+   "evidence": "13 gate tensors bitwise equal: True; decisions equal on 7300 rows; control n_A = 100 differs: True",
+   "written": "2026-11-11 11:57:03 UTC"
+  },
+  "c_gate": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 8.6133553981781,
+   "what": "gate-level decisions (per query and per position) = the library's ScopedLog.firing on the cached keys",
+   "evidence": "rescope: 373 fired of 1689, mismatches 0; rescope_shared: 359 fired of 1689, mismatches 0; cosine: 361 fired of 1689, mismatches 0; cosine_published: 305 fired of 1689, mismatches 0; exact: 100 fired of 1689, mismatches 0; where_twoblock: 373 fired of 1689, mismatches 0",
+   "written": "2026-11-11 11:57:12 UTC"
+  },
+  "c_cache": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 0.32217907905578613,
+   "what": "key cache complete for the development log; float32 keys agree with a single-pass recomputation far inside the band; float16 would not",
+   "evidence": "7280 texts, 0 missing; single-pass recomputation deviates by 3.3e-06; float16 would move a coordinate by 4.7e-05 of its scale (band 1e-05)",
+   "written": "2026-11-11 11:57:12 UTC"
+  },
+  "c_rows": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 6.160929203033447,
+   "what": "the eight rows build; calibrated rows depend on the draw, the others do not; own requests are candidates; undefined rows are refused with their reason",
+   "evidence": "rows deployed, preedit, rescope, rescope_shared, rescope_null, cosine, cosine_published, exact; undefined rows refused with reason: True",
+   "written": "2026-11-11 11:57:18 UTC"
+  },
+  "g_linear": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 17.683646202087402,
+   "what": "identity (a): thresholds -inf, linear response, logged values, all positions = the deployed weight up to round-off (200 prompts, padded batches)",
+   "evidence": "max |logit diff| to the deployed weight 1.6e-04 (deployed vs pre-edit: 21.4); same argmax at 4861/4861 positions; 200/200 decodes equal; 2707 PAD positions, none fires",
+   "written": "2026-11-11 12:09:24 UTC"
+  },
+  "g_silent": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 53.3405556678772,
+   "what": "identity (b): a prompt on which no edit fires is the pre-edit model bit for bit (teacher-forced and decode logits, mixed padded batches)",
+   "evidence": "379/379 silent rows bitwise (teacher forced), 379 (decode); 61 firing rows, 0 of them equal; thresholds +inf: 440/440",
+   "written": "2026-11-11 12:10:18 UTC"
+  },
+  "g_target": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 0.8663783073425293,
+   "what": "identity (c): at its solver key every edit attains its module-output target with rebased values (served module output vs logged target)",
+   "evidence": "served module output vs target: max rel. error 6.5e-07, own edit released at the solver position 100/100; logged values: median 0.16; deployed weight: median 0.24",
+   "written": "2026-11-11 12:10:19 UTC"
+  },
+  "g_null0": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 16.279764890670776,
+   "what": "identity (d): the null-repair variant with n_A = 0 serves the default method's logits bit for bit",
+   "evidence": "100/100 prompts bitwise (teacher forced), 100 (decode); 42 of them fire",
+   "written": "2026-11-11 12:10:35 UTC"
+  },
+  "g_batch": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 268.22235560417175,
+   "what": "a batched (right-padded, masked) pass equals the single pass: same tokens and firing flags; logits to float32 round-off",
+   "evidence": "preedit: tok diff rows 0+0, flag diff 0, max |logit diff| 1e-04; deployed: tok diff rows 0+0, flag diff 0, max |logit diff| 2e-04; rescope: tok diff rows 0+0, flag diff 0, max |logit diff| 1e-04; where_all: tok diff rows 0+0, flag diff 0, max |logit diff| 2e-04",
+   "written": "2026-11-11 12:15:03 UTC"
+  },
+  "g_hook": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 395.19649481773376,
+   "what": "hook firing in real passes = gate-level decision from the key cache on every prompt of the development log; sparse evaluation = full evaluation",
+   "evidence": "rescope: 4300 rows, hook != cache 0, sparse != full 0, passes 1002 vs 8564; cosine: 4300 rows, hook != cache 0, sparse != full 0, passes 952 vs 8564; cosine_published: 4300 rows, hook != cache 0, sparse != full 0, passes 664 vs 8564; where_twoblock: 4300 rows, hook != cache 0, sparse != full 0, passes 1002 vs 8564",
+   "written": "2026-11-11 12:21:38 UTC"
+  },
+  "g_cache": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 19.953537225723267,
+   "what": "cached keys = live keys of a teacher-forced pass and of a decode (padded batches) far inside the decision band; float16 rounding would exceed it",
+   "evidence": "live vs cached key, coordinate shift / scale: 3.6e-07 (teacher forced), 4.3e-07 (decode); band 1e-05; float16: 4.3e-05; cosine feature live vs cached 5.5e-07 (its band >= 1e-05); features cuda vs cpu 5e-15",
+   "written": "2026-11-11 12:21:58 UTC"
+  },
+  "g_public": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 72.31812381744385,
+   "what": "public evaluation code on the served model: weights reproduce the build's case files and generated texts; an all-firing linear gate reproduces the deployed scores; PAD positions never fire",
+   "evidence": "deployed / pre-edit vs the build's case files: max |diff| 0e+00 / 0e+00; all-firing linear gate vs deployed scores: 0.00 points; generated texts equal to the build's: preedit 40/40, deployed 40/40, all_off 40/40",
+   "written": "2026-11-11 12:23:11 UTC"
+  },
+  "g_store": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 20.007441997528076,
+   "what": "memoisation: silent prompts cost no forward; a second pass runs the model on nothing and returns the same rows",
+   "evidence": "rescope: first pass 150 run + 370 silent, second pass 0 run, rows differing 0; deployed: first pass 520 run + 0 silent, second pass 0 run, rows differing 0; two weights / two gates with the same label get separate outcomes: True",
+   "written": "2026-11-11 12:23:31 UTC"
+  },
+  "g_guard": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 147.43730068206787,
+   "what": "guards as served: every capped edit is a candidate on its own request in live padded passes (teacher forced and decode)",
+   "evidence": "30 capped (gate, draw, edit) cases: own edit a candidate on its own request in 30 teacher-forced and 30 decode passes with the margin; with the library's caps alone: 22 and 22",
+   "written": "2026-11-11 12:25:58 UTC"
+  },
+  "g_usage": {
+   "status": "PASS",
+   "pass": true,
+   "current_code": true,
+   "seconds": 239.40476822853088,
+   "what": "the example of every metric in USAGE.txt runs as written (development log; substitutions in the test's docstring) and has at most ten lines",
+   "evidence": "(setup) 7 lines, 2s; (i) 4 lines, 27s; (ii) 3 lines, 61s; (iii) 4 lines, 101s; (iv) 6 lines, 11s; (v) 7 lines, 17s; (vi) 7 lines, 21s; hook mismatches 0",
+   "written": "2026-11-11 12:29:58 UTC"
+  }
+ },
+ "n_tests": 21,
+ "n_pass_current_code": 21,
+ "n_fail": 0,
+ "n_not_run": 0
+}

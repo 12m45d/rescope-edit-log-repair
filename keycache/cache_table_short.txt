@@ -1,0 +1,13 @@
+kind   | Q rows    | Q valid/y0 | Q dup | Q shift | L rows | L valid/y0 | L dup | L shift
+rel    | 2000+500  | -          | 4     | 0       | 1000   | -          | 2     | 8      
+tgen   | 2000+500  | -          | 0     | 0       | 1000   | -          | 0     | 8      
+igen   | 2000+500  | -          | 39    | 0       | 1000   | -          | 2     | 8      
+probe  | 1000+1000 | 1972/2000  | 464   | 0       | 1000   | 988/1000   | 101   | 46     
+hn_i   | 800       | 787/800    | 0     | 0       | 800    | 789/800    | 0     | 6      
+hn_q   | 800       | 786/800    | 8     | 0       | 800    | 792/800    | 6     | 3      
+hn_x   | 200       | 198/200    | 0     | 0       | 200    | 196/200    | 0     | 1      
+benign | 3000      | 587/600    | 215   | 0       | 3000   | 595/600    | 0     | 17     
+all    | 14300     | 4330/4400  | 730   | 0       | 8800   | 3360/3400  | 111   | 97     
+Q = qwen25vl (a+b: VLKEB + MMKE-Bench family), L = llava; valid/y0 = decoder-v2 pre-edit answers reproduced by the pre-edit model / rows with an answer; dup = sequences whose query occurs more than once in the backbone's cache; shift = last prompt position differs between teacher forcing and decoding
+Q degenerate answers (empty / 1 char / ? / bare None-No): probe 0/0/0/0; hn_i 0/0/0/0; hn_q 0/0/0/0; hn_x 0/0/0/0; benign 0/0/0/0
+L degenerate answers (empty / 1 char / ? / bare None-No): probe 1/3/0/32; hn_i 0/0/0/250; hn_q 0/0/0/242; hn_x 0/0/0/57; benign 0/1/0/17

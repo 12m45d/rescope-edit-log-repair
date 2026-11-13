@@ -1,0 +1,51 @@
+E5 (f)  CAPACITY CURVE OF LINEAR CERTIFICATION: TB-Q100-ae-l2_3 (T = 100, d_in = 11008); three seeded orders of REPAIR-pool D1 complaints (values: order 0 / 1 / 2)
+  hypothesis of the theorem: rank of the write vectors 100 of 100; coordinate matrix: smallest singular value 1.003e-01, condition number 8.597e+00; nd_holds = True (float64 SVD, relative tolerance 1e-10)
+  capture check against P12 (ten complaints of order 0): query keys 4684 (stored 4684), rank after projecting K_ans 4583 (stored 4583): match = True
+  rank tolerance 1e-9 x largest key norm; residual singular values in (1e-10, 1e-9] / (1e-9, 1e-8] x scale along the stream, per order: 0 / 0 ; 0 / 0 ; 0 / 0 -> rank stable over two decades: [True, True, True]
+  cap = rank[K_Q, K_E] - rank K_Q; pred = edits the prediction says can be preserved (per order); keep = edits preserved by the minimum-norm restoring weight that keeps the
+  solver keys (greedy subset / least squares over all); plain = by the minimum-norm restoring change -D P_Q alone, with the median relative change of the module output
+  at the solver keys; thresholds-only repair of the deployed scoping from log-only thresholds: edits silenced at their solver key / on their own request (sacrificing form),
+  complaints refused by the protecting form (it silences no edit)
+n                    keys               rank K_Q              cap             pred      keep greedy          keep ls      plain    plain rel change  thr: solver key  thr: own request  thr: refused
+--  ---------------------  ---------------------  ---------------  ---------------  ---------------  ---------------  ---------  ------------------  ---------------  ----------------  ------------
+1            40 / 42 / 38           40 / 42 / 38  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.21 / 0.21 / 0.20        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+2       1070 / 1053 / 357      1070 / 1053 / 357  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.31 / 0.27 / 0.24        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+5       2199 / 2154 / 758      2156 / 2126 / 715  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.33 / 0.29 / 0.42        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+10     4684 / 4600 / 3219     4583 / 4512 / 3117  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.46 / 0.41 / 0.47        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+15     6347 / 5694 / 4703     6187 / 5548 / 4528  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.56 / 0.49 / 0.49        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+20     8790 / 8273 / 6181     8570 / 8068 / 5947  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.78 / 0.72 / 0.57        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+25    10253 / 9739 / 7591     9956 / 9460 / 7282  100 / 100 / 100      0 / 0 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.90 / 0.86 / 0.67        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+30  12293 / 11458 / 10041   11008 / 10123 / 9656    0 / 100 / 100      0 / 0 / 100    0 / 100 / 100    0 / 100 / 100  0 / 0 / 0  1.00 / 0.92 / 0.88        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+35  14432 / 12948 / 10779  11008 / 11008 / 10318      0 / 0 / 100  0 / 0 / partial      0 / 0 / 100      0 / 0 / 100  0 / 0 / 0  1.00 / 1.00 / 0.94        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+40  17672 / 15328 / 13236  11008 / 11008 / 11008        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0  0 / 0 / 0  1.00 / 1.00 / 1.00        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+50  21564 / 19210 / 17727  11008 / 11008 / 11008        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0  0 / 0 / 0  1.00 / 1.00 / 1.00        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+60  25437 / 22395 / 21323  11008 / 11008 / 11008        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0  0 / 0 / 0  1.00 / 1.00 / 1.00        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+  largest n of the grid with all 100 edits preserved, per order: [25, 30, 35] (minimum 25); first grid n with rank K_Q = d_in: [30, 35, 40]
+  prediction (written before the measurement), per order: all edits up to n = [23, 24, 34], only W_0 from n = [25, 25, 36]; on the grid this implies [20, 20, 30] and [25, 25, 40]: HIT per order (all edits) [False, False, False], (only W_0) [False, False, True]   ** THE PREDICTION IS MISSED on at least one order **
+  from the rank after every complaint (cap = min(T, d_in - rank K_Q) at every grid point: True): largest n with rank K_Q <= d_in - T, per order: [29, 33, 35] (predicted [23, 24, 34]); smallest n with rank K_Q = d_in: [30, 34, 36] (predicted [25, 25, 36])
+
+E5 (f)  CAPACITY CURVE OF LINEAR CERTIFICATION: TB-L100-ae-l2_3 (T = 100, d_in = 11008); three seeded orders of REPAIR-pool D1 complaints (values: order 0 / 1 / 2)
+  hypothesis of the theorem: rank of the write vectors 100 of 100; coordinate matrix: smallest singular value 7.971e-02, condition number 8.475e+00; nd_holds = True (float64 SVD, relative tolerance 1e-10)
+  capture check against P12 (ten complaints of order 0): query keys 3118 (stored 3118), rank after projecting K_ans 3099 (stored 3099): match = True
+  rank tolerance 1e-9 x largest key norm; residual singular values in (1e-10, 1e-9] / (1e-9, 1e-8] x scale along the stream, per order: 0 / 0 ; 0 / 0 ; 0 / 0 -> rank stable over two decades: [True, True, True]
+  cap = rank[K_Q, K_E] - rank K_Q; pred = edits the prediction says can be preserved (per order); keep = edits preserved by the minimum-norm restoring weight that keeps the
+  solver keys (greedy subset / least squares over all); plain = by the minimum-norm restoring change -D P_Q alone, with the median relative change of the module output
+  at the solver keys; thresholds-only repair of the deployed scoping from log-only thresholds: edits silenced at their solver key / on their own request (sacrificing form),
+  complaints refused by the protecting form (it silences no edit)
+n                    keys               rank K_Q              cap             pred      keep greedy          keep ls      plain    plain rel change  thr: solver key  thr: own request  thr: refused
+--  ---------------------  ---------------------  ---------------  ---------------  ---------------  ---------------  ---------  ------------------  ---------------  ----------------  ------------
+1            27 / 23 / 28           27 / 23 / 28  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.15 / 0.14 / 0.12        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+2         626 / 621 / 623        626 / 621 / 623  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.22 / 0.18 / 0.21        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+5      1284 / 1280 / 1274     1276 / 1271 / 1266  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.25 / 0.25 / 0.26        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+10     3118 / 3125 / 3111     3099 / 3105 / 3093  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.35 / 0.36 / 0.38        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+15     4394 / 4399 / 4394     4364 / 4367 / 4363  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.43 / 0.45 / 0.46        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+20     6242 / 6234 / 6229     6201 / 6192 / 6187  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.57 / 0.58 / 0.58        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+25     7508 / 7496 / 7501     7452 / 7440 / 7439  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.68 / 0.67 / 0.68        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+30     9345 / 9351 / 9342     9279 / 9283 / 9269  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.84 / 0.84 / 0.84        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+35  10609 / 10627 / 10611  10530 / 10544 / 10522  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  100 / 100 / 100  0 / 0 / 0  0.96 / 0.96 / 0.95        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+40  12451 / 12465 / 12453  11008 / 11008 / 11008        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0  0 / 0 / 0  1.00 / 1.00 / 1.00        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+50  15555 / 15588 / 15572  11008 / 11008 / 11008        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0  0 / 0 / 0  1.00 / 1.00 / 1.00        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+60  18667 / 18705 / 18688  11008 / 11008 / 11008        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0        0 / 0 / 0  0 / 0 / 0  1.00 / 1.00 / 1.00        0 / 0 / 0         0 / 0 / 0     0 / 0 / 0
+  largest n of the grid with all 100 edits preserved, per order: [35, 35, 35] (minimum 35); first grid n with rank K_Q = d_in: [40, 40, 40]
+  prediction (written before the measurement), per order: all edits up to n = [35, 35, 35], only W_0 from n = [36, 36, 36]; on the grid this implies [35, 35, 35] and [40, 40, 40]: HIT per order (all edits) [True, True, True], (only W_0) [True, True, True]
+  from the rank after every complaint (cap = min(T, d_in - rank K_Q) at every grid point: True): largest n with rank K_Q <= d_in - T, per order: [37, 35, 35] (predicted [35, 35, 35]); smallest n with rank K_Q = d_in: [38, 36, 36] (predicted [36, 36, 36])

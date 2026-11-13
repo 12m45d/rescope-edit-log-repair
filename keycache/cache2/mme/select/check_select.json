@@ -1,0 +1,32 @@
+{
+ "what": "the selection was run a second time in a fresh process into work/select_recheck; files compared byte for byte",
+ "files": {
+  "selection.jsonl": {
+   "identical": true,
+   "md5": "aff4f75c869890c642fdf5d9d44f6dba",
+   "md5_second_run": "aff4f75c869890c642fdf5d9d44f6dba",
+   "bytes": 5018876
+  },
+  "select_summary.json": {
+   "identical": true,
+   "md5": "0b855653b52c0a8584f7b682d2105aa4",
+   "md5_second_run": "0b855653b52c0a8584f7b682d2105aa4",
+   "bytes": 12381
+  },
+  "manifest_qwen25vl.jsonl": {
+   "identical": true,
+   "md5": "5ca3e694f242f50f5736dc799dc24d7a",
+   "md5_second_run": "5ca3e694f242f50f5736dc799dc24d7a",
+   "bytes": 1767831
+  },
+  "manifest_llava.jsonl": {
+   "identical": true,
+   "md5": "eb5bdee6dd33c903d9b503ee7ad95c7a",
+   "md5_second_run": "eb5bdee6dd33c903d9b503ee7ad95c7a",
+   "bytes": 1767831
+  }
+ },
+ "hash_randomisation": "python -I ignores PYTHONHASHSEED: every process has its own random string-hash seed, so a result that depended on set or dict-of-set order would differ between the two runs",
+ "ok": true,
+ "time": "2026-11-11 08:14:21"
+}

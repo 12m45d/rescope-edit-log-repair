@@ -1,0 +1,148 @@
+recomb -- log-derived recombinations, their keys and the per-edit baselines of the variant rescope_x / <gate>_x
+===============================================================================================================
+PROTOCOL.md section 6, amendment "Review round 1", item R5 (log-derived near-scope calibration; no label, no complaint).
+This package is the DATA AND FEATURE LAYER: the rows, their last-prompt keys, and the functions that turn them into the baseline
+that the library's two-block calibration combines with its block-1 baseline.  It runs no experiment.
+
+    import sys; sys.path.insert(0, "$RESCOPE_ROOT/02_research/experiments/10_final/feat2")
+    import recomb                 # python: $RESCOPE_PYTHON; CPU only; caps BLAS at 4 threads
+
+DATA   10_final/cache2/recomb/<backbone>/      backbone = qwen25vl (stream of TB-Q2000-ae-l2_3, 2000 edits) | llava (TB-L1000-ae-l2_3, 1000 edits)
+  rows.jsonl            12 rows per edit of the long stream, in stream order: 4 X-I (the edit's image + the image-locality question of a
+                        partner item), 4 X-Q (the edit's question + the entity image of a partner item), 4 X-X (the edit's image + the
+                        question of another edit j of the stream; j stored).  Fields, construction, flags, redraws: README.txt there.
+  keys.pt               {'rids', 'K_last' float32 (n, 11008), 'last_prompt_idx', ...}: K_last[r] = input of the edited module at the last
+                        prompt token of the PROMPT-ONLY sequence (no answer tokens) of line r of rows.jsonl, pre-edit model, B = 1
+  README.txt            the description with the numbers (rendered by rc_assemble.py from the files)
+  select_summary.json   counts, redraw statistics, sha256 of rows.jsonl          check_select.json   disjointness + reproduction (rc_check.py;
+                                                                                 check_select_fast.json: its --fast form, written by the tests)
+  verify_capture.json   the capture path reproduces cached keys bit for bit      recheck_capture.json  sampled rows captured twice
+  capture_meta.json     md5 of keys.pt, parts, checks
+  ../work/<backbone>/parts   capture parts (resumable)          ../logs   capture logs
+
+FUNCTIONS (feat2/recomb/core.py is the reference text; every function takes a fx.logs.LogData, a rescope.EditLog with meta['uids'] and
+meta['backbone'] (from_testbed / from_harness), the name of a testbed log, or a pair (backbone, uids))
+  recomb.log_rows(log, kinds=recomb.KINDS) -> LogRows
+        the recombination rows a log with T edits may use: owner position < T and, for X-X, partner position < T (row field min_T <= T).
+        .idx (row numbers in the store), .edit (the OWNING edit = its index in the log), .partner (X-X: edit j; -1), .kind, .rids, .rows
+        (the row dicts with their flags), .keys(), .counts(), .per_edit(), .subset(mask).
+        Served: every log whose edit uids are the first T edits of the backbone's long stream (development logs, working points, the
+        T = 200 .. 2000 snapshots, the MEMIT-style logs, prefixes of 10 / 20 / 50 edits).  LookupError for any other log (TB-Q500-ae:
+        other order; MMKE-Bench, one-hop, BLIP2: no recombinations exist).
+  recomb.log_keys(log, kinds) -> (K float32 (n, d), LogRows)                    the keys of these rows (materialised: 0.5 GB at T = 1000,
+        1.1 GB at T = 2000; own_scores reads the memory-mapped store in chunks instead)
+  recomb.own_scores(log, score=None, kinds=KINDS, det_edit=None, rows=None, full=False) -> OwnScores
+        scores of every edit on ITS OWN rows.  score:
+          None | 'ncoord'            the default: normalised solver coordinate <W_i, k> / <W_i, k_i>   (rescope.feature_gate(log, 'ncoord'))
+          'coord' | 'cos' | 'negdist'   the other features of rescope.feature_gate
+          a rescope.ScopedLog        ANY un-thresholded gate; its S.scores are used (the driver's base gate fx.methods.base_gate(L, feature)[0];
+                                     a gate of another feature package, e.g. white.scores.feature_gate(log, 'whitecos', stats=st, kappa=0.1);
+                                     null-repaired detectors).  Thresholds are ignored.
+          a callable                 keys float32 (n, d) -> (n, D) score matrix (a score-matrix builder, e.g.
+                                     lambda K: white.scores.scores(log, K, 'white', stats=st, kappa=0.1)); D = T, or pass det_edit (D,)
+          an (n_rows, D) matrix      the scores themselves, aligned with log_rows(log, kinds) (also for scores that are not functions of
+                                     the key: every row carries its image and prompt, LogRows.rows)
+        -> .x (D,) fp64 tensor: per detector the largest score over the usable rows OWNED by its edit (-inf: none) = THE BASELINE;
+           .value (n,) score of each row's own edit; .per_edit(kind=None) (T,) per-edit maxima (of one kind); .record(); .rows
+  recomb.own_baseline(log, score=None, kinds=KINDS) -> (x, record)             = own_scores(...).x and its record (x_sha1, counts, md5 of the store)
+  recomb.calibrate_two_block_x(S, queries=None, alpha=0.05, *, x, coords=None, split=(1, 1), seed=0, blocks=None, u=None, rank='excess',
+                               allow_silence=False) -> (scoped log, record)
+        rescope.calibrate_two_block with the baseline of R5:  b_j = max(block-1 baseline, x_j);  block 2, exact rank, eta, strict gate,
+        floating-point-safe thresholds, ranking by the margin and guards are the library's own code (x enters as one more block-1 row).
+        x = None or -inf: the library's calibrate_two_block bit for bit.  record['recomb']: block-1 baselines, x, baselines raised, eta and
+        literal thresholds with and without x.  record['n_edits_capped'] / ['capped_edits'] as in the library.
+  recomb.augment(coords, x, split, seed) -> (coords', blocks)                   the same as plain library input:
+        rescope.calibrate_two_block(S, coords=coords', alpha=alpha, blocks=blocks)
+  recomb.two_block_rule_x(coords, x, alpha, split, seed, blocks, u) -> dict     the rule on numbers, composed from the amendment's text
+        (no library rule inside; reference of the tests): b1, x, b, eta, tau, rank, n1, n2, bound, scores2
+  recomb.decide_rows(S, log, kinds) -> dict                                     a CALIBRATED gate on the recombination rows themselves
+        (fired, top_edit, own_cand, own_top, b_cand, b_top, n_cand, own_margin): a mechanics read-out, development logs only
+  recomb.store(backbone) -> Store (.rows, .K, .rids, .lp, .owner, .partner, .min_T, .stream, .meta, .select(T, kinds), .summary());
+  recomb.available(backbone);  recomb.single_thread();  recomb.wiring (below)
+
+WIRING INTO THE SHARED DRIVER (recomb/wiring.py: an example, what rc_mechanics.py and the tests run; fx is not changed)
+    S, grec = fx.methods.base_gate(L, "ncoord")              # un-thresholded gate WITH its guards (as every calibration of the driver)
+    dr      = fx.draws.calibration(L, 200, draw)             # the calibration draw of the default method
+    Q       = fx.methods.calib_coords(L, S, dr)              # (n, D) per-query maxima of the feature
+    x, xrec = recomb.own_baseline(L, S)                      # once per (log, gate): x does not depend on the draw or on alpha
+    S2, rec = recomb.calibrate_two_block_x(S, coords=Q, x=x, alpha=alpha, seed=dr.seed)
+    M       = fx.methods.wrap(L, S2, "rescope_x", rec={"cal": rec, "recomb": xrec, "draw": dr.rec}, name="rescope_x", alpha=alpha, n=dr.n, draw=dr.draw)
+  recomb.wiring.method(L, alpha, n, draw, feature='ncoord', kinds=KINDS, x=True, base=None, cal=None) does exactly this and returns the Method;
+  x=False gives fx.methods.rescope / fx.methods.cosine bit for bit (tests/t_real.py, draws 0 - 2).
+  <gate>_x for the best gate of the cosine family: base = (S, record) with S that gate's un-thresholded scoped log AFTER add_guards (the
+  detectors define the score), or feature='cos' for the library's raw cosine.  A gate whose detectors depend on the draw (cos_null) has
+  a baseline that depends on the draw: compute x for the detectors of that draw.
+  The released values are those of the base gate (rebased values of fx): rescope_x shares the memo of fx.behave with rescope.
+
+WHAT THE USER MUST KNOW
+  * OWNER.  A row belongs to the edit it was built for: X-I and X-X to the edit whose IMAGE it shows, X-Q to the edit whose QUESTION it
+    asks.  The edit j whose question an X-X row borrows is not an owner of that row (the amendment: "its coordinates on ITS OWN
+    recombinations"); j is stored (partner, edit_b_pos) for the position rule and for read-outs.
+  * POSITION RULE.  A log uses a row iff both edits are in the log.  Every log length that is a multiple of 100 has all 12 rows per edit.
+    Prefix logs of 10 / 20 / 50 edits have 4 X-I, 4 X-Q and the 2 batch partners of X-X per edit, plus the group partners that happen to
+    lie inside the prefix (counts: README.txt, 'Usable by a log').  An edit without a usable row keeps its block-1 baseline (x = -inf).
+  * KEYS.  The recombination keys are PROMPT-ONLY keys (a recombination has no answer): the quantity of keys_decode.pt of the key cache.
+    The default calibration and the teacher-forced evaluation use the teacher-forced key of the same token; the library documents the
+    difference between the two for one query (up to 0.019 in a coordinate on Qwen, 0.001 on LLaVA; rule 3 of rescope's USAGE).  On LLaVA
+    the token itself differs only for rows whose ANSWER starts with a digit; recombinations have no answer and sit on the prompt's own
+    last token.  A calibration on every key of both paths (the driver's which='all') still gets ONE key per recombination row.
+  * GUARDS FIRST.  As for every calibration of the library: add the guards (stored solver keys, B = 1 own Rel keys) to the gate BEFORE
+    calibrate_two_block_x; an edit whose literal threshold would silence a guard is capped and counted (record['n_edits_capped']), and the
+    bound is void for it.  The recombinations raise baselines, so more edits can be capped than without them.
+  * THE BOUND.  x depends on the log and on the recombination keys only (not on a calibration or test query), so the score function of
+    the two-block rule still depends on block 1 and fixed quantities, and P(a fresh benign query has a candidate) <= floor(alpha (n2 + 1))
+    / (n2 + 1) holds as before, for the uncapped rule.  It is a bound on benign queries; nothing is guaranteed about near-scope queries.
+  * ETA CAN BE NEGATIVE.  eta is the block-2 quantile of max_i (r_i - b_i).  When the recombinations raise the baselines above what all but
+    a few benign block-2 queries reach, eta is about 0 and can be negative; an edit then fires BELOW its baseline, possibly on its own
+    recombination rows (they are not test rows).  This is the rule as registered; rc_mechanics.py reports eta over the 20 draws of the
+    development logs (out/mechanics.txt, part 4).
+  * NOT TEST ROWS.  Recombination queries are disjoint from every row of every key cache (edit prompts, rephrases, probes, hard negatives
+    of all kinds, benign rows) and from the one-hop portability queries (check_select.json).  Their partner items come from the SAME source
+    pool as the test hard negatives: an X-I row may ask a question string that a test HN-I row asks about another image, an X-Q row may
+    show an image that a test HN-Q row shows with another question (counts: README.txt, 'NOT a flag').  Flags of a row: q_in_edit /
+    q_in_edit_first_pos (cross-like for a log with T edits iff first_pos < T), same_category, q_in_probe, n_redraws.
+  * DETERMINISM.  The selection is a function of the seed 20261111 and of the data files (rc_check.py re-runs it twice in fresh
+    interpreters and compares the bytes).  own_scores runs with ONE BLAS thread and fixed chunks of 1024 keys: MKL's matrix products
+    change in their last bits with the number of threads (measured: four different x under 1, 2, 4, 8 threads), with one thread x is the
+    same bits in every process (record['x_sha1']; tests/t_real.py r3).  The calibration matrix Q is the driver's (its own thread setting).
+  * ONLY THE DEVELOPMENT LOGS (TB-Q100-ae-l2_3, TB-L100-ae-l2_3) may be used to look at a gate decision, a coverage or a firing rate.
+    log_rows / log_keys / own_scores are label-free and serve every log; decide_rows and rc_mechanics.py are for the development logs.
+  * COST.  own_baseline (measured, one thread): 0.5 - 0.7 s at T = 100, 4.5 s at T = 1000, 16 s at T = 2000 (12 T keys x T detectors x
+    11008); peak memory 2.4 - 3 GB at the longest streams (the keys are memory-mapped and scored in chunks).  wiring.baseline caches x per
+    (log, detectors, kinds).
+
+BUILD (all scripts in feat2/recomb; nothing outside cache2/recomb and feat2/recomb is written)
+    python rc_select.py <backbone>           CPU, 4 s: rows.jsonl + select_summary.json (seed 20261111; no time stamp inside)
+    python rc_check.py <backbone> [--fast]   CPU, 20 - 40 s: reproduction byte for byte (2 re-runs, other PYTHONHASHSEED), disjointness
+                                             from every test query (image md5 recomputed from the files), the rules re-derived
+    nohup ./run_capture.sh <backbone> > /dev/null 2>&1 &
+                                             GPU through the queue (gq run --mem 10500 | 17000 --prio 4): verify -> capture -> recheck;
+                                             resumable parts of 200 rows; log: cache2/recomb/logs/nohup_capture_<backbone>.out
+    python rc_assemble.py <backbone>         CPU: keys.pt, capture_meta.json, README.txt (keys.pt has no time stamp: same bytes on a re-run)
+    python rc_mechanics.py                   CPU, 10 s: out/mechanics.txt + out/mechanics.json (development logs, draw 0, alpha 0.05)
+  The capture reuses the caches' code path: fc_capture.make_evaluator / make_item, Evaluator.batch(it, answer=False),
+  Evaluator.decode_keys(it, 0) (= the first of the 11 decode keys that fc_capture stores = keys_decode.pt[row_decode]); proof before
+  the run on 50 hard-negative rows + 50 probe rows per backbone, bit for bit at B = 1 (verify_capture.json).
+
+TESTS   python tests/run_tests.py [core store real select]        -> tests/out/*.json, tests/out/table.txt
+    t_core.py   synthetic logs + fake store: without recombinations = the library bit for bit (432 configurations: alphas, block ratios,
+                guards, allow_silence, rank, scales); with recombinations = a plain-loop reference; strict event on block 2; Monte-Carlo
+                bound; own_scores (owner rule, kinds, det_edit, callable / matrix / gate); rows of a log; decide_rows
+    t_store.py  capture bookkeeping with fake keys: resumable parts, stale claims, two workers, assembly byte-identical, refusals
+    t_real.py   the real store: md5 / sha256, logs served and refused, baseline = direct formula on the development log, same bits under
+                1 / 3 / 8 threads, wiring without x = fx.methods.rescope and fx.methods.cosine bit for bit, with x = max(block 1, x) and the
+                plain-loop thresholds, fx.gate = KeyCache.decide, <gate>_x for the cosine, score functions of the package `white` (if it
+                is importable), scale with synthetic detectors
+    select      rc_check.py --fast for both backbones
+
+LIMITATIONS
+  * Recombinations exist for the two long VLKEB streams only.  A log built later on another stream needs its own selection and capture
+    (rc_select.py takes the stream from fc_common.BACKBONES; the test-query list is rc_common.TEST_CACHES).
+  * Rule (b) of the selection was applied against the key caches that existed on 2026-11-11 (qwen25vl, llava, QO, blip2).  rc_check.py
+    compares with every cache present when it runs and lists a cache that appeared later ('caches_compared').
+  * m = 4 rows per kind, the three kinds and the maximum are fixed by the amendment; `kinds=` exists for read-outs (per-kind tables),
+    not as a tuning switch.
+  * The keys hold the last prompt position only: gates with role 'last'.  No pre-edit answer exists for a recombination (no D1, no
+    teacher-forced sequence, no decode-step keys).
+  * A numpy release that changed Generator.permutation would change the selection; check_select.json records the versions under which
+    the reproduction was checked.

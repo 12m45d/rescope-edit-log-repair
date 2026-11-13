@@ -1,0 +1,60 @@
+{
+ "name": "g_batch",
+ "pass": true,
+ "what": "a batched (right-padded, masked) pass equals the single pass: same tokens and firing flags; logits to float32 round-off",
+ "detail": {
+  "preedit": {
+   "n": 150,
+   "tf_tok_diff_rows": 0,
+   "dec_tok_diff_rows": 0,
+   "flag_diff_rows": 0,
+   "max_abs_logit_diff_tf": 0.0001068115234375,
+   "max_abs_logit_diff_dec": 6.103515625e-05,
+   "tok_diff_min_top2_gap": null,
+   "n_fired_rows": 0
+  },
+  "deployed": {
+   "n": 150,
+   "tf_tok_diff_rows": 0,
+   "dec_tok_diff_rows": 0,
+   "flag_diff_rows": 0,
+   "max_abs_logit_diff_tf": 0.000133514404296875,
+   "max_abs_logit_diff_dec": 0.000209808349609375,
+   "tok_diff_min_top2_gap": null,
+   "n_fired_rows": 0
+  },
+  "rescope": {
+   "n": 150,
+   "tf_tok_diff_rows": 0,
+   "dec_tok_diff_rows": 0,
+   "flag_diff_rows": 0,
+   "max_abs_logit_diff_tf": 0.00012969970703125,
+   "max_abs_logit_diff_dec": 7.62939453125e-05,
+   "tok_diff_min_top2_gap": null,
+   "n_fired_rows": 63
+  },
+  "where_all": {
+   "n": 150,
+   "tf_tok_diff_rows": 0,
+   "dec_tok_diff_rows": 0,
+   "flag_diff_rows": 0,
+   "max_abs_logit_diff_tf": 0.0001373291015625,
+   "max_abs_logit_diff_dec": 0.000186920166015625,
+   "tok_diff_min_top2_gap": null,
+   "n_fired_rows": 150
+  }
+ },
+ "error": null,
+ "seconds": 268.22235560417175,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "peak_alloc_MiB": 8339.9580078125,
+ "peak_reserved_MiB": 11566.0,
+ "written": "2026-11-11 12:15:03 UTC"
+}

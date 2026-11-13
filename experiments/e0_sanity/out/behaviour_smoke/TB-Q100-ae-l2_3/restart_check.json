@@ -1,0 +1,288 @@
+{
+ "gates": {
+  "static/M5": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "static/M6": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw0/M1": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw0/M2": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw0/M3": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw0/M4": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw1/M1": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw1/M2": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw1/M3": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw1/M4": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw2/M1": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw2/M2": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw2/M3": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  },
+  "draw2/M4": {
+   "bitwise": true,
+   "max_rel_diff": 0.0
+  }
+ },
+ "rows": {
+  "static/edits/deployed": [
+   8,
+   8
+  ],
+  "static/edits/pre-edit": [
+   8,
+   8
+  ],
+  "static/edits/M5": [
+   8,
+   8
+  ],
+  "static/edits/M6": [
+   8,
+   8
+  ],
+  "static/probes/deployed": [
+   12,
+   12
+  ],
+  "static/probes/pre-edit": [
+   12,
+   12
+  ],
+  "static/probes/M5": [
+   12,
+   12
+  ],
+  "static/probes/M6": [
+   12,
+   12
+  ],
+  "static/hn/deployed": [
+   32,
+   32
+  ],
+  "static/hn/pre-edit": [
+   32,
+   32
+  ],
+  "static/hn/M5": [
+   32,
+   32
+  ],
+  "static/hn/M6": [
+   32,
+   32
+  ],
+  "draw0/edits/M1": [
+   8,
+   8
+  ],
+  "draw0/edits/M2": [
+   8,
+   8
+  ],
+  "draw0/edits/M3": [
+   8,
+   8
+  ],
+  "draw0/edits/M4": [
+   8,
+   8
+  ],
+  "draw0/probes/M1": [
+   12,
+   12
+  ],
+  "draw0/probes/M2": [
+   12,
+   12
+  ],
+  "draw0/probes/M3": [
+   12,
+   12
+  ],
+  "draw0/probes/M4": [
+   12,
+   12
+  ],
+  "draw0/hn/M1": [
+   32,
+   32
+  ],
+  "draw0/hn/M2": [
+   32,
+   32
+  ],
+  "draw0/hn/M3": [
+   32,
+   32
+  ],
+  "draw0/hn/M4": [
+   32,
+   32
+  ],
+  "draw1/edits/M1": [
+   8,
+   8
+  ],
+  "draw1/edits/M2": [
+   8,
+   8
+  ],
+  "draw1/edits/M3": [
+   8,
+   8
+  ],
+  "draw1/edits/M4": [
+   8,
+   8
+  ],
+  "draw1/probes/M1": [
+   12,
+   12
+  ],
+  "draw1/probes/M2": [
+   12,
+   12
+  ],
+  "draw1/probes/M3": [
+   12,
+   12
+  ],
+  "draw1/probes/M4": [
+   12,
+   12
+  ],
+  "draw1/hn/M1": [
+   32,
+   32
+  ],
+  "draw1/hn/M2": [
+   32,
+   32
+  ],
+  "draw1/hn/M3": [
+   32,
+   32
+  ],
+  "draw1/hn/M4": [
+   32,
+   32
+  ],
+  "draw2/edits/M1": [
+   8,
+   8
+  ],
+  "draw2/edits/M2": [
+   8,
+   8
+  ],
+  "draw2/edits/M3": [
+   8,
+   8
+  ],
+  "draw2/edits/M4": [
+   8,
+   8
+  ],
+  "draw2/probes/M1": [
+   12,
+   12
+  ],
+  "draw2/probes/M2": [
+   12,
+   12
+  ],
+  "draw2/probes/M3": [
+   12,
+   12
+  ],
+  "draw2/probes/M4": [
+   12,
+   12
+  ],
+  "draw2/hn/M1": [
+   32,
+   32
+  ],
+  "draw2/hn/M2": [
+   32,
+   32
+  ],
+  "draw2/hn/M3": [
+   32,
+   32
+  ],
+  "draw2/hn/M4": [
+   32,
+   32
+  ]
+ },
+ "n_rows": 832,
+ "n_rows_equal": 832,
+ "differing": [],
+ "finished": "2026-11-11 00:23:35",
+ "seconds_this_run": 66.63387441635132,
+ "peak_gpu_gb": 8.33730173110962,
+ "module_weight_is_WE_after": true,
+ "sparse_stats_this_run": {
+  "rows": 832,
+  "silent_from_cache": 514,
+  "silent_from_local": 0,
+  "run_fired_or_near": 214,
+  "run_no_key": 0,
+  "run_other_method": 104,
+  "local_captures": 0,
+  "forwards": 318
+ },
+ "rescope": "[redacted: local path]/02_research/code/rescope",
+ "n_gates": 14,
+ "n_gates_bitwise": 14,
+ "spot": 40,
+ "cuda_visible_devices": "0",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "e0_code": {
+   "e0_behaviour.py": "298bfffff2b2",
+   "e0_checks.py": "c95ae28db977",
+   "e0_common.py": "6160232ad92c",
+   "e0_gate.py": "7f5ae508e9e4",
+   "e0_referee.py": "3e0bc0b949e9",
+   "e0_render.py": "e639a2e8ed71"
+  }
+ },
+ "ok": true
+}

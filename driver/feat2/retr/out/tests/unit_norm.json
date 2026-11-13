@@ -1,0 +1,35 @@
+{
+ "ok": true,
+ "summary": "image: [9165, 1024] float32, max | |e| - 1 | = 6.4e-08, on the 2^-24 grid; question: [6424, 384] float32, max | |e| - 1 | = 9.0e-08, on the 2^-24 grid",
+ "image": {
+  "shape": [
+   9165,
+   1024
+  ],
+  "dtype": "float32",
+  "n_keys": 9165,
+  "max_abs_norm_minus_1": 6.394291873768054e-08,
+  "finite": true,
+  "on_grid_2^-24": true,
+  "md5_equals_meta": true,
+  "keys_sorted_unique": true,
+  "ok": true
+ },
+ "question": {
+  "shape": [
+   6424,
+   384
+  ],
+  "dtype": "float32",
+  "n_keys": 6424,
+  "max_abs_norm_minus_1": 8.994551903285242e-08,
+  "finite": true,
+  "on_grid_2^-24": true,
+  "md5_equals_meta": true,
+  "keys_sorted_unique": true,
+  "ok": true
+ },
+ "test": "unit_norm",
+ "seconds": 0.3,
+ "when": "2026-11-11 08:27:12 UTC"
+}

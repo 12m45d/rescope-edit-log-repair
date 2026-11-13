@@ -1,0 +1,117 @@
+{
+ "name": "g_public",
+ "pass": true,
+ "what": "public evaluation code on the served model: weights reproduce the build's case files and generated texts; an all-firing linear gate reproduces the deployed scores; PAD positions never fire",
+ "detail": {
+  "deployed": {
+   "n": 30,
+   "ES": 100.0,
+   "PS": 96.67,
+   "NS": 78.67,
+   "EM": 94.95,
+   "PM": 59.75,
+   "NM": 5.32,
+   "S": 90.75,
+   "rows_fired_pct": {
+    "rewrite": null,
+    "paraphrase": null,
+    "neighborhood": null,
+    "attribute": null
+   },
+   "n_records_with_nonfinite_prob": 0,
+   "max_abs_diff_to_build_case_files": 0.0
+  },
+  "preedit": {
+   "n": 30,
+   "ES": 26.67,
+   "PS": 30.0,
+   "NS": 81.67,
+   "EM": -3.1,
+   "PM": -1.2,
+   "NM": 6.08,
+   "S": 36.11,
+   "rows_fired_pct": {
+    "rewrite": null,
+    "paraphrase": null,
+    "neighborhood": null,
+    "attribute": null
+   },
+   "n_records_with_nonfinite_prob": 0,
+   "max_abs_diff_to_build_case_files": 0.0
+  },
+  "where_all": {
+   "n": 30,
+   "ES": 100.0,
+   "PS": 96.67,
+   "NS": 78.67,
+   "EM": 94.95,
+   "PM": 59.75,
+   "NM": 5.32,
+   "S": 90.75,
+   "rows_fired_pct": {
+    "rewrite": 100.0,
+    "paraphrase": 100.0,
+    "neighborhood": 100.0,
+    "attribute": 100.0
+   },
+   "n_records_with_nonfinite_prob": 0
+  },
+  "rescope": {
+   "n": 30,
+   "ES": 100.0,
+   "PS": 100.0,
+   "NS": 81.33,
+   "EM": 98.86,
+   "PM": 69.56,
+   "NM": 5.85,
+   "S": 92.89,
+   "rows_fired_pct": {
+    "rewrite": 100.0,
+    "paraphrase": 100.0,
+    "neighborhood": 7.333333333333333,
+    "attribute": 5.666666666666667
+   },
+   "n_records_with_nonfinite_prob": 0
+  },
+  "where_all_vs_deployed_max_abs_score_diff": 0.0,
+  "public_batch": {
+   "n_rows": 46,
+   "n_rows_expected": 46,
+   "rows_firing_at_exactly_their_real_length": 46,
+   "n_pad_positions": 540
+  },
+  "generation": {
+   "preedit": {
+    "GE": 621.4385100310933,
+    "n_texts": 40,
+    "n_texts_equal_to_build": 40,
+    "prompts_fired_pct": null
+   },
+   "deployed": {
+    "GE": 588.8003454681335,
+    "n_texts": 40,
+    "n_texts_equal_to_build": 40,
+    "prompts_fired_pct": null
+   },
+   "all_off": {
+    "GE": 621.4385100310933,
+    "n_texts": 40,
+    "n_texts_equal_to_build": 40,
+    "prompts_fired_pct": 0.0
+   }
+  }
+ },
+ "error": null,
+ "seconds": 72.31812381744385,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "peak_alloc_MiB": 8521.51953125,
+ "peak_reserved_MiB": 9254.0,
+ "written": "2026-11-11 12:23:11 UTC"
+}

@@ -1,0 +1,222 @@
+{
+ "TB-Q100-ae-l2_3-p50": {
+  "log": "TB-Q100-ae-l2_3-p50",
+  "repair_rest": {
+   "mean": 5.021993236060053,
+   "se_items": 0.6901944934099702
+  },
+  "heldout_disjoint": {
+   "mean": 6.806451612903225,
+   "se_items": 0.8967447638205821
+  },
+  "difference": {
+   "value": 1.7844583768431717,
+   "se": 1.131600464021236,
+   "z": 1.576933231806879
+  },
+  "strata": {
+   "text": {
+    "repair_n": 244,
+    "repair_rate": 0.2287457110179184,
+    "heldout_n": 241,
+    "heldout_rate": 0.0
+   },
+   "image, near (question of an edit)": {
+    "repair_n": 27,
+    "repair_rate": 9.869462908900688,
+    "heldout_n": 16,
+    "heldout_rate": 7.843750000000001
+   },
+   "image, far, entity of an edit image": {
+    "repair_n": 0,
+    "repair_rate": null,
+    "heldout_n": 0,
+    "heldout_rate": null
+   },
+   "image, far, other entity": {
+    "repair_n": 218,
+    "repair_rate": 9.78653780002145,
+    "heldout_n": 208,
+    "heldout_rate": 14.612980769230768
+   },
+   "image, short (len tercile 1)": {
+    "repair_n": 84,
+    "repair_rate": 2.88931799087472,
+    "heldout_n": 64,
+    "heldout_rate": 2.4921875
+   },
+   "image, len tercile 2": {
+    "repair_n": 79,
+    "repair_rate": 12.264201275777355,
+    "heldout_n": 79,
+    "heldout_rate": 17.0
+   },
+   "image, long (tercile 3)": {
+    "repair_n": 82,
+    "repair_rate": 14.492269840550081,
+    "heldout_n": 81,
+    "heldout_rate": 20.52469135802469
+   },
+   "image, answer < 10 tokens": {
+    "repair_n": 13,
+    "repair_rate": 3.009466421016469,
+    "heldout_n": 16,
+    "heldout_rate": 18.1875
+   },
+   "image, answer = 10 tokens": {
+    "repair_n": 232,
+    "repair_rate": 10.17593825634388,
+    "heldout_n": 208,
+    "heldout_rate": 13.817307692307693
+   }
+  },
+  "heldout_standardised_to_repair_composition": {
+   "rate": 6.299012634562384,
+   "covered_weight": 1.0,
+   "strata": "modality x near-scope x entity of an edit image x length tercile"
+  },
+  "concentration": {
+   "heldout_rows_for_half_of_firing": 18,
+   "heldout_rows_firing_in_over_half_of_draws": 27,
+   "repair_rows_for_half_of_firing": 16,
+   "repair_rows_firing_in_over_half_of_draws": 20
+  },
+  "top_edits_heldout": [
+   {
+    "edit": 8,
+    "share_of_heldout_firing": 0.10537124802527745,
+    "share_of_repair_firing": 0.006217616580310879
+   },
+   {
+    "edit": 25,
+    "share_of_heldout_firing": 0.10142180094786822,
+    "share_of_repair_firing": 0.0037996545768566492
+   },
+   {
+    "edit": 23,
+    "share_of_heldout_firing": 0.09336492890995338,
+    "share_of_repair_firing": 0.013126079447322964
+   },
+   {
+    "edit": 5,
+    "share_of_heldout_firing": 0.04786729857819902,
+    "share_of_repair_firing": 0.013471502590673569
+   },
+   {
+    "edit": 3,
+    "share_of_heldout_firing": 0.04581358609794622,
+    "share_of_repair_firing": 0.028670120898100157
+   }
+  ]
+ },
+ "TB-Q100-ae-l2_3": {
+  "log": "TB-Q100-ae-l2_3",
+  "repair_rest": {
+   "mean": 4.97292529533894,
+   "se_items": 0.693184068463778
+  },
+  "heldout_disjoint": {
+   "mean": 5.953763440860216,
+   "se_items": 0.8530149350389078
+  },
+  "difference": {
+   "value": 0.9808381455212762,
+   "se": 1.099153598079644,
+   "z": 0.8923576716074264
+  },
+  "strata": {
+   "text": {
+    "repair_n": 244,
+    "repair_rate": 0.13470042281339994,
+    "heldout_n": 241,
+    "heldout_rate": 0.0
+   },
+   "image, near (question of an edit)": {
+    "repair_n": 37,
+    "repair_rate": 13.778830773490897,
+    "heldout_n": 28,
+    "heldout_rate": 9.982142857142858
+   },
+   "image, far, entity of an edit image": {
+    "repair_n": 0,
+    "repair_rate": null,
+    "heldout_n": 0,
+    "heldout_rate": null
+   },
+   "image, far, other entity": {
+    "repair_n": 208,
+    "repair_rate": 9.082100132861099,
+    "heldout_n": 196,
+    "heldout_rate": 12.698979591836734
+   },
+   "image, short (len tercile 1)": {
+    "repair_n": 84,
+    "repair_rate": 2.3163547164791813,
+    "heldout_n": 64,
+    "heldout_rate": 1.6796875000000002
+   },
+   "image, len tercile 2": {
+    "repair_n": 79,
+    "repair_rate": 13.446339744790528,
+    "heldout_n": 79,
+    "heldout_rate": 12.860759493670887
+   },
+   "image, long (tercile 3)": {
+    "repair_n": 82,
+    "repair_rate": 13.927547929653281,
+    "heldout_n": 81,
+    "heldout_rate": 20.308641975308646
+   },
+   "image, answer < 10 tokens": {
+    "repair_n": 13,
+    "repair_rate": 4.5783334189238785,
+    "heldout_n": 16,
+    "heldout_rate": 14.875
+   },
+   "image, answer = 10 tokens": {
+    "repair_n": 232,
+    "repair_rate": 10.083513930208023,
+    "heldout_n": 208,
+    "heldout_rate": 12.165865384615387
+   }
+  },
+  "heldout_standardised_to_repair_composition": {
+   "rate": 5.2825824662723635,
+   "covered_weight": 1.0,
+   "strata": "modality x near-scope x entity of an edit image x length tercile"
+  },
+  "concentration": {
+   "heldout_rows_for_half_of_firing": 15,
+   "heldout_rows_firing_in_over_half_of_draws": 25,
+   "repair_rows_for_half_of_firing": 16,
+   "repair_rows_firing_in_over_half_of_draws": 15
+  },
+  "top_edits_heldout": [
+   {
+    "edit": 8,
+    "share_of_heldout_firing": 0.0854253205707068,
+    "share_of_repair_firing": 0.0027972027972027985
+   },
+   {
+    "edit": 57,
+    "share_of_heldout_firing": 0.0854253205707068,
+    "share_of_repair_firing": 0.011888111888111888
+   },
+   {
+    "edit": 25,
+    "share_of_heldout_firing": 0.07946541448437835,
+    "share_of_repair_firing": 0.0
+   },
+   {
+    "edit": 23,
+    "share_of_heldout_firing": 0.05616759978327623,
+    "share_of_repair_firing": 0.0020979020979020988
+   },
+   {
+    "edit": 91,
+    "share_of_heldout_firing": 0.04912407440852442,
+    "share_of_repair_firing": 0.019580419580419575
+   }
+  ]
+ }
+}

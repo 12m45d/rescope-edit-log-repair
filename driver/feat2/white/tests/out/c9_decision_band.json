@@ -1,0 +1,121 @@
+{
+ "pass": true,
+ "per_log": {
+  "TB-Q100-ae-l2_3": {
+   "cos_centred": {
+    "max_abs_difference": 4.440892098500626e-16,
+    "max_difference_over_band": 2.598488474697701e-07,
+    "band_min": 1.5015982759571273e-09
+   },
+   "cos_null": {
+    "max_abs_difference": 4.996003610813204e-16,
+    "max_difference_over_band": 1.3760096448475025e-07,
+    "band_min": 2.0898778858925893e-09
+   },
+   "white_0.01": {
+    "max_abs_difference": 6.661338147750939e-16,
+    "max_difference_over_band": 1.609313776358908e-07,
+    "band_min": 2.048527198608626e-09
+   },
+   "white_0.1": {
+    "max_abs_difference": 3.3306690738754696e-16,
+    "max_difference_over_band": 7.70235140559359e-08,
+    "band_min": 1.9792944083241864e-09
+   },
+   "white_1": {
+    "max_abs_difference": 4.440892098500626e-16,
+    "max_difference_over_band": 1.1569533102801082e-07,
+    "band_min": 1.8045337789116159e-09
+   },
+   "whitecos_0.01": {
+    "max_abs_difference": 1.3433698597964394e-14,
+    "max_difference_over_band": 1.6219770099151126e-07,
+    "band_min": 8.238850221399048e-08
+   },
+   "whitecos_0.1": {
+    "max_abs_difference": 1.354472090042691e-14,
+    "max_difference_over_band": 5.386238017780829e-07,
+    "band_min": 2.462673339172987e-08
+   },
+   "whitecos_1": {
+    "max_abs_difference": 8.104628079763643e-15,
+    "max_difference_over_band": 1.037556094644578e-06,
+    "band_min": 7.166638997074373e-09
+   },
+   "rescope_null": {
+    "max_abs_difference": 4.649058915617843e-16,
+    "max_difference_over_band": 4.272289334486121e-08,
+    "band_min": 3.305258218490779e-09
+   },
+   "rescope_nullW": {
+    "max_abs_difference": 4.440892098500626e-16,
+    "max_difference_over_band": 6.069490082177414e-08,
+    "band_min": 3.439173577945894e-09
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "cos_centred": {
+    "max_abs_difference": 9.992007221626409e-16,
+    "max_difference_over_band": 5.943073029928758e-07,
+    "band_min": 1.3922265285744075e-09
+   },
+   "cos_null": {
+    "max_abs_difference": 8.881784197001252e-16,
+    "max_difference_over_band": 3.350439331425351e-07,
+    "band_min": 1.4453356551258835e-09
+   },
+   "white_0.01": {
+    "max_abs_difference": 1.124100812432971e-15,
+    "max_difference_over_band": 3.536424789062287e-07,
+    "band_min": 1.7757874177822758e-09
+   },
+   "white_0.1": {
+    "max_abs_difference": 9.853229343548264e-16,
+    "max_difference_over_band": 2.8114118345598234e-07,
+    "band_min": 1.7456457873799742e-09
+   },
+   "white_1": {
+    "max_abs_difference": 8.881784197001252e-16,
+    "max_difference_over_band": 3.9047998897555706e-07,
+    "band_min": 1.611141903548855e-09
+   },
+   "whitecos_0.01": {
+    "max_abs_difference": 9.992007221626409e-15,
+    "max_difference_over_band": 1.0080532725209179e-07,
+    "band_min": 9.886190092295547e-08
+   },
+   "whitecos_0.1": {
+    "max_abs_difference": 2.7644553313166398e-14,
+    "max_difference_over_band": 9.473396656285964e-07,
+    "band_min": 2.9181247567442636e-08
+   },
+   "whitecos_1": {
+    "max_abs_difference": 9.547918011776346e-15,
+    "max_difference_over_band": 1.1054396054735016e-06,
+    "band_min": 8.305851622344778e-09
+   },
+   "rescope_null": {
+    "max_abs_difference": 6.661338147750939e-16,
+    "max_difference_over_band": 7.76695504373009e-08,
+    "band_min": 3.760953973594953e-09
+   },
+   "rescope_nullW": {
+    "max_abs_difference": 6.765421556309548e-16,
+    "max_difference_over_band": 7.712373437771691e-08,
+    "band_min": 3.743234114004448e-09
+   }
+  }
+ },
+ "worst_difference_over_band": 1.1054396054735016e-06,
+ "note": "2 logs x 10 gates x about 290 keys x 100 edits: largest |batched - single| / decision band = 1.1e-06 (the band is 1e-9 relative; criterion <= 0.1)",
+ "test": "c9_decision_band",
+ "group": "scores",
+ "what": "round-off of the scores between batch shapes (one batch vs key by key) on development-log keys stays inside the library's decision band (near flag)",
+ "seconds": 5.6814374923706055,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

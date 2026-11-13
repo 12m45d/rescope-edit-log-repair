@@ -1,0 +1,31 @@
+{
+ "pass": true,
+ "per_backbone": {
+  "qwen25vl": {
+   "n_cells": 45,
+   "differing": [],
+   "rows_tf_outside_answer_subset": 0
+  },
+  "llava": {
+   "n_cells": 45,
+   "differing": [],
+   "rows_tf_outside_answer_subset": 0
+  },
+  "blip2": {
+   "n_cells": 45,
+   "differing": [],
+   "rows_tf_outside_answer_subset": 0
+  }
+ },
+ "note": "135 summary cells recounted, differing: 0",
+ "test": "p8_summary_recount",
+ "group": "parts",
+ "what": "summary counts recomputed here from the pool rows (rows by ptype, answer subset, valid y0, teacher-forced key, q_in_edit, per-prefix)",
+ "seconds": 0.1198887825012207,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

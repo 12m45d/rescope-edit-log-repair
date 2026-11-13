@@ -1,0 +1,47 @@
+{
+ "pass": true,
+ "per_log": {
+  "TB-Q100-ae-l2_3": {
+   "variants": 12,
+   "draw_source": "the shared driver: fx.draws.calibration(L, 200, draw) and fx.draws.null_sample(L, 100, draw)"
+  },
+  "TB-L100-ae-l2_3": {
+   "variants": 12,
+   "draw_source": "the shared driver: fx.draws.calibration(L, 200, draw) and fx.draws.null_sample(L, 100, draw)"
+  }
+ },
+ "other_log_refused": "TB-Q200-ae-l2_3: the mechanics check touches only the two development logs ['TB-",
+ "files": [
+  "mechanics_TB-L100-ae-l2_3.json",
+  "mechanics_TB-Q100-ae-l2_3.json"
+ ],
+ "calibration_queries_identical_to_a_null_sample_query": {
+  "TB-Q100-ae-l2_3": {
+   "n": 200,
+   "same_query": 5,
+   "same_question_string": 41,
+   "same_query_block1": 3,
+   "same_query_block2": 2,
+   "same_query_key_bitwise_equal": 5
+  },
+  "TB-L100-ae-l2_3": {
+   "n": 200,
+   "same_query": 3,
+   "same_question_string": 37,
+   "same_query_block1": 2,
+   "same_query_block2": 1,
+   "same_query_key_bitwise_equal": 3
+  }
+ },
+ "note": "12 rows x 2 calibrations x 2 development logs; draw 0, 200 calibration + 100 null queries, disjoint as rows; another log is refused: True; draw function: the shared driver's (the shared driver: fx.draws.calibration(L, 200, dr...); calibration queries that ARE a null-sample query (same key bit for bit, score 0 after the repair): Q100 5 of 200; L100 3 of 200; none in HELD-OUT-DISJOINT: True",
+ "test": "m3_scope",
+ "group": "mechanics",
+ "what": "the mechanics check reads development logs only, and every variant row is present for both calibrations",
+ "seconds": 0.011595010757446289,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

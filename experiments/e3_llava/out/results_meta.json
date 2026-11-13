@@ -1,0 +1,79 @@
+{
+ "experiment": "E3 (scale) and E4 (other editor) on the LLaVA-1.5-7B logs",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "started": "2026-11-12 04:07:47",
+ "alpha": 0.05,
+ "n": 200,
+ "logs": [
+  "TB-L100-ae-l2_3",
+  "TB-L200-ae-l2_3",
+  "TB-L500-ae-l2_3",
+  "TB-L100-memitw",
+  "TB-L500-memitw",
+  "TB-L1000-memitw"
+ ],
+ "families": {
+  "ae-l2_3": [
+   "TB-L100-ae-l2_3",
+   "TB-L200-ae-l2_3",
+   "TB-L500-ae-l2_3"
+  ],
+  "memitw": [
+   "TB-L100-memitw",
+   "TB-L500-memitw",
+   "TB-L1000-memitw"
+  ]
+ },
+ "n_draws_gate": 20,
+ "behavioural_draws": {
+  "TB-L100-ae-l2_3": [
+   0,
+   1,
+   2
+  ],
+  "TB-L200-ae-l2_3": [
+   0,
+   1,
+   2
+  ],
+  "TB-L500-ae-l2_3": [
+   0,
+   1,
+   2
+  ],
+  "TB-L100-memitw": [
+   0,
+   1,
+   2
+  ],
+  "TB-L500-memitw": [
+   0,
+   1,
+   2
+  ],
+  "TB-L1000-memitw": [
+   0
+  ]
+ },
+ "written": "2026-11-12 04:09:50",
+ "n_records": 54008,
+ "fields": [
+  "experiment",
+  "log",
+  "method",
+  "variant",
+  "alpha",
+  "n",
+  "draw",
+  "pool",
+  "metric",
+  "value",
+  "ci_lo",
+  "ci_hi",
+  "n_units"
+ ]
+}

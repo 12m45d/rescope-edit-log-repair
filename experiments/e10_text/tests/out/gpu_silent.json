@@ -1,0 +1,31 @@
+{
+ "name": "g_silent",
+ "pass": true,
+ "what": "identity (b): a prompt on which no edit fires is the pre-edit model bit for bit (teacher-forced and decode logits, mixed padded batches)",
+ "detail": {
+  "n_rows": 440,
+  "n_silent_hook": 379,
+  "n_silent_bitwise_tf": 379,
+  "n_silent_bitwise_dec": 379,
+  "n_fired": 61,
+  "n_fired_bitwise_tf": 0,
+  "n_cache_silent": 379,
+  "n_cache_silent_but_hook_fired": 0,
+  "n_off_bitwise_tf": 440,
+  "n_off_bitwise_dec": 440,
+  "n_batches_mixed": 26
+ },
+ "error": null,
+ "seconds": 53.3405556678772,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "peak_alloc_MiB": 7958.24365234375,
+ "peak_reserved_MiB": 10798.0,
+ "written": "2026-11-11 12:10:18 UTC"
+}

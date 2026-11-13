@@ -1,0 +1,90 @@
+{
+ "selected": "whitecos_0.1",
+ "rule": "The ONE gate of the R3 family that enters the behavioural rows (R19 f / R21): the variant with the largest paraphrase coverage at\ngate level on the DEVELOPMENT log (mean over the 20 calibration draws; two-block calibration, guards = the frozen default).  Ties:\nthe lower false firing on HELD-OUT prompts, then the table order.  Written to out/best_gate_text.json BEFORE any behavioural run on\na reported log; refuses to overwrite.",
+ "log": "TX-G2XL-rome-dev100",
+ "ranking": [
+  "whitecos_0.1",
+  "whitecos_0.01",
+  "whitecos_1",
+  "cos_null",
+  "cos_centred",
+  "white_1",
+  "white_0.1",
+  "white_0.01"
+ ],
+ "candidates": {
+  "cos_centred": {
+   "coverage_paraphrase": 94.725,
+   "false_firing_heldout": 4.805,
+   "firing_neighborhood": 6.285,
+   "n_draws": 20,
+   "capped_mean": 0.2
+  },
+  "cos_null": {
+   "coverage_paraphrase": 94.975,
+   "false_firing_heldout": 5.003333333333333,
+   "firing_neighborhood": 6.089999999999999,
+   "n_draws": 20,
+   "capped_mean": 0.15
+  },
+  "white_0.01": {
+   "coverage_paraphrase": 94.5,
+   "false_firing_heldout": 5.464999999999999,
+   "firing_neighborhood": 6.529999999999999,
+   "n_draws": 20,
+   "capped_mean": 0.05
+  },
+  "white_0.1": {
+   "coverage_paraphrase": 94.525,
+   "false_firing_heldout": 5.3950000000000005,
+   "firing_neighborhood": 6.725,
+   "n_draws": 20,
+   "capped_mean": 0.05
+  },
+  "white_1": {
+   "coverage_paraphrase": 94.625,
+   "false_firing_heldout": 5.048333333333334,
+   "firing_neighborhood": 6.425,
+   "n_draws": 20,
+   "capped_mean": 0.15
+  },
+  "whitecos_0.01": {
+   "coverage_paraphrase": 95.65,
+   "false_firing_heldout": 5.39,
+   "firing_neighborhood": 6.63,
+   "n_draws": 20,
+   "capped_mean": 0.05
+  },
+  "whitecos_0.1": {
+   "coverage_paraphrase": 95.775,
+   "false_firing_heldout": 5.3100000000000005,
+   "firing_neighborhood": 6.575,
+   "n_draws": 20,
+   "capped_mean": 0.05
+  },
+  "whitecos_1": {
+   "coverage_paraphrase": 95.4,
+   "false_firing_heldout": 4.955,
+   "firing_neighborhood": 6.18,
+   "n_draws": 20,
+   "capped_mean": 0.15
+  }
+ },
+ "for_reference_not_candidates": {
+  "cosine": {
+   "coverage_paraphrase": 94.825,
+   "false_firing_heldout": 4.793333333333334,
+   "firing_neighborhood": 6.145000000000001,
+   "n_draws": 20,
+   "capped_mean": 0.15
+  },
+  "rescope": {
+   "coverage_paraphrase": 98.25,
+   "false_firing_heldout": 4.813333333333333,
+   "firing_neighborhood": 5.885,
+   "n_draws": 20,
+   "capped_mean": 0.55
+  }
+ },
+ "written_utc": "2026-11-11 13:17:37"
+}

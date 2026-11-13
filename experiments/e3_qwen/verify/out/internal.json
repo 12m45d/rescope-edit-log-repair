@@ -1,0 +1,897 @@
+{
+ "backbones": {
+  "qwen": {
+   "logs": {},
+   "results_json": {
+    "n_cells_compared": 3085,
+    "n_disagree": 0,
+    "disagreements": [],
+    "disagreeing_quantities": []
+   },
+   "paper_numbers": {
+    "n_names": 2518,
+    "n_recomputed_here": 2504,
+    "n_disagree": 0,
+    "disagreements": [],
+    "n_not_recomputed": 14,
+    "not_recomputed_kinds": [
+     "CLoggedErrMedian",
+     "CRebaseErrMedian",
+     "LoggedErrMedian",
+     "MLoggedErrMedian",
+     "MRebaseErrMedian",
+     "RebaseErrMedian"
+    ]
+   },
+   "discipline": {
+    "n_cells": 382,
+    "bad_cells": [],
+    "n_failed_or_skipped_files": 0,
+    "jobs_per_log": {
+     "TB-Q100-ae-l2_3": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,d2gen,calq,lib"
+      ]
+     },
+     "TB-Q200-ae-l2_3": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,d2gen,calq,lib"
+      ]
+     },
+     "TB-Q500-ae-l2_3": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,d2gen,calq,lib"
+      ]
+     },
+     "TB-Q100-memitw": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,d2gen,calq,lib"
+      ]
+     },
+     "TB-Q500-memitw": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,d2gen,calq,lib"
+      ]
+     },
+     "TB-Q1000-memitw": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,d2gen,calq,lib"
+      ]
+     },
+     "TB-Q2000-memitw": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,d2gen,calq,lib"
+      ]
+     }
+    },
+    "digest_gate_vs_behaviour_differ": [],
+    "internal_logs_mentioned": {
+     "TB-Q1000-ae-l2_3": 0,
+     "TB-Q2000-ae-l2_3": 0,
+     "TB-L1000-ae-l2_3": 0
+    },
+    "out_internal_dir_exists": false,
+    "logs_in_results": [
+     "TB-Q100-memitw",
+     "TB-Q100-ae-l2_3",
+     "TB-Q1000-memitw",
+     "TB-Q200-ae-l2_3",
+     "TB-Q2000-memitw",
+     "TB-Q500-memitw",
+     "TB-Q500-ae-l2_3"
+    ]
+   },
+   "counts": {
+    "TB-Q100-ae-l2_3": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 979,
+     "n_hd_all": 475,
+     "n_hd_valid": 465,
+     "n_repair_valid": 489,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_edit_rows": 300.0,
+     "n_probe_rows_in_files": 465.0,
+     "n_hn_rows_in_files": 1278.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 28.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-Q200-ae-l2_3": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 979,
+     "n_hd_all": 475,
+     "n_hd_valid": 465,
+     "n_repair_valid": 489,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_edit_rows": 600.0,
+     "n_probe_rows_in_files": 465.0,
+     "n_hn_rows_in_files": 1313.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 48.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-Q500-ae-l2_3": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 979,
+     "n_hd_all": 475,
+     "n_hd_valid": 465,
+     "n_repair_valid": 489,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_edit_rows": 1500.0,
+     "n_probe_rows_in_files": 465.0,
+     "n_hn_rows_in_files": 1385.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 82.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-Q100-memitw": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 979,
+     "n_hd_all": 475,
+     "n_hd_valid": 465,
+     "n_repair_valid": 489,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_edit_rows": 300.0,
+     "n_probe_rows_in_files": 465.0,
+     "n_hn_rows_in_files": 1278.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 28.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-Q500-memitw": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 979,
+     "n_hd_all": 475,
+     "n_hd_valid": 465,
+     "n_repair_valid": 489,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_edit_rows": 1500.0,
+     "n_probe_rows_in_files": 465.0,
+     "n_hn_rows_in_files": 1385.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 82.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-Q1000-memitw": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 979,
+     "n_hd_all": 475,
+     "n_hd_valid": 465,
+     "n_repair_valid": 489,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_edit_rows": 3000.0,
+     "n_probe_rows_in_files": 465.0,
+     "n_hn_rows_in_files": 1483.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 100.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-Q2000-memitw": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 979,
+     "n_hd_all": 475,
+     "n_hd_valid": 465,
+     "n_repair_valid": 489,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_edit_rows": 6000.0,
+     "n_probe_rows_in_files": 465.0,
+     "n_hn_rows_in_files": 1771.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 112.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    }
+   },
+   "deployed_vs_stored": {
+    "TB-Q100-ae-l2_3": {
+     "non_oracle": [],
+     "rel": {
+      "B1_rows": 78.0,
+      "stored_per_edit": 78.0,
+      "stored_metrics_json": 78.0,
+      "n_flags_differ": 2
+     },
+     "tgen": {
+      "B1_rows": 9.0,
+      "stored_per_edit": 9.0,
+      "stored_metrics_json": 9.0,
+      "n_flags_differ": 0
+     },
+     "igen": {
+      "B1_rows": 22.0,
+      "stored_per_edit": 23.0,
+      "stored_metrics_json": 23.0,
+      "n_flags_differ": 1
+     },
+     "probe_D1": {
+      "B1_rows": 54.19354838709678,
+      "stored_is_complaint_D1": 54.19354838709678,
+      "n_flags_differ": 0,
+      "n": 465
+     }
+    },
+    "TB-Q200-ae-l2_3": {
+     "non_oracle": [
+      142
+     ],
+     "rel": {
+      "B1_rows": 65.5,
+      "stored_per_edit": 67.0,
+      "stored_metrics_json": 67.0,
+      "n_flags_differ": 3
+     },
+     "tgen": {
+      "B1_rows": 4.5,
+      "stored_per_edit": 5.0,
+      "stored_metrics_json": 5.0,
+      "n_flags_differ": 1
+     },
+     "igen": {
+      "B1_rows": 22.5,
+      "stored_per_edit": 23.5,
+      "stored_metrics_json": 23.5,
+      "n_flags_differ": 2
+     },
+     "probe_D1": {
+      "B1_rows": 77.41935483870968,
+      "stored_is_complaint_D1": 77.41935483870968,
+      "n_flags_differ": 0,
+      "n": 465
+     }
+    },
+    "TB-Q500-ae-l2_3": {
+     "non_oracle": [
+      142
+     ],
+     "rel": {
+      "B1_rows": 54.6,
+      "stored_per_edit": 56.39999999999999,
+      "stored_metrics_json": 56.39999999999999,
+      "n_flags_differ": 13
+     },
+     "tgen": {
+      "B1_rows": 4.3999999999999995,
+      "stored_per_edit": 4.8,
+      "stored_metrics_json": 4.8,
+      "n_flags_differ": 2
+     },
+     "igen": {
+      "B1_rows": 16.0,
+      "stored_per_edit": 16.6,
+      "stored_metrics_json": 16.6,
+      "n_flags_differ": 5
+     },
+     "probe_D1": {
+      "B1_rows": 89.03225806451613,
+      "stored_is_complaint_D1": 89.03225806451613,
+      "n_flags_differ": 0,
+      "n": 465
+     }
+    },
+    "TB-Q100-memitw": {
+     "non_oracle": [],
+     "rel": {
+      "B1_rows": 53.0,
+      "stored_per_edit": 53.0,
+      "stored_metrics_json": 53.0,
+      "n_flags_differ": 0
+     },
+     "tgen": {
+      "B1_rows": 11.0,
+      "stored_per_edit": 11.0,
+      "stored_metrics_json": 11.0,
+      "n_flags_differ": 0
+     },
+     "igen": {
+      "B1_rows": 19.0,
+      "stored_per_edit": 20.0,
+      "stored_metrics_json": 20.0,
+      "n_flags_differ": 1
+     },
+     "probe_D1": {
+      "B1_rows": 89.46236559139786,
+      "stored_is_complaint_D1": 89.46236559139786,
+      "n_flags_differ": 0,
+      "n": 465
+     }
+    },
+    "TB-Q500-memitw": {
+     "non_oracle": [
+      142
+     ],
+     "rel": {
+      "B1_rows": 25.0,
+      "stored_per_edit": 25.8,
+      "stored_metrics_json": 25.8,
+      "n_flags_differ": 4
+     },
+     "tgen": {
+      "B1_rows": 6.4,
+      "stored_per_edit": 6.2,
+      "stored_metrics_json": 6.2,
+      "n_flags_differ": 1
+     },
+     "igen": {
+      "B1_rows": 10.0,
+      "stored_per_edit": 9.8,
+      "stored_metrics_json": 9.8,
+      "n_flags_differ": 3
+     },
+     "probe_D1": {
+      "B1_rows": 96.55913978494624,
+      "stored_is_complaint_D1": 96.55913978494624,
+      "n_flags_differ": 0,
+      "n": 465
+     }
+    },
+    "TB-Q1000-memitw": {
+     "non_oracle": [
+      142
+     ],
+     "rel": {
+      "B1_rows": 15.2,
+      "stored_per_edit": 15.1,
+      "stored_metrics_json": 15.1,
+      "n_flags_differ": 5
+     },
+     "tgen": {
+      "B1_rows": 4.6,
+      "stored_per_edit": 4.7,
+      "stored_metrics_json": 4.7,
+      "n_flags_differ": 3
+     },
+     "igen": {
+      "B1_rows": 6.5,
+      "stored_per_edit": 6.4,
+      "stored_metrics_json": 6.4,
+      "n_flags_differ": 3
+     },
+     "probe_D1": {
+      "B1_rows": 98.9247311827957,
+      "stored_is_complaint_D1": 98.9247311827957,
+      "n_flags_differ": 0,
+      "n": 465
+     }
+    },
+    "TB-Q2000-memitw": {
+     "non_oracle": [
+      142
+     ],
+     "rel": {
+      "B1_rows": 9.8,
+      "stored_per_edit": 9.6,
+      "stored_metrics_json": 9.6,
+      "n_flags_differ": 10
+     },
+     "tgen": {
+      "B1_rows": 3.6999999999999997,
+      "stored_per_edit": 3.8,
+      "stored_metrics_json": 3.8,
+      "n_flags_differ": 6
+     },
+     "igen": {
+      "B1_rows": 4.65,
+      "stored_per_edit": 4.55,
+      "stored_metrics_json": 4.55,
+      "n_flags_differ": 4
+     },
+     "probe_D1": {
+      "B1_rows": 97.63440860215053,
+      "stored_is_complaint_D1": 97.63440860215053,
+      "n_flags_differ": 0,
+      "n": 465
+     }
+    }
+   },
+   "dev_vs_e0": {
+    "n_cells": 96,
+    "largest_abs_diff": 7.105427357601002e-15
+   }
+  },
+  "llava": {
+   "logs": {},
+   "results_json": {
+    "n_cells_compared": 3174,
+    "n_disagree": 0,
+    "disagreements": [],
+    "disagreeing_quantities": []
+   },
+   "paper_numbers": {
+    "n_names": 2182,
+    "n_recomputed_here": 2170,
+    "n_disagree": 0,
+    "disagreements": [],
+    "n_not_recomputed": 12,
+    "not_recomputed_kinds": [
+     "LoggedErrMax",
+     "RebaseErrMax"
+    ]
+   },
+   "discipline": {
+    "n_cells": 356,
+    "bad_cells": [],
+    "n_failed_or_skipped_files": 0,
+    "jobs_per_log": {
+     "TB-L100-ae-l2_3": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,gen,prompt,qd,pub,where"
+      ]
+     },
+     "TB-L200-ae-l2_3": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,gen,prompt,qd,pub,where"
+      ]
+     },
+     "TB-L500-ae-l2_3": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,gen,prompt,qd,pub,where"
+      ]
+     },
+     "TB-L100-memitw": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,gen,prompt,qd,pub,where"
+      ]
+     },
+     "TB-L500-memitw": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,gen,prompt,qd,pub,where"
+      ]
+     },
+     "TB-L1000-memitw": {
+      "n_jobs": 1,
+      "hook_mismatch": [
+       0
+      ],
+      "blocks": [
+       "fixed,cal,h3,gen,prompt,qd,pub,where"
+      ]
+     }
+    },
+    "digest_gate_vs_behaviour_differ": [],
+    "internal_logs_mentioned": {
+     "TB-Q1000-ae-l2_3": 0,
+     "TB-Q2000-ae-l2_3": 0,
+     "TB-L1000-ae-l2_3": 0
+    },
+    "out_internal_dir_exists": false,
+    "logs_in_results": [
+     "TB-L100-memitw",
+     "TB-L100-ae-l2_3",
+     "TB-L1000-memitw",
+     "TB-L200-ae-l2_3",
+     "TB-L500-memitw",
+     "TB-L500-ae-l2_3"
+    ]
+   },
+   "counts": {
+    "TB-L100-ae-l2_3": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 988,
+     "n_hd_all": 475,
+     "n_hd_valid": 469,
+     "n_repair_valid": 494,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_invalid_reported": 12,
+     "lp_shift_rows": {
+      "probe": 46,
+      "edit": 3,
+      "hn": 7
+     },
+     "n_edit_rows": 300.0,
+     "n_probe_rows_in_files": 469.0,
+     "n_hn_rows_in_files": 1286.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 39.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-L200-ae-l2_3": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 988,
+     "n_hd_all": 475,
+     "n_hd_valid": 469,
+     "n_repair_valid": 494,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_invalid_reported": 12,
+     "lp_shift_rows": {
+      "probe": 46,
+      "edit": 3,
+      "hn": 7
+     },
+     "n_edit_rows": 600.0,
+     "n_probe_rows_in_files": 469.0,
+     "n_hn_rows_in_files": 1349.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 60.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-L500-ae-l2_3": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 988,
+     "n_hd_all": 475,
+     "n_hd_valid": 469,
+     "n_repair_valid": 494,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_invalid_reported": 12,
+     "lp_shift_rows": {
+      "probe": 46,
+      "edit": 9,
+      "hn": 7
+     },
+     "n_edit_rows": 1500.0,
+     "n_probe_rows_in_files": 469.0,
+     "n_hn_rows_in_files": 1477.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 83.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-L100-memitw": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 988,
+     "n_hd_all": 475,
+     "n_hd_valid": 469,
+     "n_repair_valid": 494,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_invalid_reported": 12,
+     "lp_shift_rows": {
+      "probe": 46,
+      "edit": 3,
+      "hn": 7
+     },
+     "n_edit_rows": 300.0,
+     "n_probe_rows_in_files": 469.0,
+     "n_hn_rows_in_files": 1286.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 39.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-L500-memitw": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 988,
+     "n_hd_all": 475,
+     "n_hd_valid": 469,
+     "n_repair_valid": 494,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_invalid_reported": 12,
+     "lp_shift_rows": {
+      "probe": 46,
+      "edit": 9,
+      "hn": 7
+     },
+     "n_edit_rows": 1500.0,
+     "n_probe_rows_in_files": 469.0,
+     "n_hn_rows_in_files": 1477.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 83.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    },
+    "TB-L1000-memitw": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 988,
+     "n_hd_all": 475,
+     "n_hd_valid": 469,
+     "n_repair_valid": 494,
+     "ctx_near_differs": 0,
+     "ctx_qd_differs": 0,
+     "ctx_hd_ok": true,
+     "later_ok": true,
+     "n_invalid_reported": 12,
+     "lp_shift_rows": {
+      "probe": 46,
+      "edit": 24,
+      "hn": 10
+     },
+     "n_edit_rows": 3000.0,
+     "n_probe_rows_in_files": 469.0,
+     "n_hn_rows_in_files": 1777.0,
+     "all_row_files_have_my_sid_sets": true,
+     "n_near_rows": 103.0,
+     "near_flags_differing": 0.0,
+     "max_D1_without_firing": 0
+    }
+   },
+   "deployed_vs_stored": {
+    "TB-L100-ae-l2_3": {
+     "non_oracle": [
+      79,
+      84
+     ],
+     "rel": {
+      "B1_rows": 88.0,
+      "stored_per_edit": 88.0,
+      "stored_metrics_json": 88.0,
+      "n_flags_differ": 0
+     },
+     "tgen": {
+      "B1_rows": 28.999999999999996,
+      "stored_per_edit": 28.999999999999996,
+      "stored_metrics_json": 28.999999999999996,
+      "n_flags_differ": 0
+     },
+     "igen": {
+      "B1_rows": 66.0,
+      "stored_per_edit": 66.0,
+      "stored_metrics_json": 66.0,
+      "n_flags_differ": 0
+     },
+     "probe_D1": {
+      "B1_rows": 62.26012793176972,
+      "stored_is_complaint_D1": 62.26012793176972,
+      "n_flags_differ": 0,
+      "n": 469
+     }
+    },
+    "TB-L200-ae-l2_3": {
+     "non_oracle": [
+      79,
+      84,
+      104,
+      113
+     ],
+     "rel": {
+      "B1_rows": 70.0,
+      "stored_per_edit": 70.0,
+      "stored_metrics_json": 70.0,
+      "n_flags_differ": 0
+     },
+     "tgen": {
+      "B1_rows": 21.5,
+      "stored_per_edit": 22.0,
+      "stored_metrics_json": 22.0,
+      "n_flags_differ": 1
+     },
+     "igen": {
+      "B1_rows": 51.0,
+      "stored_per_edit": 51.0,
+      "stored_metrics_json": 51.0,
+      "n_flags_differ": 0
+     },
+     "probe_D1": {
+      "B1_rows": 76.11940298507463,
+      "stored_is_complaint_D1": 76.11940298507463,
+      "n_flags_differ": 0,
+      "n": 469
+     }
+    },
+    "TB-L500-ae-l2_3": {
+     "non_oracle": [
+      79,
+      84,
+      104,
+      113,
+      467,
+      475
+     ],
+     "rel": {
+      "B1_rows": 40.6,
+      "stored_per_edit": 41.0,
+      "stored_metrics_json": 41.0,
+      "n_flags_differ": 2
+     },
+     "tgen": {
+      "B1_rows": 11.4,
+      "stored_per_edit": 11.4,
+      "stored_metrics_json": 11.4,
+      "n_flags_differ": 0
+     },
+     "igen": {
+      "B1_rows": 33.2,
+      "stored_per_edit": 33.6,
+      "stored_metrics_json": 33.6,
+      "n_flags_differ": 4
+     },
+     "probe_D1": {
+      "B1_rows": 91.89765458422174,
+      "stored_is_complaint_D1": 91.89765458422174,
+      "n_flags_differ": 0,
+      "n": 469
+     }
+    },
+    "TB-L100-memitw": {
+     "non_oracle": [
+      79,
+      84
+     ],
+     "rel": {
+      "B1_rows": 78.0,
+      "stored_per_edit": 78.0,
+      "stored_metrics_json": 78.0,
+      "n_flags_differ": 0
+     },
+     "tgen": {
+      "B1_rows": 26.0,
+      "stored_per_edit": 26.0,
+      "stored_metrics_json": 26.0,
+      "n_flags_differ": 0
+     },
+     "igen": {
+      "B1_rows": 65.0,
+      "stored_per_edit": 64.0,
+      "stored_metrics_json": 64.0,
+      "n_flags_differ": 1
+     },
+     "probe_D1": {
+      "B1_rows": 77.82515991471215,
+      "stored_is_complaint_D1": 77.82515991471215,
+      "n_flags_differ": 0,
+      "n": 469
+     }
+    },
+    "TB-L500-memitw": {
+     "non_oracle": [
+      79,
+      84,
+      104,
+      113,
+      467,
+      475
+     ],
+     "rel": {
+      "B1_rows": 45.6,
+      "stored_per_edit": 45.6,
+      "stored_metrics_json": 45.6,
+      "n_flags_differ": 0
+     },
+     "tgen": {
+      "B1_rows": 13.4,
+      "stored_per_edit": 13.4,
+      "stored_metrics_json": 13.4,
+      "n_flags_differ": 0
+     },
+     "igen": {
+      "B1_rows": 38.4,
+      "stored_per_edit": 38.4,
+      "stored_metrics_json": 38.4,
+      "n_flags_differ": 0
+     },
+     "probe_D1": {
+      "B1_rows": 86.99360341151386,
+      "stored_is_complaint_D1": 86.99360341151386,
+      "n_flags_differ": 0,
+      "n": 469
+     }
+    },
+    "TB-L1000-memitw": {
+     "non_oracle": [
+      79,
+      84,
+      104,
+      113,
+      467,
+      475,
+      516,
+      612,
+      702,
+      994
+     ],
+     "rel": {
+      "B1_rows": 37.3,
+      "stored_per_edit": 37.3,
+      "stored_metrics_json": 37.3,
+      "n_flags_differ": 6
+     },
+     "tgen": {
+      "B1_rows": 11.4,
+      "stored_per_edit": 11.600000000000001,
+      "stored_metrics_json": 11.600000000000001,
+      "n_flags_differ": 2
+     },
+     "igen": {
+      "B1_rows": 29.599999999999998,
+      "stored_per_edit": 29.7,
+      "stored_metrics_json": 29.7,
+      "n_flags_differ": 5
+     },
+     "probe_D1": {
+      "B1_rows": 86.14072494669509,
+      "stored_is_complaint_D1": 86.14072494669509,
+      "n_flags_differ": 0,
+      "n": 469
+     }
+    }
+   },
+   "dev_vs_e0": {
+    "n_cells": 96,
+    "largest_abs_diff": 7.105427357601002e-15
+   }
+  }
+ },
+ "mine_files": [
+  "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/mine_qwen.json",
+  "[redacted: local path]/02_research/experiments/10_final/e3_qwen/verify/out/mine_llava.json"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "pass": true,
+ "cost": {
+  "T=100": {
+   "cos_centred": {
+    "build_s": 0.007740974426269531,
+    "score_1000_keys_s": 0.04946708679199219,
+    "gate_MiB": 8.3984375
+   },
+   "cos_null": {
+    "build_s": 0.07361531257629395,
+    "score_1000_keys_s": 0.030770301818847656,
+    "gate_MiB": 8.3984375
+   },
+   "white_0.1": {
+    "build_s": 0.05709958076477051,
+    "score_1000_keys_s": 0.028185367584228516,
+    "gate_MiB": 8.3984375
+   },
+   "whitecos_0.1": {
+    "build_s": 0.07567143440246582,
+    "score_1000_keys_s": 0.11615443229675293,
+    "gate_MiB": 58.7890625
+   },
+   "cosine (library, for comparison)": {
+    "build_s": 0.0,
+    "score_1000_keys_s": 0.03244447708129883,
+    "gate_MiB": 8.3984375
+   }
+  },
+  "T=2000 (random keys)": {
+   "cos_centred": {
+    "build_s": 0.31768369674682617,
+    "score_1000_keys_s": 0.27597856521606445,
+    "gate_MiB": 167.96875
+   },
+   "cos_null": {
+    "build_s": 2.5120959281921387,
+    "score_1000_keys_s": 0.19530081748962402,
+    "gate_MiB": 167.96875
+   },
+   "white_0.1": {
+    "build_s": 1.4194633960723877,
+    "score_1000_keys_s": 0.19228553771972656,
+    "gate_MiB": 167.96875
+   },
+   "whitecos_0.1": {
+    "build_s": 1.8761615753173828,
+    "score_1000_keys_s": 0.28131532669067383,
+    "gate_MiB": 218.359375
+   },
+   "cosine (library, for comparison)": {
+    "build_s": 0.0,
+    "score_1000_keys_s": 0.23218488693237305,
+    "gate_MiB": 167.96875
+   }
+  }
+ },
+ "null_w_seconds": {
+  "T=100, score_guards=True": 0.4279468059539795,
+  "T=100, score_guards=False": 0.3605377674102783,
+  "T=2000, score_guards=False": 3.906792640686035,
+  "T=2000, score_guards=True": 38.24998497962952
+ },
+ "load_stats_s": 0.5057203769683838,
+ "threads": 4,
+ "note": "load statistics 0.5 s; build / score 1000 keys (s), T = 100: cos_centred 0.01 / 0.05, cos_null 0.07 / 0.03, white_0.1 0.06 / 0.03, whitecos_0.1 0.08 / 0.12, cosine (library, for comparison) 0.00 / 0.03; T = 2000: cos_centred 0.3 / 0.3 (168 MiB), cos_null 2.5 / 0.2 (168 MiB), white_0.1 1.4 / 0.2 (168 MiB), whitecos_0.1 1.9 / 0.3 (218 MiB), cosine (library, for comparison) 0.0 / 0.2 (168 MiB); null_w (600 BEN-W keys) with / without guard scoring: T = 100 0.4 / 0.4 s, T = 2000 (4000 guards) 38 / 4 s",
+ "test": "c11_cost",
+ "group": "scores",
+ "what": "cost (information): build time and memory of every gate, scoring time per 1000 keys; T = 100 (development log) and T = 2000 (random keys, no real log)",
+ "seconds": 61.20997881889343,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

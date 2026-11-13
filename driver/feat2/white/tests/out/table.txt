@@ -1,0 +1,84 @@
+TESTS of white (10_final/feat2/white): parts of the benign pool, BEN-W statistics, score functions, mechanics check
+rendered by tests/run_tests.py from tests/out/*.json; code now: rescope c76c4da16bd6, white f6a6201ff1e6, fx e9b61c12c3ee, tests fbb968a3758b
+34 of 34 tests pass; every result was produced by the library, package and tests fingerprinted above
+
+[parts]
+  PASS  p1_split_rule                      0.2s  the stored split is the documented rule (re-coded here): sorted uids, default_rng(20261111).permutation, 20 / 45 / 35 percent of the items
+                                                 -> 2002 items -> W / S / T = 400 / 901 / 701 (19.98 / 45.00 / 35.01 %); file == rule for 3 backbones
+  PASS  p2_no_item_in_two_parts            0.1s  no source item lies in two parts; every pool row has exactly the part of its item; the parts cover the pool
+                                                 -> items in two parts: 0; rows W / S / T = 600 / 1375 / 1025 of 3000
+  PASS  p3_same_split_all_backbones        0.5s  the pool holds the same rows for every backbone and the item split (and the row split) is the same
+                                                 -> qwen25vl, llava, blip2: same rows (sid, uid, ptype, prompt, image, answer subset): True; same item split: True; differing fields: text format (1500/1500 rows), flags against the edit stream (156/227 rows)
+  PASS  p4_determinism                     4.1s  determinism: a re-run in a fresh process (other hash seeds) reproduces every stored file byte for byte
+                                                 -> 4 files x 2 fresh processes (PYTHONHASHSEED 0, 987) + in-process render: all byte-identical: True
+  PASS  p5_order_independence              0.0s  the split depends on the SET of uids only (row order, repeated uids)
+                                                 -> shuffled rows / de-duplicated uids / repeated uids give the same split: True
+  PASS  p6_loader                          0.9s  loader: verification passes; sids / rows of a part in pool order; rows(part, key cache) are the benign rows of the key cache
+                                                 -> sids(part) / rows(part, kc) / mask / unknown part refused: True
+  PASS  p7_loader_detects_changed_pool     0.1s  loader refuses a pool file that is not the file the split was made from
+                                                 -> changed pool file -> RuntimeError: True
+  PASS  p8_summary_recount                 0.1s  summary counts recomputed here from the pool rows (rows by ptype, answer subset, valid y0, teacher-forced key, q_in_edit, per-prefix)
+                                                 -> 135 summary cells recounted, differing: 0
+  PASS  p9_benign_vs_cached_queries        0.5s  benign rows against the probe rows, edits and hard negatives of the key caches (same query = same image content + question): none in the VLKEB families; MMKE-Bench counted
+                                                 -> no benign query is a probe / edit / hard-negative query of the VLKEB family (Qwen, LLaVA) and none repeats; on Qwen 215 benign rows ARE probe queries of the MMKE-Bench family (BEN-W 42, BEN-S 95, BEN-T 78; REPAIR and held-out): on TB-Q*-mmke logs the parts are not disjoint from the probes
+
+[stats]
+  PASS  s1_woodbury_small                  0.0s  Woodbury (Gram form, N < d) and the primal form (N > d) against an explicit inverse numpy.linalg.inv(C + rho I) on small random problems
+                                                 -> 4 problems x 4 ridges, rho / dense M / x M / x M x' / x M y': worst relative deviation 8.5e-14 (tolerance 1e-10)
+  PASS  s2_same_moment_other_keys          0.0s  the same second moment from other key sets gives the same statistics: keys repeated (Gram form and primal form), keys permuted
+                                                 -> mu, tr(C), M of repeated / permuted reference keys: worst relative deviation 5.2e-14; Gram form == primal form
+  PASS  s3_stored_vs_numpy                 9.0s  the stored statistics against a fresh numpy computation from the key cache: rows, keys (bitwise), mu, Gram matrix, tr(C_W), rho, L^-1
+                                                 -> qwen25vl: N = 600, keys bitwise True, mu / Gram / tr / rho rel. dev. 1.2e-16, |L^-1 A L^-T - I| 2.6e-13; llava: N = 600, keys bitwise True, mu / Gram / tr / rho rel. dev. 1.5e-16, |L^-1 A L^-T - I| 3.2e-13
+  PASS  s4_determinism_files              30.6s  determinism: fresh processes with 1, 2 and 4 BLAS threads reproduce stats.pt and meta.json byte for byte
+                                                 -> stats.pt + meta.json of 2 backbones rebuilt under 1 / 2 / 4 threads: byte-identical: True
+  PASS  s5_loader_detects_tampering        0.8s  the reader refuses a changed stats.pt (md5) and statistics whose keys are not the BEN-W keys of the key cache
+                                                 -> copy loads: True; flipped bit refused: True; other cache keys refused: True
+  PASS  s6_whitener_identity_full_size     3.0s  full size (d = 11008): M (C_W + rho I) x = x for BEN-W keys, solver keys of the development logs and random vectors, per kappa
+                                                 -> |x M (C_W + rho I) - x| / |x| and x M x' two ways, 75 vectors x 3 ridges x 2 backbones: worst 1.1e-09 (tolerance 1e-08); median cancellation |x|^2 / (rho x M x') at kappa 0.01: BEN-W keys 2022, solver keys 24 (Qwen)
+  PASS  s7_factor_bitwise                  2.3s  the whitening factor from the stored L^-1 equals a fresh factorisation bit for bit, under 1 and 4 threads
+                                                 -> Gram matrix, mu, tr(C_W) and the factor R = L^-1 K (3 ridges) recomputed under 1 and 4 threads: bitwise equal to the stored ones: True
+
+[scores]
+  PASS  c1_own_key_synthetic        0.0s  own-key value on synthetic logs: every score is 1 at the edit's own solver key (Gram and primal form, registered and other ridges)
+                                          -> 20 gates + ncoord_null, T = 24, d = 96: max |score(k_i)_i - 1| = 8.9e-16; cos_centred / whitecos <= 1 on all queries: True
+  PASS  c2_own_key_real             2.4s  own-key value on the development logs: 8 registered variants, rescope_null (100 REPAIR keys) and rescope_nullW (600 BEN-W keys)
+                                          -> 2 logs x 10 gates x 100 edits: max |score(k_i)_i - 1| = 4.8e-14; k_i = EditLog.K = the file's K1_solver = det_key (and det_w |k_i|) of the library's cosine gate: True
+  PASS  c3_invariances              0.0s  invariances: translation / rotation / scaling (cos_centred), linearity and joint scaling (white), query scaling and Cauchy-Schwarz (whitecos), null-key shifts and change of basis (cos_null)
+                                          -> 47 identities on a synthetic log (Gram and primal form): worst deviation 1.4e-14; limits mu = 0 / kappa = 1e12 / no null key reproduce the cosine gate to 6.8e-12
+  PASS  c4_null_zero_and_own        3.3s  cos_null (the 100 keys of rescope_null, draw 0) and the rescope_nullW helper (600 BEN-W keys): zero on the given keys, own coordinate unchanged, minimum change
+                                          -> both logs: max |score| on the given keys 9.7e-11 (before the repair up to 0.97 for the cosine), own coordinate changed by 3.8e-16 (relative), part of the change outside span(null keys, own key) 1.1e-14; cos_null detectors == the direct library null_repair with guards, bit for bit at one thread (the library's unpinned call at 4 threads differs by 4.2e-12 relative: thread-dependent last bits)
+  PASS  c5_naive_qwen              29.6s  naive re-implementation of every score on 50 queries of TB-Q100-ae-l2_3 (second code path: numpy / scipy, explicit d x d inverse)
+                                          -> 50 queries x 100 edits, 12 score matrices, naive numpy path (explicit d x d inverse, constrained least squares): worst |difference| 1.8e-11 (ncoord_null (600 BEN-W keys) = rescope_nullW); tolerance 1e-08; the 100 null keys hold 98 distinct keys, rank 98 in both paths; naive solves consistent (residual 1.6e-12); cancellation in k'Mk of the queries at kappa 0.01: median 23, max 163
+  PASS  c5_naive_llava             30.3s  naive re-implementation of every score on 50 queries of TB-L100-ae-l2_3 (second code path: numpy / scipy, explicit d x d inverse)
+                                          -> 50 queries x 100 edits, 12 score matrices, naive numpy path (explicit d x d inverse, constrained least squares): worst |difference| 6.6e-11 (ncoord_null (600 BEN-W keys) = rescope_nullW); tolerance 1e-08; the 100 null keys hold 100 distinct keys, rank 100 in both paths; naive solves consistent (residual 5.8e-13); cancellation in k'Mk of the queries at kappa 0.01: median 9, max 101
+  PASS  c6_calibration_contract     3.4s  library calibration on the new features (development logs, draw 0): stored thresholds == the defining strict comparison on every calibration score; exact rank; guards fire
+                                          -> 20 gates x 2 rules: r >= tau <=> (r - b) > eta on all 200 x 100 calibration scores; eta = the rank-th smallest score; calibration queries firing under the literal rule = those above eta, at most n2 - rank (4 of 100 two-block, 9 of 200 shared; exactly that many everywhere: False); the query that defines eta is silent; all 200 guards fire as run: True
+  PASS  c7_operator_contract        0.0s  library operators on the new gate classes: replace / to / add_guards keep the class; added detectors refused; null_repair / least_repair on the 'lin' gate (white)
+                                          -> TCosLog survives replace / to / add_guards; witness detector refused; white is a plain 'lin' gate (null_repair, least_repair apply); library null_repair on a gate without 'lin' detectors raises RuntimeError (its own cosine gate too: True) -- documented, cos_null goes through the 'lin' reading
+  PASS  c8_hook_cpu                 0.1s  the forward hook (rescope.Hook on a linear module, CPU) with every new gate: firing, releasing edit and output W_0 k + v_e as the gate's scores say; silent sequences untouched
+                                          -> 8 gates x 12 sequences on a synthetic log: hook firing / releasing edit == the gate's scores, output == W_0 k + v_e bit for bit, silent sequences untouched, a later position with another edit's key ignored: True
+  PASS  c9_decision_band            5.7s  round-off of the scores between batch shapes (one batch vs key by key) on development-log keys stays inside the library's decision band (near flag)
+                                          -> 2 logs x 10 gates x about 290 keys x 100 edits: largest |batched - single| / decision band = 1.1e-06 (the band is 1e-9 relative; criterion <= 0.1)
+  PASS  c10_detector_bits           8.6s  determinism of the detectors: built under 1 and 4 threads they are the same bits (every variant, both development logs)
+                                          -> detectors (det_w, det_s) of 8 variants + rescope_nullW bitwise equal under 1 / 4 threads: True; the SCORES of 200 keys (the library's batched product, not pinned) differ by at most 8.9e-16
+  PASS  c11_cost                   61.2s  cost (information): build time and memory of every gate, scoring time per 1000 keys; T = 100 (development log) and T = 2000 (random keys, no real log)
+                                          -> load statistics 0.5 s; build / score 1000 keys (s), T = 100: cos_centred 0.01 / 0.05, cos_null 0.07 / 0.03, white_0.1 0.06 / 0.03, whitecos_0.1 0.08 / 0.12, cosine (library, for comparison) 0.00 / 0.03; T = 2000: cos_centred 0.3 / 0.3 (168 MiB), cos_null 2.5 / 0.2 (168 MiB), white_0.1 1.4 / 0.2 (168 MiB), whitecos_0.1 1.9 / 0.3 (218 MiB), cosine (library, for comparison) 0.0 / 0.2 (168 MiB); null_w (600 BEN-W keys) with / without guard scoring: T = 100 0.4 / 0.4 s, T = 2000 (4000 guards) 38 / 4 s
+
+[mechanics]
+  PASS  m1_agrees_with_e0_and_driver     0.0s  the registered rows of the mechanics check agree with the sanity experiment e0 (per-row file, table.txt) and with the shared driver's rows
+                                               -> both logs, draw 0: thresholds of rescope / cosine x two-block / shared bitwise equal to e0's, 0 of 2232 (Qwen) rows decided otherwise, eta / capped of e0's table equal, 20-draw cells 44 of 44 (Qwen) and 44 of 44 (LLaVA) reproduced; driver rows bitwise equal; fx.gate.decide == KeyCache.decide for the new gates: True
+  PASS  m2_reproducible                 61.1s  a re-run in a fresh process reproduces out/mechanics_<log>.json byte for byte, and out/mechanics.txt is the rendering of these files
+                                               -> mechanics_<log>.json of both development logs re-computed in a fresh process (4 threads): byte-identical, mechanics.txt == render(): True
+  PASS  m3_scope                         0.0s  the mechanics check reads development logs only, and every variant row is present for both calibrations
+                                               -> 12 rows x 2 calibrations x 2 development logs; draw 0, 200 calibration + 100 null queries, disjoint as rows; another log is refused: True; draw function: the shared driver's (the shared driver: fx.draws.calibration(L, 200, dr...); calibration queries that ARE a null-sample query (same key bit for bit, score 0 after the repair): Q100 5 of 200; L100 3 of 200; none in HELD-OUT-DISJOINT: True
+
+[usage]
+  PASS  u1_usage_example     3.6s  the ten-line example of USAGE.txt is executed as printed (development log TB-Q100-ae-l2_3)
+                                   -> 10 lines executed; printed one line per variant (cos_centred, cos_null, white_0.01, white_0.1, white_1, whitecos_0.01, whitecos_0.1, whitecos_1); null_w returns a ScopedLog; score matrix (8, 100): True
+  PASS  u2_driver_wiring     3.7s  hand-over to the shared driver (development logs): a new gate through fx.methods.recalibrate + fx.methods.wrap == the direct library calibration, bit for bit
+                                   -> 20 rows (5 gates x 2 rules x 2 logs): fx.methods.recalibrate thresholds == direct library calibration bit for bit; fx.methods.wrap gives kind 'scoped' on the memo path with a distinct method key; fx.gate.decide == KeyCache.decide; values = fx.methods.released_values: True
+
+[gpu]
+  PASS  g1_gpu_device    16.3s  every new gate on the GPU (ScopedLog.to('cuda'), development-log keys): scores and decisions == CPU within the decision band; hook on a cuda module in the module dtype
+                                -> 2 logs x 9 gates on NVIDIA GeForce RTX 5090: |GPU - CPU| / decision band <= 1.5e-05; 0 of 8073 decisions differ outside the band; hook on a cuda linear module (bf16 / fp16, real width): firing, top edit and output == W_0 k + v_e with one cast, silent sequences bitwise untouched: True; peak 475 MiB
+

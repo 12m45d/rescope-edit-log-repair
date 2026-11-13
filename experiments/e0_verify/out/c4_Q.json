@@ -1,0 +1,219 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "load_checks": {
+  "probe_uids_match_records": true,
+  "collapsed_working_point": false,
+  "WE_float_minus_W0_equals_stored_composite": true,
+  "C_equals_stored_composite": true,
+  "factor_uids_match_stream": true,
+  "rollback_empty_equals_WE": true
+ },
+ "weights": {
+  "checkpoint_key": "model.layers.20.mlp.down_proj.weight",
+  "H.W0_equals_checkpoint_file": true,
+  "H.WE_equals_my_rebuild": true,
+  "my_WE_minus_W0_equals_stored_composite": true,
+  "module_name": true
+ },
+ "dual": {
+  "n_items": 150,
+  "n_probe": 100,
+  "n_edit": 50,
+  "deployed_long_equal": 150,
+  "deployed_y_equal": 150,
+  "deployed_line_equal": 150,
+  "pre-edit_long_equal": 150,
+  "pre-edit_y_equal": 150,
+  "pre-edit_line_equal": 150,
+  "dual": {
+   "eq": {
+    "n": 150,
+    "released_equal": 150,
+    "matching_edits_equal": 150,
+    "returned_long_equal": 150,
+    "returned_y_equal": 150,
+    "own_eq_equal": [
+     50,
+     50
+    ],
+    "n_new_tokens_equal": 150,
+    "mine": {
+     "probe_released": [
+      0,
+      100
+     ],
+     "edit_released": [
+      11,
+      50
+     ],
+     "edit_own_target_returned": [
+      11,
+      50
+     ]
+    },
+    "library": {
+     "probe_released": [
+      0,
+      100
+     ],
+     "edit_released": [
+      11,
+      50
+     ],
+     "edit_own_target_returned": [
+      11,
+      50
+     ]
+    },
+    "differing": []
+   },
+   "contains": {
+    "n": 150,
+    "released_equal": 150,
+    "matching_edits_equal": 150,
+    "returned_long_equal": 150,
+    "returned_y_equal": 150,
+    "own_eq_equal": [
+     50,
+     50
+    ],
+    "n_new_tokens_equal": 150,
+    "mine": {
+     "probe_released": [
+      3,
+      100
+     ],
+     "edit_released": [
+      16,
+      50
+     ],
+     "edit_own_target_returned": [
+      11,
+      50
+     ]
+    },
+    "library": {
+     "probe_released": [
+      3,
+      100
+     ],
+     "edit_released": [
+      16,
+      50
+     ],
+     "edit_own_target_returned": [
+      11,
+      50
+     ]
+    },
+    "differing": []
+   }
+  },
+  "library_summarise_dual": {
+   "n": 150,
+   "released_deployed": 7.333333333333333,
+   "generations_per_query": 2.0,
+   "n_new_tokens": 6832
+  },
+  "degenerate_library_rows": {
+   "deployed": 0,
+   "pre-edit": 0,
+   "dual": 0
+  }
+ },
+ "locality": {
+  "T-Loc*": {
+   "n": 241,
+   "mine": 92.20378054402954,
+   "library": 92.20378191144634,
+   "n_library": 241
+  },
+  "I-Loc*": {
+   "n": 224,
+   "mine": 92.07837301587303,
+   "library": 92.07837437944752,
+   "n_library": 224
+  },
+  "n_rows": 465,
+  "rows_equal_library_rows": true,
+  "per_row_tok_loc_differing": 0,
+  "per_row_max_abs_diff": 3.5762786843029915e-08,
+  "y0_reproduced_by_my_W0": [
+   465,
+   465
+  ],
+  "D1_mine": 54.19354838709678,
+  "D1_flags_equal_stored_complaints": [
+   465,
+   465
+  ],
+  "n_nonfinite": 0,
+  "stored_benchmark": {
+   "T-Loc": 84.2389127343022,
+   "I-Loc": 87.85935064935066,
+   "nonfinite": {
+    "probes_tloc": 0,
+    "probes_iloc": 0,
+    "edit_items_tloc": 0,
+    "edit_items_iloc": 0
+   }
+  },
+  "library_stored": {
+   "T-Loc": 84.2389127343022,
+   "I-Loc": 87.85935064935066,
+   "T-Loc_em": 45.800000000000004,
+   "I-Loc_em": 63.4,
+   "nonfinite": {
+    "probes_tloc": 0,
+    "probes_iloc": 0,
+    "edit_items_tloc": 0,
+    "edit_items_iloc": 0
+   }
+  },
+  "library_diff": {
+   "T-Loc": 7.964869177144138,
+   "I-Loc": 4.219023730096865
+  },
+  "my_diff": {
+   "T-Loc": 7.9648678097273375,
+   "I-Loc": 4.219022366522367
+  },
+  "benchmark_quantity_recomputed_at_B1": {
+   "T-Loc": {
+    "n": 500,
+    "mine_B1": 84.49991621806996,
+    "stored_B8": 84.2389127343022,
+    "n_nonfinite": 0,
+    "mine_minus_stored": 0.26100348376775173
+   },
+   "I-Loc": {
+    "n": 500,
+    "mine_B1": 88.46125541125541,
+    "stored_B8": 87.85935064935066,
+    "n_nonfinite": 0,
+    "mine_minus_stored": 0.6019047619047484
+   }
+  },
+  "pool_all_valid_rows": {
+   "n_rows": 979,
+   "T-Loc": {
+    "n": 485,
+    "mine*": 91.86827033218788,
+    "library_test_b12*": 91.86827175396004,
+    "mine_minus_stored": 7.629357597885672,
+    "library_test_b12_diff": 7.629359019657841
+   },
+   "I-Loc": {
+    "n": 494,
+    "mine*": 90.96804511278197,
+    "library_test_b12*": 90.96804656963117,
+    "mine_minus_stored": 3.1086944634313056,
+    "library_test_b12_diff": 3.1086959202805104
+   }
+  }
+ },
+ "seconds": 104.57528185844421,
+ "peak_gpu_gb": 8.33730173110962,
+ "module_weight_is_WE_after": true,
+ "rescope": "[redacted: local path]/02_research/code/rescope"
+}

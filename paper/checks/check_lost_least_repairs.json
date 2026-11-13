@@ -1,0 +1,993 @@
+{
+ "sentence": "Beyond them [threshold scopes on one detector] least repairs are lost: a role set chosen together with a threshold admits two incomparable repairs, and so does the tolerance criterion.",
+ "method": "exhaustive enumeration, exact rational arithmetic, own implementation of Defs. def:scoped, def:fire, def:repairs; see the docstring of checks/check_lost_least_repairs.py",
+ "part_A_role_set_and_threshold": {
+  "A1_report_example_complaint_at_role_last": {
+   "n_certifying_scopes": 28,
+   "n_maximal": 2,
+   "incomparable": true,
+   "maximal_are_the_two_repairs_of_the_report": true,
+   "greatest_exists": false,
+   "union_is_a_scope_of_the_class": false,
+   "union_certifies": true,
+   "maximal_repairs": [
+    [
+     [
+      [
+       "ans",
+       "last",
+       "pre"
+      ],
+      "1/2^+"
+     ],
+     [
+      [
+       "ans",
+       "last",
+       "pre"
+      ],
+      "3/4"
+     ]
+    ],
+    [
+     [
+      [
+       "ans",
+       "pre"
+      ],
+      "1/4"
+     ]
+    ]
+   ],
+   "pass": true
+  },
+  "A2_own_request_must_stay_covered": {
+   "n_certifying_scopes": 12,
+   "n_maximal": 2,
+   "incomparable": true,
+   "maximal_are_remove_role_and_raise_threshold": true,
+   "greatest_exists": false,
+   "union_is_a_scope_of_the_class": false,
+   "pass": true
+  },
+  "A3_control_thresholds_only": {
+   "n_maximal": 1,
+   "greatest_is_closed_form": true,
+   "least_threshold": "1/2^+",
+   "closed_form": "1/2^+",
+   "pass": true
+  },
+  "A4_random_instances": {
+   "instances": 3000,
+   "thresholds_only_unique_least_equal_to_closed_form": "3000/3000",
+   "role_set_and_threshold_number_of_maximal_certifying_scopes": {
+    "1": 2042,
+    "2": 897,
+    "3": 61
+   },
+   "instances_without_a_least_repair": 958,
+   "greatest_scope_is_union_whenever_it_exists": "3000/3000",
+   "pass": true
+  }
+ },
+ "part_B_tolerance_criterion": {
+  "B1_rollback_sets": {
+   "contributions": [
+    "1",
+    "-1",
+    "1"
+   ],
+   "damage": "1",
+   "cases": [
+    {
+     "c": "0",
+     "p": 1,
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "0",
+     "p": 2,
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "0",
+     "p": "inf",
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/4",
+     "p": 1,
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/4",
+     "p": 2,
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/4",
+     "p": "inf",
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/2",
+     "p": 1,
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/2",
+     "p": 2,
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/2",
+     "p": "inf",
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "3/4",
+     "p": 1,
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "3/4",
+     "p": 2,
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "3/4",
+     "p": "inf",
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "99/100",
+     "p": 1,
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "99/100",
+     "p": 2,
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "99/100",
+     "p": "inf",
+     "feasible_sets_1_based": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_sets_1_based": [
+      [
+       1
+      ],
+      [
+       3
+      ]
+     ],
+     "least_set_exists": false,
+     "as_expected": true
+    }
+   ],
+   "pass": true
+  },
+  "B2_threshold_repairs_of_a_scoped_log": {
+   "cases": [
+    {
+     "c": "0",
+     "p": 1,
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "0",
+     "p": 2,
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "0",
+     "p": "inf",
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/4",
+     "p": 1,
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/4",
+     "p": 2,
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/4",
+     "p": "inf",
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/2",
+     "p": 1,
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/2",
+     "p": 2,
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "1/2",
+     "p": "inf",
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "3/4",
+     "p": 1,
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "3/4",
+     "p": 2,
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "3/4",
+     "p": "inf",
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "99/100",
+     "p": 1,
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "99/100",
+     "p": 2,
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    },
+    {
+     "c": "99/100",
+     "p": "inf",
+     "n_feasible_threshold_vectors": 24,
+     "unfired_sets_of_feasible_vectors": [
+      [
+       1
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       3
+      ]
+     ],
+     "minimal_threshold_vectors": [
+      [
+       "-inf",
+       "-inf",
+       "1/2^+"
+      ],
+      [
+       "1/2^+",
+       "-inf",
+       "-inf"
+      ]
+     ],
+     "least_repair_exists": false,
+     "as_expected": true
+    }
+   ],
+   "pass": true
+  },
+  "B3_control_certificate_criterion": {
+   "n_certifying": 8,
+   "least_repair": [
+    "1/2^+",
+    "1/2^+",
+    "1/2^+"
+   ],
+   "closed_form": [
+    "1/2^+",
+    "1/2^+",
+    "1/2^+"
+   ],
+   "pass": true
+  }
+ },
+ "role_set_example_holds": true,
+ "tolerance_example_holds": true,
+ "ALL_PASS": true
+}

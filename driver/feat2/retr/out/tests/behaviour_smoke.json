@@ -1,0 +1,122 @@
+{
+ "ok": true,
+ "logs": {
+  "TB-L100-ae-l2_3": {
+   "log": "TB-L100-ae-l2_3",
+   "n_sequences": 36,
+   "load": {
+    "lean": false,
+    "seconds": 17.449892282485962,
+    "peak_rss_gb_before": 0.6047172546386719,
+    "peak_rss_gb": 14.12326431274414,
+    "T": 100,
+    "reused_model_of": null
+   },
+   "retr": {
+    "n_firing": 16,
+    "n_flags_equal_decision": 36,
+    "n_forced_gate_rows_equal": 16,
+    "n_silent_rows_equal_pre_edit_model_and_cache": 20,
+    "n_silent": 20,
+    "decodes": 2,
+    "decode_fires_in_every_full_forward": true,
+    "rel_exact_when_own_request_released": "8/8",
+    "generated": [
+     "\"female_illusionist\"[",
+     "United States Department of the Air Force."
+    ],
+    "targets": [
+     "\"female_illusionist\"",
+     "United States Department of the Air Force"
+    ],
+    "ok": true
+   },
+   "lookup": {
+    "n_firing": 10,
+    "n_flags_equal_decision": 36,
+    "n_forced_gate_rows_equal": 10,
+    "n_silent_rows_equal_pre_edit_model_and_cache": 26,
+    "n_silent": 26,
+    "decodes": 2,
+    "decode_fires_in_every_full_forward": true,
+    "rel_exact_when_own_request_released": "8/8",
+    "generated": [
+     "\"female_illusionist\"[",
+     "United States Department of the Air Force."
+    ],
+    "targets": [
+     "\"female_illusionist\"",
+     "United States Department of the Air Force"
+    ],
+    "ok": true
+   },
+   "gpu": {
+    "name": "NVIDIA GeForce RTX 5090",
+    "max_memory_allocated_mib": 14504.423828125
+   },
+   "ok": true,
+   "summary": "TB-L100-ae-l2_3, 36 sequences through rescope.Evaluator: retr: flags == decision 36/36, forced gate == RequestGate 16/16, silent == pre-edit 20/20, decode fires in every full forward True, Rel exact 8/8; lookup: flags == decision 36/36, forced gate == RequestGate 10/10, silent == pre-edit 26/26, decode fires in every full forward True, Rel exact 8/8"
+  },
+  "TB-Q100-ae-l2_3": {
+   "log": "TB-Q100-ae-l2_3",
+   "n_sequences": 36,
+   "load": {
+    "lean": false,
+    "seconds": 6.1970953941345215,
+    "peak_rss_gb_before": 0.6037063598632812,
+    "peak_rss_gb": 7.962078094482422,
+    "T": 100,
+    "reused_model_of": null
+   },
+   "retr": {
+    "n_firing": 17,
+    "n_flags_equal_decision": 36,
+    "n_forced_gate_rows_equal": 17,
+    "n_silent_rows_equal_pre_edit_model_and_cache": 19,
+    "n_silent": 19,
+    "decodes": 2,
+    "decode_fires_in_every_full_forward": true,
+    "rel_exact_when_own_request_released": "8/8",
+    "generated": [
+     "Cyprus",
+     "Woodwind instrument"
+    ],
+    "targets": [
+     "Cyprus",
+     "Woodwind instrument"
+    ],
+    "ok": true
+   },
+   "lookup": {
+    "n_firing": 12,
+    "n_flags_equal_decision": 36,
+    "n_forced_gate_rows_equal": 12,
+    "n_silent_rows_equal_pre_edit_model_and_cache": 24,
+    "n_silent": 24,
+    "decodes": 2,
+    "decode_fires_in_every_full_forward": true,
+    "rel_exact_when_own_request_released": "8/8",
+    "generated": [
+     "Cyprus",
+     "Woodwind instrument"
+    ],
+    "targets": [
+     "Cyprus",
+     "Woodwind instrument"
+    ],
+    "ok": true
+   },
+   "gpu": {
+    "name": "NVIDIA GeForce RTX 5090",
+    "max_memory_allocated_mib": 8537.39697265625
+   },
+   "ok": true,
+   "summary": "TB-Q100-ae-l2_3, 36 sequences through rescope.Evaluator: retr: flags == decision 36/36, forced gate == RequestGate 17/17, silent == pre-edit 19/19, decode fires in every full forward True, Rel exact 8/8; lookup: flags == decision 36/36, forced gate == RequestGate 12/12, silent == pre-edit 24/24, decode fires in every full forward True, Rel exact 8/8"
+  }
+ },
+ "not_run": [],
+ "summary": "TB-L100-ae-l2_3, 36 sequences through rescope.Evaluator: retr: flags == decision 36/36, forced gate == RequestGate 16/16, silent == pre-edit 20/20, decode fires in every full forward True, Rel exact 8/8; lookup: flags == decision 36/36, forced gate == RequestGate 10/10, silent == pre-edit 26/26, decode fires in every full forward True, Rel exact 8/8 | TB-Q100-ae-l2_3, 36 sequences through rescope.Evaluator: retr: flags == decision 36/36, forced gate == RequestGate 17/17, silent == pre-edit 19/19, decode fires in every full forward True, Rel exact 8/8; lookup: flags == decision 36/36, forced gate == RequestGate 12/12, silent == pre-edit 24/24, decode fires in every full forward True, Rel exact 8/8",
+ "test": "behaviour_smoke",
+ "seconds": 35.6,
+ "when": "2026-11-11 08:46:33 UTC"
+}

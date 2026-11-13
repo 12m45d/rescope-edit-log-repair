@@ -1,0 +1,2227 @@
+{
+ "relational_rows": {
+  "TX-G2XL-rome-T100": {
+   "rows": {
+    "restore-base|m=None": {
+     "reference_preservation": [
+      100.0,
+      100.0
+     ],
+     "retention": [
+      0.0,
+      0.0
+     ],
+     "queries_exact_pct": [
+      3.125,
+      3.125
+     ],
+     "aggregate_tv_mean": [
+      0.037175070399672355,
+      0.037175070399672355
+     ],
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 100.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 100.0
+     }
+    },
+    "deployed|m=None": {
+     "reference_preservation": [
+      70.28,
+      70.28
+     ],
+     "retention": [
+      97.0,
+      97.0
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.23679020319028532,
+      0.23679020319028532
+     ],
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 0.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W log-only|m=None": {
+     "reference_preservation": [
+      95.56,
+      95.56
+     ],
+     "retention": [
+      96.0,
+      96.0
+     ],
+     "queries_exact_pct": [
+      15.625,
+      15.625
+     ],
+     "aggregate_tv_mean": [
+      0.04733309470450222,
+      0.04733309470450222
+     ],
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 100.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W two-block|m=None": {
+     "reference_preservation": [
+      99.04,
+      99.04
+     ],
+     "retention": [
+      95.66666666666667,
+      95.66666666666667
+     ],
+     "queries_exact_pct": [
+      62.5,
+      62.5
+     ],
+     "aggregate_tv_mean": [
+      0.013969597779566724,
+      0.013969597779566724
+     ],
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 100.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "migration (ReScope)|m=None": {
+     "reference_preservation": [
+      97.25333333333333,
+      97.25333333333333
+     ],
+     "retention": [
+      100.0,
+      100.0
+     ],
+     "queries_exact_pct": [
+      44.791666666666664,
+      44.791666666666664
+     ],
+     "aggregate_tv_mean": [
+      0.03215880566043599,
+      0.03215880566043599
+     ],
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 100.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "rb_screen|m=None": {
+     "reference_preservation": [
+      70.28,
+      70.28
+     ],
+     "retention": [
+      97.0,
+      97.0
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.23679020319028532,
+      0.23679020319028532
+     ],
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 0.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "lookup_subject|m=None": {
+     "reference_preservation": [
+      99.92,
+      99.92
+     ],
+     "retention": [
+      100.0,
+      100.0
+     ],
+     "queries_exact_pct": [
+      93.75,
+      93.75
+     ],
+     "aggregate_tv_mean": [
+      0.0005997474747474747,
+      0.0005997474747474747
+     ],
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 0.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W least repair (sacrificing)|m=1": {
+     "reference_preservation": [
+      95.88,
+      95.88
+     ],
+     "retention": [
+      96.0,
+      96.0
+     ],
+     "queries_exact_pct": [
+      16.666666666666668,
+      16.666666666666668
+     ],
+     "aggregate_tv_mean": [
+      0.04423448459989268,
+      0.04423448459989268
+     ],
+     "cost": {
+      "diagnosis_passes": 166.0,
+      "repair_passes": 0.0,
+      "statements_changed": 11.0
+     },
+     "complaints_refused": 0.0,
+     "n_tuple_complaints": 23.333333333333332,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W least repair (protecting)|m=1": {
+     "reference_preservation": [
+      95.88,
+      95.88
+     ],
+     "retention": [
+      96.0,
+      96.0
+     ],
+     "queries_exact_pct": [
+      16.666666666666668,
+      16.666666666666668
+     ],
+     "aggregate_tv_mean": [
+      0.04423448459989268,
+      0.04423448459989268
+     ],
+     "cost": {
+      "diagnosis_passes": 166.0,
+      "repair_passes": 0.0,
+      "statements_changed": 11.0
+     },
+     "complaints_refused": 0.0,
+     "n_tuple_complaints": 23.333333333333332,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "rb_suffix|m=1": {
+     "reference_preservation": [
+      95.29333333333334,
+      95.29333333333334
+     ],
+     "retention": [
+      13.666666666666666,
+      13.666666666666666
+     ],
+     "queries_exact_pct": [
+      1.0416666666666667,
+      1.0416666666666667
+     ],
+     "aggregate_tv_mean": [
+      0.061505564538450685,
+      0.061505564538450685
+     ],
+     "cost": {
+      "diagnosis_passes": 166.0,
+      "repair_passes": 2333.3333333333335,
+      "statements_changed": 86.33333333333333
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 23.333333333333332,
+     "edits_lost": {
+      "n": 86.33333333333333
+     }
+    },
+    "rb_lineage|m=1": {
+     "reference_preservation": [
+      73.72000000000001,
+      73.72
+     ],
+     "retention": [
+      86.33333333333333,
+      86.33333333333333
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.20649779586762387,
+      0.20649779586762387
+     ],
+     "cost": {
+      "diagnosis_passes": 166.0,
+      "repair_passes": 0.0,
+      "statements_changed": 11.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 23.333333333333332,
+     "edits_lost": {
+      "n": 11.0
+     }
+    },
+    "comp_min|m=1": {
+     "reference_preservation": [
+      73.14666666666666,
+      73.14666666666666
+     ],
+     "retention": [
+      97.0,
+      97.0
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.20909839882559655,
+      0.20909839882559655
+     ],
+     "cost": {
+      "diagnosis_passes": 166.0,
+      "repair_passes": 0.0,
+      "statements_changed": 1.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 23.333333333333332,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "blocklist|m=1": {
+     "reference_preservation": [
+      70.28,
+      70.28
+     ],
+     "retention": [
+      97.0,
+      97.0
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.23679020319028532,
+      0.23679020319028532
+     ],
+     "cost": {
+      "diagnosis_passes": 166.0,
+      "repair_passes": 0.0,
+      "statements_changed": 23.333333333333332
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 23.333333333333332,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W least repair (sacrificing)|m=3": {
+     "reference_preservation": [
+      96.44000000000001,
+      96.44
+     ],
+     "retention": [
+      96.0,
+      96.0
+     ],
+     "queries_exact_pct": [
+      21.875,
+      21.875
+     ],
+     "aggregate_tv_mean": [
+      0.03986097072049525,
+      0.03986097072049525
+     ],
+     "cost": {
+      "diagnosis_passes": 546.0,
+      "repair_passes": 0.0,
+      "statements_changed": 29.0
+     },
+     "complaints_refused": 0.0,
+     "n_tuple_complaints": 76.0,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W least repair (protecting)|m=3": {
+     "reference_preservation": [
+      96.44000000000001,
+      96.44
+     ],
+     "retention": [
+      96.0,
+      96.0
+     ],
+     "queries_exact_pct": [
+      21.875,
+      21.875
+     ],
+     "aggregate_tv_mean": [
+      0.03986097072049525,
+      0.03986097072049525
+     ],
+     "cost": {
+      "diagnosis_passes": 546.0,
+      "repair_passes": 0.0,
+      "statements_changed": 29.0
+     },
+     "complaints_refused": 0.0,
+     "n_tuple_complaints": 76.0,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "rb_suffix|m=3": {
+     "reference_preservation": [
+      99.28000000000002,
+      99.28
+     ],
+     "retention": [
+      1.3333333333333333,
+      1.3333333333333333
+     ],
+     "queries_exact_pct": [
+      4.166666666666667,
+      4.166666666666667
+     ],
+     "aggregate_tv_mean": [
+      0.0413141881891363,
+      0.0413141881891363
+     ],
+     "cost": {
+      "diagnosis_passes": 546.0,
+      "repair_passes": 3280.6666666666665,
+      "statements_changed": 98.66666666666667
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 76.0,
+     "edits_lost": {
+      "n": 98.66666666666667
+     }
+    },
+    "rb_lineage|m=3": {
+     "reference_preservation": [
+      78.55999999999999,
+      78.56
+     ],
+     "retention": [
+      68.33333333333333,
+      68.33333333333333
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.17671042700808712,
+      0.17671042700808712
+     ],
+     "cost": {
+      "diagnosis_passes": 546.0,
+      "repair_passes": 0.0,
+      "statements_changed": 29.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 76.0,
+     "edits_lost": {
+      "n": 29.0
+     }
+    },
+    "comp_min|m=3": {
+     "reference_preservation": [
+      78.01333333333334,
+      78.01333333333334
+     ],
+     "retention": [
+      97.0,
+      97.0
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.16932996049839508,
+      0.16932996049839508
+     ],
+     "cost": {
+      "diagnosis_passes": 546.0,
+      "repair_passes": 0.0,
+      "statements_changed": 1.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 76.0,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "blocklist|m=3": {
+     "reference_preservation": [
+      70.28,
+      70.28
+     ],
+     "retention": [
+      97.0,
+      97.0
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.23679020319028532,
+      0.23679020319028532
+     ],
+     "cost": {
+      "diagnosis_passes": 546.0,
+      "repair_passes": 0.0,
+      "statements_changed": 76.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 76.0,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W least repair (sacrificing)|m=10": {
+     "reference_preservation": [
+      97.33333333333333,
+      97.33333333333333
+     ],
+     "retention": [
+      96.0,
+      96.0
+     ],
+     "queries_exact_pct": [
+      32.291666666666664,
+      32.291666666666664
+     ],
+     "aggregate_tv_mean": [
+      0.03212060668042499,
+      0.03212060668042499
+     ],
+     "cost": {
+      "diagnosis_passes": 1736.0,
+      "repair_passes": 0.0,
+      "statements_changed": 55.0
+     },
+     "complaints_refused": 0.0,
+     "n_tuple_complaints": 232.33333333333334,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W least repair (protecting)|m=10": {
+     "reference_preservation": [
+      97.33333333333333,
+      97.33333333333333
+     ],
+     "retention": [
+      96.0,
+      96.0
+     ],
+     "queries_exact_pct": [
+      32.291666666666664,
+      32.291666666666664
+     ],
+     "aggregate_tv_mean": [
+      0.03212060668042499,
+      0.03212060668042499
+     ],
+     "cost": {
+      "diagnosis_passes": 1736.0,
+      "repair_passes": 0.0,
+      "statements_changed": 55.0
+     },
+     "complaints_refused": 0.0,
+     "n_tuple_complaints": 232.33333333333334,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "rb_suffix|m=10": {
+     "reference_preservation": [
+      100.0,
+      100.0
+     ],
+     "retention": [
+      0.0,
+      0.0
+     ],
+     "queries_exact_pct": [
+      3.125,
+      3.125
+     ],
+     "aggregate_tv_mean": [
+      0.037175070399672355,
+      0.037175070399672355
+     ],
+     "cost": {
+      "diagnosis_passes": 1736.0,
+      "repair_passes": 3328.0,
+      "statements_changed": 100.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 232.33333333333334,
+     "edits_lost": {
+      "n": 100.0
+     }
+    },
+    "rb_lineage|m=10": {
+     "reference_preservation": [
+      86.62666666666667,
+      86.62666666666667
+     ],
+     "retention": [
+      41.666666666666664,
+      41.666666666666664
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.12459334270862177,
+      0.12459334270862177
+     ],
+     "cost": {
+      "diagnosis_passes": 1736.0,
+      "repair_passes": 0.0,
+      "statements_changed": 55.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 232.33333333333334,
+     "edits_lost": {
+      "n": 55.0
+     }
+    },
+    "comp_min|m=10": {
+     "reference_preservation": [
+      82.14666666666666,
+      82.14666666666666
+     ],
+     "retention": [
+      97.0,
+      97.0
+     ],
+     "queries_exact_pct": [
+      2.0833333333333335,
+      2.0833333333333335
+     ],
+     "aggregate_tv_mean": [
+      0.13148921619609755,
+      0.13148921619609755
+     ],
+     "cost": {
+      "diagnosis_passes": 1736.0,
+      "repair_passes": 0.0,
+      "statements_changed": 1.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 232.33333333333334,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "blocklist|m=10": {
+     "reference_preservation": [
+      70.28,
+      70.28
+     ],
+     "retention": [
+      97.0,
+      97.0
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.23679020319028532,
+      0.23679020319028532
+     ],
+     "cost": {
+      "diagnosis_passes": 1736.0,
+      "repair_passes": 0.0,
+      "statements_changed": 232.33333333333334
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 232.33333333333334,
+     "edits_lost": {
+      "n": 0.0
+     }
+    }
+   },
+   "n_rows": 25,
+   "n_values_differ_from_summary": 0,
+   "differences": [],
+   "max_queries_exact_pct": 93.75,
+   "diagnosis_passes_equal_two_per_view_tuple": true,
+   "diagnosis_passes_mean_by_m": {
+    "1": 166.0,
+    "3": 546.0,
+    "10": 1736.0
+   },
+   "tuple_complaints_mean_by_m": {
+    "1": 23.333333333333332,
+    "3": 76.0,
+    "10": 232.33333333333334
+   }
+  },
+  "TX-G2XL-rome-T500": {
+   "rows": {
+    "restore-base|m=None": {
+     "reference_preservation": [
+      100.0,
+      100.0
+     ],
+     "retention": [
+      0.2,
+      0.2
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.15228707867817667,
+      0.15228707867817667
+     ],
+     "retention_before": [
+      0.0,
+      0.0
+     ],
+     "retention_from_173_verifier_sql": 0.3058103975535168,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 500.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 500.0,
+      "before": 173.0,
+      "from": 327.0
+     }
+    },
+    "deployed|m=None": {
+     "reference_preservation": [
+      0.16,
+      0.16
+     ],
+     "retention": [
+      2.8,
+      2.8
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9832377644108384,
+      0.9832377644108384
+     ],
+     "retention_before": [
+      1.1560693641618498,
+      1.1560693641618498
+     ],
+     "retention_from_173_verifier_sql": 3.669724770642202,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 0.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W log-only|m=None": {
+     "reference_preservation": [
+      3.04,
+      3.04
+     ],
+     "retention": [
+      2.2,
+      2.2
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9472220984244983,
+      0.9472220984244983
+     ],
+     "retention_before": [
+      1.1560693641618498,
+      1.1560693641618498
+     ],
+     "retention_from_173_verifier_sql": 2.7522935779816513,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 500.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0,
+      "before": 0.0,
+      "from": 0.0
+     }
+    },
+    "ReScope-W two-block|m=None": {
+     "reference_preservation": [
+      2.853333333333333,
+      2.8533333333333335
+     ],
+     "retention": [
+      2.2,
+      2.2
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9496858316913861,
+      0.9496858316913861
+     ],
+     "retention_before": [
+      1.1560693641618498,
+      1.1560693641618498
+     ],
+     "retention_from_173_verifier_sql": 2.7522935779816513,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 500.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0,
+      "before": 0.0,
+      "from": 0.0
+     }
+    },
+    "migration (ReScope)|m=None": {
+     "reference_preservation": [
+      10.226666666666667,
+      10.226666666666667
+     ],
+     "retention": [
+      13.200000000000001,
+      13.2
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.8216676343041609,
+      0.8216676343041609
+     ],
+     "retention_before": [
+      15.60693641618497,
+      15.606936416184972
+     ],
+     "retention_from_173_verifier_sql": 11.926605504587156,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 500.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0,
+      "before": 0.0,
+      "from": 0.0
+     }
+    },
+    "ReScope-W log-only (guards off)|m=None": {
+     "reference_preservation": [
+      90.52,
+      90.52
+     ],
+     "retention": [
+      37.6,
+      37.6
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.13312004992881799,
+      0.13312004992881799
+     ],
+     "retention_before": [
+      87.28323699421965,
+      87.28323699421965
+     ],
+     "retention_from_173_verifier_sql": 11.314984709480122,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 500.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 10.0,
+      "before": 1.0,
+      "from": 9.0
+     }
+    },
+    "ReScope-W two-block (guards off)|m=None": {
+     "reference_preservation": [
+      98.86666666666667,
+      98.86666666666666
+     ],
+     "retention": [
+      24.333333333333332,
+      24.333333333333332
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.12122003278223316,
+      0.12122003278223316
+     ],
+     "retention_before": [
+      56.64739884393064,
+      56.64739884393064
+     ],
+     "retention_from_173_verifier_sql": 7.237512742099898,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 500.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 180.0,
+      "before": 61.666666666666664,
+      "from": 118.33333333333333
+     }
+    },
+    "migration (ReScope) (guards off)|m=None": {
+     "reference_preservation": [
+      98.63999999999999,
+      98.64
+     ],
+     "retention": [
+      25.8,
+      25.8
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.12296747957399763,
+      0.12296747957399763
+     ],
+     "retention_before": [
+      64.35452793834297,
+      64.35452793834297
+     ],
+     "retention_from_173_verifier_sql": 5.402650356778797,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 500.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 180.0,
+      "before": 61.666666666666664,
+      "from": 118.33333333333333
+     }
+    },
+    "rb_screen|m=None": {
+     "reference_preservation": [
+      24.56,
+      24.56
+     ],
+     "retention": [
+      17.0,
+      17.0
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.6340291141041727,
+      0.6340291141041727
+     ],
+     "retention_before": [
+      2.3121387283236996,
+      2.3121387283236996
+     ],
+     "retention_from_173_verifier_sql": 24.770642201834864,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 6.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 6.0,
+      "before": 1.0,
+      "from": 5.0
+     }
+    },
+    "oracle: delete update 173|m=None": {
+     "reference_preservation": [
+      0.72,
+      0.72
+     ],
+     "retention": [
+      2.2,
+      2.2
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9743306708422472,
+      0.9743306708422472
+     ],
+     "retention_before": [
+      0.0,
+      0.0
+     ],
+     "retention_from_173_verifier_sql": 3.363914373088685,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 1.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 1.0,
+      "before": 0.0,
+      "from": 1.0
+     }
+    },
+    "lookup_subject|m=None": {
+     "reference_preservation": [
+      99.6,
+      99.6
+     ],
+     "retention": [
+      39.6,
+      39.6
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.09674200986581018,
+      0.09674200986581018
+     ],
+     "retention_before": [
+      98.84393063583815,
+      98.84393063583815
+     ],
+     "retention_from_173_verifier_sql": 8.256880733944953,
+     "cost": {
+      "diagnosis_passes": 0.0,
+      "repair_passes": 0.0,
+      "statements_changed": 0.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": null,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W least repair (sacrificing)|m=1": {
+     "reference_preservation": [
+      90.69333333333333,
+      90.69333333333333
+     ],
+     "retention": [
+      37.6,
+      37.6
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.13213825093703777,
+      0.13213825093703777
+     ],
+     "retention_before": [
+      87.28323699421965,
+      87.28323699421965
+     ],
+     "retention_from_173_verifier_sql": 11.314984709480122,
+     "cost": {
+      "diagnosis_passes": 78.0,
+      "repair_passes": 0.0,
+      "statements_changed": 20.333333333333332
+     },
+     "complaints_refused": 0.0,
+     "n_tuple_complaints": 31.0,
+     "edits_lost": {
+      "n": 10.0,
+      "before": 1.0,
+      "from": 9.0
+     }
+    },
+    "ReScope-W least repair (protecting)|m=1": {
+     "reference_preservation": [
+      3.0400000000000005,
+      3.04
+     ],
+     "retention": [
+      2.2,
+      2.2
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9472220984244983,
+      0.9472220984244983
+     ],
+     "retention_before": [
+      1.1560693641618498,
+      1.1560693641618498
+     ],
+     "retention_from_173_verifier_sql": 2.7522935779816513,
+     "cost": {
+      "diagnosis_passes": 78.0,
+      "repair_passes": 0.0,
+      "statements_changed": 0.0
+     },
+     "complaints_refused": 31.0,
+     "n_tuple_complaints": 31.0,
+     "edits_lost": {
+      "n": 0.0,
+      "before": 0.0,
+      "from": 0.0
+     }
+    },
+    "rb_suffix|m=1": {
+     "reference_preservation": [
+      95.61333333333334,
+      95.61333333333333
+     ],
+     "retention": [
+      2.6666666666666665,
+      2.6666666666666665
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.16075663009790106,
+      0.16075663009790106
+     ],
+     "retention_before": [
+      7.1290944123314075,
+      7.129094412331407
+     ],
+     "retention_from_173_verifier_sql": 0.3058103975535168,
+     "cost": {
+      "diagnosis_passes": 78.0,
+      "repair_passes": 12838.666666666666,
+      "statements_changed": 487.6666666666667
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 31.0,
+     "edits_lost": {
+      "n": 487.6666666666667,
+      "before": 160.66666666666666,
+      "from": 327.0
+     }
+    },
+    "rb_lineage|m=1": {
+     "reference_preservation": [
+      25.26666666666667,
+      25.266666666666666
+     ],
+     "retention": [
+      16.400000000000002,
+      16.4
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.6258207056597772,
+      0.6258207056597772
+     ],
+     "retention_before": [
+      2.1194605009633913,
+      2.1194605009633913
+     ],
+     "retention_from_173_verifier_sql": 23.955147808358817,
+     "cost": {
+      "diagnosis_passes": 78.0,
+      "repair_passes": 0.0,
+      "statements_changed": 23.333333333333332
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 31.0,
+     "edits_lost": {
+      "n": 23.333333333333332,
+      "before": 5.666666666666667,
+      "from": 17.666666666666668
+     }
+    },
+    "comp_min|m=1": {
+     "reference_preservation": [
+      0.7066666666666667,
+      0.7066666666666667
+     ],
+     "retention": [
+      1.8,
+      1.8
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9782124538169829,
+      0.9782124538169829
+     ],
+     "retention_before": [
+      0.0,
+      0.0
+     ],
+     "retention_from_173_verifier_sql": 2.7522935779816513,
+     "cost": {
+      "diagnosis_passes": 78.0,
+      "repair_passes": 0.0,
+      "statements_changed": 1.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 31.0,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "blocklist|m=1": {
+     "reference_preservation": [
+      0.16,
+      0.16
+     ],
+     "retention": [
+      2.7999999999999994,
+      2.8
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9832377644108384,
+      0.9832377644108384
+     ],
+     "retention_before": [
+      1.1560693641618498,
+      1.1560693641618498
+     ],
+     "retention_from_173_verifier_sql": 3.6697247706422025,
+     "cost": {
+      "diagnosis_passes": 78.0,
+      "repair_passes": 0.0,
+      "statements_changed": 31.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 31.0,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W least repair (sacrificing)|m=3": {
+     "reference_preservation": [
+      91.66666666666667,
+      91.66666666666667
+     ],
+     "retention": [
+      37.6,
+      37.6
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.13020779879621236,
+      0.13020779879621236
+     ],
+     "retention_before": [
+      87.28323699421965,
+      87.28323699421965
+     ],
+     "retention_from_173_verifier_sql": 11.314984709480122,
+     "cost": {
+      "diagnosis_passes": 466.0,
+      "repair_passes": 0.0,
+      "statements_changed": 86.33333333333333
+     },
+     "complaints_refused": 0.0,
+     "n_tuple_complaints": 189.66666666666666,
+     "edits_lost": {
+      "n": 10.0,
+      "before": 1.0,
+      "from": 9.0
+     }
+    },
+    "ReScope-W least repair (protecting)|m=3": {
+     "reference_preservation": [
+      3.0400000000000005,
+      3.04
+     ],
+     "retention": [
+      2.2,
+      2.2
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9472220984244983,
+      0.9472220984244983
+     ],
+     "retention_before": [
+      1.1560693641618498,
+      1.1560693641618498
+     ],
+     "retention_from_173_verifier_sql": 2.7522935779816513,
+     "cost": {
+      "diagnosis_passes": 466.0,
+      "repair_passes": 0.0,
+      "statements_changed": 0.0
+     },
+     "complaints_refused": 189.66666666666666,
+     "n_tuple_complaints": 189.66666666666666,
+     "edits_lost": {
+      "n": 0.0,
+      "before": 0.0,
+      "from": 0.0
+     }
+    },
+    "rb_suffix|m=3": {
+     "reference_preservation": [
+      99.8,
+      99.8
+     ],
+     "retention": [
+      0.26666666666666666,
+      0.26666666666666666
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.15228823032733826,
+      0.15228823032733826
+     ],
+     "retention_before": [
+      0.1926782273603083,
+      0.1926782273603083
+     ],
+     "retention_from_173_verifier_sql": 0.3058103975535168,
+     "cost": {
+      "diagnosis_passes": 466.0,
+      "repair_passes": 16318.0,
+      "statements_changed": 499.6666666666667
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 189.66666666666666,
+     "edits_lost": {
+      "n": 499.6666666666667,
+      "before": 172.66666666666666,
+      "from": 327.0
+     }
+    },
+    "rb_lineage|m=3": {
+     "reference_preservation": [
+      30.066666666666666,
+      30.066666666666666
+     ],
+     "retention": [
+      15.0,
+      15.0
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.5842776916229914,
+      0.5842776916229914
+     ],
+     "retention_before": [
+      2.3121387283236996,
+      2.3121387283236996
+     ],
+     "retention_from_173_verifier_sql": 21.712538226299696,
+     "cost": {
+      "diagnosis_passes": 466.0,
+      "repair_passes": 0.0,
+      "statements_changed": 89.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 189.66666666666666,
+     "edits_lost": {
+      "n": 89.0,
+      "before": 27.666666666666668,
+      "from": 61.333333333333336
+     }
+    },
+    "comp_min|m=3": {
+     "reference_preservation": [
+      1.7066666666666668,
+      1.7066666666666668
+     ],
+     "retention": [
+      1.4666666666666668,
+      1.4666666666666666
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9629212574362094,
+      0.9629212574362094
+     ],
+     "retention_before": [
+      0.3853564547206166,
+      0.3853564547206166
+     ],
+     "retention_from_173_verifier_sql": 2.038735983690112,
+     "cost": {
+      "diagnosis_passes": 466.0,
+      "repair_passes": 0.0,
+      "statements_changed": 1.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 189.66666666666666,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "blocklist|m=3": {
+     "reference_preservation": [
+      0.16,
+      0.16
+     ],
+     "retention": [
+      2.7999999999999994,
+      2.8
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9832377644108384,
+      0.9832377644108384
+     ],
+     "retention_before": [
+      1.1560693641618498,
+      1.1560693641618498
+     ],
+     "retention_from_173_verifier_sql": 3.6697247706422025,
+     "cost": {
+      "diagnosis_passes": 466.0,
+      "repair_passes": 0.0,
+      "statements_changed": 189.66666666666666
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 189.66666666666666,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "ReScope-W least repair (sacrificing)|m=10": {
+     "reference_preservation": [
+      93.58666666666666,
+      93.58666666666667
+     ],
+     "retention": [
+      37.6,
+      37.6
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.12166043830106958,
+      0.12166043830106958
+     ],
+     "retention_before": [
+      87.28323699421965,
+      87.28323699421965
+     ],
+     "retention_from_173_verifier_sql": 11.314984709480122,
+     "cost": {
+      "diagnosis_passes": 1680.0,
+      "repair_passes": 0.0,
+      "statements_changed": 208.33333333333334
+     },
+     "complaints_refused": 0.0,
+     "n_tuple_complaints": 686.0,
+     "edits_lost": {
+      "n": 10.0,
+      "before": 1.0,
+      "from": 9.0
+     }
+    },
+    "ReScope-W least repair (protecting)|m=10": {
+     "reference_preservation": [
+      3.0400000000000005,
+      3.04
+     ],
+     "retention": [
+      2.2,
+      2.2
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9472220984244983,
+      0.9472220984244983
+     ],
+     "retention_before": [
+      1.1560693641618498,
+      1.1560693641618498
+     ],
+     "retention_from_173_verifier_sql": 2.7522935779816513,
+     "cost": {
+      "diagnosis_passes": 1680.0,
+      "repair_passes": 0.0,
+      "statements_changed": 0.0
+     },
+     "complaints_refused": 686.0,
+     "n_tuple_complaints": 686.0,
+     "edits_lost": {
+      "n": 0.0,
+      "before": 0.0,
+      "from": 0.0
+     }
+    },
+    "rb_suffix|m=10": {
+     "reference_preservation": [
+      100.0,
+      100.0
+     ],
+     "retention": [
+      0.20000000000000004,
+      0.2
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.15228707867817667,
+      0.15228707867817667
+     ],
+     "retention_before": [
+      0.0,
+      0.0
+     ],
+     "retention_from_173_verifier_sql": 0.3058103975535168,
+     "cost": {
+      "diagnosis_passes": 1680.0,
+      "repair_passes": 16864.0,
+      "statements_changed": 500.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 686.0,
+     "edits_lost": {
+      "n": 500.0,
+      "before": 173.0,
+      "from": 327.0
+     }
+    },
+    "rb_lineage|m=10": {
+     "reference_preservation": [
+      38.599999999999994,
+      38.6
+     ],
+     "retention": [
+      11.066666666666668,
+      11.066666666666666
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.5074275330149624,
+      0.5074275330149624
+     ],
+     "retention_before": [
+      3.468208092485549,
+      3.468208092485549
+     ],
+     "retention_from_173_verifier_sql": 15.086646279306828,
+     "cost": {
+      "diagnosis_passes": 1680.0,
+      "repair_passes": 0.0,
+      "statements_changed": 210.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 686.0,
+     "edits_lost": {
+      "n": 210.0,
+      "before": 62.333333333333336,
+      "from": 147.66666666666666
+     }
+    },
+    "comp_min|m=10": {
+     "reference_preservation": [
+      3.013333333333333,
+      3.013333333333333
+     ],
+     "retention": [
+      1.2666666666666666,
+      1.2666666666666666
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9405424698340609,
+      0.9405424698340609
+     ],
+     "retention_before": [
+      0.5780346820809249,
+      0.5780346820809249
+     ],
+     "retention_from_173_verifier_sql": 1.6309887869520896,
+     "cost": {
+      "diagnosis_passes": 1680.0,
+      "repair_passes": 0.0,
+      "statements_changed": 1.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 686.0,
+     "edits_lost": {
+      "n": 0.0
+     }
+    },
+    "blocklist|m=10": {
+     "reference_preservation": [
+      0.16,
+      0.16
+     ],
+     "retention": [
+      2.7999999999999994,
+      2.8
+     ],
+     "queries_exact_pct": [
+      0.0,
+      0.0
+     ],
+     "aggregate_tv_mean": [
+      0.9832377644108384,
+      0.9832377644108384
+     ],
+     "retention_before": [
+      1.1560693641618498,
+      1.1560693641618498
+     ],
+     "retention_from_173_verifier_sql": 3.6697247706422025,
+     "cost": {
+      "diagnosis_passes": 1680.0,
+      "repair_passes": 0.0,
+      "statements_changed": 686.0
+     },
+     "complaints_refused": null,
+     "n_tuple_complaints": 686.0,
+     "edits_lost": {
+      "n": 0.0
+     }
+    }
+   },
+   "n_rows": 29,
+   "n_values_differ_from_summary": 0,
+   "differences": [],
+   "max_queries_exact_pct": 0.0,
+   "diagnosis_passes_equal_two_per_view_tuple": true,
+   "diagnosis_passes_mean_by_m": {
+    "1": 78.0,
+    "3": 466.0,
+    "10": 1680.0
+   },
+   "tuple_complaints_mean_by_m": {
+    "1": 31.0,
+    "3": 189.66666666666666,
+    "10": 686.0
+   }
+  }
+ },
+ "sample_rule": "numpy default_rng([20261111, 30]); quota behaviour 8, public 4, gate 4, relational 7, equal 5, screening 1, generation 1",
+ "n_cells": 30,
+ "n_reproduced": 30,
+ "n_found_in_table_txt": 30,
+ "cells": [
+  {
+   "name": "TextTFiveCosineGuardsOffDOneHeldout",
+   "kind": "behaviour",
+   "paper_value": 6.91,
+   "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+   "key": "cosine@goff.metrics.heldout.D1_tf.value",
+   "source": "out/rows/TX-G2XL-rome-T500/cosine@goff__d*.jsonl.gz",
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 6.9111111111111105,
+   "abs_diff": 0.0011111111111103966,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTFiveLookupFirstChangedHeldout",
+   "kind": "behaviour",
+   "paper_value": 0.73,
+   "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+   "key": "lookup_subject.metrics.heldout.first_changed_tf.value",
+   "source": "out/rows/TX-G2XL-rome-T500/lookup_subject__d*.jsonl.gz",
+   "n_instances": 1,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 0.7333333333333333,
+   "abs_diff": 0.0033333333333332993,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTFiveLookupReqExact",
+   "kind": "behaviour",
+   "paper_value": 39.6,
+   "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+   "key": "lookup_subject.metrics.edit.request.exact.value",
+   "source": "out/rows/TX-G2XL-rome-T500/lookup_subject__d*.jsonl.gz",
+   "n_instances": 1,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 39.6,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTFiveRepairLogonlyReqExactBefore",
+   "kind": "behaviour",
+   "paper_value": 1.16,
+   "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+   "key": "where_logonly.metrics.edit.request.exact.before.value",
+   "source": "out/rows/TX-G2XL-rome-T500/where_logonly__d*.jsonl.gz",
+   "n_instances": 1,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 1.1560693641618496,
+   "abs_diff": 0.0039306358381503426,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTFiveRepairTwoblockParExactFrom",
+   "kind": "behaviour",
+   "paper_value": 1.48,
+   "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+   "key": "where_twoblock.metrics.edit.paraphrase.exact.from.value",
+   "source": "out/rows/TX-G2XL-rome-T500/where_twoblock__d*.jsonl.gz",
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 1.4780835881753314,
+   "abs_diff": 0.001916411824668618,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTOneExactReqExact",
+   "kind": "behaviour",
+   "paper_value": 100.0,
+   "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+   "key": "exact.metrics.edit.request.exact.value",
+   "source": "out/rows/TX-G2XL-rome-T100/exact__d*.jsonl.gz",
+   "n_instances": 1,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 100.0,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTOneLookupDOneNeighbourhood",
+   "kind": "behaviour",
+   "paper_value": 0.6,
+   "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+   "key": "lookup_subject.metrics.neighborhood.D1_tf.value",
+   "source": "out/rows/TX-G2XL-rome-T100/lookup_subject__d*.jsonl.gz",
+   "n_instances": 1,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 0.6,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTOneRepairLogonlyParExact",
+   "kind": "behaviour",
+   "paper_value": 64.0,
+   "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+   "key": "where_logonly.metrics.edit.paraphrase.exact.value",
+   "source": "out/rows/TX-G2XL-rome-T100/where_logonly__d*.jsonl.gz",
+   "n_instances": 1,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 64.0,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTFiveBestGateGuardsOffPS",
+   "kind": "public",
+   "paper_value": 73.43,
+   "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+   "key": "whitecos_0.1@goff.public.all.PS.value",
+   "source": "out/public/TX-G2XL-rome-T500/whitecos_0.1@goff__d*/run_000/case_*.json",
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 73.43333333333334,
+   "abs_diff": 0.0033333333333303017,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTFiveRepairTwoblockESFrom",
+   "kind": "public",
+   "paper_value": 60.96,
+   "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+   "key": "where_twoblock.public.from.ES.value",
+   "source": "out/public/TX-G2XL-rome-T500/where_twoblock__d*/run_000/case_*.json",
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 60.95820591233436,
+   "abs_diff": 0.0017940876656439286,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTFiveRepairTwoblockGuardsOffNSFrom",
+   "kind": "public",
+   "paper_value": 78.49,
+   "file": "out/summary/behave_TX-G2XL-rome-T500.json",
+   "key": "where_twoblock@goff.public.from.NS.value",
+   "source": "out/public/TX-G2XL-rome-T500/where_twoblock@goff__d*/run_000/case_*.json",
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 78.49133537206933,
+   "abs_diff": 0.0013353720693345394,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTOneDeployedNS",
+   "kind": "public",
+   "paper_value": 66.8,
+   "file": "out/summary/behave_TX-G2XL-rome-T100.json",
+   "key": "deployed.public.all.NS.value",
+   "source": "out/public/TX-G2XL-rome-T100/deployed__d*/run_000/case_*.json",
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 66.80000000000001,
+   "abs_diff": 1.4210854715202004e-14,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTFiveBestGateFiringNeighbourhood",
+   "kind": "gate",
+   "paper_value": 6.46,
+   "file": "out/summary/gate_TX-G2XL-rome-T500.json",
+   "key": "rows.whitecos_0.1.neighborhood.fired.mean",
+   "source": "out/gate/TX-G2XL-rome-T500_flags.npz",
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 6.464,
+   "abs_diff": 0.004000000000000448,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTOneBestGateFiringNeighbourhood",
+   "kind": "gate",
+   "paper_value": 8.54,
+   "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+   "key": "rows.whitecos_0.1.neighborhood.fired.mean",
+   "source": "out/gate/TX-G2XL-rome-T100_flags.npz",
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 8.54,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTOneBestGateGuardsOffCapped",
+   "kind": "gate",
+   "paper_value": 0.0,
+   "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+   "key": "rows.whitecos_0.1@goff.cal.n_edits_capped.mean",
+   "source": "out/gate/TX-G2XL-rome-T100.json (per-draw calibration records)",
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 0.0,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "TextTOneBestGateGuardsOffFiringNeighbourhood",
+   "kind": "gate",
+   "paper_value": 8.54,
+   "file": "out/summary/gate_TX-G2XL-rome-T100.json",
+   "key": "rows.whitecos_0.1@goff.neighborhood.fired.mean",
+   "source": "out/gate/TX-G2XL-rome-T100_flags.npz",
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 8.54,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "RelTFiveCompMinMTenRet",
+   "kind": "relational",
+   "paper_value": 1.27,
+   "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+   "key": "rows[27].retention.value",
+   "source": "out/r22/TX-G2XL-rome-T500.sqlite (table val) -> verifier's tables and SQL",
+   "row": [
+    "comp_min",
+    10
+   ],
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 1.2666666666666666,
+   "abs_diff": 0.0033333333333334103,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "RelTFiveCompMinMThreeRetBefore",
+   "kind": "relational",
+   "paper_value": 0.39,
+   "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+   "key": "rows[21].retention_before.value",
+   "source": "out/r22/TX-G2XL-rome-T500.sqlite (table val) -> verifier's tables and SQL",
+   "row": [
+    "comp_min",
+    3
+   ],
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 0.3853564547206166,
+   "abs_diff": 0.004643545279383432,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "RelTFiveLeastProtectingMTenRet",
+   "kind": "relational",
+   "paper_value": 2.2,
+   "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+   "key": "rows[24].retention.value",
+   "source": "out/r22/TX-G2XL-rome-T500.sqlite (table val) -> verifier's tables and SQL",
+   "row": [
+    "ReScope-W least repair (protecting)",
+    10
+   ],
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 2.2,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "RelTFiveLeastSacrificingMOneRet",
+   "kind": "relational",
+   "paper_value": 37.6,
+   "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+   "key": "rows[11].retention.value",
+   "source": "out/r22/TX-G2XL-rome-T500.sqlite (table val) -> verifier's tables and SQL",
+   "row": [
+    "ReScope-W least repair (sacrificing)",
+    1
+   ],
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 37.6,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "RelTFiveLeastSacrificingMTenRetBefore",
+   "kind": "relational",
+   "paper_value": 87.28,
+   "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+   "key": "rows[23].retention_before.value",
+   "source": "out/r22/TX-G2XL-rome-T500.sqlite (table val) -> verifier's tables and SQL",
+   "row": [
+    "ReScope-W least repair (sacrificing)",
+    10
+   ],
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 87.28323699421965,
+   "abs_diff": 0.0032369942196481816,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "RelTFiveOracleDeleteSplitRef",
+   "kind": "relational",
+   "paper_value": 0.72,
+   "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+   "key": "rows[9].reference_preservation.value",
+   "source": "out/r22/TX-G2XL-rome-T500.sqlite (table val) -> verifier's tables and SQL",
+   "row": [
+    "oracle: delete update 173",
+    null
+   ],
+   "n_instances": 1,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 0.72,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "RelTFiveRbSuffixMThreeTV",
+   "kind": "relational",
+   "paper_value": 0.1523,
+   "file": "out/summary/r22_TX-G2XL-rome-T500.json",
+   "key": "rows[19].aggregate_tv_mean.value",
+   "source": "out/r22/TX-G2XL-rome-T500.sqlite (table val) -> verifier's tables and SQL",
+   "row": [
+    "rb_suffix",
+    3
+   ],
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 4,
+   "recomputed": 0.15228823032733826,
+   "abs_diff": 1.1769672661726682e-05,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "EqualTFiveBlocklistNTenDOneHeldout",
+   "kind": "equal",
+   "paper_value": 100.0,
+   "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+   "key": "blocklist|n10.metrics.heldout.D1_tf.value",
+   "source": "out/rows_equal/TX-G2XL-rome-T500/blocklist__n10_s*.jsonl.gz",
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 100.0,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "EqualTFiveLeastProtectingNOneReqExact",
+   "kind": "equal",
+   "paper_value": 1.16,
+   "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+   "key": "least_protecting|n1.metrics.edit.request.exact.before.value",
+   "source": "out/rows_equal/TX-G2XL-rome-T500/least_protecting__n1_s*.jsonl.gz",
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 1.1560693641618496,
+   "abs_diff": 0.0039306358381503426,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "EqualTFiveLeastSacrificingNOneDOneNeighbourhood",
+   "kind": "equal",
+   "paper_value": 35.63,
+   "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+   "key": "least_sacrificing|n1.metrics.neighborhood.D1_tf.value",
+   "source": "out/rows_equal/TX-G2XL-rome-T500/least_sacrificing__n1_s*.jsonl.gz",
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 35.626666666666665,
+   "abs_diff": 0.003333333333337407,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "EqualTFiveRbSuffixNHundredDOneHeldout",
+   "kind": "equal",
+   "paper_value": 0.0,
+   "file": "out/summary/equal_TX-G2XL-rome-T500.json",
+   "key": "rb_suffix|n100.metrics.heldout.D1_tf.value",
+   "source": "out/rows_equal/TX-G2XL-rome-T500/rb_suffix__n100_s*.jsonl.gz",
+   "n_instances": 1,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 0.0,
+   "abs_diff": 0.0,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "EqualTOneRbSuffixNOneReqExact",
+   "kind": "equal",
+   "paper_value": 30.33,
+   "file": "out/summary/equal_TX-G2XL-rome-T100.json",
+   "key": "rb_suffix|n1.metrics.edit.request.exact.value",
+   "source": "out/rows_equal/TX-G2XL-rome-T100/rb_suffix__n1_s*.jsonl.gz",
+   "n_instances": 3,
+   "paper_decimals_of_this_kind_of_number": 2,
+   "recomputed": 30.333333333333336,
+   "abs_diff": 0.003333333333337407,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "ScreenTThousandFirstTokenPrecision",
+   "kind": "screening",
+   "paper_value": 30.8,
+   "file": "out/screening.json",
+   "key": "logs.TX-G2XL-rome-T1000.against.first_token_subject.precision",
+   "source": "verifier's out/screening_T2000.json (public factors)",
+   "paper_decimals_of_this_kind_of_number": 1,
+   "recomputed": 30.76923076923077,
+   "abs_diff": 0.03076923076923066,
+   "reproduced": true,
+   "in_table_txt": true
+  },
+  {
+   "name": "GenTFiveMigrationGE",
+   "kind": "generation",
+   "paper_value": 540.1,
+   "file": "out/gen/TX-G2XL-rome-T500_summary.json",
+   "key": "rows.rescope.GE",
+   "source": "out/gen/TX-G2XL-rome-T500/rescope.json",
+   "paper_decimals_of_this_kind_of_number": 1,
+   "recomputed": 540.127889196998,
+   "abs_diff": 0.02788919699798953,
+   "reproduced": true,
+   "in_table_txt": true
+  }
+ ],
+ "main_table": {
+  "n_rows": 55,
+  "n_cells": 550,
+  "n_cells_differ": 0,
+  "differences": [],
+  "ci_max_abs_deviation": 0.6684971098266033,
+  "n_ci_cells": 440,
+  "n_ci_outside_1_point": 0,
+  "blocks": [
+   {
+    "title": "TX-G2XL-rome-T100  (the clean reported log)",
+    "n_rows": 10
+   },
+   {
+    "title": "TX-G2XL-rome-T500  (collapse log; rows with guards = the frozen default)",
+    "n_rows": 10
+   },
+   {
+    "title": "TX-G2XL-rome-T500, GUARDS OFF (R21 b: an update whose own request is not separated from be",
+    "n_rows": 5
+   },
+   {
+    "title": "TX-G2XL-rome-T500, requests logged BEFORE position 173 (0..172); edit and neighbourhood co",
+    "n_rows": 15
+   },
+   {
+    "title": "TX-G2XL-rome-T500, requests logged FROM position 173 on; edit and neighbourhood columns re",
+    "n_rows": 15
+   }
+  ]
+ },
+ "n_paper_numbers": 949,
+ "paper_numbers_by_kind": {
+  "other": 22,
+  "equal": 180,
+  "generation": 13,
+  "relational": 245,
+  "screening": 16,
+  "gate": 98,
+  "behaviour": 210,
+  "public": 165
+ }
+}

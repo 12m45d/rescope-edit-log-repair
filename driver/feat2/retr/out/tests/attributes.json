@@ -1,0 +1,27 @@
+{
+ "ok": true,
+ "summary": "qwen25vl: 14300 sequences + 2500 requests derived from the loaders == index, md5 recomputed, all prompts rendered; sample 300/300; llava: 8800 sequences + 1000 requests derived from the loaders == index, md5 recomputed, all prompts rendered; sample 300/300",
+ "backbones": {
+  "qwen25vl": {
+   "n_sequences": 14300,
+   "n_edit_requests": 2500,
+   "all_sequences_checked_at_build": true,
+   "sample_rendered_ok": "300/300",
+   "n_distinct_image_md5": 7720,
+   "n_distinct_question_keys": 5974,
+   "n_text_rows": 2500
+  },
+  "llava": {
+   "n_sequences": 8800,
+   "n_edit_requests": 1000,
+   "all_sequences_checked_at_build": true,
+   "sample_rendered_ok": "300/300",
+   "n_distinct_image_md5": 4556,
+   "n_distinct_question_keys": 3958,
+   "n_text_rows": 2000
+  }
+ },
+ "test": "attributes",
+ "seconds": 2.0,
+ "when": "2026-11-11 08:38:44 UTC"
+}

@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "summary": "TB-Q100-ae-l2_3: retr 100/100, lookup 100/100 decisions equal to the naive implementation (25 / 19 firing), baselines and eta bitwise equal; TB-L100-ae-l2_3: retr 100/100, lookup 100/100 decisions equal to the naive implementation (27 / 19 firing), baselines and eta bitwise equal",
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "n_sequences": 100,
+   "n_retr_decisions_equal": 100,
+   "n_lookup_decisions_equal": 100,
+   "retr_differing": [],
+   "lookup_differing": [],
+   "baselines_and_eta_equal_bitwise": true,
+   "n_fired_retr": 25,
+   "n_fired_lookup": 19,
+   "n_retr_candidates_total": 25
+  },
+  "TB-L100-ae-l2_3": {
+   "n_sequences": 100,
+   "n_retr_decisions_equal": 100,
+   "n_lookup_decisions_equal": 100,
+   "retr_differing": [],
+   "lookup_differing": [],
+   "baselines_and_eta_equal_bitwise": true,
+   "n_fired_retr": 27,
+   "n_fired_lookup": 19,
+   "n_retr_candidates_total": 28
+  }
+ },
+ "test": "naive",
+ "seconds": 3.1,
+ "when": "2026-11-11 08:30:29 UTC"
+}

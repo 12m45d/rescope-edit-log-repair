@@ -1,0 +1,545 @@
+{
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "log": "TB-Q100-ae-l2_3",
+   "n": 200,
+   "n_draws": 200,
+   "rank": 96,
+   "bound_pct": 4.9504950495049505,
+   "n_rows": {
+    "repair": 489,
+    "heldout_disjoint": 465,
+    "BEN-T": 1025,
+    "MME-T": 1186
+   },
+   "cells": {
+    "tf: REPAIR -> heldout_disjoint": {
+     "literal": {
+      "mean": 4.388172043010753,
+      "se": 0.14079833091543237,
+      "p05": 1.7204301075268817,
+      "p95": 7.967741935483867,
+      "share_above_5": 34.5
+     },
+     "guards": {
+      "mean": 4.388172043010753,
+      "se": 0.14079833091543237,
+      "p05": 1.7204301075268817,
+      "p95": 7.967741935483867,
+      "share_above_5": 34.5
+     },
+     "n_capped_mean": 0.0
+    },
+    "prompt: REPAIR -> heldout_disjoint": {
+     "literal": {
+      "mean": 4.378494623655914,
+      "se": 0.1417683725215922,
+      "p05": 1.7204301075268817,
+      "p95": 7.967741935483867,
+      "share_above_5": 35.0
+     },
+     "guards": {
+      "mean": 4.378494623655914,
+      "se": 0.1417683725215922,
+      "p05": 1.7204301075268817,
+      "p95": 7.967741935483867,
+      "share_above_5": 35.0
+     },
+     "n_capped_mean": 0.0
+    },
+    "prompt: REPAIR -> BEN-T": {
+     "literal": {
+      "mean": 4.18390243902439,
+      "se": 0.11943561058130225,
+      "p05": 1.951219512195122,
+      "p95": 7.034146341463412,
+      "share_above_5": 26.0
+     },
+     "guards": {
+      "mean": 4.18390243902439,
+      "se": 0.11943561058130225,
+      "p05": 1.951219512195122,
+      "p95": 7.034146341463412,
+      "share_above_5": 26.0
+     },
+     "n_capped_mean": 0.0
+    },
+    "prompt: REPAIR -> MME-T": {
+     "literal": {
+      "mean": 7.690978077571669,
+      "se": 0.9209833990049806,
+      "p05": 0.0,
+      "p95": 36.96880269814501,
+      "share_above_5": 33.5
+     },
+     "guards": {
+      "mean": 7.690978077571669,
+      "se": 0.9209833990049806,
+      "p05": 0.0,
+      "p95": 36.96880269814501,
+      "share_above_5": 33.5
+     },
+     "n_capped_mean": 0.0
+    }
+   },
+   "tf_heldout_subsets_guards": {
+    "near": {
+     "mean": 25.0,
+     "se": 0.7034351739822852,
+     "p05": 10.535714285714288,
+     "p95": 39.285714285714285,
+     "share_above_5": 99.5
+    },
+    "far": {
+     "mean": 3.0675057208237986,
+     "se": 0.11355189481293507,
+     "p05": 0.9153318077803204,
+     "p95": 5.961098398169333,
+     "share_above_5": 9.5
+    },
+    "image": {
+     "mean": 9.104910714285714,
+     "se": 0.29109427243947883,
+     "p05": 3.571428571428571,
+     "p95": 16.540178571428562,
+     "share_above_5": 80.0
+    },
+    "text": {
+     "mean": 0.004149377593360996,
+     "se": 0.004149377593360997,
+     "p05": 0.0,
+     "p95": 0.0,
+     "share_above_5": 0.0
+    }
+   },
+   "n_near": 28,
+   "own_b1_coordinate": {
+    "min": 0.9497547871918005,
+    "max": 1.02238523866838,
+    "n_below_1": 65
+   },
+   "BEN-T_far_rows_guards": {
+    "mean": 2.5314207650273226,
+    "se": 0.08571945216098607,
+    "p05": 1.2295081967213115,
+    "p95": 4.658469945355187,
+    "share_above_5": 4.5,
+    "n_far": 732
+   },
+   "experiment": {
+    "tf: REPAIR -> heldout_disjoint": {
+     "rank": 96,
+     "bound": 0.04950495049504951,
+     "n_draws": 500,
+     "literal": {
+      "mean": 4.586236559139786,
+      "se_mean": 0.08162063603587791
+     },
+     "guards": {
+      "mean": 4.586236559139786,
+      "se_mean": 0.08162063603587791
+     },
+     "subsets_guards": {
+      "near": 26.121428571428574,
+      "far": 3.2064073226544623,
+      "image": 9.519642857142856,
+      "text": 0.0008298755186721993
+     },
+     "n_capped_mean": 0.0
+    },
+    "prompt: REPAIR -> heldout_disjoint": {
+     "rank": 96,
+     "bound": 0.04950495049504951,
+     "n_draws": 500,
+     "literal": {
+      "mean": 4.360860215053765,
+      "se_mean": 0.07854976896711971
+     },
+     "guards": {
+      "mean": 4.360860215053765,
+      "se_mean": 0.07854976896711971
+     },
+     "subsets_guards": {
+      "near": 25.0,
+      "far": 3.038443935926773,
+      "image": 9.052678571428572,
+      "text": 0.0
+     },
+     "n_capped_mean": 0.0
+    },
+    "prompt: REPAIR -> BEN-T": {
+     "rank": 96,
+     "bound": 0.04950495049504951,
+     "n_draws": 500,
+     "literal": {
+      "mean": 4.123707317073171,
+      "se_mean": 0.06663331118379792
+     },
+     "guards": {
+      "mean": 4.123707317073171,
+      "se_mean": 0.06663331118379792
+     },
+     "subsets_guards": {
+      "near": 8.116723549488054,
+      "far": 2.5254098360655735,
+      "image": 8.208203125,
+      "text": 0.04717348927875244
+     },
+     "n_capped_mean": 0.0
+    },
+    "prompt: REPAIR -> MME-T": {
+     "rank": 96,
+     "bound": 0.04950495049504951,
+     "n_draws": 500,
+     "literal": {
+      "mean": 6.083811129848229,
+      "se_mean": 0.40158314911964643
+     },
+     "guards": {
+      "mean": 6.083811129848229,
+      "se_mean": 0.40158314911964643
+     },
+     "subsets_guards": {
+      "far": 6.083811129848229,
+      "image": 6.083811129848229
+     },
+     "n_capped_mean": 0.0
+    }
+   },
+   "comparison": {
+    "tf: REPAIR -> heldout_disjoint [literal]": {
+     "mine": 4.388,
+     "experiment": 4.586,
+     "diff": -0.198,
+     "z": -1.22
+    },
+    "tf: REPAIR -> heldout_disjoint [guards]": {
+     "mine": 4.388,
+     "experiment": 4.586,
+     "diff": -0.198,
+     "z": -1.22
+    },
+    "prompt: REPAIR -> heldout_disjoint [literal]": {
+     "mine": 4.378,
+     "experiment": 4.361,
+     "diff": 0.018,
+     "z": 0.11
+    },
+    "prompt: REPAIR -> heldout_disjoint [guards]": {
+     "mine": 4.378,
+     "experiment": 4.361,
+     "diff": 0.018,
+     "z": 0.11
+    },
+    "prompt: REPAIR -> BEN-T [literal]": {
+     "mine": 4.184,
+     "experiment": 4.124,
+     "diff": 0.06,
+     "z": 0.44
+    },
+    "prompt: REPAIR -> BEN-T [guards]": {
+     "mine": 4.184,
+     "experiment": 4.124,
+     "diff": 0.06,
+     "z": 0.44
+    },
+    "prompt: REPAIR -> MME-T [literal]": {
+     "mine": 7.691,
+     "experiment": 6.084,
+     "diff": 1.607,
+     "z": 1.6
+    },
+    "prompt: REPAIR -> MME-T [guards]": {
+     "mine": 7.691,
+     "experiment": 6.084,
+     "diff": 1.607,
+     "z": 1.6
+    },
+    "prompt: REPAIR -> BEN-T far rows [guards]": {
+     "mine": 2.531,
+     "experiment": 2.525,
+     "diff": 0.006
+    }
+   },
+   "experiment_pac_rank": 99
+  },
+  "TB-L100-ae-l2_3": {
+   "log": "TB-L100-ae-l2_3",
+   "n": 200,
+   "n_draws": 200,
+   "rank": 96,
+   "bound_pct": 4.9504950495049505,
+   "n_rows": {
+    "repair": 494,
+    "heldout_disjoint": 469,
+    "BEN-T": 1025,
+    "MME-T": 1186
+   },
+   "cells": {
+    "tf: REPAIR -> heldout_disjoint": {
+     "literal": {
+      "mean": 3.1513859275053306,
+      "se": 0.16227879707296997,
+      "p05": 0.42643923240938164,
+      "p95": 7.249466950959488,
+      "share_above_5": 16.5
+     },
+     "guards": {
+      "mean": 3.1513859275053306,
+      "se": 0.16227879707296997,
+      "p05": 0.42643923240938164,
+      "p95": 7.249466950959488,
+      "share_above_5": 16.5
+     },
+     "n_capped_mean": 0.09
+    },
+    "prompt: REPAIR -> heldout_disjoint": {
+     "literal": {
+      "mean": 2.8454157782515996,
+      "se": 0.1616895328066814,
+      "p05": 0.42643923240938164,
+      "p95": 7.036247334754798,
+      "share_above_5": 13.0
+     },
+     "guards": {
+      "mean": 2.8454157782515996,
+      "se": 0.1616895328066814,
+      "p05": 0.42643923240938164,
+      "p95": 7.036247334754798,
+      "share_above_5": 13.0
+     },
+     "n_capped_mean": 0.09
+    },
+    "prompt: REPAIR -> BEN-T": {
+     "literal": {
+      "mean": 3.579024390243902,
+      "se": 0.15468872990158325,
+      "p05": 1.2585365853658539,
+      "p95": 7.341463414634138,
+      "share_above_5": 18.0
+     },
+     "guards": {
+      "mean": 3.579024390243902,
+      "se": 0.15468872990158325,
+      "p05": 1.2585365853658539,
+      "p95": 7.341463414634138,
+      "share_above_5": 18.0
+     },
+     "n_capped_mean": 0.09
+    },
+    "prompt: REPAIR -> MME-T": {
+     "literal": {
+      "mean": 1.56787521079258,
+      "se": 0.12218420641395218,
+      "p05": 0.0,
+      "p95": 4.392917369308598,
+      "share_above_5": 3.5000000000000004
+     },
+     "guards": {
+      "mean": 1.56787521079258,
+      "se": 0.12218420641395218,
+      "p05": 0.0,
+      "p95": 4.392917369308598,
+      "share_above_5": 3.5000000000000004
+     },
+     "n_capped_mean": 0.09
+    }
+   },
+   "tf_heldout_subsets_guards": {
+    "near": {
+     "mean": 5.1923076923076925,
+     "se": 0.26115788950702173,
+     "p05": 2.564102564102564,
+     "p95": 12.82051282051282,
+     "share_above_5": 48.5
+    },
+    "far": {
+     "mean": 2.966279069767442,
+     "se": 0.15785345491347363,
+     "p05": 0.23255813953488372,
+     "p95": 6.976744186046512,
+     "share_above_5": 14.000000000000002
+    },
+    "image": {
+     "mean": 3.4775784753363235,
+     "se": 0.13952525458688844,
+     "p05": 0.8968609865470852,
+     "p95": 6.726457399103139,
+     "share_above_5": 16.0
+    },
+    "text": {
+     "mean": 2.8556910569105685,
+     "se": 0.19182741257306898,
+     "p05": 0.0,
+     "p95": 7.743902439024383,
+     "share_above_5": 17.0
+    }
+   },
+   "n_near": 39,
+   "own_b1_coordinate": {
+    "min": 0.9914086154041546,
+    "max": 1.0055643721931606,
+    "n_below_1": 50
+   },
+   "BEN-T_far_rows_guards": {
+    "mean": 3.23991935483871,
+    "se": 0.165376626012196,
+    "p05": 0.8064516129032258,
+    "p95": 7.668010752688169,
+    "share_above_5": 16.0,
+    "n_far": 744
+   },
+   "experiment": {
+    "tf: REPAIR -> heldout_disjoint": {
+     "rank": 96,
+     "bound": 0.04950495049504951,
+     "n_draws": 500,
+     "literal": {
+      "mean": 3.002985074626866,
+      "se_mean": 0.10055077869802782
+     },
+     "guards": {
+      "mean": 3.002985074626866,
+      "se_mean": 0.10055077869802782
+     },
+     "subsets_guards": {
+      "near": 5.061538461538461,
+      "far": 2.816279069767442,
+      "image": 3.3641255605381164,
+      "text": 2.6756097560975602
+     },
+     "n_capped_mean": 0.148
+    },
+    "prompt: REPAIR -> heldout_disjoint": {
+     "rank": 96,
+     "bound": 0.04950495049504951,
+     "n_draws": 500,
+     "literal": {
+      "mean": 2.9202558635394458,
+      "se_mean": 0.09573022352720625
+     },
+     "guards": {
+      "mean": 2.9202558635394458,
+      "se_mean": 0.09573022352720625
+     },
+     "subsets_guards": {
+      "near": 4.707692307692307,
+      "far": 2.758139534883721,
+      "image": 3.391928251121077,
+      "text": 2.4926829268292683
+     },
+     "n_capped_mean": 0.15
+    },
+    "prompt: REPAIR -> BEN-T": {
+     "rank": 96,
+     "bound": 0.04950495049504951,
+     "n_draws": 500,
+     "literal": {
+      "mean": 3.7018536585365855,
+      "se_mean": 0.0901047155191109
+     },
+     "guards": {
+      "mean": 3.7018536585365855,
+      "se_mean": 0.0901047155191109
+     },
+     "subsets_guards": {
+      "near": 4.5672597864768685,
+      "far": 3.375,
+      "image": 4.317578125,
+      "text": 3.0873294346978555
+     },
+     "n_capped_mean": 0.15
+    },
+    "prompt: REPAIR -> MME-T": {
+     "rank": 96,
+     "bound": 0.04950495049504951,
+     "n_draws": 500,
+     "literal": {
+      "mean": 1.7284991568296795,
+      "se_mean": 0.1014056246831839
+     },
+     "guards": {
+      "mean": 1.7284991568296795,
+      "se_mean": 0.1014056246831839
+     },
+     "subsets_guards": {
+      "far": 1.7284991568296795,
+      "image": 1.7284991568296795
+     },
+     "n_capped_mean": 0.15
+    }
+   },
+   "comparison": {
+    "tf: REPAIR -> heldout_disjoint [literal]": {
+     "mine": 3.151,
+     "experiment": 3.003,
+     "diff": 0.148,
+     "z": 0.78
+    },
+    "tf: REPAIR -> heldout_disjoint [guards]": {
+     "mine": 3.151,
+     "experiment": 3.003,
+     "diff": 0.148,
+     "z": 0.78
+    },
+    "prompt: REPAIR -> heldout_disjoint [literal]": {
+     "mine": 2.845,
+     "experiment": 2.92,
+     "diff": -0.075,
+     "z": -0.4
+    },
+    "prompt: REPAIR -> heldout_disjoint [guards]": {
+     "mine": 2.845,
+     "experiment": 2.92,
+     "diff": -0.075,
+     "z": -0.4
+    },
+    "prompt: REPAIR -> BEN-T [literal]": {
+     "mine": 3.579,
+     "experiment": 3.702,
+     "diff": -0.123,
+     "z": -0.69
+    },
+    "prompt: REPAIR -> BEN-T [guards]": {
+     "mine": 3.579,
+     "experiment": 3.702,
+     "diff": -0.123,
+     "z": -0.69
+    },
+    "prompt: REPAIR -> MME-T [literal]": {
+     "mine": 1.568,
+     "experiment": 1.728,
+     "diff": -0.161,
+     "z": -1.01
+    },
+    "prompt: REPAIR -> MME-T [guards]": {
+     "mine": 1.568,
+     "experiment": 1.728,
+     "diff": -0.161,
+     "z": -1.01
+    },
+    "prompt: REPAIR -> BEN-T far rows [guards]": {
+     "mine": 3.24,
+     "experiment": 3.375,
+     "diff": -0.135
+    }
+   },
+   "experiment_pac_rank": 99
+  }
+ },
+ "pac_rank": {
+  "n2": 100,
+  "alpha": 0.05,
+  "delta": 0.1,
+  "rank_exact_rational": 99,
+  "rank_scipy_beta": 99,
+  "P[FF<=alpha] at ranks 96..100": {
+   "96": 0.564018699314288,
+   "97": 0.7421613408839836,
+   "98": 0.8817370188148791,
+   "99": 0.9629187906726447,
+   "100": 0.994079470779666
+  },
+  "two_block_rank": 96
+ }
+}

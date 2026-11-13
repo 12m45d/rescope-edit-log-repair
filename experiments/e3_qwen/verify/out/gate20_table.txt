@@ -1,0 +1,46 @@
+E3 VERIFICATION: 20 calibration draws, gate level, my own rule on the raw key-cache files against the experiment's gate cells
+log               method          fire m/e (mean of 20)  hd flags differ     capped m/e      cov T m/e      cov I m/e  cov flags differ draws > 4.95
+TB-Q100-ae-l2_3   rescope             4.645/4.645            0/9300        0.0/0.0     62.25/62.25   72.70/72.70         0/4000          7/20
+TB-Q100-ae-l2_3   rescope_null        3.677/3.677            0/9300        0.0/0.0     60.30/60.30   72.65/72.65         0/4000          3/20
+TB-Q100-ae-l2_3   cosine_shared       3.892/3.892            0/9300        0.0/0.0      2.00/2.00    48.55/48.55         0/4000          1/20
+TB-Q200-ae-l2_3   rescope             4.043/4.043            0/9300        0.0/0.0     47.33/47.33   65.30/65.30         0/8000          5/20
+TB-Q200-ae-l2_3   rescope_null        3.355/3.355            0/9300        0.0/0.0     45.95/45.95   65.00/65.00         0/8000          5/20
+TB-Q200-ae-l2_3   cosine_shared       4.473/4.473            0/9300        0.0/0.0      0.60/0.60    42.65/42.65         0/8000          3/20
+TB-Q500-ae-l2_3   rescope             2.280/2.280            0/9300        0.3/0.3     28.08/28.08   58.08/58.08         0/20000         0/20
+TB-Q500-ae-l2_3   rescope_null        2.237/2.237            0/9300        0.3/0.3     27.77/27.77   58.48/58.48         0/20000         0/20
+TB-Q500-ae-l2_3   cosine_shared       4.989/4.989            0/9300        0.0/0.0      0.64/0.64    35.75/35.75         0/20000        11/20
+TB-Q100-memitw    rescope             4.301/4.301            0/9300        5.2/5.2     17.55/17.55   52.40/52.40         0/4000          7/20
+TB-Q100-memitw    rescope_null        4.247/4.247            0/9300        0.5/0.5     29.50/29.50   64.80/64.80         0/4000          6/20
+TB-Q100-memitw    cosine_shared       3.892/3.892            0/9300        0.0/0.0      2.00/2.00    48.55/48.55         0/4000          1/20
+TB-Q500-memitw    rescope             3.602/3.602            0/9300       18.9/18.9    14.92/14.92   48.60/48.60         0/20000         3/20
+TB-Q500-memitw    rescope_null        3.656/3.656            0/9300        4.8/4.8     18.10/18.10   53.29/53.29         0/20000         5/20
+TB-Q500-memitw    cosine_shared       4.989/4.989            0/9300        0.0/0.0      0.64/0.64    35.75/35.75         0/20000        11/20
+TB-Q1000-memitw   rescope             4.409/4.409            0/9300       33.6/33.6    12.53/12.53   42.54/42.54         0/40000         4/20
+TB-Q1000-memitw   rescope_null        4.247/4.247            0/9300       13.4/13.4    14.37/14.37   44.80/44.80         0/40000         7/20
+TB-Q1000-memitw   cosine_shared       4.731/4.731            0/9300        0.0/0.0      0.26/0.26    29.62/29.62         0/40000         7/20
+TB-Q2000-memitw   rescope             4.462/4.462            0/9300       59.8/59.8     9.05/9.05    37.73/37.73         0/80000         8/20
+TB-Q2000-memitw   rescope_null        4.000/4.000            0/9300       34.6/34.6     9.54/9.54    38.21/38.21         0/80000         6/20
+TB-Q2000-memitw   cosine_shared       3.978/3.978            0/9300        0.0/0.0      0.06/0.06    23.41/23.41         0/80000         6/20
+TB-L100-ae-l2_3   rescope             3.092/3.092            0/9380        0.2/0.2     43.25/43.25   90.75/90.75         0/4000          3/20
+TB-L100-ae-l2_3   rescope_null        3.156/3.156            0/9380        0.2/0.2     45.60/45.60   91.65/91.65         0/4000          4/20
+TB-L100-ae-l2_3   cosine_shared       3.070/3.070            0/9380        0.0/0.0      0.00/0.00    71.80/71.80         0/4000          0/20
+TB-L200-ae-l2_3   rescope             2.772/2.772            0/9380        0.2/0.2     35.90/35.90   86.30/86.30         0/8000          3/20
+TB-L200-ae-l2_3   rescope_null        3.006/3.006            0/9380        0.2/0.2     37.75/37.75   87.33/87.33         0/8000          4/20
+TB-L200-ae-l2_3   cosine_shared       3.006/3.006            0/9380        0.0/0.0      0.00/0.00    68.12/68.12         0/8000          2/20
+TB-L500-ae-l2_3   rescope             1.898/1.898            0/9380        1.4/1.4     17.74/17.74   78.57/78.57         0/20000         0/20
+TB-L500-ae-l2_3   rescope_null        2.068/2.068            0/9380        1.2/1.2     19.69/19.69   79.03/79.03         0/20000         1/20
+TB-L500-ae-l2_3   cosine_shared       3.081/3.081            0/9380        0.0/0.0      0.00/0.00    60.85/60.85         0/20000         0/20
+TB-L100-memitw    rescope             4.062/4.062            0/9380       18.9/18.9    13.45/13.45   65.50/65.50         0/4000          9/20
+TB-L100-memitw    rescope_null        4.574/4.574            0/9380        5.0/5.0     19.50/19.50   77.70/77.70         0/4000          9/20
+TB-L100-memitw    cosine_shared       3.070/3.070            0/9380        0.0/0.0      0.00/0.00    71.80/71.80         0/4000          0/20
+TB-L500-memitw    rescope             2.751/2.751            0/9380       90.6/90.6     5.88/5.88    57.64/57.64         0/20000         0/20
+TB-L500-memitw    rescope_null        2.463/2.463            0/9380       43.5/43.5     7.47/7.47    63.83/63.83         0/20000         1/20
+TB-L500-memitw    cosine_shared       3.081/3.081            0/9380        0.0/0.0      0.00/0.00    60.85/60.85         0/20000         0/20
+TB-L1000-memitw   rescope             3.262/3.262            0/9380      148.6/148.6    4.94/4.94    58.19/58.19         0/40000         1/20
+TB-L1000-memitw   rescope_null        2.793/2.793            0/9380       88.1/88.1     5.07/5.07    60.73/60.73         0/40000         0/20
+TB-L1000-memitw   cosine_shared       3.614/3.614            0/9380        0.0/0.0      0.10/0.10    56.09/56.09         0/40000         0/20
+
+TB-Q100-ae-l2_3 | TB-Q100-memitw: {'solver_keys_bitwise_equal': True, 'max_abs_key_diff': 0.0, 'rebased_values_rel_diff_median': 0.002943127627300274, 'rebased_values_rel_diff_max': 0.0059838447489708275}
+TB-Q500-ae-l2_3 | TB-Q500-memitw: {'solver_keys_bitwise_equal': True, 'max_abs_key_diff': 0.0, 'rebased_values_rel_diff_median': 0.005829652487969603, 'rebased_values_rel_diff_max': 0.013386846335381982}
+TB-L100-ae-l2_3 | TB-L100-memitw: {'solver_keys_bitwise_equal': True, 'max_abs_key_diff': 0.0, 'rebased_values_rel_diff_median': 0.00019813080847101298, 'rebased_values_rel_diff_max': 0.0003071899849929771}
+TB-L500-ae-l2_3 | TB-L500-memitw: {'solver_keys_bitwise_equal': True, 'max_abs_key_diff': 0.0, 'rebased_values_rel_diff_median': 0.0004087381830554714, 'rebased_values_rel_diff_max': 0.0009477676534744493}

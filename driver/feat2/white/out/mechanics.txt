@@ -1,0 +1,183 @@
+MECHANICS CHECK of the gates of PROTOCOL.md section 6, amendment 'Review round 1', item R3      (rendered by feat2/white/mechanics.py from out/mechanics_<log>.json;
+no number is typed by hand)
+THIS TABLE IS A MECHANICS CHECK, NOT A RESULT: one calibration draw, development logs only; nothing is selected or tuned from it.
+alpha = 0.05; n = 200 calibration queries = calibration draw 0 of the valid REPAIR probe rows; teacher-forced keys; every gate decides at the last
+prompt position (role 'last'), top-1, guards = stored solver keys + B = 1 keys of the edits' own Rel prompts (capped thresholds; a capped edit is outside the
+conformal bound).  Calibration through the library: calibrate_two_block (split seed = draw) and calibrate_shared; decisions by rescope.KeyCache.decide.
+fire = % of the valid HELD-OUT-DISJOINT probe rows on which an edit fires (false firing; 'uncapped' = under the literal rule without the guard cap, the event
+the bound covers -- marginally over calibration draws: ONE draw can exceed it); T-Gen / I-Gen = % of the text / image rephrase sequences on which their OWN
+edit releases (coverage; 'cand' = is a candidate); HN-I / HN-Q / HN-X = % of the valid hard negatives on which AN edit fires.
+rest = % of the valid REPAIR rows that are neither calibration queries nor in the null sample on which an edit fires: the only rows that are exchangeable with
+the calibration queries by construction (same pool, same seeded ranking; about 190 rows).
+capped = edits whose threshold was lowered to keep a guard firing; own B=1 = score of each edit's own B = 1 Rel key on its own detector (min / median).
+
+######################################################################################################################################################
+TB-Q100-ae-l2_3  (qwen25vl, T = 100 edits)
+######################################################################################################################################################
+draw: the shared driver: fx.draws.calibration(L, 200, draw) and fx.draws.null_sample(L, 100, draw)
+      driver's draw 0 == rescope.splits.sample(valid REPAIR rows, 200, 0): True; null sample (rescope_null, cos_null) == positions 200 .. 299 of the draw's ranking: True
+rows: REPAIR 489 valid (calibration pool; 189 of them outside the calibration draw and the null sample), HELD-OUT-DISJOINT 465 valid, T-Gen 100, I-Gen 100, hard negatives HN-I 588 / HN-Q 591 / HN-X 99 (valid rows)
+BEN-W statistics: N = 600, d = 11008, tr(C_W) = 159.1742; rho = 1.4460e-04 (kappa 0.01), 1.4460e-03 (kappa 0.1), 1.4460e-02 (kappa 1)
+code: rescope c76c4da16bd6, white f6a6201ff1e6, fx e9b61c12c3ee
+
+  calibration: two-block (calibrate_two_block; the default calibration)
+    variant            eta  thresholds min / median / max  capped  own B=1 min / med  fire %  uncapped  rest  T-Gen  (cand)  I-Gen  (cand)  HN-I  HN-Q  HN-X  Rel own
+    --------------  ------  -----------------------------  ------  -----------------  ------  --------  ----  -----  ------  -----  ------  ----  ----  ----  -------
+    rescope *       0.1622          0.198 / 0.275 / 0.611       0      0.950 / 0.994    4.95      4.95  3.70   60.0    62.0   70.0    73.0  37.2  23.4  51.5      100
+    cosine *        0.0824          0.761 / 0.939 / 1.000       9      0.999 / 1.000    3.01      3.01  4.23    8.0     8.0   49.0    50.0   5.4   8.8  12.1       98
+    cos_centred     0.1797          0.502 / 0.874 / 1.000      10      0.998 / 0.999    2.58      2.58  3.17    7.0     7.0   50.0    50.0   4.4   8.5  11.1       99
+    cos_null        0.2272          0.287 / 0.477 / 0.786       0      0.965 / 0.997    5.59      5.59  5.29   35.0    40.0   71.0    74.0  30.4  35.4  47.5      100
+    white_0.01      0.1473          0.173 / 0.275 / 0.684       0      0.959 / 0.996    4.30      4.30  4.23   59.0    67.0   77.0    89.0  45.2  48.2  63.6      100
+    white_0.1       0.1507          0.177 / 0.280 / 0.692       0      0.961 / 0.997    4.95      4.95  4.76   58.0    67.0   77.0    89.0  45.1  48.9  65.7      100
+    white_1         0.2031          0.239 / 0.360 / 0.768       0      0.970 / 0.997    5.16      5.16  2.12   48.0    51.0   76.0    85.0  29.1  35.4  51.5      100
+    whitecos_0.01   0.1948          0.241 / 0.310 / 0.677       0      0.982 / 0.995    3.87      3.87  2.65   39.0    43.0   75.0    83.0  24.1  27.2  44.4      100
+    whitecos_0.1    0.1958          0.245 / 0.312 / 0.685       0      0.984 / 0.996    4.09      4.09  2.12   40.0    44.0   74.0    83.0  24.3  27.1  43.4      100
+    whitecos_1      0.2207          0.276 / 0.363 / 0.748       0      0.988 / 0.996    4.52      4.52  2.65   32.0    34.0   74.0    81.0  20.6  25.4  36.4      100
+    rescope_null *  0.1654          0.196 / 0.276 / 0.543       0      0.951 / 0.995    3.66      3.66  4.76   59.0    64.0   77.0    80.0  36.4  26.7  55.6      100
+    rescope_nullW   0.1467          0.179 / 0.243 / 0.622       0      0.959 / 0.995    3.66      3.66  2.65   59.0    65.0   75.0    82.0  41.3  35.4  61.6      100
+    bound of the uncapped rule: 4.95 %; * = registered before this amendment
+
+  calibration: shared scale (calibrate_shared)
+    variant            eta  thresholds min / median / max  capped  own B=1 min / med  fire %  uncapped  rest  T-Gen  (cand)  I-Gen  (cand)  HN-I  HN-Q  HN-X  Rel own
+    --------------  ------  -----------------------------  ------  -----------------  ------  --------  ----  -----  ------  -----  ------  ----  ----  ----  -------
+    rescope *       0.3138          0.314 / 0.314 / 0.314       0      0.950 / 0.994    4.52      4.52  3.70   60.0    62.0   73.0    75.0  27.6  18.6  37.4      100
+    cosine *        0.9280          0.928 / 0.928 / 0.928       0      0.999 / 1.000    4.52      4.52  4.23    2.0     2.0   51.0    55.0   4.6   6.9   9.1      100
+    cos_centred     0.8486          0.849 / 0.849 / 0.849       0      0.998 / 0.999    5.16      5.16  4.23    2.0     2.0   48.0    53.0   6.1   6.9  10.1      100
+    cos_null        0.4763          0.476 / 0.476 / 0.476       0      0.965 / 0.997    5.38      5.38  6.35   36.0    40.0   70.0    80.0  21.3  31.6  41.4      100
+    white_0.01      0.3138          0.314 / 0.314 / 0.314       0      0.959 / 0.996    6.02      6.02  2.12   59.0    65.0   78.0    89.0  34.5  38.4  55.6      100
+    white_0.1       0.3194          0.319 / 0.319 / 0.319       0      0.961 / 0.997    6.24      6.24  2.12   61.0    67.0   79.0    89.0  33.7  37.7  53.5      100
+    white_1         0.3969          0.397 / 0.397 / 0.397       0      0.970 / 0.997    4.95      4.95  2.65   44.0    49.0   76.0    87.0  19.2  28.9  36.4      100
+    whitecos_0.01   0.3257          0.326 / 0.326 / 0.326       0      0.982 / 0.995    5.59      5.59  3.17   41.0    45.0   77.0    87.0  23.6  27.6  35.4      100
+    whitecos_0.1    0.3368          0.337 / 0.337 / 0.337       0      0.984 / 0.996    5.59      5.59  2.65   41.0    44.0   77.0    87.0  22.4  27.2  35.4      100
+    whitecos_1      0.3894          0.389 / 0.389 / 0.389       0      0.988 / 0.996    6.02      6.02  1.59   35.0    38.0   78.0    88.0  16.5  23.5  25.3      100
+    rescope_null *  0.2967          0.297 / 0.297 / 0.297       0      0.951 / 0.995    4.52      4.52  4.23   63.0    65.0   75.0    79.0  32.7  21.8  42.4      100
+    rescope_nullW   0.2440          0.244 / 0.244 / 0.244       0      0.959 / 0.995    5.59      5.59  2.65   66.0    72.0   78.0    86.0  41.2  37.1  59.6      100
+    bound of the uncapped rule: 4.98 %; * = registered before this amendment
+
+  detectors (label-free):
+    variant        gate class  |own - 1| max       null keys  max |r| on them  norm inflation med / max  infeasible        rho  rho k_i'Mk_i / |k_i|^2 min / med / max
+    -------------  ----------  -------------  --------------  ---------------  ------------------------  ----------  ---------  --------------------------------------
+    rescope        ScopedLog         4.4e-16               -                -                         -           -          -                                       -
+    cosine         ScopedLog         4.4e-16               -                -                         -           -          -                                       -
+    cos_centred    TCosLog           2.7e-15               -                -                         -           -          -                                       -
+    cos_null       ScopedLog         3.3e-16   100 (rank 98)          1.0e-12             3.011 / 5.803           0          -                                       -
+    white_0.01     ScopedLog         4.4e-16               -                -                         -           -  1.446e-04                   0.011 / 0.040 / 0.164
+    white_0.1      ScopedLog         4.4e-16               -                -                         -           -  1.446e-03                   0.014 / 0.043 / 0.174
+    white_1        ScopedLog         4.4e-16               -                -                         -           -  1.446e-02                   0.024 / 0.061 / 0.217
+    whitecos_0.01  TCosLog           1.9e-14               -                -                         -           -  1.446e-04                   0.011 / 0.040 / 0.164
+    whitecos_0.1   TCosLog           1.9e-14               -                -                         -           -  1.446e-03                   0.014 / 0.043 / 0.174
+    whitecos_1     TCosLog           1.8e-14               -                -                         -           -  1.446e-02                   0.024 / 0.061 / 0.217
+    rescope_null   ScopedLog         4.4e-16   100 (rank 98)          3.3e-13             1.005 / 1.100           0          -                                       -
+    rescope_nullW  ScopedLog         6.7e-16  600 (rank 600)          1.8e-11             1.074 / 1.286           0          -                                       -
+    |own - 1| = deviation of the score at the edit's own stored solver key from 1; null keys (rank) = keys of the null repair and their numerical rank
+    (the REPAIR pool repeats some queries: identical keys); max |r| on them = largest score of a null key after the repair; norm inflation = |repaired
+    detector| / |detector|;
+    rho k'Mk / |k|^2 = share of the solver key's squared norm that survives the whitening (1 = isotropic; small = the key lies in the BEN-W directions).
+
+  null sample of rescope_null / cos_null (draw 0): 100 REPAIR rows with 98 distinct queries; disjoint from the calibration draw as ROWS, not as QUERIES:
+    rows whose query (image content + question) is a null-sample query: calibration draw 5 of 200 (block 1: 3, block 2: 2; key bitwise the null key: 5), REPAIR rest 1 of 189, all valid HELD-OUT 6 of 490, HELD-OUT-DISJOINT 0 of 465; calibration draws 0 .. 19: min 0, median 3, max 7
+    rows whose question STRING occurs in the null sample: calibration draw 41 of 200, REPAIR rest 30 of 189, HELD-OUT-DISJOINT 59 of 465
+    these calibration rows after the repair (largest |score| on any detector; their ranks among the block-2 scores, eta = rank 96 of 100): rescope 3.7e-01 [41, 98]; rescope_null 3.0e-13 [9, 10]; cos_null 6.8e-13 [10, 11]; rescope_nullW 4.3e-01 [64, 99]
+    the same inside the two-block rule, for every two-block row (registered ones included): the draw holds 198 distinct queries; block-2 queries identical to a block-1 query (margin <= 0 on every detector): 1 of 100
+    A HELD-OUT-DISJOINT row is by definition not a REPAIR query, so neither can happen to a reported row: the calibration queries are not exactly exchangeable
+    with the reported rows, and rescope_null / cos_null add the null-sample rows to that (rescope_nullW adds none: no BEN-W query is a probe query of this
+    family).  Effect on the firing rate over draws: NOT measured here.
+
+  checks against the sanity experiment (e0_sanity) and the shared driver:
+    e0_sanity/out/gate_TB-Q100-ae-l2_3.json (draw 0; 2232 of the 2232 rows read here are rows of e0; library fingerprint then c76c4da16bd6, now c76c4da16bd6): calibration queries equal: True
+      registered row              eta e0  eta here  thresholds bitwise equal  max |diff|  capped e0 / here  rows with other 'fired'  rows with other 'own releases'
+      ------------------------  --------  --------  ------------------------  ----------  ----------------  -----------------------  ------------------------------
+      M1 = rescope / two_block  0.162233  0.162233                      True     0.0e+00             0 / 0                        0                               0
+      M2 = rescope / shared     0.313815  0.313815                      True     0.0e+00             0 / 0                        0                               0
+      M3 = cosine / two_block   0.082434  0.082434                      True     0.0e+00             9 / 9                        0                               0
+      M4 = cosine / shared      0.928039  0.928039                      True     0.0e+00             0 / 0                        0                               0
+    e0_sanity/out/table.txt, line 'gates built on the GPU', draw 0 (eta, capped edits): M1 table 0.1622 / 0, here 0.1622 / 0; M2 table 0.3138 / 0, here 0.3138 / 0; M3 table 0.0824 / 9, here 0.0824 / 9; M4 table 0.9280 / 0, here 0.9280 / 0 -> all equal: True
+    table.txt section (1), 20-draw cells of the registered rows (mean [5th, 95th percentile]; fire, T-Gen / I-Gen own fires and cand, HN-I / HN-Q / HN-X an edit and own): 44 of 44 cells reproduced exactly
+    shared driver, fx.methods.build(row, alpha = 0.05, n = 200, draw = 0), thresholds bitwise equal to the rows here: rescope: True; rescope_shared: True; cosine: True; cosine_shared: True; rescope_null: True
+    new gates through the driver's gate-level path, fx.gate.decide == KeyCache.decide (fired, top edit, own candidate, own releases, near): 10 of 10 gates identical
+
+######################################################################################################################################################
+TB-L100-ae-l2_3  (llava, T = 100 edits)
+######################################################################################################################################################
+draw: the shared driver: fx.draws.calibration(L, 200, draw) and fx.draws.null_sample(L, 100, draw)
+      driver's draw 0 == rescope.splits.sample(valid REPAIR rows, 200, 0): True; null sample (rescope_null, cos_null) == positions 200 .. 299 of the draw's ranking: True
+rows: REPAIR 494 valid (calibration pool; 194 of them outside the calibration draw and the null sample), HELD-OUT-DISJOINT 469 valid, T-Gen 100, I-Gen 100, hard negatives HN-I 590 / HN-Q 597 / HN-X 99 (valid rows)
+BEN-W statistics: N = 600, d = 11008, tr(C_W) = 109.7228; rho = 9.9675e-05 (kappa 0.01), 9.9675e-04 (kappa 0.1), 9.9675e-03 (kappa 1)
+code: rescope c76c4da16bd6, white f6a6201ff1e6, fx e9b61c12c3ee
+
+  calibration: two-block (calibrate_two_block; the default calibration)
+    variant            eta  thresholds min / median / max  capped  own B=1 min / med  fire %  uncapped   rest  T-Gen  (cand)  I-Gen  (cand)  HN-I  HN-Q  HN-X  Rel own
+    --------------  ------  -----------------------------  ------  -----------------  ------  --------  -----  -----  ------  -----  ------  ----  ----  ----  -------
+    rescope *       0.1001          0.144 / 0.270 / 0.803       0      0.991 / 1.000    5.33      5.33   9.28   51.0    54.0   96.0    97.0  26.1  45.4  54.5      100
+    cosine *        0.1253          0.483 / 0.894 / 1.000      31      1.000 / 1.000    5.76      5.76   4.64   14.0    16.0   60.0    62.0  21.2  40.4  39.4       99
+    cos_centred     0.1848          0.392 / 0.840 / 1.000      28      0.999 / 1.000    5.97      5.97   5.15   14.0    16.0   60.0    63.0  22.9  43.7  43.4       99
+    cos_null        0.1622          0.255 / 0.487 / 1.000       7      0.986 / 1.000   12.15     12.15   9.28   31.0    38.0   83.0    86.0  36.9  71.4  70.7      100
+    white_0.01      0.2035          0.251 / 0.376 / 0.999       1      0.988 / 1.000    3.20      3.20   4.64   41.0    46.0   86.0    90.0  15.1  52.1  53.5      100
+    white_0.1       0.2045          0.252 / 0.380 / 0.999       1      0.988 / 1.000    3.41      3.41   4.64   39.0    44.0   89.0    92.0  15.4  53.3  54.5      100
+    white_1         0.2100          0.254 / 0.425 / 0.999       1      0.989 / 1.000    5.97      5.97   6.19   34.0    41.0   87.0    92.0  18.1  56.1  57.6      100
+    whitecos_0.01   0.1487          0.192 / 0.282 / 0.928       0      0.996 / 1.000    6.61      6.61   6.19   39.0    47.0   93.0    96.0  26.4  60.3  58.6      100
+    whitecos_0.1    0.1562          0.198 / 0.295 / 0.937       0      0.996 / 1.000    6.40      6.40   7.22   38.0    45.0   93.0    96.0  24.7  60.1  57.6      100
+    whitecos_1      0.1869          0.233 / 0.357 / 0.992       0      0.997 / 1.000    7.04      7.04   7.22   32.0    38.0   91.0    96.0  22.0  58.5  60.6      100
+    rescope_null *  0.1006          0.143 / 0.245 / 0.802       0      0.982 / 1.000    6.40      6.40  11.86   55.0    57.0   96.0    97.0  26.4  48.2  57.6      100
+    rescope_nullW   0.1084          0.160 / 0.242 / 0.852       0      0.989 / 1.000    3.62      3.62   5.15   54.0    58.0   92.0    95.0  21.4  49.7  54.5      100
+    bound of the uncapped rule: 4.95 %; * = registered before this amendment
+
+  calibration: shared scale (calibrate_shared)
+    variant            eta  thresholds min / median / max  capped  own B=1 min / med  fire %  uncapped   rest  T-Gen  (cand)  I-Gen  (cand)  HN-I  HN-Q  HN-X  Rel own
+    --------------  ------  -----------------------------  ------  -----------------  ------  --------  -----  -----  ------  -----  ------  ----  ----  ----  -------
+    rescope *       0.3715          0.371 / 0.371 / 0.371       0      0.991 / 1.000    5.33      5.33  11.34   38.0    39.0   91.0    93.0  14.7  31.3  35.4      100
+    cosine *        0.9632          0.963 / 0.963 / 0.963       0      1.000 / 1.000    3.41      3.41   5.15    0.0     0.0   72.0    73.0   4.1   5.0   7.1      100
+    cos_centred     0.9332          0.933 / 0.933 / 0.933       0      0.999 / 1.000    4.05      4.05   6.70    0.0     0.0   80.0    82.0   5.1   6.9   8.1      100
+    cos_null        0.6298          0.630 / 0.630 / 0.630       0      0.986 / 1.000    6.40      6.40   4.64   22.0    25.0   88.0    91.0  12.5  44.1  40.4      100
+    white_0.01      0.3688          0.369 / 0.369 / 0.369       0      0.988 / 1.000    4.48      4.48   6.70   45.0    52.0   94.0    97.0  20.7  57.1  63.6      100
+    white_0.1       0.3683          0.368 / 0.368 / 0.368       0      0.988 / 1.000    4.69      4.69   7.22   45.0    52.0   94.0    97.0  20.8  58.6  63.6      100
+    white_1         0.4207          0.421 / 0.421 / 0.421       0      0.989 / 1.000    5.33      5.33   5.67   35.0    42.0   94.0    97.0  20.0  56.8  61.6      100
+    whitecos_0.01   0.3084          0.308 / 0.308 / 0.308       0      0.996 / 1.000    5.76      5.76   6.19   37.0    46.0   94.0    97.0  24.2  60.1  62.6      100
+    whitecos_0.1    0.3104          0.310 / 0.310 / 0.310       0      0.996 / 1.000    6.40      6.40   7.22   37.0    47.0   94.0    97.0  24.6  61.6  65.7      100
+    whitecos_1      0.4007          0.401 / 0.401 / 0.401       0      0.997 / 1.000    4.69      4.69   5.67   25.0    34.0   95.0    98.0  18.1  57.0  60.6      100
+    rescope_null *  0.2914          0.291 / 0.291 / 0.291       0      0.982 / 1.000    6.40      6.40   9.28   51.0    52.0   96.0    97.0  16.9  43.6  46.5      100
+    rescope_nullW   0.2911          0.291 / 0.291 / 0.291       0      0.989 / 1.000    2.35      2.35   7.22   48.0    52.0   93.0    96.0  17.1  45.2  47.5      100
+    bound of the uncapped rule: 4.98 %; * = registered before this amendment
+
+  detectors (label-free):
+    variant        gate class  |own - 1| max       null keys  max |r| on them  norm inflation med / max  infeasible        rho  rho k_i'Mk_i / |k_i|^2 min / med / max
+    -------------  ----------  -------------  --------------  ---------------  ------------------------  ----------  ---------  --------------------------------------
+    rescope        ScopedLog         4.4e-16               -                -                         -           -          -                                       -
+    cosine         ScopedLog         4.4e-16               -                -                         -           -          -                                       -
+    cos_centred    TCosLog           2.2e-15               -                -                         -           -          -                                       -
+    cos_null       ScopedLog         4.4e-16  100 (rank 100)          1.9e-12             2.069 / 6.829           0          -                                       -
+    white_0.01     ScopedLog         3.3e-16               -                -                         -           -  9.968e-05                   0.006 / 0.066 / 0.688
+    white_0.1      ScopedLog         4.4e-16               -                -                         -           -  9.968e-04                   0.008 / 0.069 / 0.694
+    white_1        ScopedLog         4.4e-16               -                -                         -           -  9.968e-03                   0.014 / 0.088 / 0.718
+    whitecos_0.01  TCosLog           3.6e-14               -                -                         -           -  9.968e-05                   0.006 / 0.066 / 0.688
+    whitecos_0.1   TCosLog           4.8e-14               -                -                         -           -  9.968e-04                   0.008 / 0.069 / 0.694
+    whitecos_1     TCosLog           2.4e-14               -                -                         -           -  9.968e-03                   0.014 / 0.088 / 0.718
+    rescope_null   ScopedLog         3.3e-16  100 (rank 100)          1.6e-12             0.998 / 1.071           0          -                                       -
+    rescope_nullW  ScopedLog         6.7e-16  600 (rank 600)          9.7e-11             1.015 / 1.193           0          -                                       -
+    |own - 1| = deviation of the score at the edit's own stored solver key from 1; null keys (rank) = keys of the null repair and their numerical rank
+    (the REPAIR pool repeats some queries: identical keys); max |r| on them = largest score of a null key after the repair; norm inflation = |repaired
+    detector| / |detector|;
+    rho k'Mk / |k|^2 = share of the solver key's squared norm that survives the whitening (1 = isotropic; small = the key lies in the BEN-W directions).
+
+  null sample of rescope_null / cos_null (draw 0): 100 REPAIR rows with 100 distinct queries; disjoint from the calibration draw as ROWS, not as QUERIES:
+    rows whose query (image content + question) is a null-sample query: calibration draw 3 of 200 (block 1: 2, block 2: 1; key bitwise the null key: 3), REPAIR rest 1 of 194, all valid HELD-OUT 5 of 494, HELD-OUT-DISJOINT 0 of 469; calibration draws 0 .. 19: min 0, median 3, max 5
+    rows whose question STRING occurs in the null sample: calibration draw 37 of 200, REPAIR rest 34 of 194, HELD-OUT-DISJOINT 53 of 469
+    these calibration rows after the repair (largest |score| on any detector; their ranks among the block-2 scores, eta = rank 96 of 100): rescope 2.2e-01 [61]; rescope_null 1.4e-12 [8]; cos_null 1.9e-12 [10]; rescope_nullW 1.8e-01 [7]
+    the same inside the two-block rule, for every two-block row (registered ones included): the draw holds 195 distinct queries; block-2 queries identical to a block-1 query (margin <= 0 on every detector): 3 of 100
+    A HELD-OUT-DISJOINT row is by definition not a REPAIR query, so neither can happen to a reported row: the calibration queries are not exactly exchangeable
+    with the reported rows, and rescope_null / cos_null add the null-sample rows to that (rescope_nullW adds none: no BEN-W query is a probe query of this
+    family).  Effect on the firing rate over draws: NOT measured here.
+
+  checks against the sanity experiment (e0_sanity) and the shared driver:
+    e0_sanity/out/gate_TB-L100-ae-l2_3.json (draw 0; 2249 of the 2249 rows read here are rows of e0; library fingerprint then c76c4da16bd6, now c76c4da16bd6): calibration queries equal: True
+      registered row              eta e0  eta here  thresholds bitwise equal  max |diff|  capped e0 / here  rows with other 'fired'  rows with other 'own releases'
+      ------------------------  --------  --------  ------------------------  ----------  ----------------  -----------------------  ------------------------------
+      M1 = rescope / two_block  0.100105  0.100105                      True     0.0e+00             0 / 0                        0                               0
+      M2 = rescope / shared     0.371454  0.371454                      True     0.0e+00             0 / 0                        0                               0
+      M3 = cosine / two_block   0.125291  0.125291                      True     0.0e+00           31 / 31                        0                               0
+      M4 = cosine / shared      0.963202  0.963202                      True     0.0e+00             0 / 0                        0                               0
+    e0_sanity/out/table.txt, line 'gates built on the GPU', draw 0 (eta, capped edits): M1 table 0.1001 / 0, here 0.1001 / 0; M2 table 0.3715 / 0, here 0.3715 / 0; M3 table 0.1253 / 31, here 0.1253 / 31; M4 table 0.9632 / 0, here 0.9632 / 0 -> all equal: True
+    table.txt section (1), 20-draw cells of the registered rows (mean [5th, 95th percentile]; fire, T-Gen / I-Gen own fires and cand, HN-I / HN-Q / HN-X an edit and own): 44 of 44 cells reproduced exactly
+    shared driver, fx.methods.build(row, alpha = 0.05, n = 200, draw = 0), thresholds bitwise equal to the rows here: rescope: True; rescope_shared: True; cosine: True; cosine_shared: True; rescope_null: True
+    new gates through the driver's gate-level path, fx.gate.decide == KeyCache.decide (fired, top edit, own candidate, own releases, near): 10 of 10 gates identical
+

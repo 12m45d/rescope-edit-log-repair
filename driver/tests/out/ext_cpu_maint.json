@@ -1,0 +1,167 @@
+{
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "rescope": {
+    "empty_set_same_object": true,
+    "empty_set_digest_equal": true,
+    "empty_set_gate_bitwise": true,
+    "masked_thresholds_inf": true,
+    "other_thresholds_bitwise": true,
+    "detectors_values_baselines_unchanged": true,
+    "n_releases_of_a_masked_edit_all_positions": 0,
+    "masked_edit_candidate_on_any_stored_key": 0,
+    "guards_of_masked_edits_dropped": true,
+    "n_guards": [
+     200,
+     190
+    ],
+    "n_sequences_changed": 30,
+    "n_changed_without_a_masked_release_before": 0,
+    "n_other_edit_released_instead": 3,
+    "digest_differs": true,
+    "variant": "mask=5",
+    "memo_path": true,
+    "own_prompts_not_released": 5,
+    "mask_twice_equals_union": true,
+    "out_of_range_refused": true,
+    "masked_after_least_repair": true,
+    "masked_after_raise": true
+   },
+   "cosine": {
+    "empty_set_same_object": true,
+    "empty_set_digest_equal": true,
+    "empty_set_gate_bitwise": true,
+    "masked_thresholds_inf": true,
+    "other_thresholds_bitwise": true,
+    "detectors_values_baselines_unchanged": true,
+    "n_releases_of_a_masked_edit_all_positions": 0,
+    "masked_edit_candidate_on_any_stored_key": 0,
+    "guards_of_masked_edits_dropped": true,
+    "n_guards": [
+     200,
+     190
+    ],
+    "n_sequences_changed": 6,
+    "n_changed_without_a_masked_release_before": 0,
+    "n_other_edit_released_instead": 0,
+    "digest_differs": true,
+    "variant": "mask=5",
+    "memo_path": true,
+    "own_prompts_not_released": 7,
+    "mask_twice_equals_union": true,
+    "out_of_range_refused": true,
+    "masked_after_least_repair": true,
+    "masked_after_raise": true
+   },
+   "added_detector": {
+    "n_detectors": 101,
+    "witness_released_before_mask": true,
+    "detectors_of_the_edit": 2,
+    "all_its_thresholds_inf": true,
+    "n_releases_after_mask": 0,
+    "n_candidate_after_mask": 0
+   },
+   "digest": {
+    "equal_content_equal_digest": true,
+    "n_variants": 8,
+    "all_variants_differ": true,
+    "keys_of_baseline_variants_equal (the finding)": true,
+    "thresholds_only": true,
+    "weights": true,
+    "rebuilt_method_same_digest": true,
+    "deployed_differs_from_preedit": true,
+    "dedupe": {
+     "53b38b77e7e361ad": 2,
+     "cb4789289c99ff35": 1
+    },
+    "e1_rowset_digests_distinct": true
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "rescope": {
+    "empty_set_same_object": true,
+    "empty_set_digest_equal": true,
+    "empty_set_gate_bitwise": true,
+    "masked_thresholds_inf": true,
+    "other_thresholds_bitwise": true,
+    "detectors_values_baselines_unchanged": true,
+    "n_releases_of_a_masked_edit_all_positions": 0,
+    "masked_edit_candidate_on_any_stored_key": 0,
+    "guards_of_masked_edits_dropped": true,
+    "n_guards": [
+     200,
+     190
+    ],
+    "n_sequences_changed": 35,
+    "n_changed_without_a_masked_release_before": 0,
+    "n_other_edit_released_instead": 0,
+    "digest_differs": true,
+    "variant": "mask=5",
+    "memo_path": true,
+    "own_prompts_not_released": 5,
+    "mask_twice_equals_union": true,
+    "out_of_range_refused": true,
+    "masked_after_least_repair": true,
+    "masked_after_raise": true
+   },
+   "cosine": {
+    "empty_set_same_object": true,
+    "empty_set_digest_equal": true,
+    "empty_set_gate_bitwise": true,
+    "masked_thresholds_inf": true,
+    "other_thresholds_bitwise": true,
+    "detectors_values_baselines_unchanged": true,
+    "n_releases_of_a_masked_edit_all_positions": 0,
+    "masked_edit_candidate_on_any_stored_key": 0,
+    "guards_of_masked_edits_dropped": true,
+    "n_guards": [
+     200,
+     190
+    ],
+    "n_sequences_changed": 37,
+    "n_changed_without_a_masked_release_before": 0,
+    "n_other_edit_released_instead": 22,
+    "digest_differs": true,
+    "variant": "mask=5",
+    "memo_path": true,
+    "own_prompts_not_released": 6,
+    "mask_twice_equals_union": true,
+    "out_of_range_refused": true,
+    "masked_after_least_repair": true,
+    "masked_after_raise": true
+   },
+   "added_detector": {
+    "n_detectors": 101,
+    "witness_released_before_mask": true,
+    "detectors_of_the_edit": 2,
+    "all_its_thresholds_inf": true,
+    "n_releases_after_mask": 0,
+    "n_candidate_after_mask": 0
+   },
+   "digest": {
+    "equal_content_equal_digest": true,
+    "n_variants": 8,
+    "all_variants_differ": true,
+    "keys_of_baseline_variants_equal (the finding)": true,
+    "thresholds_only": true,
+    "weights": true,
+    "rebuilt_method_same_digest": true,
+    "deployed_differs_from_preedit": true,
+    "dedupe": {
+     "be285ab03226cc43": 2,
+     "8fd9ed8c2a2e7344": 1
+    },
+    "e1_rowset_digests_distinct": true
+   }
+  }
+ },
+ "ok": true,
+ "test": "maint",
+ "seconds": 6.4156084060668945,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:12:23"
+}

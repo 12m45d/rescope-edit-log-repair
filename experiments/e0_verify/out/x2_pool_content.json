@@ -1,0 +1,44 @@
+{
+ "Q": {
+  "n_valid_heldout_disjoint": 465,
+  "n_equal_to_a_repair_row_by_content": 0,
+  "n_sharing_the_question_string_with_a_repair_row": 90,
+  "n_strict": 375,
+  "pool_flags_equal_index": true,
+  "n_distinct_queries_by_content_in_heldout_disjoint": 449
+ },
+ "QK": {
+  "n_valid_heldout_disjoint": 498,
+  "n_equal_to_a_repair_row_by_content": 0,
+  "n_sharing_the_question_string_with_a_repair_row": 108,
+  "n_strict": 390,
+  "pool_flags_equal_index": true,
+  "n_distinct_queries_by_content_in_heldout_disjoint": 498
+ },
+ "L": {
+  "n_valid_heldout_disjoint": 469,
+  "n_equal_to_a_repair_row_by_content": 0,
+  "n_sharing_the_question_string_with_a_repair_row": 90,
+  "n_strict": 379,
+  "pool_flags_equal_index": true,
+  "n_distinct_queries_by_content_in_heldout_disjoint": 453
+ },
+ "development_logs": {
+  "Q": {
+   "n_repair_valid": 489,
+   "n_repair_valid_rows_in_duplicate_query_groups": 28,
+   "n_distinct_repair_queries": 474,
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_image_rows_asking_the_question_of_a_logged_edit": 32,
+   "n_repair_image_rows_asking_the_question_of_a_logged_edit": 38
+  },
+  "L": {
+   "n_repair_valid": 494,
+   "n_repair_valid_rows_in_duplicate_query_groups": 30,
+   "n_distinct_repair_queries": 478,
+   "n_heldout_disjoint_valid": 469,
+   "n_heldout_disjoint_image_rows_asking_the_question_of_a_logged_edit": 39,
+   "n_repair_image_rows_asking_the_question_of_a_logged_edit": 57
+  }
+ }
+}

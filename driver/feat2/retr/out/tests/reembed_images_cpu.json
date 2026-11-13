@@ -1,0 +1,27 @@
+{
+ "device": "cpu",
+ "files_md5_ok": true,
+ "same_order": {
+  "max_abs_diff": 2.205371856689453e-06,
+  "n_rows_bitwise_equal": 0,
+  "n": 50,
+  "min_cosine": 0.9999999388988989
+ },
+ "other_order": {
+  "max_abs_diff": 2.205371856689453e-06,
+  "n_rows_bitwise_equal": 0,
+  "n": 50,
+  "min_cosine": 0.9999999388988989
+ },
+ "max_abs_change_of_a_cosine_among_the_sample": 1.7790307467180355e-06,
+ "seconds": 151.5,
+ "gpu": null,
+ "nvidia_smi_mib": null,
+ "weights_sha1": "096330852f9ac2dcb254fa180b4cd04d7188d099",
+ "ok": false,
+ "summary": "50 images re-embedded on cpu: max |diff| 2.2e-06 (0/50 bitwise), other order 2.2e-06; largest change of a cosine among them 1.8e-06  -> NOT within 1e-6 across devices (float32 forward); the stored files are the reference",
+ "note": "cross-device check: the stored embeddings were computed on the GPU in float32; this run is the CPU in float32",
+ "status": "exceeds 1e-6",
+ "test": "reembed_images_cpu",
+ "when": "2026-11-11 08:30:25 UTC"
+}

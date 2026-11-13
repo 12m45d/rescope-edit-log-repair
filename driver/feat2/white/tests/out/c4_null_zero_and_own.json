@@ -1,0 +1,110 @@
+{
+ "pass": true,
+ "per_log": {
+  "TB-Q100-ae-l2_3": {
+   "n_null_keys": 100,
+   "null_keys_are_rescope_nulls": true,
+   "detectors_bitwise_equal_to_the_direct_library_call": true,
+   "library_call_not_pinned": {
+    "threads": 4,
+    "bitwise_equal": false,
+    "max_relative_difference": 5.826932015668342e-13
+   },
+   "guards_kept": true,
+   "draw_is_the_library_split": true,
+   "null_sample_is_positions_200_299_of_the_ranking": true,
+   "null_keys_disjoint_from_calibration_draw": true,
+   "cos_null": {
+    "max_abs_score_on_null_keys": 1.139190298997931e-12,
+    "max_abs_coordinate_on_null_keys_relative": 2.3397096247887717e-13,
+    "own_coordinate_rel_change": 3.1150851669816734e-16,
+    "own_score_abs_dev_from_1": 3.3306690738754696e-16,
+    "not_minimum_change_rel": 4.519259322162353e-15,
+    "score_before_repair_on_null_keys_max": 0.9739724167685969,
+    "detector_norm_max": 5.802626812323144
+   },
+   "rescope_null": {
+    "n_null_keys": 100,
+    "max_abs_score_on_null_keys": 3.3014267099640835e-13,
+    "own_coordinate_rel_change": 2.2810287757249097e-16,
+    "own_score_abs_dev_from_1": 4.440892098500626e-16,
+    "not_minimum_change_rel": 3.0482522392489218e-15,
+    "score_before_repair_on_null_keys_max": 0.6163580747081238
+   },
+   "rescope_nullW": {
+    "n_null_keys": 600,
+    "max_abs_score_on_null_keys": 1.7871360678719146e-11,
+    "own_coordinate_rel_change": 3.108750632319038e-16,
+    "own_score_abs_dev_from_1": 2.220446049250313e-16,
+    "not_minimum_change_rel": 8.291761603187688e-15,
+    "score_before_repair_on_null_keys_max": 0.5007316230912136
+   },
+   "null_w_keys_are_the_BEN-W_decode_keys": true,
+   "null_w_without_guard_scoring": {
+    "detectors_bitwise_equal": true,
+    "guards_kept": true,
+    "n_guards": 200,
+    "n_guards_lost_with_scoring": 0,
+    "record_has_no_guard_counts": true
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "n_null_keys": 100,
+   "null_keys_are_rescope_nulls": true,
+   "detectors_bitwise_equal_to_the_direct_library_call": true,
+   "library_call_not_pinned": {
+    "threads": 4,
+    "bitwise_equal": false,
+    "max_relative_difference": 4.215865314606786e-12
+   },
+   "guards_kept": true,
+   "draw_is_the_library_split": true,
+   "null_sample_is_positions_200_299_of_the_ranking": true,
+   "null_keys_disjoint_from_calibration_draw": true,
+   "cos_null": {
+    "max_abs_score_on_null_keys": 1.9381995836678917e-12,
+    "max_abs_coordinate_on_null_keys_relative": 3.2271151405543257e-13,
+    "own_coordinate_rel_change": 3.4135811691491896e-16,
+    "own_score_abs_dev_from_1": 4.440892098500626e-16,
+    "not_minimum_change_rel": 7.0683607455198974e-15,
+    "score_before_repair_on_null_keys_max": 0.9815441601562892,
+    "detector_norm_max": 6.828534986753734
+   },
+   "rescope_null": {
+    "n_null_keys": 100,
+    "max_abs_score_on_null_keys": 1.556016473804936e-12,
+    "own_coordinate_rel_change": 3.830949630808826e-16,
+    "own_score_abs_dev_from_1": 3.3306690738754696e-16,
+    "not_minimum_change_rel": 4.352265026321398e-15,
+    "score_before_repair_on_null_keys_max": 0.6296121629579742
+   },
+   "rescope_nullW": {
+    "n_null_keys": 600,
+    "max_abs_score_on_null_keys": 9.662841779591714e-11,
+    "own_coordinate_rel_change": 2.533827667901963e-16,
+    "own_score_abs_dev_from_1": 3.3306690738754696e-16,
+    "not_minimum_change_rel": 1.1248693185084666e-14,
+    "score_before_repair_on_null_keys_max": 0.5753057517825704
+   },
+   "null_w_keys_are_the_BEN-W_decode_keys": true,
+   "null_w_without_guard_scoring": {
+    "detectors_bitwise_equal": true,
+    "guards_kept": true,
+    "n_guards": 200,
+    "n_guards_lost_with_scoring": 0,
+    "record_has_no_guard_counts": true
+   }
+  }
+ },
+ "note": "both logs: max |score| on the given keys 9.7e-11 (before the repair up to 0.97 for the cosine), own coordinate changed by 3.8e-16 (relative), part of the change outside span(null keys, own key) 1.1e-14; cos_null detectors == the direct library null_repair with guards, bit for bit at one thread (the library's unpinned call at 4 threads differs by 4.2e-12 relative: thread-dependent last bits)",
+ "test": "c4_null_zero_and_own",
+ "group": "scores",
+ "what": "cos_null (the 100 keys of rescope_null, draw 0) and the rescope_nullW helper (600 BEN-W keys): zero on the given keys, own coordinate unchanged, minimum change",
+ "seconds": 3.332834005355835,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

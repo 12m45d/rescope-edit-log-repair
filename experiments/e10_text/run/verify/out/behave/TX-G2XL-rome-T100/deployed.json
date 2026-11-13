@@ -1,0 +1,266 @@
+{
+ "log": "TX-G2XL-rome-T100",
+ "label": "deployed",
+ "info": {
+  "kind": "weight",
+  "what": "deployed weight W_E of the log"
+ },
+ "stats": {
+  "edit.request.exact": {
+   "value": 97.0,
+   "ci_lo": 93.0,
+   "ci_hi": 100.0,
+   "n": 100,
+   "n_units": 100
+  },
+  "edit.request.own_released": {
+   "value": null,
+   "n": 100
+  },
+  "edit.request.own_released_dec": {
+   "value": null,
+   "n": 100
+  },
+  "edit.paraphrase.exact": {
+   "value": 75.0,
+   "ci_lo": 68.0,
+   "ci_hi": 81.5,
+   "n": 200,
+   "n_units": 100
+  },
+  "edit.paraphrase.own_released": {
+   "value": null,
+   "n": 200
+  },
+  "edit.paraphrase.own_released_dec": {
+   "value": null,
+   "n": 200
+  },
+  "heldout.D1_tf": {
+   "value": 94.22222222222223,
+   "ci_lo": 92.55555555555556,
+   "ci_hi": 95.77777777777777,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.D1_dec": {
+   "value": 94.22222222222223,
+   "ci_lo": 92.55555555555556,
+   "ci_hi": 95.77777777777777,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.kept_tf": {
+   "value": 69.08888888888887,
+   "ci_lo": 67.56666666666666,
+   "ci_hi": 70.6225,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.first_changed_tf": {
+   "value": 34.22222222222222,
+   "ci_lo": 30.555555555555557,
+   "ci_hi": 37.89166666666665,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.fired": {
+   "value": null,
+   "n": 900
+  },
+  "heldout.fired_dec": {
+   "value": null,
+   "n": 900
+  },
+  "heldout.clean.D1_tf": {
+   "value": 94.21579532814238,
+   "ci_lo": 92.53897550111358,
+   "ci_hi": 95.77777777777777,
+   "n": 899,
+   "n_units": 300
+  },
+  "heldout.clean.D1_dec": {
+   "value": 94.21579532814238,
+   "ci_lo": 92.53897550111358,
+   "ci_hi": 95.77777777777777,
+   "n": 899,
+   "n_units": 300
+  },
+  "heldout.clean.kept_tf": {
+   "value": 69.11012235817574,
+   "ci_lo": 67.58882183908045,
+   "ci_hi": 70.64448032665182,
+   "n": 899,
+   "n_units": 300
+  },
+  "heldout.clean.first_changed_tf": {
+   "value": 34.14905450500556,
+   "ci_lo": 30.477462612779632,
+   "ci_hi": 37.888888888888886,
+   "n": 899,
+   "n_units": 300
+  },
+  "heldout.clean.fired": {
+   "value": null,
+   "n": 899
+  },
+  "heldout.clean.fired_dec": {
+   "value": null,
+   "n": 899
+  },
+  "heldout.near_scope.D1_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 1,
+   "n_units": 1
+  },
+  "heldout.near_scope.D1_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 1,
+   "n_units": 1
+  },
+  "heldout.near_scope.kept_tf": {
+   "value": 50.0,
+   "ci_lo": 50.0,
+   "ci_hi": 50.0,
+   "n": 1,
+   "n_units": 1
+  },
+  "heldout.near_scope.first_changed_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 1,
+   "n_units": 1
+  },
+  "heldout.near_scope.fired": {
+   "value": null,
+   "n": 1
+  },
+  "heldout.near_scope.fired_dec": {
+   "value": null,
+   "n": 1
+  },
+  "neighborhood.D1_tf": {
+   "value": 90.2,
+   "ci_lo": 88.1975,
+   "ci_hi": 92.1,
+   "n": 1000,
+   "n_units": 100
+  },
+  "neighborhood.D1_dec": {
+   "value": 90.2,
+   "ci_lo": 88.1975,
+   "ci_hi": 92.1,
+   "n": 1000,
+   "n_units": 100
+  },
+  "neighborhood.kept_tf": {
+   "value": 72.99000000000001,
+   "ci_lo": 71.38,
+   "ci_hi": 74.64025000000001,
+   "n": 1000,
+   "n_units": 100
+  },
+  "neighborhood.first_changed_tf": {
+   "value": 30.5,
+   "ci_lo": 26.1,
+   "ci_hi": 35.0,
+   "n": 1000,
+   "n_units": 100
+  },
+  "neighborhood.fired": {
+   "value": null,
+   "n": 1000
+  },
+  "neighborhood.fired_dec": {
+   "value": null,
+   "n": 1000
+  },
+  "neighborhood.clean.D1_tf": {
+   "value": 90.15075376884423,
+   "ci_lo": 88.11609948316897,
+   "ci_hi": 92.07642717732355,
+   "n": 995,
+   "n_units": 100
+  },
+  "neighborhood.clean.D1_dec": {
+   "value": 90.15075376884423,
+   "ci_lo": 88.11609948316897,
+   "ci_hi": 92.07642717732355,
+   "n": 995,
+   "n_units": 100
+  },
+  "neighborhood.clean.kept_tf": {
+   "value": 73.21608040201005,
+   "ci_lo": 71.64815854598974,
+   "ci_hi": 74.85520727380606,
+   "n": 995,
+   "n_units": 100
+  },
+  "neighborhood.clean.first_changed_tf": {
+   "value": 30.150753768844222,
+   "ci_lo": 25.750931511263733,
+   "ci_hi": 34.6084185837919,
+   "n": 995,
+   "n_units": 100
+  },
+  "neighborhood.clean.fired": {
+   "value": null,
+   "n": 995
+  },
+  "neighborhood.clean.fired_dec": {
+   "value": null,
+   "n": 995
+  },
+  "neighborhood.near_scope.D1_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 5,
+   "n_units": 4
+  },
+  "neighborhood.near_scope.D1_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 5,
+   "n_units": 4
+  },
+  "neighborhood.near_scope.kept_tf": {
+   "value": 28.0,
+   "ci_lo": 14.0,
+   "ci_hi": 55.00000000000001,
+   "n": 5,
+   "n_units": 4
+  },
+  "neighborhood.near_scope.first_changed_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 5,
+   "n_units": 4
+  },
+  "neighborhood.near_scope.fired": {
+   "value": null,
+   "n": 5
+  },
+  "neighborhood.near_scope.fired_dec": {
+   "value": null,
+   "n": 5
+  }
+ },
+ "n_rows": 2200,
+ "seconds": 31.3782958984375,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "5b266fadd236",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "evaluation": "every sampled prompt through the model; verifier's batches; no store"
+}

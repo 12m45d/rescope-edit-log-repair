@@ -1,0 +1,82 @@
+{
+ "pass": true,
+ "per_backbone": {
+  "qwen25vl": {
+   "0.01": {
+    "residual_ben_w_keys": 1.598885304515302e-10,
+    "residual_solver_keys": 6.661964581303602e-10,
+    "residual_random": 1.1366793129056062e-09,
+    "quad_vs_apply": 9.586879390657635e-13,
+    "bilinear_symmetry": 0.0,
+    "quad_positive": true,
+    "cancellation_ben_w_keys": 2021.994510652635,
+    "cancellation_solver_keys": 24.216064478205748
+   },
+   "0.1": {
+    "residual_ben_w_keys": 2.941029967523683e-11,
+    "residual_solver_keys": 5.507439079862459e-11,
+    "residual_random": 5.96300581678877e-11,
+    "quad_vs_apply": 1.0128674899497844e-13,
+    "bilinear_symmetry": 0.0,
+    "quad_positive": true,
+    "cancellation_ben_w_keys": 221.0084781665879,
+    "cancellation_solver_keys": 22.09891556282754
+   },
+   "1": {
+    "residual_ben_w_keys": 1.665448806450264e-12,
+    "residual_solver_keys": 2.1382742421959544e-12,
+    "residual_random": 2.3033541626105092e-12,
+    "quad_vs_apply": 2.0839371492335373e-14,
+    "bilinear_symmetry": 0.0,
+    "quad_positive": true,
+    "cancellation_ben_w_keys": 34.92755799135244,
+    "cancellation_solver_keys": 15.525438322516008
+   }
+  },
+  "llava": {
+   "0.01": {
+    "residual_ben_w_keys": 9.196417862589435e-11,
+    "residual_solver_keys": 3.064577224990141e-10,
+    "residual_random": 2.5998411111354715e-10,
+    "quad_vs_apply": 1.0170036631225543e-12,
+    "bilinear_symmetry": 0.0,
+    "quad_positive": true,
+    "cancellation_ben_w_keys": 1764.8546684066473,
+    "cancellation_solver_keys": 18.434282056741576
+   },
+   "0.1": {
+    "residual_ben_w_keys": 1.2530350334519725e-11,
+    "residual_solver_keys": 1.8721542798675797e-11,
+    "residual_random": 1.886792169273899e-11,
+    "quad_vs_apply": 9.376067325408846e-14,
+    "bilinear_symmetry": 0.0,
+    "quad_positive": true,
+    "cancellation_ben_w_keys": 183.761202896069,
+    "cancellation_solver_keys": 17.11351768064653
+   },
+   "1": {
+    "residual_ben_w_keys": 7.864039274993476e-13,
+    "residual_solver_keys": 7.964093461429166e-13,
+    "residual_random": 7.975286031897289e-13,
+    "quad_vs_apply": 2.926833319655224e-14,
+    "bilinear_symmetry": 0.0,
+    "quad_positive": true,
+    "cancellation_ben_w_keys": 27.21947204983442,
+    "cancellation_solver_keys": 12.84969406524681
+   }
+  }
+ },
+ "tolerance": 1e-08,
+ "worst_relative_residual": 1.1366793129056062e-09,
+ "note": "|x M (C_W + rho I) - x| / |x| and x M x' two ways, 75 vectors x 3 ridges x 2 backbones: worst 1.1e-09 (tolerance 1e-08); median cancellation |x|^2 / (rho x M x') at kappa 0.01: BEN-W keys 2022, solver keys 24 (Qwen)",
+ "test": "s6_whitener_identity_full_size",
+ "group": "stats",
+ "what": "full size (d = 11008): M (C_W + rho I) x = x for BEN-W keys, solver keys of the development logs and random vectors, per kappa",
+ "seconds": 2.9968175888061523,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

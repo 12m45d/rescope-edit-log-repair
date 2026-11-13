@@ -1,0 +1,17 @@
+{
+ "pass": true,
+ "worst_abs_deviation_from_1": 8.881784197001252e-16,
+ "n_gates": 20,
+ "cos_centred_and_whitecos_bounded_by_1": true,
+ "note": "20 gates + ncoord_null, T = 24, d = 96: max |score(k_i)_i - 1| = 8.9e-16; cos_centred / whitecos <= 1 on all queries: True",
+ "test": "c1_own_key_synthetic",
+ "group": "scores",
+ "what": "own-key value on synthetic logs: every score is 1 at the edit's own solver key (Gram and primal form, registered and other ridges)",
+ "seconds": 0.04881453514099121,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

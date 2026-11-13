@@ -1,0 +1,381 @@
+{
+ "backbone": "llava",
+ "family": "L",
+ "master_log": "TB-L1000-ae-l2_3",
+ "seed": 20261111,
+ "T": 1000,
+ "m": 4,
+ "kinds": [
+  "X-I",
+  "X-Q",
+  "X-X"
+ ],
+ "amendment": "PROTOCOL.md section 6, Review round 1, item R5",
+ "source_pool": {
+  "n_items": 1051,
+  "excluded": {
+   "edit_name": 1023,
+   "edit_mid": 600,
+   "probe": 500
+  },
+  "n_edit_items_excluded_against": 2540,
+  "n_distinct_questions": 426,
+  "n_new_hard_negatives_with_source_in_pool": 1200,
+  "streams": [
+   "TB-L100-ae",
+   "TB-L100-ae-l2_1",
+   "TB-L100-ae-l2_3",
+   "TB-L1000-ae-l2_3",
+   "TB-L200-ae-l2_3",
+   "TB-L500-ae-l2_3",
+   "TB-Q100-memit",
+   "TB-Q100-memitw",
+   "TB-Q100-ae",
+   "TB-Q100-ae-l2_1",
+   "TB-Q100-ae-l2_3",
+   "[redacted: describes a related submission under double-blind review]",
+   "TB-Q1000-memitw",
+   "TB-Q1000-ae-l2_3",
+   "TB-Q200-memitw",
+   "TB-Q200-ae-l2_3",
+   "TB-Q2000-ae-l2_3",
+   "TB-Q500-memit",
+   "TB-Q500-memitw",
+   "TB-Q500-ae",
+   "TB-Q500-ae-l2_3",
+   "long streams of families Q and L"
+  ]
+ },
+ "test_query_sources": {
+  "llava": {
+   "index": "10_final/cache/llava/index.jsonl",
+   "md5": "a629f69ba71ef685108e1cb13e18d437",
+   "n_sequences": 8800,
+   "n_image_sequences_by_family_kind": {
+    "L|benign": 1500,
+    "L|hn_i": 800,
+    "L|hn_q": 800,
+    "L|hn_x": 200,
+    "L|igen": 1000,
+    "L|probe": 500,
+    "L|rel": 1000,
+    "L|tgen": 1000
+   },
+   "n_distinct_image_queries_added": 6738,
+   "hard_negatives": {
+    "n_rows": 1800,
+    "md5": "206fa217dcc9494fcd20fdac2191663d"
+   },
+   "benign": {
+    "n_rows": 3000,
+    "md5": "34f40d9a3efd09e5eb67a7114a948e81"
+   }
+  },
+  "qwen25vl": {
+   "index": "10_final/cache/qwen25vl/index.jsonl",
+   "md5": "0ccb7c12c4e5cdc43c47ca6afe5d647f",
+   "n_sequences": 14300,
+   "n_image_sequences_by_family_kind": {
+    "QK|igen": 500,
+    "QK|probe": 500,
+    "QK|rel": 500,
+    "QK|tgen": 500,
+    "Q|benign": 1500,
+    "Q|hn_i": 800,
+    "Q|hn_q": 800,
+    "Q|hn_x": 200,
+    "Q|igen": 2000,
+    "Q|probe": 500,
+    "Q|rel": 2000,
+    "Q|tgen": 2000
+   },
+   "n_distinct_image_queries_added": 8072,
+   "hard_negatives": {
+    "n_rows": 1800,
+    "md5": "297761b0deb1fedd94a714745b3cd422"
+   },
+   "benign": {
+    "n_rows": 3000,
+    "md5": "d5cb6171fbe2563c0ab2d328804f9423"
+   }
+  },
+  "QO": {
+   "index": "10_final/cache/QO/index.jsonl",
+   "md5": "338f14e0d8d6018f87723b7fce973840",
+   "n_sequences": 2500,
+   "n_image_sequences_by_family_kind": {
+    "QO|igen": 500,
+    "QO|probe": 500,
+    "QO|rel": 500,
+    "QO|tgen": 500
+   },
+   "n_distinct_image_queries_added": 1438
+  },
+  "blip2": {
+   "index": "10_final/cache/blip2/index.jsonl",
+   "md5": "cf9a0fb20e6992ae647b70adcfb8aaa2",
+   "n_sequences": 6800,
+   "n_image_sequences_by_family_kind": {
+    "B|benign": 1500,
+    "B|hn_i": 600,
+    "B|hn_q": 600,
+    "B|hn_x": 100,
+    "B|igen": 500,
+    "B|probe": 500,
+    "B|rel": 500,
+    "B|tgen": 500
+   },
+   "n_distinct_image_queries_added": 490,
+   "hard_negatives": {
+    "n_rows": 1300,
+    "md5": "c1fe7c5bf12a5c8f65e7ec8f349fefea"
+   },
+   "benign": {
+    "n_rows": 3000,
+    "md5": "1b65cbdbc4caaf6fd87eaf3a9073038a"
+   }
+  },
+  "n_distinct_image_queries(md5, question stripped lower case)": 16738
+ },
+ "n_rows": 12000,
+ "n_by_kind": {
+  "X-I": 4000,
+  "X-Q": 4000,
+  "X-X": 4000
+ },
+ "rows_per_edit": {
+  "X-I": [
+   [
+    4,
+    1000
+   ]
+  ],
+  "X-Q": [
+   [
+    4,
+    1000
+   ]
+  ],
+  "X-X": [
+   [
+    4,
+    1000
+   ]
+  ]
+ },
+ "redraws": {
+  "X-I": {
+   "n_rows": 4000,
+   "n_redraws_total": 125,
+   "by_reason": {
+    "own_question": 15,
+    "repeat": 68,
+    "test_query": 42
+   },
+   "n_rows_with_a_redraw": 122,
+   "mean_per_row": 0.0312,
+   "max_per_row": 2,
+   "histogram": {
+    "0": 3878,
+    "1": 119,
+    "2": 3
+   }
+  },
+  "X-Q": {
+   "n_rows": 4000,
+   "n_redraws_total": 47,
+   "by_reason": {
+    "test_query": 47
+   },
+   "n_rows_with_a_redraw": 43,
+   "mean_per_row": 0.0118,
+   "max_per_row": 3,
+   "histogram": {
+    "0": 3957,
+    "1": 40,
+    "2": 2,
+    "3": 1
+   }
+  },
+  "X-X": {
+   "n_rows": 4000,
+   "n_redraws_total": 174,
+   "by_reason": {
+    "own_question": 42,
+    "repeat": 113,
+    "test_query": 19
+   },
+   "n_rows_with_a_redraw": 157,
+   "mean_per_row": 0.0435,
+   "max_per_row": 3,
+   "histogram": {
+    "0": 3843,
+    "1": 142,
+    "2": 13,
+    "3": 2
+   }
+  },
+  "all": {
+   "n_rows": 12000,
+   "n_redraws_total": 346,
+   "by_reason": {
+    "own_question": 57,
+    "repeat": 181,
+    "test_query": 108
+   },
+   "n_rows_with_a_redraw": 322,
+   "mean_per_row": 0.0288,
+   "max_per_row": 3,
+   "histogram": {
+    "0": 11678,
+    "1": 301,
+    "2": 18,
+    "3": 3
+   }
+  }
+ },
+ "test_query_discards_by(kind | cache | family | kind of the first test row with that query)": {
+  "X-I|llava|L|hn_i": 36,
+  "X-I|llava|L|hn_x": 5,
+  "X-I|qwen25vl|Q|hn_i": 1,
+  "X-Q|QO|QO|rel": 1,
+  "X-Q|blip2|B|hn_q": 4,
+  "X-Q|llava|L|hn_q": 26,
+  "X-Q|qwen25vl|Q|hn_q": 16,
+  "X-X|llava|L|hn_i": 7,
+  "X-X|llava|L|hn_x": 11,
+  "X-X|qwen25vl|Q|hn_x": 1
+ },
+ "x_x": {
+  "scope": {
+   "batch": 200,
+   "group": 3800
+  },
+  "scope_first100": {
+   "batch": 200,
+   "group": 200
+  },
+  "batch_shortfall": {
+   "n_edits": 0,
+   "edits": []
+  },
+  "group_partners_of_first100_in_own_batch": 9,
+  "partner_same_group_of_100": 4000,
+  "partner_later_than_owner": 1986
+ },
+ "rows_usable_by_log_length_T": {
+  "10": {
+   "X-I": 40,
+   "X-Q": 40,
+   "X-X": 21,
+   "edits_with_fewer_than_m_cross_rows": 10
+  },
+  "20": {
+   "X-I": 80,
+   "X-Q": 80,
+   "X-X": 45,
+   "edits_with_fewer_than_m_cross_rows": 20
+  },
+  "50": {
+   "X-I": 200,
+   "X-Q": 200,
+   "X-X": 142,
+   "edits_with_fewer_than_m_cross_rows": 41
+  },
+  "100": {
+   "X-I": 400,
+   "X-Q": 400,
+   "X-X": 400,
+   "edits_with_fewer_than_m_cross_rows": 0
+  },
+  "200": {
+   "X-I": 800,
+   "X-Q": 800,
+   "X-X": 800,
+   "edits_with_fewer_than_m_cross_rows": 0
+  },
+  "500": {
+   "X-I": 2000,
+   "X-Q": 2000,
+   "X-X": 2000,
+   "edits_with_fewer_than_m_cross_rows": 0
+  },
+  "1000": {
+   "X-I": 4000,
+   "X-Q": 4000,
+   "X-X": 4000,
+   "edits_with_fewer_than_m_cross_rows": 0
+  }
+ },
+ "flags": {
+  "same_category": {
+   "X-I": 1332,
+   "X-Q": 1220,
+   "X-X": 1272
+  },
+  "question_string_also_an_edit_question_or_rephrase": {
+   "X-I": 1870,
+   "X-Q": 4000,
+   "X-X": 4000
+  },
+  "X-I_rows_cross_like_by_log_length_T(q_in_edit_first_pos < T)": {
+   "10": 1,
+   "20": 1,
+   "50": 18,
+   "100": 57,
+   "200": 203,
+   "500": 786,
+   "1000": 1870
+  },
+  "q_in_probe": {
+   "X-I": 2370,
+   "X-Q": 1300,
+   "X-X": 1238
+  },
+  "img_in_probe": {
+   "X-I": 0,
+   "X-Q": 0,
+   "X-X": 0
+  },
+  "query_in_probe": {
+   "X-I": 0,
+   "X-Q": 0,
+   "X-X": 0
+  }
+ },
+ "shared_with_test_hard_negatives_of_the_backbone(same generator, other query)": {
+  "X-I_rows_whose_question_string_is_the_question_of_a_test_HN-I_row": 3251,
+  "X-Q_rows_whose_image_is_the_image_of_a_test_HN-Q_row": 1865,
+  "n_distinct_question_strings_of_test_HN-I_rows": 306,
+  "n_distinct_images_of_test_HN-Q_rows": 616
+ },
+ "queries": {
+  "n_distinct(image content, prompt)": 11942,
+  "rows_in_duplicate_query_groups": {
+   "X-I": 0,
+   "X-Q": 116,
+   "X-X": 0
+  },
+  "n_distinct_partner_items": {
+   "X-I": 1031,
+   "X-Q": 1028,
+   "X-X": 982
+  },
+  "n_distinct_question_strings": {
+   "X-I": 421,
+   "X-Q": 585,
+   "X-X": 574
+  },
+  "n_distinct_images": {
+   "X-I": 1000,
+   "X-Q": 1028,
+   "X-X": 1000
+  }
+ },
+ "rows_file": {
+  "name": "rows.jsonl",
+  "n_lines": 12000,
+  "sha256": "f06e1856f9ad544cc0e8cfb142eb393c7f32794d827de9efc2dd3f8e19b33d07",
+  "bytes": 11573477
+ }
+}

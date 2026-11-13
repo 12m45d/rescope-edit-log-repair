@@ -1,0 +1,3618 @@
+{
+ "behaviour": {
+  "TX-G2XL-rome-T100": {
+   "deployed": {
+    "n_rows_mine": 2200,
+    "n_rows_found_in_experiment": 2200,
+    "row_level_differences": {
+     "D1_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "D1_dec": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "new_exact": {
+      "n_compared": 300,
+      "n_differ": 0
+     },
+     "first_changed_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "dec_first": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "kept_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     }
+    },
+    "aggregates": {
+     "edit.request.exact": {
+      "mine_on_sample": 97.0,
+      "n_sample": 100,
+      "experiment_on_same_rows": 97.0,
+      "experiment_all_rows_draw0_from_its_rows": 97.0,
+      "n_all": 100,
+      "experiment_summary_value_mean_over_draws": 97.0,
+      "experiment_summary_ci": [
+       93.0,
+       100.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact": {
+      "mine_on_sample": 75.0,
+      "n_sample": 200,
+      "experiment_on_same_rows": 75.0,
+      "experiment_all_rows_draw0_from_its_rows": 75.0,
+      "n_all": 200,
+      "experiment_summary_value_mean_over_draws": 75.0,
+      "experiment_summary_ci": [
+       68.0,
+       81.5
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_tf": {
+      "mine_on_sample": 94.22222222222221,
+      "n_sample": 900,
+      "experiment_on_same_rows": 94.22222222222221,
+      "experiment_all_rows_draw0_from_its_rows": 93.46666666666667,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 93.46666666666667,
+      "experiment_summary_ci": [
+       92.43333333333334,
+       94.39999999999999
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.kept_tf": {
+      "mine_on_sample": 69.0888888888889,
+      "n_sample": 900,
+      "experiment_on_same_rows": 69.0888888888889,
+      "experiment_all_rows_draw0_from_its_rows": 69.84666666666666,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 69.84666666666666,
+      "experiment_summary_ci": [
+       69.03641666666667,
+       70.61999999999999
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.first_changed_tf": {
+      "mine_on_sample": 34.22222222222222,
+      "n_sample": 900,
+      "experiment_on_same_rows": 34.22222222222222,
+      "experiment_all_rows_draw0_from_its_rows": 33.233333333333334,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 33.233333333333334,
+      "experiment_summary_ci": [
+       31.366666666666664,
+       35.099999999999994
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf": {
+      "mine_on_sample": 90.2,
+      "n_sample": 1000,
+      "experiment_on_same_rows": 90.2,
+      "experiment_all_rows_draw0_from_its_rows": 90.2,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 90.2,
+      "experiment_summary_ci": [
+       88.2,
+       92.2
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_dec": {
+      "mine_on_sample": 94.22222222222221,
+      "n_sample": 900,
+      "experiment_on_same_rows": 94.22222222222221,
+      "experiment_all_rows_draw0_from_its_rows": 93.46666666666667,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 93.46666666666667,
+      "experiment_summary_ci": [
+       92.43333333333334,
+       94.39999999999999
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     }
+    },
+    "my_stats_with_ci": {
+     "edit.request.exact": {
+      "value": 97.0,
+      "ci_lo": 93.0,
+      "ci_hi": 100.0,
+      "n": 100,
+      "n_units": 100
+     },
+     "edit.paraphrase.exact": {
+      "value": 75.0,
+      "ci_lo": 68.0,
+      "ci_hi": 81.5,
+      "n": 200,
+      "n_units": 100
+     },
+     "heldout.D1_tf": {
+      "value": 94.22222222222223,
+      "ci_lo": 92.55555555555556,
+      "ci_hi": 95.77777777777777,
+      "n": 900,
+      "n_units": 300
+     },
+     "neighborhood.D1_tf": {
+      "value": 90.2,
+      "ci_lo": 88.1975,
+      "ci_hi": 92.1,
+      "n": 1000,
+      "n_units": 100
+     }
+    },
+    "silent_prompts": {
+     "silent_tf.n": null,
+     "silent_tf.n_D1": null,
+     "silent_dec.n": null,
+     "silent_dec.n_D1": null
+    },
+    "max_abs_diff_same_rows": 0.0
+   },
+   "preedit": {
+    "n_rows_mine": 2200,
+    "n_rows_found_in_experiment": 2200,
+    "row_level_differences": {
+     "D1_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "D1_dec": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "new_exact": {
+      "n_compared": 300,
+      "n_differ": 0
+     },
+     "first_changed_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "dec_first": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "kept_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     }
+    },
+    "aggregates": {
+     "edit.request.exact": {
+      "mine_on_sample": 0.0,
+      "n_sample": 100,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 100,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact": {
+      "mine_on_sample": 0.5,
+      "n_sample": 200,
+      "experiment_on_same_rows": 0.5,
+      "experiment_all_rows_draw0_from_its_rows": 0.5,
+      "n_all": 200,
+      "experiment_summary_value_mean_over_draws": 0.5,
+      "experiment_summary_ci": [
+       0.0,
+       1.5
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_tf": {
+      "mine_on_sample": 0.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.kept_tf": {
+      "mine_on_sample": 100.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.first_changed_tf": {
+      "mine_on_sample": 0.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf": {
+      "mine_on_sample": 0.0,
+      "n_sample": 1000,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_dec": {
+      "mine_on_sample": 0.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     }
+    },
+    "my_stats_with_ci": {
+     "edit.request.exact": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 100,
+      "n_units": 100
+     },
+     "edit.paraphrase.exact": {
+      "value": 0.5,
+      "ci_lo": 0.0,
+      "ci_hi": 1.5,
+      "n": 200,
+      "n_units": 100
+     },
+     "heldout.D1_tf": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 900,
+      "n_units": 300
+     },
+     "neighborhood.D1_tf": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 1000,
+      "n_units": 100
+     }
+    },
+    "silent_prompts": {
+     "silent_tf.n": null,
+     "silent_tf.n_D1": null,
+     "silent_dec.n": null,
+     "silent_dec.n_D1": null
+    },
+    "max_abs_diff_same_rows": 0.0
+   },
+   "where_twoblock": {
+    "n_rows_mine": 2200,
+    "n_rows_found_in_experiment": 2200,
+    "row_level_differences": {
+     "D1_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "D1_dec": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "new_exact": {
+      "n_compared": 300,
+      "n_differ": 0
+     },
+     "fired": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "fired_dec": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "first_changed_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "dec_first": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "kept_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "own_released": {
+      "n_compared": 1300,
+      "n_differ": 0
+     },
+     "own_released_dec": {
+      "n_compared": 1300,
+      "n_differ": 0
+     }
+    },
+    "aggregates": {
+     "edit.request.exact": {
+      "mine_on_sample": 96.0,
+      "n_sample": 100,
+      "experiment_on_same_rows": 96.0,
+      "experiment_all_rows_draw0_from_its_rows": 96.0,
+      "n_all": 100,
+      "experiment_summary_value_mean_over_draws": 95.66666666666667,
+      "experiment_summary_ci": [
+       91.0,
+       99.0
+      ],
+      "experiment_summary_draw0": 96.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact": {
+      "mine_on_sample": 63.0,
+      "n_sample": 200,
+      "experiment_on_same_rows": 63.0,
+      "experiment_all_rows_draw0_from_its_rows": 63.0,
+      "n_all": 200,
+      "experiment_summary_value_mean_over_draws": 62.666666666666664,
+      "experiment_summary_ci": [
+       55.50000000000001,
+       70.5
+      ],
+      "experiment_summary_draw0": 63.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_tf": {
+      "mine_on_sample": 2.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 2.0,
+      "experiment_all_rows_draw0_from_its_rows": 2.1999999999999997,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 2.7444444444444445,
+      "experiment_summary_ci": [
+       1.0219444444444445,
+       4.866666666666666
+      ],
+      "experiment_summary_draw0": 2.1999999999999997,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.kept_tf": {
+      "mine_on_sample": 99.36666666666666,
+      "n_sample": 900,
+      "experiment_on_same_rows": 99.36666666666666,
+      "experiment_all_rows_draw0_from_its_rows": 99.22000000000001,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 99.12444444444446,
+      "experiment_summary_ci": [
+       98.59108333333332,
+       99.58672222222222
+      ],
+      "experiment_summary_draw0": 99.22000000000001,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.first_changed_tf": {
+      "mine_on_sample": 1.2222222222222223,
+      "n_sample": 900,
+      "experiment_on_same_rows": 1.2222222222222223,
+      "experiment_all_rows_draw0_from_its_rows": 1.0666666666666667,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 1.2444444444444445,
+      "experiment_summary_ci": [
+       0.5441666666666667,
+       2.0666666666666664
+      ],
+      "experiment_summary_draw0": 1.0666666666666667,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf": {
+      "mine_on_sample": 5.3,
+      "n_sample": 1000,
+      "experiment_on_same_rows": 5.3,
+      "experiment_all_rows_draw0_from_its_rows": 5.3,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 6.366666666666666,
+      "experiment_summary_ci": [
+       2.3,
+       11.600000000000001
+      ],
+      "experiment_summary_draw0": 5.3,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_dec": {
+      "mine_on_sample": 2.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 2.0,
+      "experiment_all_rows_draw0_from_its_rows": 2.1999999999999997,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 2.7444444444444445,
+      "experiment_summary_ci": [
+       1.0219444444444445,
+       4.866666666666666
+      ],
+      "experiment_summary_draw0": 2.1999999999999997,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.fired": {
+      "mine_on_sample": 2.666666666666667,
+      "n_sample": 900,
+      "experiment_on_same_rows": 2.666666666666667,
+      "experiment_all_rows_draw0_from_its_rows": 2.833333333333333,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 4.1,
+      "experiment_summary_ci": [
+       1.2,
+       7.967499999999996
+      ],
+      "experiment_summary_draw0": 2.833333333333333,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.fired": {
+      "mine_on_sample": 6.0,
+      "n_sample": 1000,
+      "experiment_on_same_rows": 6.0,
+      "experiment_all_rows_draw0_from_its_rows": 6.0,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 7.866666666666666,
+      "experiment_summary_ci": [
+       2.5324999999999998,
+       14.899999999999999
+      ],
+      "experiment_summary_draw0": 6.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.own_released": {
+      "mine_on_sample": 98.5,
+      "n_sample": 200,
+      "experiment_on_same_rows": 98.5,
+      "experiment_all_rows_draw0_from_its_rows": 98.5,
+      "n_all": 200,
+      "experiment_summary_value_mean_over_draws": 97.66666666666667,
+      "experiment_summary_ci": [
+       95.33333333333334,
+       100.0
+      ],
+      "experiment_summary_draw0": 98.5,
+      "abs_diff_same_rows": 0.0
+     }
+    },
+    "my_stats_with_ci": {
+     "edit.request.exact": {
+      "value": 96.0,
+      "ci_lo": 92.0,
+      "ci_hi": 99.0,
+      "n": 100,
+      "n_units": 100
+     },
+     "edit.paraphrase.exact": {
+      "value": 63.0,
+      "ci_lo": 55.0,
+      "ci_hi": 70.5,
+      "n": 200,
+      "n_units": 100
+     },
+     "heldout.D1_tf": {
+      "value": 2.0,
+      "ci_lo": 0.7777777777777778,
+      "ci_hi": 3.4444444444444446,
+      "n": 900,
+      "n_units": 300
+     },
+     "heldout.fired": {
+      "value": 2.6666666666666665,
+      "ci_lo": 1.2222222222222223,
+      "ci_hi": 4.333333333333333,
+      "n": 900,
+      "n_units": 300
+     },
+     "neighborhood.D1_tf": {
+      "value": 5.3,
+      "ci_lo": 3.0,
+      "ci_hi": 8.0,
+      "n": 1000,
+      "n_units": 100
+     }
+    },
+    "silent_prompts": {
+     "silent_tf.n": 1819,
+     "silent_tf.n_D1": 0,
+     "silent_dec.n": 1819,
+     "silent_dec.n_D1": 0
+    },
+    "max_abs_diff_same_rows": 0.0
+   },
+   "rescope": {
+    "n_rows_mine": 2200,
+    "n_rows_found_in_experiment": 2200,
+    "row_level_differences": {
+     "D1_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "D1_dec": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "new_exact": {
+      "n_compared": 300,
+      "n_differ": 0
+     },
+     "fired": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "fired_dec": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "first_changed_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "dec_first": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "kept_tf": {
+      "n_compared": 2200,
+      "n_differ": 0
+     },
+     "own_released": {
+      "n_compared": 1300,
+      "n_differ": 0
+     },
+     "own_released_dec": {
+      "n_compared": 1300,
+      "n_differ": 0
+     }
+    },
+    "aggregates": {
+     "edit.request.exact": {
+      "mine_on_sample": 100.0,
+      "n_sample": 100,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 100,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact": {
+      "mine_on_sample": 73.5,
+      "n_sample": 200,
+      "experiment_on_same_rows": 73.5,
+      "experiment_all_rows_draw0_from_its_rows": 73.5,
+      "n_all": 200,
+      "experiment_summary_value_mean_over_draws": 73.0,
+      "experiment_summary_ci": [
+       66.16666666666666,
+       79.66666666666666
+      ],
+      "experiment_summary_draw0": 73.5,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_tf": {
+      "mine_on_sample": 2.666666666666667,
+      "n_sample": 900,
+      "experiment_on_same_rows": 2.666666666666667,
+      "experiment_all_rows_draw0_from_its_rows": 2.7,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 3.7888888888888888,
+      "experiment_summary_ci": [
+       1.1666666666666667,
+       7.2666666666666675
+      ],
+      "experiment_summary_draw0": 2.7,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.kept_tf": {
+      "mine_on_sample": 98.64444444444443,
+      "n_sample": 900,
+      "experiment_on_same_rows": 98.64444444444443,
+      "experiment_all_rows_draw0_from_its_rows": 98.59666666666666,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 98.11777777777777,
+      "experiment_summary_ci": [
+       96.48666666666665,
+       99.41666666666666
+      ],
+      "experiment_summary_draw0": 98.59666666666666,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.first_changed_tf": {
+      "mine_on_sample": 2.111111111111111,
+      "n_sample": 900,
+      "experiment_on_same_rows": 2.111111111111111,
+      "experiment_all_rows_draw0_from_its_rows": 1.7666666666666668,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 2.3666666666666667,
+      "experiment_summary_ci": [
+       0.7330555555555556,
+       4.366666666666666
+      ],
+      "experiment_summary_draw0": 1.7666666666666668,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf": {
+      "mine_on_sample": 5.8999999999999995,
+      "n_sample": 1000,
+      "experiment_on_same_rows": 5.8999999999999995,
+      "experiment_all_rows_draw0_from_its_rows": 5.8999999999999995,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 7.466666666666667,
+      "experiment_summary_ci": [
+       2.5,
+       13.90249999999999
+      ],
+      "experiment_summary_draw0": 5.8999999999999995,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_dec": {
+      "mine_on_sample": 2.666666666666667,
+      "n_sample": 900,
+      "experiment_on_same_rows": 2.666666666666667,
+      "experiment_all_rows_draw0_from_its_rows": 2.7,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 3.7888888888888888,
+      "experiment_summary_ci": [
+       1.1666666666666667,
+       7.2666666666666675
+      ],
+      "experiment_summary_draw0": 2.7,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.fired": {
+      "mine_on_sample": 2.666666666666667,
+      "n_sample": 900,
+      "experiment_on_same_rows": 2.666666666666667,
+      "experiment_all_rows_draw0_from_its_rows": 2.833333333333333,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 4.1,
+      "experiment_summary_ci": [
+       1.2,
+       7.967499999999996
+      ],
+      "experiment_summary_draw0": 2.833333333333333,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.fired": {
+      "mine_on_sample": 6.0,
+      "n_sample": 1000,
+      "experiment_on_same_rows": 6.0,
+      "experiment_all_rows_draw0_from_its_rows": 6.0,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 7.866666666666666,
+      "experiment_summary_ci": [
+       2.5324999999999998,
+       14.899999999999999
+      ],
+      "experiment_summary_draw0": 6.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.own_released": {
+      "mine_on_sample": 98.5,
+      "n_sample": 200,
+      "experiment_on_same_rows": 98.5,
+      "experiment_all_rows_draw0_from_its_rows": 98.5,
+      "n_all": 200,
+      "experiment_summary_value_mean_over_draws": 97.66666666666667,
+      "experiment_summary_ci": [
+       95.33333333333334,
+       100.0
+      ],
+      "experiment_summary_draw0": 98.5,
+      "abs_diff_same_rows": 0.0
+     }
+    },
+    "my_stats_with_ci": {
+     "edit.request.exact": {
+      "value": 100.0,
+      "ci_lo": 100.0,
+      "ci_hi": 100.0,
+      "n": 100,
+      "n_units": 100
+     },
+     "edit.paraphrase.exact": {
+      "value": 73.5,
+      "ci_lo": 66.0,
+      "ci_hi": 80.0,
+      "n": 200,
+      "n_units": 100
+     },
+     "heldout.D1_tf": {
+      "value": 2.6666666666666665,
+      "ci_lo": 1.2222222222222223,
+      "ci_hi": 4.333333333333333,
+      "n": 900,
+      "n_units": 300
+     },
+     "heldout.fired": {
+      "value": 2.6666666666666665,
+      "ci_lo": 1.2222222222222223,
+      "ci_hi": 4.333333333333333,
+      "n": 900,
+      "n_units": 300
+     },
+     "neighborhood.D1_tf": {
+      "value": 5.9,
+      "ci_lo": 3.5975,
+      "ci_hi": 8.8,
+      "n": 1000,
+      "n_units": 100
+     }
+    },
+    "silent_prompts": {
+     "silent_tf.n": 1819,
+     "silent_tf.n_D1": 0,
+     "silent_dec.n": 1819,
+     "silent_dec.n_D1": 0
+    },
+    "max_abs_diff_same_rows": 0.0
+   }
+  },
+  "TX-G2XL-rome-T500": {
+   "deployed": {
+    "n_rows_mine": 4800,
+    "n_rows_found_in_experiment": 4800,
+    "row_level_differences": {
+     "D1_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "D1_dec": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "new_exact": {
+      "n_compared": 900,
+      "n_differ": 0
+     },
+     "first_changed_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "dec_first": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "kept_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     }
+    },
+    "aggregates": {
+     "edit.request.exact": {
+      "mine_on_sample": 2.3333333333333335,
+      "n_sample": 300,
+      "experiment_on_same_rows": 2.3333333333333335,
+      "experiment_all_rows_draw0_from_its_rows": 2.8000000000000003,
+      "n_all": 500,
+      "experiment_summary_value_mean_over_draws": 2.8,
+      "experiment_summary_ci": [
+       1.6,
+       4.3999999999999995
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact": {
+      "mine_on_sample": 0.6666666666666667,
+      "n_sample": 600,
+      "experiment_on_same_rows": 0.6666666666666667,
+      "experiment_all_rows_draw0_from_its_rows": 0.7000000000000001,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 0.7,
+      "experiment_summary_ci": [
+       0.2,
+       1.2
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_tf": {
+      "mine_on_sample": 100.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.kept_tf": {
+      "mine_on_sample": 0.6555555555555556,
+      "n_sample": 900,
+      "experiment_on_same_rows": 0.6555555555555556,
+      "experiment_all_rows_draw0_from_its_rows": 0.6433333333333333,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 0.6433333333333333,
+      "experiment_summary_ci": [
+       0.5566666666666666,
+       0.7366666666666667
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.first_changed_tf": {
+      "mine_on_sample": 99.77777777777777,
+      "n_sample": 900,
+      "experiment_on_same_rows": 99.77777777777777,
+      "experiment_all_rows_draw0_from_its_rows": 99.8,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 99.8,
+      "experiment_summary_ci": [
+       99.63333333333333,
+       99.93333333333332
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf": {
+      "mine_on_sample": 100.0,
+      "n_sample": 3000,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 5000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_dec": {
+      "mine_on_sample": 100.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.before": {
+      "mine_on_sample": 0.9345794392523363,
+      "n_sample": 107,
+      "experiment_on_same_rows": 0.9345794392523363,
+      "experiment_all_rows_draw0_from_its_rows": 1.1560693641618496,
+      "n_all": 173,
+      "experiment_summary_value_mean_over_draws": 1.1560693641618498,
+      "experiment_summary_ci": [
+       0.0,
+       2.8901734104046244
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.from": {
+      "mine_on_sample": 3.1088082901554404,
+      "n_sample": 193,
+      "experiment_on_same_rows": 3.1088082901554404,
+      "experiment_all_rows_draw0_from_its_rows": 3.669724770642202,
+      "n_all": 327,
+      "experiment_summary_value_mean_over_draws": 3.669724770642202,
+      "experiment_summary_ci": [
+       1.834862385321101,
+       5.81039755351682
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.before": {
+      "mine_on_sample": 0.46728971962616817,
+      "n_sample": 214,
+      "experiment_on_same_rows": 0.46728971962616817,
+      "experiment_all_rows_draw0_from_its_rows": 0.2890173410404624,
+      "n_all": 346,
+      "experiment_summary_value_mean_over_draws": 0.28901734104046245,
+      "experiment_summary_ci": [
+       0.0,
+       0.8670520231213872
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.from": {
+      "mine_on_sample": 0.7772020725388601,
+      "n_sample": 386,
+      "experiment_on_same_rows": 0.7772020725388601,
+      "experiment_all_rows_draw0_from_its_rows": 0.9174311926605505,
+      "n_all": 654,
+      "experiment_summary_value_mean_over_draws": 0.9174311926605505,
+      "experiment_summary_ci": [
+       0.3058103975535168,
+       1.6819571865443423
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.before": {
+      "mine_on_sample": 100.0,
+      "n_sample": 1070,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 1730,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.from": {
+      "mine_on_sample": 100.0,
+      "n_sample": 1930,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3270,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     }
+    },
+    "my_stats_with_ci": {
+     "edit.request.exact": {
+      "value": 2.3333333333333335,
+      "ci_lo": 0.6666666666666666,
+      "ci_hi": 4.0,
+      "n": 300,
+      "n_units": 300
+     },
+     "edit.request.exact.before": {
+      "value": 0.9345794392523364,
+      "ci_lo": 0.0,
+      "ci_hi": 2.803738317757009,
+      "n": 107,
+      "n_units": 107
+     },
+     "edit.request.exact.from": {
+      "value": 3.1088082901554404,
+      "ci_lo": 1.0362694300518134,
+      "ci_hi": 5.699481865284974,
+      "n": 193,
+      "n_units": 193
+     },
+     "edit.paraphrase.exact": {
+      "value": 0.6666666666666666,
+      "ci_lo": 0.16666666666666666,
+      "ci_hi": 1.3333333333333333,
+      "n": 600,
+      "n_units": 300
+     },
+     "edit.paraphrase.exact.before": {
+      "value": 0.4672897196261682,
+      "ci_lo": 0.0,
+      "ci_hi": 1.4018691588785046,
+      "n": 214,
+      "n_units": 107
+     },
+     "edit.paraphrase.exact.from": {
+      "value": 0.7772020725388601,
+      "ci_lo": 0.0,
+      "ci_hi": 1.8134715025906736,
+      "n": 386,
+      "n_units": 193
+     },
+     "heldout.D1_tf": {
+      "value": 100.0,
+      "ci_lo": 100.0,
+      "ci_hi": 100.0,
+      "n": 900,
+      "n_units": 300
+     },
+     "neighborhood.D1_tf": {
+      "value": 100.0,
+      "ci_lo": 100.0,
+      "ci_hi": 100.0,
+      "n": 3000,
+      "n_units": 300
+     }
+    },
+    "silent_prompts": {
+     "silent_tf.n": null,
+     "silent_tf.n_D1": null,
+     "silent_dec.n": null,
+     "silent_dec.n_D1": null
+    },
+    "max_abs_diff_same_rows": 0.0
+   },
+   "preedit": {
+    "n_rows_mine": 4800,
+    "n_rows_found_in_experiment": 4800,
+    "row_level_differences": {
+     "D1_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "D1_dec": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "new_exact": {
+      "n_compared": 900,
+      "n_differ": 0
+     },
+     "first_changed_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "dec_first": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "kept_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     }
+    },
+    "aggregates": {
+     "edit.request.exact": {
+      "mine_on_sample": 0.33333333333333337,
+      "n_sample": 300,
+      "experiment_on_same_rows": 0.33333333333333337,
+      "experiment_all_rows_draw0_from_its_rows": 0.2,
+      "n_all": 500,
+      "experiment_summary_value_mean_over_draws": 0.2,
+      "experiment_summary_ci": [
+       0.0,
+       0.6
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact": {
+      "mine_on_sample": 0.5,
+      "n_sample": 600,
+      "experiment_on_same_rows": 0.5,
+      "experiment_all_rows_draw0_from_its_rows": 0.3,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 0.3,
+      "experiment_summary_ci": [
+       0.0,
+       0.7000000000000001
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_tf": {
+      "mine_on_sample": 0.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.kept_tf": {
+      "mine_on_sample": 100.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.first_changed_tf": {
+      "mine_on_sample": 0.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf": {
+      "mine_on_sample": 0.0,
+      "n_sample": 3000,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 5000,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_dec": {
+      "mine_on_sample": 0.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.before": {
+      "mine_on_sample": 0.0,
+      "n_sample": 107,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 173,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.from": {
+      "mine_on_sample": 0.5181347150259068,
+      "n_sample": 193,
+      "experiment_on_same_rows": 0.5181347150259068,
+      "experiment_all_rows_draw0_from_its_rows": 0.3058103975535168,
+      "n_all": 327,
+      "experiment_summary_value_mean_over_draws": 0.3058103975535168,
+      "experiment_summary_ci": [
+       0.0,
+       0.9174311926605505
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.before": {
+      "mine_on_sample": 1.4018691588785046,
+      "n_sample": 214,
+      "experiment_on_same_rows": 1.4018691588785046,
+      "experiment_all_rows_draw0_from_its_rows": 0.8670520231213872,
+      "n_all": 346,
+      "experiment_summary_value_mean_over_draws": 0.8670520231213873,
+      "experiment_summary_ci": [
+       0.0,
+       2.023121387283237
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.from": {
+      "mine_on_sample": 0.0,
+      "n_sample": 386,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 654,
+      "experiment_summary_value_mean_over_draws": 0.0,
+      "experiment_summary_ci": [
+       0.0,
+       0.0
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.before": {
+      "mine_on_sample": 0.0,
+      "n_sample": 1070,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 1730,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.from": {
+      "mine_on_sample": 0.0,
+      "n_sample": 1930,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 3270,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     }
+    },
+    "my_stats_with_ci": {
+     "edit.request.exact": {
+      "value": 0.3333333333333333,
+      "ci_lo": 0.0,
+      "ci_hi": 1.0,
+      "n": 300,
+      "n_units": 300
+     },
+     "edit.request.exact.before": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 107,
+      "n_units": 107
+     },
+     "edit.request.exact.from": {
+      "value": 0.5181347150259067,
+      "ci_lo": 0.0,
+      "ci_hi": 1.5544041450777202,
+      "n": 193,
+      "n_units": 193
+     },
+     "edit.paraphrase.exact": {
+      "value": 0.5,
+      "ci_lo": 0.0,
+      "ci_hi": 1.1666666666666667,
+      "n": 600,
+      "n_units": 300
+     },
+     "edit.paraphrase.exact.before": {
+      "value": 1.4018691588785046,
+      "ci_lo": 0.0,
+      "ci_hi": 3.2710280373831777,
+      "n": 214,
+      "n_units": 107
+     },
+     "edit.paraphrase.exact.from": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 386,
+      "n_units": 193
+     },
+     "heldout.D1_tf": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 900,
+      "n_units": 300
+     },
+     "neighborhood.D1_tf": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 3000,
+      "n_units": 300
+     }
+    },
+    "silent_prompts": {
+     "silent_tf.n": null,
+     "silent_tf.n_D1": null,
+     "silent_dec.n": null,
+     "silent_dec.n_D1": null
+    },
+    "max_abs_diff_same_rows": 0.0
+   },
+   "where_twoblock": {
+    "n_rows_mine": 4800,
+    "n_rows_found_in_experiment": 4800,
+    "row_level_differences": {
+     "D1_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "D1_dec": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "new_exact": {
+      "n_compared": 900,
+      "n_differ": 0
+     },
+     "fired": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "fired_dec": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "first_changed_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "dec_first": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "kept_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "own_released": {
+      "n_compared": 3900,
+      "n_differ": 0
+     },
+     "own_released_dec": {
+      "n_compared": 3900,
+      "n_differ": 0
+     }
+    },
+    "aggregates": {
+     "edit.request.exact": {
+      "mine_on_sample": 2.3333333333333335,
+      "n_sample": 300,
+      "experiment_on_same_rows": 2.3333333333333335,
+      "experiment_all_rows_draw0_from_its_rows": 2.1999999999999997,
+      "n_all": 500,
+      "experiment_summary_value_mean_over_draws": 2.2,
+      "experiment_summary_ci": [
+       1.0,
+       3.5999999999999996
+      ],
+      "experiment_summary_draw0": 2.1999999999999997,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact": {
+      "mine_on_sample": 0.8333333333333334,
+      "n_sample": 600,
+      "experiment_on_same_rows": 0.8333333333333334,
+      "experiment_all_rows_draw0_from_its_rows": 0.7000000000000001,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 1.1666666666666667,
+      "experiment_summary_ci": [
+       0.36666666666666664,
+       2.1333333333333333
+      ],
+      "experiment_summary_draw0": 0.7000000000000001,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_tf": {
+      "mine_on_sample": 100.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.kept_tf": {
+      "mine_on_sample": 4.144444444444444,
+      "n_sample": 900,
+      "experiment_on_same_rows": 4.144444444444444,
+      "experiment_all_rows_draw0_from_its_rows": 4.033333333333333,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 4.028888888888889,
+      "experiment_summary_ci": [
+       3.7866388888888887,
+       4.263333333333334
+      ],
+      "experiment_summary_draw0": 4.033333333333333,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.first_changed_tf": {
+      "mine_on_sample": 96.66666666666667,
+      "n_sample": 900,
+      "experiment_on_same_rows": 96.66666666666667,
+      "experiment_all_rows_draw0_from_its_rows": 97.23333333333333,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 97.22222222222223,
+      "experiment_summary_ci": [
+       96.6,
+       97.8225
+      ],
+      "experiment_summary_draw0": 97.23333333333333,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf": {
+      "mine_on_sample": 100.0,
+      "n_sample": 3000,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 5000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_dec": {
+      "mine_on_sample": 100.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.fired": {
+      "mine_on_sample": 100.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.fired": {
+      "mine_on_sample": 100.0,
+      "n_sample": 3000,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 5000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.own_released": {
+      "mine_on_sample": 20.666666666666668,
+      "n_sample": 600,
+      "experiment_on_same_rows": 20.666666666666668,
+      "experiment_all_rows_draw0_from_its_rows": 22.900000000000002,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 67.46666666666667,
+      "experiment_summary_ci": [
+       23.3,
+       94.89999999999999
+      ],
+      "experiment_summary_draw0": 22.900000000000002,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.before": {
+      "mine_on_sample": 0.9345794392523363,
+      "n_sample": 107,
+      "experiment_on_same_rows": 0.9345794392523363,
+      "experiment_all_rows_draw0_from_its_rows": 1.1560693641618496,
+      "n_all": 173,
+      "experiment_summary_value_mean_over_draws": 1.1560693641618498,
+      "experiment_summary_ci": [
+       0.0,
+       2.8901734104046244
+      ],
+      "experiment_summary_draw0": 1.1560693641618496,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.from": {
+      "mine_on_sample": 3.1088082901554404,
+      "n_sample": 193,
+      "experiment_on_same_rows": 3.1088082901554404,
+      "experiment_all_rows_draw0_from_its_rows": 2.7522935779816518,
+      "n_all": 327,
+      "experiment_summary_value_mean_over_draws": 2.7522935779816513,
+      "experiment_summary_ci": [
+       1.2232415902140672,
+       4.587155963302752
+      ],
+      "experiment_summary_draw0": 2.7522935779816518,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.before": {
+      "mine_on_sample": 0.9345794392523363,
+      "n_sample": 214,
+      "experiment_on_same_rows": 0.9345794392523363,
+      "experiment_all_rows_draw0_from_its_rows": 0.5780346820809248,
+      "n_all": 346,
+      "experiment_summary_value_mean_over_draws": 0.5780346820809249,
+      "experiment_summary_ci": [
+       0.0,
+       1.7341040462427744
+      ],
+      "experiment_summary_draw0": 0.5780346820809248,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.from": {
+      "mine_on_sample": 0.7772020725388601,
+      "n_sample": 386,
+      "experiment_on_same_rows": 0.7772020725388601,
+      "experiment_all_rows_draw0_from_its_rows": 0.764525993883792,
+      "n_all": 654,
+      "experiment_summary_value_mean_over_draws": 1.4780835881753314,
+      "experiment_summary_ci": [
+       0.3567787971457696,
+       2.803261977573904
+      ],
+      "experiment_summary_draw0": 0.764525993883792,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.before": {
+      "mine_on_sample": 100.0,
+      "n_sample": 1070,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 1730,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.from": {
+      "mine_on_sample": 100.0,
+      "n_sample": 1930,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3270,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     }
+    },
+    "my_stats_with_ci": {
+     "edit.request.exact": {
+      "value": 2.3333333333333335,
+      "ci_lo": 0.6666666666666666,
+      "ci_hi": 4.0,
+      "n": 300,
+      "n_units": 300
+     },
+     "edit.request.exact.before": {
+      "value": 0.9345794392523364,
+      "ci_lo": 0.0,
+      "ci_hi": 2.803738317757009,
+      "n": 107,
+      "n_units": 107
+     },
+     "edit.request.exact.from": {
+      "value": 3.1088082901554404,
+      "ci_lo": 1.0362694300518134,
+      "ci_hi": 5.699481865284974,
+      "n": 193,
+      "n_units": 193
+     },
+     "edit.paraphrase.exact": {
+      "value": 0.8333333333333334,
+      "ci_lo": 0.0,
+      "ci_hi": 2.0,
+      "n": 600,
+      "n_units": 300
+     },
+     "edit.paraphrase.exact.before": {
+      "value": 0.9345794392523364,
+      "ci_lo": 0.0,
+      "ci_hi": 2.803738317757009,
+      "n": 214,
+      "n_units": 107
+     },
+     "edit.paraphrase.exact.from": {
+      "value": 0.7772020725388601,
+      "ci_lo": 0.0,
+      "ci_hi": 2.0725388601036268,
+      "n": 386,
+      "n_units": 193
+     },
+     "heldout.D1_tf": {
+      "value": 100.0,
+      "ci_lo": 100.0,
+      "ci_hi": 100.0,
+      "n": 900,
+      "n_units": 300
+     },
+     "heldout.fired": {
+      "value": 100.0,
+      "ci_lo": 100.0,
+      "ci_hi": 100.0,
+      "n": 900,
+      "n_units": 300
+     },
+     "neighborhood.D1_tf": {
+      "value": 100.0,
+      "ci_lo": 100.0,
+      "ci_hi": 100.0,
+      "n": 3000,
+      "n_units": 300
+     }
+    },
+    "silent_prompts": {
+     "silent_tf.n": 0,
+     "silent_tf.n_D1": 0,
+     "silent_dec.n": 0,
+     "silent_dec.n_D1": 0
+    },
+    "max_abs_diff_same_rows": 0.0
+   },
+   "rescope": {
+    "n_rows_mine": 4800,
+    "n_rows_found_in_experiment": 4800,
+    "row_level_differences": {
+     "D1_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "D1_dec": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "new_exact": {
+      "n_compared": 900,
+      "n_differ": 0
+     },
+     "fired": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "fired_dec": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "first_changed_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "dec_first": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "kept_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "own_released": {
+      "n_compared": 3900,
+      "n_differ": 0
+     },
+     "own_released_dec": {
+      "n_compared": 3900,
+      "n_differ": 0
+     }
+    },
+    "aggregates": {
+     "edit.request.exact": {
+      "mine_on_sample": 10.666666666666668,
+      "n_sample": 300,
+      "experiment_on_same_rows": 10.666666666666668,
+      "experiment_all_rows_draw0_from_its_rows": 12.8,
+      "n_all": 500,
+      "experiment_summary_value_mean_over_draws": 13.2,
+      "experiment_summary_ci": [
+       10.0,
+       16.400000000000002
+      ],
+      "experiment_summary_draw0": 12.8,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact": {
+      "mine_on_sample": 1.8333333333333333,
+      "n_sample": 600,
+      "experiment_on_same_rows": 1.8333333333333333,
+      "experiment_all_rows_draw0_from_its_rows": 2.1,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 6.3,
+      "experiment_summary_ci": [
+       2.1999999999999997,
+       10.233333333333333
+      ],
+      "experiment_summary_draw0": 2.1,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_tf": {
+      "mine_on_sample": 100.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.kept_tf": {
+      "mine_on_sample": 10.055555555555557,
+      "n_sample": 900,
+      "experiment_on_same_rows": 10.055555555555557,
+      "experiment_all_rows_draw0_from_its_rows": 9.96,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 11.723333333333331,
+      "experiment_summary_ci": [
+       9.869916666666668,
+       14.7035
+      ],
+      "experiment_summary_draw0": 9.96,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.first_changed_tf": {
+      "mine_on_sample": 91.33333333333333,
+      "n_sample": 900,
+      "experiment_on_same_rows": 91.33333333333333,
+      "experiment_all_rows_draw0_from_its_rows": 91.56666666666666,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 89.0111111111111,
+      "experiment_summary_ci": [
+       84.36583333333334,
+       92.22305555555556
+      ],
+      "experiment_summary_draw0": 91.56666666666666,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf": {
+      "mine_on_sample": 100.0,
+      "n_sample": 3000,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 5000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_dec": {
+      "mine_on_sample": 100.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.fired": {
+      "mine_on_sample": 100.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.fired": {
+      "mine_on_sample": 100.0,
+      "n_sample": 3000,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 5000,
+      "experiment_summary_value_mean_over_draws": 100.0,
+      "experiment_summary_ci": [
+       100.0,
+       100.0
+      ],
+      "experiment_summary_draw0": 100.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.own_released": {
+      "mine_on_sample": 20.5,
+      "n_sample": 600,
+      "experiment_on_same_rows": 20.5,
+      "experiment_all_rows_draw0_from_its_rows": 22.8,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 67.2,
+      "experiment_summary_ci": [
+       23.0975,
+       94.39999999999999
+      ],
+      "experiment_summary_draw0": 22.8,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.before": {
+      "mine_on_sample": 14.953271028037381,
+      "n_sample": 107,
+      "experiment_on_same_rows": 14.953271028037381,
+      "experiment_all_rows_draw0_from_its_rows": 15.028901734104046,
+      "n_all": 173,
+      "experiment_summary_value_mean_over_draws": 15.606936416184972,
+      "experiment_summary_ci": [
+       10.404624277456648,
+       21.19460500963391
+      ],
+      "experiment_summary_draw0": 15.028901734104046,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.from": {
+      "mine_on_sample": 8.290155440414509,
+      "n_sample": 193,
+      "experiment_on_same_rows": 8.290155440414509,
+      "experiment_all_rows_draw0_from_its_rows": 11.62079510703364,
+      "n_all": 327,
+      "experiment_summary_value_mean_over_draws": 11.926605504587156,
+      "experiment_summary_ci": [
+       8.56269113149847,
+       15.392456676860347
+      ],
+      "experiment_summary_draw0": 11.62079510703364,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.before": {
+      "mine_on_sample": 3.2710280373831773,
+      "n_sample": 214,
+      "experiment_on_same_rows": 3.2710280373831773,
+      "experiment_all_rows_draw0_from_its_rows": 3.4682080924855487,
+      "n_all": 346,
+      "experiment_summary_value_mean_over_draws": 7.129094412331407,
+      "experiment_summary_ci": [
+       3.1791907514450863,
+       11.560693641618498
+      ],
+      "experiment_summary_draw0": 3.4682080924855487,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.from": {
+      "mine_on_sample": 1.0362694300518136,
+      "n_sample": 386,
+      "experiment_on_same_rows": 1.0362694300518136,
+      "experiment_all_rows_draw0_from_its_rows": 1.3761467889908259,
+      "n_all": 654,
+      "experiment_summary_value_mean_over_draws": 5.861365953109073,
+      "experiment_summary_ci": [
+       1.3761467889908259,
+       10.295616717635065
+      ],
+      "experiment_summary_draw0": 1.3761467889908259,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.before": {
+      "mine_on_sample": 100.0,
+      "n_sample": 1070,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 1730,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.from": {
+      "mine_on_sample": 100.0,
+      "n_sample": 1930,
+      "experiment_on_same_rows": 100.0,
+      "experiment_all_rows_draw0_from_its_rows": 100.0,
+      "n_all": 3270,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     }
+    },
+    "my_stats_with_ci": {
+     "edit.request.exact": {
+      "value": 10.666666666666666,
+      "ci_lo": 7.333333333333333,
+      "ci_hi": 14.333333333333334,
+      "n": 300,
+      "n_units": 300
+     },
+     "edit.request.exact.before": {
+      "value": 14.953271028037383,
+      "ci_lo": 8.411214953271028,
+      "ci_hi": 21.49532710280374,
+      "n": 107,
+      "n_units": 107
+     },
+     "edit.request.exact.from": {
+      "value": 8.290155440414507,
+      "ci_lo": 4.66321243523316,
+      "ci_hi": 12.435233160621761,
+      "n": 193,
+      "n_units": 193
+     },
+     "edit.paraphrase.exact": {
+      "value": 1.8333333333333333,
+      "ci_lo": 0.8333333333333334,
+      "ci_hi": 3.1666666666666665,
+      "n": 600,
+      "n_units": 300
+     },
+     "edit.paraphrase.exact.before": {
+      "value": 3.2710280373831777,
+      "ci_lo": 0.9345794392523364,
+      "ci_hi": 6.074766355140187,
+      "n": 214,
+      "n_units": 107
+     },
+     "edit.paraphrase.exact.from": {
+      "value": 1.0362694300518134,
+      "ci_lo": 0.25906735751295334,
+      "ci_hi": 2.33160621761658,
+      "n": 386,
+      "n_units": 193
+     },
+     "heldout.D1_tf": {
+      "value": 100.0,
+      "ci_lo": 100.0,
+      "ci_hi": 100.0,
+      "n": 900,
+      "n_units": 300
+     },
+     "heldout.fired": {
+      "value": 100.0,
+      "ci_lo": 100.0,
+      "ci_hi": 100.0,
+      "n": 900,
+      "n_units": 300
+     },
+     "neighborhood.D1_tf": {
+      "value": 100.0,
+      "ci_lo": 100.0,
+      "ci_hi": 100.0,
+      "n": 3000,
+      "n_units": 300
+     }
+    },
+    "silent_prompts": {
+     "silent_tf.n": 0,
+     "silent_tf.n_D1": 0,
+     "silent_dec.n": 0,
+     "silent_dec.n_D1": 0
+    },
+    "max_abs_diff_same_rows": 0.0
+   },
+   "where_twoblock@goff": {
+    "n_rows_mine": 4800,
+    "n_rows_found_in_experiment": 4800,
+    "row_level_differences": {
+     "D1_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "D1_dec": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "new_exact": {
+      "n_compared": 900,
+      "n_differ": 0
+     },
+     "fired": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "fired_dec": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "first_changed_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "dec_first": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "kept_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "own_released": {
+      "n_compared": 3900,
+      "n_differ": 0
+     },
+     "own_released_dec": {
+      "n_compared": 3900,
+      "n_differ": 0
+     }
+    },
+    "aggregates": {
+     "edit.request.exact": {
+      "mine_on_sample": 0.33333333333333337,
+      "n_sample": 300,
+      "experiment_on_same_rows": 0.33333333333333337,
+      "experiment_all_rows_draw0_from_its_rows": 0.2,
+      "n_all": 500,
+      "experiment_summary_value_mean_over_draws": 24.333333333333332,
+      "experiment_summary_ci": [
+       0.2,
+       39.20166666666666
+      ],
+      "experiment_summary_draw0": 0.2,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact": {
+      "mine_on_sample": 0.6666666666666667,
+      "n_sample": 600,
+      "experiment_on_same_rows": 0.6666666666666667,
+      "experiment_all_rows_draw0_from_its_rows": 0.7000000000000001,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 16.733333333333334,
+      "experiment_summary_ci": [
+       0.8,
+       27.1
+      ],
+      "experiment_summary_draw0": 0.7000000000000001,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_tf": {
+      "mine_on_sample": 3.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 3.0,
+      "experiment_all_rows_draw0_from_its_rows": 2.466666666666667,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 4.4,
+      "experiment_summary_ci": [
+       2.4,
+       6.511388888888886
+      ],
+      "experiment_summary_draw0": 2.466666666666667,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.kept_tf": {
+      "mine_on_sample": 98.06666666666666,
+      "n_sample": 900,
+      "experiment_on_same_rows": 98.06666666666666,
+      "experiment_all_rows_draw0_from_its_rows": 98.50333333333333,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 97.6988888888889,
+      "experiment_summary_ci": [
+       96.82658333333332,
+       98.59674999999999
+      ],
+      "experiment_summary_draw0": 98.50333333333333,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.first_changed_tf": {
+      "mine_on_sample": 1.4444444444444444,
+      "n_sample": 900,
+      "experiment_on_same_rows": 1.4444444444444444,
+      "experiment_all_rows_draw0_from_its_rows": 1.0333333333333332,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 2.066666666666667,
+      "experiment_summary_ci": [
+       0.9775,
+       3.1333333333333333
+      ],
+      "experiment_summary_draw0": 1.0333333333333332,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf": {
+      "mine_on_sample": 0.4333333333333333,
+      "n_sample": 3000,
+      "experiment_on_same_rows": 0.4333333333333333,
+      "experiment_all_rows_draw0_from_its_rows": 0.5599999999999999,
+      "n_all": 5000,
+      "experiment_summary_value_mean_over_draws": 2.6466666666666665,
+      "experiment_summary_ci": [
+       0.58,
+       4.640333333333332
+      ],
+      "experiment_summary_draw0": 0.5599999999999999,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_dec": {
+      "mine_on_sample": 3.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 3.0,
+      "experiment_all_rows_draw0_from_its_rows": 2.466666666666667,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 4.4,
+      "experiment_summary_ci": [
+       2.4,
+       6.511388888888886
+      ],
+      "experiment_summary_draw0": 2.466666666666667,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.fired": {
+      "mine_on_sample": 3.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 3.0,
+      "experiment_all_rows_draw0_from_its_rows": 2.466666666666667,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 4.488888888888889,
+      "experiment_summary_ci": [
+       2.4,
+       6.689166666666664
+      ],
+      "experiment_summary_draw0": 2.466666666666667,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.fired": {
+      "mine_on_sample": 0.46666666666666673,
+      "n_sample": 3000,
+      "experiment_on_same_rows": 0.46666666666666673,
+      "experiment_all_rows_draw0_from_its_rows": 0.58,
+      "n_all": 5000,
+      "experiment_summary_value_mean_over_draws": 2.84,
+      "experiment_summary_ci": [
+       0.6,
+       5.040499999999997
+      ],
+      "experiment_summary_draw0": 0.58,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.own_released": {
+      "mine_on_sample": 1.0,
+      "n_sample": 600,
+      "experiment_on_same_rows": 1.0,
+      "experiment_all_rows_draw0_from_its_rows": 1.5,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 60.0,
+      "experiment_summary_ci": [
+       1.6,
+       94.39999999999999
+      ],
+      "experiment_summary_draw0": 1.5,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.before": {
+      "mine_on_sample": 0.0,
+      "n_sample": 107,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 173,
+      "experiment_summary_value_mean_over_draws": 56.64739884393064,
+      "experiment_summary_ci": [
+       0.0,
+       88.4393063583815
+      ],
+      "experiment_summary_draw0": 0.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.from": {
+      "mine_on_sample": 0.5181347150259068,
+      "n_sample": 193,
+      "experiment_on_same_rows": 0.5181347150259068,
+      "experiment_all_rows_draw0_from_its_rows": 0.3058103975535168,
+      "n_all": 327,
+      "experiment_summary_value_mean_over_draws": 7.237512742099898,
+      "experiment_summary_ci": [
+       0.3058103975535168,
+       13.149847094801222
+      ],
+      "experiment_summary_draw0": 0.3058103975535168,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.before": {
+      "mine_on_sample": 1.8691588785046727,
+      "n_sample": 214,
+      "experiment_on_same_rows": 1.8691588785046727,
+      "experiment_all_rows_draw0_from_its_rows": 1.4450867052023122,
+      "n_all": 346,
+      "experiment_summary_value_mean_over_draws": 36.030828516377646,
+      "experiment_summary_ci": [
+       1.4450867052023122,
+       57.80346820809249
+      ],
+      "experiment_summary_draw0": 1.4450867052023122,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.from": {
+      "mine_on_sample": 0.0,
+      "n_sample": 386,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.3058103975535168,
+      "n_all": 654,
+      "experiment_summary_value_mean_over_draws": 6.523955147808358,
+      "experiment_summary_ci": [
+       0.3058103975535168,
+       11.520132517838933
+      ],
+      "experiment_summary_draw0": 0.3058103975535168,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.before": {
+      "mine_on_sample": 0.3738317757009346,
+      "n_sample": 1070,
+      "experiment_on_same_rows": 0.3738317757009346,
+      "experiment_all_rows_draw0_from_its_rows": 0.8092485549132947,
+      "n_all": 1730,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.from": {
+      "mine_on_sample": 0.466321243523316,
+      "n_sample": 1930,
+      "experiment_on_same_rows": 0.466321243523316,
+      "experiment_all_rows_draw0_from_its_rows": 0.42813455657492355,
+      "n_all": 3270,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     }
+    },
+    "my_stats_with_ci": {
+     "edit.request.exact": {
+      "value": 0.3333333333333333,
+      "ci_lo": 0.0,
+      "ci_hi": 1.0,
+      "n": 300,
+      "n_units": 300
+     },
+     "edit.request.exact.before": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 107,
+      "n_units": 107
+     },
+     "edit.request.exact.from": {
+      "value": 0.5181347150259067,
+      "ci_lo": 0.0,
+      "ci_hi": 1.5544041450777202,
+      "n": 193,
+      "n_units": 193
+     },
+     "edit.paraphrase.exact": {
+      "value": 0.6666666666666666,
+      "ci_lo": 0.16666666666666666,
+      "ci_hi": 1.3333333333333333,
+      "n": 600,
+      "n_units": 300
+     },
+     "edit.paraphrase.exact.before": {
+      "value": 1.8691588785046729,
+      "ci_lo": 0.4672897196261682,
+      "ci_hi": 3.7383177570093458,
+      "n": 214,
+      "n_units": 107
+     },
+     "edit.paraphrase.exact.from": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 386,
+      "n_units": 193
+     },
+     "heldout.D1_tf": {
+      "value": 3.0,
+      "ci_lo": 1.7777777777777777,
+      "ci_hi": 4.333333333333333,
+      "n": 900,
+      "n_units": 300
+     },
+     "heldout.fired": {
+      "value": 3.0,
+      "ci_lo": 1.7777777777777777,
+      "ci_hi": 4.333333333333333,
+      "n": 900,
+      "n_units": 300
+     },
+     "neighborhood.D1_tf": {
+      "value": 0.43333333333333335,
+      "ci_lo": 0.2,
+      "ci_hi": 0.7333333333333333,
+      "n": 3000,
+      "n_units": 300
+     }
+    },
+    "silent_prompts": {
+     "silent_tf.n": 4731,
+     "silent_tf.n_D1": 0,
+     "silent_dec.n": 4731,
+     "silent_dec.n_D1": 0
+    },
+    "max_abs_diff_same_rows": 0.0
+   },
+   "rescope@goff": {
+    "n_rows_mine": 4800,
+    "n_rows_found_in_experiment": 4800,
+    "row_level_differences": {
+     "D1_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "D1_dec": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "new_exact": {
+      "n_compared": 900,
+      "n_differ": 0
+     },
+     "fired": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "fired_dec": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "first_changed_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "dec_first": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "kept_tf": {
+      "n_compared": 4800,
+      "n_differ": 0
+     },
+     "own_released": {
+      "n_compared": 3900,
+      "n_differ": 0
+     },
+     "own_released_dec": {
+      "n_compared": 3900,
+      "n_differ": 0
+     }
+    },
+    "aggregates": {
+     "edit.request.exact": {
+      "mine_on_sample": 0.33333333333333337,
+      "n_sample": 300,
+      "experiment_on_same_rows": 0.33333333333333337,
+      "experiment_all_rows_draw0_from_its_rows": 0.2,
+      "n_all": 500,
+      "experiment_summary_value_mean_over_draws": 25.8,
+      "experiment_summary_ci": [
+       0.2,
+       41.60333333333332
+      ],
+      "experiment_summary_draw0": 0.2,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact": {
+      "mine_on_sample": 0.6666666666666667,
+      "n_sample": 600,
+      "experiment_on_same_rows": 0.6666666666666667,
+      "experiment_all_rows_draw0_from_its_rows": 0.5,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 19.1,
+      "experiment_summary_ci": [
+       0.5,
+       31.2
+      ],
+      "experiment_summary_draw0": 0.5,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_tf": {
+      "mine_on_sample": 3.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 3.0,
+      "experiment_all_rows_draw0_from_its_rows": 2.466666666666667,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 4.466666666666667,
+      "experiment_summary_ci": [
+       2.4,
+       6.666666666666667
+      ],
+      "experiment_summary_draw0": 2.466666666666667,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.kept_tf": {
+      "mine_on_sample": 98.57777777777778,
+      "n_sample": 900,
+      "experiment_on_same_rows": 98.57777777777778,
+      "experiment_all_rows_draw0_from_its_rows": 98.85666666666665,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 97.64888888888889,
+      "experiment_summary_ci": [
+       96.31983333333332,
+       98.86675000000001
+      ],
+      "experiment_summary_draw0": 98.85666666666665,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.first_changed_tf": {
+      "mine_on_sample": 1.4444444444444444,
+      "n_sample": 900,
+      "experiment_on_same_rows": 1.4444444444444444,
+      "experiment_all_rows_draw0_from_its_rows": 0.8999999999999999,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 2.111111111111111,
+      "experiment_summary_ci": [
+       0.8666666666666666,
+       3.4558333333333313
+      ],
+      "experiment_summary_draw0": 0.8999999999999999,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf": {
+      "mine_on_sample": 0.4333333333333333,
+      "n_sample": 3000,
+      "experiment_on_same_rows": 0.4333333333333333,
+      "experiment_all_rows_draw0_from_its_rows": 0.5599999999999999,
+      "n_all": 5000,
+      "experiment_summary_value_mean_over_draws": 2.7733333333333334,
+      "experiment_summary_ci": [
+       0.58,
+       4.9334999999999996
+      ],
+      "experiment_summary_draw0": 0.5599999999999999,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.D1_dec": {
+      "mine_on_sample": 3.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 3.0,
+      "experiment_all_rows_draw0_from_its_rows": 2.466666666666667,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 4.466666666666667,
+      "experiment_summary_ci": [
+       2.4,
+       6.666666666666667
+      ],
+      "experiment_summary_draw0": 2.466666666666667,
+      "abs_diff_same_rows": 0.0
+     },
+     "heldout.fired": {
+      "mine_on_sample": 3.0,
+      "n_sample": 900,
+      "experiment_on_same_rows": 3.0,
+      "experiment_all_rows_draw0_from_its_rows": 2.466666666666667,
+      "n_all": 3000,
+      "experiment_summary_value_mean_over_draws": 4.488888888888889,
+      "experiment_summary_ci": [
+       2.4,
+       6.689166666666664
+      ],
+      "experiment_summary_draw0": 2.466666666666667,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.fired": {
+      "mine_on_sample": 0.46666666666666673,
+      "n_sample": 3000,
+      "experiment_on_same_rows": 0.46666666666666673,
+      "experiment_all_rows_draw0_from_its_rows": 0.58,
+      "n_all": 5000,
+      "experiment_summary_value_mean_over_draws": 2.84,
+      "experiment_summary_ci": [
+       0.6,
+       5.040499999999997
+      ],
+      "experiment_summary_draw0": 0.58,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.own_released": {
+      "mine_on_sample": 1.0,
+      "n_sample": 600,
+      "experiment_on_same_rows": 1.0,
+      "experiment_all_rows_draw0_from_its_rows": 1.5,
+      "n_all": 1000,
+      "experiment_summary_value_mean_over_draws": 59.766666666666666,
+      "experiment_summary_ci": [
+       1.6,
+       94.0
+      ],
+      "experiment_summary_draw0": 1.5,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.before": {
+      "mine_on_sample": 0.0,
+      "n_sample": 107,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 173,
+      "experiment_summary_value_mean_over_draws": 64.35452793834297,
+      "experiment_summary_ci": [
+       0.0,
+       98.0780346820809
+      ],
+      "experiment_summary_draw0": 0.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.request.exact.from": {
+      "mine_on_sample": 0.5181347150259068,
+      "n_sample": 193,
+      "experiment_on_same_rows": 0.5181347150259068,
+      "experiment_all_rows_draw0_from_its_rows": 0.3058103975535168,
+      "n_all": 327,
+      "experiment_summary_value_mean_over_draws": 5.402650356778797,
+      "experiment_summary_ci": [
+       0.3058103975535168,
+       10.091743119266056
+      ],
+      "experiment_summary_draw0": 0.3058103975535168,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.before": {
+      "mine_on_sample": 1.8691588785046727,
+      "n_sample": 214,
+      "experiment_on_same_rows": 1.8691588785046727,
+      "experiment_all_rows_draw0_from_its_rows": 1.4450867052023122,
+      "n_all": 346,
+      "experiment_summary_value_mean_over_draws": 46.33911368015414,
+      "experiment_summary_ci": [
+       1.4450867052023122,
+       73.02745664739884
+      ],
+      "experiment_summary_draw0": 1.4450867052023122,
+      "abs_diff_same_rows": 0.0
+     },
+     "edit.paraphrase.exact.from": {
+      "mine_on_sample": 0.0,
+      "n_sample": 386,
+      "experiment_on_same_rows": 0.0,
+      "experiment_all_rows_draw0_from_its_rows": 0.0,
+      "n_all": 654,
+      "experiment_summary_value_mean_over_draws": 4.689092762487258,
+      "experiment_summary_ci": [
+       0.0,
+       9.021406727828746
+      ],
+      "experiment_summary_draw0": 0.0,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.before": {
+      "mine_on_sample": 0.3738317757009346,
+      "n_sample": 1070,
+      "experiment_on_same_rows": 0.3738317757009346,
+      "experiment_all_rows_draw0_from_its_rows": 0.8092485549132947,
+      "n_all": 1730,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     },
+     "neighborhood.D1_tf.from": {
+      "mine_on_sample": 0.466321243523316,
+      "n_sample": 1930,
+      "experiment_on_same_rows": 0.466321243523316,
+      "experiment_all_rows_draw0_from_its_rows": 0.42813455657492355,
+      "n_all": 3270,
+      "experiment_summary_value_mean_over_draws": null,
+      "experiment_summary_ci": [
+       null,
+       null
+      ],
+      "experiment_summary_draw0": null,
+      "abs_diff_same_rows": 0.0
+     }
+    },
+    "my_stats_with_ci": {
+     "edit.request.exact": {
+      "value": 0.3333333333333333,
+      "ci_lo": 0.0,
+      "ci_hi": 1.0,
+      "n": 300,
+      "n_units": 300
+     },
+     "edit.request.exact.before": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 107,
+      "n_units": 107
+     },
+     "edit.request.exact.from": {
+      "value": 0.5181347150259067,
+      "ci_lo": 0.0,
+      "ci_hi": 1.5544041450777202,
+      "n": 193,
+      "n_units": 193
+     },
+     "edit.paraphrase.exact": {
+      "value": 0.6666666666666666,
+      "ci_lo": 0.16666666666666666,
+      "ci_hi": 1.3333333333333333,
+      "n": 600,
+      "n_units": 300
+     },
+     "edit.paraphrase.exact.before": {
+      "value": 1.8691588785046729,
+      "ci_lo": 0.4672897196261682,
+      "ci_hi": 3.7383177570093458,
+      "n": 214,
+      "n_units": 107
+     },
+     "edit.paraphrase.exact.from": {
+      "value": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 386,
+      "n_units": 193
+     },
+     "heldout.D1_tf": {
+      "value": 3.0,
+      "ci_lo": 1.7777777777777777,
+      "ci_hi": 4.333333333333333,
+      "n": 900,
+      "n_units": 300
+     },
+     "heldout.fired": {
+      "value": 3.0,
+      "ci_lo": 1.7777777777777777,
+      "ci_hi": 4.333333333333333,
+      "n": 900,
+      "n_units": 300
+     },
+     "neighborhood.D1_tf": {
+      "value": 0.43333333333333335,
+      "ci_lo": 0.2,
+      "ci_hi": 0.7333333333333333,
+      "n": 3000,
+      "n_units": 300
+     }
+    },
+    "silent_prompts": {
+     "silent_tf.n": 4731,
+     "silent_tf.n_D1": 0,
+     "silent_dec.n": 4731,
+     "silent_dec.n_D1": 0
+    },
+    "max_abs_diff_same_rows": 0.0
+   }
+  }
+ },
+ "public": {
+  "TX-G2XL-rome-T100": {
+   "deployed": {
+    "n_records": 100,
+    "max_abs_probability_difference": 0.0,
+    "n_records_with_any_difference": 0,
+    "n_comparisons_flipped": 0,
+    "public_summariser_on_my_files": {
+     "n": 100,
+     "ES": 100.0,
+     "PS": 98.5,
+     "NS": 66.8,
+     "EM": 94.9,
+     "PM": 66.59,
+     "NM": 5.1
+    },
+    "my_arithmetic_on_my_files": {
+     "ES": 100.0,
+     "PS": 98.5,
+     "NS": 66.80000000000001
+    },
+    "experiment_files_same_records": {
+     "ES": 100.0,
+     "PS": 98.5,
+     "NS": 66.8
+    },
+    "experiment_reported_draw0_all_records": {
+     "ES": 100.0,
+     "PS": 98.5,
+     "NS": 66.8
+    },
+    "experiment_n_records": 100,
+    "agree": true
+   },
+   "where_twoblock": {
+    "n_records": 100,
+    "max_abs_probability_difference": 0.0,
+    "n_records_with_any_difference": 0,
+    "n_comparisons_flipped": 0,
+    "public_summariser_on_my_files": {
+     "n": 100,
+     "ES": 100.0,
+     "PS": 95.5,
+     "NS": 76.3,
+     "EM": 89.93,
+     "PM": 52.08,
+     "NM": 5.64
+    },
+    "my_arithmetic_on_my_files": {
+     "ES": 100.0,
+     "PS": 95.5,
+     "NS": 76.3
+    },
+    "experiment_files_same_records": {
+     "ES": 100.0,
+     "PS": 95.5,
+     "NS": 76.30000000000001
+    },
+    "experiment_reported_draw0_all_records": {
+     "ES": 100.0,
+     "PS": 95.5,
+     "NS": 76.3
+    },
+    "experiment_n_records": 100,
+    "agree": true
+   }
+  },
+  "TX-G2XL-rome-T500": {
+   "deployed": {
+    "n_records": 300,
+    "max_abs_probability_difference": 0.0,
+    "n_records_with_any_difference": 0,
+    "n_comparisons_flipped": 0,
+    "public_summariser_on_my_files": {
+     "n": 300,
+     "ES": 56.67,
+     "PS": 49.5,
+     "NS": 54.23,
+     "EM": 1.18,
+     "PM": 0.34,
+     "NM": -0.16
+    },
+    "my_arithmetic_on_my_files": {
+     "ES": 56.666666666666664,
+     "PS": 49.5,
+     "NS": 54.23333333333333
+    },
+    "experiment_files_same_records": {
+     "ES": 56.666666666666664,
+     "PS": 49.5,
+     "NS": 54.233333333333334
+    },
+    "experiment_reported_draw0_all_records": {
+     "ES": 57.0,
+     "PS": 52.2,
+     "NS": 52.12
+    },
+    "experiment_n_records": 500,
+    "before": {
+     "public_summariser_on_my_files": {
+      "ES": 46.73,
+      "PS": 42.06,
+      "NS": 53.08,
+      "n": 107
+     },
+     "experiment_files_same_records": {
+      "ES": 46.728971962616825,
+      "PS": 42.05607476635514,
+      "NS": 53.08411214953273
+     },
+     "experiment_reported_draw0_all_records": {
+      "ES": 49.71,
+      "PS": 47.98,
+      "NS": 49.77,
+      "n": 173
+     }
+    },
+    "from": {
+     "public_summariser_on_my_files": {
+      "ES": 62.18,
+      "PS": 53.63,
+      "NS": 54.87,
+      "n": 193
+     },
+     "experiment_files_same_records": {
+      "ES": 62.17616580310881,
+      "PS": 53.626943005181346,
+      "NS": 54.870466321243526
+     },
+     "experiment_reported_draw0_all_records": {
+      "ES": 60.86,
+      "PS": 54.43,
+      "NS": 53.36,
+      "n": 327
+     }
+    },
+    "agree": true
+   },
+   "where_twoblock": {
+    "n_records": 300,
+    "max_abs_probability_difference": 0.0,
+    "n_records_with_any_difference": 0,
+    "n_comparisons_flipped": 0,
+    "public_summariser_on_my_files": {
+     "n": 300,
+     "ES": 55.67,
+     "PS": 45.5,
+     "NS": 55.87,
+     "EM": 1.1,
+     "PM": 0.6,
+     "NM": -0.27
+    },
+    "my_arithmetic_on_my_files": {
+     "ES": 55.666666666666664,
+     "PS": 45.5,
+     "NS": 55.86666666666668
+    },
+    "experiment_files_same_records": {
+     "ES": 55.666666666666664,
+     "PS": 45.5,
+     "NS": 55.866666666666674
+    },
+    "experiment_reported_draw0_all_records": {
+     "ES": 57.4,
+     "PS": 48.0,
+     "NS": 52.94
+    },
+    "experiment_n_records": 500,
+    "before": {
+     "public_summariser_on_my_files": {
+      "ES": 46.73,
+      "PS": 47.66,
+      "NS": 53.18,
+      "n": 107
+     },
+     "experiment_files_same_records": {
+      "ES": 46.728971962616825,
+      "PS": 47.66355140186916,
+      "NS": 53.17757009345795
+     },
+     "experiment_reported_draw0_all_records": {
+      "ES": 50.87,
+      "PS": 51.73,
+      "NS": 49.36,
+      "n": 173
+     }
+    },
+    "from": {
+     "public_summariser_on_my_files": {
+      "ES": 60.62,
+      "PS": 44.3,
+      "NS": 57.36,
+      "n": 193
+     },
+     "experiment_files_same_records": {
+      "ES": 60.62176165803109,
+      "PS": 44.30051813471503,
+      "NS": 57.35751295336787
+     },
+     "experiment_reported_draw0_all_records": {
+      "ES": 60.86,
+      "PS": 46.02,
+      "NS": 54.83,
+      "n": 327
+     }
+    },
+    "agree": true
+   },
+   "where_twoblock@goff": {
+    "n_records": 300,
+    "max_abs_probability_difference": 0.0,
+    "n_records_with_any_difference": 0,
+    "n_comparisons_flipped": 0,
+    "public_summariser_on_my_files": {
+     "n": 300,
+     "ES": 19.33,
+     "PS": 23.17,
+     "NS": 80.0,
+     "EM": -6.04,
+     "PM": -4.24,
+     "NM": 5.08
+    },
+    "my_arithmetic_on_my_files": {
+     "ES": 19.333333333333332,
+     "PS": 23.166666666666668,
+     "NS": 80.0
+    },
+    "experiment_files_same_records": {
+     "ES": 19.333333333333332,
+     "PS": 23.166666666666664,
+     "NS": 80.0
+    },
+    "experiment_reported_draw0_all_records": {
+     "ES": 19.4,
+     "PS": 24.0,
+     "NS": 78.18
+    },
+    "experiment_n_records": 500,
+    "before": {
+     "public_summariser_on_my_files": {
+      "ES": 20.56,
+      "PS": 25.23,
+      "NS": 77.76,
+      "n": 107
+     },
+     "experiment_files_same_records": {
+      "ES": 20.5607476635514,
+      "PS": 25.233644859813083,
+      "NS": 77.75700934579439
+     },
+     "experiment_reported_draw0_all_records": {
+      "ES": 20.23,
+      "PS": 24.28,
+      "NS": 76.36,
+      "n": 173
+     }
+    },
+    "from": {
+     "public_summariser_on_my_files": {
+      "ES": 18.65,
+      "PS": 22.02,
+      "NS": 81.24,
+      "n": 193
+     },
+     "experiment_files_same_records": {
+      "ES": 18.65284974093264,
+      "PS": 22.020725388601036,
+      "NS": 81.24352331606218
+     },
+     "experiment_reported_draw0_all_records": {
+      "ES": 18.96,
+      "PS": 23.85,
+      "NS": 79.14,
+      "n": 327
+     }
+    },
+    "agree": true
+   }
+  }
+ },
+ "certificate": {
+  "TX-G2XL-rome-T100": {
+   "experiment_total": {
+    "n_checked_certified": 34398,
+    "n_equal_certified": 34398,
+    "n_checked_in_band": 0,
+    "n_equal_in_band": 0,
+    "n_violations_certified": 0,
+    "n_violations_in_band": 0
+   },
+   "rows": {
+    "where_twoblock": {
+     "n_certified": [
+      2914,
+      2914
+     ],
+     "n_checked": 200,
+     "n_bit_identical": 200,
+     "n_violations": 0,
+     "n_checked_not_silent_by_own_arithmetic": 0,
+     "n_hook_fired": 0,
+     "n_tokens_equal_stored_continuation": 200
+    },
+    "rescope": {
+     "n_certified": [
+      2914,
+      2914
+     ],
+     "n_checked": 200,
+     "n_bit_identical": 200,
+     "n_violations": 0,
+     "n_checked_not_silent_by_own_arithmetic": 0,
+     "n_hook_fired": 0,
+     "n_tokens_equal_stored_continuation": 200
+    }
+   },
+   "experiment_total_recomputed": {
+    "n_checked_certified": 34398,
+    "n_equal_certified": 34398,
+    "n_violations": 0,
+    "n_rows": 12,
+    "rows_with_zero_certified": []
+   }
+  },
+  "TX-G2XL-rome-T500": {
+   "experiment_total": {
+    "n_checked_certified": 50521,
+    "n_equal_certified": 50521,
+    "n_checked_in_band": 0,
+    "n_equal_in_band": 0,
+    "n_violations_certified": 0,
+    "n_violations_in_band": 0
+   },
+   "rows": {
+    "where_twoblock": {
+     "n_certified": [
+      0,
+      0
+     ],
+     "n_checked": 0,
+     "n_bit_identical": 0,
+     "n_violations": 0,
+     "n_checked_not_silent_by_own_arithmetic": 0,
+     "n_hook_fired": 0,
+     "n_tokens_equal_stored_continuation": 0
+    },
+    "rescope": {
+     "n_certified": [
+      0,
+      0
+     ],
+     "n_checked": 0,
+     "n_bit_identical": 0,
+     "n_violations": 0,
+     "n_checked_not_silent_by_own_arithmetic": 0,
+     "n_hook_fired": 0,
+     "n_tokens_equal_stored_continuation": 0
+    },
+    "where_twoblock@goff": {
+     "n_certified": [
+      2925,
+      2925
+     ],
+     "n_checked": 200,
+     "n_bit_identical": 200,
+     "n_violations": 0,
+     "n_checked_not_silent_by_own_arithmetic": 0,
+     "n_hook_fired": 0,
+     "n_tokens_equal_stored_continuation": 200
+    },
+    "rescope@goff": {
+     "n_certified": [
+      2925,
+      2925
+     ],
+     "n_checked": 200,
+     "n_bit_identical": 200,
+     "n_violations": 0,
+     "n_checked_not_silent_by_own_arithmetic": 0,
+     "n_hook_fired": 0,
+     "n_tokens_equal_stored_continuation": 200
+    }
+   },
+   "experiment_total_recomputed": {
+    "n_checked_certified": 50521,
+    "n_equal_certified": 50521,
+    "n_violations": 0,
+    "n_rows": 24,
+    "rows_with_zero_certified": [
+     "rescope__d0",
+     "rescope__d1",
+     "rescope__d2",
+     "where_twoblock__d0",
+     "where_twoblock__d1",
+     "where_twoblock__d2"
+    ]
+   }
+  }
+ },
+ "equal": {
+  "complaints": {
+   "n_repair_prompts": 3000,
+   "n_D1_complaints_under_deployed": 2788,
+   "experiment_n_D1_complaints": 2788,
+   "mine": [
+    "repair:13526:request:0",
+    "repair:7000:paraphrase:1",
+    "repair:13061:request:0",
+    "repair:21509:request:0",
+    "repair:2626:paraphrase:1",
+    "repair:7597:paraphrase:1",
+    "repair:10329:paraphrase:0",
+    "repair:20918:request:0",
+    "repair:8730:request:0",
+    "repair:8237:request:0"
+   ],
+   "experiment": [
+    "repair:13526:request:0",
+    "repair:7000:paraphrase:1",
+    "repair:13061:request:0",
+    "repair:21509:request:0",
+    "repair:2626:paraphrase:1",
+    "repair:7597:paraphrase:1",
+    "repair:10329:paraphrase:0",
+    "repair:20918:request:0",
+    "repair:8730:request:0",
+    "repair:8237:request:0"
+   ],
+   "same_complaints": true,
+   "experiment_complaints_all_in_REPAIR_pool": true,
+   "experiment_complaints_are_D1_under_deployed_by_my_pass": true,
+   "used": [
+    "repair:13526:request:0",
+    "repair:7000:paraphrase:1",
+    "repair:13061:request:0",
+    "repair:21509:request:0",
+    "repair:2626:paraphrase:1",
+    "repair:7597:paraphrase:1",
+    "repair:10329:paraphrase:0",
+    "repair:20918:request:0",
+    "repair:8730:request:0",
+    "repair:8237:request:0"
+   ],
+   "note": "the experiment's set is used if the two differ (same cell), and the difference is reported"
+  },
+  "rb_suffix": {
+   "row_level_differences": {
+    "D1_tf": {
+     "n_compared": 1210,
+     "n_differ": 0
+    },
+    "D1_dec": {
+     "n_compared": 1210,
+     "n_differ": 0
+    },
+    "new_exact": {
+     "n_compared": 300,
+     "n_differ": 0
+    },
+    "fired": {
+     "n_compared": 0,
+     "n_differ": 0
+    }
+   },
+   "aggregates": {
+    "request.exact": {
+     "mine": 2.0,
+     "experiment_seed0_from_its_rows": 2.0,
+     "experiment_summary_mean_over_seeds": 1.3333333333333333
+    },
+    "heldout.D1_tf": {
+     "mine_on_sample": 11.0,
+     "mine_ci": [
+      9.0,
+      13.222222222222221
+     ],
+     "experiment_seed0_all_rows_from_its_rows": 11.333333333333332,
+     "experiment_seed0_same_rows": 11.0,
+     "experiment_summary_mean_over_seeds": 7.555555555555555
+    },
+    "complaints.D1_tf": {
+     "mine": 0.0,
+     "experiment_seed0": 0.0
+    },
+    "complaints.D1_dec": {
+     "mine": 0.0,
+     "experiment_seed0": 0.0
+    }
+   },
+   "my_meta": {
+    "t_star": 2,
+    "resolving_prefixes": [
+     0,
+     1,
+     2
+    ],
+    "n_forward": 1000,
+    "edits_lost": 98,
+    "full_replay_equals_deployed_bitwise": true,
+    "repair_seconds": 9.40169644355774
+   },
+   "experiment_meta": {
+    "statements_changed": 98,
+    "repair_passes": 1000,
+    "edits_lost": {
+     "n": 98
+    },
+    "complaints_refused": null
+   },
+   "experiment_repair": {
+    "t_star": 2,
+    "n_forward": 1000
+   },
+   "n_rows_compared": 1210,
+   "rows_with_a_difference": []
+  },
+  "least_sacrificing": {
+   "row_level_differences": {
+    "D1_tf": {
+     "n_compared": 1210,
+     "n_differ": 1
+    },
+    "D1_dec": {
+     "n_compared": 1210,
+     "n_differ": 1
+    },
+    "new_exact": {
+     "n_compared": 300,
+     "n_differ": 0
+    },
+    "fired": {
+     "n_compared": 1210,
+     "n_differ": 1
+    }
+   },
+   "aggregates": {
+    "request.exact": {
+     "mine": 96.0,
+     "experiment_seed0_from_its_rows": 96.0,
+     "experiment_summary_mean_over_seeds": 96.0
+    },
+    "heldout.D1_tf": {
+     "mine_on_sample": 17.555555555555557,
+     "mine_ci": [
+      14.333333333333334,
+      21.0
+     ],
+     "experiment_seed0_all_rows_from_its_rows": 17.9,
+     "experiment_seed0_same_rows": 17.555555555555554,
+     "experiment_summary_mean_over_seeds": 17.833333333333332
+    },
+    "complaints.D1_tf": {
+     "mine": 10.0,
+     "experiment_seed0": 0.0
+    },
+    "complaints.D1_dec": {
+     "mine": 0.0,
+     "experiment_seed0": 10.0
+    }
+   },
+   "my_meta": {
+    "form": "least_sacrificing",
+    "guards_off_start": true,
+    "n_thresholds_raised": 11,
+    "n_thresholds_lowered": 0,
+    "complaints_refused": 0,
+    "largest_complaint_margin_over_threshold_after_repair": -6.443910070819125e-08,
+    "repair_seconds": 0.009262561798095703,
+    "repair_passes": 0,
+    "logonly_record": {
+     "n_edits_capped": 0,
+     "n_own_keys_silenced_by_literal_rule": 0,
+     "allow_silence": true
+    }
+   },
+   "experiment_meta": {
+    "statements_changed": 11,
+    "repair_passes": 0,
+    "edits_lost": {
+     "n": 0,
+     "first": []
+    },
+    "complaints_refused": 0
+   },
+   "experiment_repair": {
+    "n_refused": 0,
+    "n_thresholds_raised": 11,
+    "resolved": true
+   },
+   "n_rows_compared": 1210,
+   "rows_with_a_difference": [
+    "repair:10329:paraphrase:0 (reported complaint)"
+   ]
+  },
+  "least_protecting": {
+   "row_level_differences": {
+    "D1_tf": {
+     "n_compared": 1210,
+     "n_differ": 1
+    },
+    "D1_dec": {
+     "n_compared": 1210,
+     "n_differ": 1
+    },
+    "new_exact": {
+     "n_compared": 300,
+     "n_differ": 0
+    },
+    "fired": {
+     "n_compared": 1210,
+     "n_differ": 1
+    }
+   },
+   "aggregates": {
+    "request.exact": {
+     "mine": 96.0,
+     "experiment_seed0_from_its_rows": 96.0,
+     "experiment_summary_mean_over_seeds": 96.0
+    },
+    "heldout.D1_tf": {
+     "mine_on_sample": 17.555555555555557,
+     "mine_ci": [
+      14.333333333333334,
+      21.0
+     ],
+     "experiment_seed0_all_rows_from_its_rows": 17.9,
+     "experiment_seed0_same_rows": 17.555555555555554,
+     "experiment_summary_mean_over_seeds": 17.833333333333332
+    },
+    "complaints.D1_tf": {
+     "mine": 10.0,
+     "experiment_seed0": 0.0
+    },
+    "complaints.D1_dec": {
+     "mine": 0.0,
+     "experiment_seed0": 10.0
+    }
+   },
+   "my_meta": {
+    "form": "least_protecting",
+    "guards_off_start": false,
+    "n_thresholds_raised": 11,
+    "n_thresholds_lowered": 0,
+    "complaints_refused": 0,
+    "largest_complaint_margin_over_threshold_after_repair": -6.443910070819125e-08,
+    "repair_seconds": 0.011363506317138672,
+    "repair_passes": 0,
+    "logonly_record": {
+     "n_edits_capped": 0,
+     "n_own_keys_silenced_by_literal_rule": 0,
+     "allow_silence": false
+    }
+   },
+   "experiment_meta": {
+    "statements_changed": 11,
+    "repair_passes": 0,
+    "edits_lost": {
+     "n": 0,
+     "first": []
+    },
+    "complaints_refused": 0
+   },
+   "experiment_repair": {
+    "n_refused": 0,
+    "n_thresholds_raised": 11
+   },
+   "n_rows_compared": 1210,
+   "rows_with_a_difference": [
+    "repair:10329:paraphrase:0 (reported complaint)"
+   ]
+  }
+ },
+ "records": {
+  "TX-G2XL-rome-T100|where_twoblock": {
+   "eta": [
+    0.1815840062709055,
+    0.1815840062709055
+   ],
+   "n_edits_capped": [
+    2,
+    2
+   ],
+   "own_requests_not_candidate": [
+    0,
+    0
+   ],
+   "thresholds_sha1": [
+    "4364517f639e",
+    "4364517f639e"
+   ],
+   "method_fingerprint": [
+    "faafa38e67db",
+    "faafa38e67db"
+   ],
+   "calibration_in_REPAIR_pool": true,
+   "alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "experiment_alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "same_gate": true
+  },
+  "TX-G2XL-rome-T100|rescope": {
+   "eta": [
+    0.1815840062709055,
+    0.1815840062709055
+   ],
+   "n_edits_capped": [
+    2,
+    2
+   ],
+   "own_requests_not_candidate": [
+    0,
+    0
+   ],
+   "thresholds_sha1": [
+    "4364517f639e",
+    "4364517f639e"
+   ],
+   "method_fingerprint": [
+    "80b1ade0136b",
+    "80b1ade0136b"
+   ],
+   "calibration_in_REPAIR_pool": true,
+   "alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "experiment_alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "same_gate": true
+  },
+  "TX-G2XL-rome-T500|where_twoblock": {
+   "eta": [
+    1.2885664332223428,
+    1.2885664332223428
+   ],
+   "n_edits_capped": [
+    500,
+    500
+   ],
+   "own_requests_not_candidate": [
+    0,
+    0
+   ],
+   "thresholds_sha1": [
+    "1c858480ef47",
+    "1c858480ef47"
+   ],
+   "method_fingerprint": [
+    "268c36eb594c",
+    "268c36eb594c"
+   ],
+   "calibration_in_REPAIR_pool": true,
+   "alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "experiment_alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "same_gate": true
+  },
+  "TX-G2XL-rome-T500|rescope": {
+   "eta": [
+    1.2885664332223428,
+    1.2885664332223428
+   ],
+   "n_edits_capped": [
+    500,
+    500
+   ],
+   "own_requests_not_candidate": [
+    0,
+    0
+   ],
+   "thresholds_sha1": [
+    "1c858480ef47",
+    "1c858480ef47"
+   ],
+   "method_fingerprint": [
+    "3beabdaa8373",
+    "3beabdaa8373"
+   ],
+   "calibration_in_REPAIR_pool": true,
+   "alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "experiment_alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "same_gate": true
+  },
+  "TX-G2XL-rome-T500|where_twoblock@goff": {
+   "eta": [
+    1.2885664332223428,
+    1.2885664332223428
+   ],
+   "n_edits_capped": [
+    0,
+    0
+   ],
+   "own_requests_not_candidate": [
+    499,
+    499
+   ],
+   "thresholds_sha1": [
+    "694b0483ed58",
+    "694b0483ed58"
+   ],
+   "method_fingerprint": [
+    "875c6a47afde",
+    "875c6a47afde"
+   ],
+   "calibration_in_REPAIR_pool": true,
+   "alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "experiment_alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "same_gate": true
+  },
+  "TX-G2XL-rome-T500|rescope@goff": {
+   "eta": [
+    1.2885664332223428,
+    1.2885664332223428
+   ],
+   "n_edits_capped": [
+    0,
+    0
+   ],
+   "own_requests_not_candidate": [
+    499,
+    499
+   ],
+   "thresholds_sha1": [
+    "694b0483ed58",
+    "694b0483ed58"
+   ],
+   "method_fingerprint": [
+    "da682a10732a",
+    "da682a10732a"
+   ],
+   "calibration_in_REPAIR_pool": true,
+   "alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "experiment_alpha_n_draw": [
+    0.05,
+    200,
+    0
+   ],
+   "same_gate": true
+  }
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "written": "2026-11-11 10:10:32 UTC",
+ "transformers": "4.23.1",
+ "cap_bytes": 14575206400,
+ "parts": "uc",
+ "uc": {
+  "at_W0": {
+   "147": {
+    "n_prompt_tokens_max": 67,
+    "peak_alloc_MiB_use_cache_true": 9542.56884765625,
+    "identical_output_true_vs_false": true,
+    "max_abs_diff_true_vs_false": 0.0,
+    "stored_W0_flagged_fallback": false,
+    "use_cache_false_equals_stored_W0_bitwise": true
+   },
+   "427": {
+    "n_prompt_tokens_max": 61,
+    "peak_alloc_MiB_use_cache_true": 9243.44140625,
+    "identical_output_true_vs_false": true,
+    "max_abs_diff_true_vs_false": 0.0,
+    "stored_W0_flagged_fallback": false,
+    "use_cache_false_equals_stored_W0_bitwise": true
+   },
+   "1531": {
+    "n_prompt_tokens_max": 179,
+    "use_cache_true": "out of memory under the audit's cap",
+    "stored_W0_flagged_fallback": true,
+    "use_cache_false_equals_stored_W0_bitwise": true
+   },
+   "1878": {
+    "n_prompt_tokens_max": 63,
+    "peak_alloc_MiB_use_cache_true": 9342.5009765625,
+    "identical_output_true_vs_false": true,
+    "max_abs_diff_true_vs_false": 0.0,
+    "stored_W0_flagged_fallback": true,
+    "use_cache_false_equals_stored_W0_bitwise": true
+   },
+   "0": {
+    "n_prompt_tokens_max": 21,
+    "peak_alloc_MiB_use_cache_true": 7262.740234375,
+    "identical_output_true_vs_false": true,
+    "max_abs_diff_true_vs_false": 0.0,
+    "stored_W0_flagged_fallback": false,
+    "use_cache_false_equals_stored_W0_bitwise": true
+   },
+   "1": {
+    "n_prompt_tokens_max": 22,
+    "peak_alloc_MiB_use_cache_true": 7311.76953125,
+    "identical_output_true_vs_false": true,
+    "max_abs_diff_true_vs_false": 0.0,
+    "stored_W0_flagged_fallback": false,
+    "use_cache_false_equals_stored_W0_bitwise": true
+   },
+   "15000": {
+    "n_prompt_tokens_max": 22,
+    "peak_alloc_MiB_use_cache_true": 7311.76953125,
+    "identical_output_true_vs_false": true,
+    "max_abs_diff_true_vs_false": 0.0,
+    "stored_W0_flagged_fallback": false,
+    "use_cache_false_equals_stored_W0_bitwise": true
+   }
+  },
+  "against_stored": {
+   "T500:147": {
+    "stored_flagged_fallback": true,
+    "use_cache_false_equals_stored_bitwise": true,
+    "max_abs_diff": 0.0,
+    "finite": true,
+    "identical_output_true_vs_false": true
+   },
+   "T500:427": {
+    "stored_flagged_fallback": true,
+    "use_cache_false_equals_stored_bitwise": true,
+    "max_abs_diff": 0.0,
+    "finite": true,
+    "identical_output_true_vs_false": true
+   },
+   "T1000:147": {
+    "stored_flagged_fallback": true,
+    "use_cache_false_equals_stored_bitwise": true,
+    "max_abs_diff": 0.0,
+    "finite": true,
+    "identical_output_true_vs_false": true
+   },
+   "T1000:427": {
+    "stored_flagged_fallback": true,
+    "use_cache_false_equals_stored_bitwise": true,
+    "max_abs_diff": 0.0,
+    "finite": true,
+    "identical_output_true_vs_false": true
+   },
+   "T2000:147": {
+    "stored_flagged_fallback": true,
+    "use_cache_false_equals_stored_bitwise": true,
+    "max_abs_diff": 0.0,
+    "finite": true,
+    "identical_output_true_vs_false": true
+   },
+   "T2000:427": {
+    "stored_flagged_fallback": true,
+    "use_cache_false_equals_stored_bitwise": true,
+    "max_abs_diff": 0.0,
+    "finite": true,
+    "identical_output_true_vs_false": true
+   },
+   "T2000:1531": {
+    "stored_flagged_fallback": true,
+    "use_cache_false_equals_stored_bitwise": true,
+    "max_abs_diff": 0.0,
+    "finite": true,
+    "use_cache_true": "out of memory under the audit's cap"
+   },
+   "T2000:1878": {
+    "stored_flagged_fallback": true,
+    "use_cache_false_equals_stored_bitwise": true,
+    "max_abs_diff": 0.0,
+    "finite": true,
+    "identical_output_true_vs_false": true
+   }
+  }
+ },
+ "peak_alloc_MiB": 12390.0576171875,
+ "finished": "2026-11-11 10:10:46 UTC"
+}

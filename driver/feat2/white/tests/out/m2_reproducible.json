@@ -1,0 +1,21 @@
+{
+ "pass": true,
+ "exit": 0,
+ "lines": [
+  "TB-Q100-ae-l2_3: mechanics_TB-Q100-ae-l2_3.json reproduced byte for byte",
+  "TB-L100-ae-l2_3: mechanics_TB-L100-ae-l2_3.json reproduced byte for byte",
+  "mechanics.txt is the rendering of the stored JSON files"
+ ],
+ "tail": [],
+ "note": "mechanics_<log>.json of both development logs re-computed in a fresh process (4 threads): byte-identical, mechanics.txt == render(): True",
+ "test": "m2_reproducible",
+ "group": "mechanics",
+ "what": "a re-run in a fresh process reproduces out/mechanics_<log>.json byte for byte, and out/mechanics.txt is the rendering of these files",
+ "seconds": 61.09476852416992,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "log": "TX-G2XL-rome-T100",
+ "draw": 0,
+ "rows": {
+  "preedit": {
+   "n_records": 100,
+   "n_failed": 0,
+   "n_texts": 1000,
+   "GE": 626.2595161314424,
+   "GE_se": 1.2158802469548937,
+   "per_text_q05": 583.8383743449226,
+   "per_text_min": 349.6978190733853,
+   "pct_below_ref_q01": 1.0,
+   "top8_word_share_pct": 26.597988527921395,
+   "n_words": 77754
+  },
+  "deployed": {
+   "n_records": 100,
+   "n_failed": 0,
+   "n_texts": 1000,
+   "GE": 594.2130956576794,
+   "GE_se": 3.3318110781631547,
+   "per_text_q05": 475.0392126743511,
+   "per_text_min": 260.87060696003937,
+   "pct_below_ref_q01": 8.799999999999999,
+   "top8_word_share_pct": 25.803543799695937,
+   "n_words": 74327
+  },
+  "where_logonly": {
+   "n_records": 100,
+   "n_failed": 0,
+   "n_texts": 1000,
+   "GE": 619.4788160001302,
+   "GE_se": 2.168115927378554,
+   "per_text_q05": 542.4842436854567,
+   "per_text_min": 308.1859214783002,
+   "prompts_fired_pct": 100.0,
+   "mean_fire_positions_per_text": 2.219,
+   "pct_below_ref_q01": 2.8000000000000003,
+   "top8_word_share_pct": 25.514435490180738,
+   "n_words": 76686
+  },
+  "where_twoblock": {
+   "n_records": 100,
+   "n_failed": 0,
+   "n_texts": 1000,
+   "GE": 618.5367408702409,
+   "GE_se": 1.9695641504404093,
+   "per_text_q05": 548.4978778752051,
+   "per_text_min": 284.7277112505736,
+   "prompts_fired_pct": 99.1,
+   "mean_fire_positions_per_text": 1.23,
+   "pct_below_ref_q01": 2.9000000000000004,
+   "top8_word_share_pct": 25.528309020037284,
+   "n_words": 76707
+  },
+  "rescope": {
+   "n_records": 100,
+   "n_failed": 0,
+   "n_texts": 1000,
+   "GE": 607.8195876034156,
+   "GE_se": 3.256466930949906,
+   "per_text_q05": 503.30940717504416,
+   "per_text_min": 97.26817582130933,
+   "prompts_fired_pct": 99.1,
+   "mean_fire_positions_per_text": 1.138,
+   "pct_below_ref_q01": 5.3,
+   "top8_word_share_pct": 25.205981080256333,
+   "n_words": 75371
+  }
+ }
+}

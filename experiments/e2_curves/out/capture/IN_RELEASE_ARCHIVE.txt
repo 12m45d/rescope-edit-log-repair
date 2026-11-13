@@ -1,0 +1,3 @@
+The 2 files of this directory (8.4 MB: the captured vectors of E2, one torch file per development log) are in the release archive results_rows.tar.gz,
+which unpacks into the clone of the repository:   tar -xzf results_rows.tar.gz -C <clone>
+code/render.py and code/fixup_cw200.py read them; code/job.py <log> --blocks capture writes them (GPU).

@@ -1,0 +1,1624 @@
+{
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "conds": {
+    "NONE": {
+     "mine": {
+      "heldout_n": 490,
+      "heldout_n_D1": 268,
+      "heldout_D1": 54.69387755102041,
+      "heldout_complaints_fixed": 0,
+      "heldout_n_complaints_stored": 268,
+      "heldout_noncomplaints_lost": 0,
+      "heldout_n_noncomplaints_stored": 222,
+      "rel_exact": 78.0,
+      "rel_n_exact": 78,
+      "eval_sec": 132.53548192977905,
+      "repair_n": 489,
+      "repair_n_D1": 297
+     },
+     "kind": "exact",
+     "vs": {
+      "experiment_record": "NONE",
+      "experiment_time": "2026-11-10 08:52:25",
+      "heldout_D1_exp": 54.69387755102041,
+      "heldout_n_D1_exp": 268,
+      "heldout_rows_agree": 490,
+      "heldout_rows": 490,
+      "rel_exact_exp": 78.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 0.0,
+      "repair_rows_agree": 489,
+      "repair_rows": 489
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {},
+     "saved": null,
+     "sanity": {
+      "heldout_flags_equal_stored_v2": true,
+      "heldout_flags_differing_from_stored": 0,
+      "repair_flags_equal_stored_v2": true,
+      "repair_flags_differing_from_stored": 0,
+      "stored_heldout_D1": 268,
+      "stored_repair_D1": 297,
+      "stored_Rel_exact_metrics_json": 78.0
+     },
+     "stats": {
+      "ci": [
+       50.60724131935821,
+       58.77581941867657
+      ],
+      "mcnemar_p": 1.0,
+      "fixed": 0,
+      "lost": 0,
+      "disjoint_D1": 54.193548387096776,
+      "disjoint_D1_WE": 54.193548387096776,
+      "disjoint_p": 1.0,
+      "disjoint_n": 465
+     }
+    },
+    "W0": {
+     "mine": {
+      "heldout_n": 490,
+      "heldout_n_D1": 0,
+      "heldout_D1": 0.0,
+      "heldout_complaints_fixed": 268,
+      "heldout_n_complaints_stored": 268,
+      "heldout_noncomplaints_lost": 0,
+      "heldout_n_noncomplaints_stored": 222,
+      "rel_exact": 0.0,
+      "rel_n_exact": 0,
+      "eval_sec": 130.09075355529785,
+      "repair_n": 489,
+      "repair_n_D1": 0
+     },
+     "kind": "exact",
+     "vs": {
+      "experiment_record": "ALL",
+      "experiment_time": "2026-11-10 08:54:20",
+      "heldout_D1_exp": 0.0,
+      "heldout_n_D1_exp": 0,
+      "heldout_rows_agree": 490,
+      "heldout_rows": 490,
+      "rel_exact_exp": 0.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 1.0000000000001308
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {},
+     "saved": null,
+     "sanity": {
+      "weight_equals_W0": true,
+      "heldout_D1_at_W0": 0,
+      "repair_D1_at_W0": 0
+     },
+     "stats": {
+      "ci": [
+       0.0,
+       0.0
+      ],
+      "mcnemar_p": 4.2168791772922093e-81,
+      "fixed": 268,
+      "lost": 0,
+      "disjoint_D1": 0.0,
+      "disjoint_D1_WE": 54.193548387096776,
+      "disjoint_p": 2.7635739376302223e-76,
+      "disjoint_n": 465
+     }
+    },
+    "BEST__COMP_B__nALL": {
+     "mine": {
+      "heldout_n": 490,
+      "heldout_n_D1": 232,
+      "heldout_D1": 47.3469387755102,
+      "heldout_complaints_fixed": 97,
+      "heldout_n_complaints_stored": 268,
+      "heldout_noncomplaints_lost": 61,
+      "heldout_n_noncomplaints_stored": 222,
+      "rel_exact": 78.0,
+      "rel_n_exact": 78,
+      "eval_sec": 140.1722228527069,
+      "reported_n": 297,
+      "reported_resolved": 168
+     },
+     "kind": "exact",
+     "vs": {
+      "experiment_record": "COMP_B__nALL__s0",
+      "experiment_time": "2026-11-10 09:33:16",
+      "heldout_D1_exp": 47.3469387755102,
+      "heldout_n_D1_exp": 232,
+      "heldout_rows_agree": 490,
+      "heldout_rows": 490,
+      "rel_exact_exp": 78.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 0.6467546578182445,
+      "reported_same_set": true,
+      "reported_resolved_exp": 168,
+      "reported_agree": 297
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {
+      "call": "repair(\"COMP\", H, stream[:n], protect=(\"K_ans\",), query=\"answer\", form=\"adapter\")",
+      "wall_sec": 57.93427896499634,
+      "fro_rel_to_log": 0.6467546578182445
+     },
+     "saved": {
+      "saved_correction": "out/TB-Q100-ae-l2_3/corr/COMP_B__nALL__s0.pt",
+      "kind_saved": "adapter",
+      "kind_mine": "adapter",
+      "rel_fro_diff": 0.0,
+      "fro_mine": 171.6737642184428,
+      "fro_saved": 171.6737642184428,
+      "rank_mine": 2841,
+      "rank_saved": 2841,
+      "gate_mine": 1e-08,
+      "gate_saved": 1e-08
+     },
+     "sanity": null,
+     "stats": {
+      "ci": [
+       43.06122448979592,
+       51.82204749679076
+      ],
+      "mcnemar_p": 0.005197322839582243,
+      "fixed": 97,
+      "lost": 61,
+      "disjoint_D1": 49.03225806451613,
+      "disjoint_D1_WE": 54.193548387096776,
+      "disjoint_p": 0.05660326997033366,
+      "disjoint_n": 465
+     }
+    },
+    "REEDIT_B__n100__theirz": {
+     "mine": {
+      "heldout_n": 490,
+      "heldout_n_D1": 288,
+      "heldout_D1": 58.775510204081634,
+      "heldout_complaints_fixed": 51,
+      "heldout_n_complaints_stored": 268,
+      "heldout_noncomplaints_lost": 71,
+      "heldout_n_noncomplaints_stored": 222,
+      "rel_exact": 71.0,
+      "rel_n_exact": 71,
+      "eval_sec": 70.22027039527893,
+      "reported_n": 100,
+      "reported_resolved": 93
+     },
+     "kind": "exact",
+     "vs": {
+      "experiment_record": "REEDIT_B__n100__s0",
+      "experiment_time": "2026-11-10 09:19:30",
+      "heldout_D1_exp": 58.775510204081634,
+      "heldout_n_D1_exp": 288,
+      "heldout_rows_agree": 490,
+      "heldout_rows": 490,
+      "rel_exact_exp": 71.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 0.7183525660327421,
+      "reported_same_set": true,
+      "reported_resolved_exp": 93,
+      "reported_agree": 100
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {
+      "call": "z*: repair(\"REEDIT\", H, [c], variant=\"k0+kp\", return_targets=True, chunk=1) per complaint; install: repair(\"REEDIT\", H, stream[:n], variant=\"k0+kp\", targets=z*, chunk=1)",
+      "wall_sec": 10.49197006225586,
+      "zopt_wall_sec": 0.04941606521606445,
+      "fro_rel_to_log": 0.7183525660327421,
+      "l2": 3.0,
+      "variant": "k0+kp",
+      "installed": 98,
+      "not_installed": [
+       "image_263",
+       "text_446"
+      ],
+      "forced_not_installed": [
+       "image_263",
+       "text_446"
+      ],
+      "solve_attainment": 0.5518145008447558,
+      "dW_over_W0": 1.5348197719838972,
+      "targets": "experiment cache (cache/targets_<log>.pt), read-only",
+      "cache_oracle_flags_false": [
+       "text_446"
+      ]
+     },
+     "saved": {
+      "saved_correction": "out/TB-Q100-ae-l2_3/superseded_zfallback/REEDIT_B__n100__s0.pt",
+      "kind_saved": "weight",
+      "kind_mine": "weight",
+      "entries_differing": 0,
+      "n_entries": 22544384,
+      "rel_fro_diff": 0.0,
+      "fro_mine": 190.67862528092223,
+      "fro_saved": 190.67862528092223
+     },
+     "sanity": null,
+     "stats": {
+      "ci": [
+       54.63822655113528,
+       62.93279022403259
+      ],
+      "mcnemar_p": 0.08498064582685333,
+      "fixed": 51,
+      "lost": 71,
+      "disjoint_D1": 59.784946236559136,
+      "disjoint_D1_WE": 54.193548387096776,
+      "disjoint_p": 0.019879103738233976,
+      "disjoint_n": 465
+     }
+    },
+    "REEDIT_B__n100__asrec": {
+     "mine": {
+      "heldout_n": 490,
+      "heldout_n_D1": 291,
+      "heldout_D1": 59.38775510204081,
+      "heldout_complaints_fixed": 50,
+      "heldout_n_complaints_stored": 268,
+      "heldout_noncomplaints_lost": 73,
+      "heldout_n_noncomplaints_stored": 222,
+      "rel_exact": 72.0,
+      "rel_n_exact": 72,
+      "eval_sec": 69.48961782455444,
+      "reported_n": 100,
+      "reported_resolved": 93
+     },
+     "kind": "noisy",
+     "vs": {
+      "experiment_record": "REEDIT_B__n100__s0",
+      "experiment_time": "2026-11-10 09:19:30",
+      "heldout_D1_exp": 58.775510204081634,
+      "heldout_n_D1_exp": 288,
+      "heldout_rows_agree": 479,
+      "heldout_rows": 490,
+      "rel_exact_exp": 71.0,
+      "rel_em_agree": 99,
+      "fro_rel_to_log_exp": 0.7183525660327421,
+      "reported_same_set": true,
+      "reported_resolved_exp": 93,
+      "reported_agree": 100
+     },
+     "heldout_rows_differ": [
+      "text_9",
+      "text_58",
+      "image_64",
+      "text_93",
+      "image_180",
+      "text_252",
+      "image_314",
+      "image_331",
+      "text_340",
+      "text_413",
+      "image_468"
+     ],
+     "rel_em_differ": [
+      3
+     ],
+     "repair": {
+      "call": "z*: repair(\"REEDIT\", H, [c], variant=\"k0+kp\", return_targets=True, chunk=1) per complaint; install: repair(\"REEDIT\", H, stream[:n], variant=\"k0+kp\", targets=z*, chunk=1)",
+      "wall_sec": 8.843005657196045,
+      "zopt_wall_sec": 0.0008981227874755859,
+      "fro_rel_to_log": 0.7165071159443532,
+      "l2": 3.0,
+      "variant": "k0+kp",
+      "installed": 98,
+      "not_installed": [
+       "image_263",
+       "text_446"
+      ],
+      "forced_not_installed": [
+       "image_263",
+       "text_446"
+      ],
+      "solve_attainment": 0.5524083064727552,
+      "dW_over_W0": 1.5308792300184557,
+      "targets": "mine (fresh z* per complaint, B=1, chunk=1)",
+      "my_z_oracle": 100,
+      "my_z_vendor_attempt_oracle": 98,
+      "my_z_vendor_attempt_not_oracle": [
+       "image_263",
+       "text_446"
+      ]
+     },
+     "saved": {
+      "saved_correction": "out/TB-Q100-ae-l2_3/superseded_zfallback/REEDIT_B__n100__s0.pt",
+      "kind_saved": "weight",
+      "kind_mine": "weight",
+      "entries_differing": 21412708,
+      "n_entries": 22544384,
+      "rel_fro_diff": 0.09278953595943962,
+      "fro_mine": 190.18877126978964,
+      "fro_saved": 190.67862528092223
+     },
+     "sanity": null,
+     "stats": {
+      "ci": [
+       55.283882323359315,
+       63.59918200408998
+      ],
+      "mcnemar_p": 0.04685007918645578,
+      "fixed": 50,
+      "lost": 73,
+      "disjoint_D1": 60.43010752688172,
+      "disjoint_D1_WE": 54.193548387096776,
+      "disjoint_p": 0.009340760589436515,
+      "disjoint_n": 465
+     }
+    },
+    "REEDIT_B__n100__ladder": {
+     "mine": {
+      "heldout_n": 490,
+      "heldout_n_D1": 286,
+      "heldout_D1": 58.36734693877551,
+      "heldout_complaints_fixed": 53,
+      "heldout_n_complaints_stored": 268,
+      "heldout_noncomplaints_lost": 71,
+      "heldout_n_noncomplaints_stored": 222,
+      "rel_exact": 72.0,
+      "rel_n_exact": 72,
+      "eval_sec": 70.35452318191528,
+      "reported_n": 100,
+      "reported_resolved": 93
+     },
+     "kind": "other",
+     "vs": {
+      "experiment_record": "REEDIT_B__n100__s0",
+      "experiment_time": "2026-11-10 09:19:30",
+      "heldout_D1_exp": 58.775510204081634,
+      "heldout_n_D1_exp": 288,
+      "heldout_rows_agree": 476,
+      "heldout_rows": 490,
+      "rel_exact_exp": 71.0,
+      "rel_em_agree": 99,
+      "fro_rel_to_log_exp": 0.7183525660327421,
+      "reported_same_set": true,
+      "reported_resolved_exp": 93,
+      "reported_agree": 100
+     },
+     "heldout_rows_differ": [
+      "text_9",
+      "text_36",
+      "image_64",
+      "text_64",
+      "image_161",
+      "image_180",
+      "text_204",
+      "text_209",
+      "text_252",
+      "image_270",
+      "text_340",
+      "text_436",
+      "image_452",
+      "image_468"
+     ],
+     "rel_em_differ": [
+      3
+     ],
+     "repair": {
+      "call": "z*: repair(\"REEDIT\", H, [c], variant=\"k0+kp\", return_targets=True, chunk=1) per complaint; install: repair(\"REEDIT\", H, stream[:n], variant=\"k0+kp\", targets=z*, chunk=1)",
+      "wall_sec": 9.669737100601196,
+      "zopt_wall_sec": 0.0005929470062255859,
+      "fro_rel_to_log": 0.7247844098968226,
+      "l2": 3.0,
+      "variant": "k0+kp",
+      "installed": 100,
+      "not_installed": [],
+      "forced_not_installed": null,
+      "solve_attainment": 0.5504876820454934,
+      "dW_over_W0": 1.5485694941431556,
+      "targets": "mine (fresh z* per complaint, B=1, chunk=1)",
+      "my_z_oracle": 100,
+      "my_z_vendor_attempt_oracle": 98,
+      "my_z_vendor_attempt_not_oracle": [
+       "image_263",
+       "text_446"
+      ]
+     },
+     "saved": {
+      "saved_correction": "out/TB-Q100-ae-l2_3/superseded_zfallback/REEDIT_B__n100__s0.pt",
+      "kind_saved": "weight",
+      "kind_mine": "weight",
+      "entries_differing": 21895412,
+      "n_entries": 22544384,
+      "rel_fro_diff": 0.16228889163814134,
+      "fro_mine": 192.3858860384045,
+      "fro_saved": 190.67862528092223
+     },
+     "sanity": null,
+     "stats": {
+      "ci": [
+       54.13204433210835,
+       62.602241931510214
+      ],
+      "mcnemar_p": 0.1265100563218555,
+      "fixed": 53,
+      "lost": 71,
+      "disjoint_D1": 59.354838709677416,
+      "disjoint_D1_WE": 54.193548387096776,
+      "disjoint_p": 0.033788175471825874,
+      "disjoint_n": 465
+     }
+    },
+    "RB_TOT__n100": {
+     "mine": {
+      "heldout_n": 490,
+      "heldout_n_D1": 207,
+      "heldout_D1": 42.244897959183675,
+      "heldout_complaints_fixed": 92,
+      "heldout_n_complaints_stored": 268,
+      "heldout_noncomplaints_lost": 31,
+      "heldout_n_noncomplaints_stored": 222,
+      "rel_exact": 53.0,
+      "rel_n_exact": 53,
+      "eval_sec": 71.13551735877991,
+      "reported_n": 100,
+      "reported_resolved": 47
+     },
+     "kind": "exact",
+     "vs": {
+      "experiment_record": "RB_TOT__n100__s0",
+      "experiment_time": "2026-11-10 09:27:14",
+      "heldout_D1_exp": 42.244897959183675,
+      "heldout_n_D1_exp": 207,
+      "heldout_rows_agree": 490,
+      "heldout_rows": 490,
+      "rel_exact_exp": 53.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 0.5816383972985552,
+      "reported_same_set": true,
+      "reported_resolved_exp": 47,
+      "reported_agree": 100
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {
+      "call": "repair(\"ROLLBACK_FO\", H, stream[:n], budget=30, offload=True, record_flags=True)",
+      "wall_sec": 295.2271661758423,
+      "fro_rel_to_log": 0.5816383972985552,
+      "R": [
+       40,
+       0,
+       67,
+       23,
+       50,
+       15,
+       95,
+       26,
+       34,
+       80,
+       85,
+       38,
+       16,
+       81,
+       49,
+       86,
+       66,
+       70,
+       29,
+       36,
+       25,
+       79,
+       62,
+       57,
+       35,
+       71,
+       42,
+       20,
+       44,
+       27
+      ],
+      "k": 30,
+      "resolved_internal": false,
+      "R_equals_experiment": true,
+      "R_same_set_as_experiment": true
+     },
+     "saved": {
+      "saved_correction": "out/TB-Q100-ae-l2_3/corr/RB_TOT__n100__s0.pt",
+      "kind_saved": "weight",
+      "kind_mine": "weight",
+      "entries_differing": 0,
+      "n_entries": 22544384,
+      "rel_fro_diff": 0.0,
+      "fro_mine": 154.38938378126323,
+      "fro_saved": 154.38938378126323
+     },
+     "sanity": null,
+     "stats": {
+      "ci": [
+       37.88187372708758,
+       46.46629560915274
+      ],
+      "mcnemar_p": 3.317352917439988e-08,
+      "fixed": 92,
+      "lost": 31,
+      "disjoint_D1": 43.44086021505376,
+      "disjoint_D1_WE": 54.193548387096776,
+      "disjoint_p": 2.5277503538116926e-06,
+      "disjoint_n": 465
+     }
+    }
+   },
+   "xcheck": {
+    "log": "TB-Q100-ae-l2_3",
+    "cross_checks": {
+     "split_equals_harness": true,
+     "stream100_equals_harness_sampler": true,
+     "stream_equals_experiment_setup": true,
+     "records_equal_harness_rows": true,
+     "record_fields_match_probes": true,
+     "edit_stream_matches_items": true,
+     "n_heldout_valid": 490,
+     "n_repair_valid": 489,
+     "n_stream": 297,
+     "stream_all_repair_D1_valid": true,
+     "heldout_uids_disjoint_from_repair_uids": true,
+     "W0_equals_checkpoint_file": [
+      "model.layers.20.mlp.down_proj.weight",
+      true
+     ],
+     "WE_differs_from_W0": 22523253,
+     "fro_log": 265.438775188048
+    },
+    "harness_checks": {
+     "probe_uids_match_records": true,
+     "collapsed_working_point": false,
+     "WE_float_minus_W0_equals_stored_composite": true,
+     "C_equals_stored_composite": true,
+     "factor_uids_match_stream": true,
+     "rollback_empty_equals_WE": true
+    },
+    "draw": [
+     [
+      "REEDIT_B",
+      100
+     ],
+     [
+      "RB_TOT",
+      100
+     ]
+    ]
+   },
+   "relb8": {
+    "log": "TB-Q100-ae-l2_3",
+    "cond": "RELB8",
+    "mine_b8": {
+     "rel": {
+      "token": 91.57936528325081,
+      "exact": 78.0,
+      "n": 100
+     },
+     "tgen": {
+      "token": 52.2150800973177,
+      "exact": 9.0,
+      "n": 100
+     },
+     "igen": {
+      "token": 59.3674609363079,
+      "exact": 23.0,
+      "n": 100
+     }
+    },
+    "stored": {
+     "Rel_exact": 78.0,
+     "Rel_token": 91.57936528325081,
+     "TGen_exact": 9.0,
+     "IGen_exact": 23.0
+    },
+    "rel_matches_stored": true,
+    "tgen_igen_match_stored": true,
+    "time": "2026-11-10 15:53:22"
+   },
+   "loc": null,
+   "wproj": null,
+   "protkeys": {
+    "log": "TB-Q100-ae-l2_3",
+    "cond": "PROTKEYS",
+    "n_probe_rows": 192,
+    "selection_repair_noncomplaints_only": true,
+    "selection_equals_my_repair_noncomplaints": true,
+    "n_heldout_rows_in_selection": 0,
+    "n_keys": 1914,
+    "n_keys_expected": 1914,
+    "harness_cache_file": "probekeys_TB-Q100-ae-l2_3_2cda02b0d7de.pt",
+    "harness_cache_file_exists": true,
+    "fresh_keys_equal_harness_cache": true,
+    "fresh_vs_cache_max_abs_diff": 0.0,
+    "p12_cache_entry": "[redacted: local path]/02_research/experiments/07_repair_v3/harness/cache/probekeys_TB-Q100-ae-l2_3_2cda02b0d7de.pt",
+    "own_hook_capture_equal": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "edit_keys_fresh_equal_harness_cache": true,
+    "n_edit_answer_keys": 400,
+    "rank_K_ans": 400,
+    "rank_K_ans_plus_probe": 2254,
+    "experiment_protection_rank_COMP_B": 400,
+    "experiment_protection_rank_COMP_BP": 2254,
+    "time": "2026-11-10 15:52:38"
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "conds": {
+    "NONE": {
+     "mine": {
+      "heldout_n": 494,
+      "heldout_n_D1": 304,
+      "heldout_D1": 61.53846153846154,
+      "heldout_complaints_fixed": 0,
+      "heldout_n_complaints_stored": 304,
+      "heldout_noncomplaints_lost": 0,
+      "heldout_n_noncomplaints_stored": 190,
+      "rel_exact": 88.0,
+      "rel_n_exact": 88,
+      "eval_sec": 70.17986249923706,
+      "repair_n": 494,
+      "repair_n_D1": 305
+     },
+     "kind": "exact",
+     "vs": {
+      "experiment_record": "NONE",
+      "experiment_time": "2026-11-10 09:47:55",
+      "heldout_D1_exp": 61.53846153846154,
+      "heldout_n_D1_exp": 304,
+      "heldout_rows_agree": 494,
+      "heldout_rows": 494,
+      "rel_exact_exp": 88.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 0.0,
+      "repair_rows_agree": 494,
+      "repair_rows": 494
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {},
+     "saved": null,
+     "sanity": {
+      "heldout_flags_equal_stored_v2": true,
+      "heldout_flags_differing_from_stored": 0,
+      "repair_flags_equal_stored_v2": true,
+      "repair_flags_differing_from_stored": 0,
+      "stored_heldout_D1": 304,
+      "stored_repair_D1": 305,
+      "stored_Rel_exact_metrics_json": 88.0
+     },
+     "stats": {
+      "ci": [
+       57.48912351443124,
+       65.65040650406505
+      ],
+      "mcnemar_p": 1.0,
+      "fixed": 0,
+      "lost": 0,
+      "disjoint_D1": 62.26012793176972,
+      "disjoint_D1_WE": 62.26012793176972,
+      "disjoint_p": 1.0,
+      "disjoint_n": 469
+     }
+    },
+    "W0": {
+     "mine": {
+      "heldout_n": 494,
+      "heldout_n_D1": 0,
+      "heldout_D1": 0.0,
+      "heldout_complaints_fixed": 304,
+      "heldout_n_complaints_stored": 304,
+      "heldout_noncomplaints_lost": 0,
+      "heldout_n_noncomplaints_stored": 190,
+      "rel_exact": 1.0,
+      "rel_n_exact": 1,
+      "eval_sec": 68.87865495681763,
+      "repair_n": 494,
+      "repair_n_D1": 0
+     },
+     "kind": "exact",
+     "vs": {
+      "experiment_record": "ALL",
+      "experiment_time": "2026-11-10 09:48:52",
+      "heldout_D1_exp": 0.0,
+      "heldout_n_D1_exp": 0,
+      "heldout_rows_agree": 494,
+      "heldout_rows": 494,
+      "rel_exact_exp": 1.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 1.0000000000006808
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {},
+     "saved": null,
+     "sanity": {
+      "weight_equals_W0": true,
+      "heldout_D1_at_W0": 0,
+      "repair_D1_at_W0": 0
+     },
+     "stats": {
+      "ci": [
+       0.0,
+       0.0
+      ],
+      "mcnemar_p": 6.136366831622158e-92,
+      "fixed": 304,
+      "lost": 0,
+      "disjoint_D1": 0.0,
+      "disjoint_D1_WE": 62.26012793176972,
+      "disjoint_p": 2.513455854232436e-88,
+      "disjoint_n": 469
+     }
+    },
+    "BEST__COMP_B__nALL": {
+     "mine": {
+      "heldout_n": 494,
+      "heldout_n_D1": 289,
+      "heldout_D1": 58.502024291497975,
+      "heldout_complaints_fixed": 72,
+      "heldout_n_complaints_stored": 304,
+      "heldout_noncomplaints_lost": 57,
+      "heldout_n_noncomplaints_stored": 190,
+      "rel_exact": 86.0,
+      "rel_n_exact": 86,
+      "eval_sec": 71.60257339477539,
+      "reported_n": 305,
+      "reported_resolved": 164
+     },
+     "kind": "exact",
+     "vs": {
+      "experiment_record": "COMP_B__nALL__s0",
+      "experiment_time": "2026-11-10 10:10:00",
+      "heldout_D1_exp": 58.502024291497975,
+      "heldout_n_D1_exp": 289,
+      "heldout_rows_agree": 494,
+      "heldout_rows": 494,
+      "rel_exact_exp": 86.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 0.4609032395053101,
+      "reported_same_set": true,
+      "reported_resolved_exp": 164,
+      "reported_agree": 305
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {
+      "call": "repair(\"COMP\", H, stream[:n], protect=(\"K_ans\",), query=\"answer\", form=\"adapter\")",
+      "wall_sec": 25.86862349510193,
+      "fro_rel_to_log": 0.4609032395053101
+     },
+     "saved": {
+      "saved_correction": "out/TB-L100-ae-l2_3/corr/COMP_B__nALL__s0.pt",
+      "kind_saved": "adapter",
+      "kind_mine": "adapter",
+      "rel_fro_diff": 0.0,
+      "fro_mine": 122.82159378278813,
+      "fro_saved": 122.82159378278813,
+      "rank_mine": 1973,
+      "rank_saved": 1973,
+      "gate_mine": 1e-08,
+      "gate_saved": 1e-08
+     },
+     "sanity": null,
+     "stats": {
+      "ci": [
+       54.233870967741936,
+       63.03107606679035
+      ],
+      "mcnemar_p": 0.21756125383946115,
+      "fixed": 72,
+      "lost": 57,
+      "disjoint_D1": 59.701492537313435,
+      "disjoint_D1_WE": 62.26012793176972,
+      "disjoint_p": 0.3112309933213218,
+      "disjoint_n": 469
+     }
+    },
+    "COMP_B__n10": {
+     "mine": {
+      "heldout_n": 494,
+      "heldout_n_D1": 304,
+      "heldout_D1": 61.53846153846154,
+      "heldout_complaints_fixed": 19,
+      "heldout_n_complaints_stored": 304,
+      "heldout_noncomplaints_lost": 19,
+      "heldout_n_noncomplaints_stored": 190,
+      "rel_exact": 88.0,
+      "rel_n_exact": 88,
+      "eval_sec": 39.55847120285034,
+      "reported_n": 10,
+      "reported_resolved": 7
+     },
+     "kind": "exact",
+     "vs": {
+      "experiment_record": "COMP_B__n10__s0",
+      "experiment_time": "2026-11-10 09:52:46",
+      "heldout_D1_exp": 61.53846153846154,
+      "heldout_n_D1_exp": 304,
+      "heldout_rows_agree": 494,
+      "heldout_rows": 494,
+      "rel_exact_exp": 88.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 0.06608427318248078,
+      "reported_same_set": true,
+      "reported_resolved_exp": 7,
+      "reported_agree": 10
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {
+      "call": "repair(\"COMP\", H, stream[:n], protect=(\"K_ans\",), query=\"answer\", form=\"adapter\")",
+      "wall_sec": 0.5575931072235107,
+      "fro_rel_to_log": 0.06608427318248078
+     },
+     "saved": {
+      "saved_correction": "out/TB-L100-ae-l2_3/corr/COMP_B__n10__s0.pt",
+      "kind_saved": "adapter",
+      "kind_mine": "adapter",
+      "rel_fro_diff": 0.0,
+      "fro_mine": 17.61015124337438,
+      "fro_saved": 17.61015124337438,
+      "rank_mine": 57,
+      "rank_saved": 57,
+      "gate_mine": 1e-08,
+      "gate_saved": 1e-08
+     },
+     "sanity": null,
+     "stats": {
+      "ci": [
+       57.635931617601685,
+       65.51724137931035
+      ],
+      "mcnemar_p": 1.0,
+      "fixed": 19,
+      "lost": 19,
+      "disjoint_D1": 62.046908315565034,
+      "disjoint_D1_WE": 62.26012793176972,
+      "disjoint_p": 1.0,
+      "disjoint_n": 469
+     }
+    },
+    "REEDIT_B__n1__theirz": {
+     "mine": {
+      "heldout_n": 494,
+      "heldout_n_D1": 321,
+      "heldout_D1": 64.97975708502024,
+      "heldout_complaints_fixed": 20,
+      "heldout_n_complaints_stored": 304,
+      "heldout_noncomplaints_lost": 37,
+      "heldout_n_noncomplaints_stored": 190,
+      "rel_exact": 88.0,
+      "rel_n_exact": 88,
+      "eval_sec": 37.89996099472046,
+      "reported_n": 1,
+      "reported_resolved": 0
+     },
+     "kind": "exact",
+     "vs": {
+      "experiment_record": "REEDIT_B__n1__s0",
+      "experiment_time": "2026-11-10 09:51:14",
+      "heldout_D1_exp": 64.97975708502024,
+      "heldout_n_D1_exp": 321,
+      "heldout_rows_agree": 494,
+      "heldout_rows": 494,
+      "rel_exact_exp": 88.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 0.07510523488052578,
+      "reported_same_set": true,
+      "reported_resolved_exp": 0,
+      "reported_agree": 1
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {
+      "call": "z*: repair(\"REEDIT\", H, [c], variant=\"k0+kp\", return_targets=True, chunk=1) per complaint; install: repair(\"REEDIT\", H, stream[:n], variant=\"k0+kp\", targets=z*, chunk=1)",
+      "wall_sec": 1.7848501205444336,
+      "zopt_wall_sec": 0.374988317489624,
+      "fro_rel_to_log": 0.07510523488052578,
+      "l2": 3.0,
+      "variant": "k0+kp",
+      "installed": 1,
+      "not_installed": [],
+      "forced_not_installed": [],
+      "solve_attainment": 0.8702793795288424,
+      "dW_over_W0": 0.16238122418869874,
+      "targets": "experiment cache (cache/targets_<log>.pt), read-only",
+      "cache_oracle_flags_false": []
+     },
+     "saved": {
+      "saved_correction": null
+     },
+     "sanity": null,
+     "stats": {
+      "ci": [
+       61.01010101010102,
+       69.23076923076923
+      ],
+      "mcnemar_p": 0.033143967787505446,
+      "fixed": 20,
+      "lost": 37,
+      "disjoint_D1": 66.31130063965885,
+      "disjoint_D1_WE": 62.26012793176972,
+      "disjoint_p": 0.014453833533827731,
+      "disjoint_n": 469
+     }
+    },
+    "REEDIT_B__n1": {
+     "mine": {
+      "heldout_n": 494,
+      "heldout_n_D1": 321,
+      "heldout_D1": 64.97975708502024,
+      "heldout_complaints_fixed": 20,
+      "heldout_n_complaints_stored": 304,
+      "heldout_noncomplaints_lost": 37,
+      "heldout_n_noncomplaints_stored": 190,
+      "rel_exact": 88.0,
+      "rel_n_exact": 88,
+      "eval_sec": 38.83530259132385,
+      "reported_n": 1,
+      "reported_resolved": 0
+     },
+     "kind": "noisy",
+     "vs": {
+      "experiment_record": "REEDIT_B__n1__s0",
+      "experiment_time": "2026-11-10 09:51:14",
+      "heldout_D1_exp": 64.97975708502024,
+      "heldout_n_D1_exp": 321,
+      "heldout_rows_agree": 494,
+      "heldout_rows": 494,
+      "rel_exact_exp": 88.0,
+      "rel_em_agree": 100,
+      "fro_rel_to_log_exp": 0.07510523488052578,
+      "reported_same_set": true,
+      "reported_resolved_exp": 0,
+      "reported_agree": 1
+     },
+     "heldout_rows_differ": [],
+     "rel_em_differ": [],
+     "repair": {
+      "call": "z*: repair(\"REEDIT\", H, [c], variant=\"k0+kp\", return_targets=True, chunk=1) per complaint; install: repair(\"REEDIT\", H, stream[:n], variant=\"k0+kp\", targets=z*, chunk=1)",
+      "wall_sec": 1.1305689811706543,
+      "zopt_wall_sec": 0.9571330547332764,
+      "fro_rel_to_log": 0.07510523488052578,
+      "l2": 3.0,
+      "variant": "k0+kp",
+      "installed": 1,
+      "not_installed": [],
+      "forced_not_installed": null,
+      "solve_attainment": 0.8702793795288424,
+      "dW_over_W0": 0.16238122418869874,
+      "targets": "mine (fresh z* per complaint, B=1, chunk=1)",
+      "my_z_oracle": 1,
+      "my_z_vendor_attempt_oracle": 1,
+      "my_z_vendor_attempt_not_oracle": []
+     },
+     "saved": {
+      "saved_correction": null
+     },
+     "sanity": null,
+     "stats": {
+      "ci": [
+       61.01010101010102,
+       69.23076923076923
+      ],
+      "mcnemar_p": 0.033143967787505446,
+      "fixed": 20,
+      "lost": 37,
+      "disjoint_D1": 66.31130063965885,
+      "disjoint_D1_WE": 62.26012793176972,
+      "disjoint_p": 0.014453833533827731,
+      "disjoint_n": 469
+     }
+    }
+   },
+   "xcheck": {
+    "log": "TB-L100-ae-l2_3",
+    "cross_checks": {
+     "split_equals_harness": true,
+     "stream100_equals_harness_sampler": true,
+     "stream_equals_experiment_setup": true,
+     "records_equal_harness_rows": true,
+     "record_fields_match_probes": true,
+     "edit_stream_matches_items": true,
+     "n_heldout_valid": 494,
+     "n_repair_valid": 494,
+     "n_stream": 305,
+     "stream_all_repair_D1_valid": true,
+     "heldout_uids_disjoint_from_repair_uids": true,
+     "W0_equals_checkpoint_file": [
+      "language_model.model.layers.16.mlp.down_proj.weight",
+      true
+     ],
+     "WE_differs_from_W0": 45081496,
+     "fro_log": 266.48021375292666
+    },
+    "harness_checks": {
+     "probe_uids_match_records": true,
+     "collapsed_working_point": false,
+     "WE_float_minus_W0_equals_stored_composite": true,
+     "C_equals_stored_composite": true,
+     "factor_uids_match_stream": true,
+     "rollback_empty_equals_WE": true
+    },
+    "draw": [
+     [
+      "COMP_B",
+      10
+     ],
+     [
+      "REEDIT_B",
+      1
+     ]
+    ]
+   },
+   "relb8": {
+    "log": "TB-L100-ae-l2_3",
+    "cond": "RELB8",
+    "mine_b8": {
+     "rel": {
+      "token": 97.12261933088303,
+      "exact": 88.0,
+      "n": 100
+     },
+     "tgen": {
+      "token": 67.6126993894577,
+      "exact": 28.999999999999996,
+      "n": 100
+     },
+     "igen": {
+      "token": 88.48611173033714,
+      "exact": 66.0,
+      "n": 100
+     }
+    },
+    "stored": {
+     "Rel_exact": 88.0,
+     "Rel_token": 97.12261933088303,
+     "TGen_exact": 28.999999999999996,
+     "IGen_exact": 66.0
+    },
+    "rel_matches_stored": true,
+    "tgen_igen_match_stored": true,
+    "time": "2026-11-10 15:38:23"
+   },
+   "loc": {
+    "log": "TB-L100-ae-l2_3",
+    "cond": "LOC",
+    "mine": {
+     "tloc": {
+      "WE": 77.2618435891071,
+      "best": 77.78366210329119,
+      "W0_self": 100.0,
+      "n": 250
+     },
+     "iloc": {
+      "WE": 81.470231990232,
+      "best": 76.65621489621489,
+      "W0_self": 100.0,
+      "n": 250
+     }
+    },
+    "experiment": {
+     "tloc": {
+      "WE": 77.2618435891071,
+      "best": 77.78366210329119
+     },
+     "iloc": {
+      "WE": 81.470231990232,
+      "best": 76.65621489621489
+     }
+    },
+    "agree": true,
+    "n_heldout_items": 250,
+    "time": "2026-11-10 16:06:09"
+   },
+   "wproj": {
+    "mine": {
+     "heldout_n": 494,
+     "heldout_n_D1": 400,
+     "heldout_D1": 80.97165991902834,
+     "heldout_complaints_fixed": 49,
+     "heldout_n_complaints_stored": 304,
+     "heldout_noncomplaints_lost": 145,
+     "heldout_n_noncomplaints_stored": 190,
+     "rel_exact": 89.0,
+     "rel_n_exact": 89,
+     "eval_sec": 71.15466785430908,
+     "repair_n": 494,
+     "repair_n_D1": 402,
+     "repair_complaints_fixed": 33,
+     "repair_noncomplaints_lost": 130
+    },
+    "weight": {
+     "rank_K_ans": 483,
+     "norm_Wproj_minus_W0_over_log": 0.378641541601214,
+     "norm_Wproj_minus_WE_over_log": 0.925543455443609,
+     "module_output_on_edit_answer_keys_rel_err": 0.0001905284444971939
+    }
+   },
+   "protkeys": {
+    "log": "TB-L100-ae-l2_3",
+    "cond": "PROTKEYS",
+    "n_probe_rows": 189,
+    "selection_repair_noncomplaints_only": true,
+    "selection_equals_my_repair_noncomplaints": true,
+    "n_heldout_rows_in_selection": 0,
+    "n_keys": 905,
+    "n_keys_expected": 905,
+    "harness_cache_file": "probekeys_TB-L100-ae-l2_3_287d6e78efce.pt",
+    "harness_cache_file_exists": true,
+    "fresh_keys_equal_harness_cache": true,
+    "fresh_vs_cache_max_abs_diff": 0.0,
+    "p12_cache_entry": "[redacted: local path]/02_research/experiments/07_repair_v3/harness/cache/probekeys_TB-L100-ae-l2_3_287d6e78efce.pt",
+    "own_hook_capture_equal": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "edit_keys_fresh_equal_harness_cache": true,
+    "n_edit_answer_keys": 483,
+    "rank_K_ans": 483,
+    "rank_K_ans_plus_probe": 1355,
+    "experiment_protection_rank_COMP_B": 483,
+    "experiment_protection_rank_COMP_BP": 1355,
+    "time": "2026-11-10 15:37:36"
+   },
+   "moddiag": {
+    "source": "my own key capture (GPU)",
+    "rank_K_ans": 483,
+    "s_complaints": 0.43439663094813685,
+    "s_noncomplaints": 0.640631001514532,
+    "a_complaints": 0.8708628856186391,
+    "a_noncomplaints": 1.406992182478319
+   }
+  }
+ },
+ "table": [
+  [
+   "Qwen NONE (unrepaired): HELD-OUT D1 % (+fixed / -lost)",
+   "54.7 (268/490)",
+   "54.7 (268/490; +0 / -0)",
+   "yes, 490/490 rows"
+  ],
+  [
+   "Qwen NONE (unrepaired): Rel exact",
+   "78",
+   "78",
+   "yes, 100/100 edits"
+  ],
+  [
+   "Qwen ALL (W_0): HELD-OUT D1 % (+fixed / -lost)",
+   "0.0 (0/490)",
+   "0.0 (0/490; +268 / -0)",
+   "yes, 490/490 rows"
+  ],
+  [
+   "Qwen ALL (W_0): Rel exact",
+   "0",
+   "0",
+   "yes, 100/100 edits"
+  ],
+  [
+   "Qwen best point COMP-B n=ALL: HELD-OUT D1 % (+fixed / -lost)",
+   "47.3 (232/490)",
+   "47.3 (232/490; +97 / -61)",
+   "yes, 490/490 rows"
+  ],
+  [
+   "Qwen best point COMP-B n=ALL: Rel exact",
+   "78",
+   "78",
+   "yes, 100/100 edits"
+  ],
+  [
+   "Qwen best point COMP-B n=ALL: reported resolved",
+   "168/297",
+   "168/297",
+   "yes, 297/297 rows"
+  ],
+  [
+   "Qwen best point COMP-B n=ALL: rebuilt operator vs the experiment's saved operator",
+   "rank 2841, norm/log 0.647",
+   "rank 2841, norm/log 0.647; rel. Frobenius diff 0.0e+00",
+   "yes"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100 (first-pass record), experiment's z* re-installed by me: HELD-OUT D1 % (+fixed / -lost)",
+   "58.8 (288/490) (first-pass record)",
+   "58.8 (288/490; +51 / -71)",
+   "yes, 490/490 rows"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100 (first-pass record), experiment's z* re-installed by me: Rel exact",
+   "71",
+   "71",
+   "yes, 100/100 edits"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100 (first-pass record), experiment's z* re-installed by me: reported resolved",
+   "93/100",
+   "93/100",
+   "yes, 100/100 rows"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100 (first-pass record), experiment's z* re-installed by me: rebuilt weight vs the experiment's saved weight",
+   "norm/log 0.718",
+   "norm/log 0.718; 0 of 22544384 entries differ (rel. diff 0.0e+00)",
+   "yes"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100 (first-pass record), my own z*, same installed set: HELD-OUT D1 % (+fixed / -lost)",
+   "58.8 (288/490) (first-pass record)",
+   "59.4 (291/490; +50 / -73)",
+   "differs only through z*: 479/490 rows equal, D1 0.6 points apart"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100 (first-pass record), my own z*, same installed set: Rel exact",
+   "71",
+   "72",
+   "99/100 edits equal"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100 (first-pass record), my own z*, same installed set: reported resolved",
+   "93/100",
+   "93/100",
+   "100/100 rows"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100 (first-pass record), my own z*, same installed set: rebuilt weight vs the experiment's saved weight",
+   "norm/log 0.718",
+   "norm/log 0.717; 21412708 of 22544384 entries differ (rel. diff 9.3e-02)",
+   "z* noise"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100, stated protocol (my z*, fallback ladder; the experiment has no such record): HELD-OUT D1 % (+fixed / -lost)",
+   "no record",
+   "58.4 (286/490; +53 / -71)",
+   "-"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100, stated protocol (my z*, fallback ladder; the experiment has no such record): Rel exact",
+   "no record",
+   "72",
+   "-"
+  ],
+  [
+   "Qwen random cell REEDIT-B n=100, stated protocol (my z*, fallback ladder; the experiment has no such record): reported resolved / installed / norm over log",
+   "no record",
+   "93/100 / 100 / 0.725",
+   "-"
+  ],
+  [
+   "Qwen random cell RB-TOT n=100: HELD-OUT D1 % (+fixed / -lost)",
+   "42.2 (207/490)",
+   "42.2 (207/490; +92 / -31)",
+   "yes, 490/490 rows"
+  ],
+  [
+   "Qwen random cell RB-TOT n=100: Rel exact",
+   "53",
+   "53",
+   "yes, 100/100 edits"
+  ],
+  [
+   "Qwen random cell RB-TOT n=100: reported resolved",
+   "47/100",
+   "47/100",
+   "yes, 100/100 rows"
+  ],
+  [
+   "Qwen random cell RB-TOT n=100: rebuilt weight vs the experiment's saved weight",
+   "norm/log 0.582",
+   "norm/log 0.582; 0 of 22544384 entries differ (rel. diff 0.0e+00)",
+   "yes"
+  ],
+  [
+   "Qwen sanity: NONE vs stored v2 flags, rows differing (HELD-OUT / REPAIR)",
+   "0 / 0",
+   "0 / 0 (stored D1 268 / 297)",
+   "yes"
+  ],
+  [
+   "Qwen sanity: D1 complaints at W_0 (HELD-OUT / REPAIR); weight == checkpoint",
+   "0 / 0; True",
+   "0 / 0; True (W_0 == checkpoint file: ['model.layers.20.mlp.down_proj.weight', True])",
+   "yes"
+  ],
+  [
+   "Qwen sanity: stored Rel exact / token on the testbed's batch-8 path",
+   "78.0 / 91.58",
+   "78.0 / 91.58",
+   "yes"
+  ],
+  [
+   "Qwen best point: 95% CI / exact McNemar p (full pool)",
+   "[43.1, 51.8] / 0.0052",
+   "[43.1, 51.8] / 0.0052 (my flags, my statistics)",
+   "yes"
+  ],
+  [
+   "Qwen best point on the non-duplicated rows: D1 % vs unrepaired (p)",
+   "49.0 vs 54.2 (0.057)",
+   "49.0 vs 54.2 (0.057; 465 rows)",
+   "yes"
+  ],
+  [
+   "LLaVA NONE (unrepaired): HELD-OUT D1 % (+fixed / -lost)",
+   "61.5 (304/494)",
+   "61.5 (304/494; +0 / -0)",
+   "yes, 494/494 rows"
+  ],
+  [
+   "LLaVA NONE (unrepaired): Rel exact",
+   "88",
+   "88",
+   "yes, 100/100 edits"
+  ],
+  [
+   "LLaVA ALL (W_0): HELD-OUT D1 % (+fixed / -lost)",
+   "0.0 (0/494)",
+   "0.0 (0/494; +304 / -0)",
+   "yes, 494/494 rows"
+  ],
+  [
+   "LLaVA ALL (W_0): Rel exact",
+   "1",
+   "1",
+   "yes, 100/100 edits"
+  ],
+  [
+   "LLaVA best point COMP-B n=ALL: HELD-OUT D1 % (+fixed / -lost)",
+   "58.5 (289/494)",
+   "58.5 (289/494; +72 / -57)",
+   "yes, 494/494 rows"
+  ],
+  [
+   "LLaVA best point COMP-B n=ALL: Rel exact",
+   "86",
+   "86",
+   "yes, 100/100 edits"
+  ],
+  [
+   "LLaVA best point COMP-B n=ALL: reported resolved",
+   "164/305",
+   "164/305",
+   "yes, 305/305 rows"
+  ],
+  [
+   "LLaVA best point COMP-B n=ALL: rebuilt operator vs the experiment's saved operator",
+   "rank 1973, norm/log 0.461",
+   "rank 1973, norm/log 0.461; rel. Frobenius diff 0.0e+00",
+   "yes"
+  ],
+  [
+   "LLaVA random cell COMP-B n=10: HELD-OUT D1 % (+fixed / -lost)",
+   "61.5 (304/494)",
+   "61.5 (304/494; +19 / -19)",
+   "yes, 494/494 rows"
+  ],
+  [
+   "LLaVA random cell COMP-B n=10: Rel exact",
+   "88",
+   "88",
+   "yes, 100/100 edits"
+  ],
+  [
+   "LLaVA random cell COMP-B n=10: reported resolved",
+   "7/10",
+   "7/10",
+   "yes, 10/10 rows"
+  ],
+  [
+   "LLaVA random cell COMP-B n=10: rebuilt operator vs the experiment's saved operator",
+   "rank 57, norm/log 0.066",
+   "rank 57, norm/log 0.066; rel. Frobenius diff 0.0e+00",
+   "yes"
+  ],
+  [
+   "LLaVA random cell REEDIT-B n=1, experiment's z* re-installed by me: HELD-OUT D1 % (+fixed / -lost)",
+   "65.0 (321/494)",
+   "65.0 (321/494; +20 / -37)",
+   "yes, 494/494 rows"
+  ],
+  [
+   "LLaVA random cell REEDIT-B n=1, experiment's z* re-installed by me: Rel exact",
+   "88",
+   "88",
+   "yes, 100/100 edits"
+  ],
+  [
+   "LLaVA random cell REEDIT-B n=1, experiment's z* re-installed by me: reported resolved",
+   "0/1",
+   "0/1",
+   "yes, 1/1 rows"
+  ],
+  [
+   "LLaVA random cell REEDIT-B n=1, my own z*: HELD-OUT D1 % (+fixed / -lost)",
+   "65.0 (321/494)",
+   "65.0 (321/494; +20 / -37)",
+   "yes, 494/494 rows (z* reproduced)"
+  ],
+  [
+   "LLaVA random cell REEDIT-B n=1, my own z*: Rel exact",
+   "88",
+   "88",
+   "yes, 100/100 edits"
+  ],
+  [
+   "LLaVA random cell REEDIT-B n=1, my own z*: reported resolved",
+   "0/1",
+   "0/1",
+   "1/1 rows"
+  ],
+  [
+   "LLaVA sanity: NONE vs stored v2 flags, rows differing (HELD-OUT / REPAIR)",
+   "0 / 0",
+   "0 / 0 (stored D1 304 / 305)",
+   "yes"
+  ],
+  [
+   "LLaVA sanity: D1 complaints at W_0 (HELD-OUT / REPAIR); weight == checkpoint",
+   "0 / 0; True",
+   "0 / 0; True (W_0 == checkpoint file: ['language_model.model.layers.16.mlp.down_proj.weight', True])",
+   "yes"
+  ],
+  [
+   "LLaVA sanity: stored Rel exact / token on the testbed's batch-8 path",
+   "88.0 / 97.12",
+   "88.0 / 97.12",
+   "yes"
+  ],
+  [
+   "LLaVA best point: T-Loc / I-Loc of the held-out items, unrepaired -> repaired",
+   "77.3 -> 77.8 / 81.5 -> 76.7",
+   "77.3 -> 77.8 / 81.5 -> 76.7 (probes and comparison rebuilt; vendor batch-8 forwards)",
+   "yes"
+  ],
+  [
+   "LLaVA best point: 95% CI / exact McNemar p (full pool)",
+   "[54.2, 63.0] / 0.22",
+   "[54.2, 63.0] / 0.22 (my flags, my statistics)",
+   "yes"
+  ],
+  [
+   "LLaVA best point on the non-duplicated rows: D1 % vs unrepaired (p)",
+   "59.7 vs 62.3 (0.31)",
+   "59.7 vs 62.3 (0.31; 469 rows)",
+   "yes"
+  ],
+  [
+   "LLaVA verifier's extra (no experiment record): behaviour of W_0 + D P_ans, i.e. W_0 restored outside the edits' answer-key span -- HELD-OUT D1 % (+fixed / -lost); Rel exact; REPAIR-pool D1",
+   "module-level statement only (0.87 of the module change left); unrepaired 61.5, Rel 88, REPAIR D1 305/494",
+   "81.0 (400/494; +49 / -145); Rel 89; REPAIR D1 402/494 (+33 / -130)",
+   "-"
+  ],
+  [
+   "LLaVA module level: rank of the edits' answer-key span / share of a held-out complaint's key norm in it / module change left if W_0 is restored outside it (medians)",
+   "483 / 0.43 / 0.87",
+   "483 / 0.43 / 0.87 (my own key capture (GPU))",
+   "yes"
+  ],
+  [
+   "LLaVA module level, the same two medians for held-out NON-complaints (not quoted in the report's summary)",
+   "0.64 / 1.41",
+   "0.64 / 1.41",
+   "yes"
+  ],
+  [
+   "report's two tables: cells equal to my own summary of the raw records",
+   "44 cells",
+   "44 agree; dagger marks correct: True",
+   "yes"
+  ],
+  [
+   "Qwen raw records: reported set = first n of MY stream / all valid REPAIR-pool D1 complaints / held-out rows = MY valid HELD-OUT rows",
+   "57 records",
+   "57 / 57 / 57; nested pairs 120/120",
+   "yes"
+  ],
+  [
+   "Qwen results.json vs my summary of the raw records (cells, CI, McNemar)",
+   "741 values",
+   "0 mismatches",
+   "yes"
+  ],
+  [
+   "Qwen split leak: valid HELD-OUT rows with a REPAIR-pool twin / of them complaints",
+   "25 / 16",
+   "25 / 16 (comparing image pixels instead of file names: 25 / 16)",
+   "yes"
+  ],
+  [
+   "LLaVA raw records: reported set = first n of MY stream / all valid REPAIR-pool D1 complaints / held-out rows = MY valid HELD-OUT rows",
+   "47 records",
+   "47 / 47 / 47; nested pairs 83/83",
+   "yes"
+  ],
+  [
+   "LLaVA results.json vs my summary of the raw records (cells, CI, McNemar)",
+   "585 values",
+   "0 mismatches",
+   "yes"
+  ],
+  [
+   "LLaVA split leak: valid HELD-OUT rows with a REPAIR-pool twin / of them complaints",
+   "25 / 12",
+   "25 / 12 (comparing image pixels instead of file names: 25 / 12)",
+   "yes"
+  ],
+  [
+   "COMP-S(+) vs COMP-B(+) operators, max rel. Frobenius diff (saved corrections)",
+   "<= 3e-8",
+   "2.9e-08 (12 pairs)",
+   "yes"
+  ],
+  [
+   "REEDIT-S vs REEDIT-B weights (LLaVA), max rel. diff",
+   "1.5e-3",
+   "1.5e-03 (2 pairs)",
+   "yes"
+  ],
+  [
+   "results.md = render(results.json) and results.json = aggregate(raw records): sandbox re-run of copies of the experiment's scripts, byte comparison",
+   "identical",
+   "md identical: True; json identical: True",
+   "yes"
+  ]
+ ],
+ "verdicts": [
+  [
+   "Sanity: NONE reproduces the stored D1 sets and Rel; W_0 gives zero D1",
+   "CONFIRMED",
+   "own loop: Qwen, LLaVA row for row"
+  ],
+  [
+   "Unrepaired baselines and the two seed-0 tables",
+   "CONFIRMED",
+   "44/44 cells equal the raw records; 10/10 recomputed conditions agree row for row"
+  ],
+  [
+   "Best operating point = COMP-B at n = ALL on both logs, with its numbers",
+   "CONFIRMED",
+   "selection re-derived from the raw records; correction rebuilt and re-evaluated on: Qwen, LLaVA"
+  ],
+  [
+   "Generalisation reading (COMP-B fixes and breaks at similar rates; COMP-B+ worse at ALL; REEDIT net negative at every n; rollback only by removing edits)",
+   "CONFIRMED (numbers)",
+   "rates and nets re-derived from the raw records; the reading is single-seed and has no same-norm control"
+  ],
+  [
+   "Anomalies: split leak; harness z* fallback bug; sequential = batch; answer-position compensation; ALLPOS",
+   "CONFIRMED",
+   "twins recounted from the records (also by pixel content); bug located in the source; operators and weights compared from the saved corrections"
+  ],
+  [
+   "Why (LLaVA, module level): rank, share, residual change; 'the damage travels through the edits' own key directions'",
+   "CONFIRMED (numbers); reading supported only by my extra run",
+   "the three numbers reproduce (my own key capture (GPU)); my behavioural run of that very weight (W_0 restored outside the span; no experiment record, one run): HELD-OUT D1 81.0% at Rel exact 89, against 61.5% unrepaired -- it does not lower D1"
+  ],
+  [
+   "Not run: D2, seeds 1-2, text head-to-head, Qwen REEDIT re-runs",
+   "CONFIRMED",
+   "no such record exists; every record has seed 0"
+  ]
+ ],
+ "missing": []
+}

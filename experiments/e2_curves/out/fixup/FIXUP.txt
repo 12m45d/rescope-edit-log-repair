@@ -1,0 +1,54 @@
+E2 FIX-UP   written 2026-11-12 21:29:39 by code/fixup_render.py from out/fixup/checks.json and the JSON files named below
+Additions required by the amendments of 2026-11-12 01:00 and 02:55 UTC of PROTOCOL.md, after the independent verification (verify/verdicts.json: 'unfavourable items in the files
+missing from the summary' and the protocol and code notes).  Nothing was selected by looking at results; no model was run; no existing file was changed: the additions live in
+out/fixup/ and code/fixup_*.py.
+Paper numbers: 261 new names (all start with 'EtwoFx'); names shared with out/paper_numbers.json: 0.
+
+ITEM 4  part c', POST HOC read-out, 200 seeded draws  ->  cw_check_200.json, table_fixup.txt (F4), 44 paper numbers
+  Mean false firing of the literal two-block rule over the draws with seeds 0 to 199, on the REPAIR rows outside the calibration draw and on heldout_disjoint; 95 % interval by a
+  bootstrap over query clusters with the draws nested (the same resampled clusters under every draw; thresholds of a draw not recomputed; draws not resampled; 2000 resamples).
+  Q: REPAIR rows outside the draw 5.16 [3.78, 6.68] against the bound 4.95: the interval CONTAINS the bound (stored mean over 20 draws 4.52); heldout_disjoint 5.90 [4.26, 7.79]: the interval CONTAINS the bound.
+  L: REPAIR rows outside the draw 5.03 [3.56, 6.73] against the bound 4.95: the interval CONTAINS the bound (stored mean over 20 draws 5.24); heldout_disjoint 2.89 [1.72, 4.22]: the interval DOES NOT CONTAIN the bound.
+  Every file and line that quotes this read-out carries the label 'POST HOC read-out'.
+
+ITEM 5  H1 record  ->  h1_registered.json, table_fixup.txt (F5), 92 paper numbers
+  The rule of R6 quoted from PROTOCOL.md; its outcome under the two-sided and the one-sided reading of 'within 2 points' per development log, with D1 and Rel exact of the repair
+  and of the deployed log (mean and per complaint stream), Rel kept / gained / lost, edit checks lost / gained of 300, the rows on which the repaired log still releases an edit,
+  and the two differences to linear repairs with intervals and Holm-adjusted values.  The record makes no statement about the time at which a reading entered the code.
+  Q: D1 1.00 % (deployed 54.19); Rel exact 78.0 against 78.0 (+0.0): two-sided met, one-sided met.
+  L: D1 2.63 % (deployed 62.26); Rel exact 92.0 against 88.0 (+4.0): two-sided NOT met, one-sided met.
+  prefix part: complete: h1_prefix.json of 2026-11-12 20:32:33 UTC: 6 of 6 prefix logs complete; two-sided met on 4, one-sided met on 5.
+  Rule: two-sided reading: not met (the development-log part fails; the prefix part cannot change this); one-sided reading: met.
+
+ITEM 6  reporting items of the verification  ->  reporting.json, running_example_flag.json, table_fixup.txt (F6a - F6d), 125 paper numbers
+  (a) H1 row and the least repair from the deployed start at n = 10 and n = 100: share of heldout_disjoint rows on which an edit is still released, near-scope firing per kind;
+  (b) false firing of the label-free migration on MME-T by n, both logs, mean with the 5th and 95th percentile over draws; mean above the level 5 % at n = Q: 40, 50, 200, ALL; L: none;
+  (c) capped edits of part c' with two decimals: Q 2.10, L 0.05;
+  (d) running example: two different edits = yes; stream positions (0-based) 21 (complaint's edit, largest coordinate) and 2 (why-not rephrase).  out/running_example.json itself is not changed: the flag is the file running_example_flag.json.
+
+CHECKS (25; failed: 0)
+  [ok] item 4: Q: the first 20 of the 200 seeded draws reproduce the stored draws of out/parts/cw_check_TB-Q100-ae-l2_3.json (per-draw rates, fresh rows, bound, means)   -- {'max_abs_diff_fresh_repair': 0.0, 'max_abs_diff_heldout_disjoint': 0.0, 'mean_first_20_fresh_repair': 4.52375652428996, 'stored_mean_fresh_repair': 4.52375652428996}
+  [ok] item 4: Q: the bound is the same for every draw and the statistic is the mean of the per-draw rates
+  [ok] item 4: L: the first 20 of the 200 seeded draws reproduce the stored draws of out/parts/cw_check_TB-L100-ae-l2_3.json (per-draw rates, fresh rows, bound, means)   -- {'max_abs_diff_fresh_repair': 0.0, 'max_abs_diff_heldout_disjoint': 0.0, 'mean_first_20_fresh_repair': 5.240603990120652, 'stored_mean_fresh_repair': 5.240603990120652}
+  [ok] item 4: L: the bound is the same for every draw and the statistic is the mean of the per-draw rates
+  [ok] item 5: the rule of R6 is found in PROTOCOL.md and quoted from the file
+  [ok] item 5: Holm values of the two differences to linear repairs, recomputed, equal out/h1.json
+  [ok] item 5: Q: stream 0 of the kept / gained / lost and lost / gained counts equals the verification's numbers (verify/verdicts.json)
+  [ok] item 5: Q: firing on heldout_disjoint and near-scope firing of the H1 row equal the verification's numbers
+  [ok] item 5: L: stream 0 of the kept / gained / lost and lost / gained counts equals the verification's numbers (verify/verdicts.json)
+  [ok] item 5: L: firing on heldout_disjoint and near-scope firing of the H1 row equal the verification's numbers
+  [ok] item 5: the numbers of out/h1.json equal the records of out/results.json (D1, Rel, per stream)
+  [ok] item 5: both readings, recomputed from the numbers, equal the flags of out/h1.json
+  [ok] item 5: prefix cells: both readings, recomputed from the copied numbers, equal the flags of h1_prefix.json
+  [ok] item 5: h1_prefix.json did not change while it was read   -- {'file': '[redacted: local path]/02_research/experiments/10_final/e2_prefix/out/h1_prefix.json', 'modified': '2026-11-12 20:32:33 UTC', 'unchanged_while_read': True, 'read_at': '2026-11-12 21:29:37 UTC'}
+  [ok] item 6: (a) Q: deployed start, n = 10: firing on heldout_disjoint and near-scope firing equal the verification's numbers
+  [ok] item 6: (b) Q: mean, 5th and 95th percentile of MME-T firing recomputed from out/parts/c_gate_TB-Q100-ae-l2_3.json equal the records of out/results.json   -- 11 n
+  [ok] item 6: (b) Q: the means at n = 40, 50, 100, 200, ALL equal the verification's numbers
+  [ok] item 6: (c) Q: the capped-edits record equals the paper number EtwoQWCalCapped of E2   -- 2.1
+  [ok] item 6: (a) L: deployed start, n = 10: firing on heldout_disjoint and near-scope firing equal the verification's numbers
+  [ok] item 6: (b) L: mean, 5th and 95th percentile of MME-T firing recomputed from out/parts/c_gate_TB-L100-ae-l2_3.json equal the records of out/results.json   -- 11 n
+  [ok] item 6: (b) L: the means at n = 40, 50, 100, 200, ALL equal the verification's numbers
+  [ok] item 6: (c) L: the capped-edits record equals the paper number EtwoLWCalCapped of E2   -- 0.05
+  [ok] item 6: (d) the two edits of the running example differ, and the record's own field is_the_example_edit says so   -- [21, 2]
+  [ok] item 0: no name of out/fixup/paper_numbers_fixup.json exists in out/paper_numbers.json   -- collisions: 0
+  [ok] item 0: every paper number has a documentation line

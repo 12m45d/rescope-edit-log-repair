@@ -1,0 +1,608 @@
+{
+ "written": "2026-11-12 06:41:35",
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "backbone": "Qwen2.5-VL-3B",
+ "endpoints_file": "endpoints_added.json",
+ "n_paper_numbers": 1393,
+ "n_paper_numbers_by_item": {
+  "2": 549,
+  "3": 328,
+  "4": 516
+ },
+ "n_collisions": 0,
+ "collisions": {},
+ "equal_to_existing_paper_numbers": [
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "what": "H3 pair 1: level of rescope",
+   "name": "EthreeQAeCRescopeHthreeExact",
+   "mine": 37.67,
+   "stored": 37.67,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "what": "H3 pair 1: level of the selected gate",
+   "name": "EthreeQAeCWhiteOneSharedHthreeExact",
+   "mine": 39.0,
+   "stored": 39.0,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "what": "D1 of the deployed log on heldout_disjoint",
+   "name": "EthreeQAeCDeployedHdDone",
+   "mine": 54.19,
+   "stored": 54.19,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "what": "D1 of rescope on heldout_disjoint (mean of the draws)",
+   "name": "EthreeQAeCRescopeHdDone",
+   "mine": 3.94,
+   "stored": 3.94,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "what": "near-scope probes released, rescope, behaviour",
+   "name": "EthreeQAeCRescopeHdNearFired",
+   "mine": 22.62,
+   "stored": 22.62,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "what": "near-scope probes released, rescope, gate level",
+   "name": "EthreeQAeCRescopeGateHdNearFired",
+   "mine": 26.61,
+   "stored": 26.61,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "what": "false firing of rescope, mean of 20 draws",
+   "name": "EthreeQAeCRescopeGateHdFired",
+   "mine": 4.65,
+   "stored": 4.65,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "what": "capped edits of rescope, mean of 20 draws",
+   "name": "EthreeQAeCRescopeGateCapped",
+   "mine": 0.0,
+   "stored": 0.0,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "what": "smallest self-separation margin",
+   "name": "EthreeQAeCMarginMin",
+   "mine": 0.3532,
+   "stored": 0.3532,
+   "equal": true
+  },
+  {
+   "log": "TB-Q200-ae-l2_3",
+   "what": "H3 pair 1: level of rescope",
+   "name": "EthreeQAeCCRescopeHthreeExact",
+   "mine": 40.17,
+   "stored": 40.17,
+   "equal": true
+  },
+  {
+   "log": "TB-Q200-ae-l2_3",
+   "what": "H3 pair 1: level of the selected gate",
+   "name": "EthreeQAeCCWhiteOneSharedHthreeExact",
+   "mine": 39.0,
+   "stored": 39.0,
+   "equal": true
+  },
+  {
+   "log": "TB-Q200-ae-l2_3",
+   "what": "D1 of the deployed log on heldout_disjoint",
+   "name": "EthreeQAeCCDeployedHdDone",
+   "mine": 77.42,
+   "stored": 77.42,
+   "equal": true
+  },
+  {
+   "log": "TB-Q200-ae-l2_3",
+   "what": "D1 of rescope on heldout_disjoint (mean of the draws)",
+   "name": "EthreeQAeCCRescopeHdDone",
+   "mine": 4.01,
+   "stored": 4.01,
+   "equal": true
+  },
+  {
+   "log": "TB-Q200-ae-l2_3",
+   "what": "near-scope probes released, rescope, behaviour",
+   "name": "EthreeQAeCCRescopeHdNearFired",
+   "mine": 13.19,
+   "stored": 13.19,
+   "equal": true
+  },
+  {
+   "log": "TB-Q200-ae-l2_3",
+   "what": "near-scope probes released, rescope, gate level",
+   "name": "EthreeQAeCCRescopeGateHdNearFired",
+   "mine": 14.17,
+   "stored": 14.17,
+   "equal": true
+  },
+  {
+   "log": "TB-Q200-ae-l2_3",
+   "what": "false firing of rescope, mean of 20 draws",
+   "name": "EthreeQAeCCRescopeGateHdFired",
+   "mine": 4.04,
+   "stored": 4.04,
+   "equal": true
+  },
+  {
+   "log": "TB-Q200-ae-l2_3",
+   "what": "capped edits of rescope, mean of 20 draws",
+   "name": "EthreeQAeCCRescopeGateCapped",
+   "mine": 0.0,
+   "stored": 0.0,
+   "equal": true
+  },
+  {
+   "log": "TB-Q200-ae-l2_3",
+   "what": "smallest self-separation margin",
+   "name": "EthreeQAeCCMarginMin",
+   "mine": 0.3532,
+   "stored": 0.3532,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-ae-l2_3",
+   "what": "H3 pair 1: level of rescope",
+   "name": "EthreeQAeDRescopeHthreeExact",
+   "mine": 41.27,
+   "stored": 41.27,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-ae-l2_3",
+   "what": "H3 pair 1: level of the selected gate",
+   "name": "EthreeQAeDWhiteOneSharedHthreeExact",
+   "mine": 36.2,
+   "stored": 36.2,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-ae-l2_3",
+   "what": "D1 of the deployed log on heldout_disjoint",
+   "name": "EthreeQAeDDeployedHdDone",
+   "mine": 89.03,
+   "stored": 89.03,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-ae-l2_3",
+   "what": "D1 of rescope on heldout_disjoint (mean of the draws)",
+   "name": "EthreeQAeDRescopeHdDone",
+   "mine": 1.79,
+   "stored": 1.79,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-ae-l2_3",
+   "what": "near-scope probes released, rescope, behaviour",
+   "name": "EthreeQAeDRescopeHdNearFired",
+   "mine": 6.1,
+   "stored": 6.1,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-ae-l2_3",
+   "what": "near-scope probes released, rescope, gate level",
+   "name": "EthreeQAeDRescopeGateHdNearFired",
+   "mine": 6.34,
+   "stored": 6.34,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-ae-l2_3",
+   "what": "false firing of rescope, mean of 20 draws",
+   "name": "EthreeQAeDRescopeGateHdFired",
+   "mine": 2.28,
+   "stored": 2.28,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-ae-l2_3",
+   "what": "capped edits of rescope, mean of 20 draws",
+   "name": "EthreeQAeDRescopeGateCapped",
+   "mine": 0.35,
+   "stored": 0.35,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-ae-l2_3",
+   "what": "smallest self-separation margin",
+   "name": "EthreeQAeDMarginMin",
+   "mine": 0.275,
+   "stored": 0.275,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-memitw",
+   "what": "H3 pair 1: level of rescope",
+   "name": "EthreeQMeCRescopeHthreeExact",
+   "mine": 27.67,
+   "stored": 27.67,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-memitw",
+   "what": "H3 pair 1: level of the selected gate",
+   "name": "EthreeQMeCWhiteOneSharedHthreeExact",
+   "mine": 39.0,
+   "stored": 39.0,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-memitw",
+   "what": "D1 of the deployed log on heldout_disjoint",
+   "name": "EthreeQMeCDeployedHdDone",
+   "mine": 89.46,
+   "stored": 89.46,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-memitw",
+   "what": "D1 of rescope on heldout_disjoint (mean of the draws)",
+   "name": "EthreeQMeCRescopeHdDone",
+   "mine": 4.23,
+   "stored": 4.23,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-memitw",
+   "what": "near-scope probes released, rescope, behaviour",
+   "name": "EthreeQMeCRescopeHdNearFired",
+   "mine": 9.52,
+   "stored": 9.52,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-memitw",
+   "what": "near-scope probes released, rescope, gate level",
+   "name": "EthreeQMeCRescopeGateHdNearFired",
+   "mine": 15.71,
+   "stored": 15.71,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-memitw",
+   "what": "false firing of rescope, mean of 20 draws",
+   "name": "EthreeQMeCRescopeGateHdFired",
+   "mine": 4.3,
+   "stored": 4.3,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-memitw",
+   "what": "capped edits of rescope, mean of 20 draws",
+   "name": "EthreeQMeCRescopeGateCapped",
+   "mine": 5.25,
+   "stored": 5.25,
+   "equal": true
+  },
+  {
+   "log": "TB-Q100-memitw",
+   "what": "smallest self-separation margin",
+   "name": "EthreeQMeCMarginMin",
+   "mine": 0.0752,
+   "stored": 0.0752,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-memitw",
+   "what": "H3 pair 1: level of rescope",
+   "name": "EthreeQMeDRescopeHthreeExact",
+   "mine": 28.27,
+   "stored": 28.27,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-memitw",
+   "what": "H3 pair 1: level of the selected gate",
+   "name": "EthreeQMeDWhiteOneSharedHthreeExact",
+   "mine": 36.2,
+   "stored": 36.2,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-memitw",
+   "what": "D1 of the deployed log on heldout_disjoint",
+   "name": "EthreeQMeDDeployedHdDone",
+   "mine": 96.56,
+   "stored": 96.56,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-memitw",
+   "what": "D1 of rescope on heldout_disjoint (mean of the draws)",
+   "name": "EthreeQMeDRescopeHdDone",
+   "mine": 1.79,
+   "stored": 1.79,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-memitw",
+   "what": "near-scope probes released, rescope, behaviour",
+   "name": "EthreeQMeDRescopeHdNearFired",
+   "mine": 5.28,
+   "stored": 5.28,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-memitw",
+   "what": "near-scope probes released, rescope, gate level",
+   "name": "EthreeQMeDRescopeGateHdNearFired",
+   "mine": 11.28,
+   "stored": 11.28,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-memitw",
+   "what": "false firing of rescope, mean of 20 draws",
+   "name": "EthreeQMeDRescopeGateHdFired",
+   "mine": 3.6,
+   "stored": 3.6,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-memitw",
+   "what": "capped edits of rescope, mean of 20 draws",
+   "name": "EthreeQMeDRescopeGateCapped",
+   "mine": 18.95,
+   "stored": 18.95,
+   "equal": true
+  },
+  {
+   "log": "TB-Q500-memitw",
+   "what": "smallest self-separation margin",
+   "name": "EthreeQMeDMarginMin",
+   "mine": 0.0668,
+   "stored": 0.0668,
+   "equal": true
+  },
+  {
+   "log": "TB-Q1000-memitw",
+   "what": "H3 pair 1: level of rescope",
+   "name": "EthreeQMeMRescopeHthreeExact",
+   "mine": 21.7,
+   "stored": 21.7,
+   "equal": true
+  },
+  {
+   "log": "TB-Q1000-memitw",
+   "what": "H3 pair 1: level of the selected gate",
+   "name": "EthreeQMeMWhiteOneSharedHthreeExact",
+   "mine": 29.5,
+   "stored": 29.5,
+   "equal": true
+  },
+  {
+   "log": "TB-Q1000-memitw",
+   "what": "D1 of the deployed log on heldout_disjoint",
+   "name": "EthreeQMeMDeployedHdDone",
+   "mine": 98.92,
+   "stored": 98.92,
+   "equal": true
+  },
+  {
+   "log": "TB-Q1000-memitw",
+   "what": "D1 of rescope on heldout_disjoint (mean of the draws)",
+   "name": "EthreeQMeMRescopeHdDone",
+   "mine": 1.51,
+   "stored": 1.51,
+   "equal": true
+  },
+  {
+   "log": "TB-Q1000-memitw",
+   "what": "near-scope probes released, rescope, behaviour",
+   "name": "EthreeQMeMRescopeHdNearFired",
+   "mine": 5.0,
+   "stored": 5.0,
+   "equal": true
+  },
+  {
+   "log": "TB-Q1000-memitw",
+   "what": "near-scope probes released, rescope, gate level",
+   "name": "EthreeQMeMRescopeGateHdNearFired",
+   "mine": 12.85,
+   "stored": 12.85,
+   "equal": true
+  },
+  {
+   "log": "TB-Q1000-memitw",
+   "what": "false firing of rescope, mean of 20 draws",
+   "name": "EthreeQMeMRescopeGateHdFired",
+   "mine": 4.41,
+   "stored": 4.41,
+   "equal": true
+  },
+  {
+   "log": "TB-Q1000-memitw",
+   "what": "capped edits of rescope, mean of 20 draws",
+   "name": "EthreeQMeMRescopeGateCapped",
+   "mine": 33.65,
+   "stored": 33.65,
+   "equal": true
+  },
+  {
+   "log": "TB-Q1000-memitw",
+   "what": "smallest self-separation margin",
+   "name": "EthreeQMeMMarginMin",
+   "mine": -0.0118,
+   "stored": -0.0118,
+   "equal": true
+  },
+  {
+   "log": "TB-Q2000-memitw",
+   "what": "H3 pair 1: level of rescope",
+   "name": "EthreeQMeMMRescopeHthreeExact",
+   "mine": 18.1,
+   "stored": 18.1,
+   "equal": true
+  },
+  {
+   "log": "TB-Q2000-memitw",
+   "what": "H3 pair 1: level of the selected gate",
+   "name": "EthreeQMeMMWhiteOneSharedHthreeExact",
+   "mine": 23.05,
+   "stored": 23.05,
+   "equal": true
+  },
+  {
+   "log": "TB-Q2000-memitw",
+   "what": "D1 of the deployed log on heldout_disjoint",
+   "name": "EthreeQMeMMDeployedHdDone",
+   "mine": 97.63,
+   "stored": 97.63,
+   "equal": true
+  },
+  {
+   "log": "TB-Q2000-memitw",
+   "what": "D1 of rescope on heldout_disjoint (mean of the draws)",
+   "name": "EthreeQMeMMRescopeHdDone",
+   "mine": 2.8,
+   "stored": 2.8,
+   "equal": true
+  },
+  {
+   "log": "TB-Q2000-memitw",
+   "what": "near-scope probes released, rescope, behaviour",
+   "name": "EthreeQMeMMRescopeHdNearFired",
+   "mine": 8.93,
+   "stored": 8.93,
+   "equal": true
+  },
+  {
+   "log": "TB-Q2000-memitw",
+   "what": "near-scope probes released, rescope, gate level",
+   "name": "EthreeQMeMMRescopeGateHdNearFired",
+   "mine": 12.46,
+   "stored": 12.46,
+   "equal": true
+  },
+  {
+   "log": "TB-Q2000-memitw",
+   "what": "false firing of rescope, mean of 20 draws",
+   "name": "EthreeQMeMMRescopeGateHdFired",
+   "mine": 4.46,
+   "stored": 4.46,
+   "equal": true
+  },
+  {
+   "log": "TB-Q2000-memitw",
+   "what": "capped edits of rescope, mean of 20 draws",
+   "name": "EthreeQMeMMRescopeGateCapped",
+   "mine": 59.75,
+   "stored": 59.75,
+   "equal": true
+  },
+  {
+   "log": "TB-Q2000-memitw",
+   "what": "smallest self-separation margin",
+   "name": "EthreeQMeMMMarginMin",
+   "mine": -0.0118,
+   "stored": -0.0118,
+   "equal": true
+  }
+ ],
+ "unmodified": {
+  "start_utc": "2026-11-12 06:21:20",
+  "n_files_checked": 8042,
+  "modified": [],
+  "directories": [
+   "e3_qwen",
+   "e3_llava",
+   "e1_main",
+   "e2_curves",
+   "e2_prefix",
+   "common"
+  ]
+ },
+ "n_mcnemar_tests": 82,
+ "n_checks": 11,
+ "n_checks_failed": 0,
+ "checks": [
+  {
+   "item": 2,
+   "check": "every H2 / H3 quantity recomputed here that out/endpoints.json holds equals it (value, interval ends, bootstrap value, levels, gate-level form)",
+   "ok": true,
+   "detail": "530 numbers compared; largest absolute difference 0"
+  },
+  {
+   "item": 2,
+   "check": "which of the quantities computed here out/endpoints.json already holds (reported, not a failure)",
+   "ok": true,
+   "detail": "53 of 53 (log, endpoint, reference, subset) entries are already in out/endpoints.json (H3 pair 2, the retrieval reference and the later edits included); out/paper_numbers.json holds no paired difference at all: the addition is the paper numbers, the documentation and the tables per editor family"
+  },
+  {
+   "item": 2,
+   "check": "comparison with the verification's own values (e3_qwen/verify/out/claims_extra.json): no VALUE differs by 0.1 points or more (interval ends at or above 0.5 points are listed with the reason: the verification drew its own resamples)",
+   "ok": true,
+   "detail": "12 numbers compared; values at or above 0.1: 0; interval ends at or above 0.5: []; largest difference of a value 0.050, of an interval end 0.000"
+  },
+  {
+   "item": 3,
+   "check": "no McNemar test missing (every per-row file exists and the paired rows hold the same sequences)",
+   "ok": true,
+   "detail": "82 tests; missing: []"
+  },
+  {
+   "item": 3,
+   "check": "the exact value computed in integer arithmetic equals the driver's fx.stats.mcnemar_exact wherever the driver can compute it (fewer than 1000 discordant pairs)",
+   "ok": true,
+   "detail": "81 tests compared, largest absolute difference 0; 1 test(s) with 1000 or more discordant pairs computed in integer arithmetic only (the driver's function overflows there)"
+  },
+  {
+   "item": 4,
+   "check": "item 4 against the verification's own values (near-scope release of rescope at behaviour and gate level; draws above the bound)",
+   "ok": true,
+   "detail": "21 numbers compared; differing beyond the rounding of the verification's list: []"
+  },
+  {
+   "item": 4,
+   "check": "the near-scope probes of the gate-level cells are the rows with near_edit set in the per-row files (same number per log and method)",
+   "ok": true,
+   "detail": "49 (log, method) pairs"
+  },
+  {
+   "item": 0,
+   "check": "numbers that also exist in out/paper_numbers.json are equal to the last stored digit (two decimals, four for the margin)",
+   "ok": true,
+   "detail": "63 numbers compared on 7 logs; differing: []"
+  },
+  {
+   "item": 0,
+   "check": "no name of out/fixup/paper_numbers_fixup.json exists in out/paper_numbers.json or in the earlier fix-up files (e1_main, e2_curves)",
+   "ok": true,
+   "detail": "collisions: 0"
+  },
+  {
+   "item": 0,
+   "check": "every paper number has a documentation line",
+   "ok": true,
+   "detail": "1393 names"
+  },
+  {
+   "item": 0,
+   "check": "no existing file of the experiments was modified (modification times against the start of this work; the new files of the fix-up excluded)",
+   "ok": true,
+   "detail": "start 2026-11-12 06:21:20 UTC; 8042 files checked in e3_qwen, e3_llava, e1_main, e2_curves, e2_prefix, common; modified: []"
+  }
+ ]
+}

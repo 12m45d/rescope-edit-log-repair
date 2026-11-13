@@ -1,0 +1,1230 @@
+{
+ "headline_cells_recomputed_with_the_plain_evaluator": {
+  "verdict": "CONFIRMED",
+  "n_cells": 16,
+  "n_agree": 16,
+  "cells": {
+   "Q/deployed": {
+    "D1_exp": 54.193548387096776,
+    "D1_mine": 54.19354838709678,
+    "edits_exp": [
+     78.0,
+     9.0,
+     22.0
+    ],
+    "edits_mine": [
+     78.0,
+     9.0,
+     22.0
+    ],
+    "own_out_exp": null,
+    "own_out_mine": null,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": null
+   },
+   "Q/wl_dep_n10": {
+    "D1_exp": 6.236559139784946,
+    "D1_mine": 6.236559139784946,
+    "edits_exp": [
+     79.0,
+     8.0,
+     26.0
+    ],
+    "edits_mine": [
+     79.0,
+     8.0,
+     26.0
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 2.220446049250313e-16
+   },
+   "Q/wl_dep_n100": {
+    "D1_exp": 3.010752688172043,
+    "D1_mine": 3.010752688172043,
+    "edits_exp": [
+     78.0,
+     6.0,
+     26.0
+    ],
+    "edits_mine": [
+     78.0,
+     6.0,
+     26.0
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 2.220446049250313e-16
+   },
+   "Q/wl_log_n10": {
+    "D1_exp": 1.075268817204301,
+    "D1_mine": 1.0752688172043012,
+    "edits_exp": [
+     78.0,
+     7.0,
+     26.0
+    ],
+    "edits_mine": [
+     78.0,
+     7.000000000000001,
+     26.0
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 3.9968028886505635e-15
+   },
+   "Q/comp_b_all": {
+    "D1_exp": 49.03225806451613,
+    "D1_mine": 49.03225806451613,
+    "edits_exp": [
+     78.0,
+     10.0,
+     25.0
+    ],
+    "edits_mine": [
+     78.0,
+     10.0,
+     25.0
+    ],
+    "own_out_exp": null,
+    "own_out_mine": null,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": null
+   },
+   "Q/c_n0": {
+    "D1_exp": 0.0,
+    "D1_mine": 0.0,
+    "edits_exp": [
+     100.0,
+     6.0,
+     28.0
+    ],
+    "edits_mine": [
+     100.0,
+     6.0,
+     28.000000000000004
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 1.6653345369377348e-15
+   },
+   "Q/c_n10": {
+    "D1_exp": 0.0,
+    "D1_mine": 0.0,
+    "edits_exp": [
+     100.0,
+     6.0,
+     28.0
+    ],
+    "edits_mine": [
+     100.0,
+     6.0,
+     28.000000000000004
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 1.6653345369377348e-15
+   },
+   "Q/c_n200": {
+    "D1_exp": 4.946236559139785,
+    "D1_mine": 4.946236559139785,
+    "edits_exp": [
+     100.0,
+     57.0,
+     69.0
+    ],
+    "edits_mine": [
+     100.0,
+     56.99999999999999,
+     69.0
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 2.1649348980190553e-15
+   },
+   "L/deployed": {
+    "D1_exp": 62.26012793176972,
+    "D1_mine": 62.26012793176972,
+    "edits_exp": [
+     88.0,
+     29.0,
+     66.0
+    ],
+    "edits_mine": [
+     88.0,
+     28.999999999999996,
+     66.0
+    ],
+    "own_out_exp": null,
+    "own_out_mine": null,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": null
+   },
+   "L/wl_dep_n10": {
+    "D1_exp": 20.46908315565032,
+    "D1_mine": 20.46908315565032,
+    "edits_exp": [
+     93.0,
+     35.0,
+     72.0
+    ],
+    "edits_mine": [
+     93.0,
+     35.0,
+     72.0
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 1.1102230246251565e-16
+   },
+   "L/wl_dep_n100": {
+    "D1_exp": 4.690831556503198,
+    "D1_mine": 4.690831556503198,
+    "edits_exp": [
+     93.0,
+     31.0,
+     69.0
+    ],
+    "edits_mine": [
+     93.0,
+     31.0,
+     69.0
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 1.1102230246251565e-16
+   },
+   "L/wl_log_n10": {
+    "D1_exp": 2.345415778251599,
+    "D1_mine": 2.345415778251599,
+    "edits_exp": [
+     92.0,
+     28.0,
+     68.0
+    ],
+    "edits_mine": [
+     92.0,
+     28.000000000000004,
+     68.0
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 1.1102230246251565e-16
+   },
+   "L/comp_b_all": {
+    "D1_exp": 59.701492537313435,
+    "D1_mine": 59.70149253731343,
+    "edits_exp": [
+     86.0,
+     32.0,
+     66.0
+    ],
+    "edits_mine": [
+     86.0,
+     32.0,
+     66.0
+    ],
+    "own_out_exp": null,
+    "own_out_mine": null,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": null
+   },
+   "L/c_n0": {
+    "D1_exp": 1.279317697228145,
+    "D1_mine": 1.279317697228145,
+    "edits_exp": [
+     98.0,
+     20.0,
+     83.0
+    ],
+    "edits_mine": [
+     98.0,
+     20.0,
+     83.0
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 6.106226635438361e-16
+   },
+   "L/c_n10": {
+    "D1_exp": 1.279317697228145,
+    "D1_mine": 1.279317697228145,
+    "edits_exp": [
+     98.0,
+     20.0,
+     83.0
+    ],
+    "edits_mine": [
+     98.0,
+     20.0,
+     83.0
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 1.2212453270876722e-15
+   },
+   "L/c_n200": {
+    "D1_exp": 5.330490405117271,
+    "D1_mine": 5.330490405117271,
+    "edits_exp": [
+     98.0,
+     47.0,
+     95.0
+    ],
+    "edits_mine": [
+     98.0,
+     47.0,
+     95.0
+    ],
+    "own_out_exp": 0.0,
+    "own_out_mine": 0,
+    "flags_differ_edits": 0,
+    "flags_differ_heldout": 0,
+    "fired_flags_differ": 0,
+    "max_abs_threshold_diff": 2.9976021664879227e-15
+   }
+  },
+  "what": "deployed log; ReScope-W least repair from the deployed scoping at n = 10 and 100 (seed 0); ReScope-W least repair from the log-only thresholds at n = 10 (seed 0, the H1 cell); COMP-B rebuilt on all complaints; ReScope label-free at n = 0, 10, 200 (draw 0); both development logs; thresholds, draws and complaint sets rebuilt by the verifier"
+ },
+ "imported_linear_cells_equal_the_p12_records": {
+  "verdict": "CONFIRMED",
+  "per_log": {
+   "Q": {
+    "n_cells": 104,
+    "n_numbers": 624,
+    "n_mismatch": 0
+   },
+   "L": {
+    "n_cells": 104,
+    "n_numbers": 624,
+    "n_mismatch": 0
+   }
+  },
+  "summary_rows": {
+   "Q": {
+    "COMP_B@10": {
+     "n_seeds": 3,
+     "d1_mine": 50.53763440860215,
+     "d1_exp": 50.53763440860215,
+     "rel_mine": 76.0,
+     "rel_exp": 76.0
+    },
+    "RB_UNION@10": {
+     "n_seeds": 3,
+     "d1_mine": 45.448028673835125,
+     "d1_exp": 45.448028673835125,
+     "rel_mine": 52.666666666666664,
+     "rel_exp": 52.666666666666664
+    },
+    "REEDIT_B@10": {
+     "n_seeds": 3,
+     "d1_mine": 58.92473118279569,
+     "d1_exp": 58.924731182795696,
+     "rel_mine": 75.66666666666667,
+     "rel_exp": 75.66666666666667
+    },
+    "COMP_B@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 49.03225806451613,
+     "d1_exp": 49.03225806451613,
+     "rel_mine": 78.0,
+     "rel_exp": 78.0
+    },
+    "REEDIT_B@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 66.02150537634408,
+     "d1_exp": 66.02150537634408,
+     "rel_mine": 63.0,
+     "rel_exp": 63.0
+    },
+    "RB_UNION@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 6.236559139784946,
+     "d1_exp": 6.236559139784946,
+     "rel_mine": 1.0,
+     "rel_exp": 1.0
+    }
+   },
+   "L": {
+    "COMP_B@10": {
+     "n_seeds": 3,
+     "d1_mine": 62.82871357498223,
+     "d1_exp": 62.82871357498223,
+     "rel_mine": 88.0,
+     "rel_exp": 88.0
+    },
+    "RB_UNION@10": {
+     "n_seeds": 3,
+     "d1_mine": 52.7363184079602,
+     "d1_exp": 52.7363184079602,
+     "rel_mine": 59.666666666666664,
+     "rel_exp": 59.666666666666664
+    },
+    "REEDIT_B@10": {
+     "n_seeds": 3,
+     "d1_mine": 66.09808102345416,
+     "d1_exp": 66.09808102345416,
+     "rel_mine": 87.66666666666667,
+     "rel_exp": 87.66666666666667
+    },
+    "COMP_B@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 59.70149253731343,
+     "d1_exp": 59.701492537313435,
+     "rel_mine": 86.0,
+     "rel_exp": 86.0
+    },
+    "REEDIT_B@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 78.03837953091684,
+     "d1_exp": 78.03837953091684,
+     "rel_mine": 74.0,
+     "rel_exp": 74.0
+    },
+    "RB_UNION@ALL": {
+     "n_seeds": 1,
+     "d1_mine": 0.0,
+     "d1_exp": 0.0,
+     "rel_mine": 1.0,
+     "rel_exp": 1.0
+    }
+   }
+  }
+ },
+ "rebuilt_linear_rows_reproduce_the_p12_flags": {
+  "verdict": "CONFIRMED",
+  "my_rebuilt_comp_b_all_vs_record": {
+   "Q": {
+    "n_heldout": 490,
+    "n_heldout_in_record": 490,
+    "n_heldout_differ": 0,
+    "n_heldout_disjoint_differ": 0,
+    "n_edit": 300,
+    "n_edit_differ": 0,
+    "solve_device": "see out/<log>/comp_b_all.pt (cpu as P12 on Qwen; the LLaVA build of this job ran on the GPU)"
+   },
+   "L": {
+    "n_heldout": 494,
+    "n_heldout_in_record": 494,
+    "n_heldout_differ": 0,
+    "n_heldout_disjoint_differ": 0,
+    "n_edit": 300,
+    "n_edit_differ": 0,
+    "solve_device": "see out/<log>/comp_b_all.pt (cpu as P12 on Qwen; the LLaVA build of this job ran on the GPU)"
+   }
+  },
+  "experiment_rows_vs_record": {
+   "Q": {
+    "COMP_B__nALL__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      0
+     ],
+     "experiment_states": [
+      0,
+      0
+     ]
+    },
+    "RB_UNION__n10__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      0
+     ],
+     "experiment_states": [
+      0,
+      0
+     ]
+    },
+    "RB_UNION__nALL__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      0
+     ],
+     "experiment_states": [
+      0,
+      0
+     ]
+    },
+    "RB_TOT__n10__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      0
+     ],
+     "experiment_states": [
+      0,
+      0
+     ]
+    },
+    "REEDIT_B__n10__s0": {
+     "recounted_by_the_verifier": [
+      7,
+      1
+     ],
+     "experiment_states": [
+      7,
+      1
+     ]
+    },
+    "REEDIT_B__nALL__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      0
+     ],
+     "experiment_states": [
+      0,
+      0
+     ]
+    }
+   },
+   "L": {
+    "COMP_B__nALL__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      0
+     ],
+     "experiment_states": [
+      0,
+      0
+     ]
+    },
+    "RB_UNION__n10__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      0
+     ],
+     "experiment_states": [
+      0,
+      0
+     ]
+    },
+    "RB_UNION__nALL__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      0
+     ],
+     "experiment_states": [
+      0,
+      0
+     ]
+    },
+    "RB_TOT__n10__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      0
+     ],
+     "experiment_states": [
+      0,
+      0
+     ]
+    },
+    "REEDIT_B__n10__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      1
+     ],
+     "experiment_states": [
+      0,
+      1
+     ]
+    },
+    "REEDIT_B__nALL__s0": {
+     "recounted_by_the_verifier": [
+      0,
+      0
+     ],
+     "experiment_states": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  "note": "COMP-B on all complaints rebuilt and evaluated by the verifier; rollbacks and REEDIT rows checked from the experiment's per-row files against the records"
+ },
+ "part_b_no_refusal_own_prompts_in_scope_order_independent_floor": {
+  "verdict": "CONFIRMED",
+  "cells": {
+   "Q": {
+    "n_cells": 36,
+    "n_refused_total": 0,
+    "n_still_firing_total": 0,
+    "n_cells_20_of_20_orders": 36,
+    "n_cells_vector_rule_equals_driver": 36,
+    "hook_vs_vectors_rows": 40320,
+    "hook_vs_vectors_differ": 0
+   },
+   "L": {
+    "n_cells": 36,
+    "n_refused_total": 0,
+    "n_still_firing_total": 0,
+    "n_cells_20_of_20_orders": 36,
+    "n_cells_vector_rule_equals_driver": 36,
+    "hook_vs_vectors_rows": 40544,
+    "hook_vs_vectors_differ": 0
+   }
+  },
+  "round_off_floor": {
+   "Q": {
+    "edits": 1,
+    "n_edits": 300,
+    "heldout_disjoint": 13,
+    "n_heldout_disjoint": 465,
+    "hard_negatives": 26,
+    "n_hard_negatives": 1278,
+    "experiment_states": {
+     "edits": 1.0,
+     "heldout_disjoint": 13.0,
+     "hard_negatives": 26.0
+    }
+   },
+   "L": {
+    "edits": 0,
+    "n_edits": 300,
+    "heldout_disjoint": 0,
+    "n_heldout_disjoint": 469,
+    "hard_negatives": 1,
+    "n_hard_negatives": 1286,
+    "experiment_states": {
+     "edits": 0.0,
+     "heldout_disjoint": 0.0,
+     "hard_negatives": 1.0
+    }
+   }
+  },
+  "own_rel_prompts_out_of_scope": 0,
+  "my_least_repairs_seed0": {
+   "Q/wl_dep_n10": {
+    "n_refused": 0,
+    "n_raised_total": 333,
+    "still_firing": 0
+   },
+   "Q/wl_dep_n100": {
+    "n_refused": 0,
+    "n_raised_total": 541,
+    "still_firing": 0
+   },
+   "Q/wl_log_n10": {
+    "n_refused": 0,
+    "n_raised_total": 2,
+    "start_capped": 2,
+    "still_firing": 0
+   },
+   "L/wl_dep_n10": {
+    "n_refused": 0,
+    "n_raised_total": 300,
+    "still_firing": 0
+   },
+   "L/wl_dep_n100": {
+    "n_refused": 0,
+    "n_raised_total": 529,
+    "still_firing": 0
+   },
+   "L/wl_log_n10": {
+    "n_refused": 0,
+    "n_raised_total": 3,
+    "start_capped": 0,
+    "still_firing": 0
+   }
+  },
+  "jobs_clean": {
+   "Q": [
+    {
+     "blocks": [
+      "reedit_build",
+      "capture",
+      "base",
+      "cw",
+      "d",
+      "b1",
+      "c",
+      "b2",
+      "gen",
+      "e"
+     ],
+     "assert_clean": {
+      "hook_mismatch": 0,
+      "memo_conflicts": 0,
+      "forwards": 10434,
+      "rows": 154808
+     },
+     "hook_vs_vectors_total": {
+      "n_rows": 45961,
+      "n_fired_differs": 0,
+      "n_own_last_differs": 0
+     },
+     "smoke": 0
+    }
+   ],
+   "L": [
+    {
+     "blocks": [
+      "reedit_build",
+      "capture",
+      "base",
+      "cw",
+      "d",
+      "b1",
+      "c",
+      "b2",
+      "gen",
+      "e"
+     ],
+     "assert_clean": {
+      "hook_mismatch": 0,
+      "memo_conflicts": 0,
+      "forwards": 10188,
+      "rows": 151137
+     },
+     "hook_vs_vectors_total": {
+      "n_rows": 46217,
+      "n_fired_differs": 0,
+      "n_own_last_differs": 0
+     },
+     "smoke": 0
+    }
+   ]
+  }
+ },
+ "h1_json": {
+  "verdict": "CONFIRMED",
+  "per_log": {
+   "Q": {
+    "d1_where_mine": 1.003584229390681,
+    "d1_where_exp": 1.003584229390681,
+    "rel_where_mine": 78.0,
+    "rel_where_exp": 78.0,
+    "rel_deployed_mine": 78.0,
+    "rel_deployed_exp": 78.0,
+    "best_linear": {
+     "registered_set_of_the_experiment": "RB_UNION",
+     "protocol_section_2_set": "RB_UNION",
+     "every_p12_method_with_3_seeds": "RB_UNION"
+    },
+    "comparisons": {
+     "best_lowest_d1": {
+      "linear_mine": "RB_UNION",
+      "linear_exp": "RB_UNION",
+      "d1_linear_mine": 45.448028673835125,
+      "d1_linear_exp": 45.448028673835125,
+      "diff_mine": {
+       "value": -44.44444444444445,
+       "ci_lo": -48.80732464106054,
+       "ci_hi": -39.95561198658313,
+       "p_two_sided": 0.0005,
+       "n_draws": 3,
+       "n_units": 449
+      },
+      "diff_exp": {
+       "value": -44.44444444444444,
+       "ci_lo": -48.965863592222604,
+       "ci_hi": -40.129753151219845,
+       "p_two_sided": 0.0005
+      }
+     },
+     "best_rel_within_2": {
+      "linear_mine": "COMP_B",
+      "linear_exp": "COMP_B",
+      "d1_linear_mine": 50.53763440860215,
+      "d1_linear_exp": 50.53763440860215,
+      "diff_mine": {
+       "value": -49.53405017921147,
+       "ci_lo": -53.80747126436781,
+       "ci_hi": -45.11032035940715,
+       "p_two_sided": 0.0005,
+       "n_draws": 3,
+       "n_units": 449
+      },
+      "diff_exp": {
+       "value": -49.53405017921147,
+       "ci_lo": -54.06959113834466,
+       "ci_hi": -45.0,
+       "p_two_sided": 0.0005
+      }
+     }
+    },
+    "d1_at_most_10": true,
+    "rel_within_2_two_sided": true,
+    "rel_not_more_than_2_below": true,
+    "literal_rule_helps_on_this_log_mine": true,
+    "literal_rule_helps_on_this_log_exp": true,
+    "one_sided_met_mine": true,
+    "one_sided_met_exp": true,
+    "where_d1_per_seed": [
+     1.0752688172043012,
+     0.8602150537634409,
+     1.0752688172043012
+    ],
+    "seed0_d1_mine_gpu": 1.0752688172043012,
+    "seed0_rel_mine_gpu": 78.0,
+    "deployed_rel_mine_gpu": 78.0
+   },
+   "L": {
+    "d1_where_mine": 2.6297085998578535,
+    "d1_where_exp": 2.6297085998578535,
+    "rel_where_mine": 92.0,
+    "rel_where_exp": 92.0,
+    "rel_deployed_mine": 88.0,
+    "rel_deployed_exp": 88.0,
+    "best_linear": {
+     "registered_set_of_the_experiment": "RB_UNION",
+     "protocol_section_2_set": "RB_UNION",
+     "every_p12_method_with_3_seeds": "RB_UNION"
+    },
+    "comparisons": {
+     "best_lowest_d1": {
+      "linear_mine": "RB_UNION",
+      "linear_exp": "RB_UNION",
+      "d1_linear_mine": 52.736318407960205,
+      "d1_linear_exp": 52.736318407960205,
+      "diff_mine": {
+       "value": -50.106609808102355,
+       "ci_lo": -54.823095401509946,
+       "ci_hi": -45.32412745474844,
+       "p_two_sided": 0.0005,
+       "n_draws": 3,
+       "n_units": 453
+      },
+      "diff_exp": {
+       "value": -50.10660980810234,
+       "ci_lo": -54.832442470659146,
+       "ci_hi": -45.35823521824849,
+       "p_two_sided": 0.0005
+      }
+     },
+     "best_rel_within_2": {
+      "linear_mine": "COMP_B",
+      "linear_exp": "COMP_B",
+      "d1_linear_mine": 62.82871357498223,
+      "d1_linear_exp": 62.82871357498223,
+      "diff_mine": {
+       "value": -60.19900497512438,
+       "ci_lo": -64.80716436212562,
+       "ci_hi": -55.554975643702164,
+       "p_two_sided": 0.0005,
+       "n_draws": 3,
+       "n_units": 453
+      },
+      "diff_exp": {
+       "value": -60.199004975124375,
+       "ci_lo": -64.60565334422114,
+       "ci_hi": -55.836277107251505,
+       "p_two_sided": 0.0005
+      }
+     }
+    },
+    "d1_at_most_10": true,
+    "rel_within_2_two_sided": false,
+    "rel_not_more_than_2_below": true,
+    "literal_rule_helps_on_this_log_mine": false,
+    "literal_rule_helps_on_this_log_exp": false,
+    "one_sided_met_mine": true,
+    "one_sided_met_exp": true,
+    "where_d1_per_seed": [
+     2.345415778251599,
+     2.771855010660981,
+     2.771855010660981
+    ],
+    "seed0_d1_mine_gpu": 2.345415778251599,
+    "seed0_rel_mine_gpu": 92.0,
+    "deployed_rel_mine_gpu": 88.0
+   }
+  },
+  "literal_rule": {
+   "Q": true,
+   "L": false
+  },
+  "helps_on_both_development_logs_literal": false,
+  "one_sided_reading_met_on_both": true,
+  "note": "numbers and the literal verdict of h1.json are reproduced from the per-row files; the best linear repair is the same for the experiment's six methods, the four of PROTOCOL section 2 and every P12 method with three seeds; which reading of 'within 2 points' R6 means is not a verification question; the prefix part of the rule is experiment e2_prefix"
+ },
+ "c_prime_gate_level": {
+  "verdict": "CONFIRMED",
+  "mean_over_20_draws": {
+   "Q": {
+    "fired_as_run_mine": 5.913978494623656,
+    "fired_as_run_exp": 5.913978494623656,
+    "fired_literal_mine": 5.56989247311828,
+    "fired_literal_exp": 5.56989247311828,
+    "n_capped_mine": 2.1,
+    "n_capped_exp": 2.1,
+    "fresh_repair_literal_mine": 4.518197884895441,
+    "fresh_repair_literal_exp": 4.52375652428996
+   },
+   "L": {
+    "fired_as_run_mine": 3.0277185501066093,
+    "fired_as_run_exp": 3.0277185501066093,
+    "fired_literal_mine": 3.0277185501066093,
+    "fired_literal_exp": 3.0277185501066093,
+    "n_capped_mine": 0.05,
+    "n_capped_exp": 0.05,
+    "fresh_repair_literal_mine": 5.233756608442677,
+    "fresh_repair_literal_exp": 5.240603990120652
+   }
+  },
+  "bound_percent": 4.9504950495049505,
+  "note": "recomputed by the verifier (own draws, own two-block rule, own guard caps) from the experiment's captured all-position vectors; the behavioural cells of c' (D1, edits) were NOT recomputed on the GPU: they are consistent with their per-row files (re-rendering) only; the fresh-REPAIR read-out differs by at most 0.03 points per draw because the verifier identifies queries by the library's query id"
+ },
+ "agreement_with_the_sanity_run_e0": {
+  "verdict": "CONFIRMED",
+  "max_abs_diff_points_of_my_numbers": {
+   "Q": 7.105427357601002e-15,
+   "L": 3.552713678800501e-15
+  },
+  "n_numbers": {
+   "Q": 11,
+   "L": 11
+  },
+  "experiments_cells_against_e0_recounted_from_its_rows": {
+   "Q": {
+    "n_cells": 7,
+    "n_numbers": 44,
+    "max_abs_diff_points": 1.4210854715202004e-14
+   },
+   "L": {
+    "n_cells": 7,
+    "n_numbers": 44,
+    "max_abs_diff_points": 1.4210854715202004e-14
+   }
+  },
+  "note": "my own deployed and default-method (draw 0) numbers against e0, and the experiment's seven shared cells (draws 0 - 2) recounted from its rows; the summary's '44 cells per log' are 44 numbers of 7 cells"
+ },
+ "running_example": {
+  "verdict": "CONFIRMED",
+  "n_values": 20,
+  "n_agree": 20,
+  "disagreeing": [],
+  "mine_details": {
+   "rollback": {
+    "R": [
+     63,
+     94,
+     34,
+     93,
+     56,
+     23,
+     46
+    ],
+    "resolved_internal": true,
+    "whole_batches_in_R": [],
+    "my_weight_equals_harness_rollback_weight": true,
+    "max_abs_diff_to_harness_weight": 0.0,
+    "n_deleted": 7,
+    "edits_broken": 1,
+    "n_kept": 93,
+    "complaint_reproduced_after_rollback": true,
+    "complaint_D1_deployed": true,
+    "rel_exact_deployed": 78,
+    "rel_exact_after": 74
+   },
+   "rescope": {
+    "own_requests_firing": 100,
+    "own_requests_firing_gate_level": 100,
+    "refused": 0,
+    "n_raised": 100,
+    "rel_exact_after": 81,
+    "complaint_fires_after_repair": false,
+    "complaint_reproduced_after_repair": true
+   },
+   "compensation": {
+    "heldout_changed": 86,
+    "rank": 10,
+    "complaint_reproduced": true
+   },
+   "edit_chosen_by": "largest coordinate over all positions (default method releases nothing)"
+  }
+ },
+ "internal_consistency": {
+  "verdict": "CONFIRMED",
+  "rerender": {
+   "ran": true,
+   "results_json_n_records": [
+    42146,
+    42146
+   ],
+   "results_json_equal": true,
+   "paper_numbers_equal": true,
+   "paper_numbers_n": 248,
+   "paper_numbers_differing": [],
+   "table_lines": [
+    457,
+    457
+   ],
+   "table_lines_differing_after_header": 0,
+   "h1_json_equal": true,
+   "linear_rows.json_equal": true,
+   "rescope_w_rows.json_equal": true,
+   "paper_numbers_all_documented": true,
+   "paper_numbers_not_found_in_results_or_h1": []
+  },
+  "counts": {
+   "Q": {
+    "mine": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 979,
+     "n_heldout_valid": 490,
+     "n_heldout_disjoint": 465,
+     "n_heldout_strict": 375,
+     "n_repair_valid": 489
+    },
+    "n_complaints_all_p12": 297,
+    "exp_probe_n_values": [
+     465.0
+    ],
+    "exp_strict_n_values": [
+     375.0
+    ],
+    "exp_edit_n_values": [
+     100.0
+    ],
+    "exp_n_records": 21067
+   },
+   "L": {
+    "mine": {
+     "n_probe_rows": 1000,
+     "n_probe_valid": 988,
+     "n_heldout_valid": 494,
+     "n_heldout_disjoint": 469,
+     "n_heldout_strict": 379,
+     "n_repair_valid": 494
+    },
+    "n_complaints_all_p12": 305,
+    "exp_probe_n_values": [
+     469.0
+    ],
+    "exp_strict_n_values": [
+     379.0
+    ],
+    "exp_edit_n_values": [
+     100.0
+    ],
+    "exp_n_records": 21079
+   }
+  }
+ },
+ "unfavourable_items_in_the_files_missing_from_the_summary": {
+  "verdict": "PARTLY CONFIRMED (the summary's list is correct but incomplete)",
+  "numbers": {
+   "Q": {
+    "h1_row_fires_on_heldout_disjoint_percent_mean": 17.99283154121864,
+    "h1_row_near_scope_firing_percent_gate_mean": {
+     "HN-I": 9.126984126984128,
+     "HN-Q": 34.23575860124083,
+     "HN-X": 19.19191919191919
+    },
+    "h1_row_near_scope_D1_percent_seed0": {
+     "HN-I": 5.612244897959184,
+     "HN-Q": 8.79864636209814,
+     "HN-X": 13.131313131313133
+    },
+    "h1_row_rel_kept_gained_lost_seed0": [
+     75,
+     3,
+     3
+    ],
+    "h1_row_edit_checks_lost_gained_of_300_seed0": [
+     9,
+     11
+    ],
+    "deployed_start_n10_fires_on_heldout_percent_mean": 51.75627240143369,
+    "deployed_start_n10_near_scope_firing_percent": {
+     "HN-I": 98.41269841269842,
+     "HN-Q": 98.92836999435985,
+     "HN-X": 98.989898989899
+    },
+    "rescope_n200_near_scope_firing_percent_mean": {
+     "HN-I": 37.474489795918366,
+     "HN-Q": 26.835871404399324,
+     "HN-X": 52.67676767676768
+    },
+    "rescope_MME-T_false_firing_percent_mean_by_n": {
+     "40": 5.556492411467117,
+     "50": 6.323777403035414,
+     "100": 2.8456998313659363,
+     "200": 5.628161888701518,
+     "ALL": 12.554806070826308
+    },
+    "c_prime_fresh_repair_false_firing_percent": 4.52375652428996
+   },
+   "L": {
+    "h1_row_fires_on_heldout_disjoint_percent_mean": 23.738450604122246,
+    "h1_row_near_scope_firing_percent_gate_mean": {
+     "HN-I": 30.169491525423734,
+     "HN-Q": 51.9821328866555,
+     "HN-X": 48.14814814814815
+    },
+    "h1_row_near_scope_D1_percent_seed0": {
+     "HN-I": 19.322033898305087,
+     "HN-Q": 34.33835845896148,
+     "HN-X": 38.38383838383838
+    },
+    "h1_row_rel_kept_gained_lost_seed0": [
+     86,
+     6,
+     2
+    ],
+    "h1_row_edit_checks_lost_gained_of_300_seed0": [
+     12,
+     17
+    ],
+    "deployed_start_n10_fires_on_heldout_percent_mean": 96.80170575692964,
+    "deployed_start_n10_near_scope_firing_percent": {
+     "HN-I": 100.0,
+     "HN-Q": 99.77666108319374,
+     "HN-X": 100.0
+    },
+    "rescope_n200_near_scope_firing_percent_mean": {
+     "HN-I": 18.533898305084747,
+     "HN-Q": 38.17420435510888,
+     "HN-X": 44.44444444444444
+    },
+    "rescope_MME-T_false_firing_percent_mean_by_n": {
+     "40": 2.7234401349072512,
+     "50": 2.504215851602024,
+     "100": 1.2436762225969646,
+     "200": 1.5893760539629005,
+     "ALL": 1.7032040472175374
+    },
+    "c_prime_fresh_repair_false_firing_percent": 5.240603990120652
+   }
+  },
+  "items": [
+   "the H1 row (ReScope-W, log-only start, n = 10) still releases an edit on a sizeable share of heldout_disjoint rows and of the near-scope negatives; the summary prints near-scope firing for c' only (R6: next to every far rate)",
+   "ReScope-W does not keep the deployed edits as they are: edit checks that are exact under the deployed log are lost and others gained (Rel kept / gained / lost above); the summary gives net rates only",
+   "false firing of the label-free ReScope on MME-T exceeds 5 percent on the Qwen log at n = 40, 50, 200 and ALL (shifted workload, prompt-only keys)",
+   "c' on the LLaVA log exceeds the bound on the fresh REPAIR rows (the summary prints the number without saying so); cw_check.py is a post-hoc diagnostic written after the result",
+   "least repair from the deployed start at n = 10 leaves an edit released on about half (Qwen) and almost all (LLaVA) held-out rows: low D1 there is not a certificate"
+  ]
+ },
+ "_protocol_and_code_notes": [
+  {
+   "file": "e2_curves/code/a_import.py",
+   "line": "20-37 (rows_of), 56-76",
+   "problem": "E2 (a) asks for the P12 repairs re-scored through the library's evaluation; the cells copy the P12 harness flags (disclosed in the summary)",
+   "effect_on_numbers": "none found: 0 mismatches against the records; COMP-B ALL rebuilt by the verifier and the rebuilt rollbacks reproduce every flag; REEDIT is not reproducible by construction"
+  },
+  {
+   "file": "e2_curves/code/tables.py",
+   "line": "381-384, 394",
+   "problem": "the 'best linear repair' of H1 is chosen on the reported heldout_disjoint D1 over six P12 methods (in favour of the baseline); line 394 fixes the two-sided reading of 'within 2 points'",
+   "effect_on_numbers": "none: the same method (RB_UNION) is best among the four methods of PROTOCOL section 2 and among every P12 method with three seeds; on the LLaVA log the literal verdict is 'does not help' only because Rel is above the deployed log"
+  },
+  {
+   "file": "e2_curves/code/cw_check.py",
+   "line": "1-4, 31-35",
+   "problem": "post-hoc read-out (false firing of c' on REPAIR rows outside the draw) added after the heldout_disjoint result was seen; REPAIR rows are not a reporting pool",
+   "effect_on_numbers": "none on registered numbers; must be labelled post hoc if quoted"
+  },
+  {
+   "file": "e2_curves/code/example.py",
+   "line": "56, 132-139",
+   "problem": "the default method releases no edit on the example's complaint, so 'the edit' is the one with the largest coordinate, and the why-not rephrase belongs to another edit (disclosed)",
+   "effect_on_numbers": "none; the example's edit and why-not pair must not be presented as one edit"
+  },
+  {
+   "file": "e2_curves/code/tables.py",
+   "line": "224",
+   "problem": "capped edits of c' on the LLaVA log printed with one decimal (0.1 for a mean of 0.05)",
+   "effect_on_numbers": "cosmetic; paper_numbers.json holds 0.05"
+  },
+  {
+   "file": "e2_curves/code/tables.py",
+   "line": "394-400",
+   "problem": "the summary says the two-sided reading of H1 was fixed in code before any ReScope-W cell existed; the file that holds the rule was last modified 2026-11-11 23:22:47, the H1 cells were written {\"Q\": [\"2026-11-11 22:06:23\", \"2026-11-11 22:55:05\", \"2026-11-11 23:13:19\"], \"L\": [\"2026-11-11 21:18:19\", \"2026-11-11 21:48:57\", \"2026-11-11 21:59:00\"]}: the statement cannot be confirmed from the files (modified after the last cell: True)",
+   "effect_on_numbers": "none: both readings are in h1.json and the decision is left to the coordinator"
+  },
+  {
+   "file": "e2_curves/code/job.py",
+   "line": "whole file",
+   "problem": "job.py was last modified 2026-11-11 20:26:00; the job processes started about {\"Q\": \"2026-11-11 20:41:54\", \"L\": \"2026-11-11 20:25:05\"} (modified after the start: {\"Q\": false, \"L\": true}): a job that started before the edit ran a version of the script that is not on disk",
+   "effect_on_numbers": "none found: the cells of the two logs have the same tags and fields (True) and every recomputed cell of both logs agrees"
+  }
+ ],
+ "_timeline": {
+  "code_last_modified": {
+   "tables.py": "2026-11-11 23:22:47",
+   "example.py": "2026-11-11 23:21:57",
+   "render.py": "2026-11-11 20:27:21",
+   "job.py": "2026-11-11 20:26:00",
+   "cw_check.py": "2026-11-11 22:17:52",
+   "e2c.py": "2026-11-11 19:59:53",
+   "a_import.py": "2026-11-11 19:58:24",
+   "c_gate.py": "2026-11-11 20:02:46"
+  },
+  "h1_cells_written": {
+   "Q": [
+    "2026-11-11 22:06:23",
+    "2026-11-11 22:55:05",
+    "2026-11-11 23:13:19"
+   ],
+   "L": [
+    "2026-11-11 21:18:19",
+    "2026-11-11 21:48:57",
+    "2026-11-11 21:59:00"
+   ]
+  },
+  "running_example_written": "2026-11-12 00:42:25",
+  "job_process_started": {
+   "Q": "2026-11-11 20:41:54",
+   "L": "2026-11-11 20:25:05"
+  },
+  "job_py_modified_after_the_job_started": {
+   "Q": false,
+   "L": true
+  },
+  "cells_of_the_two_logs_have_the_same_tags_and_fields": true,
+  "n_cells": {
+   "Q": 214,
+   "L": 214
+  },
+  "tables_py_modified_after_the_last_h1_cell": true,
+  "example_py_modified_before_the_example_ran": true
+ },
+ "_not_done_by_the_verifier": [
+  "seeds 1 and 2 of the ReScope-W cells and draws 1 and 2 of the label-free curve were not recomputed on the GPU (H1 uses them from the per-row files)",
+  "the behavioural cells of c', D2, hard-negative behaviour and free generation were not recomputed",
+  "the LLaVA compensation of the verifier was solved on the GPU (P12: CPU); its flags equal the record",
+  "the first Qwen attempt of the verifier ran out of GPU memory in the harness COMP solve on the GPU (logs/vjob_Q_try1_oom.out); the job was started again with the solve on the CPU, as P12, at the queue priority the experiment itself used"
+ ],
+ "_missing": []
+}

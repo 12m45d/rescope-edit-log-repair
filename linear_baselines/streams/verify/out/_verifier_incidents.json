@@ -1,0 +1,50 @@
+[
+ {
+  "when": "2026-11-10 14:56:53",
+  "card": "GPU 0",
+  "what": "My Qwen job (pid 13896, running since 14:45) left the card on its watchdog: a launcher of 09_testbed_scale (gpu_big.sh, threshold 16424 MiB) fitted on GPU 0 only without it.",
+  "impact_on_others": "that launcher waited at most about 25 s for my process (two watchdog looks 12 s apart); no failure",
+  "evidence": [
+   "verify/logs/gpu_TB-Q100-ae-l2_3.log (watchdog line 14:56:53)"
+  ]
+ },
+ {
+  "when": "2026-11-10 15:25:40",
+  "card": "GPU 1",
+  "what": "My LLaVA job (pid 37950) ran out of memory under its OWN cap (14.4 GiB) while loading and exited; restarted later with a 14.8 GiB cap and W_E - W_0 computed on the CPU.",
+  "impact_on_others": "none found (no out-of-memory message of another agent names this process)",
+  "evidence": [
+   "verify/logs/gpu_TB-L100-ae-l2_3.log (traceback 15:25:40: '14.40 GiB allowed')"
+  ]
+ },
+ {
+  "when": "2026-11-10 15:54:09-15:54:16",
+  "card": "GPU 1",
+  "what": "My LLaVA job (pid 51485; the two extra conditions LOC and WPROJ) reserved its memory at 15:54:10, one second after the launcher of another verifier (08_rescope/p11_retrofit/verify/run_gpu.sh, waiting for 16200 MiB since 15:52:39) had launched its LLaVA job on the same free card. Their load ran out of memory (their message names process 51485 with 14.26 GiB).",
+  "impact_on_others": "one failed start of that job; its launcher retried after 120 s, launched at 15:57:46 and the job ended with exit 0 at 15:58:49: a delay of about 3.5 minutes, no output lost",
+  "evidence": [
+   "08_rescope/p11_retrofit/verify/logs/nohup_L3.out lines 1-25",
+   "verify/logs/gpu_TB-L100-ae-l2_3.log (reserved line 15:54:10)"
+  ],
+  "cause": "my queue inspector (vcommon.launchers) only knew the launcher scripts that existed when I wrote it (gpu_wait.sh, wait_gpu.sh, gpu_run.sh, gpu_any.sh, gpu_fill.sh, gpu_big.sh, gpu_launch.sh); run_gpu.sh was not among them, so its 90 s wait was invisible to my two looks",
+  "fix": "16:02: vcommon.launchers now recognises any shell script whose name contains gpu / wait / launch / queue, in every argument layout in use (unknown layouts count as a LLaVA-sized waiter on both cards), and can_start refuses to start on a card while ANY other agent's launcher is waiting for it"
+ },
+ {
+  "when": "2026-11-10 16:01:27",
+  "card": "GPU 1",
+  "what": "I stopped my own LLaVA job (pid 52777, LOC, running since 15:59:28) by hand because I believed two launchers of the reviewer (code/rescope/review/gpu_wait.sh) were waiting behind it. They were not: both had started their jobs on GPU 0 at about 15:54. The condition was run again later.",
+  "impact_on_others": "none",
+  "evidence": [
+   "verify/logs/gpu_TB-L100-ae-l2_3.log"
+  ]
+ },
+ {
+  "when": "2026-11-10 15:41-15:53 and 16:10-16:11",
+  "card": "GPU 1",
+  "what": "Deviation from the card convention (Qwen on GPU 0): GPU 0 was held by other agents' jobs and queued launchers from 14:57 on, so the remaining Qwen conditions (the two random cells, protection keys, batch-8 Rel: pid 46703; the z* repeat test: pid 56782; cap 9.2 GiB) ran on GPU 1, under the same start rule and watchdog.",
+  "impact_on_others": "none found",
+  "evidence": [
+   "verify/logs/gpu_TB-Q100-ae-l2_3.log (15:41:24-15:53:22 and 16:10:35-16:11:49)"
+  ]
+ }
+]

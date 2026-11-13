@@ -1,0 +1,605 @@
+{
+ "n_literals": 120,
+ "literals": [
+  [
+   1,
+   "2",
+   "P12 -- out/results.json -> results.md.  Every nu"
+  ],
+  [
+   12,
+   "00",
+   "TB-Q100-ae-l2_3"
+  ],
+  [
+   12,
+   "00",
+   "TB-L100-ae-l2_3"
+  ],
+  [
+   13,
+   "00",
+   "TB-Q100-ae-l2_3"
+  ],
+  [
+   13,
+   "00",
+   "TB-L100-ae-l2_3"
+  ],
+  [
+   13,
+   "00",
+   "Qwen (TB-Q100-ae-l2_3)"
+  ],
+  [
+   13,
+   "00",
+   "LLaVA (TB-L100-ae-l2_3)"
+  ],
+  [
+   19,
+   "1",
+   "1"
+  ],
+  [
+   19,
+   "2",
+   "2"
+  ],
+  [
+   19,
+   "5",
+   "5"
+  ],
+  [
+   19,
+   "10",
+   "10"
+  ],
+  [
+   19,
+   "20",
+   "20"
+  ],
+  [
+   19,
+   "50",
+   "50"
+  ],
+  [
+   19,
+   "100",
+   "100"
+  ],
+  [
+   20,
+   "1",
+   "1"
+  ],
+  [
+   20,
+   "10",
+   "10"
+  ],
+  [
+   20,
+   "100",
+   "100"
+  ],
+  [
+   21,
+   "10",
+   "10"
+  ],
+  [
+   21,
+   "100",
+   "100"
+  ],
+  [
+   29,
+   "1e-4",
+   "<1e-4"
+  ],
+  [
+   92,
+   "95",
+   " n | reported resolved | HELD-OUT D1 rate % [95% CI] | held-out complaints fixed | non-compl"
+  ],
+  [
+   117,
+   "1",
+   "); the B=1 teacher-forced Rel exact used in every table"
+  ],
+  [
+   126,
+   "0",
+   "**Anomaly 0 (protocol level) -- the HELD-OUT pool is not"
+  ],
+  [
+   126,
+   "500",
+   "om the REPAIR pool.** The harness splits the 500 probe items by uid (`harness/sampler.py`, se"
+  ],
+  [
+   126,
+   "20261109",
+   "obe items by uid (`harness/sampler.py`, seed 20261109; the same split is used by every experiment "
+  ],
+  [
+   155,
+   "1",
+   "**Finding 1 -- what happens to the unreported complaints"
+  ],
+  [
+   155,
+   "0",
+   "e unreported complaints (HELD-OUT pool; seed 0; HELD-OUT D1 rate % full pool / disjoint row"
+  ],
+  [
+   177,
+   "2",
+   "**Finding 2 -- what a repair does to unreported rows: he"
+  ],
+  [
+   177,
+   "0",
+   "omplaints lost (disjoint held-out rows, seed 0; +fixed / -lost).**"
+  ],
+  [
+   197,
+   "0",
+   "nreported rows (disjoint held-out rows, seed 0; fix rate % = held-out complaints fixed / he"
+  ],
+  [
+   221,
+   "0",
+   "epair of the superset of n2 complaints (seed 0; fixed kept / fixed at n1 -> fixed at n2 | l"
+  ],
+  [
+   227,
+   "0",
+   "0"
+  ],
+  [
+   232,
+   "0",
+   "storation. Largest n with both records, seed 0:"
+  ],
+  [
+   250,
+   "0",
+   "eld-out non-complaints lost (full pool, seed 0; "
+  ],
+  [
+   267,
+   "0",
+   "ved (k of the logged edits rolled back; seed 0).**"
+  ],
+  [
+   280,
+   "3",
+   "**Finding 3 -- best linear operating point (lowest HELD-"
+  ],
+  [
+   337,
+   "4",
+   "**Finding 4 -- D2 complaints (ground-truth correctness l"
+  ],
+  [
+   337,
+   "0",
+   "t) among the HELD-OUT rows, decoder v2, seed 0 (D2 after the repair; stored D2 resolved / n"
+  ],
+  [
+   363,
+   "5",
+   "**Finding 5 -- how much of the log's change at the edite"
+  ],
+  [
+   363,
+   "1",
+   " the answer keys of each valid HELD-OUT row: 1 = unrepaired, 0 = pre-edit, > 1 = further fr"
+  ],
+  [
+   363,
+   "0",
+   " of each valid HELD-OUT row: 1 = unrepaired, 0 = pre-edit, > 1 = further from the pre-edit "
+  ],
+  [
+   363,
+   "1",
+   "ELD-OUT row: 1 = unrepaired, 0 = pre-edit, > 1 = further from the pre-edit output). Disjoin"
+  ],
+  [
+   363,
+   "0",
+   "e-edit output). Disjoint held-out rows, seed 0; per config: median rho over held-out compla"
+  ],
+  [
+   363,
+   "0.5",
+   "s a lower rho than a held-out non-complaint (0.5 = the repair does not tell them apart at the"
+  ],
+  [
+   386,
+   "0",
+   " Check of Anomaly 0 (identical keys are restored exactly): "
+  ],
+  [
+   390,
+   "1",
+   " keys with the protected span projected out; 1 = the correction acts on the whole key, 0 = "
+  ],
+  [
+   390,
+   "0",
+   "t; 1 = the correction acts on the whole key, 0 = it cannot act on it). Disjoint held-out ro"
+  ],
+  [
+   390,
+   "0",
+   "not act on it). Disjoint held-out rows, seed 0; rank of the correction, then median share o"
+  ],
+  [
+   390,
+   "9",
+   "t complaints / over held-out non-complaints (90th percentile over all disjoint rows).**"
+  ],
+  [
+   422,
+   "0.5",
+   "; share of held-out complaints with a < 0.5: "
+  ],
+  [
+   446,
+   "1",
+   "**Anomaly 1 -- sequential compensation is the joint comp"
+  ],
+  [
+   463,
+   "10",
+   "the log like the original stream (batches of 10, Kp extended by the installed keys, residual"
+  ],
+  [
+   477,
+   "8",
+   "ent weights (REEDIT-SC, exploratory, section 8)."
+  ],
+  [
+   481,
+   "2",
+   "**Anomaly 2 -- the harness skips its documented z* oracl"
+  ],
+  [
+   481,
+   "2026",
+   " `07_repair_v3/harness/methods.py` (modified 2026-11-09 18:47 for RQ4) the fallback ladder of "
+  ],
+  [
+   481,
+   "1",
+   "epair_v3/harness/methods.py` (modified 2026-11-09 18:47 for RQ4) the fallback ladder of `m_"
+  ],
+  [
+   481,
+   "9",
+   "ir_v3/harness/methods.py` (modified 2026-11-09 18:47 for RQ4) the fallback ladder of `m_ree"
+  ],
+  [
+   481,
+   "18",
+   "_v3/harness/methods.py` (modified 2026-11-09 18:47 for RQ4) the fallback ladder of `m_reedit"
+  ],
+  [
+   481,
+   "47",
+   "/harness/methods.py` (modified 2026-11-09 18:47 for RQ4) the fallback ladder of `m_reedit` ("
+  ],
+  [
+   481,
+   "200",
+   " of `m_reedit` (fixed loop at 2x steps, then 200 steps / early_stop 0.01) sits inside the `ch"
+  ],
+  [
+   481,
+   "0.01",
+   "oop at 2x steps, then 200 steps / early_stop 0.01) sits inside the `chunk is not None` branch,"
+  ],
+  [
+   500,
+   "9",
+   "re exposed to the same omission (see section 9 for the text complaints)."
+  ],
+  [
+   517,
+   "3",
+   "**Anomaly 3 -- compensation at the answer positions rest"
+  ],
+  [
+   517,
+   "10",
+   " of the same complaints (COMP-B-ALLPOS, n <= 10) resolves "
+  ],
+  [
+   537,
+   "4",
+   "**Anomaly 4 -- restoring ALL positions (COMP-B-ALLPOS).*"
+  ],
+  [
+   537,
+   "1e-6",
+   "very reported complaint (restoration error < 1e-6); dropped = query directions below the rank "
+  ],
+  [
+   542,
+   "1",
+   "1"
+  ],
+  [
+   542,
+   "2",
+   "2"
+  ],
+  [
+   542,
+   "5",
+   "5"
+  ],
+  [
+   542,
+   "10",
+   "10"
+  ],
+  [
+   553,
+   "5",
+   "**Anomaly 5 -- what RB-UNION and RB-TOT roll back at eac"
+  ],
+  [
+   600,
+   "2",
+   "# P12 -- linear repair streams"
+  ],
+  [
+   604,
+   "1",
+   "## 1. Findings and anomalies"
+  ],
+  [
+   607,
+   "2",
+   "## 2. Protocol"
+  ],
+  [
+   612,
+   "2",
+   "of size n is the first n of the stream (n // 2 image + n - n // 2 text). n in {"
+  ],
+  [
+   612,
+   "2",
+   "rst n of the stream (n // 2 image + n - n // 2 text). n in {"
+  ],
+  [
+   612,
+   "20",
+   " for n <= 20, seed 0 for n >= 50. Sequential methods use "
+  ],
+  [
+   612,
+   "0",
+   " for n <= 20, seed 0 for n >= 50. Sequential methods use the stre"
+  ],
+  [
+   612,
+   "50",
+   " for n <= 20, seed 0 for n >= 50. Sequential methods use the stream order."
+  ],
+  [
+   616,
+   "1",
+   "thods (all through `harness.repair`; alpha = 1; nothing tuned; fp64 solves on the CPU for b"
+  ],
+  [
+   616,
+   "4",
+   "arness.repair`; alpha = 1; nothing tuned; fp64 solves on the CPU for both logs):"
+  ],
+  [
+   623,
+   "95",
+   "- 95% CIs: uid-level percentile bootstrap, "
+  ],
+  [
+   626,
+   "3",
+   "## 3. Main table: method x n in {1, 10, 100, ALL}"
+  ],
+  [
+   626,
+   "1",
+   "## 3. Main table: method x n in {1, 10, 100, ALL}, seed 0"
+  ],
+  [
+   626,
+   "10",
+   "## 3. Main table: method x n in {1, 10, 100, ALL}, seed 0"
+  ],
+  [
+   626,
+   "100",
+   "## 3. Main table: method x n in {1, 10, 100, ALL}, seed 0"
+  ],
+  [
+   626,
+   "0",
+   "table: method x n in {1, 10, 100, ALL}, seed 0"
+  ],
+  [
+   627,
+   "0",
+   "y does not occur in the REPAIR pool (Anomaly 0); twins of reported complaints = HELD-OUT ro"
+  ],
+  [
+   627,
+   "1",
+   "s: all logged edits x {Rel, T-Gen, I-Gen}, B=1 teacher-forced exact; broken = exact at W_E "
+  ],
+  [
+   627,
+   "4",
+   ". Rank of the correction: exact for COMP (fp64 adapter), nominal for REEDIT (installed comp"
+  ],
+  [
+   648,
+   "2",
+   "* is not an oracle is not installed; Anomaly 2). The re-run with the documented oracle fall"
+  ],
+  [
+   653,
+   "4",
+   "## 4. Curves over n"
+  ],
+  [
+   654,
+   "0",
+   " more than one seed was run. Protocol: seeds 0, 1, 2 for n <= 20, seed 0 for n >= 50. "
+  ],
+  [
+   654,
+   "1",
+   "re than one seed was run. Protocol: seeds 0, 1, 2 for n <= 20, seed 0 for n >= 50. "
+  ],
+  [
+   654,
+   "2",
+   "than one seed was run. Protocol: seeds 0, 1, 2 for n <= 20, seed 0 for n >= 50. "
+  ],
+  [
+   654,
+   "20",
+   "ed was run. Protocol: seeds 0, 1, 2 for n <= 20, seed 0 for n >= 50. "
+  ],
+  [
+   654,
+   "0",
+   "n. Protocol: seeds 0, 1, 2 for n <= 20, seed 0 for n >= 50. "
+  ],
+  [
+   654,
+   "50",
+   ": seeds 0, 1, 2 for n <= 20, seed 0 for n >= 50. "
+  ],
+  [
+   676,
+   "300",
+   "edit checks broken (of 300)"
+  ],
+  [
+   701,
+   "5",
+   "## 5. HELD-OUT rows by probe type (seed 0; D1 rat"
+  ],
+  [
+   701,
+   "0",
+   "## 5. HELD-OUT rows by probe type (seed 0; D1 rate % after the repair; +fixed / -lost)"
+  ],
+  [
+   722,
+   "6",
+   "## 6. D2 complaints among the HELD-OUT rows (seed"
+  ],
+  [
+   722,
+   "0",
+   " D2 complaints among the HELD-OUT rows (seed 0, n in {10, 100, ALL})"
+  ],
+  [
+   722,
+   "10",
+   "aints among the HELD-OUT rows (seed 0, n in {10, 100, ALL})"
+  ],
+  [
+   722,
+   "100",
+   "s among the HELD-OUT rows (seed 0, n in {10, 100, ALL})"
+  ],
+  [
+   723,
+   "10",
+   "Testbed D2 pipeline (decoder v2: 10 no-cache greedy forwards + KV-cache greedy c"
+  ],
+  [
+   723,
+   "48",
+   "y forwards + KV-cache greedy continuation to 48 tokens; `tb_common.contains_ref`): a HELD-OU"
+  ],
+  [
+   723,
+   "48",
+   "LD-OUT row is a D2 complaint if its pre-edit 48-token answer contains the reference (stored "
+  ],
+  [
+   723,
+   "1",
+   " the answer keys of the valid HELD-OUT rows (1 = unrepaired, 0 = pre-edit; medians)."
+  ],
+  [
+   723,
+   "0",
+   " of the valid HELD-OUT rows (1 = unrepaired, 0 = pre-edit; medians)."
+  ],
+  [
+   734,
+   "5",
+   "dit | == stored pre-edit | rho complaints (q25-q75) | rho non-complaints | rho fixed / not "
+  ],
+  [
+   734,
+   "5",
+   "| == stored pre-edit | rho complaints (q25-q75) | rho non-complaints | rho fixed / not fixe"
+  ],
+  [
+   771,
+   "7",
+   "## 7. Operating points with Rel exact within "
+  ],
+  [
+   788,
+   "8",
+   "## 8. Method diagnostics (seed 0)"
+  ],
+  [
+   788,
+   "0",
+   "## 8. Method diagnostics (seed 0)"
+  ],
+  [
+   839,
+   "9",
+   "## 9. Second priority: per-complaint head-to-head"
+  ],
+  [
+   854,
+   "95",
+   "| method | D1 resolved | rate [95% CI] | clean (resolved, 0 broken) [CI] | edi"
+  ],
+  [
+   854,
+   "0",
+   " resolved | rate [95% CI] | clean (resolved, 0 broken) [CI] | edits broken / repair [CI] | "
+  ],
+  [
+   893,
+   "10",
+   "## 10. Run information"
+  ],
+  [
+   897,
+   "1",
+   "IT-S with one batch, COMP-S / COMP-S+ at n = 1); peak GPU memory allocated "
+  ]
+ ]
+}

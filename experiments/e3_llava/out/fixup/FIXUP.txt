@@ -1,0 +1,63 @@
+E3 FIX-UP (LLaVA-1.5-7B)   written 2026-11-12 06:41:53 by code/fixup_render.py from out/fixup/checks.json and the JSON files named below
+Additions required by PROTOCOL.md section 4 and by the amendment of 2026-11-12 06:16 UTC (decisions 1, 2, 4, 5), after the independent verification of E3 (e3_qwen/verify/verdicts.json:
+problems, must_fix_before_paper).  Nothing was selected by looking at results (the reference gates are those of e1_main/out/best_cosine_gate.json); no model was run; no existing file
+was changed: the additions live in out/fixup/ and code/fixup_*.py (shared computation: x_release/code/xlib.py, xrender.py).  Paper numbers: 1300 new names (all start
+with 'EthreeFx'); names shared with out/paper_numbers.json or with the earlier fix-up files of e1_main and e2_curves: 0.
+
+ITEM 1  paired differences H2 and H3 (missing in e3_llava)  ->  endpoints.json, table_fixup.txt (F1a - F1c), 540 paper numbers
+  Method of e3_qwen/code/e3_analyze.py (endpoints): fx.stats.crossed_bootstrap_diff over the behavioural calibration draws x edits, 2000 resamples, seed 0; the 20-draw gate-level
+  coverage form; H3 for pair 1, pair 2 and the retrieval reference; an unreachable draw counts 0.  H2 on all edits and on later edits only (stream position >= 100).
+
+  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+    log                    H2 all: - white_0.1_shared           H2 later    H2 all: - retr_sum          H3 pair 1          H3 pair 2               H3 retr  draws
+    ---------------------  --------------------------  -----------------  --------------------  -----------------  -----------------  --------------------  -----
+    TB-L100-ae-l2_3 (dev)           -1.3 [-8.0, +4.7]                  -  -29.0 [-39.0, -19.8]  -4.0 [-9.7, +1.7]  -0.3 [-6.0, +5.3]   -12.7 [-25.0, -0.3]      3
+    TB-L200-ae-l2_3                 +1.2 [-5.1, +8.5]  +0.7 [-6.7, +9.0]  -30.2 [-40.0, -21.2]  -4.2 [-8.7, +0.0]  +4.0 [-0.5, +8.7]   -12.5 [-20.5, -4.2]      3
+    TB-L500-ae-l2_3                 -1.1 [-4.4, +2.1]  -1.3 [-5.1, +2.4]  -32.9 [-41.3, -23.6]  -2.7 [-6.0, +0.7]  +5.8 [+2.0, +9.9]  -15.5 [-20.7, -10.3]      3
+
+  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+    log              H2 all: - white_0.1_shared              H2 later    H2 all: - retr_sum             H3 pair 1            H3 pair 2               H3 retr  draws
+    ---------------  --------------------------  --------------------  --------------------  --------------------  -------------------  --------------------  -----
+    TB-L100-memitw         -31.0 [-40.2, -22.2]                     -  -58.7 [-67.0, -50.0]  -23.3 [-32.3, -14.7]  -14.7 [-23.3, -6.3]  -32.0 [-43.3, -21.0]      3
+    TB-L500-memitw         -17.8 [-21.2, -14.7]  -16.0 [-19.2, -12.5]  -49.6 [-55.0, -44.0]  -14.9 [-18.9, -11.1]  -11.2 [-14.8, -7.5]  -27.7 [-32.5, -23.3]      3
+    TB-L1000-memitw         -10.2 [-11.8, -8.7]    -8.9 [-10.4, -7.3]  -38.4 [-40.6, -36.2]    -9.0 [-11.0, -6.9]    -4.2 [-6.0, -2.4]  -24.6 [-27.9, -21.5]      1
+
+  Comparison with the verification's values (claims_extra.json): 42 numbers; values at or above 0.1 points: 0; interval ends at or above 0.5 points: 1.
+    TB-L200-ae-l2_3, H2 later edits, rescope minus white_0.1_shared, ci_hi: here +9.00, verification +9.5 (difference 0.50): interval end of another bootstrap (the verification drew its own resamples; this file uses the driver's crossed bootstrap with seed 0)
+  Every value agrees with the verification's to its printed decimal; the interval ends differ by at most the amount above because the two bootstraps draw different resamples.
+
+ITEM 3  exact McNemar tests  ->  mcnemar.json, table_fixup.txt (F3), 304 paper numbers
+  76 tests: (a) D1 on heldout_disjoint and (b) Rel exact, where_logonly against the deployed log and rescope against the deployed log; (c) D1 on heldout_disjoint, rescope against
+  white_0.1_shared and against retr_sum; per log and per behavioural calibration draw.  b, c, p and log10 p per test.
+  The exact value is computed in integer arithmetic: fx.stats.mcnemar_exact overflows from 1024 discordant pairs on (0 test(s) of this backbone); below that the two agree exactly.
+  The Holm correction of the replication read-outs (H2, H3) over the unseen logs of both backbones is in x_release/out/holm.json.
+
+ITEM 4  reporting next to far locality  ->  reporting.json, table_fixup.txt (F4a, F4d, F4e), 456 paper numbers
+  (a) near-scope held-out probes released, behaviour and gate level, with the number of rows; (b) calibration draws of 20 above the bound, mean, 5th and 95th percentile of the rate;
+  (c) capped edits, mean and largest count; (d) smallest self-separation margin and edits with a non-positive margin; (e) Rel exact kept / gained / lost against the deployed log for
+  where_logonly and rescope (all edits, first 100, later edits).  Methods: where_logonly, rescope, rescope_shared, rescope_x, white_1_shared, white_0.1_shared, retr_sum; where_logonly has no gate-level read-out.
+
+  rescope  --  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+    log                    near rel. % beh.  gate  draws above / 20  capped mean  max  margin min  margin <= 0
+    ---------------------  ----------------  ----  ----------------  -----------  ---  ----------  -----------
+    TB-L100-ae-l2_3 (dev)               5.1   4.1                 3         0.20    1      +0.530            0
+    TB-L200-ae-l2_3                     4.4   4.2                 3         0.25    1      +0.530            0
+    TB-L500-ae-l2_3                     3.2   2.7                 0         1.35    3      +0.385            0
+
+  rescope  --  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+    log              near rel. % beh.  gate  draws above / 20  capped mean  max  margin min  margin <= 0
+    ---------------  ----------------  ----  ----------------  -----------  ---  ----------  -----------
+    TB-L100-memitw                9.4  11.3                 9        18.85   36      +0.023            0
+    TB-L500-memitw                8.0   6.0                 0        90.60  129      +0.023            0
+    TB-L1000-memitw               9.7   7.1                 1       148.55  239      -0.107            2
+
+CHECKS (9; failed: 0)
+  [ok] item 1: comparison with the verification's own values (e3_qwen/verify/out/claims_extra.json): no VALUE differs by 0.1 points or more (interval ends at or above 0.5 points are listed with the reason: the verification drew its own resamples)   -- 42 numbers compared; values at or above 0.1: 0; interval ends at or above 0.5: [('TB-L200-ae-l2_3', 'H2 later edits, rescope minus white_0.1_shared', 'ci_hi', 9.0, 9.5)]; largest difference of a value 0.050, of an interval end 0.500
+  [ok] item 3: no McNemar test missing (every per-row file exists and the paired rows hold the same sequences)   -- 76 tests; missing: []
+  [ok] item 3: the exact value computed in integer arithmetic equals the driver's fx.stats.mcnemar_exact wherever the driver can compute it (fewer than 1000 discordant pairs)   -- 76 tests compared, largest absolute difference 0; 0 test(s) with 1000 or more discordant pairs computed in integer arithmetic only (the driver's function overflows there)
+  [ok] item 4: item 4 against the verification's own values (near-scope release of rescope at behaviour and gate level; smallest margin and edits with a non-positive margin)   -- 24 numbers compared; differing beyond the rounding of the verification's list: []
+  [ok] item 4: the near-scope probes of the gate-level cells are the rows with near_edit set in the per-row files (same number per log and method)   -- 42 (log, method) pairs
+  [ok] item 0: numbers that also exist in out/paper_numbers.json are equal to the last stored digit (full float, tolerance 1e-9)   -- 54 numbers compared on 6 logs; differing: []
+  [ok] item 0: no name of out/fixup/paper_numbers_fixup.json exists in out/paper_numbers.json or in the earlier fix-up files (e1_main, e2_curves)   -- collisions: 0
+  [ok] item 0: every paper number has a documentation line   -- 1300 names
+  [ok] item 0: no existing file of the experiments was modified (modification times against the start of this work; the new files of the fix-up excluded)   -- start 2026-11-12 06:21:20 UTC; 8042 files checked in e3_qwen, e3_llava, e1_main, e2_curves, e2_prefix, common; modified: []

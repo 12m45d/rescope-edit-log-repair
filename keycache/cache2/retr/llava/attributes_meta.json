@@ -1,0 +1,94 @@
+{
+ "backbone": "llava",
+ "file": "attributes.jsonl",
+ "md5": "39c9c1b08ca145760a8f07ca98812972",
+ "n_lines": 9800,
+ "n_sequences": 8800,
+ "n_edit_requests": 1000,
+ "fields": [
+  "table",
+  "row",
+  "sid",
+  "kind",
+  "family",
+  "ptype",
+  "image",
+  "image_md5",
+  "question",
+  "question_key",
+  "edit",
+  "edit_uid",
+  "edit_b",
+  "edit_b_uid"
+ ],
+ "cache_index_md5": "a629f69ba71ef685108e1cb13e18d437",
+ "families": {
+  "L": {
+   "master_log": "TB-L1000-ae-l2_3",
+   "dataset": "VLKEB",
+   "n_edits": 1000,
+   "stream": "[redacted: local path]/02_research/experiments/06_testbed_v3/TB-L1000-ae-l2_3/edit_batch.jsonl"
+  }
+ },
+ "vlkeb_family": "L",
+ "by_family_kind": {
+  "L|benign": 3000,
+  "L|hn_i": 800,
+  "L|hn_q": 800,
+  "L|hn_x": 200,
+  "L|igen": 1000,
+  "L|probe": 1000,
+  "L|rel": 1000,
+  "L|request": 1000,
+  "L|tgen": 1000
+ },
+ "n_text_rows": 2000,
+ "n_distinct_image_paths": 4560,
+ "n_distinct_image_md5": 4556,
+ "n_distinct_question_strings": 3958,
+ "n_distinct_question_keys": 3958,
+ "checks": {
+  "sequences_derived_from_loaders_equal_index": 8800,
+  "mismatches": {
+   "benign_row": 0,
+   "benign_uid": 0,
+   "edit_uid": 0,
+   "hn_edit_uid": 0,
+   "hn_rule": 0,
+   "image_vs_index": 0,
+   "probe_uid": 0,
+   "prompt_vs_index": 0,
+   "ptype_vs_image": 0
+  },
+  "md5_recomputed_files": 4560,
+  "md5_mismatches": 0,
+  "prompts_rendered": 8800,
+  "rendered_text_is_template_around_question": 8800,
+  "rendered_token_count_equals_cached_prompt_length": 8800,
+  "image_slots_equal_cache": 8800,
+  "edit_requests_equal_stream_file_and_rel_sequence": 1000,
+  "edit_mismatches": {
+   "rel_sequence": 0,
+   "stream_file": 0
+  }
+ },
+ "rendered_examples": {
+  "L|image|vqa": {
+   "sid": "L:edit:rel:0",
+   "question": "Who is the person shown in the image?",
+   "rendered_prompt_text": "\nQuestion: Who is the person shown in the image? Short answer:",
+   "len_prompt": 593,
+   "n_image_tokens": 576
+  },
+  "L|text|vqa": {
+   "sid": "L:probe:text:0",
+   "question": "when does the next world of warcraft expansion come out",
+   "rendered_prompt_text": "Question: when does the next world of warcraft expansion come out Short answer:",
+   "len_prompt": 17,
+   "n_image_tokens": 0
+  }
+ },
+ "image_root_of_relative_paths": "[redacted: local path]",
+ "question_key_rule": "question.strip().lower()",
+ "built_by": "feat2/retr/build_attributes.py"
+}

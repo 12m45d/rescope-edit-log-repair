@@ -1,0 +1,58 @@
+{
+ "log": "TX-G2XL-rome-T500",
+ "n_heldout_texts": 2999,
+ "rows": {
+  "where_twoblock": {
+   "n_fired_on_cache": 2999,
+   "n_in_band": 1,
+   "n_certified": 0,
+   "n_checked": 0,
+   "n_checked_not_silent_by_own_arithmetic": 0,
+   "largest_margin_over_threshold": null,
+   "n_logits_bit_identical": 0,
+   "n_violations": 0,
+   "violations": [],
+   "n_tokens_equal_stored_continuation": 0,
+   "n_hook_fired": 0
+  },
+  "rescope": {
+   "n_fired_on_cache": 2999,
+   "n_in_band": 1,
+   "n_certified": 0,
+   "n_checked": 0,
+   "n_checked_not_silent_by_own_arithmetic": 0,
+   "largest_margin_over_threshold": null,
+   "n_logits_bit_identical": 0,
+   "n_violations": 0,
+   "violations": [],
+   "n_tokens_equal_stored_continuation": 0,
+   "n_hook_fired": 0
+  },
+  "where_twoblock@goff": {
+   "n_fired_on_cache": 74,
+   "n_in_band": 0,
+   "n_certified": 2925,
+   "n_checked": 200,
+   "n_checked_not_silent_by_own_arithmetic": 0,
+   "largest_margin_over_threshold": -0.07386232196868248,
+   "n_logits_bit_identical": 200,
+   "n_violations": 0,
+   "violations": [],
+   "n_tokens_equal_stored_continuation": 200,
+   "n_hook_fired": 0
+  },
+  "rescope@goff": {
+   "n_fired_on_cache": 74,
+   "n_in_band": 0,
+   "n_certified": 2925,
+   "n_checked": 200,
+   "n_checked_not_silent_by_own_arithmetic": 0,
+   "largest_margin_over_threshold": -0.07386232196868248,
+   "n_logits_bit_identical": 200,
+   "n_violations": 0,
+   "violations": [],
+   "n_tokens_equal_stored_continuation": 200,
+   "n_hook_fired": 0
+  }
+ }
+}

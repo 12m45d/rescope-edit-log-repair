@@ -1,0 +1,128 @@
+{
+ "kept_gained": {
+  "rel": {
+   "n": 100,
+   "n_deployed_exact": 88,
+   "n_exact": 98,
+   "n_kept": 86,
+   "n_gained": 12,
+   "n_lost": 2,
+   "kept": 86.0,
+   "gained": 12.0,
+   "lost": 2.0,
+   "kept_of_deployed": 97.72727272727273
+  },
+  "tgen": {
+   "n": 100,
+   "n_deployed_exact": 29,
+   "n_exact": 47,
+   "n_kept": 24,
+   "n_gained": 23,
+   "n_lost": 5,
+   "kept": 24.0,
+   "gained": 23.0,
+   "lost": 5.0,
+   "kept_of_deployed": 82.75862068965517
+  },
+  "igen": {
+   "n": 100,
+   "n_deployed_exact": 66,
+   "n_exact": 95,
+   "n_kept": 65,
+   "n_gained": 30,
+   "n_lost": 1,
+   "kept": 65.0,
+   "gained": 30.0,
+   "lost": 1.0,
+   "kept_of_deployed": 98.48484848484848
+  }
+ },
+ "kept_ci": {
+  "rel": [
+   79.0,
+   92.0,
+   100
+  ],
+  "tgen": [
+   16.0,
+   32.0,
+   100
+  ],
+  "igen": [
+   56.0,
+   74.0,
+   100
+  ]
+ },
+ "consistent": true,
+ "d2_deployed": {
+  "n_pre_correct": 78,
+  "n_D2": 31,
+  "rate": {
+   "value": 39.743589743589745,
+   "ci_lo": 28.571428571428573,
+   "ci_hi": 50.666666666666664,
+   "n_units": 75,
+   "n_rows": 78,
+   "n_boot": 2000,
+   "seed": 0,
+   "n_dropped": 0,
+   "n_resamples_undefined": 0
+  },
+  "n_D2_stored_records": 31,
+  "n_rows_stored": 78
+ },
+ "d2_method": {
+  "n_pre_correct": 78,
+  "n_D2": 3,
+  "rate": {
+   "value": 3.8461538461538463,
+   "ci_lo": 0.0,
+   "ci_hi": 8.436306200411387,
+   "n_units": 75,
+   "n_rows": 78,
+   "n_boot": 2000,
+   "seed": 0,
+   "n_dropped": 0,
+   "n_resamples_undefined": 0
+  }
+ },
+ "crossed_grid": {
+  "shape": [
+   2,
+   75
+  ],
+  "value": 3.8461538461538463,
+  "ci": [
+   0.0,
+   8.433734939759036
+  ]
+ },
+ "ok": true,
+ "hook_mismatch": 0,
+ "memo_conflicts": 0,
+ "test": "k",
+ "log": "TB-L100-ae-l2_3",
+ "seconds": 0.4974052906036377,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 17:47:36",
+ "stats": {
+  "rows": 2104,
+  "pre": 349,
+  "memo": 1061,
+  "run": 0,
+  "lib": 12,
+  "missing": 0,
+  "forwards": 682,
+  "decodes": 0,
+  "hook_mismatch": 0,
+  "near": 7,
+  "near_changed_on_device": 0,
+  "seconds_model": 69.75244903564453,
+  "hashed": 682
+ }
+}

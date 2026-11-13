@@ -1,0 +1,49 @@
+{
+ "pass": true,
+ "per_backbone": {
+  "qwen25vl": {
+   "items_in_two_parts": 0,
+   "rows_with_another_part_than_their_item": 0,
+   "parts_cover_pool": true,
+   "uids_shared_between_parts": 0,
+   "rows": {
+    "BEN-S": 1375,
+    "BEN-T": 1025,
+    "BEN-W": 600
+   }
+  },
+  "llava": {
+   "items_in_two_parts": 0,
+   "rows_with_another_part_than_their_item": 0,
+   "parts_cover_pool": true,
+   "uids_shared_between_parts": 0,
+   "rows": {
+    "BEN-S": 1375,
+    "BEN-T": 1025,
+    "BEN-W": 600
+   }
+  },
+  "blip2": {
+   "items_in_two_parts": 0,
+   "rows_with_another_part_than_their_item": 0,
+   "parts_cover_pool": true,
+   "uids_shared_between_parts": 0,
+   "rows": {
+    "BEN-S": 1375,
+    "BEN-T": 1025,
+    "BEN-W": 600
+   }
+  }
+ },
+ "note": "items in two parts: 0; rows W / S / T = 600 / 1375 / 1025 of 3000",
+ "test": "p2_no_item_in_two_parts",
+ "group": "parts",
+ "what": "no source item lies in two parts; every pool row has exactly the part of its item; the parts cover the pool",
+ "seconds": 0.12735986709594727,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

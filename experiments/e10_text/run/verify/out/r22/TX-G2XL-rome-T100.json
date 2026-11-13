@@ -1,0 +1,402 @@
+{
+ "log": "TX-G2XL-rome-T100",
+ "pool": {
+  "n_view": 5000,
+  "n_excluded_shared_subject": 107,
+  "pools_of_the_build_reproduced": true,
+  "view_disjoint_from_logs_and_pools": true,
+  "same_records_as_experiment": true,
+  "same_report_half": true,
+  "same_test_half": true,
+  "experiment_n_excluded": 107,
+  "view_records_sharing_a_subject_with_a_T100_request": 0
+ },
+ "sql_file": "code/v3_r22.sql",
+ "database": "[redacted: local path]/02_research/experiments/10_final/e10_text/run/verify/out/r22/TX-G2XL-rome-T100.sqlite",
+ "states": {
+  "sizes": [
+   {
+    "name": "R0",
+    "n": 5100
+   },
+   {
+    "name": "deployed",
+    "n": 5100
+   },
+   {
+    "name": "intended",
+    "n": 5100
+   },
+   {
+    "name": "restore_base",
+    "n": 2600
+   }
+  ],
+  "queries_test": 32,
+  "queries_report": 31,
+  "dropped_test": [
+   {
+    "relation": "P264",
+    "n": 4
+   },
+   {
+    "relation": "P36",
+    "n": 16
+   }
+  ],
+  "dropped_report": [
+   {
+    "relation": "P264",
+    "n": 11
+   },
+   {
+    "relation": "P36",
+    "n": 17
+   },
+   {
+    "relation": "P463",
+    "n": 19
+   }
+  ],
+  "deployed_vs_R0_unedited_test": {
+   "n": 2500,
+   "n_differ": 743
+  },
+  "deployed_vs_R0_unedited_report": {
+   "n": 2500,
+   "n_differ": 745
+  },
+  "intended_vs_R0_unedited_test": {
+   "n": 2500,
+   "n_differ": 0
+  },
+  "intended_vs_R0_edited": {
+   "n": 100,
+   "n_differ": 100
+  },
+  "deployed_vs_intended_edited": {
+   "n": 100,
+   "n_differ": 3
+  },
+  "deployed_vs_R0_edited": {
+   "n": 100,
+   "n_differ": 100
+  },
+  "n_nonfinite_values": {
+   "R0": 0,
+   "deployed": 0
+  }
+ },
+ "rows": {
+  "deployed": {
+   "scores": {
+    "reference_preservation": {
+     "n": 2500,
+     "n_ok": 1757,
+     "pct": 70.28
+    },
+    "retention": {
+     "n": 100,
+     "n_ok": 97,
+     "pct": 97.0
+    },
+    "n_views": 32,
+    "n_aggregates": 32,
+    "views_exact": 0,
+    "aggregates_exact": 0,
+    "queries_exact_pct": 0.0,
+    "aggregate_tv_mean": 0.23679020319028532
+   },
+   "diagnosis_passes": 0,
+   "repair_passes": 0
+  },
+  "restore-base": {
+   "scores": {
+    "reference_preservation": {
+     "n": 2500,
+     "n_ok": 2500,
+     "pct": 100.0
+    },
+    "retention": {
+     "n": 100,
+     "n_ok": 0,
+     "pct": 0.0
+    },
+    "n_views": 32,
+    "n_aggregates": 32,
+    "views_exact": 1,
+    "aggregates_exact": 1,
+    "queries_exact_pct": 3.125,
+    "aggregate_tv_mean": 0.037175070399672355
+   },
+   "diagnosis_passes": 0,
+   "repair_passes": 0
+  },
+  "least_sacrificing": {
+   "scores": {
+    "reference_preservation": {
+     "n": 2500,
+     "n_ok": 2417,
+     "pct": 96.68
+    },
+    "retention": {
+     "n": 100,
+     "n_ok": 96,
+     "pct": 96.0
+    },
+    "n_views": 32,
+    "n_aggregates": 32,
+    "views_exact": 9,
+    "aggregates_exact": 9,
+    "queries_exact_pct": 28.125,
+    "aggregate_tv_mean": 0.03845925423343835
+   },
+   "diagnosis_passes": 608,
+   "repair_passes": 0,
+   "repair_seconds": 0.02936577796936035,
+   "n_thresholds_raised": 34,
+   "complaints_refused": 0,
+   "serve": {
+    "n_fired": 853,
+    "n_fired_test": 753,
+    "edits_lost": 0,
+    "silent_tuples_with_a_value_other_than_R0": 0
+   },
+   "complaints_resolved_as_served": 88,
+   "complaints_still_released_as_served": 2,
+   "n_tuple_complaints": 88
+  },
+  "least_protecting": {
+   "scores": {
+    "reference_preservation": {
+     "n": 2500,
+     "n_ok": 2417,
+     "pct": 96.68
+    },
+    "retention": {
+     "n": 100,
+     "n_ok": 96,
+     "pct": 96.0
+    },
+    "n_views": 32,
+    "n_aggregates": 32,
+    "views_exact": 9,
+    "aggregates_exact": 9,
+    "queries_exact_pct": 28.125,
+    "aggregate_tv_mean": 0.03845925423343835
+   },
+   "diagnosis_passes": 608,
+   "repair_passes": 0,
+   "repair_seconds": 0.05297732353210449,
+   "n_thresholds_raised": 34,
+   "complaints_refused": 0,
+   "serve": {
+    "n_fired": 853,
+    "n_fired_test": 753,
+    "edits_lost": 0,
+    "silent_tuples_with_a_value_other_than_R0": 0
+   },
+   "complaints_resolved_as_served": 88,
+   "complaints_still_released_as_served": 2,
+   "n_tuple_complaints": 88
+  }
+ },
+ "compare": {
+  "deployed": {
+   "experiment_row_found": true,
+   "reference_preservation": [
+    1757,
+    1757
+   ],
+   "retention": [
+    97,
+    97
+   ],
+   "queries_exact_pct": [
+    0.0,
+    0.0
+   ],
+   "aggregate_tv_mean": [
+    0.23679020319028532,
+    0.23679020319028532
+   ],
+   "cost": {
+    "diagnosis_passes": 0,
+    "repair_passes": 0,
+    "repair_seconds": 0.0,
+    "statements_changed": 0
+   },
+   "edits_lost": {
+    "n": 0
+   },
+   "complaints_refused": null,
+   "scores_equal": true,
+   "per_tuple": {
+    "n_common": 5100,
+    "n_values_differ": 0
+   }
+  },
+  "restore-base": {
+   "experiment_row_found": true,
+   "reference_preservation": [
+    2500,
+    2500
+   ],
+   "retention": [
+    0,
+    0
+   ],
+   "queries_exact_pct": [
+    3.125,
+    3.125
+   ],
+   "aggregate_tv_mean": [
+    0.037175070399672355,
+    0.037175070399672355
+   ],
+   "cost": {
+    "diagnosis_passes": 0,
+    "repair_passes": 0,
+    "repair_seconds": 0.0,
+    "statements_changed": 100
+   },
+   "edits_lost": {
+    "n": 100
+   },
+   "complaints_refused": null,
+   "scores_equal": true,
+   "per_tuple": {
+    "n_common": 5100,
+    "n_values_differ": 0
+   }
+  },
+  "least_sacrificing": {
+   "experiment_row_found": true,
+   "reference_preservation": [
+    2417,
+    2417
+   ],
+   "retention": [
+    96,
+    96
+   ],
+   "queries_exact_pct": [
+    28.125,
+    28.125
+   ],
+   "aggregate_tv_mean": [
+    0.03845925423343835,
+    0.03845925423343835
+   ],
+   "cost": {
+    "diagnosis_passes": 608,
+    "repair_passes": 0,
+    "repair_seconds": 0.03064703941345215,
+    "statements_changed": 34
+   },
+   "edits_lost": {
+    "n": 0
+   },
+   "complaints_refused": 0,
+   "scores_equal": true,
+   "per_tuple": {
+    "n_common": 2600,
+    "n_values_differ": 0
+   }
+  },
+  "least_protecting": {
+   "experiment_row_found": true,
+   "reference_preservation": [
+    2417,
+    2417
+   ],
+   "retention": [
+    96,
+    96
+   ],
+   "queries_exact_pct": [
+    28.125,
+    28.125
+   ],
+   "aggregate_tv_mean": [
+    0.03845925423343835,
+    0.03845925423343835
+   ],
+   "cost": {
+    "diagnosis_passes": 608,
+    "repair_passes": 0,
+    "repair_seconds": 0.05794548988342285,
+    "statements_changed": 34
+   },
+   "edits_lost": {
+    "n": 0
+   },
+   "complaints_refused": 0,
+   "scores_equal": true,
+   "per_tuple": {
+    "n_common": 2600,
+    "n_values_differ": 0
+   }
+  }
+ },
+ "diagnosis": {
+  "m": 3,
+  "seed": 0,
+  "n_report_queries": 62,
+  "n_complaint_candidates": 62,
+  "queries": [
+   [
+    "P17",
+    "view"
+   ],
+   [
+    "P937",
+    "view"
+   ],
+   [
+    "P136",
+    "view"
+   ]
+  ],
+  "relations": [
+   "P136",
+   "P17",
+   "P937"
+  ],
+  "n_tuples_in_complained_views": 304,
+  "diagnosis_passes": 608,
+  "n_own_requests_in_views": 11,
+  "own_requests_are_exactly_the_edited_tuples_of_the_views": true,
+  "n_tuple_complaints": 88,
+  "experiment": {
+   "queries": [
+    [
+     "P17",
+     "view"
+    ],
+    [
+     "P937",
+     "view"
+    ],
+    [
+     "P136",
+     "view"
+    ]
+   ],
+   "relations": [
+    "P136",
+    "P17",
+    "P937"
+   ],
+   "n_tuples_in_complained_views": 304,
+   "n_own_requests_in_views": 11,
+   "diagnosis_passes": 608,
+   "n_tuple_complaints": 88
+  },
+  "experiment_n_report_queries": 62,
+  "experiment_n_candidates": 62,
+  "same_as_experiment": true,
+  "complaints_all_in_report_half_and_unedited": true
+ },
+ "seconds": 15.991730451583862
+}

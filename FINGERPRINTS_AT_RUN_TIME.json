@@ -1,0 +1,986 @@
+{
+ "_about": "Stored hashes and fingerprints whose value differs between the run and the release. The release changed files (the tag in the working names of the logs was replaced: README, 'Names of the logs'; marks; the path configuration); where a stored value was the hash of such a file it was recomputed so that the released checks pass. 'replaced': every such value, found by comparing the staged files before that replacement with the release, file by file; the values at run time were checked against the authors' working tree. 'kept_at_run_time_value': stored values that are the hash of a working-tree file whose released bytes differ and that were NOT replaced; they are true for the run, not for the released file. Every other stored code fingerprint in the result files is that of the working tree at run time, unchanged. Keys are JSON paths inside the released file ('/a/b/0'), or a line number for text files.",
+ "counts": {
+  "replaced": 70,
+  "replaced_by_kind": {
+   "code fingerprint": 20,
+   "data hash": 50
+  },
+  "files_with_replaced_values": 23,
+  "distinct_pairs": 25,
+  "kept_at_run_time_value": 14,
+  "kept_places": 85,
+  "kept_by_kind": {
+   "data hash": 3,
+   "code fingerprint": 11
+  }
+ },
+ "replaced": [
+  {
+   "file": "driver/READY.json",
+   "key": "/source_files/methods.py",
+   "value_at_run_time": "5d1a730230e4",
+   "released_value": "077fc1c4469f",
+   "kind": "code fingerprint",
+   "covers": "driver/fx/methods.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and by the edit that makes the digest functions read the working names at run time (rescope_paths.name_at_run_time)"
+  },
+  {
+   "file": "driver/READY.json",
+   "key": "/source_files/prefix.py",
+   "value_at_run_time": "787a7fbde3e0",
+   "released_value": "422efbfbfeac",
+   "kind": "code fingerprint",
+   "covers": "driver/fx/prefix.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "driver/READY.json",
+   "key": "/source_files/review1.py",
+   "value_at_run_time": "aaf00757d4e1",
+   "released_value": "834fa88b95de",
+   "kind": "code fingerprint",
+   "covers": "driver/fx/review1.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and by the edit that makes the digest functions read the working names at run time (rescope_paths.name_at_run_time)"
+  },
+  {
+   "file": "experiments/e0_sanity/out/checks.json",
+   "key": "/code/e0_code/e0_gate.py",
+   "value_at_run_time": "3a5574e84877",
+   "released_value": "978425084db5",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_gate.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e0_sanity/out/checks.json",
+   "key": "/code/e0_code/e0_render.py",
+   "value_at_run_time": "c3a47435f22b",
+   "released_value": "90642bcc287b",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_render.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and by the lines of the release that protect stored outputs and stop without the library's test results (rescope_paths.guard_outputs; README, 'Levels of reproduction')"
+  },
+  {
+   "file": "experiments/e0_sanity/out/gate_TB-L100-ae-l2_3.json",
+   "key": "/cache/index_md5",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e0_sanity/out/gate_TB-L100-ae-l2_3.json",
+   "key": "/code/e0_code/e0_gate.py",
+   "value_at_run_time": "3a5574e84877",
+   "released_value": "978425084db5",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_gate.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e0_sanity/out/gate_TB-L100-ae-l2_3.json",
+   "key": "/code/e0_code/e0_render.py",
+   "value_at_run_time": "c3a47435f22b",
+   "released_value": "90642bcc287b",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_render.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and by the lines of the release that protect stored outputs and stop without the library's test results (rescope_paths.guard_outputs; README, 'Levels of reproduction')"
+  },
+  {
+   "file": "experiments/e0_sanity/out/gate_TB-Q100-ae-l2_3.json",
+   "key": "/code/e0_code/e0_gate.py",
+   "value_at_run_time": "3a5574e84877",
+   "released_value": "978425084db5",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_gate.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e0_sanity/out/gate_TB-Q100-ae-l2_3.json",
+   "key": "/code/e0_code/e0_render.py",
+   "value_at_run_time": "c3a47435f22b",
+   "released_value": "90642bcc287b",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_render.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and by the lines of the release that protect stored outputs and stop without the library's test results (rescope_paths.guard_outputs; README, 'Levels of reproduction')"
+  },
+  {
+   "file": "experiments/e0_sanity/out/referee.json",
+   "key": "/code/e0_code/e0_render.py",
+   "value_at_run_time": "c3a47435f22b",
+   "released_value": "90642bcc287b",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_render.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and by the lines of the release that protect stored outputs and stop without the library's test results (rescope_paths.guard_outputs; README, 'Levels of reproduction')"
+  },
+  {
+   "file": "experiments/e0_sanity/out/results.json",
+   "key": "/code/e0_code/e0_gate.py",
+   "value_at_run_time": "3a5574e84877",
+   "released_value": "978425084db5",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_gate.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e0_sanity/out/results.json",
+   "key": "/code/e0_code/e0_render.py",
+   "value_at_run_time": "c3a47435f22b",
+   "released_value": "90642bcc287b",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_render.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and by the lines of the release that protect stored outputs and stop without the library's test results (rescope_paths.guard_outputs; README, 'Levels of reproduction')"
+  },
+  {
+   "file": "experiments/e0_sanity/out/results.json",
+   "key": "/logs/TB-L100-ae-l2_3/gate/cache/index_md5",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e0_sanity/out/results.json",
+   "key": "/logs/TB-L100-ae-l2_3/gate/code/e0_code/e0_gate.py",
+   "value_at_run_time": "3a5574e84877",
+   "released_value": "978425084db5",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_gate.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e0_sanity/out/results.json",
+   "key": "/logs/TB-L100-ae-l2_3/gate/code/e0_code/e0_render.py",
+   "value_at_run_time": "c3a47435f22b",
+   "released_value": "90642bcc287b",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_render.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and by the lines of the release that protect stored outputs and stop without the library's test results (rescope_paths.guard_outputs; README, 'Levels of reproduction')"
+  },
+  {
+   "file": "experiments/e0_sanity/out/results.json",
+   "key": "/logs/TB-Q100-ae-l2_3/gate/code/e0_code/e0_gate.py",
+   "value_at_run_time": "3a5574e84877",
+   "released_value": "978425084db5",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_gate.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e0_sanity/out/results.json",
+   "key": "/logs/TB-Q100-ae-l2_3/gate/code/e0_code/e0_render.py",
+   "value_at_run_time": "c3a47435f22b",
+   "released_value": "90642bcc287b",
+   "kind": "code fingerprint",
+   "covers": "experiments/e0_sanity/code/e0_render.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and by the lines of the release that protect stored outputs and stop without the library's test results (rescope_paths.guard_outputs; README, 'Levels of reproduction')"
+  },
+  {
+   "file": "experiments/e0_verify/verdicts.json",
+   "key": "/library_fingerprint/cache_index_md5_llava",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e0_verify/verdicts.json",
+   "key": "/library_fingerprint/cache_meta_index_md5_llava",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e2_curves/out/fixup/checks.json",
+   "key": "/code/fx",
+   "value_at_run_time": "6a71f0d2cd71",
+   "released_value": "a7cfd4d450d1",
+   "kind": "code fingerprint",
+   "covers": "the driver sources (fx), combined",
+   "algorithm": "SHA-1 over the source files, first 12 digits",
+   "released_value_is_hash_of_released_file": null,
+   "reason": "the E2 fix-up record was regenerated in the staged copy of the release (it gained the read-outs of the prefix log after 50 edits); the regenerated record carries the combined fingerprint of the released sources, the record of the run carried that of the working tree"
+  },
+  {
+   "file": "experiments/e2_curves/out/fixup/checks.json",
+   "key": "/code/rescope",
+   "value_at_run_time": "c76c4da16bd6",
+   "released_value": "ec18057f0f60",
+   "kind": "code fingerprint",
+   "covers": "the library sources (rescope), combined",
+   "algorithm": "SHA-1 over the source files, first 12 digits",
+   "released_value_is_hash_of_released_file": null,
+   "reason": "the E2 fix-up record was regenerated in the staged copy of the release (it gained the read-outs of the prefix log after 50 edits); the regenerated record carries the combined fingerprint of the released sources, the record of the run carried that of the working tree"
+  },
+  {
+   "file": "experiments/e2_curves/out/fixup/table_fixup.txt",
+   "key": "line 2",
+   "value_at_run_time": "c76c4da16bd6",
+   "released_value": "ec18057f0f60",
+   "kind": "code fingerprint",
+   "covers": "the library sources (rescope), combined",
+   "algorithm": "SHA-1 over the source files, first 12 digits",
+   "released_value_is_hash_of_released_file": null,
+   "reason": "the E2 fix-up record was regenerated in the staged copy of the release (it gained the read-outs of the prefix log after 50 edits); the regenerated record carries the combined fingerprint of the released sources, the record of the run carried that of the working tree"
+  },
+  {
+   "file": "experiments/e2_curves/out/fixup/table_fixup.txt",
+   "key": "line 2",
+   "value_at_run_time": "6a71f0d2cd71",
+   "released_value": "a7cfd4d450d1",
+   "kind": "code fingerprint",
+   "covers": "the driver sources (fx), combined",
+   "algorithm": "SHA-1 over the source files, first 12 digits",
+   "released_value_is_hash_of_released_file": null,
+   "reason": "the E2 fix-up record was regenerated in the staged copy of the release (it gained the read-outs of the prefix log after 50 edits); the regenerated record carries the combined fingerprint of the released sources, the record of the run carried that of the working tree"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/capacity_TB-L100-ae-l2_3_need.json",
+   "value_at_run_time": "8fb2fcae92a3c083237deff21a7607d2",
+   "released_value": "9bb4a54921be701a0404795ec1526ad5",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/capacity_TB-L100-ae-l2_3_need.json (and its identical copy experiments/e5_linear/verify/rerun/out/capacity_TB-L100-ae-l2_3_need.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/capacity_TB-L100-ae-l2_3_seq.json",
+   "value_at_run_time": "f2d96c10df86ce4c36c42297d3881c5d",
+   "released_value": "4922a8eda4d7418ff9d475af2fa4c5b0",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/capacity_TB-L100-ae-l2_3_seq.json (and its identical copy experiments/e5_linear/verify/rerun/out/capacity_TB-L100-ae-l2_3_seq.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/capacity_TB-Q100-ae-l2_3_need.json",
+   "value_at_run_time": "21c2922d17792fa06ec2392f7f0ed8dc",
+   "released_value": "29d3bdb9fb65e5bf448802b7cf7a546b",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/capacity_TB-Q100-ae-l2_3_need.json (and its identical copy experiments/e5_linear/verify/rerun/out/capacity_TB-Q100-ae-l2_3_need.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/capacity_TB-Q100-ae-l2_3_seq.json",
+   "value_at_run_time": "c14c610fd0e308afc812569defef682c",
+   "released_value": "df820ecf71c2f89a4a5d7ed89de38bbf",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/capacity_TB-Q100-ae-l2_3_seq.json (and its identical copy experiments/e5_linear/verify/rerun/out/capacity_TB-Q100-ae-l2_3_seq.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/cond_rollback_TB-L100-ae-l2_3.json",
+   "value_at_run_time": "9f798be630612ad96535ed4110e031d8",
+   "released_value": "cb8d50bd471b5948770aa680abc3c868",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/cond_rollback_TB-L100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/cond_rollback_TB-L100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/cond_rollback_TB-Q100-ae-l2_3.json",
+   "value_at_run_time": "85f225f532b016bf6b56020067c80f5a",
+   "released_value": "83e4a8c12fa20e085ce6861c0136aaf6",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/cond_rollback_TB-Q100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/cond_rollback_TB-Q100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/opt_meta_TB-L100-ae-l2_3.json",
+   "value_at_run_time": "b58e6793fe12c395d7d9ba94e935c8d4",
+   "released_value": "bbf5026ca3b056517dcdfce546cb5ee8",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/opt_meta_TB-L100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/opt_meta_TB-L100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/opt_meta_TB-Q100-ae-l2_3.json",
+   "value_at_run_time": "c5aec82f468b1775b79844027697137e",
+   "released_value": "65e6e13445cebf00b0dec39456b7b517",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/opt_meta_TB-Q100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/opt_meta_TB-Q100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/paper_numbers.json",
+   "value_at_run_time": "74369e0e5e70bf4b4d24c39dd6086035",
+   "released_value": "2d5423ec5a27620625ab60ca44608423",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/paper_numbers.json (and its identical copy experiments/e5_linear/verify/rerun/out/paper_numbers.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/paper_numbers_all.json",
+   "value_at_run_time": "d25c7f99ff059fe6a59291e80752e691",
+   "released_value": "751cdf743da358177e0ffcee7a040cf7",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/paper_numbers_all.json (and its identical copy experiments/e5_linear/verify/rerun/out/paper_numbers_all.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/selftest.json",
+   "value_at_run_time": "2c798a3758a10d6cba2c3241cd61a14e",
+   "released_value": "d98455c4117b95d184203a9667224cb9",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/selftest.json (and its identical copy experiments/e5_linear/verify/rerun/out/selftest.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/table.txt",
+   "value_at_run_time": "75e9571e7894cbacbc225fcc2e602ae7",
+   "released_value": "42c81e22c4976ddf63840ffaf5d77b23",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/table.txt",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/verify_TB-L100-ae-l2_3.json",
+   "value_at_run_time": "74af889b830f993d804052020097da70",
+   "released_value": "eb9ced573bbf37f4730ed2b74b974ad8",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/verify_TB-L100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/verify_TB-L100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/v_rerun.json",
+   "key": "/untouched/md5_out/verify_TB-Q100-ae-l2_3.json",
+   "value_at_run_time": "67c2bef1b915e77c6a2490f0e83fa9f3",
+   "released_value": "20aad60e1e03c00b9e478275bc4d7dd7",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/verify_TB-Q100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/verify_TB-Q100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/capacity_TB-L100-ae-l2_3_need.json",
+   "value_at_run_time": "8fb2fcae92a3c083237deff21a7607d2",
+   "released_value": "9bb4a54921be701a0404795ec1526ad5",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/capacity_TB-L100-ae-l2_3_need.json (and its identical copy experiments/e5_linear/verify/rerun/out/capacity_TB-L100-ae-l2_3_need.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/capacity_TB-L100-ae-l2_3_seq.json",
+   "value_at_run_time": "f2d96c10df86ce4c36c42297d3881c5d",
+   "released_value": "4922a8eda4d7418ff9d475af2fa4c5b0",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/capacity_TB-L100-ae-l2_3_seq.json (and its identical copy experiments/e5_linear/verify/rerun/out/capacity_TB-L100-ae-l2_3_seq.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/capacity_TB-Q100-ae-l2_3_need.json",
+   "value_at_run_time": "21c2922d17792fa06ec2392f7f0ed8dc",
+   "released_value": "29d3bdb9fb65e5bf448802b7cf7a546b",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/capacity_TB-Q100-ae-l2_3_need.json (and its identical copy experiments/e5_linear/verify/rerun/out/capacity_TB-Q100-ae-l2_3_need.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/capacity_TB-Q100-ae-l2_3_seq.json",
+   "value_at_run_time": "c14c610fd0e308afc812569defef682c",
+   "released_value": "df820ecf71c2f89a4a5d7ed89de38bbf",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/capacity_TB-Q100-ae-l2_3_seq.json (and its identical copy experiments/e5_linear/verify/rerun/out/capacity_TB-Q100-ae-l2_3_seq.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/cond_rollback_TB-L100-ae-l2_3.json",
+   "value_at_run_time": "9f798be630612ad96535ed4110e031d8",
+   "released_value": "cb8d50bd471b5948770aa680abc3c868",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/cond_rollback_TB-L100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/cond_rollback_TB-L100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/cond_rollback_TB-Q100-ae-l2_3.json",
+   "value_at_run_time": "85f225f532b016bf6b56020067c80f5a",
+   "released_value": "83e4a8c12fa20e085ce6861c0136aaf6",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/cond_rollback_TB-Q100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/cond_rollback_TB-Q100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/opt_meta_TB-L100-ae-l2_3.json",
+   "value_at_run_time": "b58e6793fe12c395d7d9ba94e935c8d4",
+   "released_value": "bbf5026ca3b056517dcdfce546cb5ee8",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/opt_meta_TB-L100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/opt_meta_TB-L100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/opt_meta_TB-Q100-ae-l2_3.json",
+   "value_at_run_time": "c5aec82f468b1775b79844027697137e",
+   "released_value": "65e6e13445cebf00b0dec39456b7b517",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/opt_meta_TB-Q100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/opt_meta_TB-Q100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/paper_numbers.json",
+   "value_at_run_time": "74369e0e5e70bf4b4d24c39dd6086035",
+   "released_value": "2d5423ec5a27620625ab60ca44608423",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/paper_numbers.json (and its identical copy experiments/e5_linear/verify/rerun/out/paper_numbers.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/paper_numbers_all.json",
+   "value_at_run_time": "d25c7f99ff059fe6a59291e80752e691",
+   "released_value": "751cdf743da358177e0ffcee7a040cf7",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/paper_numbers_all.json (and its identical copy experiments/e5_linear/verify/rerun/out/paper_numbers_all.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/selftest.json",
+   "value_at_run_time": "2c798a3758a10d6cba2c3241cd61a14e",
+   "released_value": "d98455c4117b95d184203a9667224cb9",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/selftest.json (and its identical copy experiments/e5_linear/verify/rerun/out/selftest.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/table.txt",
+   "value_at_run_time": "75e9571e7894cbacbc225fcc2e602ae7",
+   "released_value": "42c81e22c4976ddf63840ffaf5d77b23",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/table.txt",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/verify_TB-L100-ae-l2_3.json",
+   "value_at_run_time": "74af889b830f993d804052020097da70",
+   "released_value": "eb9ced573bbf37f4730ed2b74b974ad8",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/verify_TB-L100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/verify_TB-L100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "experiments/e5_linear/verify/out/verify_results.json",
+   "key": "/rerun/untouched/md5_out/verify_TB-Q100-ae-l2_3.json",
+   "value_at_run_time": "67c2bef1b915e77c6a2490f0e83fa9f3",
+   "released_value": "20aad60e1e03c00b9e478275bc4d7dd7",
+   "kind": "data hash",
+   "covers": "experiments/e5_linear/out/verify_TB-Q100-ae-l2_3.json (and its identical copy experiments/e5_linear/verify/rerun/out/verify_TB-Q100-ae-l2_3.json)",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "keycache/cache2/benign_parts/llava.json",
+   "key": "/source/key_cache_index_md5",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "keycache/cache2/mme/llava/verify.json",
+   "key": "/proof/cache_index_md5",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "keycache/cache2/mme/llava/verify.json",
+   "key": "/selection_check/files/select_summary.json/md5",
+   "value_at_run_time": "60c3bd6fb70077406790c2f8e3de426c",
+   "released_value": "0b855653b52c0a8584f7b682d2105aa4",
+   "kind": "data hash",
+   "covers": "keycache/cache2/mme/select/select_summary.json",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and holds a stored hash that was replaced itself"
+  },
+  {
+   "file": "keycache/cache2/mme/llava/verify.json",
+   "key": "/selection_check/files/select_summary.json/md5_second_run",
+   "value_at_run_time": "60c3bd6fb70077406790c2f8e3de426c",
+   "released_value": "0b855653b52c0a8584f7b682d2105aa4",
+   "kind": "data hash",
+   "covers": "keycache/cache2/mme/select/select_summary.json",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and holds a stored hash that was replaced itself"
+  },
+  {
+   "file": "keycache/cache2/mme/qwen25vl/verify.json",
+   "key": "/selection_check/files/select_summary.json/md5",
+   "value_at_run_time": "60c3bd6fb70077406790c2f8e3de426c",
+   "released_value": "0b855653b52c0a8584f7b682d2105aa4",
+   "kind": "data hash",
+   "covers": "keycache/cache2/mme/select/select_summary.json",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and holds a stored hash that was replaced itself"
+  },
+  {
+   "file": "keycache/cache2/mme/qwen25vl/verify.json",
+   "key": "/selection_check/files/select_summary.json/md5_second_run",
+   "value_at_run_time": "60c3bd6fb70077406790c2f8e3de426c",
+   "released_value": "0b855653b52c0a8584f7b682d2105aa4",
+   "kind": "data hash",
+   "covers": "keycache/cache2/mme/select/select_summary.json",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and holds a stored hash that was replaced itself"
+  },
+  {
+   "file": "keycache/cache2/mme/select/check_select.json",
+   "key": "/files/select_summary.json/md5",
+   "value_at_run_time": "60c3bd6fb70077406790c2f8e3de426c",
+   "released_value": "0b855653b52c0a8584f7b682d2105aa4",
+   "kind": "data hash",
+   "covers": "keycache/cache2/mme/select/select_summary.json",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and holds a stored hash that was replaced itself"
+  },
+  {
+   "file": "keycache/cache2/mme/select/check_select.json",
+   "key": "/files/select_summary.json/md5_second_run",
+   "value_at_run_time": "60c3bd6fb70077406790c2f8e3de426c",
+   "released_value": "0b855653b52c0a8584f7b682d2105aa4",
+   "kind": "data hash",
+   "covers": "keycache/cache2/mme/select/select_summary.json",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and holds a stored hash that was replaced itself"
+  },
+  {
+   "file": "keycache/cache2/mme/select/select_summary.json",
+   "key": "/inputs_md5/cache/llava/index.jsonl",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "keycache/cache2/mme/select/select_summary.json",
+   "key": "/reference_caches/llava/index_md5",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "keycache/cache2/recomb/llava/select_summary.json",
+   "key": "/test_query_sources/llava/md5",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "keycache/cache2/recomb/qwen25vl/select_summary.json",
+   "key": "/test_query_sources/llava/md5",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "keycache/cache2/retr/llava/attributes_meta.json",
+   "key": "/cache_index_md5",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "keycache/cache2/whiten/llava/README.txt",
+   "key": "line 23",
+   "value_at_run_time": "39649c5295efb007a5dd868f68d85de9",
+   "released_value": "d385e2d55e842d5da568874675d3c23d",
+   "kind": "data hash",
+   "covers": "keycache/cache2/benign_parts/llava.json",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and holds a stored hash that was replaced itself"
+  },
+  {
+   "file": "keycache/cache2/whiten/llava/meta.json",
+   "key": "/sources/benign_parts_md5",
+   "value_at_run_time": "39649c5295efb007a5dd868f68d85de9",
+   "released_value": "d385e2d55e842d5da568874675d3c23d",
+   "kind": "data hash",
+   "covers": "keycache/cache2/benign_parts/llava.json",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag and holds a stored hash that was replaced itself"
+  },
+  {
+   "file": "keycache/cache2/whiten/llava/meta.json",
+   "key": "/sources/key_cache_index_md5",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "pools_vl.tar: keycache_rows/llava/meta.json",
+   "key": "/index_md5",
+   "value_at_run_time": "7860593a70deb9e07813faec5f2ba76b",
+   "released_value": "a629f69ba71ef685108e1cb13e18d437",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/llava/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed by the replaced tag in the names of the logs and by nothing else"
+  },
+  {
+   "file": "pools_vl.tar: keycache_rows/qwen25vl/meta.json",
+   "key": "/index_md5",
+   "value_at_run_time": "0ccb7c12c4e5cdc43c47ca6afe5d647f",
+   "released_value": "3b6618a0a477947ef97d0e126686b686",
+   "kind": "data hash",
+   "covers": "pools_vl.tar: keycache_rows/qwen25vl/index.jsonl",
+   "algorithm": "MD5",
+   "released_value_is_hash_of_released_file": true,
+   "reason": "the covered file changed at staging (image locations of 2000 rows written with the path token; the released meta.json keeps the run-time value as index_md5_before_redaction) and then by the replaced tag",
+   "value_after_staging": "4e1dbf7d3b41b4249d1a5335eca04caf"
+  }
+ ],
+ "kept_at_run_time_value": [
+  {
+   "covers": "pools_vl.tar: keycache_rows/qwen25vl/index.jsonl",
+   "algorithm": "MD5",
+   "value_at_run_time": "0ccb7c12c4e5cdc43c47ca6afe5d647f",
+   "kind": "data hash",
+   "stored_in": [
+    "experiments/e0_sanity/out/gate_TB-Q100-ae-l2_3.json",
+    "experiments/e0_sanity/out/results.json",
+    "experiments/e0_verify/verdicts.json",
+    "keycache/cache2/benign_parts/qwen25vl.json",
+    "keycache/cache2/mme/qwen25vl/verify.json",
+    "keycache/cache2/mme/select/select_summary.json",
+    "keycache/cache2/recomb/llava/select_summary.json",
+    "keycache/cache2/recomb/qwen25vl/select_summary.json",
+    "keycache/cache2/retr/qwen25vl/attributes_meta.json",
+    "keycache/cache2/whiten/qwen25vl/meta.json",
+    "pools_vl.tar: keycache_rows/qwen25vl/meta.json"
+   ],
+   "n_places": 13
+  },
+  {
+   "covers": "driver/fx/__init__.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "value_at_run_time": "33163b2b0c90",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "driver/READY.json"
+   ],
+   "n_places": 1
+  },
+  {
+   "covers": "driver/fx/logs.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "value_at_run_time": "ac530aa63b74",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "driver/READY.json"
+   ],
+   "n_places": 1
+  },
+  {
+   "covers": "evalkit/testbed_code/tb_common.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "value_at_run_time": "f3adc53a44f3",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "keycache/cache2/mme/llava/meta.json",
+    "keycache/cache2/mme/llava/verify.json",
+    "keycache/cache2/mme/qwen25vl/meta.json",
+    "keycache/cache2/mme/qwen25vl/verify.json"
+   ],
+   "n_places": 6
+  },
+  {
+   "covers": "evalkit/vendor_v7/vlm.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "value_at_run_time": "6041e4a604da",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "keycache/cache2/mme/llava/meta.json",
+    "keycache/cache2/mme/llava/verify.json",
+    "keycache/cache2/mme/qwen25vl/meta.json",
+    "keycache/cache2/mme/qwen25vl/verify.json"
+   ],
+   "n_places": 6
+  },
+  {
+   "covers": "experiments/e0_sanity/code/e0_behaviour.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "value_at_run_time": "298bfffff2b2",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "experiments/e0_sanity/out/behaviour_smoke/TB-Q100-ae-l2_3/restart_check.json",
+    "experiments/e0_sanity/out/behaviour_smoke/TB-Q100-ae-l2_3/restart_meta.json",
+    "experiments/e0_sanity/out/checks.json",
+    "experiments/e0_sanity/out/gate_TB-L100-ae-l2_3.json",
+    "experiments/e0_sanity/out/gate_TB-Q100-ae-l2_3.json",
+    "experiments/e0_sanity/out/referee.json",
+    "experiments/e0_sanity/out/results.json",
+    "results_rows.tar.gz: experiments/e0_sanity/out/behaviour/TB-L100-ae-l2_3/restart_check.json",
+    "results_rows.tar.gz: experiments/e0_sanity/out/behaviour/TB-L100-ae-l2_3/restart_meta.json",
+    "results_rows.tar.gz: experiments/e0_sanity/out/behaviour/TB-Q100-ae-l2_3/restart_check.json",
+    "results_rows.tar.gz: experiments/e0_sanity/out/behaviour/TB-Q100-ae-l2_3/restart_meta.json"
+   ],
+   "n_places": 13
+  },
+  {
+   "covers": "experiments/e0_sanity/code/e0_common.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "value_at_run_time": "6160232ad92c",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "experiments/e0_sanity/out/behaviour_smoke/TB-Q100-ae-l2_3/restart_check.json",
+    "experiments/e0_sanity/out/behaviour_smoke/TB-Q100-ae-l2_3/restart_meta.json",
+    "experiments/e0_sanity/out/checks.json",
+    "experiments/e0_sanity/out/gate_TB-L100-ae-l2_3.json",
+    "experiments/e0_sanity/out/gate_TB-Q100-ae-l2_3.json",
+    "experiments/e0_sanity/out/referee.json",
+    "experiments/e0_sanity/out/results.json",
+    "results_rows.tar.gz: experiments/e0_sanity/out/behaviour/TB-L100-ae-l2_3/restart_check.json",
+    "results_rows.tar.gz: experiments/e0_sanity/out/behaviour/TB-L100-ae-l2_3/restart_meta.json",
+    "results_rows.tar.gz: experiments/e0_sanity/out/behaviour/TB-Q100-ae-l2_3/restart_check.json",
+    "results_rows.tar.gz: experiments/e0_sanity/out/behaviour/TB-Q100-ae-l2_3/restart_meta.json"
+   ],
+   "n_places": 13
+  },
+  {
+   "covers": "experiments/e10_text/code/e10t/__init__.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "value_at_run_time": "317aaa83806e",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "experiments/e10_text/USAGE.txt"
+   ],
+   "n_places": 1
+  },
+  {
+   "covers": "experiments/e5_linear/out/results.json",
+   "algorithm": "MD5",
+   "value_at_run_time": "c09e4123b69d2ad1cc958fde6b8307f3",
+   "kind": "data hash",
+   "stored_in": [
+    "experiments/e5_linear/verify/out/v_rerun.json",
+    "experiments/e5_linear/verify/out/verify_results.json"
+   ],
+   "n_places": 2
+  },
+  {
+   "covers": "experiments/e5_linear/verify/rerun/out/opt_stop_TB-Q100-ae-l2_3.json",
+   "algorithm": "MD5",
+   "value_at_run_time": "852f7506f3c1d4a5dc120bf1d5471cdb",
+   "kind": "data hash",
+   "stored_in": [
+    "experiments/e5_linear/verify/out/v_rerun.json",
+    "experiments/e5_linear/verify/out/verify_results.json"
+   ],
+   "n_places": 2
+  },
+  {
+   "covers": "keycache/code/fc_common.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "value_at_run_time": "43bf1f632a58",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "keycache/cache2/mme/llava/meta.json",
+    "keycache/cache2/mme/llava/verify.json",
+    "keycache/cache2/mme/qwen25vl/meta.json",
+    "keycache/cache2/mme/qwen25vl/verify.json"
+   ],
+   "n_places": 6
+  },
+  {
+   "covers": "linear_baselines/harness/hlog.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "value_at_run_time": "93e7158bfa22",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "keycache/cache2/mme/llava/meta.json",
+    "keycache/cache2/mme/llava/verify.json",
+    "keycache/cache2/mme/qwen25vl/meta.json",
+    "keycache/cache2/mme/qwen25vl/verify.json"
+   ],
+   "n_places": 6
+  },
+  {
+   "covers": "rescope/evaluate.py",
+   "algorithm": "SHA-1, first 12 digits",
+   "value_at_run_time": "1d0862a33db2",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "keycache/cache2/mme/llava/meta.json",
+    "keycache/cache2/mme/llava/verify.json",
+    "keycache/cache2/mme/qwen25vl/meta.json",
+    "keycache/cache2/mme/qwen25vl/verify.json",
+    "keycache/cache2/recomb/llava/capture_meta.json",
+    "keycache/cache2/recomb/llava/verify_capture.json",
+    "keycache/cache2/recomb/qwen25vl/capture_meta.json",
+    "keycache/cache2/recomb/qwen25vl/verify_capture.json",
+    "pools_vl.tar: keycache_rows/llava/meta.json",
+    "pools_vl.tar: keycache_rows/qwen25vl/meta.json"
+   ],
+   "n_places": 14
+  },
+  {
+   "covers": "rescope/loglib.py",
+   "algorithm": "MD5",
+   "value_at_run_time": "223c05cb53d594caac03776c2b17a5a2",
+   "kind": "code fingerprint",
+   "stored_in": [
+    "paper/scripts/check_method_pseudocode.json"
+   ],
+   "n_places": 1
+  }
+ ]
+}

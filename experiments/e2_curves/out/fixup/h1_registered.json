@@ -1,0 +1,674 @@
+{
+ "what": "H1 (repair at equal evidence) as registered, with its outcome under both readings of 'within 2 points' and the numbers behind them",
+ "rule_as_registered": {
+  "source": "PROTOCOL.md, section 6, amendment 'Review round 1' (2026-11-11 06:14 UTC, before any final run), R6",
+  "quote": "H1 (repair at equal evidence; E2 a, b): held-out D1 after n = 10 reported complaints, ReScope-W (least repair from the log-only thresholds) against the best linear repair of the same complaints; it \"helps\" if D1 is at most 10 percent with Rel exact within 2 points of the deployed log, on the development logs and on at least one mild prefix (R12)."
+ },
+ "readings": {
+  "two_sided": "Rel exact of the repair differs from Rel exact of the deployed log by at most 2 points in either direction",
+  "one_sided": "Rel exact of the repair is not more than 2 points below Rel exact of the deployed log",
+  "status": "the rule is not re-worded; both readings are reported (PROTOCOL.md, amendments of 2026-11-12 01:00 and 02:55 UTC); the one-sided reading was adopted after the run"
+ },
+ "development_logs": {
+  "TB-Q100-ae-l2_3": {
+   "n_complaints": 10,
+   "complaint_streams": [
+    0,
+    1,
+    2
+   ],
+   "repair": {
+    "what": "ReScope-W, least repair of the n = 10 reported complaints from the log-only thresholds",
+    "D1_heldout_disjoint": {
+     "mean": 1.003584229390681,
+     "per_stream": [
+      1.075268817204301,
+      0.8602150537634409,
+      1.075268817204301
+     ],
+     "ci_lo": 0.2150422262217915,
+     "ci_hi": 1.9986796678031933
+    },
+    "rel_exact": {
+     "mean": 78.0,
+     "per_stream": [
+      78.0,
+      78.0,
+      78.0
+     ]
+    }
+   },
+   "deployed_log": {
+    "D1_heldout_disjoint": 54.193548387096776,
+    "rel_exact": 78.0
+   },
+   "rel_exact_repair_minus_deployed_points": 0.0,
+   "D1_at_most_10_percent": true,
+   "two_sided_reading": {
+    "condition": "|Rel exact - Rel exact of the deployed log| <= 2 points",
+    "rel_condition_met": true,
+    "met_on_this_log": true
+   },
+   "one_sided_reading": {
+    "condition": "Rel exact not more than 2 points below the deployed log",
+    "rel_condition_met": true,
+    "met_on_this_log": true
+   },
+   "why_the_readings_differ": null,
+   "rel_edits_against_the_deployed_log": {
+    "what": "edits (of 100) whose Rel check is exact under both (kept), only under the repair (gained), only under the deployed log (lost)",
+    "kept": {
+     "value": 75.0,
+     "n_draws": 3,
+     "per_draw": [
+      75.0,
+      75.0,
+      75.0
+     ]
+    },
+    "gained": {
+     "value": 3.0,
+     "n_draws": 3,
+     "per_draw": [
+      3.0,
+      3.0,
+      3.0
+     ]
+    },
+    "lost": {
+     "value": 3.0,
+     "n_draws": 3,
+     "per_draw": [
+      3.0,
+      3.0,
+      3.0
+     ]
+    }
+   },
+   "edit_checks_of_300_against_the_deployed_log": {
+    "what": "Rel, T-Gen and I-Gen checks (3 x 100) exact under the deployed log and not under the repair (lost), and the reverse (gained)",
+    "lost": {
+     "value": 9.0,
+     "n_draws": 3,
+     "per_draw": [
+      9.0,
+      9.0,
+      9.0
+     ]
+    },
+    "gained": {
+     "value": 11.0,
+     "n_draws": 3,
+     "per_draw": [
+      11.0,
+      11.0,
+      11.0
+     ]
+    },
+    "n_checks": {
+     "value": 300.0,
+     "n_draws": 3,
+     "per_draw": [
+      300.0,
+      300.0,
+      300.0
+     ]
+    }
+   },
+   "edits_still_released": {
+    "what": "share of rows on which the repaired log still releases an edit: heldout_disjoint (hook, behaviour) and near-scope negatives per kind (gate level, captured all-position vectors); mean over the three complaint streams",
+    "heldout_disjoint_percent": {
+     "value": 17.99283154121864,
+     "ci_lo": 14.517121394376808,
+     "ci_hi": 21.789528588891645,
+     "n_units": 449,
+     "n_draws": 3,
+     "per_draw": [
+      18.27956989247312,
+      17.204301075268816,
+      18.49462365591398
+     ]
+    },
+    "near_scope_percent": {
+     "HN-I": {
+      "value": 9.126984126984128,
+      "n_draws": 3,
+      "per_draw": [
+       9.183673469387756,
+       9.013605442176871,
+       9.183673469387756
+      ]
+     },
+     "HN-Q": {
+      "value": 34.23575860124083,
+      "n_draws": 3,
+      "per_draw": [
+       34.686971235194584,
+       32.99492385786802,
+       35.025380710659896
+      ]
+     },
+     "HN-X": {
+      "value": 19.19191919191919,
+      "n_draws": 3,
+      "per_draw": [
+       19.19191919191919,
+       19.19191919191919,
+       19.19191919191919
+      ]
+     }
+    }
+   },
+   "differences_to_linear_repairs": {
+    "best_lowest_d1": {
+     "linear_repair": "RB_UNION",
+     "d1_repair": 1.003584229390681,
+     "d1_linear": 45.448028673835125,
+     "d1_linear_per_stream": [
+      47.52688172043011,
+      44.3010752688172,
+      44.516129032258064
+     ],
+     "difference_points": -44.44444444444444,
+     "ci_lo": -48.965863592222604,
+     "ci_hi": -40.129753151219845,
+     "p_two_sided": 0.0005,
+     "p_at_resolution": true,
+     "p_holm": 0.002,
+     "p_holm_is_upper_bound": true,
+     "p_holm_print": "<= 0.002",
+     "rel_linear": 52.666666666666664,
+     "interval": "paired crossed bootstrap over the 3 complaint streams and the query clusters, 2000 resamples",
+     "selection": "the linear repair with the lowest mean D1 at n = 10"
+    },
+    "best_rel_within_2": {
+     "linear_repair": "COMP_B",
+     "d1_repair": 1.003584229390681,
+     "d1_linear": 50.53763440860215,
+     "d1_linear_per_stream": [
+      50.752688172043015,
+      49.67741935483871,
+      51.182795698924735
+     ],
+     "difference_points": -49.53405017921147,
+     "ci_lo": -54.06959113834466,
+     "ci_hi": -45.0,
+     "p_two_sided": 0.0005,
+     "p_at_resolution": true,
+     "p_holm": 0.002,
+     "p_holm_is_upper_bound": true,
+     "p_holm_print": "<= 0.002",
+     "rel_linear": 76.0,
+     "interval": "paired crossed bootstrap over the 3 complaint streams and the query clusters, 2000 resamples",
+     "selection": "linear repairs whose mean Rel exact is not more than 2 points below the deployed log (one-sided: in favour of the baseline)"
+    }
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "n_complaints": 10,
+   "complaint_streams": [
+    0,
+    1,
+    2
+   ],
+   "repair": {
+    "what": "ReScope-W, least repair of the n = 10 reported complaints from the log-only thresholds",
+    "D1_heldout_disjoint": {
+     "mean": 2.6297085998578535,
+     "per_stream": [
+      2.345415778251599,
+      2.771855010660981,
+      2.771855010660981
+     ],
+     "ci_lo": 1.2846596019596115,
+     "ci_hi": 4.140561704690911
+    },
+    "rel_exact": {
+     "mean": 92.0,
+     "per_stream": [
+      92.0,
+      92.0,
+      92.0
+     ]
+    }
+   },
+   "deployed_log": {
+    "D1_heldout_disjoint": 62.26012793176972,
+    "rel_exact": 88.0
+   },
+   "rel_exact_repair_minus_deployed_points": 4.0,
+   "D1_at_most_10_percent": true,
+   "two_sided_reading": {
+    "condition": "|Rel exact - Rel exact of the deployed log| <= 2 points",
+    "rel_condition_met": false,
+    "met_on_this_log": false
+   },
+   "one_sided_reading": {
+    "condition": "Rel exact not more than 2 points below the deployed log",
+    "rel_condition_met": true,
+    "met_on_this_log": true
+   },
+   "why_the_readings_differ": "Rel exact of the repair is +4.0 points ABOVE the deployed log (the repair answers more requests than the deployed log)",
+   "rel_edits_against_the_deployed_log": {
+    "what": "edits (of 100) whose Rel check is exact under both (kept), only under the repair (gained), only under the deployed log (lost)",
+    "kept": {
+     "value": 86.0,
+     "n_draws": 3,
+     "per_draw": [
+      86.0,
+      86.0,
+      86.0
+     ]
+    },
+    "gained": {
+     "value": 6.0,
+     "n_draws": 3,
+     "per_draw": [
+      6.0,
+      6.0,
+      6.0
+     ]
+    },
+    "lost": {
+     "value": 2.0,
+     "n_draws": 3,
+     "per_draw": [
+      2.0,
+      2.0,
+      2.0
+     ]
+    }
+   },
+   "edit_checks_of_300_against_the_deployed_log": {
+    "what": "Rel, T-Gen and I-Gen checks (3 x 100) exact under the deployed log and not under the repair (lost), and the reverse (gained)",
+    "lost": {
+     "value": 12.0,
+     "n_draws": 3,
+     "per_draw": [
+      12.0,
+      12.0,
+      12.0
+     ]
+    },
+    "gained": {
+     "value": 17.0,
+     "n_draws": 3,
+     "per_draw": [
+      17.0,
+      17.0,
+      17.0
+     ]
+    },
+    "n_checks": {
+     "value": 300.0,
+     "n_draws": 3,
+     "per_draw": [
+      300.0,
+      300.0,
+      300.0
+     ]
+    }
+   },
+   "edits_still_released": {
+    "what": "share of rows on which the repaired log still releases an edit: heldout_disjoint (hook, behaviour) and near-scope negatives per kind (gate level, captured all-position vectors); mean over the three complaint streams",
+    "heldout_disjoint_percent": {
+     "value": 23.738450604122246,
+     "ci_lo": 19.62015195271383,
+     "ci_hi": 28.572450439403227,
+     "n_units": 453,
+     "n_draws": 3,
+     "per_draw": [
+      21.748400852878465,
+      26.226012793176974,
+      23.240938166311302
+     ]
+    },
+    "near_scope_percent": {
+     "HN-I": {
+      "value": 30.169491525423734,
+      "n_draws": 3,
+      "per_draw": [
+       25.254237288135595,
+       39.66101694915255,
+       25.593220338983052
+      ]
+     },
+     "HN-Q": {
+      "value": 51.9821328866555,
+      "n_draws": 3,
+      "per_draw": [
+       48.40871021775545,
+       59.12897822445561,
+       48.40871021775545
+      ]
+     },
+     "HN-X": {
+      "value": 48.14814814814815,
+      "n_draws": 3,
+      "per_draw": [
+       46.464646464646464,
+       51.515151515151516,
+       46.464646464646464
+      ]
+     }
+    }
+   },
+   "differences_to_linear_repairs": {
+    "best_lowest_d1": {
+     "linear_repair": "RB_UNION",
+     "d1_repair": 2.6297085998578535,
+     "d1_linear": 52.736318407960205,
+     "d1_linear_per_stream": [
+      53.94456289978679,
+      50.31982942430704,
+      53.94456289978679
+     ],
+     "difference_points": -50.10660980810234,
+     "ci_lo": -54.832442470659146,
+     "ci_hi": -45.35823521824849,
+     "p_two_sided": 0.0005,
+     "p_at_resolution": true,
+     "p_holm": 0.002,
+     "p_holm_is_upper_bound": true,
+     "p_holm_print": "<= 0.002",
+     "rel_linear": 59.66666666666667,
+     "interval": "paired crossed bootstrap over the 3 complaint streams and the query clusters, 2000 resamples",
+     "selection": "the linear repair with the lowest mean D1 at n = 10"
+    },
+    "best_rel_within_2": {
+     "linear_repair": "COMP_B",
+     "d1_repair": 2.6297085998578535,
+     "d1_linear": 62.82871357498223,
+     "d1_linear_per_stream": [
+      62.046908315565034,
+      63.965884861407254,
+      62.47334754797441
+     ],
+     "difference_points": -60.199004975124375,
+     "ci_lo": -64.60565334422114,
+     "ci_hi": -55.836277107251505,
+     "p_two_sided": 0.0005,
+     "p_at_resolution": true,
+     "p_holm": 0.002,
+     "p_holm_is_upper_bound": true,
+     "p_holm_print": "<= 0.002",
+     "rel_linear": 88.0,
+     "interval": "paired crossed bootstrap over the 3 complaint streams and the query clusters, 2000 resamples",
+     "selection": "linear repairs whose mean Rel exact is not more than 2 points below the deployed log (one-sided: in favour of the baseline)"
+    }
+   }
+  }
+ },
+ "development_part": {
+  "two_sided_reading_met_on_both_logs": false,
+  "one_sided_reading_met_on_both_logs": true
+ },
+ "holm": {
+  "family": "the two differences to linear repairs on the two development logs (4 tests: backbones x the two choices of the best linear repair)",
+  "resolution_of_the_bootstrap_p": 0.0005,
+  "smallest_possible_adjusted_p": 0.002,
+  "note": "a bootstrap p at 1 / n_boot means that no resample crossed 0: the Holm-adjusted value is then an upper bound"
+ },
+ "prefix_part": {
+  "label": "prefix part: complete",
+  "source": {
+   "file": "[redacted: local path]/02_research/experiments/10_final/e2_prefix/out/h1_prefix.json",
+   "modified": "2026-11-12 20:32:33 UTC",
+   "unchanged_while_read": true,
+   "read_at": "2026-11-12 21:29:37 UTC"
+  },
+  "copied_from": "e2_prefix/out/h1_prefix.json (cells at n = 10 reported complaints; R12)",
+  "prefix_logs": {
+   "TB-Q100-ae-l2_3-p10": {
+    "log": "TB-Q100-ae-l2_3-p10",
+    "T": 10,
+    "status": "complete",
+    "complete": true,
+    "deployed": {
+     "hd_D1": 23.870967741935484,
+     "rel": 80.0
+    },
+    "n_cells_missing_in_status_json": 0,
+    "D1_heldout_disjoint": {
+     "mean": 0.5734767025089605,
+     "ci_lo": 0.0,
+     "ci_hi": 1.4957264957264957,
+     "per_seed": [
+      0.21505376344086022,
+      0.43010752688172044,
+      1.075268817204301
+     ]
+    },
+    "rel_exact": {
+     "mean": 80.0,
+     "ci_lo": 50.0,
+     "ci_hi": 100.0,
+     "per_seed": [
+      80.0,
+      80.0,
+      80.0
+     ]
+    },
+    "rel_exact_repair_minus_deployed_points": 0.0,
+    "D1_at_most_10_percent": true,
+    "two_sided_reading_met": true,
+    "one_sided_reading_met": true,
+    "counts_for_the_endpoint": true
+   },
+   "TB-Q100-ae-l2_3-p20": {
+    "log": "TB-Q100-ae-l2_3-p20",
+    "T": 20,
+    "status": "complete",
+    "complete": true,
+    "deployed": {
+     "hd_D1": 29.892473118279568,
+     "rel": 75.0
+    },
+    "n_cells_missing_in_status_json": 0,
+    "D1_heldout_disjoint": {
+     "mean": 1.075268817204301,
+     "ci_lo": 0.2202522147456068,
+     "ci_hi": 2.217453505007153,
+     "per_seed": [
+      1.5053763440860215,
+      0.6451612903225806,
+      1.075268817204301
+     ]
+    },
+    "rel_exact": {
+     "mean": 75.0,
+     "ci_lo": 55.0,
+     "ci_hi": 90.0,
+     "per_seed": [
+      75.0,
+      75.0,
+      75.0
+     ]
+    },
+    "rel_exact_repair_minus_deployed_points": 0.0,
+    "D1_at_most_10_percent": true,
+    "two_sided_reading_met": true,
+    "one_sided_reading_met": true,
+    "counts_for_the_endpoint": true
+   },
+   "TB-Q100-ae-l2_3-p50": {
+    "log": "TB-Q100-ae-l2_3-p50",
+    "T": 50,
+    "status": "complete",
+    "complete": true,
+    "deployed": {
+     "hd_D1": 43.01075268817204,
+     "rel": 82.0
+    },
+    "n_cells_missing_in_status_json": 0,
+    "D1_heldout_disjoint": {
+     "mean": 0.9318996415770608,
+     "ci_lo": 0.211864406779661,
+     "ci_hi": 1.9355881535038928,
+     "per_seed": [
+      0.6451612903225806,
+      1.075268817204301,
+      1.075268817204301
+     ]
+    },
+    "rel_exact": {
+     "mean": 78.0,
+     "ci_lo": 66.0,
+     "ci_hi": 88.0,
+     "per_seed": [
+      78.0,
+      78.0,
+      78.0
+     ]
+    },
+    "rel_exact_repair_minus_deployed_points": -4.0,
+    "D1_at_most_10_percent": true,
+    "two_sided_reading_met": false,
+    "one_sided_reading_met": false,
+    "counts_for_the_endpoint": true
+   },
+   "TB-L100-ae-l2_3-p10": {
+    "log": "TB-L100-ae-l2_3-p10",
+    "T": 10,
+    "status": "complete",
+    "complete": true,
+    "deployed": {
+     "hd_D1": 26.439232409381663,
+     "rel": 90.0
+    },
+    "n_cells_missing_in_status_json": 0,
+    "D1_heldout_disjoint": {
+     "mean": 0.4975124378109453,
+     "ci_lo": 0.0,
+     "ci_hi": 1.3197916666666647,
+     "per_seed": [
+      1.0660980810234542,
+      0.21321961620469082,
+      0.21321961620469082
+     ]
+    },
+    "rel_exact": {
+     "mean": 90.0,
+     "ci_lo": 70.0,
+     "ci_hi": 100.0,
+     "per_seed": [
+      90.0,
+      90.0,
+      90.0
+     ]
+    },
+    "rel_exact_repair_minus_deployed_points": 0.0,
+    "D1_at_most_10_percent": true,
+    "two_sided_reading_met": true,
+    "one_sided_reading_met": true,
+    "counts_for_the_endpoint": true
+   },
+   "TB-L100-ae-l2_3-p20": {
+    "log": "TB-L100-ae-l2_3-p20",
+    "T": 20,
+    "status": "complete",
+    "complete": true,
+    "deployed": {
+     "hd_D1": 35.39445628997868,
+     "rel": 90.0
+    },
+    "n_cells_missing_in_status_json": 0,
+    "D1_heldout_disjoint": {
+     "mean": 0.923951670220327,
+     "ci_lo": 0.21231422505307856,
+     "ci_hi": 1.8719515425778919,
+     "per_seed": [
+      1.0660980810234542,
+      0.8528784648187633,
+      0.8528784648187633
+     ]
+    },
+    "rel_exact": {
+     "mean": 90.0,
+     "ci_lo": 75.0,
+     "ci_hi": 100.0,
+     "per_seed": [
+      90.0,
+      90.0,
+      90.0
+     ]
+    },
+    "rel_exact_repair_minus_deployed_points": 0.0,
+    "D1_at_most_10_percent": true,
+    "two_sided_reading_met": true,
+    "one_sided_reading_met": true,
+    "counts_for_the_endpoint": true
+   },
+   "TB-L100-ae-l2_3-p50": {
+    "log": "TB-L100-ae-l2_3-p50",
+    "T": 50,
+    "status": "complete",
+    "complete": true,
+    "deployed": {
+     "hd_D1": 50.53304904051173,
+     "rel": 86.0
+    },
+    "n_cells_missing_in_status_json": 0,
+    "D1_heldout_disjoint": {
+     "mean": 1.847903340440654,
+     "ci_lo": 0.7137758743754461,
+     "ci_hi": 3.178134783547446,
+     "per_seed": [
+      1.9189765458422174,
+      1.9189765458422174,
+      1.7057569296375266
+     ]
+    },
+    "rel_exact": {
+     "mean": 92.0,
+     "ci_lo": 84.0,
+     "ci_hi": 98.0,
+     "per_seed": [
+      92.0,
+      92.0,
+      92.0
+     ]
+    },
+    "rel_exact_repair_minus_deployed_points": 6.0,
+    "D1_at_most_10_percent": true,
+    "two_sided_reading_met": false,
+    "one_sided_reading_met": true,
+    "counts_for_the_endpoint": true
+   }
+  },
+  "n_prefix_logs": 6,
+  "n_complete": 6,
+  "incomplete": [],
+  "two_sided_reading_met_on": [
+   "TB-Q100-ae-l2_3-p10",
+   "TB-Q100-ae-l2_3-p20",
+   "TB-L100-ae-l2_3-p10",
+   "TB-L100-ae-l2_3-p20"
+  ],
+  "one_sided_reading_met_on": [
+   "TB-Q100-ae-l2_3-p10",
+   "TB-Q100-ae-l2_3-p20",
+   "TB-L100-ae-l2_3-p10",
+   "TB-L100-ae-l2_3-p20",
+   "TB-L100-ae-l2_3-p50"
+  ],
+  "fields_of_the_file": {
+   "n_prefix_cells_complete_n10": 6,
+   "prefixes_that_help_n10": [
+    "TB-Q100-ae-l2_3-p10",
+    "TB-Q100-ae-l2_3-p20",
+    "TB-L100-ae-l2_3-p10",
+    "TB-L100-ae-l2_3-p20"
+   ],
+   "at_least_one_mild_prefix_helps": true
+  },
+  "at_least_one_prefix_meets_the_two_sided_reading": true,
+  "at_least_one_prefix_meets_the_one_sided_reading": true
+ },
+ "rule_outcome": {
+  "two_sided_reading": "not met (the development-log part fails; the prefix part cannot change this)",
+  "one_sided_reading": "met",
+  "parts": "the rule needs both development logs AND at least one mild prefix"
+ },
+ "written": "2026-11-12 21:29:37"
+}

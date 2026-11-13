@@ -1,0 +1,93 @@
+{
+ "written": "2026-11-11 11:01:51 UTC",
+ "repeated_request_prompts_in_stream": [
+  {
+   "indices": [
+    251,
+    912
+   ],
+   "prompt": "Where is PAX? It is located in",
+   "new_objects": [
+    "Leeds",
+    "Louisiana"
+   ],
+   "true_objects": [
+    "Seattle",
+    "Boston"
+   ],
+   "solver_keys_bitwise_equal": true,
+   "left_vectors_bitwise_equal": true
+  },
+  {
+   "indices": [
+    546,
+    1214
+   ],
+   "prompt": "The law in Donetsk People's Republic declares the language",
+   "new_objects": [
+    "English",
+    "Finnish"
+   ],
+   "true_objects": [
+    "Russian",
+    "Ukrainian"
+   ],
+   "solver_keys_bitwise_equal": true,
+   "left_vectors_bitwise_equal": true
+  },
+  {
+   "indices": [
+    796,
+    1809
+   ],
+   "prompt": "Istanbul is a twin city of",
+   "new_objects": [
+    "Istanbul",
+    "Berlin"
+   ],
+   "true_objects": [
+    "Athens",
+    "Dubai"
+   ],
+   "solver_keys_bitwise_equal": true,
+   "left_vectors_bitwise_equal": true
+  },
+  {
+   "indices": [
+    978,
+    1031
+   ],
+   "prompt": "What is the twin city of Athens? It is",
+   "new_objects": [
+    "Prague",
+    "Jakarta"
+   ],
+   "true_objects": [
+    "Barcelona",
+    "Athens"
+   ],
+   "solver_keys_bitwise_equal": true,
+   "left_vectors_bitwise_equal": true
+  },
+  {
+   "indices": [
+    1219,
+    1807
+   ],
+   "prompt": "Cleveland is a twin city of",
+   "new_objects": [
+    "Tehran",
+    "Lisbon"
+   ],
+   "true_objects": [
+    "Bangalore",
+    "Cleveland"
+   ],
+   "solver_keys_bitwise_equal": true,
+   "left_vectors_bitwise_equal": true
+  }
+ ],
+ "n_pairs": 5,
+ "n_pairs_with_different_new_object": 5,
+ "n_pairs_with_bitwise_equal_solver_key": 5
+}

@@ -1,0 +1,45 @@
+{
+ "ok": true,
+ "summary": "TB-Q100-ae-l2_3: retr 70/70 (29 firing), lookup 70/70 (22 firing); TB-L100-ae-l2_3: retr 70/70 (30 firing), lookup 70/70 (19 firing) sequences: Hook output and flags == decision, forced gate == RequestGate, decode bookkeeping",
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "retr": {
+    "n_sequences": 70,
+    "n_firing": 29,
+    "n_hook_output_and_flags_equal_decision": 70,
+    "n_decode_checks": 5,
+    "unknown_sequence_raises": true,
+    "release_plan_edits": 26
+   },
+   "lookup": {
+    "n_sequences": 70,
+    "n_firing": 22,
+    "n_hook_output_and_flags_equal_decision": 70,
+    "n_decode_checks": 5,
+    "unknown_sequence_raises": true,
+    "release_plan_edits": 21
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "retr": {
+    "n_sequences": 70,
+    "n_firing": 30,
+    "n_hook_output_and_flags_equal_decision": 70,
+    "n_decode_checks": 5,
+    "unknown_sequence_raises": true,
+    "release_plan_edits": 26
+   },
+   "lookup": {
+    "n_sequences": 70,
+    "n_firing": 19,
+    "n_hook_output_and_flags_equal_decision": 70,
+    "n_decode_checks": 5,
+    "unknown_sequence_raises": true,
+    "release_plan_edits": 18
+   }
+  }
+ },
+ "test": "request_gate",
+ "seconds": 13.0,
+ "when": "2026-11-11 08:30:44 UTC"
+}

@@ -1,0 +1,50 @@
+e10t TESTS (development log TX-G2XL-rome-dev100 only)   rendered 2026-11-11 12:35:05 UTC by tests/render.py
+code: e10t 7dbf34c01e52, rescope c76c4da16bd6, fx b92d0532498f, tx_public 12afa5563ce4   (e10t-1.0 (2026-11-11))
+21 of 21 tests pass with the current code; failed: 0; not run: 0.  c_ = CPU (tests/t_cpu.py), g_ = GPU (tests/t_gpu.py).
+id = the identity of the task list that the test establishes: (a) linear log = deployed weight, (b) silent prompt = pre-edit model bit for bit,
+(c) target attained at the solver key with rebased values, (d) null repair with n_A = 0 = the default method bit for bit.
+
+test      id   status    s   MiB  what it checks / evidence
+--------  ---  ------  ---  ----  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+c_pack         PASS      0     -  edit sets in the hook's rows are lossless at any size; PAD positions of a padded batch never fire; key-value-cache steps continue the rows
+                                      round trip of sets with 0 .. 700 edits: True; synthetic padded batch + cache step: fire positions [6, 4, 5] (real positions 5+1, 3+1, 4+1), 80 candidate edits per row as a mask: True, own flags [True, True]
+c_guard        PASS     75     -  guards as served: exactly the capped thresholds are lowered, by round-off-sized amounts; no own request is left inside the decision band
+                                      rescope: capped 11, lowered 11, own requests in band 11 -> 0; rescope_shared: capped 0, lowered 0, own requests in band 0 -> 0; rescope_null: capped 4, lowered 4, own requests in band 4 -> 0; cosine: capped 3, lowered 3, own requests in band 3 -> 0; where_twoblock: capped 11, lowered 11, own requests in band 11 -> 0; where_logonly: capped 1, lowered 1, own requests in band 1 -> 0; largest relative lowering 8.2e-05
+c_log          PASS      3     -  own coordinate 1; delta() = (W_E - W_0)^T up to the write round-off; float32 replay = deployed weight bit for bit
+                                      |delta - (W_E - W_0)^T| / |.| = 2.7e-07; float32 replay bitwise = deployed: True; prefix replay too
+c_rebase  (c)  PASS      0     -  identity (c), algebraic: every edit attains its module-output target at its solver key with rebased values
+                                      k W_0 + b + V = target: max rel. error 2.3e-07 over 100 edits (logged values instead: median 0.16); values vs rescope.rebase 5e-16, bitwise = the driver's released_values: True
+c_draws        PASS      0     -  calibration draws are the library's seeded samples of the REPAIR pool; the null sample shares no prompt text with them
+                                      20/20 draws = splits.sample; 20/20 null samples disjoint by text
+c_calib        PASS      1     -  calibration from the cached per-query maxima = the library's calibration on the per-query key tensors; guards fire; block-2 firing within the allowed count
+                                      thresholds from cached maxima vs library on key tensors: max |diff| 6e-17 (ncoord), 1e-16 (cos); block-2 queries firing 4 <= 5
+c_null0   (d)  PASS      7     -  identity (d): the null-repair variant with n_a = 0 is the default method bit for bit
+                                      13 gate tensors bitwise equal: True; decisions equal on 7300 rows; control n_A = 100 differs: True
+c_gate         PASS      9     -  gate-level decisions (per query and per position) = the library's ScopedLog.firing on the cached keys
+                                      rescope: 373 fired of 1689, mismatches 0; rescope_shared: 359 fired of 1689, mismatches 0; cosine: 361 fired of 1689, mismatches 0; cosine_published: 305 fired of 1689, mismatches 0; exact: 100 fired of 1689, mismatches 0; where_twoblock: 373 fired of 1689, mismatches 0
+c_cache        PASS      0     -  key cache complete for the development log; float32 keys agree with a single-pass recomputation far inside the band; float16 would not
+                                      7280 texts, 0 missing; single-pass recomputation deviates by 3.3e-06; float16 would move a coordinate by 4.7e-05 of its scale (band 1e-05)
+c_rows         PASS      6     -  the eight rows build; calibrated rows depend on the draw, the others do not; own requests are candidates; undefined rows are refused with their reason
+                                      rows deployed, preedit, rescope, rescope_shared, rescope_null, cosine, cosine_published, exact; undefined rows refused with reason: True
+g_linear  (a)  PASS     18  7712  identity (a): thresholds -inf, linear response, logged values, all positions = the deployed weight up to round-off (200 prompts, padded batches)
+                                      max |logit diff| to the deployed weight 1.6e-04 (deployed vs pre-edit: 21.4); same argmax at 4861/4861 positions; 200/200 decodes equal; 2707 PAD positions, none fires
+g_silent  (b)  PASS     53  7958  identity (b): a prompt on which no edit fires is the pre-edit model bit for bit (teacher-forced and decode logits, mixed padded batches)
+                                      379/379 silent rows bitwise (teacher forced), 379 (decode); 61 firing rows, 0 of them equal; thresholds +inf: 440/440
+g_target  (c)  PASS      1  6293  identity (c): at its solver key every edit attains its module-output target with rebased values (served module output vs logged target)
+                                      served module output vs target: max rel. error 6.5e-07, own edit released at the solver position 100/100; logged values: median 0.16; deployed weight: median 0.24
+g_null0   (d)  PASS     16  7513  identity (d): the null-repair variant with n_A = 0 serves the default method's logits bit for bit
+                                      100/100 prompts bitwise (teacher forced), 100 (decode); 42 of them fire
+g_batch        PASS    268  8340  a batched (right-padded, masked) pass equals the single pass: same tokens and firing flags; logits to float32 round-off
+                                      preedit: tok diff rows 0+0, flag diff 0, max |logit diff| 1e-04; deployed: tok diff rows 0+0, flag diff 0, max |logit diff| 2e-04; rescope: tok diff rows 0+0, flag diff 0, max |logit diff| 1e-04; where_all: tok diff rows 0+0, flag diff 0, max |logit diff| 2e-04
+g_hook         PASS    395  8253  hook firing in real passes = gate-level decision from the key cache on every prompt of the development log; sparse evaluation = full evaluation
+                                      rescope: 4300 rows, hook != cache 0, sparse != full 0, passes 1002 vs 8564; cosine: 4300 rows, hook != cache 0, sparse != full 0, passes 952 vs 8564; cosine_published: 4300 rows, hook != cache 0, sparse != full 0, passes 664 vs 8564; where_twoblock: 4300 rows, hook != cache 0, sparse != full 0, passes 1002 vs 8564
+g_cache        PASS     20  7080  cached keys = live keys of a teacher-forced pass and of a decode (padded batches) far inside the decision band; float16 rounding would exceed it
+                                      live vs cached key, coordinate shift / scale: 3.6e-07 (teacher forced), 4.3e-07 (decode); band 1e-05; float16: 4.3e-05; cosine feature live vs cached 5.5e-07 (its band >= 1e-05); features cuda vs cpu 5e-15
+g_public       PASS     72  8522  public evaluation code on the served model: weights reproduce the build's case files and generated texts; an all-firing linear gate reproduces the deployed scores; PAD positions never fire
+                                      deployed / pre-edit vs the build's case files: max |diff| 0e+00 / 0e+00; all-firing linear gate vs deployed scores: 0.00 points; generated texts equal to the build's: preedit 40/40, deployed 40/40, all_off 40/40
+g_store        PASS     20  8113  memoisation: silent prompts cost no forward; a second pass runs the model on nothing and returns the same rows
+                                      rescope: first pass 150 run + 370 silent, second pass 0 run, rows differing 0; deployed: first pass 520 run + 0 silent, second pass 0 run, rows differing 0; two weights / two gates with the same label get separate outcomes: True
+g_guard        PASS    147  6517  guards as served: every capped edit is a candidate on its own request in live padded passes (teacher forced and decode)
+                                      30 capped (gate, draw, edit) cases: own edit a candidate on its own request in 30 teacher-forced and 30 decode passes with the margin; with the library's caps alone: 22 and 22
+g_usage        PASS    239  8508  the example of every metric in USAGE.txt runs as written (development log; substitutions in the test's docstring) and has at most ten lines
+                                      (setup) 7 lines, 2s; (i) 4 lines, 27s; (ii) 3 lines, 61s; (iii) 4 lines, 101s; (iv) 6 lines, 11s; (v) 7 lines, 17s; (vi) 7 lines, 21s; hook mismatches 0

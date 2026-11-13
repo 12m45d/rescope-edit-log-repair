@@ -1,0 +1,15 @@
+{
+ "pass": true,
+ "error": "[redacted: local path]/02_research/experiments/10_final/feat2/white/tests/tmp/pool/rows.jsonl is not the p",
+ "note": "changed pool file -> RuntimeError: True",
+ "test": "p7_loader_detects_changed_pool",
+ "group": "parts",
+ "what": "loader refuses a pool file that is not the file the split was made from",
+ "seconds": 0.11025786399841309,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

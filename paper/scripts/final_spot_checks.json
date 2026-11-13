@@ -1,0 +1,78 @@
+{
+ "G greedy deletes all, OPT = 2": {
+  "passed": true,
+  "cases": 9
+ },
+ "I independent thresholds: ratio (1 - eps) T, negative gain": {
+  "passed": true,
+  "cases": 12
+ },
+ "M least repair: min(1, T/(m+1)) attained without ties": {
+  "passed": true,
+  "cases": 48
+ },
+ "B two-block rule: false firing within the bound on urn laws with ties": {
+  "passed": true,
+  "cases": 400,
+  "largest_excess": "0"
+ },
+ "L tolerance criterion: two incomparable minimal repairs": {
+  "passed": true,
+  "feasible": [
+   [
+    0
+   ],
+   [
+    0,
+    1,
+    2
+   ],
+   [
+    2
+   ]
+  ]
+ },
+ "F successor of the rounded product is not the ratio gate": {
+  "passed": true,
+  "eta": "0.07317073170731707",
+  "rounded_product": "0.029999999999999995",
+  "successor": "0.03",
+  "ratio_gate_fires": false,
+  "product_gate_fires": true
+ },
+ "U guard band equal to the discrepancy can fire; a larger one cannot": {
+  "passed": true
+ },
+ "C gap family: rollback deletes all, only W_0 restores, least repair loses no edit": {
+  "passed": true,
+  "cases": 14
+ },
+ "X mixed criteria: restoring rollback silences 1 pair, every certifying threshold repair 3": {
+  "passed": true,
+  "rollback_cost": 1,
+  "certifying_cost": 3
+ },
+ "K linear capacity: preservable sets = own keys independent modulo the trace keys": {
+  "passed": true,
+  "logs": 125,
+  "sets": 364,
+  "statement_holds_on_all": true
+ },
+ "N numbers after Thm. thm:calibration": {
+  "passed": true,
+  "l": 5,
+  "p_exceed": 0.436,
+  "pct95": 8.92,
+  "l_delta": 2,
+  "p_delta": 0.0371,
+  "sizes": [
+   45,
+   59,
+   90
+  ]
+ },
+ "P one output dimension: table over the attainable sums = brute force": {
+  "passed": true,
+  "cases": 300
+ }
+}

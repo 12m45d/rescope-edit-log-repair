@@ -1,0 +1,30 @@
+{
+ "name": "g_cache",
+ "pass": true,
+ "what": "cached keys = live keys of a teacher-forced pass and of a decode (padded batches) far inside the decision band; float16 rounding would exceed it",
+ "detail": {
+  "n": 200,
+  "tf_max_rel_key": 3.911850214384242e-06,
+  "tf_max_dr_over_scale": 3.5582975745465827e-07,
+  "dec_max_rel_key": 4.3537636433027085e-06,
+  "dec_max_dr_over_scale": 4.292924422434284e-07,
+  "dec_tokens_equal_y0": 200,
+  "f16_max_dr_over_scale": 4.3425820847121576e-05,
+  "band": 1e-05,
+  "cos_max_abs_dr_live_vs_cached": 5.507509016622336e-07,
+  "features_cuda_vs_cpu_max_abs_diff": 4.551914400963142e-15
+ },
+ "error": null,
+ "seconds": 19.953537225723267,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "peak_alloc_MiB": 7080.19482421875,
+ "peak_reserved_MiB": 8602.0,
+ "written": "2026-11-11 12:21:58 UTC"
+}

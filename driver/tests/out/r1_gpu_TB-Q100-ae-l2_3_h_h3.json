@@ -1,0 +1,101 @@
+{
+ "gates": {
+  "rescope_x": {
+   "reachable": true,
+   "delta": 0.006060079394322099,
+   "n_edit_flags_differ": 0,
+   "n_test_rows": 641,
+   "n_test_flags_differ": 0,
+   "exact_odd_rephrases": 35.0,
+   "coverage": 35.0,
+   "subset": {
+    "n_test_rows": 307,
+    "n_flags_differ": 0
+   },
+   "ok": true
+  },
+  "whitecos_0.1": {
+   "reachable": true,
+   "delta": 0.1696555496314092,
+   "n_edit_flags_differ": 0,
+   "n_test_rows": 641,
+   "n_test_flags_differ": 0,
+   "exact_odd_rephrases": 39.0,
+   "coverage": 39.0,
+   "ok": true
+  },
+  "whitecos_0.1_x": {
+   "reachable": true,
+   "delta": 0.04146706615468491,
+   "n_edit_flags_differ": 0,
+   "n_test_rows": 641,
+   "n_test_flags_differ": 0,
+   "exact_odd_rephrases": 38.0,
+   "coverage": 38.0,
+   "subset": {
+    "n_test_rows": 307,
+    "n_flags_differ": 0
+   },
+   "ok": true
+  },
+  "cos_centred": {
+   "reachable": true,
+   "delta": 0.0,
+   "n_edit_flags_differ": 0,
+   "n_test_rows": 641,
+   "n_test_flags_differ": 0,
+   "exact_odd_rephrases": 33.0,
+   "coverage": 33.0,
+   "ok": true
+  },
+  "retr_sum": {
+   "reachable": true,
+   "delta": 0.15756638423932393,
+   "n_edit_flags_differ": 0,
+   "n_test_rows": 641,
+   "n_test_flags_differ": 0,
+   "exact_odd_rephrases": 72.0,
+   "coverage": 74.0,
+   "ok": true
+  },
+  "retr_conj": {
+   "reachable": true,
+   "delta": 0.0,
+   "n_edit_flags_differ": 0,
+   "n_test_rows": 641,
+   "n_test_flags_differ": 0,
+   "exact_odd_rephrases": 51.0,
+   "coverage": 51.0,
+   "ok": true
+  }
+ },
+ "ok": true,
+ "hook_mismatch": 0,
+ "memo_conflicts": 0,
+ "forwards": 9600,
+ "hashed": 9600,
+ "test": "h_h3",
+ "log": "TB-Q100-ae-l2_3",
+ "seconds": 0.9122664928436279,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 18:16:21",
+ "session": {
+  "rows": 26266,
+  "pre": 12294,
+  "memo": 4372,
+  "run": 0,
+  "lib": 0,
+  "missing": 0,
+  "forwards": 9600,
+  "decodes": 0,
+  "hook_mismatch": 0,
+  "near": 16,
+  "near_changed_on_device": 0,
+  "seconds_model": 1550.9042165279388,
+  "hashed": 9600
+ }
+}

@@ -1,0 +1,1811 @@
+{
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "rendered": "2026-11-11 19:42:54",
+ "tests": {
+  "registry 36 logs": {
+   "ok": true,
+   "detail": "36 of 36 registered logs exist and open (probe rows == key cache, edits -> cache rows); missing: none; released values vs rescope.rebase: max relative deviation 1.9e-15, bit for bit equal on 75/75 common prefixes of same-family logs; edits of the long Qwen stream that ask a probe question: 677 (protocol: 677); pre-edit fields of the probe records identical across the logs of a family: 5/5 families; roles and flags as registered (never reported: the 3 internal logs; cut by R19: 12 logs): True; a log registered under another directory opens and gives the same factors, thresholds and values bit for bit: True",
+   "code_current": true
+  },
+  "draws dev logs": {
+   "ok": true,
+   "detail": "Q: n = 200 draw == library draw 20/20, nested True, P12 records with identical complaint sets 156/156 (seeds [0, 1, 2]); L: n = 200 draw == library draw 20/20, nested True, P12 records with identical complaint sets 156/156 (seeds [0, 1, 2])",
+   "code_current": true
+  },
+  "gate == library dev logs": {
+   "ok": true,
+   "detail": "Q: 0 of 736416 values differ from KeyCache.decide (9 gates x 4 positions), fx 8s vs library 41s; L: 0 of 741312 values differ from KeyCache.decide (9 gates x 4 positions), fx 8s vs library 40s",
+   "code_current": true
+  },
+  "(a) sanity M1-M6, gate level dev logs": {
+   "ok": true,
+   "detail": "Q: thresholds bit for bit 162/162 gates, 0 of 3334328 decisions differ (20 draws, capped + uncapped, tf / prompt / decode), table means max diff 0.0e+00; L: thresholds bit for bit 162/162 gates, 0 of 3356496 decisions differ (20 draws, capped + uncapped, tf / prompt / decode), table means max diff 0.0e+00",
+   "code_current": true
+  },
+  "frontier, matched coverage (E1b, E1c) dev logs": {
+   "ok": true,
+   "detail": "Q: fixed gates == points of the sweep True, grid points differing from the read-out 0, matched-coverage thresholds consistent and largest True, 0.2s per feature (501 thresholds, 42 curves); L: fixed gates == points of the sweep True, grid points differing from the read-out 0, matched-coverage thresholds consistent and largest True, 0.2s per feature (501 thresholds, 42 curves)",
+   "code_current": true
+  },
+  "statistics": {
+   "ok": true,
+   "detail": "bootstrap CI == direct resampling True, paired True, McNemar == scipy 30/30",
+   "code_current": true
+  },
+  "io + memo (6 concurrent writers)": {
+   "ok": true,
+   "detail": "6 processes writing at the same time for 0.05s (0 duplicate writes of the same key) + a reader (140729 refreshes): 3000/3000 keys read back, conflicts 0, conflict detection True, other library version ignored True (admitted when named in FX_MEMO_ACCEPT: True)",
+   "code_current": true
+  },
+  "constructors + e1_rowset + wrap + recalibrate": {
+   "ok": true,
+   "detail": "Q: built 39/39 variants, keys distinct True, only calibrated rows change with (alpha, draw) True, ReScope-N == independent assembly bit for bit True (null sample: 100 distinct queries, none a calibration query, in 20 draws: True; calibration rows of draw 0 that the row-wise rule shared with it: 5), C0 / S / C1 disjoint True; L: built 39/39 variants, keys distinct True, only calibrated rows change with (alpha, draw) True, ReScope-N == independent assembly bit for bit True (null sample: 100 distinct queries, none a calibration query, in 20 draws: True; calibration rows of draw 0 that the row-wise rule shared with it: 3), C0 / S / C1 disjoint True",
+   "code_current": true
+  },
+  "gate level at scale TB-Q2000-ae-l2_3": {
+   "ok": true,
+   "detail": "T = 2000, 11750 sequences x 2 positions, first draw / 19 further draws: rescope 19s / 23s, cosine 13s / 24s, ball 275s / 49s; peak RAM 5.4 GB; no metric computed",
+   "code_current": true
+  },
+  "(a) sanity rows, behaviour Q": {
+   "ok": true,
+   "detail": "32688 rows x 12 fields (deployed, pre-edit, M5, M6; M1-M4 draws 0-2): 0 rows differ; explained by the GPU-built gate 0, unexplained 0; per method M1 0, M2 0, M3 0, M4 0, M5 0, M6 0, deployed 0, pre-edit 0; 4184 fresh forwards (private empty memo), hook mismatches 0; the same through the shared memo: 0 rows differ (0 forwards); fx row sets == the library Evaluator's item sets: 12/12 (edits, hard negatives, 5 probe pools, D2 rows); the sanity agent's rendered numbers (results.json) vs fx.metrics: 0 of 832 differ (max 1.4e-14)",
+   "code_current": true
+  },
+  "(b) memo Q": {
+   "ok": true,
+   "detail": "memo == fresh forward on 300/300 (sequence, firing edit) pairs, deployed 60/60, decodes 41/41 (+ deployed 12/12), DUAL == library DUAL 14/14, hard-negative decodes == library 22/22; second pass of 15383 rows: 0 forwards, 0 decodes, rows equal True, 0s; forced misprediction (falsified decision): counted 6/6 forwards + 3/3 decodes, rows == true rows 6/6 + 3/3, stored under the falsified signature 0",
+   "code_current": true
+  },
+  "(c) fx.gate == hook Q": {
+   "ok": true,
+   "detail": "rescope tf: 2557 sequences, fired in the hook 699, fx.gate (CPU) differs on 0, fx.behave decision on 0, memo rows on 0 (near 1); cosine tf: 2557 sequences, fired in the hook 294, fx.gate (CPU) differs on 0, fx.behave decision on 0, memo rows on 0 (near 10); dense fast paths vs full pass: router 0 of 853 rows differ (0 forwards instead of 853), zscore 0 of 853 rows differ (40 forwards instead of 853), zscore_default 0 of 853 rows differ (702 forwards instead of 853)",
+   "code_current": true
+  },
+  "(d) e1_rowset Q": {
+   "ok": true,
+   "detail": "22 methods end to end (1085 sequences each + decode subsample), 2702 records, 1961s; unavailable none",
+   "code_current": true
+  },
+  "(f) where_least, evidence Q": {
+   "ok": true,
+   "detail": "where_least n = 10 / 50: refused 0 / 0, complaints still firing 0 / 0, order independent True / True, build 1 / 4s; where_logonly: 2 capped edits; evidence curve n = 0 / 10 / 39 / 40: log_only / log_only / log_only / two_block",
+   "code_current": true
+  },
+  "(g) ablation switches Q": {
+   "ok": true,
+   "detail": "22 variants build and run on 101 sequences; rows differing from the plain Evaluator with the same gate: 0; via the memo path 13, dense 3, library path 6; calibration on captured keys (roles last+answer / all): role=last+answer 14s, role=all 14s, cosine role=all two-block 14s",
+   "code_current": true
+  },
+  "(a) sanity rows, behaviour L": {
+   "ok": true,
+   "detail": "32880 rows x 12 fields (deployed, pre-edit, M5, M6; M1-M4 draws 0-2): 0 rows differ; explained by the GPU-built gate 0, unexplained 0; per method M1 0, M2 0, M3 0, M4 0, M5 0, M6 0, deployed 0, pre-edit 0; 4140 fresh forwards (private empty memo), hook mismatches 0; the same through the shared memo: 0 rows differ (0 forwards); fx row sets == the library Evaluator's item sets: 12/12 (edits, hard negatives, 5 probe pools, D2 rows); the sanity agent's rendered numbers (results.json) vs fx.metrics: 0 of 832 differ (max 1.4e-14)",
+   "code_current": true
+  },
+  "(b) memo L": {
+   "ok": true,
+   "detail": "memo == fresh forward on 300/300 (sequence, firing edit) pairs, deployed 60/60, decodes 41/41 (+ deployed 12/12), DUAL == library DUAL 14/14, hard-negative decodes == library 22/22; second pass of 15485 rows: 0 forwards, 0 decodes, rows equal True, 1s; forced misprediction (falsified decision): counted 6/6 forwards + 3/3 decodes, rows == true rows 6/6 + 3/3, stored under the falsified signature 0",
+   "code_current": true
+  },
+  "(c) fx.gate == hook L": {
+   "ok": true,
+   "detail": "rescope tf: 2574 sequences, fired in the hook 799, fx.gate (CPU) differs on 1, fx.behave decision on 0, memo rows on 0 (near 1); rescope prompt: 52 sequences, fired in the hook 11, fx.gate (CPU) differs on 0, fx.behave decision on 0, memo rows on 0 (near 0); cosine tf: 2574 sequences, fired in the hook 654, fx.gate (CPU) differs on 0, fx.behave decision on 0, memo rows on 0 (near 32); cosine prompt: 52 sequences, fired in the hook 6, fx.gate (CPU) differs on 0, fx.behave decision on 0, memo rows on 0 (near 0); dense fast paths vs full pass: router 0 of 858 rows differ (0 forwards instead of 858), zscore 0 of 858 rows differ (128 forwards instead of 858), zscore_default 0 of 858 rows differ (713 forwards instead of 858)",
+   "code_current": true
+  },
+  "(d) e1_rowset L": {
+   "ok": true,
+   "detail": "22 methods end to end (1091 sequences each + decode subsample), 2702 records, 1450s; unavailable none",
+   "code_current": true
+  },
+  "(f) where_least, evidence L": {
+   "ok": true,
+   "detail": "where_least n = 10 / 50: refused 0 / 0, complaints still firing 0 / 0, order independent True / True, build 1 / 3s; where_logonly: 0 capped edits; evidence curve n = 0 / 10 / 39 / 40: log_only / log_only / log_only / two_block",
+   "code_current": true
+  },
+  "(g) ablation switches L": {
+   "ok": true,
+   "detail": "22 variants build and run on 103 sequences; rows differing from the plain Evaluator with the same gate: 0; via the memo path 13, dense 3, library path 6; calibration on captured keys (roles last+answer / all): role=last+answer 11s, role=all 11s, cosine role=all two-block 11s",
+   "code_current": true
+  },
+  "(e) mechanics TB-B500-ae": {
+   "ok": true,
+   "detail": "T = 500 (stress): open 0.3s, build rescope 1.0s, gate-level pass over 6741 sequences 1.1s (next draw 0.1s), model load 34s (lean True), 50 behavioural sequences (the last 50 edits' own prompts, empty private memo) 4.7s = 50 forwards, second pass 0.09s from the memo with equal rows True; per forward 0.06s, per decode 0.21s; peak RAM 15.6 GB, peak GPU 7.76 GB; no metric computed",
+   "code_current": false
+  },
+  "(e) mechanics TB-L1000-memitw": {
+   "ok": true,
+   "detail": "T = 1000 (unseen_memit): open 0.4s, build rescope 3.7s, gate-level pass over 8765 sequences 1.3s (next draw 0.2s), model load 21s (lean True), 50 behavioural sequences (the last 50 edits' own prompts, empty private memo) 7.6s = 50 forwards, second pass 0.28s from the memo with equal rows True; per forward 0.11s, per decode 1.36s; peak RAM 15.1 GB, peak GPU 14.25 GB; no metric computed",
+   "code_current": true
+  },
+  "(e) mechanics TB-Q2000-memitw": {
+   "ok": true,
+   "detail": "T = 2000 (unseen_memit): open 0.8s, build rescope 13.9s, gate-level pass over 11750 sequences 2.7s (next draw 0.7s), model load 36s (lean True), 50 behavioural sequences (the last 50 edits' own prompts, empty private memo) 7.6s = 50 forwards, second pass 0.00s from the memo with equal rows True; per forward 0.10s, per decode 0.30s; peak RAM 9.6 GB, peak GPU 8.51 GB; no metric computed",
+   "code_current": true
+  },
+  "(e) mechanics TB-Q2000-ae-l2_3": {
+   "ok": true,
+   "detail": "T = 2000 (internal): open 0.8s, build rescope 15.3s, gate-level pass over 11750 sequences 2.9s (next draw 0.8s), model load 96s (lean True), 50 behavioural sequences (the last 50 edits' own prompts, empty private memo) 8.3s = 50 forwards, second pass 0.00s from the memo with equal rows True; per forward 0.15s, per decode 0.61s; peak RAM 9.6 GB, peak GPU 8.51 GB; no metric computed",
+   "code_current": false
+  },
+  "(e) mechanics TB-Q500-onehop-l2_3": {
+   "ok": true,
+   "detail": "T = 500 (unseen_onehop): open 0.1s, build rescope 1.1s, gate-level pass over 2477 sequences 0.3s (next draw 0.0s), model load 30s (lean True), 50 behavioural sequences (the last 50 edits' own prompts, empty private memo) 11.6s = 50 forwards, second pass 0.00s from the memo with equal rows True; per forward 0.18s, per decode 0.91s; peak RAM 8.4 GB, peak GPU 7.63 GB; no metric computed",
+   "code_current": false
+  }
+ },
+ "timings": {
+  "TB-Q100-ae-l2_3": {
+   "deployed": {
+    "kind": "deployed",
+    "memo_path": false,
+    "key": "bc1e436a68fc",
+    "seconds_build": 0.00011587142944335938,
+    "seconds_tf": 177.5364019870758,
+    "seconds_per_sequence": 0.163628020264586,
+    "forwards": 1085,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 1085,
+    "lib": 0,
+    "captures": 0,
+    "seconds_decode": 48.398606300354004,
+    "n_decode_items": 54,
+    "decodes_run": 54,
+    "record_calibration": null
+   },
+   "preedit": {
+    "kind": "preedit",
+    "memo_path": false,
+    "key": "7f58ac48cf76",
+    "seconds_build": 9.5367431640625e-05,
+    "seconds_tf": 0.006710052490234375,
+    "seconds_per_sequence": 6.1843801753312214e-06,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 1085,
+    "memo": 0,
+    "run": 0,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "rescope": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "7aa0cb00ec67",
+    "seconds_build": 0.058617353439331055,
+    "seconds_tf": 70.01158237457275,
+    "seconds_per_sequence": 0.0645268040318643,
+    "seconds_gate_level": 0.4611539840698242,
+    "forwards": 367,
+    "decodes": 0,
+    "pre": 718,
+    "memo": 0,
+    "run": 367,
+    "lib": 0,
+    "captures": 0,
+    "seconds_decode": 34.44989776611328,
+    "n_decode_items": 54,
+    "decodes_run": 37,
+    "seconds_tf_next_draw": 3.422844409942627,
+    "next_draw": {
+     "forwards": 18,
+     "decodes": 0,
+     "pre": 767,
+     "memo": 300,
+     "run": 18,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 0.16223278571144695,
+     "n_edits_capped": 0,
+     "bound_false_firing": 0.04950495049504951,
+     "threshold": null
+    }
+   },
+   "rescope_shared": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "663419f6ef1a",
+    "seconds_build": 0.01798224449157715,
+    "seconds_tf": 4.2343785762786865,
+    "seconds_per_sequence": 0.003902653065694642,
+    "seconds_gate_level": 0.05115056037902832,
+    "forwards": 21,
+    "decodes": 0,
+    "pre": 742,
+    "memo": 322,
+    "run": 21,
+    "lib": 0,
+    "captures": 0,
+    "seconds_tf_next_draw": 0.018268585205078125,
+    "next_draw": {
+     "forwards": 0,
+     "decodes": 0,
+     "pre": 747,
+     "memo": 338,
+     "run": 0,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 0.3138151682775597,
+     "n_edits_capped": 0,
+     "bound_false_firing": 0.04975124378109453,
+     "threshold": null
+    }
+   },
+   "rescope_null": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "e6dd63502117",
+    "seconds_build": 0.061336517333984375,
+    "seconds_tf": 6.877670526504517,
+    "seconds_per_sequence": 0.006338866844704623,
+    "seconds_gate_level": 0.43482422828674316,
+    "forwards": 36,
+    "decodes": 0,
+    "pre": 705,
+    "memo": 344,
+    "run": 36,
+    "lib": 0,
+    "captures": 0,
+    "seconds_tf_next_draw": 4.218860149383545,
+    "next_draw": {
+     "forwards": 15,
+     "decodes": 0,
+     "pre": 712,
+     "memo": 358,
+     "run": 15,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 0.16181354195527434,
+     "n_edits_capped": 0,
+     "bound_false_firing": 0.04950495049504951,
+     "threshold": null
+    }
+   },
+   "where_logonly": {
+    "kind": "gate",
+    "memo_path": false,
+    "key": "214f67c5c5de",
+    "seconds_build": 16.470444202423096,
+    "seconds_tf": 170.16558623313904,
+    "seconds_per_sequence": 0.15683464168952907,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 0,
+    "lib": 1085,
+    "captures": 0,
+    "record_calibration": {
+     "eta": null,
+     "n_edits_capped": 2,
+     "bound_false_firing": null,
+     "threshold": null
+    }
+   },
+   "cosine": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "849604bec225",
+    "seconds_build": 0.054303646087646484,
+    "seconds_tf": 3.8558785915374756,
+    "seconds_per_sequence": 0.003553805153490761,
+    "seconds_gate_level": 0.48304104804992676,
+    "forwards": 15,
+    "decodes": 0,
+    "pre": 886,
+    "memo": 184,
+    "run": 15,
+    "lib": 0,
+    "captures": 0,
+    "seconds_decode": 10.009851455688477,
+    "n_decode_items": 54,
+    "decodes_run": 10,
+    "seconds_tf_next_draw": 8.879220008850098,
+    "next_draw": {
+     "forwards": 43,
+     "decodes": 0,
+     "pre": 820,
+     "memo": 222,
+     "run": 43,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 0.08243369095812247,
+     "n_edits_capped": 9,
+     "bound_false_firing": 0.04950495049504951,
+     "threshold": null
+    }
+   },
+   "cosine_shared": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "4a92e067d434",
+    "seconds_build": 0.010258674621582031,
+    "seconds_tf": 2.5343167781829834,
+    "seconds_per_sequence": 0.0023357758324267126,
+    "seconds_gate_level": 0.043463706970214844,
+    "forwards": 14,
+    "decodes": 0,
+    "pre": 876,
+    "memo": 195,
+    "run": 14,
+    "lib": 0,
+    "captures": 0,
+    "seconds_tf_next_draw": 0.016006946563720703,
+    "next_draw": {
+     "forwards": 0,
+     "decodes": 0,
+     "pre": 881,
+     "memo": 204,
+     "run": 0,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 0.92803941392447,
+     "n_edits_capped": 0,
+     "bound_false_firing": 0.04975124378109453,
+     "threshold": null
+    }
+   },
+   "cosine_default": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "0d15d5b2508a",
+    "seconds_build": 0.0057675838470458984,
+    "seconds_tf": 93.9111475944519,
+    "seconds_per_sequence": 0.08655405308244415,
+    "seconds_gate_level": 0.48291826248168945,
+    "forwards": 456,
+    "decodes": 0,
+    "pre": 242,
+    "memo": 387,
+    "run": 456,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "cosine_published": {
+    "kind": "gate",
+    "memo_path": false,
+    "key": "4bce4fdffdd1",
+    "seconds_build": 0.0016663074493408203,
+    "seconds_tf": 202.40878462791443,
+    "seconds_per_sequence": 0.18655187523310085,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 0,
+    "lib": 1085,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "ball": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "971ce0e8bf0b",
+    "seconds_build": 0.20895004272460938,
+    "seconds_tf": 0.7219507694244385,
+    "seconds_per_sequence": 0.0006653924142160724,
+    "seconds_gate_level": 1.9547679424285889,
+    "forwards": 2,
+    "decodes": 0,
+    "pre": 862,
+    "memo": 221,
+    "run": 2,
+    "lib": 0,
+    "captures": 0,
+    "seconds_tf_next_draw": 0.5998716354370117,
+    "next_draw": {
+     "forwards": 3,
+     "decodes": 0,
+     "pre": 803,
+     "memo": 279,
+     "run": 3,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 1.9005524525903974,
+     "n_edits_capped": 0,
+     "bound_false_firing": 0.04950495049504951,
+     "threshold": null
+    }
+   },
+   "ball_default": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "8b1303223e99",
+    "seconds_build": 0.048037052154541016,
+    "seconds_tf": 0.2626936435699463,
+    "seconds_per_sequence": 0.00024211395720732376,
+    "seconds_gate_level": 1.9519312381744385,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 985,
+    "memo": 100,
+    "run": 0,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "exact": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "3a03ff9b0f45",
+    "seconds_build": 0.005711793899536133,
+    "seconds_tf": 0.05913209915161133,
+    "seconds_per_sequence": 5.4499630554480484e-05,
+    "seconds_gate_level": 0.4811997413635254,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 986,
+    "memo": 99,
+    "run": 0,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "router": {
+    "kind": "dense",
+    "memo_path": false,
+    "key": "5b063f9dda83",
+    "seconds_build": 0.03845858573913574,
+    "seconds_tf": 40.90238094329834,
+    "seconds_per_sequence": 0.0376980469523487,
+    "forwards": 202,
+    "decodes": 0,
+    "pre": 883,
+    "memo": 0,
+    "run": 202,
+    "lib": 0,
+    "captures": 0,
+    "seconds_tf_next_draw": 3.1013073921203613,
+    "next_draw": {
+     "forwards": 19,
+     "decodes": 0,
+     "pre": 864,
+     "memo": 202,
+     "run": 19,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 31.43088043065142,
+     "n_edits_capped": null,
+     "bound_false_firing": 0.04975124378109453,
+     "threshold": 31.430880430651424
+    }
+   },
+   "router_default": {
+    "kind": "dense",
+    "memo_path": false,
+    "key": "5a4496e7935b",
+    "seconds_build": 0.00927591323852539,
+    "seconds_tf": 53.665703535079956,
+    "seconds_per_sequence": 0.04946147791251609,
+    "forwards": 365,
+    "decodes": 0,
+    "pre": 499,
+    "memo": 221,
+    "run": 365,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "zscore": {
+    "kind": "dense",
+    "memo_path": false,
+    "key": "0adcab7dd131",
+    "seconds_build": 27.47744584083557,
+    "seconds_tf": 201.73839855194092,
+    "seconds_per_sequence": 0.1859340078819732,
+    "forwards": 52,
+    "decodes": 0,
+    "pre": 1033,
+    "memo": 0,
+    "run": 0,
+    "lib": 52,
+    "captures": 1085,
+    "seconds_tf_next_draw": 18.090001106262207,
+    "next_draw": {
+     "forwards": 63,
+     "decodes": 0,
+     "pre": 1022,
+     "memo": 0,
+     "run": 0,
+     "lib": 63,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 4.922373196695222,
+     "n_edits_capped": null,
+     "bound_false_firing": 0.04975124378109453,
+     "threshold": 4.922373196695223
+    }
+   },
+   "zscore_default": {
+    "kind": "dense",
+    "memo_path": false,
+    "key": "60565861353a",
+    "seconds_build": 0.00014281272888183594,
+    "seconds_tf": 190.68513464927673,
+    "seconds_per_sequence": 0.17574666787951773,
+    "forwards": 856,
+    "decodes": 0,
+    "pre": 229,
+    "memo": 0,
+    "run": 0,
+    "lib": 856,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "dual": {
+    "kind": "dual",
+    "memo_path": false,
+    "key": "86a3b361863c",
+    "seconds_build": 0.00014448165893554688,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 0,
+    "lib": 0,
+    "captures": 0,
+    "seconds_decode": 35.2326397895813,
+    "n_decode_items": 54,
+    "decodes_run": 31,
+    "record_calibration": null
+   },
+   "p12_comp_b_nall": {
+    "kind": "correction",
+    "memo_path": false,
+    "key": "a30c40014a38",
+    "seconds_build": 0.2271251678466797,
+    "seconds_tf": 135.17765045166016,
+    "seconds_per_sequence": 0.12458769626881121,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 0,
+    "lib": 1085,
+    "captures": 0,
+    "seconds_decode": 46.10460090637207,
+    "n_decode_items": 54,
+    "decodes_run": 54,
+    "record_calibration": null
+   },
+   "p12_reedit_b_nall": {
+    "kind": "weight",
+    "memo_path": false,
+    "key": "9754b2dcf1c1",
+    "seconds_build": 0.01838517189025879,
+    "seconds_tf": 108.51281428337097,
+    "seconds_per_sequence": 0.10001181039942025,
+    "forwards": 1085,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 1085,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "p12_rb_union_nall": {
+    "kind": "weight",
+    "memo_path": false,
+    "key": "5ef0652e280c",
+    "seconds_build": 0.04050612449645996,
+    "seconds_tf": 109.18738436698914,
+    "seconds_per_sequence": 0.10063353397879184,
+    "forwards": 1085,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 1085,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "p12_rb_tot_nall": {
+    "kind": "weight",
+    "memo_path": false,
+    "key": "b8efc1d8d376",
+    "seconds_build": 0.03974294662475586,
+    "seconds_tf": 109.16420578956604,
+    "seconds_per_sequence": 0.10061217123462309,
+    "forwards": 1085,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 1085,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "deployed": {
+    "kind": "deployed",
+    "memo_path": false,
+    "key": "e5ea5f19ec9e",
+    "seconds_build": 0.0001068115234375,
+    "seconds_tf": 103.29245662689209,
+    "seconds_per_sequence": 0.0946768621694703,
+    "forwards": 1091,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 1091,
+    "lib": 0,
+    "captures": 0,
+    "seconds_decode": 30.187267541885376,
+    "n_decode_items": 51,
+    "decodes_run": 51,
+    "record_calibration": null
+   },
+   "preedit": {
+    "kind": "preedit",
+    "memo_path": false,
+    "key": "33276570a8a7",
+    "seconds_build": 0.00012421607971191406,
+    "seconds_tf": 0.007259845733642578,
+    "seconds_per_sequence": 6.654304063833711e-06,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 1091,
+    "memo": 0,
+    "run": 0,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "rescope": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "5e0b49bf9d77",
+    "seconds_build": 0.061563730239868164,
+    "seconds_tf": 48.00750112533569,
+    "seconds_per_sequence": 0.044003209097466266,
+    "seconds_gate_level": 0.47505712509155273,
+    "forwards": 412,
+    "decodes": 0,
+    "pre": 679,
+    "memo": 0,
+    "run": 412,
+    "lib": 0,
+    "captures": 0,
+    "seconds_decode": 28.223889112472534,
+    "n_decode_items": 51,
+    "decodes_run": 37,
+    "seconds_tf_next_draw": 0.17274069786071777,
+    "next_draw": {
+     "forwards": 1,
+     "decodes": 0,
+     "pre": 806,
+     "memo": 284,
+     "run": 1,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 0.10010500899090946,
+     "n_edits_capped": 0,
+     "bound_false_firing": 0.04950495049504951,
+     "threshold": null
+    }
+   },
+   "rescope_shared": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "2cffaa3c0a2b",
+    "seconds_build": 0.009155035018920898,
+    "seconds_tf": 2.0171523094177246,
+    "seconds_per_sequence": 0.0018489022084488768,
+    "seconds_gate_level": 0.044008493423461914,
+    "forwards": 20,
+    "decodes": 0,
+    "pre": 751,
+    "memo": 320,
+    "run": 20,
+    "lib": 0,
+    "captures": 0,
+    "seconds_tf_next_draw": 0.0219423770904541,
+    "next_draw": {
+     "forwards": 0,
+     "decodes": 0,
+     "pre": 771,
+     "memo": 320,
+     "run": 0,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 0.37145394888525585,
+     "n_edits_capped": 0,
+     "bound_false_firing": 0.04975124378109453,
+     "threshold": null
+    }
+   },
+   "rescope_null": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "7312852f9cbd",
+    "seconds_build": 0.06194901466369629,
+    "seconds_tf": 5.05241322517395,
+    "seconds_per_sequence": 0.004630992873669981,
+    "seconds_gate_level": 0.45266270637512207,
+    "forwards": 47,
+    "decodes": 0,
+    "pre": 658,
+    "memo": 386,
+    "run": 47,
+    "lib": 0,
+    "captures": 0,
+    "seconds_tf_next_draw": 0.04546642303466797,
+    "next_draw": {
+     "forwards": 0,
+     "decodes": 0,
+     "pre": 817,
+     "memo": 274,
+     "run": 0,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 0.09768619054373899,
+     "n_edits_capped": 0,
+     "bound_false_firing": 0.04950495049504951,
+     "threshold": null
+    }
+   },
+   "where_logonly": {
+    "kind": "gate",
+    "memo_path": false,
+    "key": "592e778fc7b5",
+    "seconds_build": 7.423389196395874,
+    "seconds_tf": 114.6924958229065,
+    "seconds_per_sequence": 0.10512602733538634,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 0,
+    "lib": 1091,
+    "captures": 0,
+    "record_calibration": {
+     "eta": null,
+     "n_edits_capped": 0,
+     "bound_false_firing": null,
+     "threshold": null
+    }
+   },
+   "cosine": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "9c8a3b1e29f8",
+    "seconds_build": 0.06177783012390137,
+    "seconds_tf": 9.097900390625,
+    "seconds_per_sequence": 0.008339047104147571,
+    "seconds_gate_level": 0.5162925720214844,
+    "forwards": 75,
+    "decodes": 0,
+    "pre": 753,
+    "memo": 263,
+    "run": 75,
+    "lib": 0,
+    "captures": 0,
+    "seconds_decode": 4.881117343902588,
+    "n_decode_items": 51,
+    "decodes_run": 8,
+    "seconds_tf_next_draw": 2.9157793521881104,
+    "next_draw": {
+     "forwards": 22,
+     "decodes": 0,
+     "pre": 827,
+     "memo": 242,
+     "run": 22,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 0.12529091217360444,
+     "n_edits_capped": 31,
+     "bound_false_firing": 0.04950495049504951,
+     "threshold": null
+    }
+   },
+   "cosine_shared": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "ebbee90f8ada",
+    "seconds_build": 0.013731002807617188,
+    "seconds_tf": 2.4496009349823,
+    "seconds_per_sequence": 0.0022452804170323554,
+    "seconds_gate_level": 0.05057096481323242,
+    "forwards": 18,
+    "decodes": 0,
+    "pre": 880,
+    "memo": 193,
+    "run": 18,
+    "lib": 0,
+    "captures": 0,
+    "seconds_tf_next_draw": 0.021009445190429688,
+    "next_draw": {
+     "forwards": 0,
+     "decodes": 0,
+     "pre": 904,
+     "memo": 187,
+     "run": 0,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 0.9632022072430285,
+     "n_edits_capped": 0,
+     "bound_false_firing": 0.04975124378109453,
+     "threshold": null
+    }
+   },
+   "cosine_default": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "e7e8f462425f",
+    "seconds_build": 0.0061283111572265625,
+    "seconds_tf": 45.42911696434021,
+    "seconds_per_sequence": 0.04163988722670963,
+    "seconds_gate_level": 0.48137354850769043,
+    "forwards": 359,
+    "decodes": 0,
+    "pre": 298,
+    "memo": 434,
+    "run": 359,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "cosine_published": {
+    "kind": "gate",
+    "memo_path": false,
+    "key": "90cf1eeac0d8",
+    "seconds_build": 0.0015633106231689453,
+    "seconds_tf": 114.32216882705688,
+    "seconds_per_sequence": 0.10478658920903472,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 0,
+    "lib": 1091,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "ball": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "72248a81aecd",
+    "seconds_build": 0.21670866012573242,
+    "seconds_tf": 1.3300349712371826,
+    "seconds_per_sequence": 0.0012190971322064003,
+    "seconds_gate_level": 2.0090248584747314,
+    "forwards": 4,
+    "decodes": 0,
+    "pre": 757,
+    "memo": 330,
+    "run": 4,
+    "lib": 0,
+    "captures": 0,
+    "seconds_tf_next_draw": 0.07037663459777832,
+    "next_draw": {
+     "forwards": 0,
+     "decodes": 0,
+     "pre": 840,
+     "memo": 251,
+     "run": 0,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 2.0450540656808665,
+     "n_edits_capped": 0,
+     "bound_false_firing": 0.04950495049504951,
+     "threshold": null
+    }
+   },
+   "ball_default": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "71371b0cea72",
+    "seconds_build": 0.04913616180419922,
+    "seconds_tf": 0.27156543731689453,
+    "seconds_per_sequence": 0.0002489142413537072,
+    "seconds_gate_level": 1.9793322086334229,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 987,
+    "memo": 104,
+    "run": 0,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "exact": {
+    "kind": "scoped",
+    "memo_path": true,
+    "key": "876aad60f92c",
+    "seconds_build": 0.006618499755859375,
+    "seconds_tf": 0.060508012771606445,
+    "seconds_per_sequence": 5.5461056619254305e-05,
+    "seconds_gate_level": 0.4752390384674072,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 991,
+    "memo": 100,
+    "run": 0,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "router": {
+    "kind": "dense",
+    "memo_path": false,
+    "key": "563d1594e6ad",
+    "seconds_build": 0.04521512985229492,
+    "seconds_tf": 16.0449001789093,
+    "seconds_per_sequence": 0.014706599614032357,
+    "forwards": 156,
+    "decodes": 0,
+    "pre": 935,
+    "memo": 0,
+    "run": 156,
+    "lib": 0,
+    "captures": 0,
+    "seconds_tf_next_draw": 1.0132410526275635,
+    "next_draw": {
+     "forwards": 0,
+     "decodes": 0,
+     "pre": 950,
+     "memo": 141,
+     "run": 0,
+     "lib": 0,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 30.462765996070253,
+     "n_edits_capped": null,
+     "bound_false_firing": 0.04975124378109453,
+     "threshold": 30.462765996070257
+    }
+   },
+   "router_default": {
+    "kind": "dense",
+    "memo_path": false,
+    "key": "4a4ee7a2493c",
+    "seconds_build": 0.0288999080657959,
+    "seconds_tf": 52.3081214427948,
+    "seconds_per_sequence": 0.04794511589623721,
+    "forwards": 596,
+    "decodes": 0,
+    "pre": 339,
+    "memo": 156,
+    "run": 596,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "zscore": {
+    "kind": "dense",
+    "memo_path": false,
+    "key": "30fc8d228854",
+    "seconds_build": 16.851502418518066,
+    "seconds_tf": 143.80464625358582,
+    "seconds_per_sequence": 0.13180994157065612,
+    "forwards": 188,
+    "decodes": 0,
+    "pre": 903,
+    "memo": 0,
+    "run": 0,
+    "lib": 188,
+    "captures": 1091,
+    "seconds_tf_next_draw": 30.785253047943115,
+    "next_draw": {
+     "forwards": 198,
+     "decodes": 0,
+     "pre": 893,
+     "memo": 0,
+     "run": 0,
+     "lib": 198,
+     "captures": 0
+    },
+    "record_calibration": {
+     "eta": 4.746818903516222,
+     "n_edits_capped": null,
+     "bound_false_firing": 0.04975124378109453,
+     "threshold": 4.746818903516223
+    }
+   },
+   "zscore_default": {
+    "kind": "dense",
+    "memo_path": false,
+    "key": "7020e107b3f0",
+    "seconds_build": 0.0001747608184814453,
+    "seconds_tf": 134.95015001296997,
+    "seconds_per_sequence": 0.12369399634552701,
+    "forwards": 871,
+    "decodes": 0,
+    "pre": 220,
+    "memo": 0,
+    "run": 0,
+    "lib": 871,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "dual": {
+    "kind": "dual",
+    "memo_path": false,
+    "key": "6e51d73a548b",
+    "seconds_build": 0.00011610984802246094,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 0,
+    "lib": 0,
+    "captures": 0,
+    "seconds_decode": 10.951201438903809,
+    "n_decode_items": 51,
+    "decodes_run": 34,
+    "record_calibration": null
+   },
+   "p12_comp_b_nall": {
+    "kind": "correction",
+    "memo_path": false,
+    "key": "bac141e8b58d",
+    "seconds_build": 0.19659805297851562,
+    "seconds_tf": 131.88015055656433,
+    "seconds_per_sequence": 0.12088006467146135,
+    "forwards": 0,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 0,
+    "lib": 1091,
+    "captures": 0,
+    "seconds_decode": 43.71653938293457,
+    "n_decode_items": 51,
+    "decodes_run": 51,
+    "record_calibration": null
+   },
+   "p12_reedit_b_nall": {
+    "kind": "weight",
+    "memo_path": false,
+    "key": "a21f6621b62c",
+    "seconds_build": 0.07659626007080078,
+    "seconds_tf": 108.52238297462463,
+    "seconds_per_sequence": 0.09947056184658537,
+    "forwards": 1091,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 1091,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "p12_rb_union_nall": {
+    "kind": "weight",
+    "memo_path": false,
+    "key": "ec5058f0fad4",
+    "seconds_build": 0.07708501815795898,
+    "seconds_tf": 108.53237986564636,
+    "seconds_per_sequence": 0.09947972489976752,
+    "forwards": 1091,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 1091,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   },
+   "p12_rb_tot_nall": {
+    "kind": "weight",
+    "memo_path": false,
+    "key": "e7184a39dcd2",
+    "seconds_build": 0.07907581329345703,
+    "seconds_tf": 110.36331868171692,
+    "seconds_per_sequence": 0.10115794562943806,
+    "forwards": 1091,
+    "decodes": 0,
+    "pre": 0,
+    "memo": 0,
+    "run": 1091,
+    "lib": 0,
+    "captures": 0,
+    "record_calibration": null
+   }
+  }
+ },
+ "projection": {
+  "TB-L1000-memitw": {
+   "log": "TB-L1000-memitw",
+   "T": 1000,
+   "scaled_from": "TB-L100-ae-l2_3",
+   "n_all": 5246,
+   "n_sequences": {
+    "edit": 3000,
+    "probe_heldout_disjoint": 469,
+    "hn_valid": 1777
+   },
+   "seconds_per_item": {
+    "forward_deployed_weight": 0.10891227722167969,
+    "forward_gate_role_last": 0.11125913143157959,
+    "forward_gate_role_all": 0.13269437551498414,
+    "decode_deployed_weight": 1.3634633779525758
+   },
+   "n_dual_decodes": 2738,
+   "dual_minutes": 62.21937881390254,
+   "pass_minutes": 9.727756724834443,
+   "seconds_per_capture": 0.1328609570028965,
+   "rows": {
+    "deployed": {
+     "path": "deployed",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 571.3538063049317,
+     "scaled_s": 571.3538063049317
+    },
+    "rescope": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.37763519706691107,
+     "upper_s": 583.6654034900665,
+     "scaled_s": 220.41259966810944
+    },
+    "rescope_shared": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.01833180568285976,
+     "upper_s": 583.6654034900665,
+     "scaled_s": 10.699640760587839
+    },
+    "rescope_null": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.04307974335472044,
+     "upper_s": 583.6654034900665,
+     "scaled_s": 25.144155787381415
+    },
+    "where_logonly": {
+     "path": "gate",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 696.1146939516068,
+     "scaled_s": 696.1146939516068
+    },
+    "cosine": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.06874427131072411,
+     "upper_s": 583.6654034900665,
+     "scaled_s": 40.123652852204394
+    },
+    "cosine_shared": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.016498625114573784,
+     "upper_s": 583.6654034900665,
+     "scaled_s": 9.629676684529054
+    },
+    "cosine_default": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.3290559120073327,
+     "upper_s": 583.6654034900665,
+     "scaled_s": 192.05855165255167
+    },
+    "cosine_published": {
+     "path": "gate",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 696.1146939516068,
+     "scaled_s": 696.1146939516068
+    },
+    "ball": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0036663611365719525,
+     "upper_s": 583.6654034900665,
+     "scaled_s": 2.1399281521175673
+    },
+    "ball_default": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0,
+     "upper_s": 583.6654034900665,
+     "scaled_s": 0.0
+    },
+    "exact": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0,
+     "upper_s": 583.6654034900665,
+     "scaled_s": 0.0
+    },
+    "router": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.14298808432630614,
+     "upper_s": 696.1146939516068,
+     "scaled_s": 99.53610655953314
+    },
+    "router_default": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.5462878093492209,
+     "upper_s": 696.1146939516068,
+     "scaled_s": 380.27897121462667
+    },
+    "zscore": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.17231897341888175,
+     "upper_s": 1393.1032743888018,
+     "scaled_s": 816.9423498807349
+    },
+    "zscore_default": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.7983501374885427,
+     "upper_s": 696.1146939516068,
+     "scaled_s": 555.7432616240601
+    }
+   },
+   "E1": {
+    "labels": [
+     "deployed",
+     "preedit",
+     "rescope",
+     "rescope_shared",
+     "rescope_null",
+     "where_logonly",
+     "cosine",
+     "cosine_shared",
+     "cosine_default",
+     "cosine_published",
+     "ball",
+     "ball_default",
+     "exact",
+     "router",
+     "router_default",
+     "zscore",
+     "zscore_default",
+     "dual"
+    ],
+    "n_rows": 18,
+    "upper_hours": 4.008661641860145,
+    "scaled_hours": 2.235959671632982,
+    "passes_dev": 5.5169569202566455,
+    "n_memo_rows": 9,
+    "passes_memo_rows_dev": 0.8570119156736937,
+    "dual_included": true
+   },
+   "E3": {
+    "labels": [
+     "deployed",
+     "rescope",
+     "rescope_shared",
+     "rescope_null",
+     "cosine",
+     "cosine_default",
+     "where_logonly"
+    ],
+    "n_rows": 7,
+    "upper_hours": 1.1627209771407976,
+    "scaled_hours": 0.4877519724937148,
+    "passes_dev": 2.8368469294225482,
+    "n_memo_rows": 5,
+    "passes_memo_rows_dev": 0.836846929422548,
+    "dual_included": false
+   }
+  },
+  "TB-Q2000-memitw": {
+   "log": "TB-Q2000-memitw",
+   "T": 2000,
+   "scaled_from": "TB-Q100-ae-l2_3",
+   "n_all": 8236,
+   "n_sequences": {
+    "edit": 6000,
+    "probe_heldout_disjoint": 465,
+    "hn_valid": 1771
+   },
+   "seconds_per_item": {
+    "forward_deployed_weight": 0.10100965023040771,
+    "forward_gate_role_last": 0.10213952541351318,
+    "forward_gate_role_all": 0.11706721782684326,
+    "decode_deployed_weight": 0.29693677425384524
+   },
+   "n_dual_decodes": 2730,
+   "dual_minutes": 13.510623228549958,
+   "pass_minutes": 14.020352188428241,
+   "seconds_per_capture": 0.10993840352957232,
+   "rows": {
+    "deployed": {
+     "path": "deployed",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 831.915479297638,
+     "scaled_s": 831.915479297638
+    },
+    "rescope": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.3382488479262673,
+     "upper_s": 841.2211313056945,
+     "scaled_s": 284.5420785153824
+    },
+    "rescope_shared": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.01935483870967742,
+     "upper_s": 841.2211313056945,
+     "scaled_s": 16.28169931559409
+    },
+    "rescope_null": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.03317972350230415,
+     "upper_s": 841.2211313056945,
+     "scaled_s": 27.91148454101844
+    },
+    "where_logonly": {
+     "path": "gate",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 964.1656060218811,
+     "scaled_s": 964.1656060218811
+    },
+    "cosine": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.013824884792626729,
+     "upper_s": 841.2211313056945,
+     "scaled_s": 11.62978522542435
+    },
+    "cosine_shared": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.012903225806451613,
+     "upper_s": 841.2211313056945,
+     "scaled_s": 10.854466210396058
+    },
+    "cosine_default": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.4202764976958525,
+     "upper_s": 841.2211313056945,
+     "scaled_s": 353.54547085290017
+    },
+    "cosine_published": {
+     "path": "gate",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 964.1656060218811,
+     "scaled_s": 964.1656060218811
+    },
+    "ball": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0018433179723502304,
+     "upper_s": 841.2211313056945,
+     "scaled_s": 1.5506380300565799
+    },
+    "ball_default": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0,
+     "upper_s": 841.2211313056945,
+     "scaled_s": 0.0
+    },
+    "exact": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0,
+     "upper_s": 841.2211313056945,
+     "scaled_s": 0.0
+    },
+    "router": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.18617511520737326,
+     "upper_s": 964.1656060218811,
+     "scaled_s": 179.50364278011057
+    },
+    "router_default": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.33640552995391704,
+     "upper_s": 964.1656060218811,
+     "scaled_s": 324.3506416571305
+    },
+    "zscore": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.047926267281105994,
+     "upper_s": 1869.6182974914386,
+     "scaled_s": 951.6615500070119
+    },
+    "zscore_default": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.7889400921658987,
+     "upper_s": 964.1656060218811,
+     "scaled_s": 760.6689020780924
+    }
+   },
+   "E1": {
+    "labels": [
+     "deployed",
+     "preedit",
+     "rescope",
+     "rescope_shared",
+     "rescope_null",
+     "where_logonly",
+     "cosine",
+     "cosine_shared",
+     "cosine_default",
+     "cosine_published",
+     "ball",
+     "ball_default",
+     "exact",
+     "router",
+     "router_default",
+     "zscore",
+     "zscore_default",
+     "dual"
+    ],
+    "n_rows": 18,
+    "upper_hours": 4.417774828434091,
+    "scaled_hours": 1.8037179011854207,
+    "passes_dev": 5.199078341013825,
+    "n_memo_rows": 9,
+    "passes_memo_rows_dev": 0.8396313364055299,
+    "dual_included": true
+   },
+   "E3": {
+    "labels": [
+     "deployed",
+     "rescope",
+     "rescope_shared",
+     "rescope_null",
+     "cosine",
+     "cosine_default",
+     "where_logonly"
+    ],
+    "n_rows": 7,
+    "upper_hours": 1.6672740949577753,
+    "scaled_hours": 0.6916643343805106,
+    "passes_dev": 2.824884792626728,
+    "n_memo_rows": 5,
+    "passes_memo_rows_dev": 0.8248847926267281,
+    "dual_included": false
+   }
+  },
+  "TB-Q2000-ae-l2_3": {
+   "log": "TB-Q2000-ae-l2_3",
+   "T": 2000,
+   "scaled_from": "TB-Q100-ae-l2_3",
+   "n_all": 8236,
+   "n_sequences": {
+    "edit": 6000,
+    "probe_heldout_disjoint": 465,
+    "hn_valid": 1771
+   },
+   "seconds_per_item": {
+    "forward_deployed_weight": 0.1437588119506836,
+    "forward_gate_role_last": 0.14936908721923828,
+    "forward_gate_role_all": 0.17734893560409545,
+    "decode_deployed_weight": 0.6057384014129639
+   },
+   "n_dual_decodes": 2730,
+   "dual_minutes": 27.561097264289856,
+   "pass_minutes": 20.50339670562744,
+   "seconds_per_capture": 0.1564663796292245,
+   "rows": {
+    "deployed": {
+     "path": "deployed",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 1183.9975752258301,
+     "scaled_s": 1183.9975752258301
+    },
+    "rescope": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.3382488479262673,
+     "upper_s": 1230.2038023376465,
+     "scaled_s": 416.11501885522233
+    },
+    "rescope_shared": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.01935483870967742,
+     "upper_s": 1230.2038023376465,
+     "scaled_s": 23.810396174277027
+    },
+    "rescope_null": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.03317972350230415,
+     "upper_s": 1230.2038023376465,
+     "scaled_s": 40.81782201304634
+    },
+    "where_logonly": {
+     "path": "gate",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 1460.64583363533,
+     "scaled_s": 1460.64583363533
+    },
+    "cosine": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.013824884792626729,
+     "upper_s": 1230.2038023376465,
+     "scaled_s": 17.007425838769308
+    },
+    "cosine_shared": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.012903225806451613,
+     "upper_s": 1230.2038023376465,
+     "scaled_s": 15.873597449518018
+    },
+    "cosine_default": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.4202764976958525,
+     "upper_s": 1230.2038023376465,
+     "scaled_s": 517.025745498587
+    },
+    "cosine_published": {
+     "path": "gate",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 1460.64583363533,
+     "scaled_s": 1460.64583363533
+    },
+    "ball": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0018433179723502304,
+     "upper_s": 1230.2038023376465,
+     "scaled_s": 2.267656778502574
+    },
+    "ball_default": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0,
+     "upper_s": 1230.2038023376465,
+     "scaled_s": 0.0
+    },
+    "exact": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0,
+     "upper_s": 1230.2038023376465,
+     "scaled_s": 0.0
+    },
+    "router": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.18617511520737326,
+     "upper_s": 1460.64583363533,
+     "scaled_s": 271.93590635422737
+    },
+    "router_default": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.33640552995391704,
+     "upper_s": 1460.64583363533,
+     "scaled_s": 491.3693357390742
+    },
+    "zscore": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.047926267281105994,
+     "upper_s": 2749.302936261623,
+     "scaled_s": 1358.6604052521336
+    },
+    "zscore_default": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.7889400921658987,
+     "upper_s": 1460.64583363533,
+     "scaled_s": 1152.3620586099933
+    }
+   },
+   "E1": {
+    "labels": [
+     "deployed",
+     "preedit",
+     "rescope",
+     "rescope_shared",
+     "rescope_null",
+     "where_logonly",
+     "cosine",
+     "cosine_shared",
+     "cosine_default",
+     "cosine_published",
+     "ball",
+     "ball_default",
+     "exact",
+     "router",
+     "router_default",
+     "zscore",
+     "zscore_default",
+     "dual"
+    ],
+    "n_rows": 18,
+    "upper_hours": 6.656119371266754,
+    "scaled_hours": 2.796166790810342,
+    "passes_dev": 5.199078341013825,
+    "n_memo_rows": 9,
+    "passes_memo_rows_dev": 0.8396313364055299,
+    "dual_included": true
+   },
+   "E3": {
+    "labels": [
+     "deployed",
+     "rescope",
+     "rescope_shared",
+     "rescope_null",
+     "cosine",
+     "cosine_default",
+     "where_logonly"
+    ],
+    "n_rows": 7,
+    "upper_hours": 2.44323956126372,
+    "scaled_hours": 1.016505504789184,
+    "passes_dev": 2.824884792626728,
+    "n_memo_rows": 5,
+    "passes_memo_rows_dev": 0.8248847926267281,
+    "dual_included": false
+   }
+  },
+  "TB-Q500-onehop-l2_3": {
+   "log": "TB-Q500-onehop-l2_3",
+   "T": 500,
+   "scaled_from": "TB-Q100-ae-l2_3",
+   "n_all": 1969,
+   "n_sequences": {
+    "edit": 1500,
+    "probe_heldout_disjoint": 469,
+    "hn_valid": 0
+   },
+   "seconds_per_item": {
+    "forward_deployed_weight": 0.19362046718597412,
+    "forward_gate_role_last": 0.17965407848358153,
+    "forward_gate_role_all": 0.20259448289871215,
+    "decode_deployed_weight": 0.9088016033172608
+   },
+   "n_dual_decodes": 2738,
+   "dual_minutes": 41.471646498044336,
+   "pass_minutes": 5.895648008902867,
+   "seconds_per_capture": 0.21073555847902492,
+   "rows": {
+    "deployed": {
+     "path": "deployed",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 381.238699889183,
+     "scaled_s": 381.238699889183
+    },
+    "rescope": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.3382488479262673,
+     "upper_s": 353.73888053417204,
+     "scaled_s": 119.65176880741119
+    },
+    "rescope_shared": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.01935483870967742,
+     "upper_s": 353.73888053417204,
+     "scaled_s": 6.846558978080749
+    },
+    "rescope_null": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.03317972350230415,
+     "upper_s": 353.73888053417204,
+     "scaled_s": 11.736958248138428
+    },
+    "where_logonly": {
+     "path": "gate",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 398.9085368275642,
+     "scaled_s": 398.9085368275642
+    },
+    "cosine": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.013824884792626729,
+     "upper_s": 353.73888053417204,
+     "scaled_s": 4.890399270057678
+    },
+    "cosine_shared": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.012903225806451613,
+     "upper_s": 353.73888053417204,
+     "scaled_s": 4.564372652053833
+    },
+    "cosine_default": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.4202764976958525,
+     "upper_s": 353.73888053417204,
+     "scaled_s": 148.6681378097534
+    },
+    "cosine_published": {
+     "path": "gate",
+     "forwards_per_sequence_dev": 1.0,
+     "upper_s": 398.9085368275642,
+     "scaled_s": 398.9085368275642
+    },
+    "ball": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0018433179723502304,
+     "upper_s": 353.73888053417204,
+     "scaled_s": 0.6520532360076904
+    },
+    "ball_default": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0,
+     "upper_s": 353.73888053417204,
+     "scaled_s": 0.0
+    },
+    "exact": {
+     "path": "scoped",
+     "forwards_per_sequence_dev": 0.0,
+     "upper_s": 353.73888053417204,
+     "scaled_s": 0.0
+    },
+    "router": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.18617511520737326,
+     "upper_s": 398.9085368275642,
+     "scaled_s": 74.26684280107646
+    },
+    "router_default": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.33640552995391704,
+     "upper_s": 398.9085368275642,
+     "scaled_s": 134.19503773461838
+    },
+    "zscore": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.047926267281105994,
+     "upper_s": 813.8468514727642,
+     "scaled_s": 434.05651180191285
+    },
+    "zscore_default": {
+     "path": "dense",
+     "forwards_per_sequence_dev": 0.7889400921658987,
+     "upper_s": 398.9085368275642,
+     "scaled_s": 314.7149378105023
+    }
+   },
+   "E1": {
+    "labels": [
+     "deployed",
+     "preedit",
+     "rescope",
+     "rescope_shared",
+     "rescope_null",
+     "where_logonly",
+     "cosine",
+     "cosine_shared",
+     "cosine_default",
+     "cosine_published",
+     "ball",
+     "ball_default",
+     "exact",
+     "router",
+     "router_default",
+     "zscore",
+     "zscore_default",
+     "dual"
+    ],
+    "n_rows": 18,
+    "upper_hours": 2.4615491528305493,
+    "scaled_hours": 1.3671105951601623,
+    "passes_dev": 5.199078341013825,
+    "n_memo_rows": 9,
+    "passes_memo_rows_dev": 0.8396313364055299,
+    "dual_included": true
+   },
+   "E3": {
+    "labels": [
+     "deployed",
+     "rescope",
+     "rescope_shared",
+     "rescope_null",
+     "cosine",
+     "cosine_default",
+     "where_logonly"
+    ],
+    "n_rows": 7,
+    "upper_hours": 0.7080115664965576,
+    "scaled_hours": 0.2977614055083857,
+    "passes_dev": 2.824884792626728,
+    "n_memo_rows": 5,
+    "passes_memo_rows_dev": 0.8248847926267281,
+    "dual_included": false
+   }
+  }
+ },
+ "all_pass": true
+}

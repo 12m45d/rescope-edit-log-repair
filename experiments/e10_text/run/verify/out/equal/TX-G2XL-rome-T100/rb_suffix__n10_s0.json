@@ -1,0 +1,61 @@
+{
+ "log": "TX-G2XL-rome-T100",
+ "repair": "rb_suffix",
+ "n": 10,
+ "seed": 0,
+ "meta": {
+  "t_star": 2,
+  "resolving_prefixes": [
+   0,
+   1,
+   2
+  ],
+  "n_forward": 1000,
+  "edits_lost": 98,
+  "full_replay_equals_deployed_bitwise": true,
+  "repair_seconds": 9.40169644355774
+ },
+ "stats": {
+  "request.exact": {
+   "value": 2.0,
+   "ci_lo": 0.0,
+   "ci_hi": 5.0,
+   "n": 100
+  },
+  "paraphrase.exact": {
+   "value": 0.5,
+   "ci_lo": 0.0,
+   "ci_hi": 1.5,
+   "n": 200
+  },
+  "heldout.D1_tf": {
+   "value": 11.0,
+   "ci_lo": 9.0,
+   "ci_hi": 13.222222222222221,
+   "n": 900
+  },
+  "heldout.kept_tf": {
+   "value": 98.83333333333333,
+   "ci_lo": 98.57777777777778,
+   "ci_hi": 99.04444444444447,
+   "n": 900
+  },
+  "heldout.fired": null,
+  "complaints.D1_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 10
+  },
+  "complaints.D1_dec": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 10
+  },
+  "complaints.fired": null,
+  "request.own_released_dec": null,
+  "requests_whose_own_edit_is_not_released_as_served": null
+ },
+ "n_rows": 1210
+}

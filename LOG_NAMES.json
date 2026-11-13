@@ -1,0 +1,293 @@
+{
+ "_about": "The one map between the names of the paper (Table 2; keys) and the directory names that the code uses internally ('dir'). Read by rescope_paths.py, which links <working tree>/<dir> to the released directory <paper name>. 'batch_deltas': the released log whose rebuilt applied batch updates serve this log (logs that are prefixes of one sequential run share them; tools/logs/rebuild_batch_deltas.py). Text logs are released under the names of the code (the public-code logs have no confidential part); their paper names are listed for reference. 'name_at_run_time' (logs of the first editor family): the working name under which the released results were computed. One tag in these names was replaced in every released file; method digests in the result files were computed under the old names, which the digest functions read through rescope_paths.name_at_run_time (README, 'Names of the logs').",
+ "vl": {
+  "Q-A100-r3": {
+   "dir": "TB-Q100-ae-l2_3",
+   "role": "development",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 100,
+   "n_batches": 10,
+   "archive": "logs_vl_QA.tar",
+   "batch_deltas": "Q-A100-r3",
+   "name_at_run_time": "TB-Q100-mm-l2_3"
+  },
+  "L-A100-r3": {
+   "dir": "TB-L100-ae-l2_3",
+   "role": "development",
+   "backbone": "llava",
+   "layer": 16,
+   "dtype": "torch.float16",
+   "T": 100,
+   "n_batches": 10,
+   "archive": "logs_vl_LA.tar",
+   "batch_deltas": "L-A100-r3",
+   "name_at_run_time": "TB-L100-mm-l2_3"
+  },
+  "Q-A100-r10": {
+   "dir": "TB-Q100-ae",
+   "role": "working_point",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 100,
+   "n_batches": 10,
+   "archive": "logs_vl_QA.tar",
+   "batch_deltas": "Q-A100-r10",
+   "name_at_run_time": "TB-Q100-mm"
+  },
+  "Q-A100-r1": {
+   "dir": "TB-Q100-ae-l2_1",
+   "role": "working_point",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 100,
+   "n_batches": 10,
+   "archive": "logs_vl_QA.tar",
+   "batch_deltas": "Q-A100-r1",
+   "name_at_run_time": "TB-Q100-mm-l2_1"
+  },
+  "L-A100-r10": {
+   "dir": "TB-L100-ae",
+   "role": "working_point",
+   "backbone": "llava",
+   "layer": 16,
+   "dtype": "torch.float16",
+   "T": 100,
+   "n_batches": 10,
+   "archive": "logs_vl_LA.tar",
+   "batch_deltas": "L-A100-r10",
+   "name_at_run_time": "TB-L100-mm"
+  },
+  "Q-A200": {
+   "dir": "TB-Q200-ae-l2_3",
+   "role": "unseen_alphaedit",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 200,
+   "n_batches": 20,
+   "archive": "logs_vl_QA.tar",
+   "batch_deltas": "Q-A500",
+   "name_at_run_time": "TB-Q200-mm-l2_3"
+  },
+  "Q-A500": {
+   "dir": "TB-Q500-ae-l2_3",
+   "role": "unseen_alphaedit",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 500,
+   "n_batches": 50,
+   "archive": "logs_vl_QA.tar",
+   "batch_deltas": "Q-A500",
+   "name_at_run_time": "TB-Q500-mm-l2_3"
+  },
+  "Q-M100": {
+   "dir": "TB-Q100-memitw",
+   "role": "unseen_memit",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 100,
+   "n_batches": 10,
+   "archive": "logs_vl_QM.tar",
+   "batch_deltas": "Q-M2000"
+  },
+  "Q-M500": {
+   "dir": "TB-Q500-memitw",
+   "role": "unseen_memit",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 500,
+   "n_batches": 50,
+   "archive": "logs_vl_QM.tar",
+   "batch_deltas": "Q-M2000"
+  },
+  "Q-M1000": {
+   "dir": "TB-Q1000-memitw",
+   "role": "unseen_memit",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 1000,
+   "n_batches": 100,
+   "archive": "logs_vl_QM.tar",
+   "batch_deltas": "Q-M2000"
+  },
+  "Q-M2000": {
+   "dir": "TB-Q2000-memitw",
+   "role": "unseen_memit",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 2000,
+   "n_batches": 200,
+   "archive": "logs_vl_QM.tar",
+   "batch_deltas": "Q-M2000"
+  },
+  "L-A200": {
+   "dir": "TB-L200-ae-l2_3",
+   "role": "unseen_alphaedit",
+   "backbone": "llava",
+   "layer": 16,
+   "dtype": "torch.float16",
+   "T": 200,
+   "n_batches": 20,
+   "archive": "logs_vl_LA.tar",
+   "batch_deltas": "L-A500",
+   "name_at_run_time": "TB-L200-mm-l2_3"
+  },
+  "L-A500": {
+   "dir": "TB-L500-ae-l2_3",
+   "role": "unseen_alphaedit",
+   "backbone": "llava",
+   "layer": 16,
+   "dtype": "torch.float16",
+   "T": 500,
+   "n_batches": 50,
+   "archive": "logs_vl_LA.tar",
+   "batch_deltas": "L-A500",
+   "name_at_run_time": "TB-L500-mm-l2_3"
+  },
+  "L-M100": {
+   "dir": "TB-L100-memitw",
+   "role": "unseen_memit",
+   "backbone": "llava",
+   "layer": 16,
+   "dtype": "torch.float16",
+   "T": 100,
+   "n_batches": 10,
+   "archive": "logs_vl_LM.tar",
+   "batch_deltas": "L-M1000"
+  },
+  "L-M500": {
+   "dir": "TB-L500-memitw",
+   "role": "unseen_memit",
+   "backbone": "llava",
+   "layer": 16,
+   "dtype": "torch.float16",
+   "T": 500,
+   "n_batches": 50,
+   "archive": "logs_vl_LM.tar",
+   "batch_deltas": "L-M1000"
+  },
+  "L-M1000": {
+   "dir": "TB-L1000-memitw",
+   "role": "unseen_memit",
+   "backbone": "llava",
+   "layer": 16,
+   "dtype": "torch.float16",
+   "T": 1000,
+   "n_batches": 100,
+   "archive": "logs_vl_LM.tar",
+   "batch_deltas": "L-M1000"
+  }
+ },
+ "prefix": {
+  "Q-A100-r3-p10": {
+   "dir": "TB-Q100-ae-l2_3-p10",
+   "prefix_of": "Q-A100-r3",
+   "role": "prefix",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 10,
+   "n_batches": 1,
+   "archive": "logs_vl_prefix.tar",
+   "batch_deltas": "Q-A100-r3",
+   "name_at_run_time": "TB-Q100-mm-l2_3-p10"
+  },
+  "Q-A100-r3-p20": {
+   "dir": "TB-Q100-ae-l2_3-p20",
+   "prefix_of": "Q-A100-r3",
+   "role": "prefix",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 20,
+   "n_batches": 2,
+   "archive": "logs_vl_prefix.tar",
+   "batch_deltas": "Q-A100-r3",
+   "name_at_run_time": "TB-Q100-mm-l2_3-p20"
+  },
+  "Q-A100-r3-p50": {
+   "dir": "TB-Q100-ae-l2_3-p50",
+   "prefix_of": "Q-A100-r3",
+   "role": "prefix",
+   "backbone": "qwen25vl",
+   "layer": 20,
+   "dtype": "torch.bfloat16",
+   "T": 50,
+   "n_batches": 5,
+   "archive": "logs_vl_prefix.tar",
+   "batch_deltas": "Q-A100-r3",
+   "name_at_run_time": "TB-Q100-mm-l2_3-p50"
+  },
+  "L-A100-r3-p10": {
+   "dir": "TB-L100-ae-l2_3-p10",
+   "prefix_of": "L-A100-r3",
+   "role": "prefix",
+   "backbone": "llava",
+   "layer": 16,
+   "dtype": "torch.float16",
+   "T": 10,
+   "n_batches": 1,
+   "archive": "logs_vl_prefix.tar",
+   "batch_deltas": "L-A100-r3",
+   "name_at_run_time": "TB-L100-mm-l2_3-p10"
+  },
+  "L-A100-r3-p20": {
+   "dir": "TB-L100-ae-l2_3-p20",
+   "prefix_of": "L-A100-r3",
+   "role": "prefix",
+   "backbone": "llava",
+   "layer": 16,
+   "dtype": "torch.float16",
+   "T": 20,
+   "n_batches": 2,
+   "archive": "logs_vl_prefix.tar",
+   "batch_deltas": "L-A100-r3",
+   "name_at_run_time": "TB-L100-mm-l2_3-p20"
+  },
+  "L-A100-r3-p50": {
+   "dir": "TB-L100-ae-l2_3-p50",
+   "prefix_of": "L-A100-r3",
+   "role": "prefix",
+   "backbone": "llava",
+   "layer": 16,
+   "dtype": "torch.float16",
+   "T": 50,
+   "n_batches": 5,
+   "archive": "logs_vl_prefix.tar",
+   "batch_deltas": "L-A100-r3",
+   "name_at_run_time": "TB-L100-mm-l2_3-p50"
+  }
+ },
+ "text": {
+  "G-R100": {
+   "dir": "TX-G2XL-rome-T100",
+   "archive": "logs_text.tar"
+  },
+  "G-R500": {
+   "dir": "TX-G2XL-rome-T500",
+   "archive": "logs_text.tar"
+  },
+  "G-R1000": {
+   "dir": "TX-G2XL-rome-T1000",
+   "archive": "logs_text.tar"
+  },
+  "G-R2000": {
+   "dir": "TX-G2XL-rome-T2000",
+   "archive": "logs_text.tar"
+  },
+  "G-R-dev100": {
+   "dir": "TX-G2XL-rome-dev100",
+   "archive": "logs_text.tar",
+   "role": "development (not a reported log)"
+  }
+ }
+}

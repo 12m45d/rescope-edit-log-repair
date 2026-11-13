@@ -1,0 +1,86 @@
+{
+ "TB-Q500-ae-l2_3": {
+  "log": "TB-Q500-ae-l2_3",
+  "T": 500,
+  "mine": {
+   "err_rebased_max_pct": 1.8685374244766257,
+   "err_logged_max_pct": 72.95045401383501,
+   "err_rebased_median_pct": 0.895839402469599,
+   "err_logged_median_pct": 24.425275178681318,
+   "margin_min": 0.27499431860566703,
+   "n_margin_nonpositive": 0
+  },
+  "experiment": {
+   "err_rebased_max_pct": 1.8685374244766257,
+   "err_logged_max_pct": 72.95045401383501,
+   "err_rebased_median_pct": 0.895839402469599,
+   "err_logged_median_pct": 24.425275178681318,
+   "margin_min": 0.27499431860566725,
+   "n_margin_nonpositive": 0
+  },
+  "max_abs_diff": 2.220446049250313e-16
+ },
+ "TB-Q2000-memitw": {
+  "log": "TB-Q2000-memitw",
+  "T": 2000,
+  "mine": {
+   "err_rebased_max_pct": 2.3795873894874053,
+   "err_logged_max_pct": 117.61163658263685,
+   "err_rebased_median_pct": 1.1312883719026896,
+   "err_logged_median_pct": 58.107518215272115,
+   "margin_min": -0.0117513520104644,
+   "n_margin_nonpositive": 1
+  },
+  "experiment": {
+   "err_rebased_max_pct": 2.3795873894874053,
+   "err_logged_max_pct": 117.61163658263685,
+   "err_rebased_median_pct": 1.131288371902689,
+   "err_logged_median_pct": 58.107518215272115,
+   "margin_min": -0.011751352010464622,
+   "n_margin_nonpositive": 1
+  },
+  "max_abs_diff": 6.661338147750939e-16
+ },
+ "TB-L500-ae-l2_3": {
+  "log": "TB-L500-ae-l2_3",
+  "T": 500,
+  "mine": {
+   "err_rebased_max_pct": 0.664329453030131,
+   "err_logged_max_pct": 34.902009855760035,
+   "err_rebased_median_pct": 0.11833128812944495,
+   "err_logged_median_pct": 13.008411564726874,
+   "margin_min": 0.38547991975585805,
+   "n_margin_nonpositive": 0
+  },
+  "experiment": {
+   "err_rebased_max_pct": 0.664329453030131,
+   "err_logged_max_pct": 34.902009855760035,
+   "err_rebased_median_pct": 0.11833128812944482,
+   "err_logged_median_pct": 13.008411564726874,
+   "margin_min": 0.38547991975585805,
+   "n_margin_nonpositive": 0
+  },
+  "max_abs_diff": 1.249000902703301e-16
+ },
+ "TB-L1000-memitw": {
+  "log": "TB-L1000-memitw",
+  "T": 1000,
+  "mine": {
+   "err_rebased_max_pct": 0.702904944950824,
+   "err_logged_max_pct": 61.297928515000436,
+   "err_rebased_median_pct": 0.11266624605687932,
+   "err_logged_median_pct": 39.713504191827084,
+   "margin_min": -0.10706204901728911,
+   "n_margin_nonpositive": 2
+  },
+  "experiment": {
+   "err_rebased_max_pct": 0.7029049449508243,
+   "err_logged_max_pct": 61.297928515000436,
+   "err_rebased_median_pct": 0.11266624605687962,
+   "err_logged_median_pct": 39.713504191827084,
+   "margin_min": -0.10706204901728911,
+   "n_margin_nonpositive": 2
+  },
+  "max_abs_diff": 3.3306690738754696e-16
+ }
+}

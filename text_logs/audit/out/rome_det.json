@@ -1,0 +1,859 @@
+{
+ "written": "2026-11-11 09:35:48 UTC",
+ "tag": "det",
+ "plan": "dev:0:3,dev:40:3,dev:97:3,stream:100:3,stream:173:3,stream:1530:3",
+ "seed": 0,
+ "transformers": "4.23.1",
+ "torch": "2.8.0+cu128",
+ "gpu": "NVIDIA GeForce RTX 5090",
+ "cap_bytes": 13002342400,
+ "pre_edit_weight_of_loaded_model_equals_builder_W0_file_bitwise": true,
+ "pre_edit_weight_sha256": "bd483af64b575f9dbd9330262b555d8bb4a74eb36e55b13ccbb0a0b9c9ef22a3",
+ "items": [
+  {
+   "source": "dev",
+   "state_after_updates": 0,
+   "n_updates_rerun": 3,
+   "state_sha256": "bd483af64b575f9dbd9330262b555d8bb4a74eb36e55b13ccbb0a0b9c9ef22a3",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 0,
+     "record": 15000,
+     "case_id": 15000,
+     "request": "In Canton of Valais, an official language is -> Finnish",
+     "subject_last_token_index_audit": 5,
+     "subject_last_token_index_builder": 5,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 7.121434755013847,
+     "update_fro_stored": 7.121434755013843,
+     "division_factor_audit_key": 12.646906096467244,
+     "division_factor_stored": 12.646906096467244,
+     "readout_dot_key_minus_1": -2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.20960573172330058,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 7.046302955082468e-08,
+     "output_after_vs_stored_target_rel": 1.23329477822756e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 8.503980997060874e-08,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 1,
+     "record": 15001,
+     "case_id": 15001,
+     "request": "The headquarters of Dominican Order is in -> Minneapolis",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 7.404587224856237,
+     "update_fro_stored": 7.404587224856237,
+     "division_factor_audit_key": 9.294725754456577,
+     "division_factor_stored": 9.294725754456577,
+     "readout_dot_key_minus_1": -1.1102230246251565e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.17838949436903836,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 7.573254793341122e-08,
+     "output_after_vs_stored_target_rel": 1.244222533283645e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 8.329879798103584e-08,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 2,
+     "record": 15002,
+     "case_id": 15002,
+     "request": "Lage Raho Munna Bhai was formulated in -> Malta",
+     "subject_last_token_index_audit": 7,
+     "subject_last_token_index_builder": 7,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 7.183046276073668,
+     "update_fro_stored": 7.1830462760736715,
+     "division_factor_audit_key": 11.849653329415656,
+     "division_factor_stored": 11.849653329415656,
+     "readout_dot_key_minus_1": -2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.21359285407196316,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.685488414133609e-08,
+     "output_after_vs_stored_target_rel": 1.0638924588788414e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 8.206141894268138e-08,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "3a9070caf602673dd6f64fa096484622d31970faf5b5eb336acc56345559fe90",
+   "final_weight_sha256_recorded_by_builder": "3a9070caf602673dd6f64fa096484622d31970faf5b5eb336acc56345559fe90",
+   "n_left_bitwise": 3,
+   "n_right_bitwise": 3,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "dev",
+   "state_after_updates": 40,
+   "n_updates_rerun": 3,
+   "state_sha256": "00491614ac3899b686c55e02e18b1d9a953ab9111025bdb149834b6e2aed9547",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 40,
+     "record": 15040,
+     "case_id": 15040,
+     "request": "Wojciech Jaruzelski writes in -> Latin",
+     "subject_last_token_index_audit": 8,
+     "subject_last_token_index_builder": 8,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 9.828375434016996,
+     "update_fro_stored": 9.828375434016998,
+     "division_factor_audit_key": 10.727372678178629,
+     "division_factor_stored": 10.727372678178629,
+     "readout_dot_key_minus_1": -1.1102230246251565e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.25574174928896176,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 5.5088441629350583e-08,
+     "output_after_vs_stored_target_rel": 9.98744265902867e-08,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 7.455387404626007e-08,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 41,
+     "record": 15041,
+     "case_id": 15041,
+     "request": "George Albertus Cox used to work in -> Rome",
+     "subject_last_token_index_audit": 3,
+     "subject_last_token_index_builder": 3,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 9.195029779110458,
+     "update_fro_stored": 9.19502977911045,
+     "division_factor_audit_key": 9.64024459325903,
+     "division_factor_stored": 9.64024459325903,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.3072737975582836,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.80279236733394e-08,
+     "output_after_vs_stored_target_rel": 1.033493633352825e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 7.96852021624939e-08,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 42,
+     "record": 15042,
+     "case_id": 15042,
+     "request": "Krypteria, that was formulated in -> Netherlands",
+     "subject_last_token_index_audit": 3,
+     "subject_last_token_index_builder": 3,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 10.62144827234396,
+     "update_fro_stored": 10.621448272343962,
+     "division_factor_audit_key": 8.82689667267302,
+     "division_factor_stored": 8.82689667267302,
+     "readout_dot_key_minus_1": 2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.47882076180581373,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.593461633345572e-08,
+     "output_after_vs_stored_target_rel": 1.0015978653174896e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 8.20708110799978e-08,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "47abdbe0168f78100a7c3b043cf27641db7bda4078f328d24d92ab1ae1120f80",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 3,
+   "n_right_bitwise": 3,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "dev",
+   "state_after_updates": 97,
+   "n_updates_rerun": 3,
+   "state_sha256": "4c580cc2afad7813e450e599e43327726a0255f686232c4ebcbabcb794e0db00",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 97,
+     "record": 15097,
+     "case_id": 15097,
+     "request": "Corinne Calvet speaks the language -> Dutch",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 11.616571984990628,
+     "update_fro_stored": 11.616571984990625,
+     "division_factor_audit_key": 10.858706328458908,
+     "division_factor_stored": 10.858706328458908,
+     "readout_dot_key_minus_1": -2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.22261168403117484,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 8.368075373985595e-08,
+     "output_after_vs_stored_target_rel": 1.2514623970284281e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 8.321302780456859e-08,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 98,
+     "record": 15098,
+     "case_id": 15098,
+     "request": "Jean Tinguely worked in the city of -> Hamburg",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 5.898155687132695,
+     "update_fro_stored": 5.898155687132695,
+     "division_factor_audit_key": 11.850315324661077,
+     "division_factor_stored": 11.850315324661077,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.3377517295486015,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.852571628769021e-08,
+     "output_after_vs_stored_target_rel": 1.6528642297323054e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 1.218360132433307e-07,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 99,
+     "record": 15099,
+     "case_id": 15099,
+     "request": "Giovanni Lindo Ferretti writes in -> Spanish",
+     "subject_last_token_index_audit": 7,
+     "subject_last_token_index_builder": 7,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 11.453939107152234,
+     "update_fro_stored": 11.45393910715222,
+     "division_factor_audit_key": 9.271057515663921,
+     "division_factor_stored": 9.271057515663921,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.4021429149318035,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 5.4463432120436427e-08,
+     "output_after_vs_stored_target_rel": 1.208242346289161e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 8.511579889192957e-08,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "e7c3301d08e42a2485206b46f5b48b979b02e5b28fc120801bb8feb106b0fda7",
+   "final_weight_sha256_recorded_by_builder": "e7c3301d08e42a2485206b46f5b48b979b02e5b28fc120801bb8feb106b0fda7",
+   "n_left_bitwise": 3,
+   "n_right_bitwise": 3,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 100,
+   "n_updates_rerun": 3,
+   "state_sha256": "9cc93368e5bf547279d97c090917e5975495d56e08e730376ad58fc7d99c135e",
+   "state_sha256_recorded_by_builder": "9cc93368e5bf547279d97c090917e5975495d56e08e730376ad58fc7d99c135e",
+   "updates": [
+    {
+     "index": 100,
+     "record": 100,
+     "case_id": 100,
+     "request": "The official religion of Jahangir is -> Judaism",
+     "subject_last_token_index_audit": 6,
+     "subject_last_token_index_builder": 6,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 11.198307189575456,
+     "update_fro_stored": 11.198307189575454,
+     "division_factor_audit_key": 10.509783616428743,
+     "division_factor_stored": 10.509783616428743,
+     "readout_dot_key_minus_1": -2.220446049250313e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.13351492275569035,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 1.0776840596184185e-07,
+     "output_after_vs_stored_target_rel": 1.4002457203394352e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 7.933042871052227e-08,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 101,
+     "record": 101,
+     "case_id": 101,
+     "request": "What does Frank Mantooth play? They play -> trance",
+     "subject_last_token_index_audit": 4,
+     "subject_last_token_index_builder": 4,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 13.721262133310075,
+     "update_fro_stored": 13.721262133310066,
+     "division_factor_audit_key": 9.205896544274523,
+     "division_factor_stored": 9.205896544274523,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.22207498351795932,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.1185780248083104e-08,
+     "output_after_vs_stored_target_rel": 1.0434984361909067e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 7.727089125309995e-08,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 102,
+     "record": 102,
+     "case_id": 102,
+     "request": "Renault 8 is produced by -> Fiat",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 19.58970618039085,
+     "update_fro_stored": 19.58970618039085,
+     "division_factor_audit_key": 5.987433035727654,
+     "division_factor_stored": 5.987433035727654,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.6695191826604117,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.9556600143290406e-08,
+     "output_after_vs_stored_target_rel": 1.0222703743270577e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 7.960844210543181e-08,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "state_equals_builder_recorded_hash": true,
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "23f238056d4972c3b22ea549b4e5bd18bcb1642669ed5b9f7025e73c52839a0a",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 3,
+   "n_right_bitwise": 3,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 173,
+   "n_updates_rerun": 3,
+   "state_sha256": "3ccc6e1d620e8d7548ed18a5b3fc40cf492d6039d95668e9032d85e61661bbaf",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 173,
+     "record": 173,
+     "case_id": 173,
+     "request": "Chicago is a twin city of -> Istanbul",
+     "subject_last_token_index_audit": 0,
+     "subject_last_token_index_builder": 0,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 5902.105251580258,
+     "update_fro_stored": 5902.105251580258,
+     "division_factor_audit_key": 0.02180741481286131,
+     "division_factor_stored": 0.02180741481286131,
+     "readout_dot_key_minus_1": -6.661338147750939e-15,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 1.1963230385606822,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 2.6213743375439933e-06,
+     "output_after_vs_stored_target_rel": 5.3400967684412746e-06,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 4.858722162207598e-06,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 174,
+     "record": 174,
+     "case_id": 174,
+     "request": "Iosif Rotariu plays as -> pitcher",
+     "subject_last_token_index_audit": 5,
+     "subject_last_token_index_builder": 5,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 27.712941202521886,
+     "update_fro_stored": 27.712941202521872,
+     "division_factor_audit_key": 11.387569759718794,
+     "division_factor_stored": 11.387569759718794,
+     "readout_dot_key_minus_1": -1.1102230246251565e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.23578210794367813,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 3.7647426729613465e-08,
+     "output_after_vs_stored_target_rel": 2.218928114541781e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 1.6470548947181863e-07,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 175,
+     "record": 175,
+     "case_id": 175,
+     "request": "John Navarre plays in the position of -> linebacker",
+     "subject_last_token_index_audit": 2,
+     "subject_last_token_index_builder": 2,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 24.342560336306352,
+     "update_fro_stored": 24.342560336306345,
+     "division_factor_audit_key": 10.450518520635452,
+     "division_factor_stored": 10.450518520635452,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.2751341337361912,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 8.699585490701175e-08,
+     "output_after_vs_stored_target_rel": 6.683746182452722e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 4.927187847086577e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "d4276c83ca645778a1463c89c7b02234e4d58cbd67fb041e3a878049d67dd0d3",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 3,
+   "n_right_bitwise": 3,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  },
+  {
+   "source": "stream",
+   "state_after_updates": 1530,
+   "n_updates_rerun": 3,
+   "state_sha256": "d6f66b6b584fceed3127a4d2a4cf70c4d5028e332607b1056fd74e0e4c0b30f1",
+   "state_sha256_recorded_by_builder": null,
+   "updates": [
+    {
+     "index": 1530,
+     "record": 1530,
+     "case_id": 1530,
+     "request": "9K720 Iskander was created in the country of -> Japan",
+     "subject_last_token_index_audit": 5,
+     "subject_last_token_index_builder": 5,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 30.88916336538974,
+     "update_fro_stored": 30.88916336538972,
+     "division_factor_audit_key": 11.392170979647446,
+     "division_factor_stored": 11.392170979647446,
+     "readout_dot_key_minus_1": 4.440892098500626e-16,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.3106529878058598,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 2.3243640744702845e-08,
+     "output_after_vs_stored_target_rel": 4.1229751859545416e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 2.9872592182034776e-07,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 1531,
+     "record": 1531,
+     "case_id": 1531,
+     "request": "Pons Aemilius is in -> Oslo",
+     "subject_last_token_index_audit": 5,
+     "subject_last_token_index_builder": 5,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 32.65506854766885,
+     "update_fro_stored": 32.65506854766883,
+     "division_factor_audit_key": 10.584168861502993,
+     "division_factor_stored": 10.584168861502993,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.290262279290839,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.621128831800315e-08,
+     "output_after_vs_stored_target_rel": 2.6357869940238324e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 1.956013934586745e-07,
+     "weight_after_equals_replay_bitwise": true
+    },
+    {
+     "index": 1532,
+     "record": 1532,
+     "case_id": 1532,
+     "request": "Giorgio Almirante speaks -> French",
+     "subject_last_token_index_audit": 5,
+     "subject_last_token_index_builder": 5,
+     "left_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_vs_stored": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "update_fro": 37.14544574235135,
+     "update_fro_stored": 37.14544574235133,
+     "division_factor_audit_key": 9.699034399936632,
+     "division_factor_stored": 9.699034399936632,
+     "readout_dot_key_minus_1": 0.0,
+     "key_audit_vs_stored_k_request": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "key_audit_vs_stored_k_template_mean_rel": 0.2773460674052762,
+     "output_before_audit_vs_stored_cur_output": {
+      "bitwise_equal": true,
+      "max_abs_diff": 0.0,
+      "rel_l2_diff": 0.0
+     },
+     "right_times_s_vs_target_minus_output_rel": 4.436056927918116e-08,
+     "output_after_vs_stored_target_rel": 6.556342318666052e-07,
+     "key_unchanged_by_update_bitwise": true,
+     "module_output_formula_rel": 4.637688167843857e-07,
+     "weight_after_equals_replay_bitwise": true
+    }
+   ],
+   "final_weight_equals_replay_of_stored_factors_bitwise": true,
+   "final_weight_sha256": "68a8092871f5171dfb018e01fac0d5943712ab41aafa9d985c62bb8ece941bbc",
+   "final_weight_sha256_recorded_by_builder": null,
+   "n_left_bitwise": 3,
+   "n_right_bitwise": 3,
+   "max_left_rel_l2_diff": 0.0,
+   "max_right_rel_l2_diff": 0.0
+  }
+ ],
+ "other_parameters": {
+  "n_tensors": 676,
+  "sha256_before": "4ec989853b9b16408c8c8934b94d8b9a658a109ca25e2886adc6d27e65b4123d",
+  "sha256_after": "4ec989853b9b16408c8c8934b94d8b9a658a109ca25e2886adc6d27e65b4123d",
+  "unchanged": true
+ },
+ "context_templates": {
+  "audit": [
+   "{}",
+   "In the last few. {}",
+   "The following is a. {}",
+   "I have been working. {}",
+   "A man was arrested. {}",
+   "The U.S. {}",
+   "I have been working. {}",
+   "I've been working. {}",
+   "\"I have to. {}",
+   "In this week's. {}",
+   "I've been working. {}",
+   "The U.S. government's National Ocean. {}",
+   "\"The best way to describe it would be. {}",
+   "A man in the US who has been living. {}",
+   "A new study has found a link between the. {}",
+   "In the past few decades, a growing number. {}",
+   "I've seen a lot of people complaining about. {}",
+   "I'm trying to get my hands on an. {}",
+   "The first thing that comes to mind when hearing. {}",
+   "The first day of the 2016 season has officially. {}",
+   "A man was killed when he was struck by. {}"
+  ],
+  "n": 21,
+  "equal_to_builder": {
+   "dev": true,
+   "stream": true,
+   "single": true
+  },
+  "n_equal_positionwise": {
+   "dev": 21,
+   "stream": 21,
+   "single": 21
+  }
+ },
+ "templates_cache_unchanged": true,
+ "peak_alloc_MiB": 9046.564453125,
+ "peak_reserved_MiB": 9514.0,
+ "finished": "2026-11-11 09:37:22 UTC"
+}

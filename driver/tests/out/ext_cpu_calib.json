@@ -1,0 +1,214 @@
+{
+ "rank": {
+  "n2_100_alpha_0.05_delta_0.1": 99,
+  "exact_fractions": 99,
+  "scipy_beta": 99,
+  "default_rank": 96,
+  "grid": 75,
+  "grid_differing_from_exact": 0,
+  "grid_differing_from_scipy": 0,
+  "nothing_may_fire_n2_20_alpha_0.01": true
+ },
+ "validity": {
+  "n_calibration_samples": 40000,
+  "share_above_alpha_pac": 0.0369,
+  "share_above_alpha_one_rank_lower": 0.1171,
+  "share_above_alpha_default_rank": 0.432425,
+  "delta": 0.1,
+  "exact_pac": 0.037081209327355036,
+  "exact_one_rank_lower": 0.1182629811851204,
+  "mean_rate_pac": 0.01986085792586646,
+  "end_to_end": {
+   "n_calibrations": 300,
+   "n_test_keys": 4000,
+   "share_of_calibrations_with_rate_above_alpha": {
+    "pac": 0.023333333333333334,
+    "default": 0.47333333333333333
+   },
+   "rank": 99
+  }
+ },
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "pac": {
+    "rank": 99,
+    "pac_rank": 99,
+    "alpha": 0.05,
+    "variant": "",
+    "label": "rescope_pac",
+    "block2_firing_literal": 1,
+    "n2_minus_rank": 1,
+    "thresholds_not_below_default": true,
+    "same_draw": true,
+    "same_baselines": true,
+    "n_edits_capped": 0,
+    "memo_path": true,
+    "delta_0.2": 98
+   },
+   "baseline_x": {
+    "minus_inf_equals_default_bitwise": true,
+    "variant": "x=external",
+    "n_baselines_raised": 35,
+    "baselines_equal_formula": true,
+    "eta_equals_formula": true,
+    "literal_thresholds_equal_formula": true,
+    "n1_n2": [
+     100,
+     100
+    ],
+    "n_edits_capped": 0,
+    "recalibrate_equals_constructor": true,
+    "wrong_length_refused": true,
+    "with_pac": true,
+    "equals_feature_package_recomb_bitwise": true,
+    "recomb_n_edits_capped": 0
+   },
+   "top1": {
+    "default_output_unchanged": true,
+    "rescope_d0": {
+     "n_sequences": 2557,
+     "n_differs": 0,
+     "brute_force": 0,
+     "n_edits_capped": 0,
+     "by_part": {
+      "probe": 0,
+      "edit": 0,
+      "hn": 0
+     },
+     "library_fires_only": 0
+    },
+    "cosine_d0": {
+     "n_sequences": 2557,
+     "n_differs": 0,
+     "brute_force": 0,
+     "n_edits_capped": 9,
+     "by_part": {
+      "probe": 0,
+      "edit": 0,
+      "hn": 0
+     },
+     "library_fires_only": 0
+    },
+    "cosine_d1": {
+     "n_sequences": 2557,
+     "n_differs": 0,
+     "brute_force": 0,
+     "n_edits_capped": 1,
+     "by_part": {
+      "probe": 0,
+      "edit": 0,
+      "hn": 0
+     },
+     "library_fires_only": 0
+    },
+    "cosine_default": {
+     "n_sequences": 2557,
+     "n_differs": 0,
+     "brute_force": 0,
+     "n_edits_capped": null,
+     "by_part": {
+      "probe": 0,
+      "edit": 0,
+      "hn": 0
+     },
+     "library_fires_only": 0
+    }
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "pac": {
+    "rank": 99,
+    "pac_rank": 99,
+    "alpha": 0.05,
+    "variant": "",
+    "label": "rescope_pac",
+    "block2_firing_literal": 1,
+    "n2_minus_rank": 1,
+    "thresholds_not_below_default": true,
+    "same_draw": true,
+    "same_baselines": true,
+    "n_edits_capped": 0,
+    "memo_path": true,
+    "delta_0.2": 98
+   },
+   "baseline_x": {
+    "minus_inf_equals_default_bitwise": true,
+    "variant": "x=external",
+    "n_baselines_raised": 29,
+    "baselines_equal_formula": true,
+    "eta_equals_formula": true,
+    "literal_thresholds_equal_formula": true,
+    "n1_n2": [
+     100,
+     100
+    ],
+    "n_edits_capped": 0,
+    "recalibrate_equals_constructor": true,
+    "wrong_length_refused": true,
+    "with_pac": true,
+    "equals_feature_package_recomb_bitwise": true,
+    "recomb_n_edits_capped": 0
+   },
+   "top1": {
+    "default_output_unchanged": true,
+    "rescope_d0": {
+     "n_sequences": 2574,
+     "n_differs": 0,
+     "brute_force": 0,
+     "n_edits_capped": 0,
+     "by_part": {
+      "probe": 0,
+      "edit": 0,
+      "hn": 0
+     },
+     "library_fires_only": 0
+    },
+    "cosine_d0": {
+     "n_sequences": 2574,
+     "n_differs": 0,
+     "brute_force": 0,
+     "n_edits_capped": 31,
+     "by_part": {
+      "probe": 0,
+      "edit": 0,
+      "hn": 0
+     },
+     "library_fires_only": 0
+    },
+    "cosine_d1": {
+     "n_sequences": 2574,
+     "n_differs": 2,
+     "brute_force": 2,
+     "n_edits_capped": 36,
+     "by_part": {
+      "probe": 0,
+      "edit": 2,
+      "hn": 0
+     },
+     "library_fires_only": 2
+    },
+    "cosine_default": {
+     "n_sequences": 2574,
+     "n_differs": 0,
+     "brute_force": 0,
+     "n_edits_capped": null,
+     "by_part": {
+      "probe": 0,
+      "edit": 0,
+      "hn": 0
+     },
+     "library_fires_only": 0
+    }
+   }
+  }
+ },
+ "ok": true,
+ "test": "calib",
+ "seconds": 45.556174755096436,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:10:33"
+}

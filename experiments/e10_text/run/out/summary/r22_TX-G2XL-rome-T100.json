@@ -1,0 +1,2628 @@
+{
+ "meta": {
+  "log": "TX-G2XL-rome-T100",
+  "T": 100,
+  "split": null,
+  "view_pool": {
+   "n": 5000,
+   "n_excluded_shared_subject": 107,
+   "n_candidates_scanned": 5107,
+   "seed": 20261109
+  },
+  "counts": {
+   "n_edited": 100,
+   "n_report": 2500,
+   "n_test": 2500,
+   "n_queries_report": 31,
+   "n_queries_test": 32,
+   "n_view_tuples_carrying_a_solver_key": 1,
+   "n_edited_tuples_not_recognised": 0
+  },
+  "dropped_relations": [
+   {
+    "half": "report",
+    "relation": "P264",
+    "n": 11
+   },
+   {
+    "half": "report",
+    "relation": "P36",
+    "n": 17
+   },
+   {
+    "half": "report",
+    "relation": "P463",
+    "n": 19
+   },
+   {
+    "half": "test",
+    "relation": "P264",
+    "n": 4
+   },
+   {
+    "half": "test",
+    "relation": "P36",
+    "n": 16
+   }
+  ],
+  "code": {
+   "e10t": "7dbf34c01e52",
+   "rescope": "c76c4da16bd6",
+   "fx": "29f1abeaa7b4",
+   "tx_public": "12afa5563ce4",
+   "e10t_version": "e10t-1.0 (2026-11-11)"
+  },
+  "sql_file": "code/r22.sql",
+  "database": "[redacted: local path]/02_research/experiments/10_final/e10_text/run/out/r22/TX-G2XL-rome-T100.sqlite",
+  "value": "first token id of the greedy continuation of the record's request prompt; -1 if a logit is not finite",
+  "seconds": 435.4068455696106
+ },
+ "serving_overhead": {
+  "pre-edit weight": {
+   "ms_per_forward_min": 2.8509991243481636,
+   "ms_per_forward_all": [
+    3.241422586143017,
+    3.0873813666403294,
+    2.8509991243481636
+   ],
+   "ratio_to_pre_edit": 1.0
+  },
+  "deployed weight": {
+   "ms_per_forward_min": 1.5860595740377903,
+   "ms_per_forward_all": [
+    2.8973519802093506,
+    3.1670271418988705,
+    1.5860595740377903
+   ],
+   "ratio_to_pre_edit": 0.556317103184105
+  },
+  "ReScope-W (hook, all positions)": {
+   "ms_per_forward_min": 3.211661707609892,
+   "ms_per_forward_all": [
+    3.594344947487116,
+    3.211661707609892,
+    4.406247287988663
+   ],
+   "ratio_to_pre_edit": 1.1265039263539542
+  },
+  "migration (hook, all positions)": {
+   "ms_per_forward_min": 3.214232623577118,
+   "ms_per_forward_all": [
+    3.4606591798365116,
+    3.214232623577118,
+    3.6788112483918667
+   ],
+   "ratio_to_pre_edit": 1.1274056860020965
+  },
+  "lookup_subject": {
+   "ms_per_forward_min": 2.0182356238365173,
+   "ms_per_forward_all": [
+    3.1510493718087673,
+    3.395597916096449,
+    2.0182356238365173
+   ],
+   "ratio_to_pre_edit": 0.7079046803628729
+  },
+  "_note": "512 test prompts, every prompt through the model (no sparse shortcut), batches of at most 32, 3 repeats, minimum; shared GPU"
+ },
+ "complaints": {
+  "n_report_queries": 62,
+  "n_complaint_candidates": 62,
+  "sets": {
+   "m1_s0": {
+    "m": 1,
+    "seed": 0,
+    "queries": [
+     [
+      "P17",
+      "view"
+     ]
+    ],
+    "relations": [
+     "P17"
+    ],
+    "n_tuples_in_complained_views": 98,
+    "n_own_requests_in_views": 4,
+    "diagnosis_passes": 196,
+    "n_tuple_complaints": 23
+   },
+   "m3_s0": {
+    "m": 3,
+    "seed": 0,
+    "queries": [
+     [
+      "P17",
+      "view"
+     ],
+     [
+      "P937",
+      "view"
+     ],
+     [
+      "P136",
+      "view"
+     ]
+    ],
+    "relations": [
+     "P136",
+     "P17",
+     "P937"
+    ],
+    "n_tuples_in_complained_views": 304,
+    "n_own_requests_in_views": 11,
+    "diagnosis_passes": 608,
+    "n_tuple_complaints": 88
+   },
+   "m10_s0": {
+    "m": 10,
+    "seed": 0,
+    "queries": [
+     [
+      "P17",
+      "view"
+     ],
+     [
+      "P937",
+      "view"
+     ],
+     [
+      "P136",
+      "view"
+     ],
+     [
+      "P140",
+      "aggregate"
+     ],
+     [
+      "P1303",
+      "view"
+     ],
+     [
+      "P413",
+      "view"
+     ],
+     [
+      "P131",
+      "view"
+     ],
+     [
+      "P178",
+      "aggregate"
+     ],
+     [
+      "P19",
+      "aggregate"
+     ],
+     [
+      "P190",
+      "aggregate"
+     ]
+    ],
+    "relations": [
+     "P1303",
+     "P131",
+     "P136",
+     "P140",
+     "P17",
+     "P178",
+     "P19",
+     "P190",
+     "P413",
+     "P937"
+    ],
+    "n_tuples_in_complained_views": 822,
+    "n_own_requests_in_views": 30,
+    "diagnosis_passes": 1644,
+    "n_tuple_complaints": 257
+   },
+   "m1_s1": {
+    "m": 1,
+    "seed": 1,
+    "queries": [
+     [
+      "P740",
+      "aggregate"
+     ]
+    ],
+    "relations": [
+     "P740"
+    ],
+    "n_tuples_in_complained_views": 95,
+    "n_own_requests_in_views": 3,
+    "diagnosis_passes": 190,
+    "n_tuple_complaints": 15
+   },
+   "m3_s1": {
+    "m": 3,
+    "seed": 1,
+    "queries": [
+     [
+      "P740",
+      "aggregate"
+     ],
+     [
+      "P20",
+      "view"
+     ],
+     [
+      "P159",
+      "view"
+     ]
+    ],
+    "relations": [
+     "P159",
+     "P20",
+     "P740"
+    ],
+    "n_tuples_in_complained_views": 304,
+    "n_own_requests_in_views": 10,
+    "diagnosis_passes": 608,
+    "n_tuple_complaints": 83
+   },
+   "m10_s1": {
+    "m": 10,
+    "seed": 1,
+    "queries": [
+     [
+      "P740",
+      "aggregate"
+     ],
+     [
+      "P20",
+      "view"
+     ],
+     [
+      "P159",
+      "view"
+     ],
+     [
+      "P27",
+      "view"
+     ],
+     [
+      "P1412",
+      "view"
+     ],
+     [
+      "P127",
+      "view"
+     ],
+     [
+      "P131",
+      "aggregate"
+     ],
+     [
+      "P276",
+      "view"
+     ],
+     [
+      "P101",
+      "aggregate"
+     ],
+     [
+      "P937",
+      "view"
+     ]
+    ],
+    "relations": [
+     "P101",
+     "P127",
+     "P131",
+     "P1412",
+     "P159",
+     "P20",
+     "P27",
+     "P276",
+     "P740",
+     "P937"
+    ],
+    "n_tuples_in_complained_views": 884,
+    "n_own_requests_in_views": 30,
+    "diagnosis_passes": 1768,
+    "n_tuple_complaints": 213
+   },
+   "m1_s2": {
+    "m": 1,
+    "seed": 2,
+    "queries": [
+     [
+      "P190",
+      "aggregate"
+     ]
+    ],
+    "relations": [
+     "P190"
+    ],
+    "n_tuples_in_complained_views": 56,
+    "n_own_requests_in_views": 6,
+    "diagnosis_passes": 112,
+    "n_tuple_complaints": 32
+   },
+   "m3_s2": {
+    "m": 3,
+    "seed": 2,
+    "queries": [
+     [
+      "P190",
+      "aggregate"
+     ],
+     [
+      "P495",
+      "view"
+     ],
+     [
+      "P101",
+      "aggregate"
+     ]
+    ],
+    "relations": [
+     "P101",
+     "P190",
+     "P495"
+    ],
+    "n_tuples_in_complained_views": 211,
+    "n_own_requests_in_views": 11,
+    "diagnosis_passes": 422,
+    "n_tuple_complaints": 57
+   },
+   "m10_s2": {
+    "m": 10,
+    "seed": 2,
+    "queries": [
+     [
+      "P190",
+      "aggregate"
+     ],
+     [
+      "P495",
+      "view"
+     ],
+     [
+      "P101",
+      "aggregate"
+     ],
+     [
+      "P1412",
+      "aggregate"
+     ],
+     [
+      "P159",
+      "aggregate"
+     ],
+     [
+      "P140",
+      "view"
+     ],
+     [
+      "P103",
+      "view"
+     ],
+     [
+      "P740",
+      "view"
+     ],
+     [
+      "P449",
+      "view"
+     ],
+     [
+      "P136",
+      "aggregate"
+     ]
+    ],
+    "relations": [
+     "P101",
+     "P103",
+     "P136",
+     "P140",
+     "P1412",
+     "P159",
+     "P190",
+     "P449",
+     "P495",
+     "P740"
+    ],
+    "n_tuples_in_complained_views": 898,
+    "n_own_requests_in_views": 37,
+    "diagnosis_passes": 1796,
+    "n_tuple_complaints": 227
+   }
+  }
+ },
+ "rows": [
+  {
+   "label": "restore-base",
+   "m": null,
+   "class": "reference",
+   "evidence": "none (the log is discarded)",
+   "n_instances": 1,
+   "n_infeasible": 0,
+   "instances": [
+    null
+   ],
+   "instance_kind": "-",
+   "reference_preservation": {
+    "value": 100.0,
+    "ci_lo": 100.0,
+    "ci_hi": 100.0,
+    "n_units": 2500,
+    "n_draws": 1,
+    "n_rows": 2500,
+    "se": 0.0
+   },
+   "retention": {
+    "value": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "n_units": 100,
+    "n_draws": 1,
+    "n_rows": 100,
+    "se": 0.0
+   },
+   "views_exact_pct": {
+    "value": 3.125,
+    "min": 3.125,
+    "max": 3.125
+   },
+   "aggregates_exact_pct": {
+    "value": 3.125,
+    "min": 3.125,
+    "max": 3.125
+   },
+   "queries_exact_pct": {
+    "value": 3.125,
+    "min": 3.125,
+    "max": 3.125
+   },
+   "aggregate_tv_mean": {
+    "value": 0.037175070399672355,
+    "min": 0.037175070399672355,
+    "max": 0.037175070399672355
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 3.93183283890364,
+    "min": 3.93183283890364,
+    "max": 3.93183283890364
+   },
+   "diagnosis_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "statements_changed": {
+    "value": 100.0,
+    "min": 100.0,
+    "max": 100.0
+   },
+   "edits_lost": {
+    "n": 100.0
+   },
+   "edits_lost_range": [
+    100,
+    100
+   ],
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "deployed",
+   "m": null,
+   "class": "reference",
+   "evidence": "none",
+   "n_instances": 1,
+   "n_infeasible": 0,
+   "instances": [
+    null
+   ],
+   "instance_kind": "-",
+   "reference_preservation": {
+    "value": 70.28,
+    "ci_lo": 68.4,
+    "ci_hi": 72.00099999999999,
+    "n_units": 2500,
+    "n_draws": 1,
+    "n_rows": 2500,
+    "se": 0.9093104448660926
+   },
+   "retention": {
+    "value": 97.0,
+    "ci_lo": 93.0,
+    "ci_hi": 100.0,
+    "n_units": 100,
+    "n_draws": 1,
+    "n_rows": 100,
+    "se": 1.6878294149786093
+   },
+   "views_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregates_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queries_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregate_tv_mean": {
+    "value": 0.23679020319028532,
+    "min": 0.23679020319028532,
+    "max": 0.23679020319028532
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 29.676197983751795,
+    "min": 29.676197983751795,
+    "max": 29.676197983751795
+   },
+   "diagnosis_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "statements_changed": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "ReScope-W log-only",
+   "m": null,
+   "class": "repair of the log (thresholds)",
+   "evidence": "log only",
+   "n_instances": 1,
+   "n_infeasible": 0,
+   "instances": [
+    null
+   ],
+   "instance_kind": "-",
+   "reference_preservation": {
+    "value": 95.56,
+    "ci_lo": 94.76,
+    "ci_hi": 96.32,
+    "n_units": 2500,
+    "n_draws": 1,
+    "n_rows": 2500,
+    "se": 0.402520117289076
+   },
+   "retention": {
+    "value": 96.0,
+    "ci_lo": 92.0,
+    "ci_hi": 99.0,
+    "n_units": 100,
+    "n_draws": 1,
+    "n_rows": 100,
+    "se": 2.011288738892454
+   },
+   "views_exact_pct": {
+    "value": 15.625,
+    "min": 15.625,
+    "max": 15.625
+   },
+   "aggregates_exact_pct": {
+    "value": 15.625,
+    "min": 15.625,
+    "max": 15.625
+   },
+   "queries_exact_pct": {
+    "value": 15.625,
+    "min": 15.625,
+    "max": 15.625
+   },
+   "aggregate_tv_mean": {
+    "value": 0.04733309470450222,
+    "min": 0.04733309470450222,
+    "max": 0.04733309470450222
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 5.4204700854060555,
+    "min": 5.4204700854060555,
+    "max": 5.4204700854060555
+   },
+   "diagnosis_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "statements_changed": {
+    "value": 100.0,
+    "min": 100.0,
+    "max": 100.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "capped": 0.0,
+   "hook_mismatch": 0,
+   "guards": true
+  },
+  {
+   "label": "ReScope-W two-block",
+   "m": null,
+   "class": "repair of the log (thresholds)",
+   "evidence": "log + 200 benign calibration prompts (REPAIR pool)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "calibration draws",
+   "reference_preservation": {
+    "value": 99.04,
+    "ci_lo": 98.48,
+    "ci_hi": 99.52,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.26321800688490715
+   },
+   "retention": {
+    "value": 95.66666666666667,
+    "ci_lo": 91.0,
+    "ci_hi": 99.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 2.0721328667121366
+   },
+   "views_exact_pct": {
+    "value": 62.5,
+    "min": 50.0,
+    "max": 71.875
+   },
+   "aggregates_exact_pct": {
+    "value": 62.5,
+    "min": 50.0,
+    "max": 71.875
+   },
+   "queries_exact_pct": {
+    "value": 62.5,
+    "min": 50.0,
+    "max": 71.875
+   },
+   "aggregate_tv_mean": {
+    "value": 0.013969597779566724,
+    "min": 0.008327954077077043,
+    "max": 0.01957561732154122
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 1.5880015816922572,
+    "min": 0.8912193207511826,
+    "max": 2.332561732154122
+   },
+   "diagnosis_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "statements_changed": {
+    "value": 100.0,
+    "min": 100.0,
+    "max": 100.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "capped": 1.0,
+   "hook_mismatch": 0,
+   "guards": true
+  },
+  {
+   "label": "migration (ReScope)",
+   "m": null,
+   "class": "migration of the log",
+   "evidence": "log + 200 benign calibration prompts (REPAIR pool)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "calibration draws",
+   "reference_preservation": {
+    "value": 97.25333333333333,
+    "ci_lo": 95.198,
+    "ci_hi": 98.73333333333333,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.9534652586106462
+   },
+   "retention": {
+    "value": 100.0,
+    "ci_lo": 100.0,
+    "ci_hi": 100.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 0.0
+   },
+   "views_exact_pct": {
+    "value": 44.791666666666664,
+    "min": 21.875,
+    "max": 71.875
+   },
+   "aggregates_exact_pct": {
+    "value": 44.791666666666664,
+    "min": 21.875,
+    "max": 71.875
+   },
+   "queries_exact_pct": {
+    "value": 44.791666666666664,
+    "min": 21.875,
+    "max": 71.875
+   },
+   "aggregate_tv_mean": {
+    "value": 0.03215880566043599,
+    "min": 0.024184967861903807,
+    "max": 0.04696937359706012
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 3.2710912023193637,
+    "min": 2.4184967861903806,
+    "max": 4.8625692685333055
+   },
+   "diagnosis_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "statements_changed": {
+    "value": 100.0,
+    "min": 100.0,
+    "max": 100.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "capped": 1.0,
+   "hook_mismatch": 0,
+   "guards": true
+  },
+  {
+   "label": "rb_screen",
+   "m": null,
+   "class": "rollback",
+   "evidence": "log only (screening: self-separation margin <= 0)",
+   "n_instances": 1,
+   "n_infeasible": 0,
+   "instances": [
+    null
+   ],
+   "instance_kind": "-",
+   "reference_preservation": {
+    "value": 70.28,
+    "ci_lo": 68.4,
+    "ci_hi": 72.00099999999999,
+    "n_units": 2500,
+    "n_draws": 1,
+    "n_rows": 2500,
+    "se": 0.9093104448660926
+   },
+   "retention": {
+    "value": 97.0,
+    "ci_lo": 93.0,
+    "ci_hi": 100.0,
+    "n_units": 100,
+    "n_draws": 1,
+    "n_rows": 100,
+    "se": 1.6878294149786093
+   },
+   "views_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregates_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queries_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregate_tv_mean": {
+    "value": 0.23679020319028532,
+    "min": 0.23679020319028532,
+    "max": 0.23679020319028532
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 29.676197983751795,
+    "min": 29.676197983751795,
+    "max": 29.676197983751795
+   },
+   "diagnosis_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 1.047858715057373,
+    "min": 1.047858715057373,
+    "max": 1.047858715057373
+   },
+   "statements_changed": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "lookup_subject",
+   "m": null,
+   "class": "OTHER DEPLOYMENT CLASS: keyed store over the requests",
+   "evidence": "the REQUESTS (subject strings) + log values",
+   "n_instances": 1,
+   "n_infeasible": 0,
+   "instances": [
+    null
+   ],
+   "instance_kind": "-",
+   "reference_preservation": {
+    "value": 99.92,
+    "ci_lo": 99.8,
+    "ci_hi": 100.0,
+    "n_units": 2500,
+    "n_draws": 1,
+    "n_rows": 2500,
+    "se": 0.05483090017323524
+   },
+   "retention": {
+    "value": 100.0,
+    "ci_lo": 100.0,
+    "ci_hi": 100.0,
+    "n_units": 100,
+    "n_draws": 1,
+    "n_rows": 100,
+    "se": 0.0
+   },
+   "views_exact_pct": {
+    "value": 93.75,
+    "min": 93.75,
+    "max": 93.75
+   },
+   "aggregates_exact_pct": {
+    "value": 93.75,
+    "min": 93.75,
+    "max": 93.75
+   },
+   "queries_exact_pct": {
+    "value": 93.75,
+    "min": 93.75,
+    "max": 93.75
+   },
+   "aggregate_tv_mean": {
+    "value": 0.0005997474747474747,
+    "min": 0.0005997474747474747,
+    "max": 0.0005997474747474747
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 0.05997474747474747,
+    "min": 0.05997474747474747,
+    "max": 0.05997474747474747
+   },
+   "diagnosis_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "statements_changed": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "hook_mismatch": 0,
+   "guards": null
+  },
+  {
+   "label": "ReScope-W least repair (sacrificing)",
+   "m": 1,
+   "class": "repair of the log (thresholds)",
+   "evidence": "log + 1 complained query (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 95.88,
+    "ci_lo": 95.08,
+    "ci_hi": 96.65333333333334,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.39691573382897205
+   },
+   "retention": {
+    "value": 96.0,
+    "ci_lo": 92.0,
+    "ci_hi": 99.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 2.011288738892454
+   },
+   "views_exact_pct": {
+    "value": 16.666666666666668,
+    "min": 15.625,
+    "max": 18.75
+   },
+   "aggregates_exact_pct": {
+    "value": 16.666666666666668,
+    "min": 15.625,
+    "max": 18.75
+   },
+   "queries_exact_pct": {
+    "value": 16.666666666666668,
+    "min": 15.625,
+    "max": 18.75
+   },
+   "aggregate_tv_mean": {
+    "value": 0.04423448459989268,
+    "min": 0.04294712979222152,
+    "max": 0.04678484909046713
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 5.0799718200431405,
+    "min": 4.951236339276024,
+    "max": 5.335008269100586
+   },
+   "diagnosis_passes": {
+    "value": 166.0,
+    "min": 112.0,
+    "max": 196.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.0078431765238444,
+    "min": 0.00517582893371582,
+    "max": 0.009752273559570312
+   },
+   "statements_changed": {
+    "value": 11.0,
+    "min": 7.0,
+    "max": 16.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "complaints_refused": 0.0,
+   "complaints_still_released": 0.0,
+   "complaints_in_band": 7.666666666666667,
+   "n_tuple_complaints": 23.333333333333332,
+   "hook_mismatch": 0,
+   "guards": null
+  },
+  {
+   "label": "ReScope-W least repair (protecting)",
+   "m": 1,
+   "class": "repair of the log (thresholds)",
+   "evidence": "log + 1 complained query (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 95.88,
+    "ci_lo": 95.08,
+    "ci_hi": 96.65333333333334,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.39691573382897205
+   },
+   "retention": {
+    "value": 96.0,
+    "ci_lo": 92.0,
+    "ci_hi": 99.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 2.011288738892454
+   },
+   "views_exact_pct": {
+    "value": 16.666666666666668,
+    "min": 15.625,
+    "max": 18.75
+   },
+   "aggregates_exact_pct": {
+    "value": 16.666666666666668,
+    "min": 15.625,
+    "max": 18.75
+   },
+   "queries_exact_pct": {
+    "value": 16.666666666666668,
+    "min": 15.625,
+    "max": 18.75
+   },
+   "aggregate_tv_mean": {
+    "value": 0.04423448459989268,
+    "min": 0.04294712979222152,
+    "max": 0.04678484909046713
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 5.0799718200431405,
+    "min": 4.951236339276024,
+    "max": 5.335008269100586
+   },
+   "diagnosis_passes": {
+    "value": 166.0,
+    "min": 112.0,
+    "max": 196.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.016713937123616535,
+    "min": 0.00958561897277832,
+    "max": 0.021476268768310547
+   },
+   "statements_changed": {
+    "value": 11.0,
+    "min": 7.0,
+    "max": 16.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "complaints_refused": 0.0,
+   "complaints_still_released": 0.0,
+   "complaints_in_band": 7.666666666666667,
+   "n_tuple_complaints": 23.333333333333332,
+   "hook_mismatch": 0,
+   "guards": null
+  },
+  {
+   "label": "rb_suffix",
+   "m": 1,
+   "class": "rollback",
+   "evidence": "log + 1 complained query (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 95.29333333333334,
+    "ci_lo": 92.44,
+    "ci_hi": 99.32,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 1.7543442036692882
+   },
+   "retention": {
+    "value": 13.666666666666666,
+    "ci_lo": 1.0,
+    "ci_hi": 25.666666666666664,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 6.13751310975994
+   },
+   "views_exact_pct": {
+    "value": 1.0416666666666667,
+    "min": 0.0,
+    "max": 3.125
+   },
+   "aggregates_exact_pct": {
+    "value": 1.0416666666666667,
+    "min": 0.0,
+    "max": 3.125
+   },
+   "queries_exact_pct": {
+    "value": 1.0416666666666667,
+    "min": 0.0,
+    "max": 3.125
+   },
+   "aggregate_tv_mean": {
+    "value": 0.061505564538450685,
+    "min": 0.041463819318469694,
+    "max": 0.07322465200182246
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 7.888945032571244,
+    "min": 4.508621963986162,
+    "max": 9.95892932201023
+   },
+   "diagnosis_passes": {
+    "value": 166.0,
+    "min": 112.0,
+    "max": 196.0
+   },
+   "repair_passes": {
+    "value": 2333.3333333333335,
+    "min": 1500.0,
+    "max": 3200.0
+   },
+   "repair_seconds": {
+    "value": 10.014060735702515,
+    "min": 7.703339576721191,
+    "max": 13.286265134811401
+   },
+   "statements_changed": {
+    "value": 86.33333333333333,
+    "min": 79.0,
+    "max": 99.0
+   },
+   "edits_lost": {
+    "n": 86.33333333333333
+   },
+   "edits_lost_range": [
+    79,
+    99
+   ],
+   "n_tuple_complaints": 23.333333333333332,
+   "t_star": [
+    19,
+    21,
+    1
+   ],
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "rb_lineage",
+   "m": 1,
+   "class": "rollback",
+   "evidence": "log + 1 complained query (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 73.72,
+    "ci_lo": 71.86633333333334,
+    "ci_hi": 75.56,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.960639464246557
+   },
+   "retention": {
+    "value": 86.33333333333333,
+    "ci_lo": 78.33333333333333,
+    "ci_hi": 93.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 3.787389414353195
+   },
+   "views_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregates_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queries_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregate_tv_mean": {
+    "value": 0.20649779586762387,
+    "min": 0.20062221254010965,
+    "max": 0.21486329734187218
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 26.502681479794663,
+    "min": 25.706093814307536,
+    "max": 27.157872097681025
+   },
+   "diagnosis_passes": {
+    "value": 166.0,
+    "min": 112.0,
+    "max": 196.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.9334293206532797,
+    "min": 0.8609023094177246,
+    "max": 1.0472776889801025
+   },
+   "statements_changed": {
+    "value": 11.0,
+    "min": 7.0,
+    "max": 16.0
+   },
+   "edits_lost": {
+    "n": 11.0
+   },
+   "edits_lost_range": [
+    7,
+    16
+   ],
+   "n_tuple_complaints": 23.333333333333332,
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "comp_min",
+   "m": 1,
+   "class": "compensation",
+   "evidence": "log + 1 complained query (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 73.14666666666666,
+    "ci_lo": 70.88,
+    "ci_hi": 75.14699999999999,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 1.0619085329619022
+   },
+   "retention": {
+    "value": 97.0,
+    "ci_lo": 93.0,
+    "ci_hi": 100.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 1.6878294149786093
+   },
+   "views_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregates_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queries_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregate_tv_mean": {
+    "value": 0.20909839882559655,
+    "min": 0.1968577632992191,
+    "max": 0.21646166284633256
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 26.574859736053025,
+    "min": 25.502726923935292,
+    "max": 27.494306491536026
+   },
+   "diagnosis_passes": {
+    "value": 166.0,
+    "min": 112.0,
+    "max": 196.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.28437264760335285,
+    "min": 0.2041945457458496,
+    "max": 0.43296313285827637
+   },
+   "statements_changed": {
+    "value": 1.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "n_tuple_complaints": 23.333333333333332,
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "blocklist",
+   "m": 1,
+   "class": "exact-match list",
+   "evidence": "log + 1 complained query (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 70.28,
+    "ci_lo": 68.4,
+    "ci_hi": 72.00099999999999,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.9093104448660926
+   },
+   "retention": {
+    "value": 97.0,
+    "ci_lo": 93.0,
+    "ci_hi": 100.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 1.6878294149786093
+   },
+   "views_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregates_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queries_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregate_tv_mean": {
+    "value": 0.23679020319028532,
+    "min": 0.23679020319028532,
+    "max": 0.23679020319028532
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 29.676197983751795,
+    "min": 29.676197983751795,
+    "max": 29.676197983751795
+   },
+   "diagnosis_passes": {
+    "value": 166.0,
+    "min": 112.0,
+    "max": 196.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "statements_changed": {
+    "value": 23.333333333333332,
+    "min": 15.0,
+    "max": 32.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "n_tuple_complaints": 23.333333333333332,
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "ReScope-W least repair (sacrificing)",
+   "m": 3,
+   "class": "repair of the log (thresholds)",
+   "evidence": "log + 3 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 96.44,
+    "ci_lo": 95.72,
+    "ci_hi": 97.12033333333332,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.36577428485088126
+   },
+   "retention": {
+    "value": 96.0,
+    "ci_lo": 92.0,
+    "ci_hi": 99.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 2.011288738892454
+   },
+   "views_exact_pct": {
+    "value": 21.875,
+    "min": 15.625,
+    "max": 28.125
+   },
+   "aggregates_exact_pct": {
+    "value": 21.875,
+    "min": 15.625,
+    "max": 28.125
+   },
+   "queries_exact_pct": {
+    "value": 21.875,
+    "min": 15.625,
+    "max": 28.125
+   },
+   "aggregate_tv_mean": {
+    "value": 0.03986097072049525,
+    "min": 0.03845925423343835,
+    "max": 0.04188168011583064
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 4.564823436307681,
+    "min": 4.373757284501605,
+    "max": 4.773959274450236
+   },
+   "diagnosis_passes": {
+    "value": 546.0,
+    "min": 422.0,
+    "max": 608.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.02350028355916341,
+    "min": 0.016998767852783203,
+    "max": 0.03064703941345215
+   },
+   "statements_changed": {
+    "value": 29.0,
+    "min": 23.0,
+    "max": 34.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "complaints_refused": 0.0,
+   "complaints_still_released": 0.0,
+   "complaints_in_band": 20.333333333333332,
+   "n_tuple_complaints": 76.0,
+   "hook_mismatch": 0,
+   "guards": null
+  },
+  {
+   "label": "ReScope-W least repair (protecting)",
+   "m": 3,
+   "class": "repair of the log (thresholds)",
+   "evidence": "log + 3 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 96.44,
+    "ci_lo": 95.72,
+    "ci_hi": 97.12033333333332,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.36577428485088126
+   },
+   "retention": {
+    "value": 96.0,
+    "ci_lo": 92.0,
+    "ci_hi": 99.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 2.011288738892454
+   },
+   "views_exact_pct": {
+    "value": 21.875,
+    "min": 15.625,
+    "max": 28.125
+   },
+   "aggregates_exact_pct": {
+    "value": 21.875,
+    "min": 15.625,
+    "max": 28.125
+   },
+   "queries_exact_pct": {
+    "value": 21.875,
+    "min": 15.625,
+    "max": 28.125
+   },
+   "aggregate_tv_mean": {
+    "value": 0.03986097072049525,
+    "min": 0.03845925423343835,
+    "max": 0.04188168011583064
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 4.564823436307681,
+    "min": 4.373757284501605,
+    "max": 4.773959274450236
+   },
+   "diagnosis_passes": {
+    "value": 546.0,
+    "min": 422.0,
+    "max": 608.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.04993605613708496,
+    "min": 0.04004192352294922,
+    "max": 0.05794548988342285
+   },
+   "statements_changed": {
+    "value": 29.0,
+    "min": 23.0,
+    "max": 34.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "complaints_refused": 0.0,
+   "complaints_still_released": 0.0,
+   "complaints_in_band": 20.333333333333332,
+   "n_tuple_complaints": 76.0,
+   "hook_mismatch": 0,
+   "guards": null
+  },
+  {
+   "label": "rb_suffix",
+   "m": 3,
+   "class": "rollback",
+   "evidence": "log + 3 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 99.28,
+    "ci_lo": 98.4,
+    "ci_hi": 100.0,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.4060617949984279
+   },
+   "retention": {
+    "value": 1.3333333333333333,
+    "ci_lo": 0.0,
+    "ci_hi": 4.333333333333334,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 1.2013852522706019
+   },
+   "views_exact_pct": {
+    "value": 4.166666666666667,
+    "min": 3.125,
+    "max": 6.25
+   },
+   "aggregates_exact_pct": {
+    "value": 4.166666666666667,
+    "min": 3.125,
+    "max": 6.25
+   },
+   "queries_exact_pct": {
+    "value": 4.166666666666667,
+    "min": 3.125,
+    "max": 6.25
+   },
+   "aggregate_tv_mean": {
+    "value": 0.0413141881891363,
+    "min": 0.037175070399672355,
+    "max": 0.04530367484926684
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 4.561955062141677,
+    "min": 3.93183283890364,
+    "max": 5.245410383535227
+   },
+   "diagnosis_passes": {
+    "value": 546.0,
+    "min": 422.0,
+    "max": 608.0
+   },
+   "repair_passes": {
+    "value": 3280.6666666666665,
+    "min": 3225.0,
+    "max": 3353.0
+   },
+   "repair_seconds": {
+    "value": 11.230379263559977,
+    "min": 9.828245878219604,
+    "max": 12.463951349258423
+   },
+   "statements_changed": {
+    "value": 98.66666666666667,
+    "min": 97.0,
+    "max": 100.0
+   },
+   "edits_lost": {
+    "n": 98.66666666666667
+   },
+   "edits_lost_range": [
+    97,
+    100
+   ],
+   "n_tuple_complaints": 76.0,
+   "t_star": [
+    0,
+    3,
+    1
+   ],
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "rb_lineage",
+   "m": 3,
+   "class": "rollback",
+   "evidence": "log + 3 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 78.56,
+    "ci_lo": 75.44,
+    "ci_hi": 81.08033333333333,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 1.4663390383836012
+   },
+   "retention": {
+    "value": 68.33333333333333,
+    "ci_lo": 58.333333333333336,
+    "ci_hi": 77.66666666666666,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 4.914812949854239
+   },
+   "views_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregates_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queries_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregate_tv_mean": {
+    "value": 0.17671042700808712,
+    "min": 0.1625945464839248,
+    "max": 0.201419873660602
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 22.537181787475305,
+    "min": 20.58670766386941,
+    "max": 25.402349487238375
+   },
+   "diagnosis_passes": {
+    "value": 546.0,
+    "min": 422.0,
+    "max": 608.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.7241605122884115,
+    "min": 0.6684610843658447,
+    "max": 0.7804827690124512
+   },
+   "statements_changed": {
+    "value": 29.0,
+    "min": 23.0,
+    "max": 34.0
+   },
+   "edits_lost": {
+    "n": 29.0
+   },
+   "edits_lost_range": [
+    23,
+    34
+   ],
+   "n_tuple_complaints": 76.0,
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "comp_min",
+   "m": 3,
+   "class": "compensation",
+   "evidence": "log + 3 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 78.01333333333334,
+    "ci_lo": 75.6,
+    "ci_hi": 80.45333333333333,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 1.2465931233418293
+   },
+   "retention": {
+    "value": 97.0,
+    "ci_lo": 93.0,
+    "ci_hi": 100.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 1.6878294149786093
+   },
+   "views_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregates_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queries_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregate_tv_mean": {
+    "value": 0.16932996049839508,
+    "min": 0.14381622949723552,
+    "max": 0.18913383962228625
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 21.941044428820565,
+    "min": 19.70219442317636,
+    "max": 23.82348147547089
+   },
+   "diagnosis_passes": {
+    "value": 546.0,
+    "min": 422.0,
+    "max": 608.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.4474488099416097,
+    "min": 0.32189011573791504,
+    "max": 0.5410685539245605
+   },
+   "statements_changed": {
+    "value": 1.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "n_tuple_complaints": 76.0,
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "blocklist",
+   "m": 3,
+   "class": "exact-match list",
+   "evidence": "log + 3 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 70.28,
+    "ci_lo": 68.4,
+    "ci_hi": 72.00099999999999,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.9093104448660926
+   },
+   "retention": {
+    "value": 97.0,
+    "ci_lo": 93.0,
+    "ci_hi": 100.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 1.6878294149786093
+   },
+   "views_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregates_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queries_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregate_tv_mean": {
+    "value": 0.23679020319028532,
+    "min": 0.23679020319028532,
+    "max": 0.23679020319028532
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 29.676197983751795,
+    "min": 29.676197983751795,
+    "max": 29.676197983751795
+   },
+   "diagnosis_passes": {
+    "value": 546.0,
+    "min": 422.0,
+    "max": 608.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "statements_changed": {
+    "value": 76.0,
+    "min": 57.0,
+    "max": 88.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "n_tuple_complaints": 76.0,
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "ReScope-W least repair (sacrificing)",
+   "m": 10,
+   "class": "repair of the log (thresholds)",
+   "evidence": "log + 10 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 97.33333333333333,
+    "ci_lo": 96.693,
+    "ci_hi": 97.94666666666667,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.3164203934280039
+   },
+   "retention": {
+    "value": 96.0,
+    "ci_lo": 92.0,
+    "ci_hi": 99.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 2.011288738892454
+   },
+   "views_exact_pct": {
+    "value": 32.291666666666664,
+    "min": 31.25,
+    "max": 34.375
+   },
+   "aggregates_exact_pct": {
+    "value": 32.291666666666664,
+    "min": 31.25,
+    "max": 34.375
+   },
+   "queries_exact_pct": {
+    "value": 32.291666666666664,
+    "min": 31.25,
+    "max": 34.375
+   },
+   "aggregate_tv_mean": {
+    "value": 0.03212060668042499,
+    "min": 0.030358579075109034,
+    "max": 0.03448952948122299
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 3.6784647761964293,
+    "min": 3.482632540872314,
+    "max": 3.9233660058612654
+   },
+   "diagnosis_passes": {
+    "value": 1736.0,
+    "min": 1644.0,
+    "max": 1796.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.07139325141906738,
+    "min": 0.05840730667114258,
+    "max": 0.0802912712097168
+   },
+   "statements_changed": {
+    "value": 55.0,
+    "min": 52.0,
+    "max": 57.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "complaints_refused": 0.0,
+   "complaints_still_released": 0.0,
+   "complaints_in_band": 47.0,
+   "n_tuple_complaints": 232.33333333333334,
+   "hook_mismatch": 0,
+   "guards": null
+  },
+  {
+   "label": "ReScope-W least repair (protecting)",
+   "m": 10,
+   "class": "repair of the log (thresholds)",
+   "evidence": "log + 10 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 97.33333333333333,
+    "ci_lo": 96.693,
+    "ci_hi": 97.94666666666667,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.3164203934280039
+   },
+   "retention": {
+    "value": 96.0,
+    "ci_lo": 92.0,
+    "ci_hi": 99.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 2.011288738892454
+   },
+   "views_exact_pct": {
+    "value": 32.291666666666664,
+    "min": 31.25,
+    "max": 34.375
+   },
+   "aggregates_exact_pct": {
+    "value": 32.291666666666664,
+    "min": 31.25,
+    "max": 34.375
+   },
+   "queries_exact_pct": {
+    "value": 32.291666666666664,
+    "min": 31.25,
+    "max": 34.375
+   },
+   "aggregate_tv_mean": {
+    "value": 0.03212060668042499,
+    "min": 0.030358579075109034,
+    "max": 0.03448952948122299
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 3.6784647761964293,
+    "min": 3.482632540872314,
+    "max": 3.9233660058612654
+   },
+   "diagnosis_passes": {
+    "value": 1736.0,
+    "min": 1644.0,
+    "max": 1796.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.14649422963460287,
+    "min": 0.1374213695526123,
+    "max": 0.16089177131652832
+   },
+   "statements_changed": {
+    "value": 55.0,
+    "min": 52.0,
+    "max": 57.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "complaints_refused": 0.0,
+   "complaints_still_released": 0.0,
+   "complaints_in_band": 47.0,
+   "n_tuple_complaints": 232.33333333333334,
+   "hook_mismatch": 0,
+   "guards": null
+  },
+  {
+   "label": "rb_suffix",
+   "m": 10,
+   "class": "rollback",
+   "evidence": "log + 10 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 100.0,
+    "ci_lo": 100.0,
+    "ci_hi": 100.0,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.0
+   },
+   "retention": {
+    "value": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 0.0
+   },
+   "views_exact_pct": {
+    "value": 3.125,
+    "min": 3.125,
+    "max": 3.125
+   },
+   "aggregates_exact_pct": {
+    "value": 3.125,
+    "min": 3.125,
+    "max": 3.125
+   },
+   "queries_exact_pct": {
+    "value": 3.125,
+    "min": 3.125,
+    "max": 3.125
+   },
+   "aggregate_tv_mean": {
+    "value": 0.037175070399672355,
+    "min": 0.037175070399672355,
+    "max": 0.037175070399672355
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 3.93183283890364,
+    "min": 3.93183283890364,
+    "max": 3.93183283890364
+   },
+   "diagnosis_passes": {
+    "value": 1736.0,
+    "min": 1644.0,
+    "max": 1796.0
+   },
+   "repair_passes": {
+    "value": 3328.0,
+    "min": 3264.0,
+    "max": 3424.0
+   },
+   "repair_seconds": {
+    "value": 9.399742126464844,
+    "min": 7.654175519943237,
+    "max": 12.134319305419922
+   },
+   "statements_changed": {
+    "value": 100.0,
+    "min": 100.0,
+    "max": 100.0
+   },
+   "edits_lost": {
+    "n": 100.0
+   },
+   "edits_lost_range": [
+    100,
+    100
+   ],
+   "n_tuple_complaints": 232.33333333333334,
+   "t_star": [
+    0,
+    0,
+    0
+   ],
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "rb_lineage",
+   "m": 10,
+   "class": "rollback",
+   "evidence": "log + 10 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 86.62666666666667,
+    "ci_lo": 85.16,
+    "ci_hi": 88.14666666666666,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.7610856553916762
+   },
+   "retention": {
+    "value": 41.666666666666664,
+    "ci_lo": 32.33333333333333,
+    "ci_hi": 51.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 4.657595673718473
+   },
+   "views_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregates_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queries_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregate_tv_mean": {
+    "value": 0.12459334270862177,
+    "min": 0.1185441302730439,
+    "max": 0.1293512371809708
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 15.917986168826351,
+    "min": 14.898655927277794,
+    "max": 16.46577811655645
+   },
+   "diagnosis_passes": {
+    "value": 1736.0,
+    "min": 1644.0,
+    "max": 1796.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.5113694667816162,
+    "min": 0.4867560863494873,
+    "max": 0.5446791648864746
+   },
+   "statements_changed": {
+    "value": 55.0,
+    "min": 52.0,
+    "max": 57.0
+   },
+   "edits_lost": {
+    "n": 55.0
+   },
+   "edits_lost_range": [
+    52,
+    57
+   ],
+   "n_tuple_complaints": 232.33333333333334,
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "comp_min",
+   "m": 10,
+   "class": "compensation",
+   "evidence": "log + 10 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 82.14666666666666,
+    "ci_lo": 80.78666666666666,
+    "ci_hi": 83.58666666666666,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.7175824351002965
+   },
+   "retention": {
+    "value": 97.0,
+    "ci_lo": 93.0,
+    "ci_hi": 100.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 1.6878294149786093
+   },
+   "views_exact_pct": {
+    "value": 2.0833333333333335,
+    "min": 0.0,
+    "max": 3.125
+   },
+   "aggregates_exact_pct": {
+    "value": 2.0833333333333335,
+    "min": 0.0,
+    "max": 3.125
+   },
+   "queries_exact_pct": {
+    "value": 2.0833333333333335,
+    "min": 0.0,
+    "max": 3.125
+   },
+   "aggregate_tv_mean": {
+    "value": 0.13148921619609755,
+    "min": 0.12930921548773172,
+    "max": 0.1334070162622163
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 17.704093548758387,
+    "min": 17.588477414519097,
+    "max": 17.85146786718734
+   },
+   "diagnosis_passes": {
+    "value": 1736.0,
+    "min": 1644.0,
+    "max": 1796.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 1.4211841424306233,
+    "min": 1.2680997848510742,
+    "max": 1.6141912937164307
+   },
+   "statements_changed": {
+    "value": 1.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "n_tuple_complaints": 232.33333333333334,
+   "hook_mismatch": null,
+   "guards": null
+  },
+  {
+   "label": "blocklist",
+   "m": 10,
+   "class": "exact-match list",
+   "evidence": "log + 10 complained queries (diagnosis charged)",
+   "n_instances": 3,
+   "n_infeasible": 0,
+   "instances": [
+    0,
+    1,
+    2
+   ],
+   "instance_kind": "complaint seeds",
+   "reference_preservation": {
+    "value": 70.28,
+    "ci_lo": 68.4,
+    "ci_hi": 72.00099999999999,
+    "n_units": 2500,
+    "n_draws": 3,
+    "n_rows": 2500,
+    "se": 0.9093104448660926
+   },
+   "retention": {
+    "value": 97.0,
+    "ci_lo": 93.0,
+    "ci_hi": 100.0,
+    "n_units": 100,
+    "n_draws": 3,
+    "n_rows": 100,
+    "se": 1.6878294149786093
+   },
+   "views_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregates_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "queries_exact_pct": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "aggregate_tv_mean": {
+    "value": 0.23679020319028532,
+    "min": 0.23679020319028532,
+    "max": 0.23679020319028532
+   },
+   "view_wrong_share_mean_pct": {
+    "value": 29.676197983751795,
+    "min": 29.676197983751795,
+    "max": 29.676197983751795
+   },
+   "diagnosis_passes": {
+    "value": 1736.0,
+    "min": 1644.0,
+    "max": 1796.0
+   },
+   "repair_passes": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "repair_seconds": {
+    "value": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "statements_changed": {
+    "value": 232.33333333333334,
+    "min": 213.0,
+    "max": 257.0
+   },
+   "edits_lost": {
+    "n": 0.0
+   },
+   "edits_lost_range": [
+    0,
+    0
+   ],
+   "n_tuple_complaints": 232.33333333333334,
+   "hook_mismatch": null,
+   "guards": null
+  }
+ ]
+}

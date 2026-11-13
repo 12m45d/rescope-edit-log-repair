@@ -1,0 +1,144 @@
+{
+ "log": "TX-G2XL-rome-T100",
+ "n_heldout_prompts": 2999,
+ "pre_edit_decode_in_these_batches_equals_stored_continuation": 2999,
+ "seconds": 660.3202006816864,
+ "what": "E10 task 6: certificate check.  For every HELD-OUT benign prompt on whose pre-edit trace a calibrated row releases nothing\n(cached keys of [prompt, pre-edit continuation]; outside the decision band = 'certified'; inside it = 'in band', listed apart),\nthe served logits of the 10-token greedy decode are compared BIT FOR BIT with the pre-edit model's logits of the same batch.\n\n    $GQ run --mem 13000 --prio -2 --name e10c -- $PY run_cert.py --log TX-G2XL-rome-T100\nCalibrated rows: where_twoblock, rescope, cosine, the R3 gate of out/best_gate_text.json; draws 0-2; on the collapse log also with\nguards off.  Every violation is listed with its cause.  -> out/cert/<log>.json\n",
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "7f8236032d7b",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "rows": {
+  "where_twoblock__d0": {
+   "n_certified": 2914,
+   "n_equal": 2914,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2914,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "where_twoblock__d1": {
+   "n_certified": 2962,
+   "n_equal": 2962,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2962,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "where_twoblock__d2": {
+   "n_certified": 2752,
+   "n_equal": 2752,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2752,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "rescope__d0": {
+   "n_certified": 2914,
+   "n_equal": 2914,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2914,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "rescope__d1": {
+   "n_certified": 2962,
+   "n_equal": 2962,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2962,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "rescope__d2": {
+   "n_certified": 2752,
+   "n_equal": 2752,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2752,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "cosine__d0": {
+   "n_certified": 2826,
+   "n_equal": 2826,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2826,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "cosine__d1": {
+   "n_certified": 2876,
+   "n_equal": 2876,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2876,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "cosine__d2": {
+   "n_certified": 2860,
+   "n_equal": 2860,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2860,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "whitecos_0.1__d0": {
+   "n_certified": 2820,
+   "n_equal": 2820,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2820,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "whitecos_0.1__d1": {
+   "n_certified": 2885,
+   "n_equal": 2885,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2885,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  },
+  "whitecos_0.1__d2": {
+   "n_certified": 2875,
+   "n_equal": 2875,
+   "n_in_band": 0,
+   "n_in_band_equal": 0,
+   "tokens_equal_y0": 2875,
+   "n_violations_certified": 0,
+   "n_violations_in_band": 0,
+   "violations": []
+  }
+ },
+ "total": {
+  "n_checked_certified": 34398,
+  "n_equal_certified": 34398,
+  "n_checked_in_band": 0,
+  "n_equal_in_band": 0,
+  "n_violations_certified": 0,
+  "n_violations_in_band": 0
+ }
+}

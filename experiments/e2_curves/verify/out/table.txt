@@ -1,0 +1,156 @@
+VERIFICATION OF E2 a-c (evidence curves, linear rows, running example)      rendered 2026-11-12 01:30:12 by verify/code/vcpu.py
+mine = recomputed by the verifier: rescope.load + rescope.Evaluator.tf_rows at B = 1 (no driver, no memo, no key cache), thresholds computed by the verifier from
+coordinates captured by the verifier; seed / draw 0.  exp = the experiment's reported number (results.json).  D1 on heldout_disjoint, percentile bootstrap over
+query clusters (2000 resamples, the verifier's own generator: interval ends differ from the experiment's in the first decimal).  'flags differ' = rows whose
+exact flag differs between my rows and the experiment's per-row file (edits of 300 / heldout_disjoint rows).  NOT FINISHED: nothing
+
+############################################################################################################################################
+TB-Q100-ae-l2_3
+############################################################################################################################################
+(1) headline cells: experiment's reported number | mine
+cell                                                            D1 % disjoint exp | mine [95 %]      D1 strict        Rel/T-Gen/I-Gen  own out  fire % disjoint  flags differ (edits; held-out)  fired flags differ  max |threshold diff| (inf pattern)  agree
+--------------------------------------------------------------  -------------------------------  -------------  ---------------------  -------  ---------------  ------------------------------  ------------------  ----------------------------------  -----
+deployed log                                                         54.19 | 54.19 [49.2, 58.8]  54.67 | 54.67      78/9/22 | 78/9/22    - | -            - | -                    0/300; 0/465            0/0; 0/0                                   -    yes
+ReScope-W least repair, deployed start, n=10, seed 0                     6.24 | 6.24 [3.8, 9.0]    4.80 | 4.80      79/8/26 | 79/8/26    0 | 0    50.97 | 50.97                    0/300; 0/465        0/300; 0/465                    0.0000000000 (0)    yes
+ReScope-W least repair, deployed start, n=100, seed 0                    3.01 | 3.01 [1.3, 5.0]    2.67 | 2.67      78/6/26 | 78/6/26    0 | 0    30.11 | 30.11                    0/300; 0/465        0/300; 0/465                    0.0000000000 (0)    yes
+ReScope-W least repair, log-only start, n=10, seed 0 (H1 cell)           1.08 | 1.08 [0.2, 2.2]    1.07 | 1.07      78/7/26 | 78/7/26    0 | 0    18.28 | 18.28                    0/300; 0/465        0/300; 0/465                    0.0000000000 (0)    yes
+COMP-B rebuilt on ALL complaints, seed 0                             49.03 | 49.03 [44.4, 53.4]  48.27 | 48.27    78/10/25 | 78/10/25    - | -            - | -                    0/300; 0/465            0/0; 0/0                                   -    yes
+ReScope label-free, n=0 (log-only)                                       0.00 | 0.00 [0.0, 0.0]    0.00 | 0.00    100/6/28 | 100/6/28    0 | 0      0.00 | 0.00                    0/300; 0/465        0/300; 0/465                    0.0000000000 (0)    yes
+ReScope label-free, n=10, draw 0                                         0.00 | 0.00 [0.0, 0.0]    0.00 | 0.00    100/6/28 | 100/6/28    0 | 0      0.00 | 0.00                    0/300; 0/465        0/300; 0/465                    0.0000000000 (0)    yes
+ReScope label-free, n=200, draw 0                                        4.95 | 4.95 [3.0, 7.0]    3.73 | 3.73  100/57/69 | 100/57/69    0 | 0      4.95 | 4.95                    0/300; 0/465        0/300; 0/465                    0.0000000000 (0)    yes
+
+    rebuilt COMP-B (ALL) against the ORIGINAL P12 record: held-out flags differing 0 of 490 (heldout_disjoint: 0), edit flags 0 of 300; my deployed flags against the record's deployed flags: 0 of 490
+
+(2) imported linear cells (part a) against the original P12 records, recomputed from the records with the library's split: 104 cells, 624 numbers, 0 mismatches (largest difference of the others 1.42e-14)
+linear cell (mean over the record's seeds)  seeds  D1 % exp  D1 % mine  Rel exp  Rel mine  agree
+------------------------------------------  -----  --------  ---------  -------  --------  -----
+COMP_B@10                                       3     50.54      50.54    76.00     76.00    yes
+RB_UNION@10                                     3     45.45      45.45    52.67     52.67    yes
+REEDIT_B@10                                     3     58.92      58.92    75.67     75.67    yes
+COMP_B@ALL                                      1     49.03      49.03    78.00     78.00    yes
+REEDIT_B@ALL                                    1     66.02      66.02    63.00     63.00    yes
+RB_UNION@ALL                                    1      6.24       6.24     1.00      1.00    yes
+
+(3) H1 recomputed from the per-row files (ReScope-W rows of the experiment, seeds 0-2; linear side from the P12 records); rule of R6 applied literally
+quantity                                                                                               exp                              mine  agree
+------------------------------------------------------------------------  --------------------------------  --------------------------------  -----
+D1 % ReScope-W (log-only start, n = 10, 3 seeds)                                                      1.00                              1.00    yes
+Rel exact % ReScope-W                                                                                78.00                             78.00    yes
+Rel exact % deployed                                                                                 78.00                             78.00    yes
+best_lowest_d1: linear repair                                                                     RB_UNION                          RB_UNION    yes
+best_rel_within_2: linear repair                                                                    COMP_B                            COMP_B    yes
+best_lowest_d1: D1 difference [95 %] (p)                                  -44.44 [-48.97, -40.13] (0.0005)  -44.44 [-48.81, -39.96] (0.0005)    yes
+best_rel_within_2: D1 difference [95 %] (p)                               -49.53 [-54.07, -45.00] (0.0005)  -49.53 [-53.81, -45.11] (0.0005)    yes
+literal rule (D1 <= 10 and |Rel - Rel deployed| <= 2): helps on this log                              True                              True    yes
+one-sided reading (Rel >= Rel deployed - 2) met                                                       True                              True    yes
+    best linear repair at n = 10 by lowest D1: the experiment's six methods -> RB_UNION; the four of PROTOCOL section 2 -> RB_UNION; every P12 method with 3 seeds -> RB_UNION
+    candidates (D1 %, Rel %): RB_UNION 45.4, 52.7; RB_TOT 46.2, 54.7; COMP_B 50.5, 76.0; COMP_S 50.5, 76.0; COMP_BP 52.3, 77.7; COMP_SP 52.3, 77.7; COMP_B_ALLPOS 56.6, 76.7; REEDIT_B 58.9, 75.7; REEDIT_S 58.9, 75.7
+    ReScope-W D1 per seed [1.08, 0.86, 1.08]; the seed-0 cell recomputed by me on the GPU: D1 1.08, Rel 78.0 (deployed Rel 78.0)
+
+(4) sanity run e0 (deployed; default method, draw 0) against MY numbers: 11 numbers, largest absolute difference 0.0000 points
+cell                    quantity      e0    mine
+--------  ----------------------  ------  ------
+deployed     D1 heldout_disjoint   54.19   54.19
+deployed       D1 heldout_strict   54.67   54.67
+deployed                     Rel   78.00   78.00
+deployed                   T-Gen    9.00    9.00
+deployed                   I-Gen   22.00   22.00
+c_n200       D1 heldout_disjoint    4.95    4.95
+c_n200         D1 heldout_strict    3.73    3.73
+c_n200                       Rel  100.00  100.00
+c_n200                     T-Gen   57.00   57.00
+c_n200                     I-Gen   69.00   69.00
+c_n200    fired heldout_disjoint    4.95    4.95
+
+(5) counts: mine {'n_probe_rows': 1000, 'n_probe_valid': 979, 'n_heldout_valid': 490, 'n_heldout_disjoint': 465, 'n_heldout_strict': 375, 'n_repair_valid': 489}; complaints 'ALL' 297; in the experiment's records: heldout_disjoint n [465.0], heldout_strict n [375.0], edits per metric [100.0]; 21067 records
+
+############################################################################################################################################
+TB-L100-ae-l2_3
+############################################################################################################################################
+(1) headline cells: experiment's reported number | mine
+cell                                                            D1 % disjoint exp | mine [95 %]      D1 strict      Rel/T-Gen/I-Gen  own out  fire % disjoint  flags differ (edits; held-out)  fired flags differ  max |threshold diff| (inf pattern)  agree
+--------------------------------------------------------------  -------------------------------  -------------  -------------------  -------  ---------------  ------------------------------  ------------------  ----------------------------------  -----
+deployed log                                                         62.26 | 62.26 [57.6, 66.8]  66.75 | 66.75  88/29/66 | 88/29/66    - | -            - | -                    0/300; 0/469            0/0; 0/0                                   -    yes
+ReScope-W least repair, deployed start, n=10, seed 0                 20.47 | 20.47 [16.7, 24.2]  23.48 | 23.48  93/35/72 | 93/35/72    0 | 0    97.65 | 97.65                    0/300; 0/469        0/300; 0/469                    0.0000000000 (0)    yes
+ReScope-W least repair, deployed start, n=100, seed 0                    4.69 | 4.69 [2.8, 6.8]    5.28 | 5.28  93/31/69 | 93/31/69    0 | 0    50.32 | 50.32                    0/300; 0/469        0/300; 0/469                    0.0000000000 (0)    yes
+ReScope-W least repair, log-only start, n=10, seed 0 (H1 cell)           2.35 | 2.35 [1.1, 3.8]    2.11 | 2.11  92/28/68 | 92/28/68    0 | 0    21.75 | 21.75                    0/300; 0/469        0/300; 0/469                    0.0000000000 (0)    yes
+COMP-B rebuilt on ALL complaints, seed 0                             59.70 | 59.70 [55.3, 64.3]  63.59 | 63.59  86/32/66 | 86/32/66    - | -            - | -                    0/300; 0/469            0/0; 0/0                                   -    yes
+ReScope label-free, n=0 (log-only)                                       1.28 | 1.28 [0.4, 2.4]    0.79 | 0.79  98/20/83 | 98/20/83    0 | 0      1.28 | 1.28                    0/300; 0/469        0/300; 0/469                    0.0000000000 (0)    yes
+ReScope label-free, n=10, draw 0                                         1.28 | 1.28 [0.4, 2.4]    0.79 | 0.79  98/20/83 | 98/20/83    0 | 0      1.28 | 1.28                    0/300; 0/469        0/300; 0/469                    0.0000000000 (0)    yes
+ReScope label-free, n=200, draw 0                                        5.33 | 5.33 [3.4, 7.5]    4.75 | 4.75  98/47/95 | 98/47/95    0 | 0      5.33 | 5.33                    0/300; 0/469        0/300; 0/469                    0.0000000000 (0)    yes
+
+    rebuilt COMP-B (ALL) against the ORIGINAL P12 record: held-out flags differing 0 of 494 (heldout_disjoint: 0), edit flags 0 of 300; my deployed flags against the record's deployed flags: 0 of 494
+
+(2) imported linear cells (part a) against the original P12 records, recomputed from the records with the library's split: 104 cells, 624 numbers, 0 mismatches (largest difference of the others 1.42e-14)
+linear cell (mean over the record's seeds)  seeds  D1 % exp  D1 % mine  Rel exp  Rel mine  agree
+------------------------------------------  -----  --------  ---------  -------  --------  -----
+COMP_B@10                                       3     62.83      62.83    88.00     88.00    yes
+RB_UNION@10                                     3     52.74      52.74    59.67     59.67    yes
+REEDIT_B@10                                     3     66.10      66.10    87.67     87.67    yes
+COMP_B@ALL                                      1     59.70      59.70    86.00     86.00    yes
+REEDIT_B@ALL                                    1     78.04      78.04    74.00     74.00    yes
+RB_UNION@ALL                                    1      0.00       0.00     1.00      1.00    yes
+
+(3) H1 recomputed from the per-row files (ReScope-W rows of the experiment, seeds 0-2; linear side from the P12 records); rule of R6 applied literally
+quantity                                                                                               exp                              mine  agree
+------------------------------------------------------------------------  --------------------------------  --------------------------------  -----
+D1 % ReScope-W (log-only start, n = 10, 3 seeds)                                                      2.63                              2.63    yes
+Rel exact % ReScope-W                                                                                92.00                             92.00    yes
+Rel exact % deployed                                                                                 88.00                             88.00    yes
+best_lowest_d1: linear repair                                                                     RB_UNION                          RB_UNION    yes
+best_rel_within_2: linear repair                                                                    COMP_B                            COMP_B    yes
+best_lowest_d1: D1 difference [95 %] (p)                                  -50.11 [-54.83, -45.36] (0.0005)  -50.11 [-54.82, -45.32] (0.0005)    yes
+best_rel_within_2: D1 difference [95 %] (p)                               -60.20 [-64.61, -55.84] (0.0005)  -60.20 [-64.81, -55.55] (0.0005)    yes
+literal rule (D1 <= 10 and |Rel - Rel deployed| <= 2): helps on this log                             False                             False    yes
+one-sided reading (Rel >= Rel deployed - 2) met                                                       True                              True    yes
+    best linear repair at n = 10 by lowest D1: the experiment's six methods -> RB_UNION; the four of PROTOCOL section 2 -> RB_UNION; every P12 method with 3 seeds -> RB_UNION
+    candidates (D1 %, Rel %): RB_UNION 52.7, 59.7; RB_TOT 56.6, 63.7; COMP_B 62.8, 88.0; COMP_S 62.8, 88.0; COMP_BP 63.8, 88.0; COMP_SP 63.8, 88.0; COMP_B_ALLPOS 66.1, 89.0; REEDIT_B 66.1, 87.7; REEDIT_S 66.1, 87.7
+    ReScope-W D1 per seed [2.35, 2.77, 2.77]; the seed-0 cell recomputed by me on the GPU: D1 2.35, Rel 92.0 (deployed Rel 88.0)
+
+(4) sanity run e0 (deployed; default method, draw 0) against MY numbers: 11 numbers, largest absolute difference 0.0000 points
+cell                    quantity     e0   mine
+--------  ----------------------  -----  -----
+deployed     D1 heldout_disjoint  62.26  62.26
+deployed       D1 heldout_strict  66.75  66.75
+deployed                     Rel  88.00  88.00
+deployed                   T-Gen  29.00  29.00
+deployed                   I-Gen  66.00  66.00
+c_n200       D1 heldout_disjoint   5.33   5.33
+c_n200         D1 heldout_strict   4.75   4.75
+c_n200                       Rel  98.00  98.00
+c_n200                     T-Gen  47.00  47.00
+c_n200                     I-Gen  95.00  95.00
+c_n200    fired heldout_disjoint   5.33   5.33
+
+(5) counts: mine {'n_probe_rows': 1000, 'n_probe_valid': 988, 'n_heldout_valid': 494, 'n_heldout_disjoint': 469, 'n_heldout_strict': 379, 'n_repair_valid': 494}; complaints 'ALL' 305; in the experiment's records: heldout_disjoint n [469.0], heldout_strict n [379.0], edits per metric [100.0]; 21079 records
+
+############################################################################################################################################
+RUNNING EXAMPLE recomputed from scratch (Qwen development log): 20 of 20 values agree; the two copies of the experiment's file are equal: True
+key                                                                experiment                                             mine  agree
+----------------------------  -----------------------------------------------  -----------------------------------------------  -----
+complaint sid                                                 probe:image:486                                  probe:image:486    yes
+stream position (seed 0)                                                   89                                               89    yes
+complaint.query               What town in New York is depicted in the image?  What town in New York is depicted in the image?    yes
+complaint.pre_answer                      The image depicts Ithaca, New York.              The image depicts Ithaca, New York.    yes
+complaint.deployed_answer          The image depicts Ithaca Falls, located in       The image depicts Ithaca Falls, located in    yes
+complaint.max_coordinate                                   0.5833808636027424                               0.5833808636027424    yes
+edit index                                                                 21                                               21    yes
+edit.target                                                    Richard Schiff                                   Richard Schiff    yes
+edit.question                        Who is the actor featured in this image?         Who is the actor featured in this image?    yes
+rollback.n_deleted                                                          7                                                7    yes
+rollback removal set                             [23, 34, 46, 56, 63, 93, 94]                     [23, 34, 46, 56, 63, 93, 94]    yes
+rollback.edits_broken                                                       1                                                1    yes
+compensation.heldout_changed                                               86                                               86    yes
+heldout.n                                                                 465                                              465    yes
+rescope.own_requests_firing                                               100                                              100    yes
+whynot edit                                                                 2                                                2    yes
+whynot.query                            Which film does this scene belong to?            Which film does this scene belong to?    yes
+whynot.answer                           This scene is from the film "Bernie."            This scene is from the film "Bernie."    yes
+whynot.coordinate                                         0.12600079675131734                               0.1260007967513173    yes
+whynot.threshold                                           0.2673883577708882                              0.26738835777088926    yes
+    details (mine): rollback {'R': [63, 94, 34, 93, 56, 23, 46], 'resolved_internal': True, 'whole_batches_in_R': [], 'my_weight_equals_harness_rollback_weight': True, 'max_abs_diff_to_harness_weight': 0.0, 'n_deleted': 7, 'edits_broken': 1, 'n_kept': 93, 'complaint_reproduced_after_rollback': True, 'complaint_D1_deployed': True, 'rel_exact_deployed': 78, 'rel_exact_after': 74}
+    rescope {'own_requests_firing': 100, 'own_requests_firing_gate_level': 100, 'refused': 0, 'n_raised': 100, 'rel_exact_after': 81, 'complaint_fires_after_repair': False, 'complaint_reproduced_after_repair': True}; compensation {'heldout_changed': 86, 'rank': 10, 'complaint_reproduced': True}; edit chosen by: largest coordinate over all positions (default method releases nothing)
+
+############################################################################################################################################
+INTERNAL CONSISTENCY: the experiment's render.py re-run on its own cells into verify/out/rerender
+    {"ran": true, "results_json_n_records": [42146, 42146], "results_json_equal": true, "paper_numbers_equal": true, "paper_numbers_n": 248, "paper_numbers_differing": [], "table_lines": [457, 457], "table_lines_differing_after_header": 0, "h1_json_equal": true, "linear_rows.json_equal": true, "rescope_w_rows.json_equal": true, "paper_numbers_all_documented": true, "paper_numbers_not_found_in_results_or_h1": []}

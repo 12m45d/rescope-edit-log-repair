@@ -1,0 +1,40 @@
+{
+ "log": "TB-L100-ae-l2_3",
+ "cross_checks": {
+  "split_equals_harness": true,
+  "stream100_equals_harness_sampler": true,
+  "stream_equals_experiment_setup": true,
+  "records_equal_harness_rows": true,
+  "record_fields_match_probes": true,
+  "edit_stream_matches_items": true,
+  "n_heldout_valid": 494,
+  "n_repair_valid": 494,
+  "n_stream": 305,
+  "stream_all_repair_D1_valid": true,
+  "heldout_uids_disjoint_from_repair_uids": true,
+  "W0_equals_checkpoint_file": [
+   "language_model.model.layers.16.mlp.down_proj.weight",
+   true
+  ],
+  "WE_differs_from_W0": 45081496,
+  "fro_log": 266.48021375292666
+ },
+ "harness_checks": {
+  "probe_uids_match_records": true,
+  "collapsed_working_point": false,
+  "WE_float_minus_W0_equals_stored_composite": true,
+  "C_equals_stored_composite": true,
+  "factor_uids_match_stream": true,
+  "rollback_empty_equals_WE": true
+ },
+ "draw": [
+  [
+   "COMP_B",
+   10
+  ],
+  [
+   "REEDIT_B",
+   1
+  ]
+ ]
+}

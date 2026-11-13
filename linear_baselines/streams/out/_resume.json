@@ -1,0 +1,321 @@
+{
+ "start_utc": "2026-11-10 17:09",
+ "chains_launched_utc": "2026-11-10 17:17:34",
+ "deadline_utc": "2026-11-10 21:50 (no pass started later; hard stop of the task at 22:09)",
+ "notes": [
+  "Resume of 2026-11-10 17:09 UTC (the first run wrote its last record at 12:10 UTC; its later starts left the cards to other agents' jobs without producing a record). Both cards were idle at the start; `code/chain_resume.sh` was launched at 17:17:34 UTC: Qwen on GPU 0, LLaVA on GPU 1, one process of this experiment per card, every start behind `code/gpu_wait.sh` (needs the job's footprint + 1024 MiB free, defers to other agents' queued jobs), every worker with the watchdog of the first run.",
+  "Unchanged: the harness, every method option, the pools, the streams, the evaluation, the memory caps (torch cap 10.25 GiB for the Qwen stream / head-to-head workers and 9.6 GiB for its D2 worker; 15.3 / 15.0 GiB for LLaVA). Changed: at most 4 CPU (BLAS) threads per process (`P12_THREADS`; the first run used 8), which can move fp64 solves at round-off level; wall-clock numbers of the resume records come from cards without another compute process unless stated in the per-log line below.",
+  "Order: (1) seed 0 completions (missing n values; corrected REEDIT runs on Qwen), (2) seeds 1 and 2 for n <= 20, both in one worker per log (`run_streams.py --phase protocol`); (3) D2 decodes (core set first, then REEDIT-S, COMP-B-ALLPOS n = 10 and the sequential COMP variants); (4) text head-to-head; (5) the module-level diagnostics of Qwen follow from the first D2 start (held-out answer keys) on the CPU. The exploratory configurations outside the protocol (COMP-B-RESTORE, REEDIT-SC) were not part of the resume.",
+  "Deviations of the resume from its instructions, both mine. (a) The chains were launched at 17:17:34 with the head-to-head ahead of the non-core D2 decodes; corrected at 19:38, before any head-to-head pass had started (the two chain shells of this experiment were stopped, their running workers were left untouched, `code/then_chain.sh` continued with the order above). (b) At 18:14 a test copy of `code/gpuq.py` was written to /tmp and run there, outside this experiment's directory; it was deleted by the same command and nothing of it is left.",
+  "Yielding to other agents during the resume (see the incident list below for the one case with a possible effect on another job): 17:43:58 LLaVA stream worker left GPU 1 (card nearly full next to a job of 02_research/code/rescope); 18:17:55 LLaVA stream worker left GPU 1 (queued job of the same package); 18:31:52 Qwen stream worker taken off GPU 0 (`code/ext_watchdog.py`: SIGTERM to that worker of this experiment only; queued job of the same package); 19:50:21 Qwen D2 worker left GPU 0 (queued job of 10_final/cache); 20:04:28 LLaVA stream worker taken off GPU 1 (`code/ext_watchdog.py`; queued job of 10_final/cache). Interrupted configurations were redone on the next start; between these times the launcher waited for the cards (LLaVA had no start between 18:18 and 19:16 and none after 20:04 while GPU 1 was held by other agents' jobs).",
+  "Stopped at 21:54:42 UTC (five-hour limit of the resume: 22:09) with `code/stop_all.sh`: the processes of this experiment only; the Qwen head-to-head worker was in its 22nd complaint, which is not recorded. From 20:04 on GPU 1 was held by other agents' jobs, so LLaVA had no further start: its remaining seed-2 configurations, its D2 decodes and its head-to-head were not run.",
+  "Completion run of 2026-11-11 (task start 03:36 UTC; driver `code/gq_finish.sh`, launched 03:49:40 UTC): the LLaVA cells that the resume above left open (14 seed-2 configurations, every D2 decode, the text head-to-head), then the Qwen head-to-head complaints 22 to 30, in this order, one job of this experiment at a time. Every GPU start went through the shared queue `02_research/tools/gpuq/gq` (`gq run --prio -3`, `--mem 17000` for LLaVA, `--mem 10500` for Qwen) around the same python entry points as the resume (`run_streams.py --phase protocol`, `run_d2.py --set all`, `run_text_h2h.py`); `code/gpu_wait.sh` was not used. Unchanged: the harness, every method option, the pools, the streams, the evaluation, the memory caps (torch cap 15.3 GiB for the LLaVA stream and head-to-head workers, 15.0 GiB for its D2 worker, 10.25 GiB for the Qwen head-to-head worker), at most 4 CPU (BLAS) threads per process. After each unit `code/finalize.sh` (CPU) rebuilt results.json and results.md. The record counts and times of the two per-log lines at the end of this list include the records of this run.",
+  "Completion run of 2026-11-11, queue jobs (read from the queue's event log `tools/gpuq/state/events.log`): `p12_L_streams` (--mem 17000, --prio -3): queued 03:49:42, started 03:49:52 on card 1 after 10 s in the queue, exit code 0 at 04:05:08 after 916 s; `p12_L_d2` (--mem 17000, --prio -3): queued 04:05:41, started 04:06:37 on card 1 after 56 s in the queue, exit code 0 at 04:45:19 after 2323 s; `p12_L_h2h` (--mem 17000, --prio -3): queued 04:45:20, started 04:46:46 on card 1 after 86 s in the queue, exit code 0 at 06:26:23 after 5977 s; `p12_Q_h2h` (--mem 10500, --prio -3): queued 06:26:24, started 06:26:34 on card 1 after 10 s in the queue, exit code 75 at 06:37:48 after 674 s; `p12_Q_h2h` (--mem 10500, --prio -3): queued 06:38:50, started 06:50:36 on card 0 after 706 s in the queue, exit code 0 at 07:11:45 after 1269 s.",
+  "Completion run of 2026-11-11, written (counted from the raw records): LLaVA 14 stream records (13 evaluated, 1 copy of an identical computation; torch CPU threads 4; peak GPU memory allocated 15.16 GiB; other compute processes on the card: max 1), 27 D2 records (of 27 on disk), 30 head-to-head complaints (151 rows; peak GPU memory allocated 14.71 GiB); Qwen 9 head-to-head complaints (number 22 to 30 in draw order; 45 rows; peak GPU memory allocated 8.70 GiB), 30 of 30 done in all. Failed / out-of-memory markers on disk: none.",
+  "Completion run of 2026-11-11, other experiments in the queue (from the same event log; not an incident: the queue serves by priority, then ticket time, and never interrupts a running job): jobs of other experiments that were waiting with a LOWER priority than mine at the moment a job of mine was started -- `p12_L_h2h` (04:46:46): `a3_relb1_QO` (priority -5, --mem 10500, had waited 16 min, started 1 min later), `a3_harness_blip2` (priority -5, --mem 10500, had waited 11 min, started 2 min later), `a3_port_QO` (priority -5, --mem 10500, had waited 4 min, started 1 min later), `fx_a_Q` (priority -10, --mem 10500, had waited 0 min, did not start afterwards), `fx_a_L` (priority -10, --mem 17000, had waited 0 min, did not start afterwards); `p12_Q_h2h` (06:26:34): `fx_t_Q` (priority -10, --mem 10500, had waited 28 min, started 4 min later), `fx_t_L` (priority -10, --mem 17000, had waited 28 min, started 5 min later); `p12_Q_h2h` (06:50:36): `fx_t_L` (priority -10, --mem 17000, had waited 3 min, did not start afterwards), `fx_t_Q` (priority -10, --mem 10500, had waited 3 min, started 0 min later). Whether such a job would have fitted on a card at that moment without mine is not recorded in the event log.",
+  "Completion run of 2026-11-11, workers that left the card by themselves (the experiment's own card checks of `code/p12_common.py` -- `load_log`, `yield_if_blocking`, `start_watchdog` -- written before the queue existed and left unchanged here; the worker exits with code 75, the complaint or configuration in progress is not recorded and is redone by the next pass, which the driver submits 60 s later): `p12_Q_h2h` 06:37:47: [watchdog] leaving the card now (4260 MiB free on the card, the running neighbours may still take 5200 MiB within their declared caps); the current config is redone later. These checks count 2600 MiB of possible growth for every neighbour on the card that declares no cap on its command line; they do not read the queue's reservations.",
+  "Completion run of 2026-11-11, memory against the reservation (`gq status`, column ACTUAL, sampled every 30 s by `code/gq_poll.sh` while it was polling; `logs/gq_actual.log`): `p12_L_h2h` at most 16222 MiB of the 17000 MiB reserved (samples 05:35:29 to 06:26:24 UTC); `p12_Q_h2h` at most 9768 MiB of the 10500 MiB reserved (samples 06:28:40 to 07:11:51 UTC). The stream and D2 jobs ran before the sampling was added.",
+  "Completion run of 2026-11-11, memory cap against the queue's rule (README of the queue: a job caps its torch memory at its --mem minus 600 MiB): `p12_Q_h2h` ran with the torch cap of the existing scripts, 10.25 GiB = 10496 MiB, which is above 10500 - 600 = 9900 MiB. Both figures were given for this run (the --mem of the queue and the caps of the existing scripts) and were kept. The reservation was not exceeded in any sample of the note above, but the cap would not have enforced it. The other jobs' caps are inside the rule (`p12_L_d2` 15.0 GiB for --mem 17000, `p12_L_h2h` 15.3 GiB for --mem 17000, `p12_L_streams` 15.3 GiB for --mem 17000).",
+  "Completion run of 2026-11-11, driver change (mine, no effect on a result): the first version of `code/gq_finish.sh` ran `finalize.sh` between two units, so that the ticket of the D2 job was written 33 s after the stream job had ended (04:05:08 -> 04:05:41); the queue started 3 job(s) of other experiments in that gap (priority -5; mine: -3). At 04:23:29 UTC the driver was replaced, without touching the running D2 job, by a version that queues the next unit at once and runs `finalize.sh` in the background (the first driver was told by its stop file to submit nothing more and ended after its `finalize.sh`; the second waited for the running job to end before its first unit). Time limits of the first version: no job submitted after 07:14:00, a running job stopped at 07:24:00 UTC; of the second: 07:20:00 and 07:27:00 UTC (task limit: four hours from the task start).",
+  "Completion run of 2026-11-11, end: the driver finished at 07:12:15 UTC with every unit done; what is still open is listed under 'Not finished' in section 1."
+ ],
+ "stopped_utc": "2026-11-10 21:54:42",
+ "completion_run": {
+  "task_start_utc": "2026-11-11 03:36",
+  "driver": "code/gq_finish.sh",
+  "queue": "02_research/tools/gpuq/gq",
+  "prio": -3,
+  "mem_mib": {
+   "llava": 17000,
+   "qwen25vl": 10500
+  },
+  "driver_limits_utc": [
+   [
+    "07:14:00",
+    "07:24:00"
+   ],
+   [
+    "07:20:00",
+    "07:27:00"
+   ]
+  ],
+  "queue_jobs": [
+   {
+    "name": "p12_L_streams",
+    "mem_mib": 17000,
+    "prio": -3,
+    "queued": "2026-11-11 03:49:42",
+    "starts": [
+     {
+      "time": "2026-11-11 03:49:52",
+      "t": 1794368992.35,
+      "card": 1,
+      "waited_s": 10
+     }
+    ],
+    "requeued": 0,
+    "exit_code": 0,
+    "ran_s": 915.9,
+    "ended": "2026-11-11 04:05:08",
+    "cancelled": null,
+    "t_queued": 1794368982.22,
+    "t_ended": 1794369908.24
+   },
+   {
+    "name": "p12_L_d2",
+    "mem_mib": 17000,
+    "prio": -3,
+    "queued": "2026-11-11 04:05:41",
+    "starts": [
+     {
+      "time": "2026-11-11 04:06:37",
+      "t": 1794369997.22,
+      "card": 1,
+      "waited_s": 56
+     }
+    ],
+    "requeued": 0,
+    "exit_code": 0,
+    "ran_s": 2322.7,
+    "ended": "2026-11-11 04:45:19",
+    "cancelled": null,
+    "t_queued": 1794369941.71,
+    "t_ended": 1794372319.91
+   },
+   {
+    "name": "p12_L_h2h",
+    "mem_mib": 17000,
+    "prio": -3,
+    "queued": "2026-11-11 04:45:20",
+    "starts": [
+     {
+      "time": "2026-11-11 04:46:46",
+      "t": 1794372406.61,
+      "card": 1,
+      "waited_s": 86
+     }
+    ],
+    "requeued": 0,
+    "exit_code": 0,
+    "ran_s": 5977.1,
+    "ended": "2026-11-11 06:26:23",
+    "cancelled": null,
+    "t_queued": 1794372320.84,
+    "t_ended": 1794378383.72
+   },
+   {
+    "name": "p12_Q_h2h",
+    "mem_mib": 10500,
+    "prio": -3,
+    "queued": "2026-11-11 06:26:24",
+    "starts": [
+     {
+      "time": "2026-11-11 06:26:34",
+      "t": 1794378394.59,
+      "card": 1,
+      "waited_s": 10
+     }
+    ],
+    "requeued": 0,
+    "exit_code": 75,
+    "ran_s": 674.3,
+    "ended": "2026-11-11 06:37:48",
+    "cancelled": null,
+    "t_queued": 1794378384.47,
+    "t_ended": 1794379068.94
+   },
+   {
+    "name": "p12_Q_h2h",
+    "mem_mib": 10500,
+    "prio": -3,
+    "queued": "2026-11-11 06:38:50",
+    "starts": [
+     {
+      "time": "2026-11-11 06:50:36",
+      "t": 1794379836.7,
+      "card": 0,
+      "waited_s": 706
+     }
+    ],
+    "requeued": 0,
+    "exit_code": 0,
+    "ran_s": 1268.9,
+    "ended": "2026-11-11 07:11:45",
+    "cancelled": null,
+    "t_queued": 1794379130.51,
+    "t_ended": 1794381105.55
+   }
+  ],
+  "written": {
+   "llava_stream_records": 14,
+   "llava_stream_records_alias": 1,
+   "llava_stream_configs": [
+    "COMP_BP__n20__s2",
+    "COMP_B_ALLPOS__n10__s2",
+    "COMP_B__n20__s2",
+    "COMP_SP__n10__s2",
+    "COMP_SP__n20__s2",
+    "COMP_S__n20__s2",
+    "RB_TOT__n10__s2",
+    "RB_TOT__n20__s2",
+    "RB_UNION__n10__s2",
+    "RB_UNION__n20__s2",
+    "REEDIT_B__n10__s2",
+    "REEDIT_B__n20__s2",
+    "REEDIT_S__n10__s2",
+    "REEDIT_S__n20__s2"
+   ],
+   "llava_stream_gpu_procs_other_max": 1,
+   "llava_stream_peak_gib_max": 15.16124677658081,
+   "llava_stream_torch_threads": [
+    4
+   ],
+   "llava_d2_records": 27,
+   "llava_d2_records_total": 27,
+   "failed_or_oom_markers": [],
+   "llava_h2h_rows_new": 151,
+   "llava_h2h_complaints_new": 30,
+   "llava_h2h_complaints_new_range": [
+    1,
+    30
+   ],
+   "llava_h2h_complaints_total": 30,
+   "llava_h2h_peak_gib_max": 14.709043502807617,
+   "qwen_h2h_rows_new": 45,
+   "qwen_h2h_complaints_new": 9,
+   "qwen_h2h_complaints_new_range": [
+    22,
+    30
+   ],
+   "qwen_h2h_complaints_total": 30,
+   "qwen_h2h_peak_gib_max": 8.700403213500977
+  },
+  "others_waiting_lower_priority": [
+   {
+    "mine": "p12_L_h2h",
+    "at": "2026-11-11 04:46:46",
+    "name": "a3_relb1_QO",
+    "prio": -5,
+    "mem_mib": 10500,
+    "waited_min": 16.1,
+    "started_after_min": 1.0
+   },
+   {
+    "mine": "p12_L_h2h",
+    "at": "2026-11-11 04:46:46",
+    "name": "a3_harness_blip2",
+    "prio": -5,
+    "mem_mib": 10500,
+    "waited_min": 10.6,
+    "started_after_min": 1.5
+   },
+   {
+    "mine": "p12_L_h2h",
+    "at": "2026-11-11 04:46:46",
+    "name": "a3_port_QO",
+    "prio": -5,
+    "mem_mib": 10500,
+    "waited_min": 3.6,
+    "started_after_min": 1.4
+   },
+   {
+    "mine": "p12_L_h2h",
+    "at": "2026-11-11 04:46:46",
+    "name": "fx_a_Q",
+    "prio": -10,
+    "mem_mib": 10500,
+    "waited_min": 0.1,
+    "started_after_min": null
+   },
+   {
+    "mine": "p12_L_h2h",
+    "at": "2026-11-11 04:46:46",
+    "name": "fx_a_L",
+    "prio": -10,
+    "mem_mib": 17000,
+    "waited_min": 0.1,
+    "started_after_min": null
+   },
+   {
+    "mine": "p12_Q_h2h",
+    "at": "2026-11-11 06:26:34",
+    "name": "fx_t_Q",
+    "prio": -10,
+    "mem_mib": 10500,
+    "waited_min": 28.2,
+    "started_after_min": 3.7
+   },
+   {
+    "mine": "p12_Q_h2h",
+    "at": "2026-11-11 06:26:34",
+    "name": "fx_t_L",
+    "prio": -10,
+    "mem_mib": 17000,
+    "waited_min": 28.2,
+    "started_after_min": 5.0
+   },
+   {
+    "mine": "p12_Q_h2h",
+    "at": "2026-11-11 06:50:36",
+    "name": "fx_t_L",
+    "prio": -10,
+    "mem_mib": 17000,
+    "waited_min": 2.7,
+    "started_after_min": null
+   },
+   {
+    "mine": "p12_Q_h2h",
+    "at": "2026-11-11 06:50:36",
+    "name": "fx_t_Q",
+    "prio": -10,
+    "mem_mib": 10500,
+    "waited_min": 2.7,
+    "started_after_min": 0.2
+   }
+  ],
+  "left_card": [
+   {
+    "job": "p12_Q_h2h",
+    "kind": "left",
+    "time": "06:37:47",
+    "text": "[watchdog] leaving the card now (4260 MiB free on the card, the running neighbours may still take 5200 MiB within their declared caps); the current config is redone later"
+   }
+  ],
+  "actual_memory_samples": {
+   "p12_L_h2h": {
+    "max_mib": 16222,
+    "reserved_mib": 17000,
+    "first": "05:35:29",
+    "last": "06:26:24",
+    "over": false
+   },
+   "p12_Q_h2h": {
+    "max_mib": 9768,
+    "reserved_mib": 10500,
+    "first": "06:28:40",
+    "last": "07:11:51",
+    "over": false
+   }
+  },
+  "declared_caps": {
+   "p12_L_d2": {
+    "mem_mib": 17000,
+    "cap_gib": 15.0
+   },
+   "p12_L_h2h": {
+    "mem_mib": 17000,
+    "cap_gib": 15.3
+   },
+   "p12_L_streams": {
+    "mem_mib": 17000,
+    "cap_gib": 15.3
+   },
+   "p12_Q_h2h": {
+    "mem_mib": 10500,
+    "cap_gib": 10.25
+   }
+  },
+  "driver_done_line": "[finish 07:12:15] DONE",
+  "frozen": true
+ }
+}

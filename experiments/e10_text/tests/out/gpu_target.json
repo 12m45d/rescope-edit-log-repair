@@ -1,0 +1,44 @@
+{
+ "name": "g_target",
+ "pass": true,
+ "what": "identity (c): at its solver key every edit attains its module-output target with rebased values (served module output vs logged target)",
+ "detail": {
+  "rebased": {
+   "n": 100,
+   "max_rel_err": 6.494869616042969e-07,
+   "median_rel_err": 4.0918331110007515e-07,
+   "n_within_1e-5": 100,
+   "own_edit_released_at_solver_position": 100,
+   "other_edit_released_there": 0
+  },
+  "logged_values": {
+   "n": 100,
+   "max_rel_err": 0.6155093821668566,
+   "median_rel_err": 0.16040653101092298,
+   "n_within_1e-5": 1,
+   "own_edit_released_at_solver_position": 100,
+   "other_edit_released_there": 0
+  },
+  "deployed": {
+   "n": 100,
+   "max_rel_err": 0.8244414844455515,
+   "median_rel_err": 0.2443050296212769,
+   "n_within_1e-5": 1,
+   "own_edit_released_at_solver_position": null,
+   "other_edit_released_there": null
+  }
+ },
+ "error": null,
+ "seconds": 0.8663783073425293,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "peak_alloc_MiB": 6292.99072265625,
+ "peak_reserved_MiB": 10798.0,
+ "written": "2026-11-11 12:10:19 UTC"
+}

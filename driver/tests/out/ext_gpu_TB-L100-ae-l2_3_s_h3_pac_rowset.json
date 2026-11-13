@@ -1,0 +1,108 @@
+{
+ "h3": {
+  "rescope": {
+   "delta": 0.4007670958880199,
+   "n_edits": 12,
+   "n_test_rows": 72,
+   "edit_flags_differ_from_gate_level": 0,
+   "hard_negative_flags_differ_from_gate_level": 0,
+   "memo_path": true,
+   "exact_on_sample": 37.5,
+   "n_fired_hn": 5,
+   "src": [
+    "memo",
+    "pre"
+   ]
+  },
+  "cosine": {
+   "delta": 0.10035455794459831,
+   "n_edits": 12,
+   "n_test_rows": 72,
+   "edit_flags_differ_from_gate_level": 0,
+   "hard_negative_flags_differ_from_gate_level": 0,
+   "memo_path": true,
+   "exact_on_sample": 20.833333333333336,
+   "n_fired_hn": 9,
+   "src": [
+    "memo",
+    "pre"
+   ]
+  }
+ },
+ "rescope_pac": {
+  "n_rows": 44,
+  "flags_differ_from_gate_level": 0,
+  "rank": 99,
+  "n_edits_capped": 0
+ },
+ "rowset": {
+  "calibrated_rows": [
+   "rescope",
+   "rescope_shared",
+   "rescope_null",
+   "cosine",
+   "cosine_shared",
+   "ball",
+   "router",
+   "zscore"
+  ],
+  "same_calibration_rows": true,
+  "n_rows": 200,
+  "rules": {
+   "rescope": "calibrate_two_block",
+   "rescope_shared": "calibrate_shared",
+   "rescope_null": "calibrate_two_block",
+   "cosine": "calibrate_two_block",
+   "cosine_shared": "calibrate_shared",
+   "ball": "calibrate_two_block",
+   "router": "calibrate_dense",
+   "zscore": "calibrate_dense"
+  },
+  "digests_distinct": true,
+  "all_rows_built": true
+ },
+ "pools": {
+  "BEN-T": {
+   "n": 1025,
+   "fired": 4.097560975609756,
+   "equals_library": true
+  },
+  "MME-T": {
+   "n": 1186,
+   "fired": 0.8431703204047217,
+   "equals_library": true
+  },
+  "zscore_refused": true,
+  "router_calibrated_on_MME-C": {
+   "n": 200,
+   "thr_differs": true
+  }
+ },
+ "ok": true,
+ "hook_mismatch": 0,
+ "memo_conflicts": 0,
+ "test": "s",
+ "log": "TB-L100-ae-l2_3",
+ "seconds": 3.18082332611084,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 17:47:36",
+ "stats": {
+  "rows": 1348,
+  "pre": 309,
+  "memo": 345,
+  "run": 0,
+  "lib": 12,
+  "missing": 0,
+  "forwards": 682,
+  "decodes": 0,
+  "hook_mismatch": 0,
+  "near": 7,
+  "near_changed_on_device": 0,
+  "seconds_model": 69.75244903564453,
+  "hashed": 682
+ }
+}

@@ -1,0 +1,177 @@
+E10 VERIFICATION: public ROME logs of GPT-2 XL  --  rendered 2026-11-11 16:35:39 UTC by code/v8_verdicts.py from JSON under verify/out (no number is typed)
+verified: [redacted: local path]/02_research/experiments/10_final/e10_text/run
+checks: 12 pass, 2 fail
+
+ 1. [PASS] behaviour_T100
+      4 rows of the table rebuilt from the log with the adapter at calibration draw 0 (deployed, preedit, where_twoblock, rescope); sample: 100 logged records (300
+      request / paraphrase and 1000 neighbourhood prompts) and 300 HELD-OUT records (900 prompts); every prompt through the model (no sparse shortcut, no store).  Row by
+      row against the experiment's per-row files: 0 differences in 59200 compared values (D1 tf / decode, exact match, firing, own edit released, first token); largest
+      difference of an aggregate on the same rows 0 points; thresholds of the rebuilt gates identical to the experiment's (sha1): True; prompts on which the hook released
+      nothing but a token changed: 0.
+
+ 2. [PASS] behaviour_T500_guards_on_off_split_173
+      6 rows of the table rebuilt from the log with the adapter at calibration draw 0 (deployed, preedit, where_twoblock, rescope, where_twoblock@goff, rescope@goff);
+      sample: 300 logged records (900 request / paraphrase and 3000 neighbourhood prompts) and 300 HELD-OUT records (900 prompts); every prompt through the model (no
+      sparse shortcut, no store).  Row by row against the experiment's per-row files: 0 differences in 219000 compared values (D1 tf / decode, exact match, firing, own
+      edit released, first token); largest difference of an aggregate on the same rows 0 points; thresholds of the rebuilt gates identical to the experiment's (sha1):
+      True; prompts on which the hook released nothing but a token changed: 0.
+
+ 3. [PASS] public_scores_deployed_and_repair
+      the public compute_rewrite_quality_counterfact on the served model and the public summarize.py, run by the verifier (T100 deployed: ES/PS/NS 100.0/98.5/66.8 on 100
+      records; T100 where_twoblock: ES/PS/NS 100.0/95.5/76.3 on 100 records; T500 deployed: ES/PS/NS 56.67/49.5/54.23 on 300 records; T500 where_twoblock: ES/PS/NS
+      55.67/45.5/55.87 on 300 records; T500 where_twoblock@goff: ES/PS/NS 19.33/23.17/80.0 on 300 records); 1100 case files compared with the experiment's: largest
+      difference of a probability 0.0, comparisons flipped 0; public summariser on the verifier's files = the experiment's files on the same records: True (T100: all 100
+      records of the log; T500: 300 random records, guards on and off).
+
+ 4. [PASS] certificate_200_certified_prompts_per_row
+      800 certified HELD-OUT prompts (200 random per row with certified prompts; repair and migration at draw 0; T500 guards off) decoded under the row and under the pre-
+      edit model in the verifier's batches: 800 bit-identical logits, 0 violations; number of certified prompts per row equal to the experiment's: True; rows that certify
+      nothing (guards on, T500): {'T100': [], 'T500': ['where_twoblock', 'rescope']}; the experiment's totals recomputed from its per-row counts: T100 34398, T500 50521,
+      violations 0: True.
+
+ 5. [PASS] equal_evidence_cell_T100_n10_seed0
+      complaints: the verifier's pass of the deployed log over the 3000 REPAIR-pool prompts gives 2788 D1 complaints (experiment 2788); the 10 complaints of seed 0 are
+      the experiment's: True.  rb_suffix: longest resolving prefix 2 (experiment 2), 1000 forward passes (1000), 98 edits lost (98), request exact 2.0 (2.0), D1 HELD-OUT
+      on the same 900 prompts 11.00 (11.00); rows differing 0 of 1210.  Least repair (sacrificing / protecting): thresholds raised 11 / 11 (experiment 11 / 11), refused 0
+      / 0, request exact 96.0 (96.0), D1 HELD-OUT on the same prompts 17.56 (17.56; all 3000 prompts of seed 0: 17.90; table, mean of 3 seeds: 17.83); rows differing 1 of
+      1210 (repair:10329:paraphrase:0 (reported complaint)): this reported complaint, whose coordinate lies 6.4e-08 below its repaired threshold on the cached keys still
+      releases an edit as served, in the teacher-forced pass of the verifier's batches (complaints still D1: tf 10 %, decode 0 %) and in the decode of the experiment's
+      batches (tf 0 %, decode 10 %).
+
+ 6. [PASS] relational_workload_R22_T100
+      verifier's own VIEW pool (5000 records, 107 excluded for a shared subject) equals the experiment's: True; three states as sqlite tables (R0 5100, deployed 5100,
+      intended 5100, restore_base 2600); deployed differs from the pre-edit state on 743 of 2500 unedited test tuples and from the intended state on 3 of 100 edited
+      tuples; 32 relations x (view, aggregate) on the test half.  Verifier's SQL (code/v3_r22.sql), reference preservation / retention / queries exact / TV: deployed
+      70.28 / 97.0 / 0.00 / 0.2368; restore-base 100.00 / 0.0 / 3.12 / 0.0372; least threshold repair, m = 3, seed 0 (both forms) 96.68 / 96.0 / 28.12 / 0.0385, 34
+      thresholds raised, 0 refused, 0 edits lost; charged passes: diagnosis 608 (2 x 304 tuples of the 3 complained views; 11 own requests recognised from the solver
+      keys; 88 tuple complaints), repair 0.  All equal to the experiment's rows: True; per-tuple values differing: 0 of 15400; complaints resolved as served 88 of 88.
+
+ 7. [FAIL] screening_T2000_self_separation_margins   (minor: the count of flagged edits and the precision on T2000 (and, through one pair, on T1000) depend on the last bit; recall and the T500 numbers quoted in the report do not)
+      margins recomputed from the public factors (read-out vector and solver key of every update; deviation from the library's normalised log 1.4e-14).  T2000: the
+      verifier flags 31 edits, the experiment 29; recall identical (60.0 % of the audit's 20 exploding updates, 100.0 % of the 8 first-token subjects); precision 38.7 /
+      25.8 % against the experiment's 41.4 / 27.6 %.  Cause: 12 edits in 6 pairs of requests with bitwise identical solver keys (repeated request prompts) have margin 0
+      in exact arithmetic (|margin| <= 4.4e-16); the rule 'margin <= 0' flags 6 of them in the experiment's arithmetic and 8 in the verifier's; the two flag sets differ
+      only on these edits: True.  Without ties 23 edits are flagged, with all ties 35: precision between 34.3 and 52.2 % (exploding) and between 22.9 and 34.8 % (first
+      token).  T100, T500, T1000: flag sets, precision and recall identical to the experiment's: True (T1000 contains 1 tie pair, T500 0).
+
+ 8. [PASS] discipline_only_audited_logs
+      logs named in the experiment's outputs: TX-G2XL-rome-T100, TX-G2XL-rome-T1000, TX-G2XL-rome-T2000, TX-G2XL-rome-T500, TX-G2XL-rome-dev100; verdicts of the
+      independent audit (09_testbed_scale/text_public/audit/verdicts.json): dev100 safe, T100 safe, T500 safe, T1000 safe, T2000 safe; the 11 prefix logs of the stream
+      are bit-for-bit replays of the audited T2000 log.
+
+ 9. [PASS] discipline_pools
+      57 calibrated method records (behaviour, stream): calibration prompts outside the REPAIR pool 0, other alpha or n 0 (alpha [0.05], n [200], draws [0, 1, 2]); the
+      six gates rebuilt by the verifier from draw 0 of the REPAIR pool have the experiment's thresholds; R3 statistics: the 500 prompts recomputed from the rule (REPAIR
+      prompts in none of the 20 draws; 764 available) have the sha1 of the experiment's gate files: True; equal-evidence complaints outside the REPAIR pool: 0 of 266;
+      locality rows: T100 3000 HELD-OUT (0 outside the pool) and 1000 neighbourhood, T500 3000 HELD-OUT (0 outside the pool) and 5000 neighbourhood; near-scope prompts
+      flagged and reported separately (T100 12 HELD-OUT / 5 neighbourhood, T500 53 HELD-OUT / 79 neighbourhood); R22 tuple complaints of the recomputed cell all from the
+      report half of the VIEW pool: True.
+
+10. [PASS] discipline_nothing_tuned_on_a_reported_log
+      R3 gate: argmax of the paraphrase coverage on the development log recomputed from its gate-level file = whitecos_0.1 = selected; file written 2026-11-11 13:17:37
+      UTC, first outcome of a reported log 2026-11-11 13:22:56 (store), first gate-level file of a reported log 2026-11-11 13:43:40; split 173 (fixed); behavioural
+      instances exactly the registered plan (T100 18, T500 31; extra: []); 20 job logs, each with one queue entry, 0 non-zero exit codes, 0 tracebacks; outcome store: 139
+      served methods (89 gates, 48 weights, 2 keyed stores), 0 without a method record under out/ (no method was served with other settings); constants: ALPHA, N_CAL,
+      N_DRAWS, BEHAVE_DRAWS = 0.05, 200, 20, (0, 1, 2); no other alpha in the code.  Code: the method construction (xmeth.py, 13:07:26) and the behavioural driver
+      (run_behave.py, 13:12:29) were last modified before the first outcome (13:22:56); files modified after a job that imports them had started: ['run_gate.py',
+      'xcommon.py'] (jobs ['behave_T100', 'behave_T500', 'gate_T1000', 'gate_T2000', 'gate_dev', 'r22_T100']).  run_gate.py was changed between its run on the development
+      log (basis of the R3 selection) and its runs on the reported logs: the adapter's own gate-level evaluation, run by the verifier over the 20 draws, reproduces the
+      experiment's gate-level files of the development log AND of T100 for ReScope and the cosine gate (false firing, coverage, neighbourhood firing, eta, capped edits;
+      largest difference 0.0 points), so the edit did not change what the driver computes for these rows.  xcommon.py (paths, bootstrap) was changed at 13:33:20, seconds
+      before its bootstrap test file was rewritten (13:33:27); the jobs started earlier compute no interval.  No version history exists: the earlier contents cannot be
+      inspected.
+
+11. [PASS] discipline_public_scores_from_public_code
+      the experiment calls ['e10t.public._summarise', 'e10t.public.generation', 'e10t.public.generation_summary', 'e10t.public.scores'] of the adapter, which runs the
+      public probability test (through the builder's wrapper of compute_rewrite_quality_counterfact) and the public experiments/summarize.py; the experiment defines no
+      probability test of its own; the verifier's direct calls of the public function give case files identical to the experiment's (1100 records, largest difference
+      0.0); ES / PS / NS are in columns of their own in every table.
+
+12. [PASS] numbers_of_table_and_paper_numbers_reproduced_from_rows
+      30 of 30 sampled entries of paper_numbers.json (numpy default_rng([20261111, 30]); quota behaviour 8, public 4, gate 4, relational 7, equal 5, screening 1,
+      generation 1) reproduced from the per-row files by the verifier's aggregation, 30 found in table.txt; main table (section 1): 55 rows parsed, 550 of 550 cells
+      reproduced (exact match, D1, kept, changed first tokens from the row files; ES / PS / NS from the case files); 440 interval ends recomputed with the verifier's
+      crossed bootstrap (other random numbers): largest deviation 0.67 points, 0 beyond 1 point; relational tables: 54 rows of both logs rescored by the verifier's SQL
+      from the experiment's per-tuple values, 0 values differ; gate-level columns (false firing, coverage, neighbourhood firing over the 20 draws) of ReScope and of the
+      cosine gate on the development log and on T100 recomputed with the adapter's evaluation: largest difference 0.0 points; bootstrap tested on synthetic data: True.
+
+13. [FAIL] headline_statements_of_the_report   (minor: one summary sentence is too strong; the numbers behind it are in table.txt and are reproduced)
+      8 of 9 statements hold as worded.  Not as worded: 'R21 (3): no row exceeds 12 % request exact from 173 on': true for the 15 behavioural rows of T500 (largest:
+      rescope 11.93 %); NOT true for the equal-evidence rows of the same table: rb_lineage n1 24.2 %, rb_lineage n10 23.1 %, rb_lineage n100 20.8 % (rollback of the
+      lineage; experiment's own row files, table section 6); the same in the relational workload (retention of the edited tuples from 173 on, verifier's SQL on the
+      experiment's per-tuple values): rb_screen 24.8 %, rb_lineage m=1 24.0 %, rb_lineage m=3 21.7 %, rb_lineage m=10 15.1 %
+      * holds: main table (T100, T500 guards on / off, before / from 173) -- 550 cells of section 1 of table.txt reproduced from the per-row files; the rows of draw 0
+        recomputed by the verifier on the model agree row by row
+      * holds: R21 (1): with guards the calibrated ReScope rows fire on 100 % of HELD-OUT prompts on T500, T1000, T2000; the cosine family stays at 5-7 % -- per-row flags
+        of the 20 draws: ReScope and ReScope-W two-block 100 % in every draw of the three logs: True; cosine and whitecos_0.1 means between 5.05 and 6.74 %; verifier's
+        model run at draw 0 on T500: 100 % of 900 HELD-OUT prompts fire
+      * holds: R21 (2): eta >= 1 in 1 of 20 draws on T500 and 12 of 20 on T2000; behavioural draw 0 silences 499 of 500 own requests; draws 1-2 give 96-97 % request exact
+        before 173 -- T500: the 20 calibrations rebuilt by the verifier: eta >= 1 in 1 draw (draw 0: 1.289); own requests silenced with guards off in draws 0, 1, 2: [499,
+        22, 15] (over the 20 draws [499, 499, 311] are the three largest); T2000: 12 of 20 in the experiment's per-draw records (not rebuilt); migration with guards off,
+        request exact before 173, from the row files: draw 0 0.0, draw 1 96.0, draw 2 97.1 %
+      * DOES NOT HOLD AS WORDED: R21 (3): no row exceeds 12 % request exact from 173 on -- true for the 15 behavioural rows of T500 (largest: rescope 11.93 %); NOT true
+        for the equal-evidence rows of the same table: rb_lineage n1 24.2 %, rb_lineage n10 23.1 %, rb_lineage n100 20.8 % (rollback of the lineage; experiment's own row
+        files, table section 6); the same in the relational workload (retention of the edited tuples from 173 on, verifier's SQL on the experiment's per-tuple values):
+        rb_screen 24.8 %, rb_lineage m=1 24.0 %, rb_lineage m=3 21.7 %, rb_lineage m=10 15.1 %
+      * holds: equal evidence, n = 10 (table of the report) -- the cell recomputed on the model (T100, seed 0) agrees; 5 sampled equal-evidence numbers reproduced from
+        the row files
+      * holds: R22 rows of the report (T100 and T500) -- 54 rows rescored by the verifier's SQL, 0 values differ; T500: queries exact at most 0.0 % in every row;
+        diagnosis passes at m = 10: T100 1736, T500 1680; tuple complaints at m = 10 on T500: 686
+      * holds: split: the deployed model breaks at prefix 174 (ES of the first 100 requests 99 -> 51, exact 94 -> 1) -- row and case files of the stream: prefix 173 ES
+        99.0, exact 94.0; prefix 174 ES 51.0, exact 1.0
+      * holds: certificate: 34,398 (T100) and 50,521 (T500) certified cases bit-identical, 0 violations; guards-on ReScope rows certify nothing on T500 -- totals
+        recomputed from the per-row counts; 800 cases re-checked by the verifier with 0 violations; guards-on rows with 0 certified prompts: ['rescope__d0',
+        'rescope__d1', 'rescope__d2', 'where_twoblock__d0', 'where_twoblock__d1', 'where_twoblock__d2']
+      * holds: anomalies: frozen copy of the three driver files; screening on T500 (recall 62.5 / 100, precision 83 / 50); entropy 431 against 579; hook / cache
+        mismatches 0 -- the frozen files have the sha1 of the reviewed originals the adapter was tested with (the verifier's shim refuses anything else); T500 screening
+        recomputed: recall 62.5 / 100.0, precision 83.3 / 50.0; n-gram entropy from the generation files: repair with guards 431.2, deployed 578.6; mismatches summed over
+        193 method records: {'hook_mismatch': 0, 'hook_mismatch_dec': 0}
+
+14. [PASS] deviations_from_the_protocol_stated
+      out/DEVIATIONS.txt lists 16 items (frozen driver copy, R3 statistics, run-time patch of the refinement, gate-level code, rows not run, guards-off log-only row, two
+      forms of the least repair, rb_suffix, comp_min, blocklist, lookup_subject, R22 choices, public-score intervals, overhead, eta diagnostic, certificate); the
+      verifier's reading of the code and of the protocol (sections 0, 2, 4, 6: E10, R1-R16, R19 f, R21, R22) found no change of a registered analysis that is missing from
+      it.  Notes that a reader of the report text alone would miss: least repair (R21 d, sacrificing form 'every reported complaint is certified'): with the library's
+      margin a repaired complaint can stay inside the decision band; at n = 10 the experiment's own rows show 22 of 30 (T100) and 19 of 30 (T500) complaints in the band,
+      4 and 3 still releasing an edit in the teacher-forced pass, 1 and 1 still D1 in the decode; stated in DEVIATIONS.txt item 7 and in the column 'resolved' (teacher-
+      forced), not in the report text | task 5: the repair and the migration were also run (draw 0, first 100 requests) on the unregistered stream prefixes 150, 173, 174,
+      200 and 300; shown in table section 8, not listed among the additions; nothing is selected from them | screening: 'exploding' is the audit's list of 20 updates with
+      norm above |W_0| (stated in the table), not the 8 updates of the audit's summary table, which coincide with the first-token subjects
+
+VERIFIER (sample, draw 0) AGAINST THE EXPERIMENT ON THE SAME ROWS  (percent; verifier / experiment)
+   log   row                       request exact   paraphrase exact      D1 HELD-OUT   D1 neighbourhood     false firing         req <173        req >=173
+   -------------------------------------------------------------------------------------------------------------------------------------------------------
+   T100  deployed                  97.00 / 97.00      75.00 / 75.00    94.22 / 94.22      90.20 / 90.20                -                -                -
+   T100  preedit                     0.00 / 0.00        0.50 / 0.50      0.00 / 0.00        0.00 / 0.00                -                -                -
+   T100  where_twoblock            96.00 / 96.00      63.00 / 63.00      2.00 / 2.00        5.30 / 5.30      2.67 / 2.67                -                -
+   T100  rescope                 100.00 / 100.00      73.50 / 73.50      2.67 / 2.67        5.90 / 5.90      2.67 / 2.67                -                -
+   T500  deployed                    2.33 / 2.33        0.67 / 0.67  100.00 / 100.00    100.00 / 100.00                -      0.93 / 0.93      3.11 / 3.11
+   T500  preedit                     0.33 / 0.33        0.50 / 0.50      0.00 / 0.00        0.00 / 0.00                -      0.00 / 0.00      0.52 / 0.52
+   T500  where_twoblock              2.33 / 2.33        0.83 / 0.83  100.00 / 100.00    100.00 / 100.00  100.00 / 100.00      0.93 / 0.93      3.11 / 3.11
+   T500  rescope                   10.67 / 10.67        1.83 / 1.83  100.00 / 100.00    100.00 / 100.00  100.00 / 100.00    14.95 / 14.95      8.29 / 8.29
+   T500  where_twoblock@goff         0.33 / 0.33        0.67 / 0.67      3.00 / 3.00        0.43 / 0.43      3.00 / 3.00      0.00 / 0.00      0.52 / 0.52
+   T500  rescope@goff                0.33 / 0.33        0.67 / 0.67      3.00 / 3.00        0.43 / 0.43      3.00 / 3.00      0.00 / 0.00      0.52 / 0.52
+
+RESIDUAL RISKS
+   - Screening (R21 c) is unstable at exact ties: 12 edits of T2000 with repeated request prompts have margin 0; flagged count 29 (experiment) / 31 (verifier) / 23
+     without ties / 35 with all ties; the paper should fix a tie rule (e.g. margin < -tolerance, or count repeated prompts apart) before quoting the T1000 / T2000
+     precision.
+   - R21 (3) as summarised in the report ('no row exceeds 12 %') does not cover the equal-evidence rows: rb_lineage reaches 24.2 %, 23.1 %, 20.8 % request exact on the
+     requests from 173 on (equal evidence), and the rollbacks rb_screen / rb_lineage retain 24.8 %, 24.0 %, 21.7 %, 15.1 % of the edited tuples from 173 on in the
+     relational workload; the expectation 'no method recovers them' is met by the gates and repairs, not by these rollbacks; a paper sentence should say so.
+   - least repair (R21 d, sacrificing form 'every reported complaint is certified'): with the library's margin a repaired complaint can stay inside the decision band; at
+     n = 10 the experiment's own rows show 22 of 30 (T100) and 19 of 30 (T500) complaints in the band, 4 and 3 still releasing an edit in the teacher-forced pass, 1 and 1
+     still D1 in the decode; stated in DEVIATIONS.txt item 7 and in the column 'resolved' (teacher-forced), not in the report text
+   - On T500 the guards-off outcome of the two calibrated ReScope rows is bimodal over calibration draws (own requests silenced in the 20 rebuilt draws: [499, 499, 311]
+     in three draws, at most 27 in the others); the three behavioural draws contain one collapsed draw (draw 0), so the means over draws 0-2 (e.g. request exact before
+     173) describe neither mode; the per-draw values should be quoted.
+   - The verifier recomputed behaviour at calibration draw 0 only, on 300 logged and 300 HELD-OUT records per log; draws 1 and 2, the cosine-family rows, comp_min /
+     rb_lineage / blocklist, R22 on T500 and gate level on T1000 / T2000 were re-aggregated from the experiment's per-row files, not rerun on the model.
+   - Serving overhead (x1.05-1.15) and repair times are timings on shared GPUs and were not re-measured.
+   - No version history of run/code: ['run_gate.py', 'xcommon.py'] were modified after jobs that import them had started (among them the gate-level run on the development
+     log that the R3 selection reads); the verifier reproduced that file for ReScope and the cosine gate with the adapter's evaluation, not for the R3 gates themselves
+     (built by the feature layer feat2/white, which the verifier did not rebuild).
+   - The verifier rebuilds methods with the same adapter (e10t) and library (rescope) as the experiment: an error inside them (thresholds, hook, guards, key cache) would
+     be shared; the certificate, the public scores, the relational scores and the screening do not depend on the experiment's own code.
+   - The key caches of the reported logs were built by the experiment through the adapter's script and are reused here; the verifier's live model runs agree with the
+     decisions taken from them on every sampled prompt.

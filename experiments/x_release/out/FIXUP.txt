@@ -1,0 +1,87 @@
+X_RELEASE   written 2026-11-12 06:41:54 by code/release_render.py from out/checks.json and the JSON files named below
+Additions to the final evaluation required by the amendment of 2026-11-12 06:16 UTC (decisions 2 and 7) and by decision E4 of the triage of the external review
+(01_paper/v4_rescope/_ext_review/TRIAGE_RESULTS.txt).  No model was run; every number comes from stored per-row files; no existing file was changed (new directory x_release).
+Paper numbers: 2415 new names (all start with 'Xrel'); names shared with any paper-number file of E1, E2, the prefix logs, E3 or a fix-up: 0.
+
+ITEM 3 (Holm)  ->  holm.json, table_fixup.txt (X1-H2, X1-H3), 231 paper numbers
+  Label: replication read-outs on unseen logs (not the confirmatory family of R6).  From the two-sided bootstrap values of the behavioural paired differences (e3_qwen/out/fixup/endpoints_added.json,
+  e3_llava/out/fixup/endpoints.json); resolution 0.0005; a value at the resolution is an upper bound, and so is a Holm-adjusted value that derives from it.
+  H2: family of 22 = 11 unseen logs x 2 comparisons; Holm-adjusted value at most 0.05: 18 (the paper's method worse in 18, better in 0); not rejected: 4: TB-Q200-ae-l2_3 | rescope minus white_0.1_shared; TB-Q500-ae-l2_3 | rescope minus white_0.1_shared; TB-L200-ae-l2_3 | rescope minus white_0.1_shared; TB-L500-ae-l2_3 | rescope minus white_0.1_shared
+  H3: family of 33 = 11 unseen logs x 3 comparisons; Holm-adjusted value at most 0.05: 27 (the paper's method worse in 25, better in 2); not rejected: 6: TB-Q200-ae-l2_3 | rescope minus white_1_shared; TB-Q200-ae-l2_3 | rescope_x minus white_1_x; TB-Q500-ae-l2_3 | rescope_x minus white_1_x; TB-L200-ae-l2_3 | rescope minus white_1_shared; TB-L200-ae-l2_3 | rescope_x minus white_1_x; TB-L500-ae-l2_3 | rescope minus white_1_shared
+
+ITEM 5  release against change  ->  release_change.json, table_fixup.txt (X2), 2070 paper numbers
+  13 logs of E3 (the two development logs among them) x where_logonly, rescope, the two selected gates of the cosine family, retr_sum; on the development logs also, from E2, the H1 row
+  (least repair of 10 complaints from the log-only thresholds, complaint streams 0-2) and ReScope-W with two-block thresholds (calibration draws 0-2; its near-scope negatives exist
+  at draw 0 only, as stored).  Pools: heldout_disjoint (all / no shared question / shared question), HN-I, HN-Q, HN-X.  Per run: numerator and denominator of every rate.
+
+  heldout_disjoint, all rows  --  FIRST EDITOR FAMILY (AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; names ending in -ae-l2_3)
+    log                    method           rows  released %  changed % (D1)  changed | released %  changed, no release
+    ---------------------  ---------------  ----  ----------  --------------  --------------------  -------------------
+    TB-Q100-ae-l2_3 (dev)  where_logonly     465        18.5             1.1                   5.8                    0
+    TB-Q100-ae-l2_3 (dev)  where_least_n10   465        18.0             1.0                   5.6                    0
+    TB-Q100-ae-l2_3 (dev)  where_cal         465         6.5             0.4                   7.1                    0
+    TB-Q100-ae-l2_3 (dev)  rescope           465         3.9             3.9                 100.0                    0
+    TB-Q200-ae-l2_3        where_logonly     465        16.8             0.9                   5.1                    0
+    TB-Q200-ae-l2_3        rescope           465         4.0             4.0                 100.0                    0
+    TB-Q500-ae-l2_3        where_logonly     465        13.8             1.1                   7.8                    0
+    TB-Q500-ae-l2_3        rescope           465         1.8             1.8                 100.0                    0
+    TB-L100-ae-l2_3 (dev)  where_logonly     469        26.2             2.8                  10.6                    0
+    TB-L100-ae-l2_3 (dev)  where_least_n10   469        23.7             2.6                  11.1                    0
+    TB-L100-ae-l2_3 (dev)  where_cal         469         3.8             0.9                  22.2                    0
+    TB-L100-ae-l2_3 (dev)  rescope           469         3.1             3.1                 100.0                    0
+    TB-L200-ae-l2_3        where_logonly     469        29.4             3.4                  11.6                    0
+    TB-L200-ae-l2_3        rescope           469         2.9             2.9                 100.0                    0
+    TB-L500-ae-l2_3        where_logonly     469        44.1            10.4                  23.7                    0
+    TB-L500-ae-l2_3        rescope           469         1.8             1.8                 100.0                    0
+
+  heldout_disjoint, all rows  --  SECOND EDITOR FAMILY (MEMIT-style, public configuration; names ending in -memitw)
+    log              method         rows  released %  changed % (D1)  changed | released %  changed, no release
+    ---------------  -------------  ----  ----------  --------------  --------------------  -------------------
+    TB-Q100-memitw   where_logonly   465        25.6             7.7                  30.3                    0
+    TB-Q100-memitw   rescope         465         4.2             4.2                 100.0                    0
+    TB-Q500-memitw   where_logonly   465        45.6            11.2                  24.5                    0
+    TB-Q500-memitw   rescope         465         1.8             1.8                 100.0                    0
+    TB-Q1000-memitw  where_logonly   465        44.1             9.0                  20.5                    0
+    TB-Q1000-memitw  rescope         465         1.5             1.5                 100.0                    0
+    TB-Q2000-memitw  where_logonly   465        31.6             4.7                  15.0                    0
+    TB-Q2000-memitw  rescope         465         2.8             2.8                 100.0                    0
+    TB-L100-memitw   where_logonly   469        25.4            17.5                  68.9                    0
+    TB-L100-memitw   rescope         469         2.4             2.4                 100.0                    0
+    TB-L500-memitw   where_logonly   469        23.9            14.7                  61.6                    0
+    TB-L500-memitw   rescope         469         3.1             3.1                 100.0                    0
+    TB-L1000-memitw  where_logonly   469        22.2            11.7                  52.9                    0
+    TB-L1000-memitw  rescope         469         2.8             2.8                 100.0                    0
+
+  Rows without a release whose answer changed: 0 (summed over all logs, methods, pools and runs).
+    where_logonly: 14610 rows without a release (summed over runs and pools); with a forward pass under the method: 14610; pre-edit outcome assigned without a forward: 0.  The count is a measurement: every sequence without a release had its own forward pass under the method.
+    rescope: 51862 rows without a release (summed over runs and pools); with a forward pass under the method: 0; pre-edit outcome assigned without a forward: 51862.  The count is 0 by construction of the evaluation: the driver assigns the pre-edit outcome to a sequence on which nothing fires (no forward pass); this fix-up adds no evidence for these rows; the evidence is the independent verification of E3, whose own forward passes at calibration draw 0 reproduce every stored probe flag (PROTOCOL.md, amendment of 2026-11-12 06:16 UTC: 0 of 6,804 differ).
+    white_1_shared: 49972 rows without a release (summed over runs and pools); with a forward pass under the method: 0; pre-edit outcome assigned without a forward: 49972.  The count is 0 by construction of the evaluation: the driver assigns the pre-edit outcome to a sequence on which nothing fires (no forward pass); this fix-up adds no evidence for these rows; the evidence is the independent verification of E3, whose own forward passes at calibration draw 0 reproduce every stored probe flag (PROTOCOL.md, amendment of 2026-11-12 06:16 UTC: 0 of 6,804 differ).
+    white_0.1_shared: 48349 rows without a release (summed over runs and pools); with a forward pass under the method: 0; pre-edit outcome assigned without a forward: 48349.  The count is 0 by construction of the evaluation: the driver assigns the pre-edit outcome to a sequence on which nothing fires (no forward pass); this fix-up adds no evidence for these rows; the evidence is the independent verification of E3, whose own forward passes at calibration draw 0 reproduce every stored probe flag (PROTOCOL.md, amendment of 2026-11-12 06:16 UTC: 0 of 6,804 differ).
+    retr_sum: 45748 rows without a release (summed over runs and pools); with a forward pass under the method: 0; pre-edit outcome assigned without a forward: 45748.  The count is 0 by construction of the evaluation: the driver assigns the pre-edit outcome to a sequence on which nothing fires (no forward pass); this fix-up adds no evidence for these rows; the evidence is the independent verification of E3, whose own forward passes at calibration draw 0 reproduce every stored probe flag (PROTOCOL.md, amendment of 2026-11-12 06:16 UTC: 0 of 6,804 differ).
+    where_least_n10: 7476 rows without a release (summed over runs and pools); with a forward pass under the method: 7476; pre-edit outcome assigned without a forward: 0.  The count is a measurement: every sequence without a release had its own forward pass under the method.
+    where_cal: 4584 rows without a release (summed over runs and pools); with a forward pass under the method: 4584; pre-edit outcome assigned without a forward: 0.  The count is a measurement: every sequence without a release had its own forward pass under the method.
+  No cell has a non-zero count: for the thresholds-only rows (where_logonly, the H1 row, the two-block thresholds) this is measured on every sequence (the round-off of replaying logged
+  terms flips no teacher-forced token on these rows); for the gates at the last prompt position it holds by construction of the evaluation (see the lines above).
+
+ITEM 6  table of logs  ->  logs_b1.json, table_fixup.txt (X3), 114 paper numbers
+  19 logs: 13 of E3 (rows of the deployed log in e3_*/out/rows/<log>__deployed__dx__tf.jsonl.gz), 6 prefix logs (e2_prefix/out/rows/<log>__deployed.jsonl.gz): backbone, editor family,
+  T, valid heldout_disjoint rows, Rel / T-Gen / I-Gen exact and D1 with numerator, denominator and source file.  The development logs have the same counts in E1 and E2.
+
+CHECKS (17; failed: 0)
+  [ok] item 3: Holm (H2): the adjusted values computed here equal fx.stats.holm   -- 22 members; largest absolute difference 0
+  [ok] item 3: Holm (H3): the adjusted values computed here equal fx.stats.holm   -- 33 members; largest absolute difference 0
+  [ok] item 3: Holm families: H2 = 11 unseen logs x 2 references, H3 = 11 unseen logs x 3 comparisons   -- H2 22, H3 33
+  [ok] item 5: TB-Q100-ae-l2_3: the rows of E1 (e1_main/out/rows) give the same counts as the rows of E3 for the five methods, every pool and draw   -- 78 cells compared; differing: []
+  [ok] item 5: TB-L100-ae-l2_3: the rows of E1 (e1_main/out/rows) give the same counts as the rows of E3 for the five methods, every pool and draw   -- 78 cells compared; differing: []
+  [ok] item 5: no row of item 5 is missing   -- missing: []
+  [ok] item 5: D1 and release rates on heldout_disjoint equal the experiments' paper numbers to the last stored digit   -- 52 numbers compared; differing: []
+  [ok] item 5: how the count of changed rows without a release was obtained, per method (reported, not a failure): a measurement where every such row had a forward pass under the method   -- {'where_logonly': (14610, 0), 'rescope': (0, 51862), 'white_1_shared': (0, 49972), 'white_0.1_shared': (0, 48349), 'retr_sum': (0, 45748), 'where_least_n10': (7476, 0), 'where_cal': (4584, 0)} = (rows with a forward, rows assigned the pre-edit outcome)
+  [ok] item 5: rows without a release whose answer changed: count reported; a non-zero count is a FINDING (listed with the rows in release_change.json)   -- 0 rows summed over the runs, in 0 (log, method, pool) cells; by method: {}
+  [ok] item 5: no gate at the last prompt position (rescope, the selected gates of the cosine family, retr_sum) changes an answer without a release   -- cells: []
+  [ok] item 6: the deployed log's Rel / T-Gen / I-Gen exact and D1 equal the experiments' paper numbers to the last stored digit (E3: both backbones; prefix logs: e2_prefix)   -- 76 numbers compared on 19 logs; differing: []
+  [ok] item 6: development logs: the deployed log has the same counts in the per-row files of E1 and of E2 as in E3   -- [('TB-Q100-ae-l2_3', 'E1', True), ('TB-Q100-ae-l2_3', 'E2', True), ('TB-L100-ae-l2_3', 'E1', True), ('TB-L100-ae-l2_3', 'E2', True)]
+  [ok] item 6: the table holds 19 logs: 13 of E3 (the two development logs among them) and 6 prefix logs   -- 19 logs
+  [ok] item 0: no name of x_release/out/paper_numbers_fixup.json exists in a paper-number file of E1, E2, the prefix logs, E3 or of a fix-up (e1_main, e2_curves, e3_qwen, e3_llava)   -- collisions: 0; 9 files
+  [ok] item 0: every paper number has a documentation line   -- 2415 names
+  [ok] item 0: at least ten numbers per backbone that also exist in the experiments' paper numbers are equal to the last stored digit   -- compared: {'Q': 68, 'L': 60}
+  [ok] item 0: no existing file of the experiments was modified (modification times against the start of this work; the new files of the fix-up excluded)   -- start 2026-11-12 06:21:20 UTC; 8042 files checked in e3_qwen, e3_llava, e1_main, e2_curves, e2_prefix, common; modified: []

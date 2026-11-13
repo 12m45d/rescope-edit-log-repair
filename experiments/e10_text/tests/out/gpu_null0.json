@@ -1,0 +1,26 @@
+{
+ "name": "g_null0",
+ "pass": true,
+ "what": "identity (d): the null-repair variant with n_A = 0 serves the default method's logits bit for bit",
+ "detail": {
+  "n_prompts": 100,
+  "n_fired_under_default": 42,
+  "n_bitwise_equal_tf_logits_and_flags": 100,
+  "n_bitwise_equal_decode_logits": 100,
+  "control_n_a_100_rows_with_other_logits": 3,
+  "gate_sig_equal": true
+ },
+ "error": null,
+ "seconds": 16.279764890670776,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "peak_alloc_MiB": 7513.041015625,
+ "peak_reserved_MiB": 10968.0,
+ "written": "2026-11-11 12:10:35 UTC"
+}

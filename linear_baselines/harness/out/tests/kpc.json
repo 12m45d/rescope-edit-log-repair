@@ -1,0 +1,63 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "d_in": 11008,
+ "n_keys_K_all": 66426,
+ "orthonormal_err": 1.1387201236229232e-14,
+ "eig_residual_rel_max": 6.890657809133977e-16,
+ "evals_descending": true,
+ "eval_min_over_max": 1.4692930662493011e-05,
+ "energy64_from_keys": 0.4023485469920638,
+ "energy64_from_evals": 0.40234854699206346,
+ "rows": [
+  {
+   "group": "image_479",
+   "A": 10,
+   "pc0_equals_none": true,
+   "full_infeasible": true,
+   "full_fro": 0.0,
+   "full_module_out_bitwise_WE": true,
+   "r_d_minus_A_rank_kept": 10,
+   "r_d_minus_A_P1_rel": 1.1108096608641824e-14,
+   "r_d_minus_A_P2": 5.192404636255279e-12,
+   "r_d_minus_A_fro": 7652.728340910027,
+   "none_fro": 4.847279691187757
+  },
+  {
+   "group": "text_290",
+   "A": 10,
+   "pc0_equals_none": true,
+   "full_infeasible": true,
+   "full_fro": 0.0,
+   "full_module_out_bitwise_WE": true,
+   "r_d_minus_A_rank_kept": 10,
+   "r_d_minus_A_P1_rel": 6.608386431369402e-15,
+   "r_d_minus_A_P2": 1.4689215942485977e-12,
+   "r_d_minus_A_fro": 7393.330379950455,
+   "none_fro": 8.233681726478663
+  },
+  {
+   "group": "text_335",
+   "A": 10,
+   "pc0_equals_none": true,
+   "full_infeasible": true,
+   "full_fro": 0.0,
+   "full_module_out_bitwise_WE": true,
+   "r_d_minus_A_rank_kept": 10,
+   "r_d_minus_A_P1_rel": 3.728643014137659e-15,
+   "r_d_minus_A_P2": 4.4374395184535906e-13,
+   "r_d_minus_A_fro": 2066.343891914398,
+   "none_fro": 6.343634968204656
+  }
+ ],
+ "union_rank": 164,
+ "union_rank_independent": 164,
+ "compat_bitwise_basis": {
+  "K_last": true,
+  "K_ans": true,
+  "K_seq:3": true,
+  "K_last+probe:20": true
+ },
+ "pass": true,
+ "seconds": 46.90181827545166,
+ "gpu": "NVIDIA GeForce RTX 5090"
+}

@@ -1,0 +1,375 @@
+{
+ "what": "test of mme_pool.py: reader on the published captures (A), same rows and parts for both backbones (B), the ten-line example on a synthetic copy with random keys and a synthetic detector set (C); no gate is run on MME rows",
+ "backbones": {
+  "qwen25vl": {
+   "A_reader": {
+    "n_rows": 2374,
+    "layer": 20,
+    "d": 11008,
+    "rows_all_is_range": true,
+    "parts_partition_the_rows": true,
+    "parts_tuple_equals_all": true,
+    "parts_equal_selection": true,
+    "sids_of_part": true,
+    "n_images_in_both_parts": 0,
+    "by_part": {
+     "MME-C": {
+      "rows": 1188,
+      "images": 589,
+      "valid": 1187
+     },
+     "MME-T": {
+      "rows": 1186,
+      "images": 588,
+      "valid": 1186
+     }
+    },
+    "valid_rows_have_tf_key": true,
+    "valid_equals_keycache_rows": true,
+    "category_filter": true,
+    "where_filter": true,
+    "field": true,
+    "summary": {
+     "MME-C": {
+      "rows": 1188,
+      "images": 589,
+      "valid_y0": 1187,
+      "with_teacher_forced_key": 1188,
+      "y0": {
+       "yes": 586,
+       "no": 599,
+       "other": 3
+      }
+     },
+     "MME-T": {
+      "rows": 1186,
+      "images": 588,
+      "valid_y0": 1186,
+      "with_teacher_forced_key": 1186,
+      "y0": {
+       "yes": 578,
+       "no": 607,
+       "other": 1
+      }
+     },
+     "all": {
+      "rows": 2374,
+      "images": 1177,
+      "valid_y0": 2373,
+      "with_teacher_forced_key": 2374,
+      "y0": {
+       "yes": 1164,
+       "no": 1206,
+       "other": 4
+      }
+     }
+    },
+    "keys": {
+     "decode_shape": [
+      16,
+      11008
+     ],
+     "steps_shape": [
+      16,
+      11,
+      11008
+     ],
+     "tf_shape": [
+      16,
+      11008
+     ],
+     "step0_equals_decode": true,
+     "dtype": "torch.float32",
+     "prompt_equals_tf_where_no_shift": true,
+     "having": {
+      "tf": 2374,
+      "decode": 2374,
+      "steps": 2374,
+      "all": 2374
+     }
+    },
+    "items": {
+     "n": 2374,
+     "equal_to_the_capture_code_item": true,
+     "n_found_by_content_in_the_key_cache": 2374,
+     "n_rows_without_tf": 0,
+     "row_without_tf_is_refused": true,
+     "rows_second_positional_argument_is_refused": true,
+     "images_exist": true
+    },
+    "ok": true
+   },
+   "C_example": {
+    "synthetic_dir": "work/test_pool/qwen25vl",
+    "n_rows": 240,
+    "key_width": 96,
+    "n_detectors": 12,
+    "lines_executed": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     10
+    ],
+    "lines_not_executed": [
+     [
+      8,
+      "needs a model: run with the pre-edit weight as the method in the GPU verification (verify.json, glue_mme_pool)"
+     ],
+     [
+      9,
+      "needs a model: run with the pre-edit weight as the method in the GPU verification (verify.json, glue_mme_pool)"
+     ]
+    ],
+    "import_lines_executed": [
+     1,
+     2
+    ],
+    "imports_give_the_modules": true,
+    "n_cal": 131,
+    "n_test": 108,
+    "coords_shape": [
+     131,
+     12
+    ],
+    "coords_equal_gate_scores": true,
+    "decide_fields": [
+     "fired",
+     "margin",
+     "n_cand",
+     "near",
+     "rows",
+     "top_edit",
+     "which"
+    ],
+    "decide_fired_equals_scores_vs_thresholds": true,
+    "decide_rows_are_the_test_rows": true,
+    "n_fired_synthetic": 66,
+    "n_not_fired_synthetic": 42,
+    "synthetic_threshold": 0.18063636143812842,
+    "units_are_images": true,
+    "which_decode_steps": {
+     "decode": {
+      "coords_shape": [
+       132,
+       12
+      ],
+      "n_fired": 52
+     },
+     "steps": {
+      "coords_shape": [
+       132,
+       12
+      ],
+      "n_fired": 59
+     }
+    },
+    "which_all_at_least_tf": true,
+    "signatures": {
+     "mme_pool.load": "(backbone: 'str', root: 'str | None' = None, verify: 'bool' = True) -> 'MMEPool'",
+     "MMEPool.rows": "(self, part=None, *, valid=None, category=None, where=None) -> 'list'",
+     "MMEPool.items": "(self, rows) -> 'list'",
+     "KeyCache.coords": "(self, gate: 'ScopedLog', rows=None, which: 'str' = 'tf', chunk: 'int' = 1024) -> 'torch.Tensor'",
+     "KeyCache.decide": "(self, gate, which: 'str' = 'tf', rows=None, uids=None, slack: 'float' = 1e-09, chunk: 'int' = 1024, log=None) -> 'dict'",
+     "SparseEvaluator.__init__": "(self, H, cache='auto', hard_negatives: 'bool' = True, hn_dir: 'str | None' = None, slack: 'float' = 1e-09)",
+     "Evaluator.tf_rows": "(self, method, items, verbose=0, lp='tf')"
+    },
+    "ok": true
+   },
+   "capture": {
+    "index_md5": "a44ebc01c37c72da69faeb819e74913b",
+    "keys_decode_md5": "c9b1fa4578876d196502f7d193a79b04"
+   }
+  },
+  "llava": {
+   "A_reader": {
+    "n_rows": 2374,
+    "layer": 16,
+    "d": 11008,
+    "rows_all_is_range": true,
+    "parts_partition_the_rows": true,
+    "parts_tuple_equals_all": true,
+    "parts_equal_selection": true,
+    "sids_of_part": true,
+    "n_images_in_both_parts": 0,
+    "by_part": {
+     "MME-C": {
+      "rows": 1188,
+      "images": 589,
+      "valid": 1188
+     },
+     "MME-T": {
+      "rows": 1186,
+      "images": 588,
+      "valid": 1186
+     }
+    },
+    "valid_rows_have_tf_key": true,
+    "valid_equals_keycache_rows": true,
+    "category_filter": true,
+    "where_filter": true,
+    "field": true,
+    "summary": {
+     "MME-C": {
+      "rows": 1188,
+      "images": 589,
+      "valid_y0": 1188,
+      "with_teacher_forced_key": 1188,
+      "y0": {
+       "yes": 546,
+       "no": 642,
+       "other": 0
+      }
+     },
+     "MME-T": {
+      "rows": 1186,
+      "images": 588,
+      "valid_y0": 1186,
+      "with_teacher_forced_key": 1186,
+      "y0": {
+       "yes": 567,
+       "no": 619,
+       "other": 0
+      }
+     },
+     "all": {
+      "rows": 2374,
+      "images": 1177,
+      "valid_y0": 2374,
+      "with_teacher_forced_key": 2374,
+      "y0": {
+       "yes": 1113,
+       "no": 1261,
+       "other": 0
+      }
+     }
+    },
+    "keys": {
+     "decode_shape": [
+      16,
+      11008
+     ],
+     "steps_shape": [
+      16,
+      11,
+      11008
+     ],
+     "tf_shape": [
+      16,
+      11008
+     ],
+     "step0_equals_decode": true,
+     "dtype": "torch.float32",
+     "prompt_equals_tf_where_no_shift": true,
+     "having": {
+      "tf": 2374,
+      "decode": 2374,
+      "steps": 2374,
+      "all": 2374
+     }
+    },
+    "items": {
+     "n": 2374,
+     "equal_to_the_capture_code_item": true,
+     "n_found_by_content_in_the_key_cache": 2374,
+     "n_rows_without_tf": 0,
+     "row_without_tf_is_refused": true,
+     "rows_second_positional_argument_is_refused": true,
+     "images_exist": true
+    },
+    "ok": true
+   },
+   "C_example": {
+    "synthetic_dir": "work/test_pool/llava",
+    "n_rows": 240,
+    "key_width": 96,
+    "n_detectors": 12,
+    "lines_executed": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     10
+    ],
+    "lines_not_executed": [
+     [
+      8,
+      "needs a model: run with the pre-edit weight as the method in the GPU verification (verify.json, glue_mme_pool)"
+     ],
+     [
+      9,
+      "needs a model: run with the pre-edit weight as the method in the GPU verification (verify.json, glue_mme_pool)"
+     ]
+    ],
+    "import_lines_executed": [
+     1,
+     2
+    ],
+    "imports_give_the_modules": true,
+    "n_cal": 132,
+    "n_test": 108,
+    "coords_shape": [
+     132,
+     12
+    ],
+    "coords_equal_gate_scores": true,
+    "decide_fields": [
+     "fired",
+     "margin",
+     "n_cand",
+     "near",
+     "rows",
+     "top_edit",
+     "which"
+    ],
+    "decide_fired_equals_scores_vs_thresholds": true,
+    "decide_rows_are_the_test_rows": true,
+    "n_fired_synthetic": 57,
+    "n_not_fired_synthetic": 51,
+    "synthetic_threshold": 0.18197678265516468,
+    "units_are_images": true,
+    "which_decode_steps": {
+     "decode": {
+      "coords_shape": [
+       132,
+       12
+      ],
+      "n_fired": 64
+     },
+     "steps": {
+      "coords_shape": [
+       132,
+       12
+      ],
+      "n_fired": 64
+     }
+    },
+    "which_all_at_least_tf": true,
+    "signatures": {
+     "mme_pool.load": "(backbone: 'str', root: 'str | None' = None, verify: 'bool' = True) -> 'MMEPool'",
+     "MMEPool.rows": "(self, part=None, *, valid=None, category=None, where=None) -> 'list'",
+     "MMEPool.items": "(self, rows) -> 'list'",
+     "KeyCache.coords": "(self, gate: 'ScopedLog', rows=None, which: 'str' = 'tf', chunk: 'int' = 1024) -> 'torch.Tensor'",
+     "KeyCache.decide": "(self, gate, which: 'str' = 'tf', rows=None, uids=None, slack: 'float' = 1e-09, chunk: 'int' = 1024, log=None) -> 'dict'",
+     "SparseEvaluator.__init__": "(self, H, cache='auto', hard_negatives: 'bool' = True, hn_dir: 'str | None' = None, slack: 'float' = 1e-09)",
+     "Evaluator.tf_rows": "(self, method, items, verbose=0, lp='tf')"
+    },
+    "ok": true
+   },
+   "capture": {
+    "index_md5": "2ded346b1909e09dcf5c6d9c1679a6bc",
+    "keys_decode_md5": "3488e8579cabd9889ba49bea0f0e0d12"
+   }
+  }
+ },
+ "time": "2026-11-11 08:16:22",
+ "B_same_rows_for_both_backbones": {
+  "sids": true,
+  "parts": true,
+  "queries": true,
+  "ok": true
+ },
+ "ok": true
+}

@@ -1,0 +1,48 @@
+E3 VERIFICATION, CHECK 2: my plain-Evaluator rows and my own thresholds (calibration draw 0) against the experiment's files
+mine = rescope.Evaluator, no driver / memo / key cache; thresholds from keys captured here by my own numpy rule.  exp = experiment (same rows).
+
+== TB-Q500-ae-l2_3  (T = 500; cache check, bitwise equal keys: own_rel 500/500, calibration 200/200, null_sample 100/100, rephrase_sample 100/100)
+method             eta mine      eta exp  cap m/e  thr diff |  hd n   fired m/e      D1 m/e flags diff f/D1 | edits       Rel m/e   T-Gen m/e   I-Gen m/e diff ex/own |  cov TG m/e  cov IG m/e    diff
+rescope          0.34633300   0.34633300   0/0      3.3e-16 |   465  2.15/2.15   2.15/2.15        0/0       |   150  99.33/99.33  23.33/23.33 56.67/56.67     0/0     | 24.80/24.80 57.60/57.60   0/0  
+rescope_null     0.32271078   0.32271078   0/0      7.7e-14 |   465  1.94/1.94   1.94/1.94        0/0       |   150  99.33/99.33  29.33/29.33 61.33/61.33     0/0     | 30.20/30.20 61.60/61.60   0/0  
+cosine_shared    0.94658854   0.94658854   0/0      4.4e-16 |   465  5.38/5.38   5.38/5.38        0/0       |   150  99.33/99.33   2.67/2.67  38.67/38.67     0/0     |  0.60/0.60  37.60/37.60   0/0  
+
+== TB-Q500-memitw  (T = 500; cache check, bitwise equal keys: own_rel 500/500, calibration 200/200, null_sample 100/100, rephrase_sample 100/100)
+method             eta mine      eta exp  cap m/e  thr diff |  hd n   fired m/e      D1 m/e flags diff f/D1 | edits       Rel m/e   T-Gen m/e   I-Gen m/e diff ex/own |  cov TG m/e  cov IG m/e    diff
+rescope          0.44471565   0.44471565  25/25     2.2e-16 |   465  0.86/0.86   0.86/0.86        0/0       |   150  99.33/99.33  12.67/12.67 38.67/38.67     0/0     |  9.00/9.00  40.20/40.20   0/0  
+rescope_null     0.38770443   0.38770443   1/1      2.7e-14 |   465  2.58/2.58   2.58/2.58        0/0       |   150  99.33/99.33  19.33/19.33 50.00/50.00     0/0     | 16.60/16.60 53.40/53.40   0/0  
+cosine_shared    0.94658854   0.94658854   0/0      4.4e-16 |   465  5.38/5.38   5.38/5.38        0/0       |   150  99.33/99.33   2.67/2.67  38.67/38.67     0/0     |  0.60/0.60  37.60/37.60   0/0  
+
+== TB-Q2000-memitw  (T = 2000; cache check, bitwise equal keys: own_rel 2000/2000, calibration 200/200, null_sample 100/100, rephrase_sample 100/100)
+method             eta mine      eta exp  cap m/e  thr diff |  hd n   fired m/e      D1 m/e flags diff f/D1 | edits       Rel m/e   T-Gen m/e   I-Gen m/e diff ex/own |  cov TG m/e  cov IG m/e    diff
+rescope          0.50391413   0.50391413  69/69     2.2e-16 |   200  2.50/2.50   2.50/2.50        0/0       |   100 100.00/100.00  6.00/6.00  37.00/37.00     0/0     |  5.70/5.70  31.45/31.45   0/0  
+rescope_null     0.51148032   0.51148032  26/26     7.9e-14 |   200  2.00/2.00   2.00/2.00        0/0       |   100 100.00/100.00  7.00/7.00  40.00/40.00     0/0     |  6.65/6.65  33.00/33.00   0/0  
+cosine_shared    0.96909172   0.96909172   0/0      0.0e+00 |   200  3.50/3.50   3.50/3.50        0/0       |   100 100.00/100.00  1.00/1.00  22.00/22.00     0/0     |  0.05/0.05  21.10/21.10   0/0  
+
+== TB-L500-ae-l2_3  (T = 500; cache check, bitwise equal keys: own_rel 500/500, calibration 200/200, null_sample 100/100)
+method             eta mine      eta exp  cap m/e  thr diff |  hd n   fired m/e      D1 m/e flags diff f/D1 | edits       Rel m/e   T-Gen m/e   I-Gen m/e diff ex/own |  cov TG m/e  cov IG m/e    diff
+rescope          0.29962616   0.29962616   1/1      6.7e-16 |   469  1.71/1.71   1.71/1.71        0/0       |   150  98.67/98.67  11.33/11.33 76.67/76.67     0/0     | 17.40/17.40 80.40/80.40   0/0  
+               decode's position: 18 shifted rows, fired differs from tf on 0, D1 on 0; hd fired m/e 1.71/1.71, D1 m/e 1.71/1.71; flags differing from the experiment f/D1 0/0
+rescope_null     0.21256448   0.21256448   0/0      4.1e-15 |   469  6.18/6.18   6.18/6.18        0/0       |   150  98.67/98.67  34.00/34.00 85.33/85.33     0/0     | 37.20/37.20 87.40/87.40   0/0  
+               decode's position: 18 shifted rows, fired differs from tf on 0, D1 on 0; hd fired m/e 6.18/6.18, D1 m/e 6.18/6.18; flags differing from the experiment f/D1 0/0
+cosine_shared    0.97325797   0.97325797   0/0      3.3e-16 |   469  3.20/3.20   3.20/3.20        0/0       |   150  98.67/98.67   0.00/0.00  63.33/63.33     0/0     |  0.00/0.00  64.20/64.20   0/0  
+               decode's position: 18 shifted rows, fired differs from tf on 0, D1 on 0; hd fired m/e 3.20/3.20, D1 m/e 3.20/3.20; flags differing from the experiment f/D1 0/0
+
+== TB-L500-memitw  (T = 500; cache check, bitwise equal keys: own_rel 500/500, calibration 200/200, null_sample 100/100)
+method             eta mine      eta exp  cap m/e  thr diff |  hd n   fired m/e      D1 m/e flags diff f/D1 | edits       Rel m/e   T-Gen m/e   I-Gen m/e diff ex/own |  cov TG m/e  cov IG m/e    diff
+rescope          0.52526952   0.52526952 113/113    1.1e-16 |   469  1.92/1.92   1.92/1.92        0/0       |   150  98.67/98.67   1.33/1.33  46.00/46.00     0/0     |  3.00/3.00  51.00/51.00   0/0  
+               decode's position: 18 shifted rows, fired differs from tf on 0, D1 on 0; hd fired m/e 1.92/1.92, D1 m/e 1.92/1.92; flags differing from the experiment f/D1 0/0
+rescope_null     0.43882362   0.43882362  20/20     1.6e-13 |   469  5.12/5.12   5.12/5.12        0/0       |   150  98.67/98.67  10.00/10.00 64.67/64.67     0/0     | 11.40/11.40 70.20/70.20   0/0  
+               decode's position: 18 shifted rows, fired differs from tf on 0, D1 on 0; hd fired m/e 5.12/5.12, D1 m/e 5.12/5.12; flags differing from the experiment f/D1 0/0
+cosine_shared    0.97325797   0.97325797   0/0      3.3e-16 |   469  3.20/3.20   3.20/3.20        0/0       |   150  98.67/98.67   0.00/0.00  63.33/63.33     0/0     |  0.00/0.00  64.20/64.20   0/0  
+               decode's position: 18 shifted rows, fired differs from tf on 0, D1 on 0; hd fired m/e 3.20/3.20, D1 m/e 3.20/3.20; flags differing from the experiment f/D1 0/0
+
+== TB-L1000-memitw  (T = 1000; cache check, bitwise equal keys: own_rel 1000/1000, calibration 200/200, null_sample 100/100)
+method             eta mine      eta exp  cap m/e  thr diff |  hd n   fired m/e      D1 m/e flags diff f/D1 | edits       Rel m/e   T-Gen m/e   I-Gen m/e diff ex/own |  cov TG m/e  cov IG m/e    diff
+rescope          0.54337435   0.54337435 163/163    1.1e-16 |   200  4.00/4.00   4.00/4.00        0/0       |   100  99.00/99.00   2.00/2.00  48.00/48.00     0/0     |  3.60/3.60  55.50/55.50   0/0  
+               decode's position: 10 shifted rows, fired differs from tf on 0, D1 on 0; hd fired m/e 4.00/4.00, D1 m/e 4.00/4.00; flags differing from the experiment f/D1 0/0
+rescope_null     0.49829853   0.49829853  52/52     2.2e-16 |   200  6.00/6.00   6.00/6.00        0/0       |   100  99.00/99.00   5.00/5.00  67.00/67.00     0/0     |  7.40/7.40  66.80/66.80   0/0  
+               decode's position: 10 shifted rows, fired differs from tf on 0, D1 on 0; hd fired m/e 6.00/6.00, D1 m/e 6.00/6.00; flags differing from the experiment f/D1 0/0
+cosine_shared    0.97456085   0.97456085   0/0      7.8e-16 |   200  2.00/2.00   2.00/2.00        0/0       |   100  99.00/99.00   1.00/1.00  55.00/55.00     0/0     |  0.10/0.10  58.50/58.50   0/0  
+               decode's position: 10 shifted rows, fired differs from tf on 0, D1 on 0; hd fired m/e 2.00/2.00, D1 m/e 2.00/2.00; flags differing from the experiment f/D1 0/0
+

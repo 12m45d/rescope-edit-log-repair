@@ -1,0 +1,55 @@
+{
+ "crossed": {
+  "n_experiments": 400,
+  "coverage_95": 0.93,
+  "mean_width": 0.1006167754662612,
+  "analytic_width": 0.1010873681525046,
+  "units_only_width": 0.08974937415083435,
+  "reference_loop_width": 0.10046642612926679,
+  "width_over_reference": 0.98847737022312,
+  "value_is_grand_mean": true,
+  "n_boot_default": 2000,
+  "n_draws": 20,
+  "n_units": 300,
+  "deterministic": true
+ },
+ "ratio": {
+  "value": 29.487179487179485,
+  "value_direct": 29.487179487179485,
+  "width": 10.209637053433163,
+  "unit_bootstrap_width": 9.6337524334781,
+  "incomplete_grid_refused": true
+ },
+ "paired": {
+  "n_experiments": 300,
+  "coverage_95": 0.9933333333333333,
+  "mean_width": 0.024239604256532855,
+  "analytic_width": 0.014313816169468342,
+  "unpaired_width": 0.14156235147607896,
+  "rejection_rate_under_the_null": 0.006666666666666667,
+  "value_is_difference": true,
+  "other_shape_refused": true
+ },
+ "holm": {
+  "known_example": true,
+  "named": {
+   "a": 0.2,
+   "b": 0.003,
+   "c": 0.04
+  },
+  "named_ok": true,
+  "equals_statsmodels_on_200_families": true,
+  "family_wise_error_under_six_true_nulls": 0.04975,
+  "monotone": true,
+  "bad_p_refused": true
+ },
+ "ok": true,
+ "test": "stats2",
+ "seconds": 57.961928367614746,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:11:31"
+}

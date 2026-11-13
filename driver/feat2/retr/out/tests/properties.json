@@ -1,0 +1,94 @@
+{
+ "ok": true,
+ "summary": "conjunction never releases where one attribute alone has no candidate; rows without an image never fire; tie -> lowest index; eta = +inf releases own requests only; literal thresholds == library rule (also through calibrate_two_block of a cosine gate): all hold",
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "n_rows": 5557,
+   "fired_implies_some_edit_passes_image": true,
+   "fired_implies_some_edit_passes_question": true,
+   "n_cand_le_min_of_single_attribute_counts": true,
+   "n_rows_without_image": 1985,
+   "n_rows_without_image_firing": 0,
+   "margin_ge_0_iff_fired": true,
+   "top_edit_minus1_iff_not_fired": true,
+   "steps_arrays": true,
+   "near_all_false": true,
+   "literal_thresholds_equal_library_rule": true,
+   "library_calibrate_two_block_same_question_thresholds": true,
+   "library_capped_edits_equal_question_attribute": true,
+   "own_requests_passing": "100/100",
+   "own_requests_released_by_own_edit": "100/100",
+   "eta_infinite_with_10_queries": true,
+   "eta_infinite_fires_only_on_exact_requests": true,
+   "allow_silence_nothing_fires_at_eta_infinite": true,
+   "shared_rule_is_score_gt_eta": true,
+   "record_is_json": true,
+   "thresholds_reproducible": true,
+   "ok": true
+  },
+  "TB-L100-ae-l2_3": {
+   "n_rows": 5574,
+   "fired_implies_some_edit_passes_image": true,
+   "fired_implies_some_edit_passes_question": true,
+   "n_cand_le_min_of_single_attribute_counts": true,
+   "n_rows_without_image": 1991,
+   "n_rows_without_image_firing": 0,
+   "margin_ge_0_iff_fired": true,
+   "top_edit_minus1_iff_not_fired": true,
+   "steps_arrays": true,
+   "near_all_false": true,
+   "literal_thresholds_equal_library_rule": true,
+   "library_calibrate_two_block_same_question_thresholds": true,
+   "library_capped_edits_equal_question_attribute": true,
+   "own_requests_passing": "100/100",
+   "own_requests_released_by_own_edit": "100/100",
+   "eta_infinite_with_10_queries": true,
+   "eta_infinite_fires_only_on_exact_requests": true,
+   "allow_silence_nothing_fires_at_eta_infinite": true,
+   "shared_rule_is_score_gt_eta": true,
+   "record_is_json": true,
+   "thresholds_reproducible": true,
+   "ok": true
+  }
+ },
+ "synthetic": {
+  "top_edit": [
+   0,
+   1,
+   -1,
+   2
+  ],
+  "n_cand": [
+   3,
+   2,
+   0,
+   2
+  ],
+  "own_cand": [
+   true,
+   true,
+   false,
+   true
+  ],
+  "own_top": [
+   false,
+   true,
+   false,
+   true
+  ],
+  "ok": true
+ },
+ "edge_no_images": {
+  "eta_img": -Infinity,
+  "note": true,
+  "fired": [
+   true,
+   false
+  ],
+  "ok": true
+ },
+ "no_image_in_block1_refused": true,
+ "test": "properties",
+ "seconds": 0.2,
+ "when": "2026-11-11 08:30:29 UTC"
+}

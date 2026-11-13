@@ -1,0 +1,181 @@
+white -- data and feature layer of PROTOCOL.md section 6, amendment "Review round 1", items R2 (parts of the benign pool) and R3 (centred /
+null-repaired / whitened gates, rescope_nullW)
+=============================================================================================================================================
+Code, tests, docs: 10_final/feat2/white/        Data: 10_final/cache2/benign_parts/, 10_final/cache2/whiten/        (README.txt in both)
+Everything is CPU, float64, seeded and deterministic.  The library rescope, the shared driver fx and the caches of 10_final/cache are only read.
+This package builds DATA and FEATURES.  It runs no experiment; the only gate decisions it ever looked at are those of the mechanics check on the
+two development logs (out/mechanics.txt), from which nothing was selected or tuned.
+
+    import sys; sys.path.insert(0, "$RESCOPE_ROOT/02_research/experiments/10_final/feat2")
+    import white                         # python: $RESCOPE_PYTHON; white caps BLAS at 4 threads
+    from white import benparts, wstats, scores, mechanics, common       # every module starts with its own reference text
+
+WHAT EXISTS
+  cache2/benign_parts/<backbone>.json   qwen25vl, llava (+ blip2: the same pool, the same split; the amendment names no use for it)
+        parts {sid: BEN-W | BEN-S | BEN-T}, items {uid: part}, summary.  Split by SOURCE ITEM (uid), seed 20261111: BEN-W 20 % of the items (400 items,
+        600 rows), BEN-S 45 % (901, 1375), BEN-T 35 % (701, 1025).  The same item split for every backbone (the pool holds the same rows; checked).
+  cache2/whiten/<backbone>/stats.pt, meta.json, README.txt        qwen25vl, llava
+        the 600 BEN-W keys (prompt-only key at the last prompt position = the key cache's DECODE key of the row, float32), the mean key mu, the Gram
+        matrix of the uncentred second moment C_W, tr(C_W), and per kappa in {0.01, 0.1, 1}: rho = kappa tr(C_W) / d and the inverse Cholesky factor.
+  feat2/white/out/mechanics.txt (+ mechanics_<log>.json)          the mechanics check, script-rendered
+  feat2/white/tests/out/table.txt (+ <test>.json)                 the test table, script-rendered
+
+SIGNATURES
+  white.benparts
+    load(backbone, verify=True) -> BenignParts                  verify: the pool file is the one the split was made from (md5), no item in two parts
+        .part(sid) -> 'BEN-W' | 'BEN-S' | 'BEN-T'      .part_of_item(uid)      .sids(part | tuple of parts) -> [sid] in pool order
+        .rows(part, kc) -> positions in the index of the backbone's key cache (rescope.KeyCache; = the driver's sequences, e.g. kc = L.kc)
+        .mask(sids) -> {part: [bool]}      .summary (dict)      .n_items, .n_rows ({part: count})
+    item_split(uids) -> {uid: part}                             the rule itself (depends on the set of uids and the seed only)
+    python -m white.benparts build | check | show               (cwd = 10_final/feat2)  write the files | re-run and compare byte for byte | print the table
+  white.wstats
+    load(backbone, verify=True) -> KeyStats                     the stored BEN-W statistics (verify: md5 of stats.pt; keys == the cache's BEN-W keys, bitwise)
+        .keys (N, d) float32   .mu (d,)   .gram (N, N)   .trace = tr(C_W)   .n, .d   .sids   .meta
+        .rho(kappa) = kappa tr(C_W) / d         .whitener(kappa=None, rho=None) -> Whitener
+    KeyStats.from_keys(keys, name="", sids=None) -> KeyStats    the same statistics of ANY key matrix (N <= d: Gram form; N > d: primal form)
+    Whitener: M = (C + rho I)^-1 without a d x d inverse        .apply(X) -> rows x M     .quad(X) -> x M x'     .bilinear(X, Y) -> x M y'
+        .rho, .kappa, .form ('gram' | 'primal'), .F, .c0, .c1       .dense() (small problems only)
+    single_thread()                                             context manager: one BLAS thread (bit-reproducible linear algebra)
+    python -m white.wstats build | check | show [backbone ...]
+  white.scores      (log: a rescope.EditLog, e.g. L.log; or a (T, d) tensor of solver keys.  queries: (n, d) keys, any float dtype.)
+    cos_centred(log, queries, stats) -> (n, T)                  cos(k - mu, k_i - mu)
+    white(log, queries, stats, kappa) -> (n, T)                 k_i' M k / k_i' M k_i
+    whitecos(log, queries, stats, kappa) -> (n, T)              k_i' M k / sqrt(k_i' M k_i * k' M k)
+    cos_null(log, queries, null_keys, ridge=0.0) -> (n, T)      the library's cosine detector after the library's null repair on null_keys
+    ncoord_null(log, queries, null_keys, ridge=0.0) -> (n, T)   the default method's detectors after the library's null repair on null_keys
+    scores(log, queries, feature, *, stats=None, kappa=None, null_keys=None, ridge=0.0) -> (n, T)        the four features by name
+    feature_gate(log, feature, *, stats=None, kappa=None, null_keys=None, ridge=0.0, role="last", fire="top1", response="repl", values="rebased",
+                 W0=None) -> rescope.ScopedLog                  the UN-THRESHOLDED gate of a feature ('cos_centred' | 'cos_null' | 'white' | 'whitecos'):
+                                                                S.scores(keys) is the score matrix; calibrate it like rescope.feature_gate(log, 'cos')
+    gates(log, stats, null_keys=None, kappas=(0.01, 0.1, 1), **kw) -> {label: gate}       the 8 registered variants in table order
+    variants() -> [(label, feature, kappa)]      label(feature, kappa)      labels: cos_centred, cos_null, white_0.01, white_0.1, white_1, whitecos_...
+    null_w(S, stats=None, keys=None, ridge=0.0, score_guards=True) -> (ScopedLog, record)                helper of rescope_nullW (see below)
+    own_scores(S) -> (T,)                                       score of every edit's own solver key on its own detector (1)
+    solver_keys(log) -> (T, d)                                  the keys k_i every feature uses
+  white.mechanics
+    python -m white.mechanics run | render | check              (cwd = 10_final/feat2)  development logs only; any other log is refused
+
+DEFINITIONS (reference text: scores.py, wstats.py)
+  k_i = the log's STORED SOLVER KEY, EditLog.K[i] (testbed: edit_factors.pt 'K1_solver').  It is the key of the library's cosine gate
+        (rescope.baselines._key_gate: det_key = log.K, det_w = log.K / |log.K|); checked bitwise in the tests.
+  mu  = mean BEN-W key;  C_W = (1/N) sum k k' over the BEN-W keys (uncentred);  M = (C_W + rho I)^-1,  rho = kappa tr(C_W) / d_in.
+        d_in = 11008 > N = 600, so M is applied through the N x N Gram matrix (Woodbury): M = (I - R'R) / rho, R = L^-1 K, L L' = K K' + N rho I.
+  Every score: LARGER = CLOSER.  Value at the edit's own solver key k = k_i: 1 for cos_centred, white, whitecos, cos_null and ncoord_null
+        (measured deviation at most 5e-14).  cos_centred and whitecos are true cosines (in [-1, 1]); white and cos_null are not bounded by 1.
+  cos_null: w_i' = the minimum-change version of the cosine detector k_i / |k_i| with <w_i', b> = 0 on every null key b and <w_i', k_i> unchanged
+        (= |k_i|); score <w_i', k> / |k|.  Score 0 on the null keys (to 1e-10), 1 at k_i.  All of it is rescope.null_repair (ridge 0).
+  Limits (tested): mu = 0 -> cos_centred = cos; kappa -> infinity -> whitecos = cos; no null key -> cos_null = cos.
+
+EXAMPLE (ten lines; development log)
+    # ---- example (executed by tests/t_usage.py) ----
+    import sys; sys.path.insert(0, "$RESCOPE_ROOT/02_research/experiments/10_final/feat2"); import white
+    from white import common, wstats, scores as WS; fx = common.use_driver(); from rescope import add_guards, calibrate_two_block
+    L = fx.logs.open("TB-Q100-ae-l2_3"); st = wstats.load(L.backbone)                     # the log, the BEN-W statistics of its backbone
+    cal, A = fx.draws.calibration(L, 200, 0), fx.draws.null_sample(L, 100, 0)             # draw 0; the 100 rows of rescope_null in the same draw
+    for lab, S in WS.gates(L.log, st, null_keys=L.kc.keys("tf", A), values=fx.methods.released_values(L)[0]).items():
+        S, _ = add_guards(S, *L.own_keys())                                               # B = 1 own-prompt keys: guards, BEFORE calibrating
+        G, rec = calibrate_two_block(S, coords=L.kc.coords(S, cal.rows, cal.which), alpha=0.05, seed=cal.seed)
+        print(lab, rec["eta"], rec["n_edits_capped"], fx.gate.decide(L, G, L.pool("heldout_disjoint"))["fired"].mean())
+    Sn, nrec = WS.null_w(fx.methods.base_gate(L)[0], stats=st)                            # rescope_nullW: detectors; then calibrate as rescope
+    R = WS.whitecos(L.log, L.kc.keys("tf", cal.rows[:8]), st, kappa=0.1)                  # a plain score matrix [8 queries x T edits]
+    # ---- end of the example ----
+
+WIRING INTO THE DRIVER (what the registered rows need; tests/t_usage.py, u2, runs exactly this on both development logs)
+  R3: "role last, top-1, rebased values, guards and both calibrations exactly as the registered cosine gate, same draws".
+  * gate      S = white.scores.feature_gate(L.log, feature, stats=white.wstats.load(L.backbone), kappa=..., null_keys=...,
+                                           values=fx.methods.released_values(L)[0])
+              It IS rescope.feature_gate(L.log, 'cos', ...) with other detectors: role 'last', fire 'top1', response 'repl', guards = stored solver keys.
+              values = the driver's batch-by-batch rebased values: the released value is then bit for bit the driver's, so the memo of fx.behave is
+              shared with every other row (the default values="rebased" is rescope.rebase, equal to round-off only).
+  * guards    S, _ = rescope.add_guards(S, *L.own_keys())           before calibrating, as fx.methods.base_gate does for every row
+  * calibrate G, rec = fx.methods.recalibrate(L, S, alpha, n, draw, rule="two_block" | "shared")      (or the library calls of the example)
+              M = fx.methods.wrap(L, G, label, rec=rec, name=label, alpha=alpha, n=n, draw=draw)      -> kind 'scoped', memo path, own method key
+  * cos_null  null_keys = L.kc.keys("tf", fx.draws.null_sample(L, 100, draw)): the teacher-forced last-prompt keys of the 100 REPAIR queries that
+              rescope_null uses in the same draw (positions 200 .. 299 of the draw's ranking).  The gate depends on the draw: build it per draw.
+  * rescope_nullW   S0, _ = fx.methods.base_gate(L)                 the default gate with its guards (as rescope_null starts)
+              S1, nrec = white.scores.null_w(S0, stats=white.wstats.load(L.backbone))       # library null_repair, ridge 0, on the 600 BEN-W keys
+              then the default two-block calibration unchanged: fx.methods.recalibrate(L, S1, alpha, n, draw) + fx.methods.wrap.
+              The detectors do not depend on the draw: build S1 once per log.  nrec has the fields of the driver's rescope_null record
+              (n_guards_lost, rank_benign, max_abs_benign_r, detector_norm_inflation, ...).  score_guards=False skips the library's guard
+              bookkeeping (same detectors bit for bit; no guard counts in the record).
+  * parts     P = white.benparts.load(L.backbone); P.rows("BEN-T", L.kc) / P.rows("BEN-S", L.kc) are sequences of the driver (benign rows have the
+              prompt-only key for all rows and a teacher-forced key for the answer subset only: use which="decode" unless a part is restricted to it).
+  * gate classes: white and cos_null are plain rescope.ScopedLog objects ('lin' / 'cos' detectors).  cos_centred and whitecos are white.scores.TCosLog,
+              a subclass of ScopedLog that overrides ONE method (_scores); isinstance(S, ScopedLog) holds, replace / to(device) / add_guards /
+              calibrate_* / KeyCache.coords / KeyCache.decide / fx.gate / rescope.Hook work unchanged (tests c6 - c9, g1, u2).
+              A process that imports a calibrated TCosLog needs white on sys.path (the class lives here).
+
+PRECISION
+  float64 everywhere (as the library's gate).  Keys are float32 images of the module dtype (exact); the mean is accumulated in float64.
+  cond(K K' + N rho I) is at most 2.6e5 (kappa = 0.01; meta.json).  k' M k = (|k|^2 - |k R'|^2) / rho is a difference of nearly equal numbers: at
+  kappa = 0.01 it loses a factor |k|^2 / (rho k' M k) of 1.4 .. 163 for the 50 test queries of each development log (median 23 Qwen, 9 LLaVA),
+  about 20 for solver keys and about 2000 for the BEN-W keys themselves.  Float32 is therefore NOT sufficient for whitecos; float64 leaves
+  about 10 digits.
+  Measured (tests/out/table.txt): Woodbury against numpy.linalg.inv on small problems 9e-14 (relative); M (C_W + rho I) x = x at full size 1e-9;
+  every score against a naive numpy implementation with the explicit 11008 x 11008 inverse on 50 queries x 100 edits of each development log: at
+  most 7e-11 (absolute); batched against key-by-key scoring 1e-6 of the library's decision band; GPU against CPU 2e-5 of the band.
+  Determinism: statistics and detectors are computed with ONE BLAS thread inside wstats.single_thread() (MKL's last bits depend on the thread count):
+  stats.pt, meta.json and the detectors are the same bits under 1, 2 and 4 threads.  SCORING is the library's batched product and is not pinned:
+  its last bits depend on batch shape, thread count and device, as for every gate (that is what the library's decision band is for).
+
+COST (4 threads; tests/out/c11_cost.json)
+  statistics: build 10 s per backbone (md5 check of the key file included); wstats.load 0.6 s; a whitener 0.2 s and N x d float64 = 53 MB.
+  gate construction, T = 100: 0.01 - 0.1 s; T = 2000: cos_centred 0.3 s, white 1.4 s, whitecos 1.8 s, cos_null 2.1 s; detectors T x d float64
+  (T = 2000: 168 MiB per gate, as the library's cosine gate; whitecos + 50 MiB).  Eight variants at T = 2000 held together: 1.4 GB.
+  scoring 1000 keys: T = 100: 0.03 - 0.06 s (whitecos 0.12 s); T = 2000: 0.2 - 0.3 s (library cosine gate: 0.3 s).  whitecos costs N d more
+  flops per key than the cosine (N = 600).
+  null_w on 600 keys: T = 100 0.4 s; T = 2000 with 4000 guards 38 s (score_guards=False: 4 s) -- the library scores every guard key by key.
+  mechanics check: 30 s per log; all CPU tests: 5 - 7 minutes depending on the load of the machine, 3 GB of RAM (the naive tests form the explicit
+  d x d second moment); GPU test: 20 s, 0.5 GB on the card.
+
+KNOWN LIMITATIONS
+  * One statistics source (BEN-W), two backbones (qwen25vl, llava), one edited module, role 'last'.  No statistics were built for blip2.
+  * BEN-W statistics use the PROMPT-ONLY key of each row (the only key all 600 rows have).  Calibration and evaluation use teacher-forced keys.
+    On the 112 BEN-W rows that have both, the two keys sit on the same token but differ for 57 rows on Qwen (relative distance up to 3.8 %) and
+    for 26 on LLaVA (up to 0.3 %): the low-precision forward gives another key when the sequence is longer (library rule 3);
+    tests/out/s3_stored_vs_numpy.json.  rescope_nullW therefore nulls prompt-only keys: the teacher-forced key of the same BEN-W query is not
+    exactly nulled.
+  * The REPAIR pool repeats queries (Qwen: 28 of its 489 valid rows lie in groups with the same image content and question; LLaVA 30 of 494).
+    (a) The null sample of rescope_null / cos_null is disjoint from the calibration draw as ROWS, not as QUERIES: in draw 0, 5 (Qwen) and 3 (LLaVA)
+    of the 200 calibration queries are identical to a null-sample query (same key bit for bit, score 0 on every detector after the repair); over
+    draws 0 .. 19 the count is 0 .. 7.  (b) Inside the two-block rule, for every two-block row including the registered ones, a block-2 query can
+    be identical to a block-1 query and then has margin <= 0 on every detector.  A HELD-OUT-DISJOINT row is never a REPAIR query, so neither can
+    happen to a reported row: the calibration queries are not exactly exchangeable with the reported rows.  The counts are label-free and printed
+    in out/mechanics.txt; the effect on the false-firing rate was NOT measured here (it needs the 20 draws of the new rows, which is experiment
+    E1).  rescope_nullW adds no such row.  For the same reason the 100 null keys can be rank deficient (Qwen draw 0: rank 98); the library's null
+    repair handles it (pseudo-inverse).
+  * On Qwen 215 benign rows (BEN-W 42, BEN-S 95, BEN-T 78) are probe queries of the MMKE-Bench family: for TB-Q*-mmke logs the parts are NOT
+    disjoint from the probe pools (no benign row is a probe / edit / hard-negative query of the VLKEB families; tests/out/p9_*.json).
+  * 812 (Qwen) / 712 (LLaVA) benign rows, all of them image rows, ask a question string that an edit of the long stream asks or rephrases
+    (q_in_edit): BEN-W 169 / 149, BEN-S 383 / 331, BEN-T 260 / 232.  They are near-scope rows for long logs; the summary counts them per prefix T.
+  * rescope.null_repair raises (RuntimeError: empty reduction) on a gate without 'lin' detectors -- the library's own cosine gate included, and
+    so cos_centred / whitecos / cos_null gates.  cos_null is built by handing the cosine detector to null_repair as the linear coordinate it is
+    (w = k_i / |k_i|, s_i = |k_i|) and reading the result as a cosine again.  witness_repair(mode='detector') is refused for TCosLog
+    (NotImplementedError); least_repair, witness_repair(mode='threshold'), scope_cut and every calibration only read scores and work.
+  * A gate built from a (T, d) tensor of keys has no values (scores only).  feature_gate pins one BLAS thread while it builds detectors
+    (torch.set_num_threads is process-wide for that moment).
+  * Side effects of `import white` on the importing process: bytecode writing is switched off (sys.dont_write_bytecode = True, so that nothing is
+    written into the read-only library / driver directories), OMP / MKL / OPENBLAS thread variables default to 4 and torch is capped at 4 threads
+    (as fx does).
+  * white is a linear coordinate: it is not bounded and an edit's own B = 1 prompt can score above 1; cos_null's detectors are 2 - 7 times longer
+    than unit vectors (norm inflation, out/mechanics.txt), so its score is not a cosine of anything.
+  * The mechanics table is ONE calibration draw on the two development logs.  It shows that the pipeline runs end to end and agrees with the
+    sanity experiment; it is not a comparison of gates, and a single draw can lie above the conformal bound (the bound is marginal over draws).
+
+TESTS AND REPRODUCTION (cwd = 10_final/feat2; PY = $RESCOPE_PYTHON)
+    $PY -m white.benparts build && $PY -m white.benparts check        parts: write; re-run and compare byte for byte
+    $PY -m white.wstats build && $PY -m white.wstats check            statistics: write; re-run and compare byte for byte
+    $PY -m white.mechanics run                                        out/mechanics_<log>.json + out/mechanics.txt ($PY -m white.mechanics check: re-run, compare)
+    $PY white/tests/run_tests.py                                      all CPU tests + tests/out/table.txt (groups: parts stats scores mechanics usage)
+    $GQ run --mem 1500 --prio 4 --name white_gpu -- $PY white/tests/run_tests.py gpu      optional: the gates on a card (no model is loaded)
+  parts      p1 - p9    the rule re-coded, no item in two parts, same split for all backbones, byte-for-byte re-runs, loader, tampering, summary recount,
+                        benign rows against every cached query
+  stats      s1 - s7    Woodbury (Gram and primal form) against an explicit inverse, stored statistics against numpy, byte-for-byte re-runs under
+                        1 / 2 / 4 threads, tampering, the identity M (C_W + rho I) x = x at full size
+  scores     c1 - c11   own-key values (synthetic and real), 47 invariance identities and limits, cos_null / rescope_nullW (zero on the given keys, own
+                        coordinate unchanged, minimum change), the naive second code path on 50 queries of each development log (tests/naive.py: numpy
+                        only, explicit d x d inverse, constrained least squares), the library's calibration contract on the new features, operators,
+                        the forward hook, the decision band, detector bits, cost
+  mechanics  m1 - m3    agreement with e0_sanity and with the driver's rows, byte-for-byte re-run, scope
+  usage      u1 - u2    the example above executed as printed; the wiring through fx.methods.recalibrate / wrap
+  gpu        g1         every gate on a card: scores and decisions as on the CPU, hook in the module dtype

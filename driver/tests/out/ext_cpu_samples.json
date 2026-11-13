@@ -1,0 +1,239 @@
+{
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "contamination_even": {
+    "0.0": {
+     "n": 200,
+     "n_in_scope": 0,
+     "expected": 0,
+     "n_text": 0,
+     "n_image": 0,
+     "all_even_edits": true,
+     "benign_part_nested_in_clean_draw": true,
+     "nested_in_share": true
+    },
+    "0.01": {
+     "n": 200,
+     "n_in_scope": 2,
+     "expected": 2,
+     "n_text": 1,
+     "n_image": 1,
+     "all_even_edits": true,
+     "benign_part_nested_in_clean_draw": true,
+     "nested_in_share": true
+    },
+    "0.05": {
+     "n": 200,
+     "n_in_scope": 10,
+     "expected": 10,
+     "n_text": 5,
+     "n_image": 5,
+     "all_even_edits": true,
+     "benign_part_nested_in_clean_draw": true,
+     "nested_in_share": true
+    },
+    "0.2": {
+     "n": 200,
+     "n_in_scope": 40,
+     "expected": 40,
+     "n_text": 20,
+     "n_image": 20,
+     "all_even_edits": true,
+     "benign_part_nested_in_clean_draw": true,
+     "nested_in_share": true
+    }
+   },
+   "first_half_draw_unchanged": true,
+   "contaminated_method": {
+    "variant": "contamination=0.2,contam_half=even",
+    "n": 200,
+    "contaminating_edits_even": true
+   },
+   "sources": {
+    "BEN-S/tf": {
+     "n_pool": 282,
+     "n": 200,
+     "all_in_part": true,
+     "kc_is_log_cache": true
+    },
+    "BEN-S/decode": {
+     "n_pool": 1375,
+     "n": 200,
+     "all_in_part": true,
+     "kc_is_log_cache": true
+    },
+    "BEN-S/steps": {
+     "n_pool": 1375,
+     "n": 200,
+     "all_in_part": true,
+     "kc_is_log_cache": true
+    },
+    "MME-C/tf": {
+     "n_pool": 1187,
+     "n": 200,
+     "all_in_part": true,
+     "kc_is_mme_cache": true,
+     "sids": [
+      "mme:10",
+      "mme:11"
+     ]
+    },
+    "methods": {
+     "variants": [
+      "source=BEN-S",
+      "source=MME-C"
+     ],
+     "thresholds_differ_from_repair": true,
+     "mme_block2_firing": 4,
+     "mme_allowed": 5,
+     "mme_capped": 0,
+     "null_with_mme_source_builds": true,
+     "cosine_ben_s": "source=BEN-S"
+    }
+   },
+   "guard": {
+    "whole_benign_pool_refused": true,
+    "whole_benign_pool_refused_in_method": true,
+    "BEN-T_source_refused": true,
+    "MME-T_source_refused": true,
+    "BEN-W_source_refused": true,
+    "benign_part_BEN-T_refused": true,
+    "explicit_BEN-T_refused": true,
+    "explicit_MME-T_refused": true,
+    "explicit_one_BEN-T_row_among_repair_refused": true,
+    "handmade_draw_BEN-T_refused_at_calibration": true,
+    "handmade_draw_MME-T_refused_at_calibration": true,
+    "null_rows_BEN-T_refused": true,
+    "least_BEN-T_refused": true,
+    "exclude_BEN-T_refused": true,
+    "BEN-S_explicit_allowed": true,
+    "MME-C_explicit_allowed": true,
+    "BEN-W_null_rows_allowed": true,
+    "BEN-W_calibration_refused": true,
+    "behave_refuses_benign_rows": true
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "contamination_even": {
+    "0.0": {
+     "n": 200,
+     "n_in_scope": 0,
+     "expected": 0,
+     "n_text": 0,
+     "n_image": 0,
+     "all_even_edits": true,
+     "benign_part_nested_in_clean_draw": true,
+     "nested_in_share": true
+    },
+    "0.01": {
+     "n": 200,
+     "n_in_scope": 2,
+     "expected": 2,
+     "n_text": 1,
+     "n_image": 1,
+     "all_even_edits": true,
+     "benign_part_nested_in_clean_draw": true,
+     "nested_in_share": true
+    },
+    "0.05": {
+     "n": 200,
+     "n_in_scope": 10,
+     "expected": 10,
+     "n_text": 5,
+     "n_image": 5,
+     "all_even_edits": true,
+     "benign_part_nested_in_clean_draw": true,
+     "nested_in_share": true
+    },
+    "0.2": {
+     "n": 200,
+     "n_in_scope": 40,
+     "expected": 40,
+     "n_text": 20,
+     "n_image": 20,
+     "all_even_edits": true,
+     "benign_part_nested_in_clean_draw": true,
+     "nested_in_share": true
+    }
+   },
+   "first_half_draw_unchanged": true,
+   "contaminated_method": {
+    "variant": "contamination=0.2,contam_half=even",
+    "n": 200,
+    "contaminating_edits_even": true
+   },
+   "sources": {
+    "BEN-S/tf": {
+     "n_pool": 289,
+     "n": 200,
+     "all_in_part": true,
+     "kc_is_log_cache": true
+    },
+    "BEN-S/decode": {
+     "n_pool": 1375,
+     "n": 200,
+     "all_in_part": true,
+     "kc_is_log_cache": true
+    },
+    "BEN-S/steps": {
+     "n_pool": 1375,
+     "n": 200,
+     "all_in_part": true,
+     "kc_is_log_cache": true
+    },
+    "MME-C/tf": {
+     "n_pool": 1188,
+     "n": 200,
+     "all_in_part": true,
+     "kc_is_mme_cache": true,
+     "sids": [
+      "mme:10",
+      "mme:11"
+     ]
+    },
+    "methods": {
+     "variants": [
+      "source=BEN-S",
+      "source=MME-C"
+     ],
+     "thresholds_differ_from_repair": true,
+     "mme_block2_firing": 4,
+     "mme_allowed": 5,
+     "mme_capped": 0,
+     "null_with_mme_source_builds": true,
+     "cosine_ben_s": "source=BEN-S"
+    }
+   },
+   "guard": {
+    "whole_benign_pool_refused": true,
+    "whole_benign_pool_refused_in_method": true,
+    "BEN-T_source_refused": true,
+    "MME-T_source_refused": true,
+    "BEN-W_source_refused": true,
+    "benign_part_BEN-T_refused": true,
+    "explicit_BEN-T_refused": true,
+    "explicit_MME-T_refused": true,
+    "explicit_one_BEN-T_row_among_repair_refused": true,
+    "handmade_draw_BEN-T_refused_at_calibration": true,
+    "handmade_draw_MME-T_refused_at_calibration": true,
+    "null_rows_BEN-T_refused": true,
+    "least_BEN-T_refused": true,
+    "exclude_BEN-T_refused": true,
+    "BEN-S_explicit_allowed": true,
+    "MME-C_explicit_allowed": true,
+    "BEN-W_null_rows_allowed": true,
+    "BEN-W_calibration_refused": true,
+    "behave_refuses_benign_rows": true
+   }
+  }
+ },
+ "ok": true,
+ "test": "samples",
+ "seconds": 2.3905105590820312,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:09:43"
+}

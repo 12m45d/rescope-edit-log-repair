@@ -1,0 +1,159 @@
+{
+ "ok": true,
+ "summary": "qwen25vl/Q: 1123/2000 edits share their question with another edit (1058 distinct questions), 677 ask a probe question; edit images all distinct: True; image rephrase = own image for 3, shared with another edit for 0; qwen25vl/QK: 328/500 edits share their question with another edit (223 distinct questions), 0 ask a probe question; edit images all distinct: True; image rephrase = own image for 1, shared with another edit for 35; llava/L: 514/1000 edits share their question with another edit (585 distinct questions), 325 ask a probe question; edit images all distinct: True; image rephrase = own image for 2, shared with another edit for 0",
+ "families": {
+  "qwen25vl/Q": {
+   "T": 2000,
+   "n_distinct_edit_questions": 1058,
+   "n_edits_whose_question_is_asked_by_another_edit": 1123,
+   "most_frequent_edit_questions": [
+    [
+     "who is the person featured in this image?",
+     106
+    ],
+    [
+     "what is the title of the film in this scene?",
+     71
+    ],
+    [
+     "who is the actor featured in this image?",
+     60
+    ]
+   ],
+   "n_edits_whose_text_rephrase_equals_their_question": 0,
+   "n_edits_whose_text_rephrase_is_the_question_of_another_edit": 77,
+   "n_distinct_edit_images": 2000,
+   "n_edits_whose_image_is_the_image_of_another_edit": 0,
+   "n_edits_whose_image_rephrase_is_their_own_image": 3,
+   "n_edits_whose_image_rephrase_is_shared_with_another_edit": 0,
+   "n_edits_whose_image_rephrase_is_the_image_of_another_edit": 0,
+   "probe": {
+    "n": 1000,
+    "n_with_image": 500,
+    "n_whose_question_is_an_edit_question": 266,
+    "n_whose_image_is_an_edit_image": 0,
+    "n_whose_image_is_an_edit_image_or_image_rephrase": 0,
+    "n_valid_repair_rows_whose_question_is_an_edit_question": 139,
+    "n_valid_repair_rows": 489
+   },
+   "n_edits_whose_question_is_a_probe_question": 677,
+   "benign": {
+    "n": 3000,
+    "n_with_image": 1500,
+    "n_whose_question_is_an_edit_question": 803,
+    "n_whose_image_is_an_edit_image": 0,
+    "n_whose_image_is_an_edit_image_or_image_rephrase": 0
+   },
+   "hn": {
+    "n": 1800,
+    "n_with_image": 1800,
+    "n_whose_question_is_an_edit_question": 1423,
+    "n_whose_image_is_an_edit_image": 1000,
+    "n_whose_image_is_an_edit_image_or_image_rephrase": 1000
+   }
+  },
+  "qwen25vl/QK": {
+   "T": 500,
+   "n_distinct_edit_questions": 223,
+   "n_edits_whose_question_is_asked_by_another_edit": 328,
+   "most_frequent_edit_questions": [
+    [
+     "give me some important information about the bird in the image.",
+     50
+    ],
+    [
+     "give me some important information about the plant in the image.",
+     31
+    ],
+    [
+     "give me some important information about the human in the image.",
+     31
+    ]
+   ],
+   "n_edits_whose_text_rephrase_equals_their_question": 0,
+   "n_edits_whose_text_rephrase_is_the_question_of_another_edit": 0,
+   "n_distinct_edit_images": 500,
+   "n_edits_whose_image_is_the_image_of_another_edit": 0,
+   "n_edits_whose_image_rephrase_is_their_own_image": 1,
+   "n_edits_whose_image_rephrase_is_shared_with_another_edit": 35,
+   "n_edits_whose_image_rephrase_is_the_image_of_another_edit": 0,
+   "probe": {
+    "n": 1000,
+    "n_with_image": 500,
+    "n_whose_question_is_an_edit_question": 0,
+    "n_whose_image_is_an_edit_image": 0,
+    "n_whose_image_is_an_edit_image_or_image_rephrase": 0,
+    "n_valid_repair_rows_whose_question_is_an_edit_question": 0,
+    "n_valid_repair_rows": 495
+   },
+   "n_edits_whose_question_is_a_probe_question": 0,
+   "benign": {
+    "n": 3000,
+    "n_with_image": 1500,
+    "n_whose_question_is_an_edit_question": 0,
+    "n_whose_image_is_an_edit_image": 0,
+    "n_whose_image_is_an_edit_image_or_image_rephrase": 0
+   }
+  },
+  "llava/L": {
+   "T": 1000,
+   "n_distinct_edit_questions": 585,
+   "n_edits_whose_question_is_asked_by_another_edit": 514,
+   "most_frequent_edit_questions": [
+    [
+     "what is the title of the film in this scene?",
+     50
+    ],
+    [
+     "who is the person featured in this image?",
+     46
+    ],
+    [
+     "who is the actor featured in this image?",
+     32
+    ]
+   ],
+   "n_edits_whose_text_rephrase_equals_their_question": 0,
+   "n_edits_whose_text_rephrase_is_the_question_of_another_edit": 41,
+   "n_distinct_edit_images": 1000,
+   "n_edits_whose_image_is_the_image_of_another_edit": 0,
+   "n_edits_whose_image_rephrase_is_their_own_image": 2,
+   "n_edits_whose_image_rephrase_is_shared_with_another_edit": 0,
+   "n_edits_whose_image_rephrase_is_the_image_of_another_edit": 0,
+   "probe": {
+    "n": 1000,
+    "n_with_image": 500,
+    "n_whose_question_is_an_edit_question": 236,
+    "n_whose_image_is_an_edit_image": 0,
+    "n_whose_image_is_an_edit_image_or_image_rephrase": 0,
+    "n_valid_repair_rows_whose_question_is_an_edit_question": 124,
+    "n_valid_repair_rows": 494
+   },
+   "n_edits_whose_question_is_a_probe_question": 325,
+   "benign": {
+    "n": 3000,
+    "n_with_image": 1500,
+    "n_whose_question_is_an_edit_question": 701,
+    "n_whose_image_is_an_edit_image": 0,
+    "n_whose_image_is_an_edit_image_or_image_rephrase": 0
+   },
+   "hn": {
+    "n": 1800,
+    "n_with_image": 1800,
+    "n_whose_question_is_an_edit_question": 1379,
+    "n_whose_image_is_an_edit_image": 1000,
+    "n_whose_image_is_an_edit_image_or_image_rephrase": 1000
+   }
+  }
+ },
+ "embedding_keys": {
+  "n_images": 9165,
+  "n_questions": 6424,
+  "n_images_shared_by_backbones": 3111,
+  "n_questions_shared_by_backbones": 3508,
+  "n_image_contents_with_several_paths": 302
+ },
+ "test": "facts",
+ "seconds": 0.6,
+ "when": "2026-11-11 08:27:12 UTC"
+}

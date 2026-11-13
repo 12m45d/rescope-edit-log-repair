@@ -1,0 +1,224 @@
+{
+ "pass": true,
+ "log": "TB-Q100-ae-l2_3",
+ "n_queries": 50,
+ "query_sids": [
+  "Q:probe:text:36",
+  "Q:probe:text:52",
+  "Q:probe:image:126",
+  "Q:probe:image:196",
+  "Q:probe:image:260",
+  "Q:probe:image:279",
+  "Q:probe:text:315",
+  "Q:probe:text:342",
+  "Q:probe:text:386",
+  "Q:probe:image:406",
+  "Q:probe:text:416",
+  "Q:probe:text:435",
+  "Q:probe:text:472",
+  "Q:probe:text:475",
+  "Q:probe:image:489",
+  "Q:edit:tgen:5",
+  "Q:edit:tgen:18",
+  "Q:edit:tgen:28",
+  "Q:edit:tgen:29",
+  "Q:edit:tgen:43",
+  "Q:edit:tgen:68",
+  "Q:edit:tgen:74",
+  "Q:edit:tgen:77",
+  "Q:edit:tgen:84",
+  "Q:edit:tgen:93",
+  "Q:edit:igen:9",
+  "Q:edit:igen:14",
+  "Q:edit:igen:17",
+  "Q:edit:igen:34",
+  "Q:edit:igen:41",
+  "Q:edit:igen:55",
+  "Q:edit:igen:64",
+  "Q:edit:igen:77",
+  "Q:edit:igen:79",
+  "Q:edit:igen:98",
+  "Q:edit:rel:6",
+  "Q:edit:rel:14",
+  "Q:edit:rel:50",
+  "Q:edit:rel:67",
+  "Q:edit:rel:80",
+  "HN-I:train:3089:0",
+  "HN-I:train:1674:1",
+  "HN-I:train:2250:2",
+  "HN-I:train:1389:5",
+  "HN-Q:train:4227:3",
+  "HN-Q:train:4927:2",
+  "HN-Q:train:4703:4",
+  "HN-X:train:1075:train:2536",
+  "HN-X:train:4703:train:2822",
+  "HN-X:train:4904:train:2462"
+ ],
+ "scores": {
+  "cosine (registered; library gate)": {
+   "max_abs_deviation": 4.440892098500626e-16,
+   "max_abs_score": 0.9997555040188675,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "cos_centred": {
+   "max_abs_deviation": 1.2212453270876722e-15,
+   "max_abs_score": 0.9995760267938547,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "tr(C_W) relative deviation": 0.0,
+  "white_0.01": {
+   "max_abs_deviation": 7.008560398702457e-13,
+   "max_abs_score": 1.0182663758605104,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "whitecos_0.01": {
+   "max_abs_deviation": 5.379238721126001e-13,
+   "max_abs_score": 0.9975549440389868,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "rho_0.01 relative deviation": 0.0,
+  "white_0.1": {
+   "max_abs_deviation": 1.3514449975771115e-13,
+   "max_abs_score": 1.0188136908973082,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "whitecos_0.1": {
+   "max_abs_deviation": 8.295447662121092e-14,
+   "max_abs_score": 0.9976144541615479,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "rho_0.1 relative deviation": 0.0,
+  "white_1": {
+   "max_abs_deviation": 2.4549806632023774e-14,
+   "max_abs_score": 1.019142997721066,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "whitecos_1": {
+   "max_abs_deviation": 1.8974405380234316e-14,
+   "max_abs_score": 0.9978592346455541,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "rho_1 relative deviation": 0.0,
+  "cos_null (100 REPAIR keys)": {
+   "max_abs_deviation": 1.083258916595442e-12,
+   "max_abs_score": 1.005701706759462,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "ncoord_null (100 REPAIR keys) = rescope_null": {
+   "max_abs_deviation": 2.8173470500991726e-13,
+   "max_abs_score": 1.0053779758734445,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "ncoord_null (600 BEN-W keys) = rescope_nullW": {
+   "max_abs_deviation": 1.778467303981124e-11,
+   "max_abs_score": 1.002940157652874,
+   "shape": [
+    50,
+    100
+   ]
+  },
+  "null_w helper (600 BEN-W keys)": {
+   "max_abs_deviation": 1.778467303981124e-11,
+   "max_abs_score": 1.002940157652874,
+   "shape": [
+    50,
+    100
+   ]
+  }
+ },
+ "tolerance": 1e-08,
+ "worst_abs_deviation": 1.778467303981124e-11,
+ "worst_score": "ncoord_null (600 BEN-W keys) = rescope_nullW",
+ "naive_constrained_solves": {
+  "cos_null (100 REPAIR keys)": {
+   "n_keys": 100,
+   "n_distinct_keys": 98,
+   "rank_min": 98,
+   "rank_max": 98,
+   "smallest_kept_singular_value_rel": 0.00028237323492233835,
+   "largest_dropped_singular_value_rel": 9.965335509196719e-17,
+   "max_relative_residual": 2.2779839786892283e-14,
+   "rank_of_the_library_repair": 98
+  },
+  "ncoord_null (100 REPAIR keys)": {
+   "n_keys": 100,
+   "n_distinct_keys": 98,
+   "rank_min": 98,
+   "rank_max": 98,
+   "smallest_kept_singular_value_rel": 0.00028237323492233835,
+   "largest_dropped_singular_value_rel": 9.965335509196719e-17,
+   "max_relative_residual": 1.3204154119104896e-13,
+   "rank_of_the_library_repair": 98
+  },
+  "ncoord_null (600 BEN-W keys)": {
+   "n_keys": 600,
+   "n_distinct_keys": 600,
+   "rank_min": 600,
+   "rank_max": 600,
+   "smallest_kept_singular_value_rel": 7.4977002482298384e-06,
+   "largest_dropped_singular_value_rel": 0.0,
+   "max_relative_residual": 1.6446303106094119e-12,
+   "rank_of_the_library_repair": 600
+  }
+ },
+ "naive_reference_is_a_valid_solution": true,
+ "cancellation_of_query_quadratic_form_min_median_max": {
+  "0.01": [
+   7.317606222802983,
+   22.767383135383398,
+   162.65513403581667
+  ],
+  "0.1": [
+   6.945813592299435,
+   20.937011198498574,
+   125.37485338121698
+  ],
+  "1": [
+   5.705708608816026,
+   15.223996904136417,
+   64.10871293143002
+  ]
+ },
+ "naive_path_seconds": 29.55066704750061,
+ "note": "50 queries x 100 edits, 12 score matrices, naive numpy path (explicit d x d inverse, constrained least squares): worst |difference| 1.8e-11 (ncoord_null (600 BEN-W keys) = rescope_nullW); tolerance 1e-08; the 100 null keys hold 98 distinct keys, rank 98 in both paths; naive solves consistent (residual 1.6e-12); cancellation in k'Mk of the queries at kappa 0.01: median 23, max 163",
+ "test": "c5_naive_qwen",
+ "group": "scores",
+ "what": "naive re-implementation of every score on 50 queries of TB-Q100-ae-l2_3 (second code path: numpy / scipy, explicit d x d inverse)",
+ "seconds": 29.594831705093384,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

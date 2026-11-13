@@ -1,0 +1,1456 @@
+{
+ "audit": "E10 public text logs: sequential ROME (public code) on GPT-2 XL with CounterFact -- logs TX-G2XL-rome-dev100, -T100, -T500, -T1000, -T2000",
+ "written_utc": "2026-11-11 11:02:28 UTC",
+ "audit_dir": "[redacted: local path]/02_research/experiments/09_testbed_scale/text_public/audit",
+ "audit_seed": 20261111,
+ "binding_specification": "02_research/experiments/10_final/PROTOCOL.md, section 6, amendment 'E10: public text logs' and its correction (single-edit check on the first 1000 records); 04_handover/README.md section 5 (data traps)",
+ "independence": "no function of the builder's code (text_public/code) is imported; the audit reads the builder's stored files, the public repository, the checkpoint, the data and the statistics file, and drives the public code with drivers of its own",
+ "discipline_of_the_audit": "on the reported stream the audit ran only the public editor (re-derivation of logged updates), the pre-edit and the deployed model; no threshold, gate, scoped replay, rollback or repair was run or computed on any log of the family",
+ "checks": {
+  "1_provenance": {
+   "verdict": "PASS",
+   "evidence": {
+    "public_code": {
+     "commit": "0874014cd9837e4365f3e6f3c71400ef11509e04",
+     "equals_stated_commit": true,
+     "commit_date": "2022-10-14 05:16:00 -0400",
+     "git_status_porcelain_empty": true,
+     "git_diff_HEAD_empty": true,
+     "tracked_files": 146,
+     "tracked_symbolic_links": 10,
+     "tracked_files_whose_content_hash_differs_from_the_commit(audit's own hashing)": 0,
+     "untracked_files": "30 compiled __pycache__/*.pyc (git-ignored), 0 others",
+     "commit_archive_downloaded_by_audit(codeload.github.com)": {
+      "files_compared": 136,
+      "links_compared": 10,
+      "differing": 0,
+      "sha256_equals_builder_archive": true
+     },
+     "github_HEAD_and_main_today_equal_this_commit": true
+    },
+    "hyper_parameters": {
+     "file": "hparams/ROME/gpt2-xl.json",
+     "sha256": "81a98b788b8fbb89718288a8831441200e7d824fd057f62cb7d913ae4da5cf42",
+     "equals_commit_blob": true,
+     "copies_recorded_by_the_runs_equal": {
+      "single_run_params.json_sha256_equal": true,
+      "dev_meta_hparams_equal": true,
+      "stream_meta_hparams_equal": true
+     }
+    },
+    "model": {
+     "repo_revision": "15ea56dee5df4983c59b2538573817e1667135e2",
+     "equals_mirror_main": true,
+     "model.safetensors": {
+      "bytes": 6431829964,
+      "sha256": "0f8b28eb05a8075f48b61b6f35332978c74fc7763fa9fb4051a1c30511736a6a",
+      "equals_mirror_lfs_listing": true
+     },
+     "pytorch_model.bin": {
+      "bytes": 6431878936,
+      "sha256": "cd2a29e31040ef64d9362cb96801969c9f67b9e0bdbd6e00b9dda57cdbe17435",
+      "equals_mirror_lfs_listing": true
+     },
+     "config_and_tokenizer_files_equal_mirror_blobs": true,
+     "edited_weight_of_loaded_model_equals_both_checkpoint_tensors_and_stored_W0": true
+    },
+    "data": {
+     "file": "counterfact.json",
+     "bytes": 45108470,
+     "sha256": "d017056125178a13728594e66a801357a8db9ed7973a7425554bb4271de9fc6f",
+     "n_records": 21919,
+     "case_ids_are_0_to_n_minus_1": true,
+     "fresh_download_by_audit_identical": true,
+     "first_record": {
+      "case_id": 0,
+      "requested_rewrite": {
+       "prompt": "The mother tongue of {} is",
+       "relation_id": "P103",
+       "target_new": {
+        "str": "English",
+        "id": "Q1860"
+       },
+       "target_true": {
+        "str": "French",
+        "id": "Q150"
+       },
+       "subject": "Danielle Darrieux"
+      }
+     },
+     "last_record": {
+      "case_id": 21918,
+      "requested_rewrite": {
+       "prompt": "{} works as",
+       "relation_id": "P106",
+       "target_new": {
+        "str": "composer",
+        "id": "Q36834"
+       },
+       "target_true": {
+        "str": "actor",
+        "id": "Q33999"
+       },
+       "subject": "Subair"
+      }
+     }
+    },
+    "statistics": {
+     "source": "authors' precomputed file (rome.baulab.info); not recomputed",
+     "sha256": "376f29d29b05fed1f5c48daa47b40edb87a239ec817a51bfe4cf68659749bc78",
+     "bytes": 163841186,
+     "fresh_download_by_audit_identical": true,
+     "tokens": 44068071,
+     "samples": 100000,
+     "shape": [
+      6400,
+      6400
+     ],
+     "dtype": "float32",
+     "condition_number": 59747.9,
+     "public_code_printouts": "'Loading cached <this file>' in every run; 0 'Attempting to download', 0 'Computing locally'",
+     "stored_directions_recomputed_from_the_file(float64 inverse, template-mean keys)": {
+      "n_updates": 39,
+      "min_cosine": 0.999999998761157,
+      "max_rel_l2_diff": 4.97763565897092e-05
+     }
+    },
+    "library_stack": {
+     "transformers_4.23.1_tokenizers_0.13.3_huggingface_hub_0.11.1_nltk_3.10.4_files_equal_wheel_RECORD": true,
+     "[redacted: related project]_files_modified_since_build_start": 0,
+     "files_left_in_home_cache": 0
+    },
+    "gpt_j": {
+     "bytes_total": 24210465421,
+     "equals_stated": true,
+     "pytorch_model.bin_sha256_equals_mirror_listing": true,
+     "no_queue_job_touched_it": true
+    },
+    "driver_vs_public_code": {
+     "edit_call_equal_up_to_names": true,
+     "post_and_pre_evaluation_calls_equal_up_to_names": true,
+     "restore_statement_equal": true,
+     "replay_expression_in_builder_resume": true,
+     "public_write_expression": true
+    },
+    "deviation_list": {
+     "items": 17,
+     "missing_from_the_list": [
+      "which checkpoint file is read is not stated: transformers 4.23.1 with safetensors installed reads model.safetensors, the public environment (transformers 4.15.0) would read pytorch_model.bin; the 628 tensors of the two files are bitwise equal (0 differ): no effect",
+      "item 15 (memory fallback) ends with '(bit for bit: not run yet)' and no result of that check is stored (out/describe/*/info.json has no use_cache_equivalence_at_W0); the audit ran it (see discrepancies)",
+      "the list is rendered from the driver files as they are on disk; tp_common.py and run_stream.py were last modified at 2026-11-11 06:36:20 UTC while the first process of the reported stream was running; that process (updates 0..1530), the development log and the single-edit run executed earlier versions of which no copy is kept (see discrepancies)"
+     ]
+    }
+   },
+   "criteria": "commit = stated commit and = github HEAD; every tracked file hash = commit; hyper-parameter file = commit; model files = mirror listing; data and statistics = fresh downloads; statistics never recomputed; installed stacks = wheels"
+  },
+  "2_condition_1_reconstruction_orientation_key_determinism": {
+   "verdict": "PASS",
+   "evidence": {
+    "per_log": {
+     "TX-G2XL-rome-dev100": {
+      "T": 100,
+      "records": [
+       15000,
+       15099
+      ],
+      "requests_equal_dataset_records": true,
+      "float32_replay_of_logged_terms_equals_deployed_weight_bitwise": true,
+      "fp64_sum_vs_deployed": {
+       "max_abs_error": 6.151998280731763e-07,
+       "rel_fro_of_update": 2.6714670948098356e-07,
+       "rel_fro_of_W0": 3.1395212508096937e-07,
+       "max_abs_error_in_float32_ulps_at_max|W_E|": 2.6,
+       "max|W_E|": 2.0076024532318115
+      },
+      "|W_E - W_0|_F": 137.65092577961406,
+      "W_E_finite": true,
+      "max|<readout, solver key> - 1|": 2.220446049250313e-16,
+      "negative_division_factors": 0,
+      "min_division_factor": 2.642184738390609,
+      "max_rel(key @ W_before + b - logged output)": 8.417599140836435e-07,
+      "max_rel(key @ W_after + b - logged target)": 2.1883278067363385e-07,
+      "template_mean_key_coordinate": {
+       "median": 1.0108158019427298,
+       "q95": 1.5439495107755516,
+       "max": 3.0404703921983773,
+       "share_within_1pct": 0.18
+      },
+      "library_format": {
+       "U=right*s, W=left/s, K=solver key": true,
+       "library own() max|s-1|": 2.220446049250313e-16,
+       "library delta() vs (W_E-W_0)^T rel": 2.671467094808541e-07
+      }
+     },
+     "TX-G2XL-rome-T100": {
+      "T": 100,
+      "records": [
+       0,
+       99
+      ],
+      "requests_equal_dataset_records": true,
+      "float32_replay_of_logged_terms_equals_deployed_weight_bitwise": true,
+      "fp64_sum_vs_deployed": {
+       "max_abs_error": 6.198326337192306e-07,
+       "rel_fro_of_update": 3.051426881033738e-07,
+       "rel_fro_of_W0": 3.04996293297179e-07,
+       "max_abs_error_in_float32_ulps_at_max|W_E|": 2.6,
+       "max|W_E|": 2.33841872215271
+      },
+      "|W_E - W_0|_F": 117.07310378352597,
+      "W_E_finite": true,
+      "max|<readout, solver key> - 1|": 3.3306690738754696e-16,
+      "negative_division_factors": 0,
+      "min_division_factor": 4.845785348662033,
+      "max_rel(key @ W_before + b - logged output)": 2.6501577375660937e-07,
+      "max_rel(key @ W_after + b - logged target)": 1.50811937666737e-07,
+      "template_mean_key_coordinate": {
+       "median": 1.0182123527370273,
+       "q95": 1.2210860872964868,
+       "max": 1.6145756804542422,
+       "share_within_1pct": 0.17
+      },
+      "library_format": {
+       "U=right*s, W=left/s, K=solver key": true,
+       "library own() max|s-1|": 3.3306690738754696e-16,
+       "library delta() vs (W_E-W_0)^T rel": 3.051426881030768e-07
+      }
+     },
+     "TX-G2XL-rome-T500": {
+      "T": 500,
+      "records": [
+       0,
+       499
+      ],
+      "requests_equal_dataset_records": true,
+      "float32_replay_of_logged_terms_equals_deployed_weight_bitwise": true,
+      "fp64_sum_vs_deployed": {
+       "max_abs_error": 0.0002139012418922448,
+       "rel_fro_of_update": 4.13341850163523e-07,
+       "rel_fro_of_W0": 5.4174315611962285e-05,
+       "max_abs_error_in_float32_ulps_at_max|W_E|": 14.0,
+       "max|W_E|": 186.665283203125
+      },
+      "|W_E - W_0|_F": 15351.456744716505,
+      "W_E_finite": true,
+      "max|<readout, solver key> - 1|": 1.0658141036401503e-14,
+      "negative_division_factors": 0,
+      "min_division_factor": 0.021807414812861303,
+      "max_rel(key @ W_before + b - logged output)": 3.838944414100271e-06,
+      "max_rel(key @ W_after + b - logged target)": 2.928634287848742e-06,
+      "template_mean_key_coordinate": {
+       "median": 1.0191297588071702,
+       "q95": 1.3746785838692535,
+       "max": 234.31684018261444,
+       "share_within_1pct": 0.15
+      },
+      "library_format": {
+       "U=right*s, W=left/s, K=solver key": true,
+       "library own() max|s-1|": 1.509903313490213e-14,
+       "library delta() vs (W_E-W_0)^T rel": 4.133418501678288e-07
+      }
+     },
+     "TX-G2XL-rome-T1000": {
+      "T": 1000,
+      "records": [
+       0,
+       999
+      ],
+      "requests_equal_dataset_records": true,
+      "float32_replay_of_logged_terms_equals_deployed_weight_bitwise": true,
+      "fp64_sum_vs_deployed": {
+       "max_abs_error": 0.0003938236073963708,
+       "rel_fro_of_update": 4.847517343466465e-07,
+       "rel_fro_of_W0": 9.725957944784837e-05,
+       "max_abs_error_in_float32_ulps_at_max|W_E|": 12.9,
+       "max|W_E|": 445.00628662109375
+      },
+      "|W_E - W_0|_F": 23500.57857414241,
+      "W_E_finite": true,
+      "max|<readout, solver key> - 1|": 1.4210854715202004e-14,
+      "negative_division_factors": 0,
+      "min_division_factor": 0.017447209269158298,
+      "max_rel(key @ W_before + b - logged output)": 5.342276051609335e-06,
+      "max_rel(key @ W_after + b - logged target)": 4.8775169213218464e-06,
+      "template_mean_key_coordinate": {
+       "median": 1.021569982374094,
+       "q95": 1.3501758481560153,
+       "max": 313.3856575779074,
+       "share_within_1pct": 0.13
+      },
+      "library_format": {
+       "U=right*s, W=left/s, K=solver key": true,
+       "library own() max|s-1|": 1.509903313490213e-14,
+       "library delta() vs (W_E-W_0)^T rel": 4.847517343483752e-07
+      }
+     },
+     "TX-G2XL-rome-T2000": {
+      "T": 2000,
+      "records": [
+       0,
+       1999
+      ],
+      "requests_equal_dataset_records": true,
+      "float32_replay_of_logged_terms_equals_deployed_weight_bitwise": true,
+      "fp64_sum_vs_deployed": {
+       "max_abs_error": 0.0008651006049831267,
+       "rel_fro_of_update": 8.349326893173641e-07,
+       "rel_fro_of_W0": 0.00020690070150278087,
+       "max_abs_error_in_float32_ulps_at_max|W_E|": 14.2,
+       "max|W_E|": 535.0865478515625
+      },
+      "|W_E - W_0|_F": 29025.254541241888,
+      "W_E_finite": true,
+      "max|<readout, solver key> - 1|": 1.4210854715202004e-14,
+      "negative_division_factors": 0,
+      "min_division_factor": 0.017447209269158298,
+      "max_rel(key @ W_before + b - logged output)": 6.028708648435459e-06,
+      "max_rel(key @ W_after + b - logged target)": 6.318618424121465e-06,
+      "template_mean_key_coordinate": {
+       "median": 1.0229491855884862,
+       "q95": 1.3589834949390456,
+       "max": 313.3856575779074,
+       "share_within_1pct": 0.1365
+      },
+      "library_format": {
+       "U=right*s, W=left/s, K=solver key": true,
+       "library own() max|s-1|": 1.509903313490213e-14,
+       "library delta() vs (W_E-W_0)^T rel": 8.349326893198342e-07
+      }
+     }
+    },
+    "orientation": "the edited parameter is the Conv1D weight of transformer.h.17.mlp.c_proj, shape (d_in 6400, d_out 1600), y = x @ W + b (checked with the audit's own hooks: max rel 4.9e-06); the logged update is outer(left 6400, right 1600) added without transposition; in the paper's notation the read-out vector is the PUBLIC 'left_vector' / s and the output-side factor is the PUBLIC 'right_vector' * s, s = <left_vector, solver key>",
+    "solver_key": "the input of the module at the last subject token of the request prompt ALONE (what the public compute_v divides by); the audit's own capture of it is bitwise the stored key on every re-run update",
+    "determinism": {
+     "dev": {
+      "n_distinct_updates_rerun_by_audit": 100,
+      "n_left_vector_bitwise_equal": 100,
+      "n_right_vector_bitwise_equal": 100,
+      "n_solver_key_bitwise_equal(audit's own hook)": 100,
+      "n_output_before_bitwise_equal(audit's own hook)": 100,
+      "max_abs(<readout, key> - 1)": 4.440892098500626e-16,
+      "max_rel(module output after the update - logged target)": 4.2156974193540034e-07,
+      "max_rel(key @ W + b - module output)": 3.638534567714121e-07,
+      "indices": "all 100"
+     },
+     "stream": {
+      "n_distinct_updates_rerun_by_audit": 195,
+      "n_left_vector_bitwise_equal": 195,
+      "n_right_vector_bitwise_equal": 195,
+      "n_solver_key_bitwise_equal(audit's own hook)": 195,
+      "n_output_before_bitwise_equal(audit's own hook)": 195,
+      "max_abs(<readout, key> - 1)": 6.661338147750939e-15,
+      "max_rel(module output after the update - logged target)": 5.3400967684412746e-06,
+      "max_rel(key @ W + b - module output)": 4.858722162207598e-06,
+      "indices": "0..99 (T100 complete) and 95 updates between 100 and 1999: 100-102, 173-175, 1530-1532 and random ones; 88 of them after the collapse"
+     },
+     "all_reproduced_bitwise": true,
+     "n_stream_updates_rerun_after_the_collapse(index >= 173)": 88,
+     "context_templates_sampled_by_audit_equal_builder(21 of 21)": true,
+     "all_other_parameters_unchanged_by_the_public_editor(676 tensors hashed)": true,
+     "weight_hashes_recorded_during_the_runs_reproduced_by_replay": {
+      "dev": "5 of 5",
+      "stream": "80 of 80"
+     },
+     "condition_for_reproduction": "the 21 context templates must be the ones the first process sampled from the PRE-EDIT model with torch seed 0 (stored in meta.json).  Re-running development update 97 from the saved state with templates sampled from the EDITED model at that state (same seed) gives 11 of 21 equal templates and an update that differs by 22 % (relative Frobenius); with the pre-edit templates it is bitwise the stored one"
+    }
+   },
+   "criteria": "float32 replay = deployed weight bitwise for all five logs; fp64 error < 1e-5 of the update; |<readout, key> - 1| < 1e-10; no negative division factor; every re-run update bitwise equal to the stored factors"
+  },
+  "3_condition_2_single_edit": {
+   "verdict": "PASS",
+   "evidence": {
+    "published(arXiv 2202.05262v5 e-print downloaded by the audit; tables/cf-results.tex, GPT-2 XL block, row ROME; 7,500 records)": {
+     "ES": [
+      100.0,
+      0.1
+     ],
+     "PS": [
+      96.4,
+      0.3
+     ],
+     "NS": [
+      75.4,
+      0.7
+     ]
+    },
+    "builder_first_1000_records_recomputed_by_audit_from_the_1000_case_files": {
+     "ES": 100.0,
+     "PS": 96.7,
+     "NS": 75.41
+    },
+    "standard_errors": {
+     "ES": 0.0,
+     "PS": 0.47,
+     "NS": 0.92
+    },
+    "abs_difference_to_published": {
+     "ES": 0.0,
+     "PS": 0.3,
+     "NS": 0.01
+    },
+    "tolerance_points": 3.0,
+    "unedited_model_same_records(ours / published)": {
+     "ES": [
+      20.8,
+      22.2
+     ],
+     "PS": [
+      23.7,
+      24.7
+     ],
+     "NS": [
+      78.13,
+      78.1
+     ]
+    },
+    "blocks_of_200_records(NS)": [
+     74.55,
+     77.85,
+     71.85,
+     75.8,
+     77.0
+    ],
+    "rerun_of_150_random_records_by_the_PUBLIC_driver(experiments/evaluate.py main(), seed 0)": {
+     "records": 150,
+     "post_probabilities_bitwise_equal": 150,
+     "pre_probabilities_bitwise_equal": 150,
+     "factors_bitwise_equal(left, right)": [
+      150,
+      150
+     ],
+     "prompt_flags_differing": "0 of 1950",
+     "sample_scores(audit = builder)": {
+      "ES": 100.0,
+      "PS": 98.0,
+      "NS": 71.47
+     },
+     "baselines_replaced_by_placeholders(never called)": [
+      "baselines.efk",
+      "baselines.mend"
+     ],
+     "four_first_token_subject_records_also_identical": true
+    },
+    "same_150_records_with_other_context_templates(seed 1)": {
+     "templates_equal_positionwise": "2 of 21",
+     "median_rel_diff_of_right_vector": 0.3,
+     "max_rel_diff_of_left_vector": 0.36,
+     "prompt_flags_differing": "3 of 1950",
+     "score_change_points": {
+      "ES": 0.0,
+      "PS": 0.0,
+      "NS": -0.07
+     }
+    },
+    "single_edits_with_exploding_update_among_the_first_1000": [
+     {
+      "record": 173,
+      "update_fro": 8149.6,
+      "ES": 1.0,
+      "PS": 1.0,
+      "NS": 0.0
+     },
+     {
+      "record": 240,
+      "update_fro": 6083.8,
+      "ES": 1.0,
+      "PS": 0.5,
+      "NS": 0.5
+     },
+     {
+      "record": 266,
+      "update_fro": 4560.2,
+      "ES": 1.0,
+      "PS": 1.0,
+      "NS": 0.0
+     },
+     {
+      "record": 946,
+      "update_fro": 9186.6,
+      "ES": 1.0,
+      "PS": 1.0,
+      "NS": 0.0
+     }
+    ]
+   },
+   "criteria": "|ours - published| <= 3 points for ES, PS, NS on the first 1000 records; the audit's re-run reproduces the stored per-record probabilities"
+  },
+  "4_condition_3_data_traps": {
+   "verdict": "PASS",
+   "evidence": {
+    "multi_token_decode": {
+     "ok": true,
+     "evidence": "every new and true object of all 21919 records is ONE token as tok(' ' + object) (max 1), so the exact-match rule is a first-token test and equals the token-level and the teacher-forced variant (0 differing rows); the multi-token comparison of the family is D1 on 10-token greedy continuations"
+    },
+    "pre_edit_continuations": {
+     "ok": true,
+     "evidence": "100 random prompts decoded by the audit (one prompt, no cache, no padding): 100 of 100 continuations and 1000 of 1000 tokens equal the stored ones (also under transformers 5.17.0: 100 of 100); further 1200 of 1200 in check 7"
+    },
+    "degenerate_continuations_counted": {
+     "ok": true,
+     "evidence": "pre-edit, 27878 prompts: 0 empty, 3 repetitive (builder: 3), 128 contain <|endoftext|> (kept as valid), 4 start with a line break, 25 have at most two words; deployed: repetitive continuations on HELD-OUT dev100 0.1 %, T100 0.2 %, T500 35.4 %, T1000 52.4 %, T2000 89.1 %"
+    },
+    "ground_truth_vs_evaluation": {
+     "ok": true,
+     "evidence": "D1: ground truth = greedy continuation of the PRE-EDIT model (stored with the hash of W_0), evaluated = argmax of the DEPLOYED model; exact match: data-set object string vs deployed argmax; public scores (probability comparison) are in separate columns and define no ground truth; the pre-edit row of D1 (0.0) is a re-run of the same model, i.e. a reproducibility figure"
+    },
+    "batched_equals_single_decode": {
+     "ok": true,
+     "evidence": "50 prompts of 17 different lengths: the builder's stored batched decode equals the audit's single-prompt decode on 50 (pre-edit) and 50 (dev100 deployed); the builder batches prompts of ONE token length (no pad token, no mask).  The audit's own left-padded batch with mask and position ids: 50 of 50; a naive right-padded batch: 0 of 44 padded prompts (the trap exists; it is avoided)"
+    },
+    "public_probability_test_padding": {
+     "ok": true,
+     "evidence": "the public test right-pads 46 sequences per record; the audit's unpadded single-sequence computation gives the same success flag on 390 of 390 prompts (W0, max |diff| 1.7e-05), 650 of 650 prompts (dev100, max |diff| 5.3e-05), 390 of 390 prompts (T100, max |diff| 3.7e-05), 650 of 650 prompts (T1000, max |diff| 1.8e-04)"
+    },
+    "leading_space_of_the_object": {
+     "ok": true,
+     "evidence": "target tokens are tok(' ' + object): the leading-space token on 21919 of 21919 records; without the space the token would equal it on 0 records; 0 of 27878 prompts end in white space; stored token ids equal the tokenizer's on 27878; a text rule (decoded text starts with the object string) differs from the token rule on 0 rows"
+    },
+    "signs": {
+     "ok": true,
+     "evidence": "all 2,100 division factors are positive (normalising the read-out vector flips no sign); public scores store NEGATIVE log-probabilities: success means nll(true) > nll(new) (verified against the audit's own probabilities)"
+    },
+    "non_finite_values": {
+     "ok": true,
+     "evidence": "no non-finite probability or logit in any stored row; float32 (GPU) vs float64 (CPU) last-token logits: same argmax on 40 of 40 (W0, max |diff| 1.8e-05), 40 of 40 (dev100, max |diff| 2.7e-05), 40 of 40 (T100, max |diff| 2.3e-05), 40 of 40 (T1000, max |diff| 7.9e-05)"
+    }
+   },
+   "criteria": "each of the handover traps and of the listed decode traps is checked by the audit's own code; all must hold"
+  },
+  "5_pools": {
+   "verdict": "PASS",
+   "evidence": {
+    "seed": 20261109,
+    "rule": "eligible = records in no log, case-id order; perm = numpy.random.default_rng(seed).permutation(len(eligible)); REPAIR = first 1000 of perm, HELD-OUT = next 1000",
+    "split_rederived_by_audit_equals_stored": [
+     true,
+     true
+    ],
+    "records": {
+     "eligible": 19819,
+     "REPAIR": 1000,
+     "HELD-OUT": 1000,
+     "stream": 2000,
+     "dev": 100
+    },
+    "pairwise_intersections_by_record": {
+     "repair&heldout": 0,
+     "repair&stream": 0,
+     "repair&dev": 0,
+     "heldout&stream": 0,
+     "heldout&dev": 0,
+     "stream&dev": 0
+    },
+    "pool_records_sharing_a_subject_with_a_logged_request(T100/T500/T1000/T2000, dev)": {
+     "repair": [
+      0,
+      6,
+      14,
+      22,
+      0
+     ],
+     "heldout": [
+      2,
+      4,
+      13,
+      19,
+      1
+     ]
+    },
+    "per_row_flags_differing_from_audit": {
+     "repair": 0,
+     "heldout": 0
+    },
+    "mention_flags_differing_from_the_audit's_own_rule": {
+     "repair": 0,
+     "heldout": 0
+    },
+    "not_covered_by_record_disjointness(counted, flags exist)": {
+     "HELD-OUT benign prompts that are a logged stream request / neighbourhood prompt / a prompt of the dev log": [
+      4,
+      22,
+      7
+     ],
+     "REPAIR benign prompts, the same": [
+      2,
+      30,
+      1
+     ],
+     "prompt texts in both pools": 1,
+     "subjects in both pools": 5,
+     "HELD-OUT prompts mentioning a logged subject (T100/T500/T1000/T2000)": [
+      7,
+      42,
+      95,
+      159
+     ],
+     "neighbourhood prompts equal to a logged request (T100/T500/T1000/T2000)": [
+      1,
+      11,
+      41,
+      140
+     ],
+     "neighbourhood prompts mentioning another logged subject (T100/T500/T1000/T2000)": [
+      5,
+      79,
+      289,
+      971
+     ]
+    }
+   },
+   "criteria": "the stored pools equal the re-derivation from the rule and the seed; all pairwise record intersections empty; the subject flags equal the audit's"
+  },
+  "6_discipline": {
+   "verdict": "PASS",
+   "evidence": {
+    "gpu_jobs_of_the_build(queue event log)": [
+     "tx_collapse",
+     "tx_d1curve",
+     "tx_descA",
+     "tx_descD1",
+     "tx_descD2",
+     "tx_dev",
+     "tx_dev_test",
+     "tx_genG1",
+     "tx_genG2",
+     "tx_genG3",
+     "tx_libcheck",
+     "tx_precont",
+     "tx_selfcheck",
+     "tx_single",
+     "tx_smoke",
+     "tx_stream"
+    ],
+    "scripts_behind_them": {
+     "tx_collapse": [
+      "collapse_point.py"
+     ],
+     "tx_d1curve": [
+      "d1_curve_dev.py"
+     ],
+     "tx_descA": [
+      "describe.py --tags W0 dev100 T100 T500 --"
+     ],
+     "tx_descD1": [
+      "describe.py --tags W0 dev100 T100 T500 T1"
+     ],
+     "tx_descD2": [
+      "code/describe.py --tags T2000 --parts dec,edit,public"
+     ],
+     "tx_dev": [
+      "run_stream.py --name dev"
+     ],
+     "tx_dev_test": [
+      "run_stream.py --name dev --limit 3"
+     ],
+     "tx_genG1": [
+      "describe.py --tags W0 T500 T1000 --parts",
+      "describe.py --tags dev100 T100 W0 --parts",
+      "describe.py --tags dev100 T100 W0 T500 T1"
+     ],
+     "tx_genG2": [
+      "code/describe.py --tags T2000 --parts gen"
+     ],
+     "tx_genG3": [
+      "code/describe.py --tags dev100 T100 W0 T500 T1000 T2000 --parts gen"
+     ],
+     "tx_libcheck": [
+      "check_library.py"
+     ],
+     "tx_precont": [
+      "pre_cont.py"
+     ],
+     "tx_selfcheck": [
+      "code/selfcheck.py"
+     ],
+     "tx_single": [
+      "run_single.py"
+     ],
+     "tx_smoke": [
+      "smoke.py"
+     ],
+     "tx_stream": [
+      "run_stream.py --name stream"
+     ]
+    },
+    "only_script_that_builds_a_gate_object(ScopedLog / Hook)": "check_library.py: NAME = TX.DEV_LOG, asserted to be TX-G2XL-rome-dev100 (thresholds +inf, -inf and 0.999: a format check of the library on the development log)",
+    "outputs_with_gate_words_all_belong_to_the_development_log": true,
+    "reported_logs_through_the_library": "export_library_format.py builds rescope.EditLog objects of all five logs with the library's constructor and reads own() (= 1) and delta() (= W_E - W_0): a format check of stored tensors, no threshold, no decision, no model",
+    "evaluations_of_the_reported_stream_by_the_build": "pre-edit weight; deployed weights after 100, 150, 173, 174, 200, 500, 1000, 2000 requests; the single-edit protocol on records 0..999",
+    "note_detector_statistic_on_the_reported_stream": "while writing the stream the build recorded, for every update, the normalised coordinate <left, k> / <left, k_request> of the edit's own subject token under the editor's 21 context templates (factors.pt: scalars coord_templates, w_dot_k_avg) and tabulated its distribution per reported log (table, section 1: median 1.02, q95 1.36, max 313).  It is the key identity the build had to check, evaluated at the editor's own prompts; it is also the registered detector's score at 20 prefixed variants of each request.  No threshold was applied and nothing was decided or tuned with it (the loader's default key follows from the public code and holds on the development log alone).  Reported for transparency; the audit recomputed the same statistic to verify the builder's statement and computed no other coordinate on a reported log",
+    "other_agents_at_scan_time": {
+     "time": "2026-11-11 10:53:17 UTC",
+     "10_final/e10_text": "driver under construction; its scratch scripts open the development log only; key-cache parts built: ['dev', 'pools']; parts of the reported stream: []"
+    }
+   },
+   "criteria": "no script of the build constructs or applies a gate / scoped log / repair on a log other than TX-G2XL-rome-dev100; no output of such a run exists"
+  },
+  "7_table_of_deployed_logs": {
+   "verdict": "PASS",
+   "evidence": {
+    "own_decode": {
+     "TX-G2XL-rome-dev100": {
+      "deployed_weight_rebuilt_by_audit_equals_snapshot": true,
+      "exact_match(300 request / paraphrase prompts)": {
+       "rows_equal_to_builder": "300 of 300",
+       "audit_request_pct": 98.0,
+       "audit_paraphrase_pct": 75.5,
+       "n_request_n_paraphrase": [
+        100,
+        200
+       ],
+       "builder_all_rows_pct(request, paraphrase)": [
+        98.0,
+        75.5
+       ],
+       "token_rule_vs_text_rule_differ": 0
+      },
+      "D1_heldout(300 prompts)": {
+       "rows_equal_to_builder(tf, decode, tokens kept)": [
+        300,
+        300,
+        300
+       ],
+       "audit_D1_pct": 95.33,
+       "audit_tokens_kept_pct": 62.83,
+       "audit_first_token_changed_pct": 37.33,
+       "builder_all_3000_rows(D1, tokens kept)": [
+        95.43,
+        64.7
+       ],
+       "deployed_continuations_equal_to_builder's_stored_decode": 300
+      },
+      "D1_neighbourhood(300 prompts)": {
+       "rows_equal_to_builder": 300,
+       "audit_D1_pct": 95.33,
+       "builder_all_rows_D1_pct": 94.0
+      }
+     },
+     "TX-G2XL-rome-T1000": {
+      "deployed_weight_rebuilt_by_audit_equals_snapshot": true,
+      "exact_match(300 request / paraphrase prompts)": {
+       "rows_equal_to_builder": "300 of 300",
+       "audit_request_pct": 0.96,
+       "audit_paraphrase_pct": 1.02,
+       "n_request_n_paraphrase": [
+        104,
+        196
+       ],
+       "builder_all_rows_pct(request, paraphrase)": [
+        1.4,
+        0.9
+       ],
+       "token_rule_vs_text_rule_differ": 0
+      },
+      "D1_heldout(300 prompts)": {
+       "rows_equal_to_builder(tf, decode, tokens kept)": [
+        300,
+        300,
+        300
+       ],
+       "audit_D1_pct": 100.0,
+       "audit_tokens_kept_pct": 0.13,
+       "audit_first_token_changed_pct": 100.0,
+       "builder_all_3000_rows(D1, tokens kept)": [
+        100.0,
+        0.27
+       ],
+       "deployed_continuations_equal_to_builder's_stored_decode": 300
+      },
+      "D1_neighbourhood(300 prompts)": {
+       "rows_equal_to_builder": 300,
+       "audit_D1_pct": 100.0,
+       "builder_all_rows_D1_pct": 100.0
+      }
+     }
+    },
+    "retention_first_100_requests(audit's decode; request / paraphrase exact)": {
+     "T100": [
+      97.0,
+      75.0,
+      "300 of 300 rows equal"
+     ],
+     "T500": [
+      1.0,
+      0.0,
+      "300 of 300 rows equal"
+     ],
+     "T1000": [
+      0.0,
+      0.0,
+      "300 of 300 rows equal"
+     ],
+     "T2000": [
+      0.0,
+      0.0,
+      "300 of 300 rows equal"
+     ]
+    },
+    "every_digit_of_the_report's_table_recomputed_from_the_stored_row_and_case_files": true,
+    "table_recomputed": {
+     "dev100": {
+      "ES_PS_NS": [
+       100.0,
+       98.0,
+       72.9
+      ],
+      "request_paraphrase_exact": [
+       98.0,
+       75.5
+      ],
+      "D1_heldout": 95.4,
+      "tokens_kept": 64.7,
+      "GE": 587.2,
+      "pre_edit_D1": 0.0
+     },
+     "T100": {
+      "ES_PS_NS": [
+       100.0,
+       98.5,
+       66.8
+      ],
+      "request_paraphrase_exact": [
+       97.0,
+       75.0
+      ],
+      "D1_heldout": 93.5,
+      "tokens_kept": 69.8,
+      "GE": 594.2,
+      "pre_edit_D1": 0.0
+     },
+     "T500": {
+      "ES_PS_NS": [
+       57.0,
+       52.2,
+       52.1
+      ],
+      "request_paraphrase_exact": [
+       2.8,
+       0.7
+      ],
+      "D1_heldout": 100.0,
+      "tokens_kept": 0.6,
+      "GE": 578.6,
+      "pre_edit_D1": 0.0
+     },
+     "T1000": {
+      "ES_PS_NS": [
+       53.4,
+       52.4,
+       52.0
+      ],
+      "request_paraphrase_exact": [
+       1.4,
+       0.9
+      ],
+      "D1_heldout": 100.0,
+      "tokens_kept": 0.3,
+      "GE": 587.3,
+      "pre_edit_D1": 0.0
+     },
+     "T2000": {
+      "ES_PS_NS": [
+       50.4,
+       47.3,
+       51.9
+      ],
+      "request_paraphrase_exact": [
+       0.9,
+       0.4
+      ],
+      "D1_heldout": 100.0,
+      "tokens_kept": 0.3,
+      "GE": 503.1,
+      "pre_edit_D1": 0.0
+     }
+    },
+    "public_probability_test_rerun_by_audit(records: identical to stored case files)": {
+     "W0": "70 of 70",
+     "dev100": "50 of 50",
+     "T100": "30 of 30",
+     "T1000": "50 of 50",
+     "T2000": "30 of 30"
+    },
+    "D1_teacher_forced_vs_decode": "0 of 52000 deployed rows differ",
+    "D1_along_the_development_log(audit, 300 prompts; builder 3000: 7.0 / 26.2 / 95.4)": {
+     "1": 6.0,
+     "10": 28.0,
+     "100": 95.3
+    }
+   },
+   "criteria": "on 300 random prompts per column and log (dev100, T1000) every row flag equals the audit's single-prompt decode; all digits of the table follow from the stored files"
+  }
+ },
+ "conditions_of_use": {
+  "(1) deployed weight = pre-edit weight + logged rank-one terms": {
+   "verdict": "PASS",
+   "evidence": "all five logs: float32 replay bitwise equal; fp64 relative error of the update 2.7e-07, 3.1e-07, 4.1e-07, 4.8e-07, 8.3e-07; max abs entry error 6.2e-07, 6.2e-07, 2.1e-04, 3.9e-04, 8.7e-04 (2.6 to 14.2 float32 ulps at max|W_E|)"
+  },
+  "(2) single edits on the first 1000 records within 3 points of the published scores": {
+   "verdict": "PASS",
+   "evidence": "ES 100.0 / 100.0, PS 96.7 / 96.4, NS 75.41 / 75.4 (ours / published)"
+  },
+  "(3) data traps of the handover": {
+   "verdict": "PASS",
+   "evidence": "multi_token_decode: ok; pre_edit_continuations: ok; degenerate_continuations_counted: ok; ground_truth_vs_evaluation: ok; batched_equals_single_decode: ok; public_probability_test_padding: ok; leading_space_of_the_object: ok; signs: ok; non_finite_values: ok"
+  }
+ },
+ "per_log": {
+  "TX-G2XL-rome-dev100": {
+   "T": 100,
+   "conditions_1_2_3": [
+    "PASS",
+    "PASS",
+    "PASS"
+   ],
+   "deployed": {
+    "ES_PS_NS": [
+     100.0,
+     98.0,
+     72.9
+    ],
+    "request_paraphrase_exact_pct": [
+     98.0,
+     75.5
+    ],
+    "D1_heldout_pct": 95.4,
+    "tokens_kept_pct": 64.7,
+    "first_token_changed_pct": 38.3,
+    "repetitive_continuations_pct": 0.1
+   },
+   "largest_update_norm": 51.9,
+   "|W_E - W_0|_F": 137.7,
+   "|W_0|_F": 117.1,
+   "verdict": "safe",
+   "class": "development log",
+   "notes": [
+    "no exploding update, no request whose subject is the first prompt token",
+    "D1 on 10-token continuations is close to saturation (see residual risks)"
+   ]
+  },
+  "TX-G2XL-rome-T100": {
+   "T": 100,
+   "conditions_1_2_3": [
+    "PASS",
+    "PASS",
+    "PASS"
+   ],
+   "deployed": {
+    "ES_PS_NS": [
+     100.0,
+     98.5,
+     66.8
+    ],
+    "request_paraphrase_exact_pct": [
+     97.0,
+     75.0
+    ],
+    "D1_heldout_pct": 93.5,
+    "tokens_kept_pct": 69.8,
+    "first_token_changed_pct": 33.2,
+    "repetitive_continuations_pct": 0.2
+   },
+   "largest_update_norm": 20.3,
+   "|W_E - W_0|_F": 117.1,
+   "|W_0|_F": 117.1,
+   "verdict": "safe",
+   "class": "clean reported log",
+   "notes": [
+    "no exploding update, no request whose subject is the first prompt token",
+    "D1 on 10-token continuations is close to saturation (see residual risks)"
+   ]
+  },
+  "TX-G2XL-rome-T500": {
+   "T": 500,
+   "conditions_1_2_3": [
+    "PASS",
+    "PASS",
+    "PASS"
+   ],
+   "deployed": {
+    "ES_PS_NS": [
+     57.0,
+     52.2,
+     52.1
+    ],
+    "request_paraphrase_exact_pct": [
+     2.8,
+     0.7
+    ],
+    "D1_heldout_pct": 100.0,
+    "tokens_kept_pct": 0.6,
+    "first_token_changed_pct": 99.8,
+    "repetitive_continuations_pct": 35.4
+   },
+   "largest_update_norm": 11154.8,
+   "|W_E - W_0|_F": 15351.5,
+   "|W_0|_F": 117.1,
+   "verdict": "safe",
+   "class": "collapse log",
+   "safe_for": "a faithful, bitwise reproducible record of a deployment that the public code destroyed; claims about collateral damage and about recovering the pre-edit behaviour",
+   "not_safe_for": "any claim about preserving or retaining the edits of the whole log, and any comparison that reads the deployed row as a working edited model",
+   "binding_restrictions": [
+    "the deployed model is collapsed: update 173 ('Chicago is a twin city of' -> Istanbul, subject = first prompt token, division factor 0.0218, update norm 5902 against |W_0| = 117) takes the tokens kept on HELD-OUT prompts from 54.9 % to 4.4 % and the exact match of the first 100 requests from 94.0 % to 1.0 % (audit's own decode of the deployed prefixes 173 and 174)",
+    "3 of 500 updates (requests [173, 240, 266]) carry 99.72 % of the summed squared update norm.  MEASURED: the norms, and the model before / after update 173.  NOT measured (a model without these updates is a repair, which the audit may not run): how much damage the other updates carry on their own",
+    "327 of the 500 logged targets were computed on weights that already contain update 173: the editor's own final probability of the new object is below 0.5 on 96.0 % of them (the public code's own printouts), and 202 of 500 requests had P(new object) > 0.5 on their own request prompt right after their own update (write-time files; 49 of 49 sampled ones re-derived identically by the audit).  Whether any replay can install the remaining targets was not tested by the builder or by the audit: report the requests before 173 separately",
+    "deployed baseline: ES / PS / NS [57.0, 52.2, 52.1] with probability differences EM / PM / NM [1.3, 0.4, -0.2] points (pre-edit model: ES / PS / NS [19.4, 22.6, 78.2]); D1 100 %; 35.4 % repetitive continuations",
+    "exact match: 5 of the 14 request hits and 2 of the 7 paraphrase hits have a target among the new objects of the first-token-subject updates, the tokens the collapsed model emits most.  Base-rate test (does the model emit such a token more often when it is the target?): on other edits' prompts with such a target, request 3 hits observed against 1.2 expected (+1.7 sd), paraphrase 2 against 2.5 (-0.3 sd); request hits with another target: 9 (pre-edit model: 1 request hits in all).  The column mixes base-rate hits with others; which of the others are retained edits was not determined",
+    "public n-gram entropy of the deployed model 578.6 (pre-edit 626.3; dev100, not collapsed, 587.2)"
+   ]
+  },
+  "TX-G2XL-rome-T1000": {
+   "T": 1000,
+   "conditions_1_2_3": [
+    "PASS",
+    "PASS",
+    "PASS"
+   ],
+   "deployed": {
+    "ES_PS_NS": [
+     53.4,
+     52.4,
+     52.0
+    ],
+    "request_paraphrase_exact_pct": [
+     1.4,
+     0.9
+    ],
+    "D1_heldout_pct": 100.0,
+    "tokens_kept_pct": 0.3,
+    "first_token_changed_pct": 99.9,
+    "repetitive_continuations_pct": 52.4
+   },
+   "largest_update_norm": 17831.6,
+   "|W_E - W_0|_F": 23500.6,
+   "|W_0|_F": 117.1,
+   "verdict": "safe",
+   "class": "collapse log",
+   "safe_for": "a faithful, bitwise reproducible record of a deployment that the public code destroyed; claims about collateral damage and about recovering the pre-edit behaviour",
+   "not_safe_for": "any claim about preserving or retaining the edits of the whole log, and any comparison that reads the deployed row as a working edited model",
+   "binding_restrictions": [
+    "the deployed model is collapsed: update 173 ('Chicago is a twin city of' -> Istanbul, subject = first prompt token, division factor 0.0218, update norm 5902 against |W_0| = 117) takes the tokens kept on HELD-OUT prompts from 54.9 % to 4.4 % and the exact match of the first 100 requests from 94.0 % to 1.0 % (audit's own decode of the deployed prefixes 173 and 174)",
+    "4 of 1000 updates (requests [173, 240, 266, 946]) carry 99.74 % of the summed squared update norm.  MEASURED: the norms, and the model before / after update 173.  NOT measured (a model without these updates is a repair, which the audit may not run): how much damage the other updates carry on their own",
+    "827 of the 1000 logged targets were computed on weights that already contain update 173: the editor's own final probability of the new object is below 0.5 on 98.2 % of them (the public code's own printouts), and 212 of 1000 requests had P(new object) > 0.5 on their own request prompt right after their own update (write-time files; 49 of 49 sampled ones re-derived identically by the audit).  Whether any replay can install the remaining targets was not tested by the builder or by the audit: report the requests before 173 separately",
+    "deployed baseline: ES / PS / NS [53.4, 52.4, 52.0] with probability differences EM / PM / NM [0.4, 0.2, -0.2] points (pre-edit model: ES / PS / NS [20.8, 23.7, 78.1]); D1 100 %; 52.4 % repetitive continuations",
+    "exact match: 9 of the 14 request hits and 12 of the 18 paraphrase hits have a target among the new objects of the first-token-subject updates, the tokens the collapsed model emits most.  Base-rate test (does the model emit such a token more often when it is the target?): on other edits' prompts with such a target, request 7 hits observed against 4.7 expected (+1.0 sd), paraphrase 10 against 9.1 (+0.3 sd); request hits with another target: 5 (pre-edit model: 4 request hits in all).  The column mixes base-rate hits with others; which of the others are retained edits was not determined",
+    "public n-gram entropy of the deployed model 587.3 (pre-edit 626.3; dev100, not collapsed, 587.2)"
+   ]
+  },
+  "TX-G2XL-rome-T2000": {
+   "T": 2000,
+   "conditions_1_2_3": [
+    "PASS",
+    "PASS",
+    "PASS"
+   ],
+   "deployed": {
+    "ES_PS_NS": [
+     50.4,
+     47.3,
+     51.9
+    ],
+    "request_paraphrase_exact_pct": [
+     0.9,
+     0.4
+    ],
+    "D1_heldout_pct": 100.0,
+    "tokens_kept_pct": 0.3,
+    "first_token_changed_pct": 99.8,
+    "repetitive_continuations_pct": 89.1
+   },
+   "largest_update_norm": 17831.6,
+   "|W_E - W_0|_F": 29025.3,
+   "|W_0|_F": 117.1,
+   "verdict": "safe",
+   "class": "collapse log",
+   "safe_for": "a faithful, bitwise reproducible record of a deployment that the public code destroyed; claims about collateral damage and about recovering the pre-edit behaviour",
+   "not_safe_for": "any claim about preserving or retaining the edits of the whole log, and any comparison that reads the deployed row as a working edited model",
+   "binding_restrictions": [
+    "the deployed model is collapsed: update 173 ('Chicago is a twin city of' -> Istanbul, subject = first prompt token, division factor 0.0218, update norm 5902 against |W_0| = 117) takes the tokens kept on HELD-OUT prompts from 54.9 % to 4.4 % and the exact match of the first 100 requests from 94.0 % to 1.0 % (audit's own decode of the deployed prefixes 173 and 174)",
+    "8 of 2000 updates (requests [173, 240, 266, 946, 1416, 1420, 1508, 1947]) carry 99.62 % of the summed squared update norm.  MEASURED: the norms, and the model before / after update 173.  NOT measured (a model without these updates is a repair, which the audit may not run): how much damage the other updates carry on their own",
+    "1827 of the 2000 logged targets were computed on weights that already contain update 173: the editor's own final probability of the new object is below 0.5 on 99.0 % of them (the public code's own printouts), and 221 of 2000 requests had P(new object) > 0.5 on their own request prompt right after their own update (write-time files; 49 of 49 sampled ones re-derived identically by the audit).  Whether any replay can install the remaining targets was not tested by the builder or by the audit: report the requests before 173 separately",
+    "deployed baseline: ES / PS / NS [50.4, 47.3, 51.9] with probability differences EM / PM / NM [0.1, -0.2, -0.1] points (pre-edit model: ES / PS / NS [22.4, 25.0, 77.5]); D1 100 %; 89.1 % repetitive continuations",
+    "exact match: 17 of the 18 request hits and 16 of the 17 paraphrase hits have a target among the new objects of the first-token-subject updates, the tokens the collapsed model emits most.  Base-rate test (does the model emit such a token more often when it is the target?): on other edits' prompts with such a target, request 15 hits observed against 6.4 expected (+3.4 sd), paraphrase 14 against 12.5 (+0.4 sd); request hits with another target: 1 (pre-edit model: 6 request hits in all).  The column mixes base-rate hits with others; which of the others are retained edits was not determined",
+    "public n-gram entropy of the deployed model 503.1 (pre-edit 626.3; dev100, not collapsed, 587.2)"
+   ]
+  }
+ },
+ "discrepancies": [
+  {
+   "what": "DEVIATIONS.txt item 15 states the equivalence check of the memory fallback as '(bit for bit: not run yet)'; no result of it is stored",
+   "numbers": "audit: the public probability test returns identical numbers with model.config.use_cache True and False in 13 record-weight pairs (records 0, 1, 147, 427, 1878, 15000 at W_0; 147, 427 at T500 and at T1000; 147, 427, 1878 at T2000); with use_cache False all 8 flagged stored case files are reproduced bitwise; record 1531 (179-token paraphrase) ran out of memory with use_cache True under a 14.5 GB reservation in 2 of 2 attempts, so for it the equivalence rests on the other records",
+   "effect_on_logs": "none"
+  },
+  {
+   "what": "the driver files on disk are not the versions that wrote most of the logs, and the list of deviations is rendered from the files on disk",
+   "numbers": "tp_common.py and run_stream.py were last modified 2026-11-11 06:36:20 UTC; the first process of the reported stream started 2026-11-11 05:31:42 UTC and wrote updates 0..1530; the development log finished 2026-11-11 05:31:16 UTC; the single-edit run finished 2026-11-11 06:31:26 UTC; 1531 of 2000 stream write-time files and 100 of 100 development ones lack the field the current driver writes; no earlier copy of the files is kept",
+   "effect_on_logs": "none found: the audit's own driver reproduces bitwise 100 of 100 development updates, 195 stream updates and 153 single edits, and the replay reproduces all 85 weight hashes recorded during the runs"
+  },
+  {
+   "what": "no run log of the first process of the reported stream (updates 0..1530) exists: logs/stream.out begins with the resumed run and logs/stream_before_run_1.out holds only a cancelled queue entry (the file was presumably truncated by the first watcher attempt), so the stated cause of the interruption (out of memory in the write-time test of case 1531) is not documented by that process",
+   "numbers": "consistent with: a pause from 2026-11-11 06:50:21 UTC to 2026-11-11 06:58:06 UTC after 1531 updates; request 1531 computed twice by the public code with 23 identical printed lines; the same out-of-memory error for that record in logs/describe_A_oom_case1531.out",
+   "effect_on_logs": "none: the audit re-ran updates 1530, 1531, 1532 from the replayed state, bitwise equal to the stored factors"
+  },
+  {
+   "what": "logs_edit/dev/meta.json is stale",
+   "numbers": "'what' says records 15000 .. 15002 and T_planned = 3 (from the 3-update test run); T_done = 100 and 100 update files exist",
+   "effect_on_logs": "none"
+  },
+  {
+   "what": "the deviation list does not say which checkpoint file is loaded (model.safetensors under transformers 4.23.1; the public stack would read pytorch_model.bin)",
+   "numbers": "628 tensors in both files, 0 not bitwise equal",
+   "effect_on_logs": "none"
+  }
+ ],
+ "builder_statements_checked": {
+  "report_table(ES/PS/NS, exact, D1, tokens kept, GE of the five logs)": "all digits reproduced from the stored files",
+  "reconstruction_table": {
+   "dev100": [
+    2.7e-07,
+    6.2e-07
+   ],
+   "T100": [
+    3.1e-07,
+    6.2e-07
+   ],
+   "T500": [
+    4.1e-07,
+    0.00021
+   ],
+   "T1000": [
+    4.8e-07,
+    0.00039
+   ],
+   "T2000": [
+    8.3e-07,
+    0.00087
+   ]
+  },
+  "single_edit(ours / published)": "100.0 / 100.0, 96.7 / 96.4, 75.4 / 75.4 confirmed",
+  "collapse_at_update_173": {
+   "division_factor": 0.021807414812861303,
+   "update_norm": 5902.105251580258,
+   "|W - W_0|_F after 173 / 174 requests": [
+    168.6,
+    5905.8
+   ],
+   "audit_decode_tokens_kept_173_174": [
+    54.9,
+    4.4
+   ],
+   "public_test_at_173_and_174_identical_to_builder(records)": [
+    100,
+    100
+   ],
+   "same_division_factor_under_transformers_5": "keys agree to 1.2e-06, division factors to 3.5e-06",
+   "also_with_other_templates(seed 1, record 266 edited alone)": [
+    4166.5
+   ]
+  },
+  "eight_first_token_requests_and_20_exploding_updates": [
+   8,
+   20,
+   "80 of 21919 records; none in dev100"
+  ],
+  "editor_fails_on_99.0_pct_from_173": 99.01,
+  "stored_scalars_equal_the_public_code's_own_printouts": {
+   "dev": "p_new 100, division factor 100 of 100",
+   "stream": "p_new 2000, division factor 2000 of 2000"
+  },
+  "key_identity_with_template_mean_key(T2000)": {
+   "median": 1.0229491855884862,
+   "q95": 1.358983494939046,
+   "max": 313.3856575779119,
+   "share_within_1pct": 13.65
+  },
+  "key_identity_with_request_key(max abs dev, T2000)": 1.4210854715202004e-14,
+  "D1_after_1_10_100_updates_of_dev100(audit, 300 prompts)": {
+   "1": 6.0,
+   "10": 28.0,
+   "100": 95.3
+  },
+  "every_object_one_token": {
+   "1": 21919
+  },
+  "two_D1_variants_agree": "52000 of 52000",
+  "n_gram_entropy_barely_registers_collapse": {
+   "W0:dev_first100": [
+    626.8,
+    "8 most frequent words = 27 % of all words"
+   ],
+   "W0:stream_first100": [
+    626.3,
+    "8 most frequent words = 27 % of all words"
+   ],
+   "dev100:dev_first100": [
+    587.2,
+    "8 most frequent words = 25 % of all words"
+   ],
+   "T100:stream_first100": [
+    594.2,
+    "8 most frequent words = 26 % of all words"
+   ],
+   "T500:stream_first100": [
+    578.6,
+    "8 most frequent words = 60 % of all words"
+   ],
+   "T1000:stream_first100": [
+    587.3,
+    "8 most frequent words = 61 % of all words"
+   ],
+   "T2000:stream_first100": [
+    503.1,
+    "8 most frequent words = 65 % of all words"
+   ]
+  },
+  "greedy_tokens_that_are_objects_of_exploding_updates(HELD-OUT, pct)": {
+   "T100": 0.0,
+   "T500": 51.4,
+   "T1000": 78.3,
+   "T2000": 81.3
+  },
+  "transformers_5_breaks_the_public_generate_fast": [
+   "In the-\n",
+   "The U.\n",
+   "I have been\n",
+   "A manchester\n"
+  ],
+  "stream_resumed_once_at_1531_dev_once_at_3": [
+   1531,
+   3
+  ],
+  "cache_files_outside_project_3_removed": true,
+  "gpt_j_bytes_and_sha256": [
+   24210465421,
+   true
+  ],
+  "deviations_listed": 17
+ },
+ "residual_risks": [
+  "Reproducibility is established on this machine and stack only (RTX 5090, torch 2.8.0, transformers 4.23.1): the public environment (torch 1.10.2, transformers 4.15.0) cannot be installed for Python 3.11, so what the authors' stack would write bit for bit is untested; the tie to the paper is the single-edit scores (0.0 / 0.3 / 0.0 points) and the unedited-model scores.",
+  "One stream, one draw of the public code's 21 random context templates (seed 0).  With another draw (2 of 21 templates equal) the single-edit factors of the same 150 records differ by 30 % (median, output-side factor) while ES / PS / NS move by 0.0 / 0.0 / -0.07 points; the variance of sequential-log metrics over template draws is unknown.",
+  "The development log has no request whose subject is the first prompt token and no exploding update (base rate 80 of 21919 records).  In the library format the read-out vectors of such updates have norm up to 57.3 against a median of 0.10 (measured).  What that does to the method's scores on these logs was not measured (discipline); nothing developed on the development log has met such an update.",
+  "Records are disjoint, prompt texts are not: 310 of the 1000 neighbourhood rows of the development log are also prompts of the reported stream (305 distinct texts; 42 rows of T100, 622 of T2000); 22 HELD-OUT benign prompts are neighbourhood prompts of logged records and 4 are logged requests (flags exist: use the 'clean' rows).",
+  "D1 on 10-token continuations is close to its ceiling on the logs that did NOT collapse (dev100 95.4 %, T100 93.5 %; audit after 1 / 10 updates: 6.0 / 28.0 %); the share of tokens kept (64.7 / 69.8 %) and of changed first tokens (38.3 / 33.2 %) are further from their ceiling.",
+  "The public n-gram entropy (metric v) did not separate the collapsed T500 / T1000 from the non-collapsed dev100: 578.6 / 587.3 against 587.2 (pre-edit 626.3), while 8 words make up 60 % of the generated words (T2000: 503.1).  For scale, the public formula on uniformly random sequences of the same length (90 word tokens) gives 539 for 5 symbols and 616 for 10.",
+  "Requests that repeat a subject / a whole request prompt inside a log (5 of 5 such prompt pairs of the stream have bitwise identical solver keys and 5 different new objects): T500 2 / 0, T1000 4 / 1, T2000 21 / 5; none in dev100 and T100.",
+  "Float32: at T2000 the deployed weight has entries up to 535; the exact (fp64) sum of the logged terms differs from it by up to 8.7e-04 per entry, so a replay in another precision is the deployed model only up to that round-off (float32 vs float64 forward at T1000: same argmax on 40 of 40 prompts).",
+  "The registered behavioural evaluation of E10 (amendment R19 f) uses the logs with 500 and 2000 requests: both are collapse logs; the only clean reported log (T100) is registered at gate level only.",
+  "Checkpoint and tokenizer were verified against the listing of hf-mirror.com (huggingface.co is not reachable from this machine)."
+ ],
+ "what_a_user_must_know": [
+  "Naming: the PUBLIC left_vector (6400, input side) divided by s is the read-out vector w_i; the PUBLIC right_vector (1600) times s is the output-side factor u_i; s = <left_vector, solver key>.  The stored weight is a Conv1D weight (6400, 1600), y = x @ W + b.  The library-format copies are already converted.",
+  "Solver key = module input at the last subject token of the request prompt alone.  Only there is the coordinate 1 (max deviation 1.4e-14); at the template-averaged key it has median 1.02, q95 1.36, max 313 and is within 1 % for 13.7 % of the 2000 updates.",
+  "T500, T1000 and T2000 are collapse logs (see per_log: binding restrictions).  dev100 and T100 are the only logs with a working deployed model.",
+  "A log can be re-derived bit for bit only with the 21 context templates stored in its meta.json.",
+  "Exact match is a first-token test on this data set (every object is one token); the public ES / PS / NS compare two probabilities and are near 50 on the collapsed logs while the probability differences are near 0."
+ ],
+ "tests_of_the_audit's_own_statements": {
+  "why": "before the report was written, the interpretive statements of the first draft of this file were tested; three were wrong or too strong and were corrected",
+  "1_'the exact-match hits of the collapsed logs are coincidences'": {
+   "prediction_if_true": "the model emits a collapse token X as first token at the same rate whether or not X is the target of the request",
+   "result": {
+    "T500": {
+     "request": {
+      "observed": 3,
+      "expected": 1.16,
+      "sd_units": 1.71,
+      "hits_with_another_target": 9,
+      "hits_total": 14
+     },
+     "paraphrase": {
+      "observed": 2,
+      "expected": 2.45,
+      "sd_units": -0.29,
+      "hits_with_another_target": 5,
+      "hits_total": 7
+     }
+    },
+    "T1000": {
+     "request": {
+      "observed": 7,
+      "expected": 4.75,
+      "sd_units": 1.03,
+      "hits_with_another_target": 5,
+      "hits_total": 14
+     },
+     "paraphrase": {
+      "observed": 10,
+      "expected": 9.08,
+      "sd_units": 0.31,
+      "hits_with_another_target": 6,
+      "hits_total": 18
+     }
+    },
+    "T2000": {
+     "request": {
+      "observed": 15,
+      "expected": 6.36,
+      "sd_units": 3.42,
+      "hits_with_another_target": 1,
+      "hits_total": 18
+     },
+     "paraphrase": {
+      "observed": 14,
+      "expected": 12.52,
+      "sd_units": 0.42,
+      "hits_with_another_target": 1,
+      "hits_total": 17
+     }
+    }
+   },
+   "outcome": "NOT supported as a general statement: consistent with the base rate on paraphrase prompts and at T1000, but at T2000 the request prompts show 15 hits against 6.4 expected (+3.4 sd), and at T500 9 of the 14 request hits have a target outside the collapse tokens.  The statement was withdrawn from the list of discrepancies; the restriction now says what was measured"
+  },
+  "2_'a random sequence over 5 symbols already scores 619'": {
+   "prediction_if_true": "the public formula on uniformly random 5-symbol sequences of the texts' length gives about 619",
+   "result": {
+    "90 tokens, 2 symbols (uniform)": 261.8,
+    "90 tokens, 3 symbols (uniform)": 405.2,
+    "90 tokens, 5 symbols (uniform)": 539.2,
+    "90 tokens, 10 symbols (uniform)": 615.6,
+    "90 tokens, 50 symbols (uniform)": 645.4,
+    "90 tokens, 1000 symbols (uniform)": 646.5,
+    "100 tokens, 2 symbols (uniform)": 262.5,
+    "100 tokens, 3 symbols (uniform)": 406.6,
+    "100 tokens, 5 symbols (uniform)": 544.8,
+    "100 tokens, 10 symbols (uniform)": 628.0,
+    "100 tokens, 50 symbols (uniform)": 660.6,
+    "100 tokens, 1000 symbols (uniform)": 662.0,
+    "90 tokens, 5 symbols (p = .5 .25 .15 .07 .03)": 437.3,
+    "100 tokens, 5 symbols (p = .5 .25 .15 .07 .03)": 440.4
+   },
+   "outcome": "WRONG number (619 is an asymptotic value that a 90-token text cannot reach): 5 symbols give 539 to 545, 10 symbols 616 to 628.  The corrected statement is in the residual risks"
+  },
+  "3_'ES / PS / NS of about 50 are chance values'": {
+   "result": {
+    "T500": {
+     "ES": 57.0,
+     "PS": 52.2,
+     "NS": 52.12,
+     "EM": 1.28,
+     "PM": 0.39,
+     "NM": -0.18
+    },
+    "T1000": {
+     "ES": 53.4,
+     "PS": 52.35,
+     "NS": 52.02,
+     "EM": 0.42,
+     "PM": 0.25,
+     "NM": -0.18
+    },
+    "T2000": {
+     "ES": 50.35,
+     "PS": 47.27,
+     "NS": 51.92,
+     "EM": 0.15,
+     "PM": -0.16,
+     "NM": -0.08
+    }
+   },
+   "outcome": "replaced by the measured fact: the probability differences EM / PM / NM are between -0.2 and 1.3 points on the collapsed logs"
+  },
+  "4_write_time_files_used_for_'221 of 2000 requests were installed'": {
+   "result": {
+    "stream": {
+     "n_updates_checked": 49,
+     "n_identical_to_stored_write_time_file": 49,
+     "max_abs_diff": 0.0,
+     "n_after_173": 45,
+     "n_installed_flag_equal(P(new|request) > 0.5)": 49,
+     "n_installed_in_sample_audit": 5,
+     "n_installed_in_sample_after_173_audit": 1
+    },
+    "dev": {
+     "n_updates_checked": 10,
+     "n_identical_to_stored_write_time_file": 10,
+     "max_abs_diff": 0.0,
+     "n_installed_flag_equal(P(new|request) > 0.5)": 10,
+     "n_installed_in_sample_audit": 10
+    }
+   },
+   "outcome": "the sampled write-time files are reproduced identically by the audit's replay and the public test"
+  },
+  "statements_reworded_because_they_were_not_measured": [
+   "'every difference between the deployed row and a scoped row is decided by the eight first-token updates' -> the norm share and the before / after of update 173 are measured; a model without these updates was not evaluated",
+   "'edit metrics over all requests are bounded by the 221 installed requests' -> whether a replay can install the other targets was not tested",
+   "'tokens kept and first-token change discriminate better than D1' -> they are further from their ceiling; no method was compared"
+  ]
+ },
+ "not_checked": [
+  "the generations behind the n-gram entropy were not re-sampled (their stored texts were re-scored with the audit's own formula)",
+  "D1 of T100, T500 and T2000 on HELD-OUT prompts was recomputed from the stored decodes; the audit's own decode covers dev100, T1000 and the stream prefixes 100, 150, 173, 174, 200",
+  "the VIEW pool of amendment R16 is not part of this build",
+  "'no GPU work was done with GPT-J' cannot be proven; the queue's event log has no such job"
+ ],
+ "gpu_jobs_of_the_audit": {
+  "e10aud_det": [
+   "2026-11-11 09:35:33"
+  ],
+  "e10aud_single0": [
+   "2026-11-11 09:37:32"
+  ],
+  "e10aud_devfull": [
+   "2026-11-11 09:47:02"
+  ],
+  "e10aud_eval": [
+   "2026-11-11 09:48:30"
+  ],
+  "e10aud_single1": [
+   "2026-11-11 09:55:39"
+  ],
+  "e10aud_pubcmp": [
+   "2026-11-11 09:57:07"
+  ],
+  "e10aud_strm30": [
+   "2026-11-11 10:05:29"
+  ],
+  "e10aud_uc": [
+   "2026-11-11 10:10:17"
+  ],
+  "e10aud_xstack": [
+   "2026-11-11 10:13:15"
+  ],
+  "e10aud_envx": [
+   "2026-11-11 10:16:20"
+  ],
+  "e10aud_strmT100": [
+   "2026-11-11 10:29:07"
+  ],
+  "e10aud_indep": [
+   "2026-11-11 10:31:47"
+  ],
+  "e10aud_misc": [
+   "2026-11-11 10:41:35"
+  ]
+ },
+ "files": {
+  "scripts": [
+   "a_common.py",
+   "cpu_claims.py",
+   "cpu_discipline.py",
+   "cpu_extra.py",
+   "cpu_extra2.py",
+   "cpu_extra3.py",
+   "cpu_lib.py",
+   "cpu_pools.py",
+   "cpu_provenance.py",
+   "cpu_recon.py",
+   "cpu_selftest.py",
+   "cpu_single_cmp.py",
+   "cpu_traps.py",
+   "gpu_env_extra.py",
+   "gpu_eval.py",
+   "gpu_misc.py",
+   "gpu_pub.py",
+   "gpu_pub_indep.py",
+   "gpu_rome.py",
+   "gpu_single.py",
+   "gpu_writetime.py",
+   "make_verdicts.py"
+  ],
+  "results": "out/*.json (one per script)",
+  "logs": "logs/",
+  "table": "verdicts_table.txt"
+ },
+ "all_checks_pass": true
+}

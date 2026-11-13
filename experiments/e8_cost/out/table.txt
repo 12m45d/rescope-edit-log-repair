@@ -1,0 +1,208 @@
+E8  COST.  Rendered by code/render.py on 2026-11-11 22:45:57 UTC; driver fx {'rescope': 'c76c4da16bd6', 'fx': '6a71f0d2cd71', 'fx_version': 'fx-1.2 stage 2 (2026-11-11)'}
+    Not finished / missing: nothing
+
+E8 (1)  GATE LATENCY PER FORWARD PASS ON THE GPU (B = 1; 30 sequences: 10 edit sequences, 10 image probes, 10 text probes; 1 warm-up + 9 repetitions, modes rotating within
+  every repetition and sequence; shared card through the queue, no card reserved).  median [10th, 90th percentile] over sequences x repetitions (the spread of plain / gated ms is
+  mostly the sequence length: text probes about 40 tokens, image sequences about 1000).  overhead % = paired ratio to the plain forward of the same (repetition, sequence) minus 1;
+  img / text % = its median on the 20 image sequences / on the 10 text probes; min % = ratio of the sums of the per-sequence minima over repetitions minus 1 (robust to other jobs); gate alone = decision + response on the captured module
+  input (50 runs per sequence for role last, 10 for all positions; min = mean of per-sequence minima; % of fwd = min-based gate alone / min-based plain forward).
+  Modes: last_fp64 = role last, top-1, REPL, fp64 (as evaluated); last_module = module dtype; all_fp64 = all positions, fire all, linear response, the same calibrated thresholds;
+  all_nothr_fp64 = all thresholds -inf (every edit released at every position); where_logonly = ReScope-W.  Real logs: detectors, thresholds (two-block, alpha 0.05, n 200,
+  draw 0) and values of the log; synthetic logs: synth.py.  util %: card utilisation; others: other compute processes on the card (median / max).  pass: * = primary pass
+  (per gate set the pass with the lower median card utilisation; rule fixed before a second pass was run); gate sets with two passes: TB-Q100-ae-l2_3: pass 1 (median card utilisation pass 1: 92 %, pass 2: 94 %); TB-L100-ae-l2_3: pass 1 (median card utilisation pass 1: 93 %, pass 2: 93 %)
+backbone  pass          gate set      T            mode             plain ms             gated ms          overhead %  img / text %   min %             gate alone ms     min  % of fwd  seq firing       util %  others  capped
+--------  ----  ----------------  -----  --------------  -------------------  -------------------  ------------------  ------------  ------  ------------------------  ------  --------  ----------  -----------  ------  ------
+qwen25vl    1*   TB-Q100-ae-l2_3    100       last_fp64  105.9 [23.2, 192.3]  105.1 [24.8, 200.8]   5.0 [-11.7, 35.2]    1.0 / 10.5    0.48      1.050 [0.323, 3.786]   0.561      0.65           7  92 [89, 95]   1 / 1       0
+qwen25vl    1*   TB-Q100-ae-l2_3    100     last_module  105.9 [23.2, 192.3]  110.9 [24.8, 199.2]   6.0 [-16.6, 41.9]    2.4 / 13.8    1.02      1.036 [0.328, 3.213]   0.549      0.64           7  92 [89, 95]   1 / 1       0
+qwen25vl    1*   TB-Q100-ae-l2_3    100        all_fp64  105.9 [23.2, 192.3]  109.0 [27.9, 208.9]  14.4 [-14.6, 52.5]    7.3 / 31.7    6.06      6.726 [2.959, 8.749]   5.103      5.91          22  92 [89, 95]   1 / 1       0
+qwen25vl    1*   TB-Q100-ae-l2_3    100  all_nothr_fp64  105.9 [23.2, 192.3]  109.7 [28.3, 211.5]  16.0 [-14.6, 57.4]    7.2 / 32.1    7.94     7.808 [5.572, 11.541]   6.549      7.58          30  92 [89, 95]   1 / 1       0
+qwen25vl    1*   TB-Q100-ae-l2_3    100   where_logonly  105.9 [23.2, 192.3]  106.3 [27.9, 198.0]   9.8 [-14.1, 50.1]    3.8 / 25.6    5.47     4.213 [2.895, 10.771]   3.275      3.79           8  92 [89, 95]   1 / 1       0
+qwen25vl    1*    TB-Q100-memitw    100       last_fp64  102.0 [22.6, 196.9]  107.7 [24.4, 202.2]   6.6 [-11.9, 37.4]    2.6 / 12.1    0.61      0.939 [0.305, 7.326]   0.515      0.61           6  94 [92, 95]   1 / 1       3
+qwen25vl    1*    TB-Q100-memitw    100     last_module  102.0 [22.6, 196.9]  110.0 [24.8, 200.7]   7.0 [-16.8, 45.1]    1.5 / 16.7    0.73      0.881 [0.306, 3.555]   0.487      0.57           6  94 [92, 95]   1 / 1       3
+qwen25vl    1*    TB-Q100-memitw    100        all_fp64  102.0 [22.6, 196.9]  108.0 [27.7, 211.3]  13.4 [-14.9, 48.7]    5.3 / 34.4    2.51     3.386 [2.685, 10.415]   3.167      3.73           7  94 [92, 95]   1 / 1       3
+qwen25vl    1*    TB-Q100-memitw    100  all_nothr_fp64  102.0 [22.6, 196.9]  107.5 [27.8, 204.3]  12.8 [-12.7, 51.6]    6.1 / 33.7    5.47     7.727 [5.583, 14.176]   6.187      7.28          30  94 [92, 95]   1 / 1       3
+qwen25vl    1*    TB-Q500-memitw    500       last_fp64  105.5 [22.9, 198.8]  107.0 [24.7, 202.6]   6.3 [-15.1, 36.8]    1.5 / 11.4    0.41      1.127 [0.478, 9.195]   0.520      0.60           3  94 [90, 95]   1 / 1      25
+qwen25vl    1*    TB-Q500-memitw    500     last_module  105.5 [22.9, 198.8]  107.1 [25.4, 200.4]   7.2 [-21.4, 44.1]    2.4 / 16.9   -2.06      1.040 [0.315, 7.201]   0.503      0.58           2  94 [90, 95]   1 / 1      25
+qwen25vl    1*    TB-Q500-memitw    500        all_fp64  105.5 [22.9, 198.8]  109.5 [27.7, 220.9]  16.3 [-14.7, 52.9]    8.1 / 30.4    8.54     5.004 [2.451, 14.428]   5.368      6.21           3  94 [90, 95]   1 / 1      25
+qwen25vl    1*    TB-Q500-memitw    500  all_nothr_fp64  105.5 [22.9, 198.8]  115.6 [28.1, 241.0]   19.7 [-7.5, 55.9]   14.9 / 34.0   14.30     9.074 [5.327, 32.850]  11.855     13.71          30  94 [90, 95]   1 / 1      25
+qwen25vl    1*   TB-Q1000-memitw   1000       last_fp64   97.9 [22.7, 195.9]   94.3 [24.2, 205.5]   5.1 [-10.7, 29.4]     1.3 / 7.6    1.46      1.187 [0.825, 2.459]   0.768      0.90           3  92 [87, 95]   1 / 1      45
+qwen25vl    1*   TB-Q1000-memitw   1000     last_module   97.9 [22.7, 195.9]   94.6 [24.3, 197.7]   5.8 [-18.5, 34.2]     1.5 / 8.0   -3.04      1.066 [0.765, 1.667]   0.624      0.73           2  92 [87, 95]   1 / 1      45
+qwen25vl    1*   TB-Q1000-memitw   1000        all_fp64   97.9 [22.7, 195.9]  103.7 [27.5, 230.8]   18.8 [-7.9, 52.7]   12.4 / 25.0   12.30     8.177 [3.765, 28.903]  10.607     12.43           9  92 [87, 95]   1 / 1      45
+qwen25vl    1*   TB-Q1000-memitw   1000  all_nothr_fp64   97.9 [22.7, 195.9]  109.0 [28.2, 253.2]   25.4 [-2.9, 55.3]   24.7 / 26.9   23.49    15.641 [7.405, 60.320]  22.455     26.31          30  92 [87, 95]   1 / 1      45
+qwen25vl    1*   TB-Q2000-memitw   2000       last_fp64   80.6 [22.1, 184.2]   82.8 [23.8, 184.5]    4.7 [-5.7, 17.3]     1.6 / 8.2    2.89      1.309 [0.874, 3.290]   0.842      1.02           3  94 [91, 95]   1 / 1      69
+qwen25vl    1*   TB-Q2000-memitw   2000     last_module   80.6 [22.1, 184.2]   81.8 [23.6, 186.0]   5.4 [-10.0, 21.5]     1.9 / 7.4    3.59      1.091 [0.772, 1.457]   0.677      0.82           2  94 [91, 95]   1 / 1      69
+qwen25vl    1*   TB-Q2000-memitw   2000        all_fp64   80.6 [22.1, 184.2]   96.9 [26.4, 242.4]    21.6 [8.5, 52.6]   23.8 / 20.8   27.88    14.925 [4.261, 49.300]  18.721     22.67          11  94 [91, 95]   1 / 1      69
+qwen25vl    1*   TB-Q2000-memitw   2000  all_nothr_fp64   80.6 [22.1, 184.2]  113.8 [27.6, 291.5]   38.4 [20.1, 69.2]   46.4 / 25.8   52.60   31.209 [7.901, 100.142]  39.130     47.38          30  94 [91, 95]   1 / 1      69
+qwen25vl    1*   synthetic-T1000   1000       last_fp64   80.0 [22.7, 185.0]   83.3 [24.4, 195.7]    5.8 [-5.3, 22.0]     3.1 / 7.6    2.66      1.188 [0.846, 3.091]   0.802      0.94           3  92 [86, 95]   1 / 1       4
+qwen25vl    1*   synthetic-T1000   1000     last_module   80.0 [22.7, 185.0]   82.3 [24.2, 183.8]   4.7 [-10.0, 19.2]     1.7 / 6.9    1.63      1.062 [0.735, 2.324]   0.651      0.76           3  92 [86, 95]   1 / 1       4
+qwen25vl    1*   synthetic-T1000   1000        all_fp64   80.0 [22.7, 185.0]   89.7 [27.3, 207.1]    16.8 [5.2, 30.0]   13.3 / 21.5   14.54     8.801 [3.487, 30.821]  11.051     12.98          12  92 [86, 95]   1 / 1       4
+qwen25vl    1*  synthetic-T10000  10000       last_fp64   81.6 [23.2, 185.4]   83.5 [25.6, 186.6]    5.3 [-4.7, 34.8]    2.0 / 12.2    4.22      1.866 [0.908, 4.337]   0.919      1.11           2  92 [86, 95]   1 / 1     159
+qwen25vl    1*  synthetic-T10000  10000     last_module   81.6 [23.2, 185.4]   82.6 [24.9, 188.7]    6.0 [-8.1, 37.6]    2.6 / 10.6    4.99      0.922 [0.412, 2.557]   0.460      0.56           2  92 [86, 95]   1 / 1     159
+qwen25vl    1*  synthetic-T10000  10000        all_fp64   81.6 [23.2, 185.4]  149.1 [37.4, 407.2]  86.7 [51.5, 130.1]   95.9 / 65.2  101.00  66.281 [10.470, 205.377]  75.980     91.83          11  92 [86, 95]   1 / 1     159
+qwen25vl     2   TB-Q100-ae-l2_3    100       last_fp64  128.9 [23.5, 235.9]  129.9 [27.2, 242.5]  10.5 [-15.8, 49.5]    3.1 / 20.1    4.68     1.842 [0.736, 10.449]   0.634      0.71           7  94 [90, 95]   2 / 2       0
+qwen25vl     2   TB-Q100-ae-l2_3    100     last_module  128.9 [23.5, 235.9]  131.5 [28.2, 245.7]  10.2 [-16.9, 53.6]    4.2 / 25.2    3.84     1.872 [0.662, 11.523]   0.620      0.70           7  94 [90, 95]   2 / 2       0
+qwen25vl     2   TB-Q100-ae-l2_3    100        all_fp64  128.9 [23.5, 235.9]  132.8 [30.4, 245.7]  14.5 [-13.6, 64.5]    7.7 / 32.5   13.43     8.143 [4.544, 18.608]   5.632      6.31          22  94 [90, 95]   2 / 2       0
+qwen25vl     2   TB-Q100-ae-l2_3    100  all_nothr_fp64  128.9 [23.5, 235.9]  133.9 [31.0, 250.3]  15.6 [-10.5, 69.7]    8.7 / 37.5    9.99    10.968 [7.582, 24.680]   7.364      8.25          30  94 [90, 95]   2 / 2       0
+qwen25vl     2   TB-Q100-ae-l2_3    100   where_logonly  128.9 [23.5, 235.9]  132.2 [29.8, 245.7]  15.6 [-15.8, 56.7]    6.0 / 31.2    9.03     5.447 [3.213, 16.708]   3.993      4.47           8  94 [90, 95]   2 / 2       0
+llava       1*   TB-L100-ae-l2_3    100       last_fp64   79.4 [20.9, 105.8]   81.4 [23.2, 106.3]    4.9 [-3.8, 29.8]    2.2 / 14.6    4.82      1.080 [0.489, 7.547]   0.635      1.18          10  93 [91, 96]   1 / 1       0
+llava       1*   TB-L100-ae-l2_3    100     last_module   79.4 [20.9, 105.8]   81.8 [23.5, 105.3]    4.6 [-4.0, 30.7]    2.9 / 13.8    8.18      1.068 [0.431, 7.520]   0.625      1.16          10  93 [91, 96]   1 / 1       0
+llava       1*   TB-L100-ae-l2_3    100        all_fp64   79.4 [20.9, 105.8]   86.7 [26.5, 112.1]   11.9 [-3.3, 45.4]    8.6 / 27.4   13.28     6.251 [2.954, 10.454]   4.630      8.61          23  93 [91, 96]   1 / 1       0
+llava       1*   TB-L100-ae-l2_3    100  all_nothr_fp64   79.4 [20.9, 105.8]   88.3 [29.0, 114.0]    13.2 [0.8, 50.5]   10.4 / 42.6   15.79     8.283 [6.007, 10.862]   6.587     12.25          30  93 [91, 96]   1 / 1       0
+llava       1*   TB-L100-ae-l2_3    100   where_logonly   79.4 [20.9, 105.8]   84.7 [26.6, 110.9]    8.3 [-2.0, 38.6]    6.2 / 27.9   10.77      4.534 [2.774, 8.111]   3.470      6.45          15  93 [91, 96]   1 / 1       0
+llava       1*    TB-L100-memitw    100       last_fp64    58.6 [19.8, 80.7]    59.4 [20.8, 81.4]      2.0 [0.9, 7.3]     1.5 / 4.5    1.70      0.316 [0.286, 0.637]   0.374      0.82           9  70 [60, 95]   1 / 1       9
+llava       1*    TB-L100-memitw    100     last_module    58.6 [19.8, 80.7]    59.4 [20.7, 82.1]      2.1 [0.7, 8.9]     1.5 / 4.4    1.75      0.319 [0.291, 0.643]   0.380      0.84           9  70 [60, 95]   1 / 1       9
+llava       1*    TB-L100-memitw    100        all_fp64    58.6 [19.8, 80.7]    61.5 [22.8, 84.6]     5.4 [3.9, 18.5]    4.9 / 14.9    6.30      2.438 [2.421, 2.744]   2.509      5.53           9  70 [60, 95]   1 / 1       9
+llava       1*    TB-L100-memitw    100  all_nothr_fp64    58.6 [19.8, 80.7]    64.0 [23.3, 88.8]     9.8 [8.6, 23.1]    9.3 / 17.5   10.41      5.277 [4.884, 5.305]   5.140     11.32          30  70 [60, 95]   1 / 1       9
+llava       1*   TB-L1000-memitw   1000       last_fp64    58.6 [19.9, 88.5]    59.3 [20.9, 93.7]      2.3 [1.0, 7.9]     1.7 / 4.7    1.83      0.389 [0.367, 0.713]   0.425      0.93           6  65 [54, 96]   1 / 1     163
+llava       1*   TB-L1000-memitw   1000     last_module    58.6 [19.9, 88.5]    59.3 [20.7, 93.9]      3.0 [0.9, 8.0]     1.5 / 4.5    1.68      0.319 [0.293, 0.642]   0.350      0.77           6  65 [54, 96]   1 / 1     163
+llava       1*   TB-L1000-memitw   1000        all_fp64    58.6 [19.9, 88.5]   68.0 [22.8, 105.0]   16.3 [13.3, 18.9]   16.5 / 14.4   16.02      9.139 [2.425, 9.486]   6.961     15.27           6  65 [54, 96]   1 / 1     163
+llava       1*   TB-L1000-memitw   1000  all_nothr_fp64    58.6 [19.9, 88.5]   80.4 [23.3, 123.9]   37.1 [16.2, 40.1]   37.3 / 17.2   34.28    21.574 [5.076, 21.617]  16.066     35.25          30  65 [54, 96]   1 / 1     163
+llava       1*   synthetic-T1000   1000       last_fp64    58.6 [20.3, 88.5]    59.3 [21.4, 93.8]     2.5 [1.0, 21.1]     1.6 / 4.7    1.80      0.395 [0.375, 0.721]   0.422      0.92           5  62 [54, 94]   1 / 1      66
+llava       1*   synthetic-T1000   1000     last_module    58.6 [20.3, 88.5]    59.3 [21.3, 94.0]     2.7 [0.9, 29.8]     1.7 / 4.3    1.59      0.325 [0.302, 0.661]   0.360      0.79           6  62 [54, 94]   1 / 1      66
+llava       1*   synthetic-T1000   1000        all_fp64    58.6 [20.3, 88.5]   68.1 [23.3, 105.1]   16.3 [13.2, 29.8]   16.5 / 14.3   15.96      9.167 [2.436, 9.522]   6.975     15.28           6  62 [54, 94]   1 / 1      66
+llava       1*  synthetic-T10000  10000       last_fp64   73.3 [20.5, 102.6]   76.5 [23.8, 106.1]   7.5 [-20.9, 63.6]    4.6 / 10.0    4.53      1.826 [0.905, 3.888]   0.980      2.01           5  86 [66, 95]   1 / 1     900
+llava       1*  synthetic-T10000  10000     last_module   73.3 [20.5, 102.6]   77.4 [22.9, 104.3]   1.9 [-22.4, 55.9]     0.6 / 4.1    1.86      0.998 [0.418, 2.294]   0.520      1.06           5  86 [66, 95]   1 / 1     900
+llava       1*  synthetic-T10000  10000        all_fp64   73.3 [20.5, 102.6]  185.2 [28.6, 230.4]  97.2 [23.5, 226.5]  140.0 / 34.0  141.01   98.067 [5.349, 142.628]  62.583    128.13           5  86 [66, 95]   1 / 1     900
+llava        2   TB-L100-ae-l2_3    100       last_fp64   80.0 [21.4, 100.6]   75.7 [23.2, 106.0]   4.8 [-25.5, 50.1]    0.5 / 10.2   -0.87      0.710 [0.308, 2.176]   0.407      0.77          10  93 [82, 95]   1 / 1       0
+llava        2   TB-L100-ae-l2_3    100     last_module   80.0 [21.4, 100.6]   79.2 [23.8, 106.0]   3.3 [-21.3, 45.9]    0.5 / 12.3   -1.29      0.983 [0.324, 2.368]   0.439      0.84          10  93 [82, 95]   1 / 1       0
+llava        2   TB-L100-ae-l2_3    100        all_fp64   80.0 [21.4, 100.6]   86.7 [26.1, 115.1]  14.2 [-12.5, 55.4]   10.3 / 24.1   11.85      5.002 [3.018, 8.079]   4.607      8.77          23  93 [82, 95]   1 / 1       0
+llava        2   TB-L100-ae-l2_3    100  all_nothr_fp64   80.0 [21.4, 100.6]   87.3 [28.2, 105.6]  12.5 [-12.1, 57.3]    6.4 / 30.8    7.77     7.821 [5.399, 12.862]   6.130     11.66          30  93 [82, 95]   1 / 1       0
+llava        2   TB-L100-ae-l2_3    100   where_logonly   80.0 [21.4, 100.6]   84.7 [26.6, 109.9]  12.7 [-14.3, 58.0]    3.6 / 24.9    6.73      4.034 [2.798, 7.248]   3.400      6.47          15  93 [82, 95]   1 / 1       0
+
+E8 (1b) GATE ALONE ON THE GPU FOR SYNTHETIC LOGS (no model in the process; fp64; one eligible key per sequence; 30 keys x 50 runs; median [p10, p90] ms over all runs;
+  min = mean over keys of the per-key minimum, the figure that is nearly free of contention on the shared card and the one used in the scale table).
+  All six rows come from ONE job (14.5 GB reservation).  Earlier partial runs of the same code are kept and not used: out/latency/superseded_10runs/ (10 runs per key:
+  minima still inflated by the load) and out/latency/superseded_small_reservation/ (T <= 10000 only, before the 14.5 GB reservation was granted)
+backbone       T            gate alone ms    min  keys firing  peak MiB  util % before / after  others before / after  capped
+--------  ------  -----------------------  -----  -----------  --------  ---------------------  ---------------------  ------
+qwen25vl    1000    1.638 [0.381, 11.466]  0.761            0       109                77 / 98                  1 / 1       4
+qwen25vl   10000    3.709 [1.341, 11.992]  1.279            0      1006                93 / 98                  1 / 1     159
+qwen25vl  100000  17.398 [10.307, 21.664]  8.709            0      9976                61 / 99                  1 / 1    1718
+llava       1000    2.000 [0.399, 11.482]  0.818            1      9976                87 / 98                  1 / 1      66
+llava      10000    4.094 [1.485, 11.993]  1.371            2      9976                88 / 98                  1 / 1     900
+llava     100000  17.361 [10.376, 21.690]  8.540            2     11542                88 / 97                  1 / 1    9267
+
+E8 (2, 3)  STORAGE AND REPAIR COST ON THE CPU FROM STORED KEYS (4 threads), real logs and synthetic logs (synth.py), default method (two-block, alpha 0.05, n 200, draw 0)
+  store = T (d_in + d_out + 3) numbers (detectors, values, scales, thresholds, baselines); guard keys (2 T d_in, calibration / repair only) not included; % module = numbers of the
+  store / numbers of the module; % model = numbers / parameters of the whole model; (fp64) = bytes of the fp64 store / bytes of the model.  gate GPU = gate alone (fp64, one eligible
+  position); cal = one calibration, n = 200: lib = library rule with guards on stored keys, slim = the same thresholds without materialised guard keys (the form used for the
+  synthetic logs); least = least repair of one complaint; revoke = one threshold to +inf (mask = fx.methods.mask_edits); null = removal of 1 / 10 / 100 keys from all detectors; cut = one minimum cut
+backbone                log       T  MB fp64  MB mod  % module  % model  % model (fp64)  gate GPU ms   gate CPU ms [p10, p90]  CPU fp32  cal lib s  cal slim s  least lib ms  least slim ms  revoke ms  mask ms     null s 1/10/100  cut s
+--------  -----------------  ------  -------  ------  --------  -------  --------------  -----------  -----------------------  --------  ---------  ----------  ------------  -------------  ---------  -------  ------------------  -----
+qwen25vl    TB-Q100-ae-l2_3     100     10.0     2.5       5.8    0.035           0.139        0.561        0.21 [0.20, 0.27]     0.126      0.028       0.005          0.48           0.42      0.049     18.1  0.03 / 0.03 / 0.04  0.003
+qwen25vl     TB-Q100-memitw     100     10.0     2.5       5.8    0.035           0.139        0.515        0.22 [0.20, 0.29]     0.131      0.030       0.005          0.48           0.42      0.056     18.1  0.03 / 0.03 / 0.04  0.004
+qwen25vl     TB-Q500-memitw     500     49.8    12.5      29.0    0.174           0.696        0.520        0.61 [0.58, 0.64]     0.390      0.525       0.018          1.09           0.82      0.059    155.8  0.65 / 0.66 / 0.68  0.013
+qwen25vl    TB-Q1000-memitw    1000     99.6    24.9      57.9    0.348           1.391        0.768        3.85 [1.09, 6.24]     0.642      1.875       0.028          2.30           1.23      0.073    352.1  2.21 / 2.23 / 2.21  0.030
+qwen25vl    TB-Q2000-memitw    2000    199.3    49.8     115.9    0.696           2.782        0.842        2.27 [2.24, 2.34]     1.080      7.260       0.048          6.23           2.20      0.076    713.3  8.58 / 8.97 / 9.13  0.101
+qwen25vl    synthetic-T1000    1000     99.6    24.9      57.9    0.348           1.391        0.761        1.05 [1.04, 1.07]     0.618          -       0.028             -           1.31      0.054        -                   -      -
+qwen25vl   synthetic-T10000   10000    996.3   249.1     579.3    3.478          13.912        1.279     12.78 [12.62, 13.10]     6.252          -       0.223             -          14.42      0.137        -                   -      -
+qwen25vl  synthetic-T100000  100000   9963.2  2490.8    5792.6   34.781         139.124        8.709  174.72 [173.78, 175.79]    89.398          -       2.325             -         178.40      0.356        -                   -      -
+llava       TB-L100-ae-l2_3     100     11.5     2.9       3.4    0.021           0.086        0.635        0.22 [0.20, 0.27]     0.127      0.030       0.005          0.47           0.40      0.049     19.7  0.03 / 0.03 / 0.04  0.004
+llava        TB-L100-memitw     100     11.5     2.9       3.4    0.021           0.086        0.374        0.23 [0.20, 0.27]     0.130      0.030       0.004          0.47           0.41      0.055     19.6  0.03 / 0.03 / 0.04  0.005
+llava       TB-L1000-memitw    1000    115.3    28.8      33.5    0.214           0.856        0.425        1.06 [1.06, 1.11]     0.624      1.899       0.028          2.26           1.27      0.065    334.4  2.19 / 2.19 / 2.23  0.031
+llava       synthetic-T1000    1000    115.3    28.8      33.5    0.214           0.856        0.818        1.04 [1.03, 1.06]     0.609          -       0.027             -           1.28      0.058        -                   -      -
+llava      synthetic-T10000   10000   1152.6   288.1     335.1    2.139           8.555        1.371     14.77 [14.43, 15.44]     5.976          -       0.223             -          17.33      0.135        -                   -      -
+llava     synthetic-T100000  100000  11525.7  2881.4    3350.5   21.388          85.551        8.540  171.36 [170.46, 172.75]    88.342          -       2.107             -         173.17      0.367        -                   -      -
+  storage per edit and the T at which the store reaches the size of the module / of the model:
+backbone   d_in  d_out  numbers / edit  MB / edit fp64  MB / edit module dtype  module MB  T = module (numbers)  T = module (fp64 store)  model parameters  T = model (numbers)
+--------  -----  -----  --------------  --------------  ----------------------  ---------  --------------------  -----------------------  ----------------  -------------------
+qwen25vl  11008   2048           13059          0.0996                  0.0249       43.0                  1726                      431        3754622976               287512
+llava     11008   4096           15107          0.1153                  0.0288       86.0                  2984                      746        7063427072               467559
+
+E8 (4a) COST PER COMPLAINT OF THE LINEAR REPAIRS, from the existing P12 records (no new run): passes and seconds of the repair divided by the number of reported complaints,
+  mean over seeds; fwd = forward passes of any kind (full, prefix, suffix), bwd = backward passes; wall-clock of the records (shared cards; setup excluded)
+log                     method  n complaints  seeds  fwd / complaint  bwd / complaint  ms / complaint                                                                                     record
+---------------  -------------  ------------  -----  ---------------  ---------------  --------------  -----------------------------------------------------------------------------------------
+TB-Q100-ae-l2_3         COMP_B             1      3              1.0              0.0              46          10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_B__n1__s*.json
+TB-Q100-ae-l2_3         COMP_B            10      3              1.0              0.0             113         10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_B__n10__s*.json
+TB-Q100-ae-l2_3         COMP_B           100      1              1.0              0.0             117        10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_B__n100__s*.json
+TB-Q100-ae-l2_3        COMP_BP             1      3              1.0              0.0              48         10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_BP__n1__s*.json
+TB-Q100-ae-l2_3        COMP_BP            10      3              1.0              0.0             108        10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_BP__n10__s*.json
+TB-Q100-ae-l2_3        COMP_BP           100      1              1.0              0.0             105       10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_BP__n100__s*.json
+TB-Q100-ae-l2_3  COMP_B_ALLPOS             1      3              1.0              0.0              51   10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_B_ALLPOS__n1__s*.json
+TB-Q100-ae-l2_3  COMP_B_ALLPOS            10      3              1.0              0.0            1533  10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_B_ALLPOS__n10__s*.json
+TB-Q100-ae-l2_3         COMP_S             1      3              1.0              0.0              46          10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_S__n1__s*.json
+TB-Q100-ae-l2_3         COMP_S            10      3              1.0              0.0             103         10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_S__n10__s*.json
+TB-Q100-ae-l2_3         COMP_S           100      1              1.0              0.0             302        10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_S__n100__s*.json
+TB-Q100-ae-l2_3        COMP_SP             1      3              1.0              0.0              48         10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_SP__n1__s*.json
+TB-Q100-ae-l2_3        COMP_SP            10      3              1.0              0.0             130        10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_SP__n10__s*.json
+TB-Q100-ae-l2_3        COMP_SP           100      1              1.0              0.0             323       10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/COMP_SP__n100__s*.json
+TB-Q100-ae-l2_3         RB_TOT             1      3             10.3              4.7             797          10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/RB_TOT__n1__s*.json
+TB-Q100-ae-l2_3         RB_TOT            10      3             61.0             30.0            2814         10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/RB_TOT__n10__s*.json
+TB-Q100-ae-l2_3         RB_TOT           100      1             61.0             30.0            3198        10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/RB_TOT__n100__s*.json
+TB-Q100-ae-l2_3       RB_UNION             1      3             10.3              4.7             360        10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/RB_UNION__n1__s*.json
+TB-Q100-ae-l2_3       RB_UNION            10      3             11.9              5.4             515       10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/RB_UNION__n10__s*.json
+TB-Q100-ae-l2_3       RB_UNION           100      1              9.6              4.3             570      10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/RB_UNION__n100__s*.json
+TB-Q100-ae-l2_3       REEDIT_B             1      3              9.0              6.0             630        10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/REEDIT_B__n1__s*.json
+TB-Q100-ae-l2_3       REEDIT_B            10      3              9.8              6.8            1168       10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/REEDIT_B__n10__s*.json
+TB-Q100-ae-l2_3       REEDIT_B           100      1              9.5              6.5            1254      10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/REEDIT_B__n100__s*.json
+TB-Q100-ae-l2_3       REEDIT_S             1      3              9.0              6.0             630        10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/REEDIT_S__n1__s*.json
+TB-Q100-ae-l2_3       REEDIT_S            10      3              9.8              6.8            1168       10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/REEDIT_S__n10__s*.json
+TB-Q100-ae-l2_3       REEDIT_S           100      1              9.5              6.5            1263      10_final/../08_rescope/p12_linear_streams/out/TB-Q100-ae-l2_3/REEDIT_S__n100__s*.json
+TB-L100-ae-l2_3         COMP_B             1      3              1.0              0.0              29          10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_B__n1__s*.json
+TB-L100-ae-l2_3         COMP_B            10      3              1.0              0.0              43         10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_B__n10__s*.json
+TB-L100-ae-l2_3         COMP_B           100      1              1.0              0.0              40        10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_B__n100__s*.json
+TB-L100-ae-l2_3        COMP_BP             1      3              1.0              0.0              36         10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_BP__n1__s*.json
+TB-L100-ae-l2_3        COMP_BP            10      3              1.0              0.0              42        10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_BP__n10__s*.json
+TB-L100-ae-l2_3        COMP_BP           100      1              1.0              0.0              34       10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_BP__n100__s*.json
+TB-L100-ae-l2_3  COMP_B_ALLPOS             1      3              1.0              0.0              40   10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_B_ALLPOS__n1__s*.json
+TB-L100-ae-l2_3  COMP_B_ALLPOS            10      3              1.0              0.0             784  10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_B_ALLPOS__n10__s*.json
+TB-L100-ae-l2_3         COMP_S             1      3              1.0              0.0              29          10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_S__n1__s*.json
+TB-L100-ae-l2_3         COMP_S            10      3              1.0              0.0              53         10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_S__n10__s*.json
+TB-L100-ae-l2_3         COMP_S           100      1              1.0              0.0             134        10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_S__n100__s*.json
+TB-L100-ae-l2_3        COMP_SP             1      3              1.0              0.0              36         10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_SP__n1__s*.json
+TB-L100-ae-l2_3        COMP_SP            10      3              1.0              0.0             104        10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_SP__n10__s*.json
+TB-L100-ae-l2_3        COMP_SP           100      1              1.0              0.0             124       10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/COMP_SP__n100__s*.json
+TB-L100-ae-l2_3         RB_TOT             1      3             10.3              4.7             310          10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/RB_TOT__n1__s*.json
+TB-L100-ae-l2_3         RB_TOT            10      3             61.0             30.0            2594         10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/RB_TOT__n10__s*.json
+TB-L100-ae-l2_3         RB_TOT           100      1             61.0             30.0            1961        10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/RB_TOT__n100__s*.json
+TB-L100-ae-l2_3       RB_UNION             1      3             10.3              4.7             374        10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/RB_UNION__n1__s*.json
+TB-L100-ae-l2_3       RB_UNION            10      3             10.5              4.8             467       10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/RB_UNION__n10__s*.json
+TB-L100-ae-l2_3       RB_UNION           100      1             11.4              5.2             386      10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/RB_UNION__n100__s*.json
+TB-L100-ae-l2_3       REEDIT_B             1      3              7.3              4.3             423        10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/REEDIT_B__n1__s*.json
+TB-L100-ae-l2_3       REEDIT_B            10      3              6.8              3.8             425       10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/REEDIT_B__n10__s*.json
+TB-L100-ae-l2_3       REEDIT_B           100      1              7.1              4.1             370      10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/REEDIT_B__n100__s*.json
+TB-L100-ae-l2_3       REEDIT_S             1      3              7.3              4.3             423        10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/REEDIT_S__n1__s*.json
+TB-L100-ae-l2_3       REEDIT_S            10      3              6.8              3.8             425       10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/REEDIT_S__n10__s*.json
+TB-L100-ae-l2_3       REEDIT_S           100      1              7.1              4.1             380      10_final/../08_rescope/p12_linear_streams/out/TB-L100-ae-l2_3/REEDIT_S__n100__s*.json
+
+E8 (4b) CLEAN WALL-CLOCK OF ONE LINEAR REPAIR OF ONE COMPLAINT (07_repair_v3/harness/out/smoke/timing.json; TB-Q100-ae-l2_3, 10 complaints, NVIDIA GeForce RTX 5090, 1 process on the card, 8 CPU threads)
+config                                 method  fwd / complaint  bwd / complaint  median ms      p10 / p90 ms
+------  -------------------------------------  ---------------  ---------------  ---------  ----------------
+C02               COMP[K_last|answer|adapter]              1.0              0.0       45.3      23.5 / 119.0
+C03                COMP[K_last|answer|merged]              1.0              0.0       43.3       23.8 / 91.6
+C04                  COMP[K_last|all|adapter]              1.0              0.0      119.8      24.6 / 341.5
+C05                COMP[K_ans|answer|adapter]              1.0              0.0       41.8       22.6 / 90.1
+C06             COMP[K_seq:10|answer|adapter]              1.0              0.0       44.0       24.0 / 91.7
+C07     COMP[K_last+probe:200|answer|adapter]              1.0              0.0       42.2       23.3 / 90.7
+C08                 COMP[none|answer|adapter]              1.0              0.0       39.8       19.9 / 87.6
+C10                     REEDIT[variant=k0+kp]             12.2              9.2      615.5    435.2 / 1528.5
+C11                    ROLLBACK_FO[budget=10]             10.6              4.8      252.0     190.6 / 460.9
+C12                    ROLLBACK_FO[budget=20]             12.2              5.6      251.0     199.6 / 634.6
+C13                   ROLLBACK_BEH[budget=20]            464.2              0.0     3717.5  2022.3 / 11565.0
+C14                              ROLLBACK_ALL              0.0              0.0        0.1         0.1 / 0.1
+
+E8 (4c) ANSWER-MATCH BASELINE (two generations per query), 50 heldout_disjoint queries, wall-clock per query next to one generation of the pre-edit / deployed model
+log                                 what  queries  generations / query  ms / query  util % before / after  others before / after
+---------------  -----------------------  -------  -------------------  ----------  ---------------------  ---------------------
+TB-Q100-ae-l2_3   preedit_one_generation       50                    1      1094.8            68.0 / 96.0                  1 / 1
+TB-Q100-ae-l2_3  deployed_one_generation       50                    1      1050.1            68.0 / 96.0                  1 / 1
+TB-Q100-ae-l2_3     dual_two_generations       50                    2      2056.5            68.0 / 96.0                  1 / 1
+TB-L100-ae-l2_3   preedit_one_generation       50                    1       695.0            47.0 / 97.0                  1 / 1
+TB-L100-ae-l2_3  deployed_one_generation       50                    1       680.0            47.0 / 97.0                  1 / 1
+TB-L100-ae-l2_3     dual_two_generations       50                    2      1338.3            47.0 / 97.0                  1 / 1
+
+E8 (5)  SCALE TABLE: synthetic scoped logs at 10^3, 10^4, 10^5 edits and, in the last row, the figures that the gated key-value editor NeuralDB publishes for 10^5 facts
+  (contextual, not normalised to our setting, not re-run).  storage per edit and in total; % model = numbers / model parameters ((fp64): bytes of the fp64 store / bytes of the model);
+  lookup = the gate alone per forward pass (one eligible position); repair = one least repair; revocation = one threshold write
+system                                                                                                                                                 T                  MB / edit  MB total                          % model  % model (fp64)                                                         lookup GPU ms  lookup CPU ms  calibration s      repair ms                           revocation ms
+------------------------------------------------------------------------------------------------------------------------------------------------  ------  -------------------------  --------  -------------------------------  --------------  --------------------------------------------------------------------  -------------  -------------  -------------  --------------------------------------
+synthetic, qwen25vl                                                                                                                                 1000                     0.0996       100                             0.35             1.4                                                                 0.761           1.05           0.03           1.31                                   0.054
+synthetic, qwen25vl                                                                                                                                10000                     0.0996       996                             3.48            13.9                                                                 1.279          12.78           0.22          14.42                                   0.137
+synthetic, qwen25vl                                                                                                                               100000                     0.0996      9963                            34.78           139.1                                                                 8.709         174.72           2.32         178.40                                   0.356
+synthetic, llava                                                                                                                                    1000                     0.1153       115                             0.21             0.9                                                                 0.818           1.04           0.03           1.28                                   0.058
+synthetic, llava                                                                                                                                   10000                     0.1153      1153                             2.14             8.6                                                                 1.371          14.77           0.22          17.33                                   0.135
+synthetic, llava                                                                                                                                  100000                     0.1153     11526                            21.39            85.6                                                                 8.540         171.36           2.11         173.17                                   0.367
+published: NeuralDB, Llama-3 8B, 10^5 facts (Fei et al., NeuralDB, arXiv 2507.18028v1 (ICLR 2026), Appendix A 'Limitation'; local copy line 724)  100000  (d1 + d2 = 18432 numbers)         -  20 (of the model, as published)               -  not published at 10^5 (evaluation time +1.5 % at 10^4 facts, Sec. 4)              -              -  not published  not published (no deletion experiment)
+  quotation (Appendix A (Limitation)): "the corresponding storage overhead grows linearly with the number of edited entries. This may lead to additional memory usage, especially when editing a large amount of knowledge. For instance, after editing 100,000 pieces of knowledge for LLama3 8B, the additional memory usage reached 20% of the original model."
+  source record: 03_analysis/scope_lit/D_unlearning_editing_scale/records.json (id fei2026neuraldb); text: _raw/2507.18028/html/page.txt lines {'time_1e4': 126, 'storage_1e5': 724, 'storage_1e4': 838}

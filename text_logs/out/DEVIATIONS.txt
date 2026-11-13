@@ -1,0 +1,161 @@
+DEVIATIONS of the E10 build (ROME on GPT-2 XL, CounterFact) from the public reference implementation and its hyper-parameter file
+rendered 2026-11-11 09:21:06 UTC by make_deviations.py from out/provenance.json and the run meta files
+
+1. Public code
+   what: github.com/kmeng01/rome, commit 0874014cd9837e4365f3e6f3c71400ef11509e04 (2022-10-14 05:16:00 -0400), obtained with
+         `git clone --depth 1` (a shallow clone: github.com:443 timed out repeatedly); working tree clean: True; identical to
+         the commit archive served by codeload.github.com (kept under ext/third_party/_tarballs).  No file of the clone is
+         edited.  github.com/kmeng01/memit (commit 80426fd9316cf9a50c5ba15e0912f2c2c5bfe84b) is cloned for reference only: of
+         the ROME files, compute_u.py, compute_v.py, rome_hparams.py, tok_dataset.py, util/generate.py, util/nethook.py,
+         util/runningstats.py and hparams/ROME/gpt2-xl.json are byte-identical there; rome_main.py (adds an optional factor
+         cache), repr_tools.py (batch 128 instead of 512), layer_stats.py (a force_recompute option) and the evaluation files
+         experiments/py/eval_utils_counterfact.py and experiments/summarize.py (MEMIT adds accuracy-based metrics and drops
+         the attribute prompts) differ.  The ROME repository is the one that is run, for editing and for scoring.
+   why : none (not a deviation); recorded as required
+
+2. Hyper-parameters
+   what: hparams/ROME/gpt2-xl.json of the clone, sha256 81a98b788b8fbb89718288a8831441200e7d824fd057f62cb7d913ae4da5cf42,
+         read by the public ROMEHyperParams.from_json; unchanged (tracked file unmodified: True).
+   why : none (not a deviation)
+
+3. Paths (globals.yml)
+   what: The public util/globals.py reads ./globals.yml.  The drivers chdir to text_public/run, whose globals.yml has the
+         keys of the public file with absolute paths: RESULTS_DIR = text_public/out/public_results, DATA_DIR =
+         ext/data/rome_data, STATS_DIR = ext/data/rome_data/stats, HPARAMS_DIR = ext/third_party/rome/hparams,
+         REMOTE_ROOT_URL unchanged.
+   why : outputs and data must live under project_3; the clone must stay unedited
+
+4. Model source and loading
+   what: GPT-2 XL from the local directory ext/models/gpt2-xl (repo openai-community/gpt2-xl, revision
+         15ea56dee5df4983c59b2538573817e1667135e2, downloaded through hf-mirror.com; model.safetensors sha256 equals the
+         hub's LFS hash: True) instead of the hub name 'gpt2-xl'.  Loaded as experiments/evaluate.py does:
+         AutoModelForCausalLM.from_pretrained(...).cuda(), tok.pad_token = tok.eos_token; torch_dtype=torch.float32 is passed
+         explicitly (it is the default).  model.config._name_or_path is set to 'gpt2-xl' after loading, because the public
+         code builds the statistics path from it.
+   why : huggingface.co is not reachable from this machine
+
+5. Device and dtype
+   what: One GPU (cuda:0 of the queue's card), float32 everywhere, as in the public code.  The process caps its GPU memory
+         (torch.cuda.set_per_process_memory_fraction) and uses at most 4 BLAS threads.
+   why : queue rules; no numerical effect
+
+6. Library stack
+   what: python 3.11.16, torch 2.8.0+cu128, transformers 4.23.1, tokenizers 0.13.3, numpy 2.4.6, scipy 1.17.1, scikit-learn
+         1.9.1, nltk 3.10.4.  The public environment pins python 3.9.7, pytorch 1.10.2, transformers 4.15.0, nltk 3.6.5
+         (scripts/rome.yml); MEMIT, which ships the same ROME files, pins pytorch 1.12.1 and transformers 4.23.1.
+         transformers 4.23.1, tokenizers 0.13.3 and huggingface_hub 0.11.1 are installed under ext/pydeps_tf4 and put first
+         on sys.path for the E10 scripts only; nltk under ext/pydeps (with the punkt_tab tokenizer data under
+         ext/data/nltk_data).  The project environment is not modified.
+   why : the project environment has transformers 5.17, under which the public util/generate.py (generate_fast) produces
+         garbage text (logs/smoke_tf5.out: the sampled context templates were strings such as 'In the-\n. {}'); transformers
+         4.15.0 has no build of its tokenizers for python 3.11; nltk is not installed in the environment
+
+7. `datasets` placeholder
+   what: rome/layer_stats.py imports datasets.load_dataset at import time.  The environment's datasets package cannot be
+         imported next to huggingface_hub 0.11.1, so the drivers register an empty placeholder module whose load_dataset
+         raises.  It is never called: the statistics file exists, so the public layer_stats loads it from the cache.
+   why : import-time dependency only
+
+8. Second-moment statistics
+   what: The authors' precomputed file, downloaded from
+         https://rome.baulab.info/data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz
+         (sha256 376f29d29b05fed1f5c48daa47b40edb87a239ec817a51bfe4cf68659749bc78; 44068071 tokens of 100000 Wikipedia
+         samples, float32, 6400 x 6400), placed where the public code caches it.  Not recomputed.  The inverse is taken by
+         the public compute_u.get_inv_cov (torch.inverse on the GPU, cast to float32).
+   why : the task asks for the authors' file if it downloads; curl is used because the public loader's own download
+         (torch.hub) would write to the same place
+
+9. Data
+   what: counterfact.json from the URL of the public loader (https://rome.baulab.info/data/dsets/counterfact.json), sha256
+         d017056125178a13728594e66a801357a8db9ed7973a7425554bb4271de9fc6f, 21919 records, downloaded with curl into ext/data
+         and read with json.load, which is what the public CounterFactDataset (dsets/counterfact.py) does with the file.
+         idf.npy, tfidf_vocab.json and attribute_snippets.json were also downloaded (the last one after a resumed transfer)
+         and linked into the data directory; none of the three is used by this build.
+   why : same file from the same URL; the consistency score, the only user of the three auxiliary files, is not required
+
+10. Driver of the single-edit check
+   what: experiments/evaluate.py cannot be imported here: it imports every baseline and fails at `import hydra`
+         (baselines/mend/mend_main.py; checked on 2026-11-11).  Its loop (lines 105-146) is re-typed in run_single.py with
+         the same public calls and arguments: apply_rome_to_model(model, tok, [record['requested_rewrite']], hparams,
+         copy=False, return_orig_weights=True); compute_rewrite_quality_counterfact(edited_model, tok, record, None, None);
+         restore the weight; the same call on the restored model; case_<id>.json in the public format.  snips = vec = None is
+         the public --skip_generation_tests.  Scores: the public experiments/summarize.py, unchanged.
+   why : the other baselines' dependencies are not installed and are not needed for ROME
+
+11. Weight not restored between requests (the sequential logs)
+   what: run_stream.py calls apply_rome_to_model(model, tok, [request], hparams, copy=False, return_orig_weights=False) once
+         per request and does not restore the weight afterwards.  The public function itself computes the factors on the
+         current weight and adds their outer product in place; only the restore of the public evaluation driver is absent.
+   why : this is the object of E10: one module, one rank-one update per request, applied sequentially
+
+12. Random seed and context templates
+   what: torch.manual_seed(0) is called once before the first request of every run (the public driver sets no seed).  Public
+         behaviour, kept: rome_main.get_context_templates samples the context templates ONCE per process, at the first
+         request, from the model as it is at that moment (generate_fast with top-5 sampling from '<|endoftext|>': 10 texts of
+         5 tokens and 10 of 10 tokens, each followed by '. {}', plus the bare '{}'), and caches them in the module global
+         CONTEXT_TEMPLATES_CACHE; every later request of the process reuses them, so in a sequential run they are samples of
+         the PRE-EDIT model.  With seed 0 the development log, the reported stream and the single-edit check obtained the
+         same 21 templates: ['{}', 'In the last few. {}', 'The following is a. {}', 'I have been working. {}', 'A man was
+         arrested. {}', 'The U.S. {}', 'I have been working. {}', "I've been working. {}", '"I have to. {}', "In this week's.
+         {}", "I've been working. {}", "The U.S. government's National Ocean. {}", '"The best way to describe it would be.
+         {}', 'A man in the US who has been living. {}', 'A new study has found a link between the. {}', 'In the past few
+         decades, a growing number. {}', "I've seen a lot of people complaining about. {}", "I'm trying to get my hands on
+         an. {}", 'The first thing that comes to mind when hearing. {}', 'The first day of the 2016 season has officially.
+         {}', 'A man was killed when he was struck by. {}'].  When a run is resumed, the cache is restored from the run's
+         meta file instead of being re-sampled from the edited model, and the weight is rebuilt by replaying the stored
+         factors with the public write expression (bit-for-bit equality with the recorded sha256 is asserted).  Resume
+         events: dev: 1 (at 3 updates); stream: 1 (at 1531 updates); single: 0.  Causes: the development log was started as a
+         3-update test and continued; the reported stream stopped once, with a CUDA out-of-memory error in the write-time
+         probability test of case 1531 (item on the memory fallback below), after 1531 updates.  Resume checks: stream after
+         1531 updates: the direction of the last stored update, recomputed with the public compute_u in the new process, is
+         bit-for-bit the stored one: True; recorded weight hashes reproduced by the replay: 61.
+   why : reproducibility; a resumed run must behave as the uninterrupted public process would
+
+13. Observation of the public computation
+   what: tp_common.Capture wraps rome.rome_main.execute_rome and rome.repr_tools.get_reprs_at_word_tokens at run time
+         (attributes of the imported modules; no file is edited) and reads the local variables target, target_init, delta and
+         the last loss terms of the running compute_v frame.  It records the returned factors, the module inputs at the last
+         subject token under every context template (their mean is the vector compute_u multiplies by the inverse second
+         moment), the module input and output for the request prompt alone (the key compute_v divides by and the output it
+         subtracts) and the target.  Nothing the public code computes is changed.
+   why : the log needs the keys and the target, which the public functions do not return
+
+14. Evaluation inside the sequential runs
+   what: After each update the public compute_rewrite_quality_counterfact is run on the request's own record with the weight
+         of that moment (forward passes only; no sampling, the weight is not touched) and stored under
+         logs_edit/<run>/write_time.
+   why : write-time success of the editor along the stream
+
+15. Memory fallback of the public probability test (model.config.use_cache)
+   what: The public test_batch_prediction feeds the 46 sequences of a record as one padded batch through model(**batch); with
+         the default config the forward also returns the key / value tensors of all 48 layers.  For a record with a very long
+         paraphrase prompt this exceeds the memory cap of the queue job (case 1531: a 179-token paraphrase, 46 x 181 tokens;
+         first seen as an out-of-memory failure, logs/describe_A_oom_case1531.out).  tp_common.public_prob_test calls the
+         public function as is and, on a CUDA out-of-memory error only, calls the same public function again with
+         model.config.use_cache = False (the forward then returns no key / value tensors; the logits are computed by the same
+         operations).  Records evaluated that way carry prob_test_use_cache_false = true in their case file: description,
+         run_T1000: case(s) [147, 427]; description, run_T2000: case(s) [147, 427, 1531, 1878]; description, run_T500:
+         case(s) [147, 427]; description, run_W0: case(s) [1531, 1878]; write time, stream: case(s) [1531].  Equality of the
+         public function's output under both settings was checked on three records at the pre-edit weight (bit for bit: not
+         run yet).
+   why : GPU memory is shared; the alternative was a reservation of about 15 GB for one record
+
+16. Generation metric of the description
+   what: The public test_generation needs the attribute snippets and the tf-idf vectoriser for its consistency score.  The
+         description calls the two public functions it is made of that do not need them: util.generate.generate_fast(model,
+         tok, generation_prompts, n_gen_per_prompt=1, max_out_len=100) and eval_utils_counterfact.n_gram_entropy(texts of one
+         record).  The generation prompts of 2 records (20 prompts) are passed to one generate_fast call instead of one call
+         per record, with torch.manual_seed(77000 + index of the first record) before each call; rows of a batch do not
+         interact in generate_fast (no pad position is fed), so only the random numbers drawn differ from per-record calls.
+         The consistency (reference) score and the essence score are not computed.  nltk.word_tokenize is that of nltk 3.10.4
+         (punkt_tab), not 3.6.5.
+   why : the consistency score is not required; a seed makes the sampled generations reproducible and paired across weights;
+         one call per record took about 15 minutes per 100 records on the shared cards (a first attempt was stopped for that
+         reason)
+
+17. Not public code (this project's own measurements)
+   what: The pools, the pre-edit continuations, the exact / token-level match of the new object, D1 and the degeneration
+         flags are computed by text_public/code (tp_eval.py, describe.py, make_table.py): greedy decoding and teacher forcing
+         in batches of one token length without padding.  They are reported in separate columns and never mixed with the
+         public scores.
+   why : required by the E10 protocol; listed so that no reader takes them for public metrics

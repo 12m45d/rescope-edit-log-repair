@@ -1,0 +1,36 @@
+{
+ "n_texts": 27878,
+ "n_dec": 10,
+ "w0": {
+  "sha256": "bd483af64b575f9dbd9330262b555d8bb4a74eb36e55b13ccbb0a0b9c9ef22a3",
+  "dtype": "float32",
+  "shape": [
+   6400,
+   1600
+  ]
+ },
+ "n_valid": 27878,
+ "n_invalid": 0,
+ "n_nonfinite": 0,
+ "n_empty": 0,
+ "n_repetitive": 3,
+ "n_few_distinct": 2,
+ "n_long_run": 1,
+ "n_has_eos": 128,
+ "seconds": 637.5108196735382,
+ "versions": {
+  "python": "3.11.16",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.23.1",
+  "tokenizers": "0.13.3",
+  "numpy": "2.4.6",
+  "nltk": "3.10.4",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.1",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "cuda": "12.8"
+ },
+ "written": "2026-11-11 06:16:30 UTC",
+ "peak_alloc_MiB": 8093.86572265625,
+ "peak_reserved_MiB": 9736.0
+}

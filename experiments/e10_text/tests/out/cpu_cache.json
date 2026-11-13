@@ -1,0 +1,42 @@
+{
+ "name": "c_cache",
+ "pass": true,
+ "what": "key cache complete for the development log; float32 keys agree with a single-pass recomputation far inside the band; float16 would not",
+ "detail": {
+  "parts": {
+   "dev": {
+    "n_texts": 1282,
+    "n_positions": 25311,
+    "dtype": "float32",
+    "gb": 0.6034612655639648,
+    "single_pass_recompute_max_rel_deviation": 2.867354867448241e-06,
+    "n_verified": 100
+   },
+   "pools": {
+    "n_texts": 5998,
+    "n_positions": 152836,
+    "dtype": "float32",
+    "gb": 3.6438941955566406,
+    "single_pass_recompute_max_rel_deviation": 3.288955289413129e-06,
+    "n_verified": 100
+   }
+  },
+  "texts_needed_by_dev_log": 7280,
+  "texts_missing": 0,
+  "positions_ok": true,
+  "float16_rounding_max_dr_over_scale": 4.666337546229212e-05,
+  "band": 1e-05,
+  "float16_exceeds_band": true
+ },
+ "error": null,
+ "seconds": 0.32217907905578613,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "written": "2026-11-11 11:57:12 UTC"
+}

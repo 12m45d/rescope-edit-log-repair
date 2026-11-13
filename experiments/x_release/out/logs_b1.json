@@ -1,0 +1,839 @@
+{
+ "about": {
+  "what": "the paper's table of logs: every log of E3, the two development logs (among them) and the six prefix logs; the deployed log's edit metrics and D1 as evaluated in these experiments (one sequence per forward pass; they differ from the metrics stored at build time on 0 to 13 edits per metric, amendment of 2026-11-12 06:16 UTC, decision 7)",
+  "written": "2026-11-12 06:41:50",
+  "code": {
+   "rescope": "c76c4da16bd6",
+   "fx": "6a71f0d2cd71",
+   "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+  }
+ },
+ "logs": [
+  {
+   "log": "TB-Q100-ae-l2_3",
+   "backbone": "Qwen2.5-VL-3B",
+   "backbone_key": "qwen25vl",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3",
+   "role": "development",
+   "T": 100,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_valid_source": "e3_qwen/out/rows/TB-Q100-ae-l2_3__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 78.0,
+     "numerator": 78,
+     "denominator": 100,
+     "source": "e3_qwen/out/rows/TB-Q100-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 9.0,
+     "numerator": 9,
+     "denominator": 100,
+     "source": "e3_qwen/out/rows/TB-Q100-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 22.0,
+     "numerator": 22,
+     "denominator": 100,
+     "source": "e3_qwen/out/rows/TB-Q100-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 54.19354838709678,
+     "numerator": 252,
+     "denominator": 465,
+     "source": "e3_qwen/out/rows/TB-Q100-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null,
+   "same_counts_in": [
+    {
+     "log": "TB-Q100-ae-l2_3",
+     "other": "E1",
+     "file": "e1_main/out/rows/TB-Q100-ae-l2_3__deployed__dx__tf.jsonl.gz",
+     "equal": true
+    },
+    {
+     "log": "TB-Q100-ae-l2_3",
+     "other": "E2",
+     "file": "e2_curves/out/rows/base__Q__deployed.jsonl.gz",
+     "equal": true
+    }
+   ]
+  },
+  {
+   "log": "TB-Q200-ae-l2_3",
+   "backbone": "Qwen2.5-VL-3B",
+   "backbone_key": "qwen25vl",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3",
+   "role": "unseen",
+   "T": 200,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_valid_source": "e3_qwen/out/rows/TB-Q200-ae-l2_3__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 65.5,
+     "numerator": 131,
+     "denominator": 200,
+     "source": "e3_qwen/out/rows/TB-Q200-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 4.5,
+     "numerator": 9,
+     "denominator": 200,
+     "source": "e3_qwen/out/rows/TB-Q200-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 22.5,
+     "numerator": 45,
+     "denominator": 200,
+     "source": "e3_qwen/out/rows/TB-Q200-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 77.41935483870968,
+     "numerator": 360,
+     "denominator": 465,
+     "source": "e3_qwen/out/rows/TB-Q200-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-Q500-ae-l2_3",
+   "backbone": "Qwen2.5-VL-3B",
+   "backbone_key": "qwen25vl",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3",
+   "role": "unseen",
+   "T": 500,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_valid_source": "e3_qwen/out/rows/TB-Q500-ae-l2_3__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 54.6,
+     "numerator": 273,
+     "denominator": 500,
+     "source": "e3_qwen/out/rows/TB-Q500-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 4.3999999999999995,
+     "numerator": 22,
+     "denominator": 500,
+     "source": "e3_qwen/out/rows/TB-Q500-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 16.0,
+     "numerator": 80,
+     "denominator": 500,
+     "source": "e3_qwen/out/rows/TB-Q500-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 89.03225806451613,
+     "numerator": 414,
+     "denominator": 465,
+     "source": "e3_qwen/out/rows/TB-Q500-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-Q100-memitw",
+   "backbone": "Qwen2.5-VL-3B",
+   "backbone_key": "qwen25vl",
+   "editor_family": "memitw",
+   "editor_family_registry": "memit",
+   "editor": "MEMIT-style, public default configuration (Wikipedia-text statistics, lam_hat = 100)",
+   "role": "unseen",
+   "T": 100,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_valid_source": "e3_qwen/out/rows/TB-Q100-memitw__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 53.0,
+     "numerator": 53,
+     "denominator": 100,
+     "source": "e3_qwen/out/rows/TB-Q100-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 11.0,
+     "numerator": 11,
+     "denominator": 100,
+     "source": "e3_qwen/out/rows/TB-Q100-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 19.0,
+     "numerator": 19,
+     "denominator": 100,
+     "source": "e3_qwen/out/rows/TB-Q100-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 89.46236559139786,
+     "numerator": 416,
+     "denominator": 465,
+     "source": "e3_qwen/out/rows/TB-Q100-memitw__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-Q500-memitw",
+   "backbone": "Qwen2.5-VL-3B",
+   "backbone_key": "qwen25vl",
+   "editor_family": "memitw",
+   "editor_family_registry": "memit",
+   "editor": "MEMIT-style, public default configuration (Wikipedia-text statistics, lam_hat = 100)",
+   "role": "unseen",
+   "T": 500,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_valid_source": "e3_qwen/out/rows/TB-Q500-memitw__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 25.0,
+     "numerator": 125,
+     "denominator": 500,
+     "source": "e3_qwen/out/rows/TB-Q500-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 6.4,
+     "numerator": 32,
+     "denominator": 500,
+     "source": "e3_qwen/out/rows/TB-Q500-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 10.0,
+     "numerator": 50,
+     "denominator": 500,
+     "source": "e3_qwen/out/rows/TB-Q500-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 96.55913978494624,
+     "numerator": 449,
+     "denominator": 465,
+     "source": "e3_qwen/out/rows/TB-Q500-memitw__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-Q1000-memitw",
+   "backbone": "Qwen2.5-VL-3B",
+   "backbone_key": "qwen25vl",
+   "editor_family": "memitw",
+   "editor_family_registry": "memit",
+   "editor": "MEMIT-style, public default configuration (Wikipedia-text statistics, lam_hat = 100)",
+   "role": "unseen",
+   "T": 1000,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_valid_source": "e3_qwen/out/rows/TB-Q1000-memitw__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 15.2,
+     "numerator": 152,
+     "denominator": 1000,
+     "source": "e3_qwen/out/rows/TB-Q1000-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 4.6,
+     "numerator": 46,
+     "denominator": 1000,
+     "source": "e3_qwen/out/rows/TB-Q1000-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 6.5,
+     "numerator": 65,
+     "denominator": 1000,
+     "source": "e3_qwen/out/rows/TB-Q1000-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 98.9247311827957,
+     "numerator": 460,
+     "denominator": 465,
+     "source": "e3_qwen/out/rows/TB-Q1000-memitw__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-Q2000-memitw",
+   "backbone": "Qwen2.5-VL-3B",
+   "backbone_key": "qwen25vl",
+   "editor_family": "memitw",
+   "editor_family_registry": "memit",
+   "editor": "MEMIT-style, public default configuration (Wikipedia-text statistics, lam_hat = 100)",
+   "role": "unseen",
+   "T": 2000,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_valid_source": "e3_qwen/out/rows/TB-Q2000-memitw__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 9.8,
+     "numerator": 196,
+     "denominator": 2000,
+     "source": "e3_qwen/out/rows/TB-Q2000-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 3.6999999999999997,
+     "numerator": 74,
+     "denominator": 2000,
+     "source": "e3_qwen/out/rows/TB-Q2000-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 4.65,
+     "numerator": 93,
+     "denominator": 2000,
+     "source": "e3_qwen/out/rows/TB-Q2000-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 97.63440860215053,
+     "numerator": 454,
+     "denominator": 465,
+     "source": "e3_qwen/out/rows/TB-Q2000-memitw__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-Q100-ae-l2_3-p10",
+   "backbone": "Qwen2.5-VL-3B",
+   "backbone_key": "qwen25vl",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; the first 10 edits (1 batches) of TB-Q100-ae-l2_3",
+   "role": "prefix of the development stream",
+   "T": 10,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_valid_source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p10__deployed.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 80.0,
+     "numerator": 8,
+     "denominator": 10,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p10__deployed.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 0.0,
+     "numerator": 0,
+     "denominator": 10,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p10__deployed.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 20.0,
+     "numerator": 2,
+     "denominator": 10,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p10__deployed.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 23.870967741935484,
+     "numerator": 111,
+     "denominator": 465,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p10__deployed.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E2 prefix",
+   "forward": "one sequence per forward pass",
+   "prefix_of": "TB-Q100-ae-l2_3"
+  },
+  {
+   "log": "TB-Q100-ae-l2_3-p20",
+   "backbone": "Qwen2.5-VL-3B",
+   "backbone_key": "qwen25vl",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; the first 20 edits (2 batches) of TB-Q100-ae-l2_3",
+   "role": "prefix of the development stream",
+   "T": 20,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_valid_source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p20__deployed.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 75.0,
+     "numerator": 15,
+     "denominator": 20,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p20__deployed.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 0.0,
+     "numerator": 0,
+     "denominator": 20,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p20__deployed.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 15.0,
+     "numerator": 3,
+     "denominator": 20,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p20__deployed.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 29.89247311827957,
+     "numerator": 139,
+     "denominator": 465,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p20__deployed.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E2 prefix",
+   "forward": "one sequence per forward pass",
+   "prefix_of": "TB-Q100-ae-l2_3"
+  },
+  {
+   "log": "TB-Q100-ae-l2_3-p50",
+   "backbone": "Qwen2.5-VL-3B",
+   "backbone_key": "qwen25vl",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; the first 50 edits (5 batches) of TB-Q100-ae-l2_3",
+   "role": "prefix of the development stream",
+   "T": 50,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 465,
+   "n_heldout_disjoint_valid_source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p50__deployed.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 82.0,
+     "numerator": 41,
+     "denominator": 50,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p50__deployed.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 8.0,
+     "numerator": 4,
+     "denominator": 50,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p50__deployed.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 28.000000000000004,
+     "numerator": 14,
+     "denominator": 50,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p50__deployed.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 43.01075268817204,
+     "numerator": 200,
+     "denominator": 465,
+     "source": "e2_prefix/out/rows/TB-Q100-ae-l2_3-p50__deployed.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E2 prefix",
+   "forward": "one sequence per forward pass",
+   "prefix_of": "TB-Q100-ae-l2_3"
+  },
+  {
+   "log": "TB-L100-ae-l2_3",
+   "backbone": "LLaVA-1.5-7B",
+   "backbone_key": "llava",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3",
+   "role": "development",
+   "T": 100,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 469,
+   "n_heldout_disjoint_valid_source": "e3_llava/out/rows/TB-L100-ae-l2_3__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 88.0,
+     "numerator": 88,
+     "denominator": 100,
+     "source": "e3_llava/out/rows/TB-L100-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 28.999999999999996,
+     "numerator": 29,
+     "denominator": 100,
+     "source": "e3_llava/out/rows/TB-L100-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 66.0,
+     "numerator": 66,
+     "denominator": 100,
+     "source": "e3_llava/out/rows/TB-L100-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 62.26012793176972,
+     "numerator": 292,
+     "denominator": 469,
+     "source": "e3_llava/out/rows/TB-L100-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null,
+   "same_counts_in": [
+    {
+     "log": "TB-L100-ae-l2_3",
+     "other": "E1",
+     "file": "e1_main/out/rows/TB-L100-ae-l2_3__deployed__dx__tf.jsonl.gz",
+     "equal": true
+    },
+    {
+     "log": "TB-L100-ae-l2_3",
+     "other": "E2",
+     "file": "e2_curves/out/rows/base__L__deployed.jsonl.gz",
+     "equal": true
+    }
+   ]
+  },
+  {
+   "log": "TB-L200-ae-l2_3",
+   "backbone": "LLaVA-1.5-7B",
+   "backbone_key": "llava",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3",
+   "role": "unseen",
+   "T": 200,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 469,
+   "n_heldout_disjoint_valid_source": "e3_llava/out/rows/TB-L200-ae-l2_3__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 70.0,
+     "numerator": 140,
+     "denominator": 200,
+     "source": "e3_llava/out/rows/TB-L200-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 21.5,
+     "numerator": 43,
+     "denominator": 200,
+     "source": "e3_llava/out/rows/TB-L200-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 51.0,
+     "numerator": 102,
+     "denominator": 200,
+     "source": "e3_llava/out/rows/TB-L200-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 76.11940298507463,
+     "numerator": 357,
+     "denominator": 469,
+     "source": "e3_llava/out/rows/TB-L200-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-L500-ae-l2_3",
+   "backbone": "LLaVA-1.5-7B",
+   "backbone_key": "llava",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3",
+   "role": "unseen",
+   "T": 500,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 469,
+   "n_heldout_disjoint_valid_source": "e3_llava/out/rows/TB-L500-ae-l2_3__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 40.6,
+     "numerator": 203,
+     "denominator": 500,
+     "source": "e3_llava/out/rows/TB-L500-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 11.4,
+     "numerator": 57,
+     "denominator": 500,
+     "source": "e3_llava/out/rows/TB-L500-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 33.2,
+     "numerator": 166,
+     "denominator": 500,
+     "source": "e3_llava/out/rows/TB-L500-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 91.89765458422174,
+     "numerator": 431,
+     "denominator": 469,
+     "source": "e3_llava/out/rows/TB-L500-ae-l2_3__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-L100-memitw",
+   "backbone": "LLaVA-1.5-7B",
+   "backbone_key": "llava",
+   "editor_family": "memitw",
+   "editor_family_registry": "memit",
+   "editor": "MEMIT-style, public default configuration (Wikipedia-text statistics, lam_hat = 100)",
+   "role": "unseen",
+   "T": 100,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 469,
+   "n_heldout_disjoint_valid_source": "e3_llava/out/rows/TB-L100-memitw__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 78.0,
+     "numerator": 78,
+     "denominator": 100,
+     "source": "e3_llava/out/rows/TB-L100-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 26.0,
+     "numerator": 26,
+     "denominator": 100,
+     "source": "e3_llava/out/rows/TB-L100-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 65.0,
+     "numerator": 65,
+     "denominator": 100,
+     "source": "e3_llava/out/rows/TB-L100-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 77.82515991471215,
+     "numerator": 365,
+     "denominator": 469,
+     "source": "e3_llava/out/rows/TB-L100-memitw__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-L500-memitw",
+   "backbone": "LLaVA-1.5-7B",
+   "backbone_key": "llava",
+   "editor_family": "memitw",
+   "editor_family_registry": "memit",
+   "editor": "MEMIT-style, public default configuration (Wikipedia-text statistics, lam_hat = 100)",
+   "role": "unseen",
+   "T": 500,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 469,
+   "n_heldout_disjoint_valid_source": "e3_llava/out/rows/TB-L500-memitw__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 45.6,
+     "numerator": 228,
+     "denominator": 500,
+     "source": "e3_llava/out/rows/TB-L500-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 13.4,
+     "numerator": 67,
+     "denominator": 500,
+     "source": "e3_llava/out/rows/TB-L500-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 38.4,
+     "numerator": 192,
+     "denominator": 500,
+     "source": "e3_llava/out/rows/TB-L500-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 86.99360341151386,
+     "numerator": 408,
+     "denominator": 469,
+     "source": "e3_llava/out/rows/TB-L500-memitw__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-L1000-memitw",
+   "backbone": "LLaVA-1.5-7B",
+   "backbone_key": "llava",
+   "editor_family": "memitw",
+   "editor_family_registry": "memit",
+   "editor": "MEMIT-style, public default configuration (Wikipedia-text statistics, lam_hat = 100)",
+   "role": "unseen",
+   "T": 1000,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 469,
+   "n_heldout_disjoint_valid_source": "e3_llava/out/rows/TB-L1000-memitw__deployed__dx__tf.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 37.3,
+     "numerator": 373,
+     "denominator": 1000,
+     "source": "e3_llava/out/rows/TB-L1000-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 11.4,
+     "numerator": 114,
+     "denominator": 1000,
+     "source": "e3_llava/out/rows/TB-L1000-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 29.599999999999998,
+     "numerator": 296,
+     "denominator": 1000,
+     "source": "e3_llava/out/rows/TB-L1000-memitw__deployed__dx__tf.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 86.14072494669509,
+     "numerator": 404,
+     "denominator": 469,
+     "source": "e3_llava/out/rows/TB-L1000-memitw__deployed__dx__tf.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E3",
+   "forward": "one sequence per forward pass",
+   "prefix_of": null
+  },
+  {
+   "log": "TB-L100-ae-l2_3-p10",
+   "backbone": "LLaVA-1.5-7B",
+   "backbone_key": "llava",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; the first 10 edits (1 batches) of TB-L100-ae-l2_3",
+   "role": "prefix of the development stream",
+   "T": 10,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 469,
+   "n_heldout_disjoint_valid_source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p10__deployed.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 90.0,
+     "numerator": 9,
+     "denominator": 10,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p10__deployed.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 10.0,
+     "numerator": 1,
+     "denominator": 10,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p10__deployed.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 80.0,
+     "numerator": 8,
+     "denominator": 10,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p10__deployed.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 26.439232409381663,
+     "numerator": 124,
+     "denominator": 469,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p10__deployed.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E2 prefix",
+   "forward": "one sequence per forward pass",
+   "prefix_of": "TB-L100-ae-l2_3"
+  },
+  {
+   "log": "TB-L100-ae-l2_3-p20",
+   "backbone": "LLaVA-1.5-7B",
+   "backbone_key": "llava",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; the first 20 edits (2 batches) of TB-L100-ae-l2_3",
+   "role": "prefix of the development stream",
+   "T": 20,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 469,
+   "n_heldout_disjoint_valid_source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p20__deployed.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 90.0,
+     "numerator": 18,
+     "denominator": 20,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p20__deployed.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 30.0,
+     "numerator": 6,
+     "denominator": 20,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p20__deployed.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 75.0,
+     "numerator": 15,
+     "denominator": 20,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p20__deployed.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 35.39445628997868,
+     "numerator": 166,
+     "denominator": 469,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p20__deployed.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E2 prefix",
+   "forward": "one sequence per forward pass",
+   "prefix_of": "TB-L100-ae-l2_3"
+  },
+  {
+   "log": "TB-L100-ae-l2_3-p50",
+   "backbone": "LLaVA-1.5-7B",
+   "backbone_key": "llava",
+   "editor_family": "ae-l2_3",
+   "editor_family_registry": "alphaedit",
+   "editor": "AlphaEdit-style, [redacted: describes a related submission under double-blind review], ridge l2 = 3; the first 50 edits (5 batches) of TB-L100-ae-l2_3",
+   "role": "prefix of the development stream",
+   "T": 50,
+   "T_source": "common/fx/logs.py (registry; equals n_edits of the log's metrics.json)",
+   "n_heldout_disjoint_valid": 469,
+   "n_heldout_disjoint_valid_source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p50__deployed.jsonl.gz",
+   "deployed": {
+    "rel_exact": {
+     "value": 86.0,
+     "numerator": 43,
+     "denominator": 50,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p50__deployed.jsonl.gz"
+    },
+    "tgen_exact": {
+     "value": 24.0,
+     "numerator": 12,
+     "denominator": 50,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p50__deployed.jsonl.gz"
+    },
+    "igen_exact": {
+     "value": 64.0,
+     "numerator": 32,
+     "denominator": 50,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p50__deployed.jsonl.gz"
+    },
+    "D1_heldout_disjoint": {
+     "value": 50.53304904051173,
+     "numerator": 237,
+     "denominator": 469,
+     "source": "e2_prefix/out/rows/TB-L100-ae-l2_3-p50__deployed.jsonl.gz"
+    }
+   },
+   "evaluated_in": "E2 prefix",
+   "forward": "one sequence per forward pass",
+   "prefix_of": "TB-L100-ae-l2_3"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "name": "c_calib",
+ "pass": true,
+ "what": "calibration from the cached per-query maxima = the library's calibration on the per-query key tensors; guards fire; block-2 firing within the allowed count",
+ "detail": {
+  "ncoord": {
+   "max_abs_diff_query_maxima": 1.5265566588595902e-16,
+   "n_query_maxima_bitwise_equal": 18939,
+   "n_query_maxima": 20000,
+   "two_block": {
+    "eta_cache": 0.14281290529652363,
+    "eta_library": 0.14281290529652363,
+    "max_abs_threshold_diff": 5.551115123125783e-17,
+    "n_thresholds_bitwise_equal": 96,
+    "n_edits_capped": 0,
+    "bound": 0.04950495049504951,
+    "all_guards_fire": true,
+    "n_guards": 200,
+    "n_block2_queries_firing": 4,
+    "n_allowed": 5,
+    "n_block1_queries_firing": 0
+   },
+   "shared": {
+    "eta_cache": 0.4339001759633224,
+    "eta_library": 0.4339001759633224,
+    "max_abs_threshold_diff": 0.0,
+    "n_edits_capped": 0,
+    "bound": 0.04975124378109453
+   }
+  },
+  "cos": {
+   "max_abs_diff_query_maxima": 2.220446049250313e-16,
+   "n_query_maxima_bitwise_equal": 19151,
+   "n_query_maxima": 20000,
+   "two_block": {
+    "eta_cache": 0.11564883538044335,
+    "eta_library": 0.11564883538044335,
+    "max_abs_threshold_diff": 1.1102230246251565e-16,
+    "n_thresholds_bitwise_equal": 98,
+    "n_edits_capped": 0,
+    "bound": 0.04950495049504951,
+    "all_guards_fire": true,
+    "n_guards": 200,
+    "n_block2_queries_firing": 4,
+    "n_allowed": 5,
+    "n_block1_queries_firing": 0
+   },
+   "shared": {
+    "eta_cache": 0.4675650939150498,
+    "eta_library": 0.4675650939150498,
+    "max_abs_threshold_diff": 0.0,
+    "n_edits_capped": 0,
+    "bound": 0.04975124378109453
+   }
+  }
+ },
+ "error": null,
+ "seconds": 0.7292013168334961,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "b92d0532498f",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "log": "TX-G2XL-rome-dev100",
+ "written": "2026-11-11 11:56:56 UTC"
+}

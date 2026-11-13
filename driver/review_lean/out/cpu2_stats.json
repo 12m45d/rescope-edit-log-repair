@@ -1,0 +1,86 @@
+{
+ "crossed_bootstrap": {
+  "cell noise only, 5 draws": {
+   "analytic_width": 0.17530772943598352,
+   "coverage": 1.0,
+   "mean_width": 0.28038399069106273,
+   "n_sim": 300,
+   "value_is_grand_mean_abs_diff": 0.0
+  },
+  "draw effect 0.3, 20 draws": {
+   "analytic_width": 0.47276240121227914,
+   "coverage": 0.9433333333333334,
+   "mean_width": 0.4675499133448209,
+   "n_sim": 300,
+   "value_is_grand_mean_abs_diff": 0.0
+  },
+  "draw effect 0.3, 3 draws": {
+   "analytic_width": 0.7869345080754816,
+   "coverage": 0.8566666666666667,
+   "mean_width": 0.6349619705672679,
+   "n_sim": 300,
+   "value_is_grand_mean_abs_diff": 0.0
+  },
+  "paired_null_rejection_rate_at_0.05": 0.0033333333333333335,
+  "paired_shift_0.5_detected": true,
+  "paired_value_abs_diff": 0.0,
+  "ratio_value_abs_diff": 0.0,
+  "unit-dominated, 20 draws": {
+   "analytic_width": 0.3937600487606634,
+   "coverage": 0.9533333333333334,
+   "mean_width": 0.38946656626646087,
+   "n_sim": 300,
+   "value_is_grand_mean_abs_diff": 0.0
+  },
+  "unit-dominated, 3 draws": {
+   "analytic_width": 0.4035887015266906,
+   "coverage": 0.96,
+   "mean_width": 0.4024620425579252,
+   "n_sim": 300,
+   "value_is_grand_mean_abs_diff": 0.0
+  }
+ },
+ "holm": {
+  "example": {
+   "a": 0.03,
+   "b": 0.06,
+   "c": 0.06
+  },
+  "example_expected": {
+   "a": 0.03,
+   "b": 0.06,
+   "c": 0.06
+  },
+  "example_ok": true,
+  "n_differ": 0,
+  "n_random_vectors": 300,
+  "statsmodels_equal": true
+ },
+ "ok": true,
+ "retrieval_validity": {
+  "retr_min": {
+   "T": 30,
+   "bound": 0.04950495049504951,
+   "max_abs_diff_driver_vs_own_per_trial": 0.0,
+   "mean_false_firing_driver_rule": 0.04796,
+   "mean_false_firing_own_rule": 0.04796,
+   "n": 200,
+   "n_test": 4000,
+   "se": 0.0009354075446291302,
+   "trials": 500,
+   "valid": true
+  },
+  "retr_sum": {
+   "T": 30,
+   "bound": 0.04950495049504951,
+   "max_abs_diff_driver_vs_own_per_trial": 0.0,
+   "mean_false_firing_driver_rule": 0.0495325,
+   "mean_false_firing_own_rule": 0.0495325,
+   "n": 200,
+   "n_test": 4000,
+   "se": 0.000994590145041276,
+   "trials": 500,
+   "valid": true
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "pass": true,
+ "threads": {
+  "1": {
+   "gram": true,
+   "mu": true,
+   "trace": true,
+   "F": {
+    "0.01": true,
+    "0.1": true,
+    "1": true
+   },
+   "threads_restored": true
+  },
+  "4": {
+   "gram": true,
+   "mu": true,
+   "trace": true,
+   "F": {
+    "0.01": true,
+    "0.1": true,
+    "1": true
+   },
+   "threads_restored": true
+  }
+ },
+ "note": "Gram matrix, mu, tr(C_W) and the factor R = L^-1 K (3 ridges) recomputed under 1 and 4 threads: bitwise equal to the stored ones: True",
+ "test": "s7_factor_bitwise",
+ "group": "stats",
+ "what": "the whitening factor from the stored L^-1 equals a fresh factorisation bit for bit, under 1 and 4 threads",
+ "seconds": 2.3438656330108643,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

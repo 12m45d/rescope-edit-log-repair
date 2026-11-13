@@ -1,0 +1,661 @@
+fx -- the shared driver of the final experiments (10_final/PROTOCOL.md with every amendment up to "Outcome of the independent review", 2026-11-11 12:37 UTC)
+==============================================================================
+STAGE 2 (2026-11-11): stage 1 + the gates registered after the review (module fx.review1; this file's sections "GATES OF THE REVIEW ROUND" and
+"EXPERIMENT TASKS", at the end).  READY.json reports stage 2 with both fingerprints; tests/out/table_r1.txt; FEAT2_PROBLEMS.txt.
+Review of the extension and of the feature layer: review_lean/verdicts.json (READY.json: "reviewed").
+STAGE 1 (2026-11-11): the reviewed driver (fingerprint b92d0532498f; review/patches.txt, review/out/review_table.txt) + the EXTENSION of
+this file's section "EXTENSION (stage 1)".  Readiness record: READY.json (code fingerprint, method names, pools, logs, test summary).
+Nothing that existed and was tested changed its behaviour (tests/out/digest_compare.json: the gate decisions of the row set are the
+same bits), with ONE exception decided by the coordinator: source="benign" (the whole benign pool) is refused, see RULES.
+
+RULES FOR EVERY JOB THAT USES THE DRIVER (from its independent review; a violation invalidates the job)
+  1. Gates and weights are IMMUTABLE.  Never modify detectors, thresholds, baselines, values or a weight tensor in place; every change
+     is a new object: gate.replace(det_tau=...), fx.methods.mask_edits / wrap / fx.sweeps.raised_method, W.clone().
+  2. At the end of every job:  rec = ses.assert_clean()   (= assert ses.stats["hook_mismatch"] == 0 and ses.memo.stats["conflicts"] == 0;
+     every forward agreed with the predicted firing; no memo key has two outcomes).  Store rec with the results.
+  3. ONE LOG PER PROCESS (one model handle, one session).  The only exception is the prefix builder, which reuses one model.
+  4. Report the NUMBER OF CAPPED EDITS of every calibrated gate (fx.methods.n_capped(M) = M.rec["cal"]["n_edits_capped"]): its conformal
+     bound is void for capped edits (the two-block cosine gate caps 23 to 58 edits on the LLaVA development log).
+  5. Compare, deduplicate and cache methods by CONTENT: M.digest (fx.methods.dedupe), never by label or by M.key (the key hashes the
+     record and misses the content of wrapped objects: review finding 2).
+  6. Calibration sources: the REPAIR pool (default), BEN-S, MME-C.  source="benign" (the whole benign pool) raises unless a part is
+     named; BEN-T and MME-T are TEST rows and raise wherever they are used as calibration, statistics or stream data; BEN-W is the
+     statistics part of the feature packages.  Benign-pool and MME rows are gate level only (R19 e): fx.behave refuses them.
+  7. Only the development logs, their working points and their prefixes may be used for anything behavioural or for any number that
+     is looked at; every unseen log receives the frozen row set unchanged.
+
+A log built later can be added at run time, also from another directory:
+    fx.logs.register(name, role, backbone="qwen25vl", layer=20, family="Q", T=100, path=<directory>, setup=<callable, e.g. an import>)
+    (LLaVA: backbone="llava", layer=16, family="L", gq_mem=17000; family / cache = the stream family of its sequences in the key cache)
+fx opens it from that directory; the LIBRARY (rescope.load, stored_metrics, the harness) finds a log by NAME under 06_testbed_v3.
+
+Every number of the paper passes through this package: the same method definitions, calibration draws, evaluation path and
+result format for all experiments.  All method arithmetic is the library 02_research/code/rescope (read its docs/USAGE.md:
+"Rules that keep numbers trustworthy" and "Known limitations" apply unchanged); fx adds the registry of logs, the seeded draws,
+named constructors, a fast gate-level evaluation, the persistent memo of behavioural results, statistics and the result format.
+
+    import sys; sys.path.insert(0, "$RESCOPE_ROOT/02_research/experiments/10_final/common")
+    import fx                                   # python: $RESCOPE_PYTHON; fx caps BLAS at 4 threads
+
+Files: fx/{logs,draws,methods,gate,behave,memo,metrics,stats,io}.py (every module starts with its own reference text);
+tests/{t_cpu.py,t_gpu.py,render.py,run_all.sh}, tests/out/table.txt (test table, timings, projection); memo store: 10_final/memo/<backbone>/
+(+ memo/aux/<log>/: per-log caches of the z-scores, of Rescope-WHERE's log-only negatives and of the deployed weight's signature).
+
+RULES THAT BIND EVERY EXPERIMENT (from the protocol and the project rules)
+  * Only the development logs (fx.logs.names("development")) may be used for anything behavioural or for any number you look at
+    before the final runs; on every other log this package ran mechanics only (open, build, one gate-level pass, 50 sequences; no
+    metric).  Internal logs are never reported.  A registered log may not exist (fx.logs.available()).
+  * Calibration queries and reported complaints come from the REPAIR pool (fx.draws); locality is reported on heldout_disjoint;
+    pre-edit answers are the cached decoder-v2 answers (the key cache); nothing is tuned.
+  * Every reported number is written by code (fx.io.Results) and rendered by script; per-row files are kept next to the results.
+  * GPU jobs go through the queue:  $GQ run --mem 10500 (Qwen) | 17000 (LLaVA) -- python job.py ...   (fx.logs.load_model caps the
+    process at GQ_MEM - 600 MiB).  Long jobs: nohup, log file, resumable -- the memo makes a restarted job skip what was computed.
+
+API (one line per function; details in the module docstrings)
+  fx.logs.names(role=None) / info(name) / available() / table()     registry: role, backbone, editor family, cache family, T, path, exists, cut_by_R19; roles:
+                                                                    development, working_point, unseen_alphaedit, unseen_memit, internal, stress (MMKE-Bench
+                                                                    + BLIP2 logs), unseen_onehop (protocol amendments of 04:26 / 05:06)
+  fx.logs.register(name, role, backbone=, layer=, family=, T=, cache=, path=, setup=, reported=)   add a log at run time (any role name;
+                                                                    path: its directory; setup: a callable run before the library touches the log)
+  fx.logs.stored(name, pools=False)                                 the deployed log's own stored metrics (no model)
+  fx.logs.open(name) -> LogData L                                   edit log L.log (U, W, K, batch), L.kc (key cache), L.edit_rows[metric][edit] (edits ->
+                                                                    cache rows), L.rows(kind, pool=, valid=), L.pool(pool), L.near_edit(j) (near-scope probe:
+                                                                    its question is the question of an edit of the log; rephrase=True: or a rephrase),
+                                                                    L.own(j), L.sid(j), L.own_keys(), L.targets, L.probe_rec(j), L.describe()
+  fx.logs.load_model(name, mem_gb=None, reuse=None) -> H            harness handle, scale-safe (lean for T >= 500, harness baseline refused there)
+  fx.draws.calibration(L, n=200, draw=0, source="repair"|"BEN-S"|"MME-C", which="tf", contamination=0.0, exclude=None, *, part=None, mask=None,
+                       contam_half="first"|"even") -> Draw (.rows, .which, .rec, .kc);
+                                                                    nested in n; exclude = sequences whose queries must not calibrate (reported complaints);
+                                                                    which="all": every key of a query on both paths (decode-proof calibration)
+  fx.draws.partition(L, sizes, draw) -> [Draw, ...]                 seeded parts of the REPAIR pool, disjoint as ROWS (C0 / S / C1 of the detector-repair experiments)
+  fx.draws.null_sample(L, 100, draw) / explicit(L, rows)            the benign sample of ReScope-N (shares no QUERY with the calibration draw); any given sample as a Draw
+  fx.draws.query_ids(L, rows)                                       query identity of sequences (question string + image content; the same id = the same key)
+  fx.draws.complaints(L, n, seed) / complaint_stream(L, seed) / verify_p12(L)     reported complaints = the nested sets of P12 (seeds 0 - 2)
+  fx.draws.half_a(L) / half_b(L) / scale_edits(L, 100, 200, seed)   edit halves; edit subset for expensive methods at scale (DUAL)
+  fx.methods.build(name, L, H=None, **switches) -> Method M         names: deployed preedit rescope rescope_shared rescope_null rescope_logonly
+                                                                    where_logonly where_least cosine ball exact router zscore dual p12; M.obj, M.rec,
+                                                                    M.key, M.memo, M.variant; switches incl. cal=<Draw> (explicit calibration sample),
+                                                                    least=<rows> (least repair after calibration), null_rows= / null_ridge= (null repair)
+  fx.methods.base_gate(L, feature="ncoord", role="last", ...)       -> (un-thresholded scoped log with the guards, record): the start of every calibration
+  fx.methods.wrap(L, obj, label, rec)                               a Method around any library object (e.g. M.obj after least_repair / null_repair /
+                                                                    witness_repair / scope_cut), so that it runs through fx.gate / fx.behave / the memo
+  fx.methods.recalibrate(L, S, alpha, n, draw, exclude=None, cal=None)   the two-block (or shared) rule re-run on ANY scoped log, e.g. after detector
+                                                                    repairs (cal=C1: a sample never looked at before); -> (scoped log, record) for wrap
+  fx.methods.evidence(L, n, draw, alpha)                            ReScope on n benign queries along the evidence curve (log-only + least repair below n = 40)
+  fx.methods.e1_rowset(L, alpha, draw, n=200, H=None, labels=None, **switches)   the fixed rows of E1 (E1_LABELS, 22 rows: deployed, preedit, rescope,
+                                                                    rescope_shared, rescope_null, where_logonly, cosine, cosine_shared, cosine_default,
+                                                                    cosine_published, ball, ball_default, exact, router, router_default, zscore,
+                                                                    zscore_default, dual, 4 linear repairs of P12; E4: the same rows; E3:
+                                                                    labels=fx.methods.E3_LABELS, 7 rows, without DUAL since R19); L may be a log
+                                                                    name; rows that need the model are left out when H is None; switches (e.g.
+                                                                    which="all", guards="all") go to the calibrated scoped rows;
+                                                                    labels=E1_LABELS + E1_GATE_LEVEL adds rescope_pac (gate level only)
+  fx.gate.decide(L, M, rows, which="tf"|"prompt"|"decode"|"steps")  per-row firing: fired, top_edit, own_cand, own_top, n_cand (lineage width), near
+  fx.gate.evaluate(L, M, positions=("tf",)) -> {part: {which: decision}}   probes / edits / hard negatives / benign pool of the log, CPU
+  fx.gate.features(L, M, rows, which)                               (n, D) fp64 feature matrix of a gate's detectors (many-draw simulations with the
+                                                                    library's two_block_rule / shared_rule on matrices: E5)
+  fx.gate.frontier(L, feature, n_grid=501) / sweep / readout(L, sw, t)   E1b: one global threshold on 'ncoord' | 'cos' swept over a grid: false firing,
+                                                                    coverage of text / image rephrases, firing on every kind of near-scope negative
+  fx.gate.matched_coverage(L, feature, targets=(25, 50, 75))        E1c: the largest threshold reaching that coverage of the rephrases + the numbers there
+  fx.metrics.gate_stats(L, ev, which)                               firing per pool (+ near / far), coverage, hard negatives, benign pool, lineage
+  fx.behave.session(L, H=None) -> ses                               evaluation session (H=None: answers from memo / key cache only)
+  ses.edits(M, metrics, edits=None, lp="tf")                        Rel / T-Gen / I-Gen: exact, token_acc, firing flags (optional subset of edits)
+  ses.probes(M, pool="heldout_disjoint", lp="tf")                   D1, firing, tok_loc (token-level locality)
+  ses.hard_negatives(M, generate=False, rows=None, gen_rows=None, decode_all=False)   D1, firing; generate=True: + wrong-target flags from generated
+                                                                    answers (decode_all=True: every row is decoded, not only the firing ones)
+  ses.d2(M, pool="heldout_disjoint") / ses.generate(M, rows)        48-token decode (D2) / free generation of any sequences
+  ses.dual_tf(M, rows)                                              teacher-forced rows of the model DUAL selects (labelled composition, as Evaluator.dual_tf_rows)
+  ses.decide_dense(M, rows) / ses.zmax(rows)                        firing of the router / z-score gate without a full forward; cached largest z-score per sequence
+  ses.tf(M, rows, lp) / ses.decide(M, rows, which) / ses.stats      explicit sequences; the decision used by the memo path; counters (forwards, hook_mismatch);
+                                                                    ses.verbose = True prints one line per chunk of 128 forwards; ses.memo.summary()
+  fx.metrics.edit_stats / probe_stats / hn_stats / d2_stats / gen_stats(rows, ci=False) / endpoint(rows_a, rows_b) / rephrase_exact(rows)
+  fx.stats.bootstrap / bootstrap_ratio / bootstrap_diff / mcnemar_exact / over_draws / crossed_bootstrap / crossed_bootstrap_diff / holm
+  fx.io.Results(experiment, out_dir): add, add_stat, add_nested, add_draws, rows, save, paper, table; fx.io.pivot / text_table / record / FIELDS
+  fx.memo.open(backbone) -> Memo (get / put / refresh / summary); fx.code_fingerprint()
+
+CONVENTIONS
+  * A SEQUENCE is a row of the backbone's key cache, addressed by its position j in the cache index (L.rows / L.pool / L.edit_rows return
+    positions).  fx.behave rows carry sid (the library's sid, e.g. 'edit:tgen:17') and csid (the cache sid).
+  * Calibration draw d: the n = 200 draw is rescope.splits.sample(valid REPAIR rows, 200, seed=d) (the draw of the library's USAGE and of the
+    sanity experiment); the two-block split uses seed d.  Draws of other sizes are nested around it.  Draw indices 0 .. 19.
+  * Every gate is built ON THE CPU from the log's files and the key cache (KeyCache.coords for calibration, as the library's usage
+    example): gate-level and behavioural numbers refer to the same thresholds bit for bit, in every process.  A decision that lies inside
+    the 1e-9 decision band is re-decided on the model's device with the hook's arithmetic (fx.behave), and every forward that runs is
+    checked against the hook's own decision (ses.stats['hook_mismatch'] must be 0; assert it at the end of a job).
+  * Released values: the library's rebased values V_i = U_i + sum over earlier batches of U_j <W_j, k_i>, computed batch by batch
+    (fx.methods.released_values; equal to rescope.rebase to round-off, about 1e-15, checked at every construction).  Logs of one family
+    then share the bits of the values of their common edits, so the memo is shared along T = 100 .. 2000.  rebase=False: the stored U_i.
+  * Calibration keys.  Default (as the library's usage example and the sanity experiment): the TEACHER-FORCED key of each calibration query
+    and of each own prompt; the conformal bound then covers teacher-forced firing.  Decode metrics (D2, free generation, wrong-target) are
+    evaluated with the same gate at the decode's keys.  The library's rules 3 and 6 ask for every key of both paths if the bound is to cover
+    decode metrics: build the rows with which="all", guards="all" (fx.methods.build(..., which="all", guards="all") or
+    e1_rowset(..., which="all", guards="all")); Method.variant then says so.  Which of the two the paper reports is the PI's decision.
+  * ReScope-N ('rescope_null', registered 2026-11-11 01:35; clarification of 09:03): benign sample A = the first 100 rows after position
+    199 of the draw's ranking of the REPAIR pool whose QUERY (key-cache query_id: same question string and image content, hence the same
+    key) is none of the 200 calibration queries and not yet in A: 100 distinct queries, none a calibration query (until 09:03 it was
+    positions 200 .. 299, which shared 0 to 7 queries with the calibration draw; tests/t_cpu.py reproduces the 5 / 3 of draw 0 that the
+    amendment names).  WHICH rows replace the dropped ones is this package's choice (the amendment does not say): the next rows of the
+    same ranking.  fx.methods refuses ANY null-repair sample that shares a query with its calibration sample.  Then: library null_repair
+    at ridge 0 on the teacher-forced last-prompt keys of A; guards added before the null repair as in every other row (the library
+    counts guards the repair loses: rec['null_repair']['n_guards_lost']); the default two-block calibration on the 200 calibration
+    queries.  Released values are unchanged.
+  * Detector repairs driven by complaints (E2 d - f; amendment of 2026-11-11 01:50; CUT by R19, the functions remain and are tested).
+    The parts of fx.draws.partition are disjoint as rows, not as queries (the pool repeats a few queries): before a repair that changes
+    detectors, drop the complaint rows whose query is in the recalibration sample (fx.draws.query_ids; fx.methods raises otherwise).
+    C0, S, C1 = fx.draws.partition(L, (160, 160, 160), draw) (E2 e - f: C0, C1 = partition(L, (200, 200), draw)); start =
+    fx.methods.rescope(L, cal=C0); complaints arise on S; the repaired method is fx.methods.rescope(L, cal=C1, least=<complaints>) (least
+    repair after recalibration), fx.methods.rescope(L, cal=C1, null_rows=<complaints>, null_ridge=0 | 0.1) (null repair, then calibration
+    on C1), or the library's operators + fx.methods.recalibrate(L, S, cal=C1) + fx.methods.wrap.  The bound is claimed for thresholds
+    calibrated on C1 only; records carry n_edits_capped and the detectors' norm inflation.
+  * Guards: the stored solver keys and the B = 1 keys of the edits' own Rel prompts are added before every calibration (library rule 5);
+    capped edits are counted in M.rec['cal'] (n_edits_capped, capped_edits) and M.rec['own_prompts'].
+  * Methods with fixed (published) thresholds have no own-prompt guards: cosine 0.65 (NeuralDB), exact 0.999, ball radius 1.0 (GRACE eps_init),
+    router eps = smallest own activation (WISE), z-score 2.2 (CoachHooK).  Scalar-score gates (router, z-score) are calibrated by ONE conformal
+    threshold on their score from all n queries (calibration='conformal'); 'two_block' is available.
+  * Rescope-WHERE = role 'all', fire 'all', response LIN without the round-off term.  where_logonly: tau_i = 5 % above the largest coordinate
+    of edit i over every position of the other edits' own Rel sequences and the non-solver positions of its own (needs the model once per
+    log: T truncated forwards; cached under memo/aux/<log>/).  where_least: the library's least_repair, one complaint at a time, library
+    default on_conflict='refuse' (a complaint whose repair would silence an own key is refused and counted; on_conflict='partial' is a switch).
+  * Hard negatives: valid rows of the final set (HN-I, HN-Q, HN-X; HN-X only if both edits are in the log).  own edit = the edit whose image
+    (HN-I, HN-X) or question (HN-Q) the row uses.  wrong_target (gates) = the generated first line equals, after the testbed's normalisation,
+    the target of the edit that fires in the decode; rows on which nothing fires in the decode are False without a decode (hn_stats: n_decoded;
+    eq_own / eq_any_edit are rates over the DECODED rows only).  DUAL: wrong_target = the deployed answer was released.  Methods without firing
+    flags (deployed weight, linear repairs): wrong_target is undefined (None); use eq_own / eq_any_edit.
+  * fire='all' (ablation): every candidate edit releases, so coverage is own_cand (gate level) / own_fired_last (rows), not own_top.
+  * Statistics: percentile bootstrap, 2000 resamples, seed 0; unit = query cluster for probe rows (row field query_id = the key cache's
+    content id: rows with the same question string and image content are one unit; amendment R10; the library's own id, by image path, is
+    the row field probe_query_id and gives the same clusters on the held-out pools), edit for edit rows and hard negatives.
+    probe_stats(unit="uid") resamples probe items (the text and the image probe of an item together: the unit before R10; 248 instead
+    of 449 units on heldout_disjoint of the Qwen development log).  The crossed bootstrap over calibration draws and units of R10 and
+    the Holm correction: fx.stats.crossed_bootstrap / crossed_bootstrap_diff / holm (section EXTENSION).
+
+THE MEMO (10_final/memo/<backbone>/shard_*.jsonl; fx.memo)
+  key = (cache sid, mode 'tf' | 'prompt' | 'decode', signature); signature = sha1 of the fp64 value released at the last prompt position
+  (scoped replay, REPL, top-1) or of a full replacement weight (deployed W_E).  A sequence on which nothing fires takes the cached
+  pre-edit outcome of the key cache.  Entries are written only after a forward through rescope.Evaluator with the real gate and are shared
+  by methods, draws, logs (same edit prefix, same values bit for bit) and experiments.  Per-process append-only shards, merged on read
+  (ses.memo.refresh()): any number of processes may run at once.  Shards written by another version of the library (sha1 of rescope/*.py)
+  are ignored and counted: ANY edit of the library empties the memo.  FX_MEMO_ACCEPT=<version>[,...] admits named versions (PI's decision).
+  DUAL is composed from the memoised decodes of the deployed and of the pre-edit model (the pre-edit decode of a sequence is shared by
+  every log of the backbone); the rule is the library's Dual.match (ses.dual_from_memo = False runs the library's own DUAL).
+  Dense gates, teacher forcing: the router decides at the last prompt position, and a routed sequence has ONE outcome whatever the
+  threshold (memoised under 'RW:<sha1 of W_E>'); a sequence whose largest z-score is below the z-score threshold is the pre-edit model
+  (its score is cached per log under memo/aux/<log>/zscore_max.json), the others run through the library (ses.dense_fast = False: all do).
+  Replacement weights (deployed W_E, P12's saved REEDIT / rollback weights) are memoised under the sha1 of the weight.
+  Not memoised (library path, every row a forward): roles 'last+answer' / 'all', responses GAIN / LIN, fire 'all', adapter corrections
+  (COMP), decodes of dense gates.  Role-'last' gates on that path still skip surely-silent sequences (rescope.SparseEvaluator).
+
+SKELETON OF AN EXPERIMENT JOB
+    L = fx.logs.open(name)
+    # 1. gate level, 20 draws, CPU only (seconds per draw)
+    per = {}
+    for d in range(fx.draws.N_DRAWS):
+        for M in fx.methods.e1_rowset(L, alpha, d, labels=("rescope", "cosine", "ball")):
+            per.setdefault(M.label, {})[d] = fx.metrics.gate_stats(L, fx.gate.evaluate(L, M, positions=("tf", "prompt")))
+    # 2. behaviour (GPU; restartable: the memo holds what was computed)
+    H = fx.logs.load_model(name); ses = fx.behave.session(L, H)
+    R = fx.io.Results("E1", out_dir)
+    for d in draws:
+        for M in fx.methods.e1_rowset(L, alpha, d, H=H):
+            if M.kind == "dual": continue                       # generation only: ses.generate / ses.d2 / ses.hard_negatives(generate=True)
+            e, p, h = ses.edits(M), ses.probes(M), ses.hard_negatives(M)
+            kw = dict(alpha=M.alpha, n=M.n, draw=M.draw, variant=M.variant)
+            R.add_nested(L.name, M.label, fx.metrics.edit_stats(e, ci=True), prefix="edit.", pool="edits", **kw)
+            R.add_nested(L.name, M.label, fx.metrics.probe_stats(p, ci=True), prefix="probe.", pool="heldout_disjoint", **kw)
+            R.rows(f"{L.name}__{M.label}__d{d}", e + p + h)
+    assert ses.stats["hook_mismatch"] == 0 and ses.memo.stats["conflicts"] == 0      # every forward agreed with the predicted firing; no key with two outcomes
+    R.save(); R.paper({...}); R.table(fx.io.pivot(R.records, row=("method",), col=("metric",), where=...))
+  Rows that do not depend on (alpha, draw) have the same Method.key for every (alpha, draw): evaluate them once (fx.methods.E1_DEPENDS).
+
+  Complaint-driven operators (E2 d - f, cut by R19; E7), with the three disjoint samples of the amendment of 2026-11-11 01:50:
+    C0, S, C1 = fx.draws.partition(L, (160, 160, 160), draw)
+    M0 = fx.methods.rescope(L, alpha=alpha, cal=C0)                                         # starting thresholds
+    complaints = [r for r in ses.tf(M0, S.rows) if r["fired"] and r["D1"]]                 # wrong answers on the stream S (their csid / sequence)
+    rows = [L.kc.by_sid(r["csid"]) for r in complaints]
+    c1q = set(fx.draws.query_ids(L, C1.rows)); rows = [j for j in rows if fx.draws.query_ids(L, [j])[0] not in c1q]   # no query of C1 may change a detector
+    Ml = fx.methods.rescope(L, alpha=alpha, cal=C1, least=rows, label="rescope+least")     # recalibrated on C1, then the least repair
+    Mn = fx.methods.rescope(L, alpha=alpha, cal=C1, null_rows=rows, null_ridge=0.0, label="rescope+null")      # null repair, then calibration on C1
+    # any other operator of the library (witness_repair, scope_cut): apply it to a scoped log, recalibrate, wrap
+    S2, rec = witness_repair(M0.obj, edit, L.kc.keys("tf", [j]), mode="detector")
+    S2, rc = fx.methods.recalibrate(L, S2, alpha, cal=C1)
+    M2 = fx.methods.wrap(L, S2, "rescope+witness", rec={"op": rec, "recalibration": rc}, alpha=alpha, n=C1.n, draw=draw)
+  Frontier and matched coverage (E1b, E1c; CPU):
+    fr = fx.gate.frontier(L, "ncoord")                  # fr["thresholds"], fr["curves"]["probe.heldout_disjoint.fired" | "edit.tgen.own_top" | "hn.HN-I.fired" | ...]
+    for m in fx.gate.matched_coverage(L, "cos", (25, 50, 75)): m["threshold"], m["coverage"], m["readout"]["hn"]["HN-I"]["fired"], ...
+
+TESTS (development logs for every number; long logs: mechanics only)
+    nohup tests/run_all.sh > tests/out/run_all.log 2>&1 &        CPU tests + GPU tests a b f g c d on both development logs + mechanics e + render;
+                                                                  GPU tests in groups, each group its own job of the queue (names fx_*; --prio FX_PRIO,
+                                                                  default -8; since 2026-11-11 07:51 the queue's own policy file state/prio_override.json
+                                                                  runs every job named fx_* at priority 6 instead); `run_all.sh gpu`: GPU part only
+    python tests/t_cpu.py [registry draws gate regress_gate stats io_memo methods frontier scale]
+    $GQ run --mem 10500 -- python tests/t_gpu.py TB-Q100-ae-l2_3 a b f g c d [--smoke] [--force]      (17000 for TB-L100-ae-l2_3)
+    $GQ run --mem 10500 -- python tests/t_gpu.py TB-Q2000-ae-l2_3 e                                   mechanics only on any other log
+    python tests/render.py                                        tests/out/table.txt + summary.json from tests/out/*.json
+  A GPU test that passed with the current code (sha1 of fx/*.py and of rescope/*.py) is skipped; the table marks results of older code.
+  Example of a complete output directory (results.json, results_meta.json, rows/, paper_numbers.json, table.txt): tests/out/e1_demo_<log>/.
+  a = every row and every rendered number of the sanity experiment (M1 - M6, deployed, pre-edit; draws 0 - 2), once through an empty private
+      memo (fresh forwards) and once through the shared memo; fx row sets == the library Evaluator's item sets
+  b = memo == fresh forwards on 300 (sequence, firing edit) pairs, decodes, DUAL == the library's DUAL; a second pass runs the model on nothing
+  c = fx.gate == the hook's firing on every sequence of a full pass (ReScope and cosine, lp = tf and prompt); dense fast paths == full pass
+  d = the E1 row set end to end for one draw with an empty private memo (seconds per method), the calibrated rows again for the next draw
+  f = Rescope-WHERE + least repair of 10 / 50 reported complaints (silent afterwards, order independent), the evidence-curve constructor
+  g = every ablation switch of E6 and ReScope-N build and run on the GPU and give the plain Evaluator's rows
+  e = open / build / gate pass / 50 behavioural sequences / per-item costs on a long log (no metric)
+
+LIMITATIONS (see also tests/out/table.txt)
+  * Gates are CPU-built and release batch-by-batch rebased values; the library's usage example builds them on the model's device with
+    rescope.rebase.  The two can differ in the last bits of thresholds and released values; test a compares every row with the sanity
+    agent's GPU-built gates (and re-runs any differing row to establish the cause): see tests/out/table.txt.
+  * fx.gate / the memo path cover gates that decide at the last prompt position (role 'last', fp64).  Everything else needs the model.
+  * The router and z-score constructors, where_logonly (first use per log), where_least and p12 need the model's weights (H).
+  * fx.behave evaluates sequences that have an item in the library's evaluation: edits, probe rows, valid hard negatives.  The benign
+    pool is gate-level only (it has no pre-edit answer outside its 600-row subset).
+  * DUAL costs two decodes per query the first time (both memoised afterwards); at scale use fx.draws.scale_edits and held-out probes only
+    (amendment item 6).  Rescope-WHERE, the published cosine gate (role 'all') and COMP cost one forward per sequence and method; the
+    z-score gate costs one truncated forward per sequence once per log + one forward per firing sequence for every calibration draw.
+  * fx.gate decides on the CPU; a sequence inside the 1e-9 decision band (`near`: in practice the calibration query that defines eta, a
+    REPAIR-pool row) can be decided otherwise by the hook (test c counts them).  fx.behave re-decides those rows with the hook's arithmetic.
+  * Near-scope probes (amendment of 22:10, item 5): a probe whose question string is the QUESTION of an edit of the evaluated log
+    (row field near_edit; the protocol's count, 677 of the 2000 edits of the long Qwen stream, is reproduced by tests/t_cpu.py).  Probes
+    that match only an edit's text rephrase are flagged separately (near_reph); the key cache's hard-negative / benign flags use that
+    wider definition.  The portability queries of the one-hop logs are not sequences of the key cache: not evaluable through fx.
+  * BLIP2 logs (TB-B*, role 'stress') and one-hop logs (role 'unseen_onehop'): mechanics test e ran on TB-B500-ae and TB-Q500-onehop-l2_3
+    (open, default method, gate-level pass, 50 sequences through the memo path, forwards of the deployed weight / a role-'last' gate / a
+    role-'all' gate, a decode); nothing else was run on them.  The harness repairs (COMP, REEDIT, rollback) do not run on BLIP2, and there
+    are no P12 rows for these logs.  The one-hop logs have no hard negatives and no benign pool (source="benign" is an error there, as
+    the audit of 05:06 requires); their stored edit flags were computed in padded batches of 8 (fx.logs.stored), fx.behave evaluates
+    at batch size 1.
+  * Not in fx (experiment-specific; use the library directly with M.obj): gate latency and storage (E8: rescope.Hook(module, gate,
+    record=False)), rebase error against clean-model targets (E5a: rescope.rebase_error), SCOPE-CUT (rescope.scope_cut + fx.methods.wrap),
+    the harness' linear repairs at other n / seeds than P12's saved corrections (fx.methods.p12 reads those; wrap any harness Correction).
+  * The memo trusts (backbone, sequence, signature); a changed model revision or tokenizer would not be detected (as for the key cache).
+    It now holds outcomes computed on the two development logs (keyed by the bits of their released values / weights) and pre-edit
+    decodes (properties of the pre-edit model, shared by every log of a backbone).
+  * R19 (08:49) cut items the driver still offers: the quantile-baseline switch (baseline=0.98), the complaint-driven detector
+    repairs (partition, cal=, least=, null_rows=), the one-hop / BLIP2 / MMKE-Bench / internal logs (registered, flagged cut_by_R19),
+    DUAL on unseen logs (E3_LABELS no longer holds it; E1_LABELS does: pass labels= on an unseen log).  Behaviour of E1 is now
+    draws 0 - 2 at alpha = 0.05, the other levels at gate level; nothing in fx enforces it.
+  * Registered after the first driver was specified: see section EXTENSION (stage 1) below for what is in the driver now.  Since STAGE 2
+    the driver also holds the gates of R3 - R5 (cos_centred, cos_null, white, whitecos, the retrieval family, lookup, rescope_x / <gate>_x,
+    rescope_nullW), the reader of the selection file and the subset of test hard negatives whose foreign part occurs in no recombination
+    row: section GATES OF THE REVIEW ROUND.  NOT in the driver: the text logs of E10.  Cut by R19 and not built: E11, the one-hop / BLIP2 / MMKE-Bench
+    runs, the complaint streams E2 (d) - (g), the quantile-baseline option beyond the existing switch, the integer program, and any
+    behavioural evaluation of benign-pool or MME rows.
+  * Bootstrap intervals describe one calibration draw; draw-to-draw variability is reported separately (R.add_draws: mean, 5th-95th percentile).
+
+==============================================================================
+EXTENSION (stage 1, 2026-11-11): what was registered after the first driver was specified.  Tests: tests/t_ext_cpu.py, tests/t_ext_gpu.py,
+tests/out/table_ext.txt.  New modules fx.pools, fx.masks, fx.sweeps, fx.prefix; additions to fx.draws, fx.methods, fx.gate, fx.metrics,
+fx.stats, fx.behave, fx.logs.  Every addition is a new function or a keyword argument whose default is the behaviour before.
+
+DEFINITIONS USED BY EVERY EXPERIMENT
+  TOP-1 WITH CAPPED EDITS.  The library's rule, unchanged: the CANDIDATES are the detectors whose coordinate passes its threshold AFTER
+      the guard caps; the best candidate by the ranking key (two-block: the margin r_j - b_j; shared scale: r_j) releases its edit
+      ("threshold first, argmax second").  The other order ("argmax first, threshold second": the first-ranked detector of all releases
+      iff it is a candidate) decides the same wherever no threshold was capped below its calibrated level; the gate-level evaluation
+      reports per method and draw on how many sequences it would differ:
+          ev = fx.gate.evaluate(L, M, top1=True);  fx.metrics.gate_stats(L, ev)["top1"]["all"]["n_differs"]   (per part: probe, edit, hn, benign)
+      (what it gives on the development logs: tests/out/table_ext.txt, row "calibration options").
+  BATCH SIZE 1.  Every forward of every experiment is a B = 1 forward through the library's Evaluator (teacher forcing and decodes); stored
+      flags of a log that were computed in padded batches (the testbed's vendor pass) are never used for a reported number.
+  POOLS.  Calibration, null-repair queries and reported complaints: the valid rows of the REPAIR pool, unless a job names BEN-S or MME-C as
+      calibration source.  Far locality: heldout_disjoint (heldout_strict as a second column); further far columns at gate level: BEN-T
+      (every row, prompt-only key) and MME-T (rows with a valid pre-edit answer, teacher-forced key; the degenerate-answer filter is NOT
+      applied to MME rows).  Near scope: the valid hard negatives of the log's edits (HN-I, HN-Q; HN-X with both edits in the log),
+      probes that share a question string with an edit of the log (L.near_edit), reported next to every far rate.
+  MASKS (R8).  Later edits: stream position >= 500 (Qwen stream) / >= 100 (LLaVA stream): fx.masks.later_edits(L).  Question-disjoint rows:
+      the question string (stripped, lower case) is not the question or text rephrase of ANY edit of the longest stream of the backbone
+      (2000 / 1000 edits): fx.masks.question_disjoint(L); a masked calibration draw is taken from the filtered pool.
+  THE RAISED SCALE (H3, coverage scale, curves).  theta_j(delta) = min(literal threshold_j + delta, guard cap_j): the method's own rule at
+      the scale eta + delta, own prompts stay in scope, edits at their cap are counted (fx.sweeps, guards="keep").  H3 splits the hard
+      negatives by the parity of the stream position of the row's OWN edit (the edit whose image the row shows: HN-I, HN-X; an HN-Q row
+      shows a foreign image and belongs to the edit whose question it asks): even = fit, odd = test.
+  ReScope-N.  The null-repair sample: 100 distinct REPAIR queries, none a calibration query of the same draw (by query_id); rows whose
+      query is a calibration query are replaced by the next rows of the draw's seeded ranking (confirmed by the coordinator).
+  Rescope-WHERE, LOG-ONLY THRESHOLDS (confirmed by the coordinator, review finding 4).  tau_i = 5 % above the largest coordinate of edit i
+      on the NEGATIVES OF P10: every position of the OTHER edits' own request sequences and the NON-SOLVER positions of the edit's own
+      request sequence (teacher-forced B = 1 Rel sequences).  The edit's own sequence sets 3 of 100 thresholds on the Qwen development
+      log and 65 of 100 on the LLaVA one.
+  NO CALIBRATED FORM (task 4; the row set holds every registered row): the exact-match gate is the cosine gate at the fixed threshold
+      0.999 -- calibrating its threshold IS the calibrated cosine gate, which is in the row set (cosine, cosine_shared); the answer-match
+      baseline (dual) has no score to calibrate (it compares generated answers); the router and the z-score gate have ONE scalar score
+      per query, not one per edit, so the two-block per-edit baseline is not definable: they receive the same conformal rule as one
+      threshold on their score from the same n queries of the same draw (router, zscore), next to their published forms.
+
+1. ReScope-N (task 1)
+    fx.methods.rescope_null(L, n_a=100, ridge=0.0, n_A=None, **switches)       n_A = alias of n_a; n_A=0 is the default method bit for bit
+    fx.methods.rescope_null(L, null_keys=K)                                    the null-repair keys given explicitly ((n_A, d) tensor)
+    fx.methods.null_keys(L, draw=0, n_A=100, n=200, mask=None) -> (K, rows)    the keys ReScope-N clears for a draw (cos_null of R3 needs them)
+    fx.methods.null_rows(L, draw, n_A, n, mask) -> rows                        = fx.draws.null_sample(L, n_A, draw, n)
+      K, rows = fx.methods.null_keys(L, draw=3);  M = fx.methods.rescope_null(L, alpha=0.05, draw=3)      # M == rescope_null(L, draw=3, null_keys=K)
+2. Samples (task 2)
+    fx.draws.calibration(L, 200, d, contamination=p, contam_half="even")       E6 (10): round(p n) calibration queries replaced by rephrase
+        prompts of the edits with EVEN stream index, half text / half image (c - c // 2 T-Gen, c // 2 I-Gen), nested in p; report coverage
+        separately on fx.draws.even_edits(L) / odd_edits(L).  fx.methods.rescope(L, contamination=0.2, contam_half="even").
+    fx.draws.calibration(L, 200, d, source="BEN-S" | "MME-C", which="tf" | "decode")    another key-level source (Draw.kc = its key cache);
+        fx.methods.rescope(L, source="MME-C"), fx.methods.cosine(L, source="BEN-S"), fx.methods.router(L, H, source="MME-C").  The null-repair
+        sample of rescope_null stays in the REPAIR pool.  which="decode": every row at the prompt-only key (exchangeable with BEN-T firing).
+    fx.draws.calibration(L, 200, d, mask="qdisjoint")                           the draw from the question-disjoint pool (R8)
+    fx.draws.complaint_stream(L, seed, n_base=100) / complaints(L, n, seed, n_base=100)   n_base: size of the stratified base draw; prefix
+        logs have fewer than 50 + 50 complaints: use n_base=20 (the first 20 = harness.sample_complaints(H, 20, seed), then all others)
+3. Sweeps and read-outs at gate level (task 3; fx.sweeps; any calibrated gate with role 'last', or an object offering .sweep(...))
+    fx.sweeps.Scale(M.obj, guards="keep", literal=None)                         .theta(delta), .gate(delta), .n_at_cap(delta)
+    fx.sweeps.raised_method(L, M, delta, guards="keep") -> Method               the gate at the raised scale (behavioural form; memo path)
+    fx.sweeps.shift_curves(L, M, deltas, which="tf", guards="keep", parts=("probe", "edit", "hn"), pools=("BEN-T", "MME-T")) -> curves
+        cv["curves"]["probe.heldout_disjoint.fired" | "edit.rephrase.own_top" | "edit.odd.rephrase.own_top" | "hn.HN-I.fired" |
+        "hn.test.mean.fired" | "pool.BEN-T.fired" | ...][i] at shift deltas[i]; cv["n_edits_at_cap"]
+    fx.sweeps.coverage_scale(L, M, target, which="tf", guards="keep", edits=None) -> {reachable, delta, coverage, coverage_next, monotone}
+    fx.sweeps.h3(L, M, which="tf", limit=10.0, guards="keep", test_rows=None) -> {reachable, delta, rephrase{tgen, igen, mean, rel},
+        test{kind: {n, fired, own_top, other_top, b_top}, mean_fired}, heldout_disjoint{fired}, fit{...}, per_edit, test_rows, odd_edits, method}
+    fx.sweeps.h3_split(L) -> {fit{kind: rows}, test{kind: rows}, even_edits, odd_edits}
+    fx.gate.sweep(L, label, gate=S) / frontier(L, sw=sw) / matched_coverage(L, sw=sw)    one GLOBAL threshold on the feature of ANY scoped gate
+      h = fx.sweeps.h3(L, M)                                   # gate level, per draw; h["delta"], h["rephrase"]["mean"], h["test"]["HN-I"]["fired"]
+      e = ses.edits(h["method"], edits=h["odd_edits"])         # behavioural H3: exact on the odd edits
+      t, g = ses.hard_negatives(h["method"], rows=h["test_rows"]["rows"], generate=True)       # firing, D1, wrong-target on the test rows
+      gate-level wrong-target event = an edit is released on the row (test[kind]["fired"]; own_top: the row's own edit).
+4. Row set (task 4): fx.methods.E1_LABELS (22 rows, unchanged) holds cosine / cosine_shared / ball / router / zscore (calibrated on the
+    SAME draw: M.rec["draw"]["sids"] are equal), cosine_default (0.65, last position), cosine_published (0.65, all positions),
+    zscore_default, exact, dual; E1_GATE_LEVEL = ("rescope_pac",).  See NO CALIBRATED FORM above.
+5. Calibration options (task 5)
+    fx.methods.rescope_pac(L, delta=0.1, alpha=0.05, n=200, draw=0) / build("rescope_pac", L, ...)   R9: rank of the block-2 quantile =
+        fx.methods.pac_rank(n2, alpha, delta) = the smallest k with P[Beta(n2 + 1 - k, k) <= alpha] >= 1 - delta (n2 = 100, alpha = 0.05,
+        delta = 0.1: rank 99 instead of 96); M.rec["cal"]["pac"]; any scoped builder takes calibration="pac", delta=.
+    fx.methods.rescope(L, baseline_x=x) / recalibrate(L, S, ..., baseline_x=x, pac_delta=None)      R5 hook: x (D,) external per-detector
+        baselines (-inf = none), b_j = max(block-1 maximum, x_j) BEFORE the quantile is taken; x = None: the default bit for bit.
+        x, xrec = recomb.own_baseline(L, fx.methods.base_gate(L)[0]);  M = fx.methods.rescope(L, draw=d, baseline_x=x, label="rescope_x")
+        (bit for bit recomb.calibrate_two_block_x; tests/out/ext_cpu_calib.json)
+    fx.gate.evaluate(L, M, top1=True) / fx.gate.decide(..., top1=True) / fx.metrics.top1_report(ev)     see TOP-1 WITH CAPPED EDITS
+6. Read-outs of R7 (task 6; fx.metrics)
+    kept_gained(rows, rows_deployed, ci=False) -> {metric: {n, n_deployed_exact, n_exact, n_kept, n_gained, n_lost, kept, gained, lost
+        (% of all edits), kept_of_deployed}};  kept_gained_rows(rows, rows_deployed) -> per-sequence flags
+    d2_stats(rows, ci=True, unit="query_id") -> D2 = the RATE of the pre-correct rows as {value, ci_lo, ci_hi, n_units}
+    grid(rows_by_draw, value, unit="query_id" | "edit", where=None) -> {num, den, units, draws}      the matrices of the crossed bootstrap
+      kg = fx.metrics.kept_gained(ses.edits(M), ses.edits(fx.methods.deployed(L)), ci=True)
+      g = fx.metrics.grid({d: ses.d2(Ms[d]) for d in draws}, "D2", where=lambda r: r.get("pre_correct")); fx.stats.crossed_bootstrap(g["num"], g["den"], scale=100)
+7. Statistics of R10 (task 7; fx.stats)
+    crossed_bootstrap(num, den=None, n_boot=2000, seed=0, ci=95, scale=1) -> {value, ci_lo, ci_hi, se, n_draws, n_units}   num[d, u]: unit u
+        under calibration draw d; draws and units resampled independently; den: rows per cell (rate of a clustered pool)
+    crossed_bootstrap_diff(num_a, num_b, den_a=None, den_b=None, ...) -> {value, ci_lo, ci_hi, p_two_sided, mean_a, mean_b}   paired: the same
+        resampled draws and units for both methods
+    holm(pvalues, alpha=0.05) -> {adjusted, reject, order}                      list or {name: p}
+      ga, gb = (fx.metrics.grid(rows[m], lambda r: float(r["exact"]), unit="edit", where=lambda r: r["metric"] in ("tgen", "igen")) for m in ("a", "b"))
+      d = fx.stats.crossed_bootstrap_diff(ga["num"], gb["num"], ga["den"], gb["den"], scale=100);  fx.stats.holm({"Q/cos": d["p_two_sided"], ...})
+8. Logs, pools, masks (task 8)
+    fx.logs.programme(part=None) -> {log: role}                                 the 16 logs of the reduced programme (R19 b): development,
+        working_point, unseen (TB-Q200/500-ae-l2_3, TB-Q{100,500,1000,2000}-memitw, TB-L200/500-ae-l2_3, TB-L{100,500,1000}-memitw)
+    L.near_edit(j) / row field near_edit                                        probe shares a question string with an edit of the log
+    fx.pools.get(L, "BEN-T" | "BEN-S" | "BEN-W" | "MME-C" | "MME-T", which=None) -> Pool (.rows .which .kc .index .test_only)
+    fx.pools.firing(L, M, pool, which=None, mask=None, rows_out=False) -> {n, n_fired, fired, far, related, image, text | by_category,
+        n_masked_out, n_edits_capped};  fx.pools.decide(L, M, pool);  fx.pools.guard(L, rows, use, kc=None);  fx.pools.related(L, pool)
+      st = fx.pools.firing(L, M, "MME-T");  sb = fx.pools.firing(L, M, "BEN-T", mask=fx.masks.question_disjoint(L))   # far / related: with and without
+      rows that the pool's own flags relate to an edit or probe of the family (counted)
+    fx.masks.later_edits(L); fx.masks.question_disjoint(L) (predicate on an index row); fx.masks.keep(L, rows, kc=None)
+      e = ses.edits(M, edits=fx.masks.later_edits(L));  hd = L.rows("probe", pool="heldout_disjoint", valid=True, where=fx.masks.question_disjoint(L))
+9. Prefix logs (task 9; fx.prefix; out/prefix_logs.txt)
+    fx.logs.names("prefix") = TB-Q100-ae-l2_3-p10 / -p20 / -p50, TB-L100-ae-l2_3-p10 / -p20 / -p50;  fx.logs.open(name), fx.logs.load_model(name)
+    fx.prefix.load_model(name, keep_batch_deltas=True, cache_dir=<dir>) -> the harness handle for the linear repairs (COMP, REEDIT, rollback)
+    fx.prefix.edit_log(name) -> rescope.EditLog;  fx.prefix.describe(name);  `python -m fx.prefix build <development log>` (GPU), `... table`
+      H = fx.prefix.load_model("TB-Q100-ae-l2_3-p10", keep_batch_deltas=True, cache_dir=MY + "/hcache"); hz = rescope.harness()
+      cs = hz.HS.sample_complaints(H, 10, seed);  corr, cost = hz.HM.repair("COMP", H, cs, protect=("K_ans",), query="answer", form="adapter")
+      M = fx.methods.wrap(L, corr, "comp_b_n10")   (a weight correction: fx.methods.wrap(L, corr.W, label));  ses.probes(M), ses.edits(M)
+      nested complaint sets on a prefix: fx.draws.complaints(L, n, seed, n_base=20)
+10. Maintenance (task 10)
+    fx.methods.mask_edits(L, M, edits) -> Method                                thresholds of every detector of a masked edit = +inf, guards
+        of masked edits dropped, everything else the same tensors; mask_edits(L, M, []) is M's object (same digest)
+    ses.tf_hashed(M, rows, lp="tf") -> rows + logit_sha1 + released             every sequence a real forward (no memo, no key cache)
+    fx.methods.rollback(L, H, edits) -> Method (kind 'weight')                  the harness's rollback weight; same evaluation functions as
+        the deployed weight (ses.tf / edits / probes: memoised by content; ses.tf_hashed)
+    ses.blocklist(reported, rows, lp="tf") -> rows                              the blocklist line (R11 h): listed queries -> pre-edit rows
+      a = ses.tf_hashed(M, rows); b = ses.tf_hashed(fx.methods.mask_edits(L, M, R), rows)
+      frame-rule violations = [x for x, y in zip(a, b) if not set(x["released"]) & set(R) and x["logit_sha1"] != y["logit_sha1"]]     (expected: none)
+      Mr = fx.methods.rollback(L, H, R);  e = ses.edits(Mr);  p = ses.probes(Mr)
+    fx.methods.content_digest(obj) / M.digest / fx.methods.dedupe(methods) / fx.methods.n_capped(M) / ses.assert_clean()
+
+KNOWN LIMITATIONS OF THE EXTENSION
+  * fx.sweeps works for scoped gates with role 'last' and ONE detector per edit when guards are kept (the library's own_caps); gates with
+    added detectors: guards="drop".  The literal threshold of a CAPPED detector is recomputed from the gate's own calibration (library
+    two-block / shared rule with ranking baselines); a gate calibrated by another rule with capped edits needs literal= (ValueError says so).
+    A gate calibrated WITHOUT guards (allow_silence=True) has no cap rule: guards="drop".  Gates that are not scoped logs (retrieval
+    references) take part by offering .sweep(L, rows, which=, guards=, kc=) -> object with .at(delta), .gate(delta).
+  * H3 can be unreachable with guards kept (caps hold edits in scope on fit rows): reachable False, read-out 'at_saturation'; it is then
+    reported as unreachable, not replaced by the pure shift.  Coverage along the scale is monotone only without capped edits
+    (coverage_scale reports 'monotone').
+  * Key-level pools hold the last-prompt key only: scoped role-'last' gates and the router are decided on them; the z-score gate,
+    Rescope-WHERE and every all-positions gate are not (NotImplementedError); no D1 and no behaviour on them (R19 e).
+  * The guard recognises pool rows by their position in the key cache they belong to.  Keys handed over as TENSORS (null_keys=) cannot be
+    traced to a pool: the caller states their origin (only bitwise equality with a teacher-forced calibration key is refused).
+  * The crossed bootstrap resamples draws and units independently.  It is close to the analytic interval where the unit component
+    dominates and CONSERVATIVE (too wide) where the cell noise dominates, as in paired differences (measured widths and coverages on
+    synthetic two-way tables: tests/out/table_ext.txt, row "statistics"); with 3 behavioural draws the draw component is underestimated
+    by about (n_draws - 1) / n_draws in variance.
+  * Prefix logs: the intermediate weights of the original build were not stored; the prefix weight is the harness's reconstruction
+    rule on the first batch updates (bitwise the deployed weight for all 10 batches).  D2 / decode fields of their probe records are
+    None; rescope.load / stored_metrics / fx.logs.stored do not find them by name; fx.draws.verify_p12 has no records for them.
+  * ses.tf_hashed costs one forward per sequence and method (0.1 s); hashes of two runs are comparable on the same card type and
+    software only (bitwise determinism of B = 1 forwards was observed in every test, it is not guaranteed across hardware).
+  * Method.digest hashes the detectors at every access (0.5 s at T = 2000); guard keys are not part of it.  The behavioural session
+    keys its device copy of a gate by this digest (a gate changed in place is rebuilt, not served stale); the CPU feature cache of
+    fx.gate is keyed by the detector OBJECTS and relies on rule 1 (hashing 176 MB of detectors per decision at T = 2000 would double
+    the gate-level time).
+  * The 'benign' part of fx.gate.evaluate / gate_stats / frontier is still the WHOLE benign pool (the first driver's read-out, kept
+    unchanged); a reported far-locality column on benign rows is fx.pools.firing(L, M, "BEN-T").
+  * The harness's own evaluate() / baseline() run on a prefix handle (their cache files go to cache_dir); they need about 4 minutes
+    for the first call per log (the harness's eval cache) and are not needed for reported numbers, which are re-scored at B = 1
+    through fx.behave (fx.methods.wrap of the correction or of its weight).
+  * Dense gates (router, z-score): digest = (log, kind, threshold); their calibrated two-block per-edit form is not definable.
+
+==============================================================================
+GATES OF THE REVIEW ROUND (stage 2, 2026-11-11): module fx.review1.  PROTOCOL.md section 6: "Review round 1" R3 - R5, "R4 extended", the
+clarifications of 06:34 (two pairs of H3) and 09:03 (null sample by query; second form of the near-scope read-outs), R19.  The feature packages
+10_final/feat2/{white, retr, recomb} (data: 10_final/cache2) are read-only and imported on first use; their USAGE.txt apply.  Tests:
+tests/t_r1_cpu.py, tests/t_r1_gpu.py, tests/out/table_r1.txt (tests/run_r1.sh runs every test of the driver and writes READY.json);
+tests/t_r1_usage.py executes the calls printed in the section EXPERIMENT TASKS.  Problems found in the packages: FEAT2_PROBLEMS.txt.
+
+    M    = fx.methods.build(name, L, alpha=0.05, n=200, draw=0, **switches)     every name below, any log of the two VLKEB streams, any draw
+    rows = fx.review1.e1_rowset_review1(L, alpha, draw, n=200, H=None, labels=None, skip_unavailable=True, **switches)
+    why  = fx.review1.why_not(L, name)                                          None, or the reason the gate is not defined on the log
+Every Method runs through fx.gate.decide / evaluate, fx.pools.firing, fx.metrics.gate_stats, fx.behave (ses.edits / probes / hard_negatives /
+generate / d2; memoised), fx.sweeps (shift_curves, coverage_scale, raised_method) and fx.sweeps.h3 like the stage-1 methods (lookup has no
+calibrated scale: no sweep, no H3).  All rules of the top of this file apply (immutable gates, assert_clean, one log per process, report
+fx.methods.n_capped(M), compare by M.digest).
+
+NAMES (fx.review1.NAMES; role last, top-1, the driver's rebased values at the last prompt position, guards and the calibration draw / blocks
+exactly as the registered cosine gate: fairness rule (i))
+  cos_centred          cos(k - mu, k_i - mu), mu = mean BEN-W key
+  cos_null             the cosine detector after the library's null repair (ridge 0) on the 100 null-repair keys of rescope_null in the SAME draw
+  white_0.01 | white_0.1 | white_1             k_i' M k / k_i' M k_i, M = (C_W + rho I)^-1, rho = kappa tr(C_W) / d_in
+  whitecos_0.01 | whitecos_0.1 | whitecos_1    the cosine in that whitened space          (also build("white", L, kappa=0.1))
+       each with the two-block calibration (the name) and with the shared scale (<name>_shared; or calibration="shared")
+  cosine_shared        the registered cosine gate with the shared scale (= fx.methods.cosine(L, "shared")): every member of the family is a name
+  rescope_nullW        rescope_null with ALL 600 BEN-W keys (prompt-only keys) as null-repair keys, then the default calibration
+  retr_conj            R4 as written: image cosine AND question cosine pass thresholds calibrated per attribute by the two-block rule on the same
+                       draw at the same level; top-1 by the sum of the two margins (feat2/retr calibrate / decide)
+  retr_sum             ONE per-edit score a + c (image cosine + question cosine); two-block rule
+  retr_min             ONE per-edit score min(a', c'), a' / c' = a / c standardised per edit by the mean and standard deviation of that edit's
+                       block-1 scores; then baselines from block 1 and the block-2 quantile as usual
+       all three: a query without an image releases nothing; the guard keeps the edit's OWN REQUEST in scope (cap at (1 - 1e-9) x its score)
+  lookup               same image content (md5) and at least one shared content word with the edit's question; no calibration
+  <gate>_x             R5: the two-block rule with b_i = max(block-1 baseline, largest score of edit i on ITS OWN recombination rows):
+                       rescope_x, rescope_null_x, rescope_nullW_x, cosine_x, ball_x, cos_centred_x, cos_null_x, white_<kappa>_x, whitecos_<kappa>_x
+  Families: fx.review1.COSINE_FAMILY (18 names: cosine, cosine_shared and the 16 above: "the best gate of the cosine family" is one of them),
+  RETRIEVAL_FAMILY (retr_conj, retr_sum, retr_min: "retr" is one of them), X_BASES (the gates that have an _x form).
+  Row set: R1_LABELS (21 rows: the 16 cosine-family rows, rescope_x, the three retrieval rules, lookup) follow fx.methods.E1_LABELS;
+  gate level only (R19 a): fx.methods.E1_GATE_LEVEL + fx.review1.R1_GATE_LEVEL = rescope_pac, rescope_nullW.
+
+SWITCHES (keyword arguments; defaults = the registered form; Method.variant names those off their default)
+  allow_silence=True (the literal rule without the guard cap), source="BEN-S" | "MME-C" (retrieval: "BEN-S" only), which= (as fx.draws.calibration),
+  mask="qdisjoint" | predicate (R8; cos_null / rescope_null_x take their null sample from the same masked pool), cal=<fx.draws.Draw>, split=(a, b),
+  guards=True | False | "all" and rebase= (scoped gates), null_rows=<sequences> (cos_null, rescope_null_x), baseline_x=<(T,) tensor> (_x gates:
+  explicit baselines, for tests).  rescope_x / cosine_x / ball_x pass every other switch to the stage-1 constructor.  An unknown switch raises.
+
+WHERE A GATE IS NOT DEFINED (fx.review1.NotDefined, a LookupError whose text names the reason; e1_rowset_review1(skip_unavailable=False) returns
+such a row as Method(kind="unavailable") with rec["not_defined"])
+  cos_centred, white, whitecos, rescope_nullW    logs outside the two VLKEB streams (key-cache families Q, L): MMKE-Bench, one-hop, BLIP2 logs
+                                                 (no BEN-W statistics are registered for them)
+  retr_conj, retr_sum, retr_min, lookup          logs without attribute table / embeddings (one-hop, BLIP2 caches); ROWS OF ANOTHER KEY CACHE:
+                                                 fx.pools.firing(L, M, "MME-T") and source="MME-C" raise (no retrieval attribute exists for MME rows)
+  <gate>_x                                       logs whose edits are not the first T edits of the backbone's long stream (no recombination rows);
+                                                 <gate>_shared_x (R5 raises a BLOCK-1 baseline; the shared scale has none); the retrieval family
+                                                 (about 110 of the 1200 recombination images of a T = 100 log have no embedding; the protocol compares
+                                                 retr in the first pair's form only)
+  cos_null is defined wherever rescope_null is.  Prefix logs use what exists for their edits (all 12 names of the mechanics test build on the six
+  prefix logs; an edit without a usable recombination row keeps its block-1 baseline).
+
+DEFINITIONS FIXED HERE (where the amendments leave a choice; none was made by looking at a result; to be confirmed by the coordinator)
+  1. retr_sum / retr_min, top-1: the candidate with the largest MARGIN score - baseline (the two-block rule as the library defines it), not the
+     largest raw fused score.  "R4 extended" says "top-1 by the fused score (retr_conj: by the sum of the two margins)".  The two readings differ
+     only where several edits are candidates: 3 / 58 (Qwen) and 63 / 33 (LLaVA) of about 5560 sequences of a development log at draw 0.
+  2. retr_min, standardisation: mean and POPULATION standard deviation (ddof 0) of the edit's block-1 scores; for the image cosine over the
+     block-1 queries that HAVE an image (a text query has no image cosine).  Fixed before block 2 is read: the bound holds (synthetic test).
+  3. The _x form of a SHARED-SCALE gate is the two-block _x form on the same detectors (cosine_shared -> cosine_x; fx.review1.x_form): R5 defines
+     the construction inside the two-block rule only.  read_selection reports it (x_form_changes_calibration).
+  4. Second form of the near-scope read-outs of an _x method (clarification (2) of 09:03), fx.review1.hn_unseen_foreign(L): a test hard negative
+     is kept iff its FOREIGN part occurs in no recombination row the log may use -- HN-I: its question string (stripped, lower case) is the
+     question of no recombination row; HN-Q: its image content (md5) is the image of no recombination row; HN-X: its partner edit b is the
+     PARTNER of no X-X recombination row (as owner every edit occurs in its own rows).  Sizes on the development logs: HN-I 186 / 588 and
+     178 / 590, HN-Q 434 / 591 and 465 / 597, HN-X 4 / 99 and 1 / 99: the HN-X subset is nearly empty; report the size next to every number.
+  5. cos_null / rescope_null: the null-repair sample shares no QUERY with the calibration draw (fx.draws.null_sample; clarification (1)).  The
+     white package's mechanics table used the ROW rule: reproduced exactly with that rule; with the driver's rule draw 0 differs, most for
+     cos_null with the two-block rule on Qwen (tests/out/table_r1.txt, row "mechanics tables").
+
+FUNCTIONS
+  fx.review1.build(name, L, H=None, alpha=, n=, draw=, label=, kappa=, calibration=, **switches)       (fx.methods.build dispatches here)
+  fx.review1.e1_rowset_review1(L, alpha, draw, n, H, labels, skip_unavailable, **switches) -> [Method]   stage-1 rows (fx.methods.e1_rowset, unchanged)
+        + R1_LABELS; labels: any order / subset of E1 labels, R1 labels, gate-level labels and any other method name (e.g. "white_0.1_x")
+  fx.review1.read_selection(path=None, backbones=("qwen25vl", "llava")) -> {backbone: {"log", "cosine": {"H3", "H3_x", "H2", "H2_x", "differs",
+        "x_form_changes_calibration"}, "retr": {"H3", "H2", "differs"}}}      the file 10_final/e1_main/out/best_cosine_gate.json; FileNotFoundError
+        if it does not exist, ValueError if a backbone or one of cosine_family.H3 / .H2 / retrieval.H3 / .H2 is missing or names no gate
+  fx.review1.selected(L | backbone, endpoint="H3" | "H2", path=None) -> {"cosine": name, "cosine_x": name, "retr": rule}
+  fx.review1.write_selection({backbone: {"log": ..., "cosine_family": {"H3": X, "H2": X}, "retrieval": {"H3": R, "H2": R}, <tables: free>}}, path)
+        writes the file in the format the reader reads, after validating it (X: a name of COSINE_FAMILY or {"variant", "calibration", "kappa"})
+  fx.review1.why_not(L, name) / NotDefined
+  fx.review1.hn_unseen_foreign(L, rows=None) -> {"rows", "keep", "n": {kind: {"all", "kept"}}, "n_all", "n_kept", "rule"}
+  fx.review1.near_scope(L, M, which="tf", rows=None) -> {"all": {kind: {n, fired, own_top}, "mean_fired"}, "unseen_foreign": {...}, "subset"}
+  fx.review1.h3_both(L, M, **kw) -> {"all": fx.sweeps.h3(L, M), "unseen_foreign": h3 with the TEST read-out on the subset (same fit rows, same
+        raise), "subset"}       behaviour on the subset: ses.hard_negatives(h["method"], rows=hb["unseen_foreign"]["test_rows"]["rows"], generate=True)
+  fx.review1.unthresholded(L, name, draw=0) -> the un-thresholded scoped gate of a cosine-family name (also "cosine", "rescope", "ball"), for
+        fx.gate.sweep(L, label, gate=S) / frontier / matched_coverage (E1b, E1c: one global threshold on the feature) and fx.gate.features
+  fx.review1.x_baseline(L, S) -> (x, record)       recomb.own_baseline, cached;  x_form(name);  one_score_rule / block1_stats (retr_sum / retr_min on
+        score matrices);  RequestRule (the object of a retrieval Method: .decide_rows, .sweep, .shifted(delta), .theta(), .content_digest())
+
+RETRIEVAL METHODS (Method.kind == "request")
+  The decision depends on the query's image content and question string, not on a key: it is the same at 'tf', 'prompt', 'decode' and in every
+  forward of a decode (on LLaVA also where lp_shift = 1; retr USAGE, section H).  Gate level: fx.gate.decide / evaluate dispatch to the rule
+  (decisions carry near = False; top1=True works).  Behaviour: a sequence on which nothing is released is the cached pre-edit row (no forward);
+  a sequence on which edit e is released runs through the memo path under the library gate that releases exactly e (feat2/retr forced_gate on
+  fx.methods.base_gate(L): the value released is the driver's rebased value, so the memo entry is shared with every scoped gate that releases
+  e on that sequence); the row's firing flags are the rule's decision.  Raised scale (fx.sweeps, H3): the common scale of EVERY attribute is
+  shifted by delta, guards kept (retr_conj: both attribute thresholds); shifts accumulate (raising a raised method shifts it further; shift 0 is
+  the method itself).  M.rec["cal"] holds eta, the bound, n_edits_capped / capped_edits and the own requests silenced by the literal rule
+  (retr_conj: per attribute, with the bound that holds with the caps).
+  Not defined for a retrieval Method: ses.tf_hashed (TypeError), fx.methods.mask_edits, M.rec["own_prompts"] (use gate_stats(...)["edit"]["rel"]),
+  a session without the memo (fx.behave.session(L, H, memo=False) raises for it).
+
+COST (CPU, 4 threads; tests/out/table_r1.txt, row "all logs, mechanics" lists the measured build seconds per T)
+  build at T = 100: under 1 s per gate (first use of a feature +0.3 - 1 s; statistics 0.6 s once per process); gate-level pass of a log: 0.3 - 1 s;
+  H3: 0.1 s.  Measured first builds at T = 500 / 1000 / 2000 (s): a cosine-family gate 1 - 2 / 3 - 5 / 12 - 17; rescope_nullW 3 / 12 / 53 (the
+  library scores every guard during the null repair; once per log); rescope_x 1.4 / 5 / 17; a cosine-family _x form 2 - 5 / 7 - 12 / 27 - 38 (the
+  baseline x is computed once per detector set; cos_null_x and rescope_null_x: once per DRAW); retrieval rules and lookup: under 0.5 s at any T.
+  Build + gate-level pass of the 12 names of the mechanics test: 4 s at T = 100, 23 s at 500, 61 s at 1000, 220 s at 2000.  Un-thresholded
+  gates are cached (10 per process; about 0.5 GB each at T = 2000).  The feature cache of fx.gate holds 6 (detector set, key file) pairs: with
+  the 21 new rows, loop GATE-MAJOR (all draws and levels of one feature, then the next; <name> and <name>_shared share their detectors),
+  otherwise every pass recomputes the features (0.3 - 1 s at T = 100).  Behaviour: the memo path of the stage-1 gates (forwards only where an
+  edit is released and the memo has no entry); a retrieval row moves one forced gate to the card per released edit with a memo miss.
+
+KNOWN LIMITATIONS OF STAGE 2
+  * Independently reviewed on 2026-11-11 (stage 1, stage 2 and the feature packages): review_lean/verdicts.json (verdict per item, evidence and
+    the RESIDUAL RISKS every experiment agent must read); no line of fx/*.py was changed by that review (review_lean/patches.txt).
+  * Retrieval family on the MME pools and with source MME-C: not obtainable (no attributes); behaviour and D1 on benign-pool / MME rows: cut (R19 e).
+  * rescope_nullW nulls PROMPT-ONLY BEN-W keys (white USAGE, limitations); its record has no bitwise check against calibration keys (BEN-W
+    shares no query with the REPAIR pool or with BEN-S of the VLKEB streams).
+  * A calibrated gate can have the same content for two draws (white_1_shared on the Qwen development log, draws 0 and 1: the shared-scale
+    quantile falls on the same query): M.digest is then equal, as it should; do not assume one digest per draw.
+  * Importing white switches bytecode writing off for the process (sys.dont_write_bytecode); feat2/retr is appended to the END of sys.path.
+  * TCosLog gates (cos_centred, whitecos) need feat2 on sys.path in any process that unpickles them; build them by name instead.
+
+==============================================================================
+EXPERIMENT TASKS (stage 2): the driver calls that serve each task of tools/workflows/final_dev_lean.js and final_unseen_lean.js (task text +
+additions + LEAN block; the LEAN block wins).  "Skeleton" = section SKELETON OF AN EXPERIMENT JOB above; R = fx.io.Results.
+
+E1  main comparison (e1_main; logs: fx.logs.names("development") + names("working_point"), one log per process)
+  rows       ALL = fx.methods.E1_LABELS + fx.review1.R1_LABELS; GL = fx.methods.E1_GATE_LEVEL + fx.review1.R1_GATE_LEVEL (rescope_pac, rescope_nullW)
+             fx.review1.e1_rowset_review1(L, alpha, d, H=H, labels=ALL + GL)     H=None: the rows that need the model (router, zscore, where_logonly
+             unless cached, p12) are left out; published forms and dual are in E1_LABELS; no calibrated form: see NO CALIBRATED FORM above
+  gate level alpha in (0.01, 0.02, 0.05, 0.10, 0.20), d in range(fx.draws.N_DRAWS):  ev = fx.gate.evaluate(L, M, positions=("tf", "prompt"), top1=True);
+             st = fx.metrics.gate_stats(L, ev) (heldout_disjoint / _strict, image / text, near / far, coverage, other_top, HN-I / -Q / -X, lineage);
+             literal rule without the cap: the same rows built with allow_silence=True; capped edits fx.methods.n_capped(M); own prompts
+             M.rec["own_prompts"], M.rec["cal"]; far columns fx.pools.firing(L, M, "BEN-T") and fx.pools.firing(L, M, "MME-T") (gate level)
+             H2 coverage form: (st["edit"]["tgen"]["own_top"] + st["edit"]["igen"]["own_top"]) / 2
+             H3: h = fx.sweeps.h3(L, M) (every calibrated gate); _x methods: hb = fx.review1.h3_both(L, M) and fx.review1.near_scope(L, M)
+  selection  candidates fx.review1.COSINE_FAMILY and RETRIEVAL_FAMILY, read-out h["rephrase"]["mean"] over the 20 draws (h["reachable"] False: state
+             your rule for such draws before looking); fx.review1.write_selection({...}) BEFORE any behavioural run of these gates -- it writes
+             e1_main/out/best_cosine_gate.json in the ONLY layout the reader accepts (section GATES OF THE REVIEW ROUND, FUNCTIONS; the tables of
+             all variants go into the same file as further fields); sel = fx.review1.selected(L) -> sel["cosine"], sel["cosine_x"], sel["retr"]
+             are method names
+  behaviour  H = fx.logs.load_model(name); ses = fx.behave.session(L, H); alpha = 0.05, draws 0 - 2: ses.edits(M), ses.probes(M) and
+             ses.probes(M, pool="heldout_strict"), ses.hard_negatives(M, generate=True); LLaVA: lp="prompt" next to lp="tf"; row with linear
+             response: fx.methods.rescope(L, response="lin", ...); thresholds-only repair: where_logonly; rescope_pac / rescope_nullW: gate level only
+             R7: fx.metrics.kept_gained(ses.edits(M), ses.edits(fx.methods.deployed(L)), ci=True); fx.metrics.d2_stats(ses.d2(M), ci=True)
+             generation at draw 0: ses.d2(M), ses.generate(M, rows), fx.metrics.gen_stats; dual: ses.generate / ses.hard_negatives(generate=True)
+             behavioural H3: e = ses.edits(h["method"], edits=h["odd_edits"]); t, g = ses.hard_negatives(h["method"], rows=h["test_rows"]["rows"],
+             generate=True)       (h["method"] of a retrieval rule is a retrieval Method at the raised scale)
+  statistics fx.metrics.grid + fx.stats.crossed_bootstrap / crossed_bootstrap_diff (R10), fx.stats.holm, fx.metrics.endpoint, R.add_draws
+  E1b / E1c  fx.gate.frontier(L, "ncoord" | "cos"), fx.gate.matched_coverage; cosine-family variant: sw = fx.gate.sweep(L, name,
+             gate=fx.review1.unthresholded(L, name, draw=d)); fx.gate.frontier(L, sw=sw).  Axis "mean near-scope firing on the TEST hard negatives":
+             sp = fx.sweeps.h3_split(L); per kind the share of sw["parts"]["hn"]["rmax"] >= t over the rows of sp["test"][kind] (aligned with
+             sw["parts"]["hn"]["rows"]).  Retrieval conjunction and calibrated points: fx.sweeps.shift_curves(L, M, deltas, pools=("BEN-T",)) ->
+             "probe.heldout_disjoint.fired", "edit.rephrase.own_top", "hn.test.mean.fired", "hn.HN-I.fired", ...
+  cannot be obtained: retrieval family on MME-T (NotDefined); D1 / behaviour on BEN-T and MME-T rows (cut, R19 e); frontier.json is the task's own
+             file; COMP-B / REEDIT-B rows come from e2_curves/out (not from the driver).
+
+E6 + E9  ablations and maintenance (e6_ablations, e9_maintenance; development logs)
+  E6         fx.methods.rescope(L, alpha=, n=, draw=, <one switch>): role="last+answer" | "all"; response="gain" | "lin"; rebase=False; fire="all";
+             feature="coord" | "cos"; calibration="shared" | "log_only" | "running_max"; split=(1, 3) | (3, 1); rank="r"; allow_silence=True (guards off);
+             source="BEN-S"; contamination=0.01 | 0.05 | 0.2 with contam_half="even" (coverage on fx.draws.even_edits / odd_edits); n=40 | 100 | 200 |
+             400; fx.methods.rescope_null(L, n_A=0 | 50 | 100 | 200); fx.methods.rescope_pac(L).  Gate level: fx.gate.evaluate (role 'last' gates) +
+             gate_stats; behaviour: Skeleton (roles / responses / fire 'all' run through the library path, one forward per sequence).
+  E9         M = fx.methods.rescope(L, draw=0); Mm = fx.methods.mask_edits(L, M, R); a, b = ses.tf_hashed(M, rows), ses.tf_hashed(Mm, rows) (logit
+             hashes, released edits; frame rule: section EXTENSION 10); linear log: fx.methods.rollback(L, H, R) + ses.edits / probes / tf_hashed;
+             lineage: mask the released edit of a firing row and repeat (ses.tf_hashed(fx.methods.preedit(L), rows) for "bitwise pre-edit")
+  cannot be obtained: the 0.98-quantile baseline is cut (the switch baseline=0.98 still exists); nothing of fx.review1 is needed here.
+
+E2 a-c  evidence curves (e2_curves; development logs)
+  a          P12 records are read by the task; nested complaint sets fx.draws.complaints(L, n, seed), fx.draws.verify_p12(L)
+  b          fx.methods.where_least(L, complaints, H, start="deployed" | "logonly"); ses.edits / probes / hard_negatives / d2 (library path);
+             blocklist line: ses.blocklist(reported, rows)
+  c          fx.methods.evidence(L, n, draw, alpha) (n = 0: log-only; n < 40: + least repair; n >= 40: two-block), fx.methods.rescope_shared(L, n=, draw=)
+  d          fx.methods.p12(L, H, method, n, seed) reads P12's saved corrections; a rebuilt harness correction: fx.methods.wrap(L, corr, label)
+  H1         fx.metrics.grid + fx.stats.crossed_bootstrap_diff; R7 read-outs as in E1
+  cannot be obtained from the driver: COMP-B+ and rebuilt REEDIT weights (shared harness; wrap them), the running example (task's own code).
+
+E2 on prefix logs  (e2_prefix; fx.logs.names("prefix"): six logs)
+  H = fx.prefix.load_model(name, keep_batch_deltas=True, cache_dir=<own dir>); harness repairs + fx.methods.wrap (section EXTENSION 9);
+  fx.draws.complaints(L, n, seed, n_base=20); fx.methods.where_least(L, complaints, H, start="logonly"); ses.blocklist; fx.methods.rescope(L, draw=d);
+  description of the logs: out/prefix_logs.txt, fx.prefix.describe(name).  Part (e) (T = 200 logs) is cut.
+
+E3  unseen logs (e3_qwen, e3_llava; logs of fx.logs.programme() for the backbone + its development log; frozen rows, alpha = 0.05)
+  rows       sel = fx.review1.selected(L)            # FileNotFoundError / ValueError until E1 has written the selection: stop and say so
+             ALL = fx.methods.E3_LABELS + (sel["cosine"], sel["cosine_x"], sel["retr"], "lookup", "rescope_x"); GL = ("rescope_nullW", "rescope_pac")
+             fx.review1.e1_rowset_review1(L, 0.05, d, H=H, labels=tuple(dict.fromkeys(ALL + GL)), skip_unavailable=False)     (a label must not
+             repeat: the selected gate may be "cosine", which E3_LABELS already holds); a row with M.kind == "unavailable" is "not defined":
+             record M.rec["not_defined"]; where_logonly at T >= 1000: time one pass first (task text)
+  gate level 20 draws as E1 (fx.gate.evaluate + gate_stats; fx.pools.firing(L, M, "BEN-T", mask=...) and "MME-T"); behaviour draws 0 - 2 (Skeleton);
+             T >= 500: fx.logs.load_model is lean, the harness baseline is refused; deployed log: fx.logs.stored(name) and ses.probes(deployed)
+  R8         later edits: ses.edits(M, edits=fx.masks.later_edits(L)); first 100 edits: edits=range(100); second read-out of the scale series:
+             the same rows with mask="qdisjoint" (calibration draw from the filtered pool; e1_rowset_review1(..., mask="qdisjoint")) and test rows
+             L.rows("probe", pool="heldout_disjoint", valid=True, where=fx.masks.question_disjoint(L)), fx.pools.firing(..., mask=fx.masks.question_disjoint(L))
+  H3         fx.sweeps.h3(L, M) for rescope, sel["cosine"], sel["retr"]; fx.review1.h3_both(L, M) for rescope_x and sel["cosine_x"]; behaviour as E1
+  near scope probes: row field near_edit / gate_stats heldout_disjoint_near / _far; hard negatives of the log's edits: ses.hard_negatives(M)
+  retention  ses.edits(M, edits=range(100)) for deployed, where_logonly, rescope along T (E9 c)
+  cannot be obtained: retrieval family on MME-T (NotDefined: say so); dual on unseen logs is cut (R19); rebase error and self-separation margins:
+             the library (rescope.rebase_error; section LIMITATIONS).
+
+E5 + E8  theory checks and cost (e5_rescope, e8_cost)
+  E5 a       factor level: the library on L.log (rescope.rebase_error, own coordinates: L.own_keys(), fx.methods.base_gate(L)[0].scores)
+  E5 b       lineage widths: fx.gate.decide(L, M, rows)["n_cand"] (calibrated default), where_logonly through ses.tf (n_cand_edits)
+  E5 c       R = fx.gate.features(L, fx.methods.base_gate(L)[0], rows, which) once, then rescope.two_block_rule / shared_rule on R[idx] for 500 draws;
+             pools: fx.pools.get(L, "BEN-T" | "BEN-S" | "MME-C" | "MME-T") (features(..., kc=P.kc)); rescope_pac: fx.methods.pac_rank(n2, alpha, 0.1)
+  E5 d, e, f least repair / minimum cut / capacity curve: the library and the harness (task's own code); nothing of fx.review1 is needed
+  E8         latency and storage: rescope.Hook(module, M.obj, record=False) with any Method's gate (section LIMITATIONS); synthetic logs: task's own
+  cannot be obtained from the driver: the integer program (cut), the all-position key capture of E5 f, synthetic logs, timings.

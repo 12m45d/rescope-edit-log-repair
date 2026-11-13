@@ -1,0 +1,1350 @@
+{
+ "what": "E10 diagnostic (descriptive; no method is changed and nothing is served): which detectors set the common scale eta of the\ntwo-block calibration of the default method on each reported log.\n\n    python diag_eta.py  ->  out/diag_eta.json\nPer log and calibration draw (alpha = 0.05, n = 200, the library's two_block_rule on the same per-query maxima as the row):\neta as calibrated; the detectors that attain the block-2 scores at and above the quantile (share that belong to updates of\nexploding norm (audit's list) / to first-token-subject requests); eta recomputed on the SAME draw without the detectors of the\nexploding updates, and without those of the first-token-subject requests (arithmetic on the calibration matrix only).\n",
+ "logs": {
+  "TX-G2XL-rome-T100": {
+   "T": 100,
+   "n_exploding": 0,
+   "n_first_token": 0,
+   "per_draw": [
+    {
+     "draw": 0,
+     "eta": 0.1815840062709055,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      7,
+      8,
+      51,
+      54,
+      78
+     ]
+    },
+    {
+     "draw": 1,
+     "eta": 0.39232654333621997,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      43,
+      71
+     ]
+    },
+    {
+     "draw": 2,
+     "eta": 0.11290104182791963,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      28,
+      36,
+      51,
+      53,
+      69
+     ]
+    },
+    {
+     "draw": 3,
+     "eta": 0.2536282383864238,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      21,
+      43,
+      51,
+      71,
+      77
+     ]
+    },
+    {
+     "draw": 4,
+     "eta": 0.30949856619830685,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      10,
+      53,
+      62,
+      81
+     ]
+    },
+    {
+     "draw": 5,
+     "eta": 0.19647703550513912,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      18,
+      23,
+      43,
+      53
+     ]
+    },
+    {
+     "draw": 6,
+     "eta": 0.1490380008126853,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      38,
+      43,
+      52,
+      63
+     ]
+    },
+    {
+     "draw": 7,
+     "eta": 0.1958342052954712,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      3,
+      52,
+      65,
+      69,
+      77
+     ]
+    },
+    {
+     "draw": 8,
+     "eta": 0.17979492128067331,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      28,
+      58,
+      62,
+      88
+     ]
+    },
+    {
+     "draw": 9,
+     "eta": 0.2331750954069564,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      10,
+      21,
+      69,
+      77,
+      78
+     ]
+    },
+    {
+     "draw": 10,
+     "eta": 0.18402265183972522,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      7,
+      51,
+      53,
+      62,
+      74
+     ]
+    },
+    {
+     "draw": 11,
+     "eta": 0.10641312770851487,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      10,
+      13,
+      18,
+      43,
+      95
+     ]
+    },
+    {
+     "draw": 12,
+     "eta": 0.28468144494478975,
+     "n_block2_at_or_above_eta": 6,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      10,
+      61,
+      77,
+      87
+     ]
+    },
+    {
+     "draw": 13,
+     "eta": 0.15484049391723928,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      13,
+      21,
+      38,
+      53,
+      93
+     ]
+    },
+    {
+     "draw": 14,
+     "eta": 0.22996217851636266,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      8,
+      51,
+      78,
+      93
+     ]
+    },
+    {
+     "draw": 15,
+     "eta": 0.18034350212092176,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      8,
+      28,
+      36,
+      77,
+      80
+     ]
+    },
+    {
+     "draw": 16,
+     "eta": 0.27912106753160865,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      23,
+      28,
+      87
+     ]
+    },
+    {
+     "draw": 17,
+     "eta": 0.10455464769668582,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      14,
+      18,
+      36,
+      86
+     ]
+    },
+    {
+     "draw": 18,
+     "eta": 0.113347368074593,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      18,
+      34,
+      38,
+      79
+     ]
+    },
+    {
+     "draw": 19,
+     "eta": 0.16489011248712424,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      28,
+      43,
+      62,
+      83
+     ]
+    }
+   ],
+   "eta": {
+    "n_draws": 20,
+    "mean": 0.2003217124579133,
+    "p05": 0.10632020370792342,
+    "p95": 0.3136399650552026,
+    "min": 0.10455464769668582,
+    "max": 0.39232654333621997
+   },
+   "share_attained_by_exploding_pct": {
+    "n_draws": 20,
+    "mean": 0.0,
+    "p05": 0.0,
+    "p95": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "share_attained_by_first_token_pct": {
+    "n_draws": 20,
+    "mean": 0.0,
+    "p05": 0.0,
+    "p95": 0.0,
+    "min": 0.0,
+    "max": 0.0
+   },
+   "n_draws_eta_at_least_1": 0,
+   "n_draws_eta_above_0.5": 0
+  },
+  "TX-G2XL-rome-T500": {
+   "T": 500,
+   "n_exploding": 8,
+   "n_first_token": 3,
+   "per_draw": [
+    {
+     "draw": 0,
+     "eta": 1.2885664332223428,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      173,
+      240
+     ],
+     "eta_without_exploding": 0.22785640116777178,
+     "eta_without_first_token": 0.22785640116777178
+    },
+    {
+     "draw": 1,
+     "eta": 0.6012876734975389,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      43,
+      71,
+      124,
+      341,
+      399
+     ],
+     "eta_without_exploding": 0.47082830099086703,
+     "eta_without_first_token": 0.6012876734975389
+    },
+    {
+     "draw": 2,
+     "eta": 0.39981237017283794,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      173,
+      187,
+      222
+     ],
+     "eta_without_exploding": 0.38503201286743477,
+     "eta_without_first_token": 0.39981237017283794
+    },
+    {
+     "draw": 3,
+     "eta": 0.6359928008958895,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 60.0,
+     "share_attained_by_first_token_pct": 60.0,
+     "detectors_at_or_above_eta": [
+      71,
+      240,
+      266,
+      399
+     ],
+     "eta_without_exploding": 0.2986255830511125,
+     "eta_without_first_token": 0.2986255830511125
+    },
+    {
+     "draw": 4,
+     "eta": 0.6123454964698811,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      10,
+      124,
+      266,
+      341,
+      466
+     ],
+     "eta_without_exploding": 0.5821954192651572,
+     "eta_without_first_token": 0.5835211019087276
+    },
+    {
+     "draw": 5,
+     "eta": 0.5031846968655138,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      23,
+      112,
+      173,
+      397,
+      399
+     ],
+     "eta_without_exploding": 0.46172055398601286,
+     "eta_without_first_token": 0.46172055398601286
+    },
+    {
+     "draw": 6,
+     "eta": 0.5596900453142406,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      43,
+      63,
+      173,
+      212,
+      294
+     ],
+     "eta_without_exploding": 0.4979007780465411,
+     "eta_without_first_token": 0.4979007780465411
+    },
+    {
+     "draw": 7,
+     "eta": 0.33794931155092023,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 60.0,
+     "share_attained_by_first_token_pct": 60.0,
+     "detectors_at_or_above_eta": [
+      162,
+      173,
+      266,
+      458
+     ],
+     "eta_without_exploding": 0.2427833397900752,
+     "eta_without_first_token": 0.2427833397900752
+    },
+    {
+     "draw": 8,
+     "eta": 0.887017325495266,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 60.0,
+     "share_attained_by_first_token_pct": 60.0,
+     "detectors_at_or_above_eta": [
+      112,
+      266,
+      294
+     ],
+     "eta_without_exploding": 0.4025148469946919,
+     "eta_without_first_token": 0.4025148469946919
+    },
+    {
+     "draw": 9,
+     "eta": 0.42866275818824034,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      10,
+      21,
+      266,
+      366
+     ],
+     "eta_without_exploding": 0.3534206096255547,
+     "eta_without_first_token": 0.3534206096255547
+    },
+    {
+     "draw": 10,
+     "eta": 0.4219836616884398,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      173,
+      187,
+      191,
+      458,
+      459
+     ],
+     "eta_without_exploding": 0.3629877681423175,
+     "eta_without_first_token": 0.3629877681423175
+    },
+    {
+     "draw": 11,
+     "eta": 0.3029699308953251,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      124,
+      130,
+      393,
+      399,
+      483
+     ],
+     "eta_without_exploding": 0.3029699308953251,
+     "eta_without_first_token": 0.3029699308953251
+    },
+    {
+     "draw": 12,
+     "eta": 0.3869102919881953,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      10,
+      77,
+      87,
+      154,
+      266
+     ],
+     "eta_without_exploding": 0.31012668687586964,
+     "eta_without_first_token": 0.31012668687586964
+    },
+    {
+     "draw": 13,
+     "eta": 0.951013224192323,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      173,
+      240
+     ],
+     "eta_without_exploding": 0.3333659095573469,
+     "eta_without_first_token": 0.3333659095573469
+    },
+    {
+     "draw": 14,
+     "eta": 0.6232632444084483,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 80.0,
+     "share_attained_by_first_token_pct": 60.0,
+     "detectors_at_or_above_eta": [
+      124,
+      266,
+      341
+     ],
+     "eta_without_exploding": 0.36538200004198684,
+     "eta_without_first_token": 0.37964089570595616
+    },
+    {
+     "draw": 15,
+     "eta": 0.26888405445702385,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      36,
+      77,
+      104,
+      240,
+      266
+     ],
+     "eta_without_exploding": 0.251275083479382,
+     "eta_without_first_token": 0.251275083479382
+    },
+    {
+     "draw": 16,
+     "eta": 0.28678268938692164,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      23,
+      28,
+      173
+     ],
+     "eta_without_exploding": 0.27912106753160876,
+     "eta_without_first_token": 0.27912106753160876
+    },
+    {
+     "draw": 17,
+     "eta": 0.2847067234620173,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      36,
+      112,
+      154,
+      273,
+      462
+     ],
+     "eta_without_exploding": 0.2665642666925492,
+     "eta_without_first_token": 0.2847067234620173
+    },
+    {
+     "draw": 18,
+     "eta": 0.35078702855468347,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 60.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      18,
+      173,
+      341,
+      385
+     ],
+     "eta_without_exploding": 0.2394733458992757,
+     "eta_without_first_token": 0.24303352203269563
+    },
+    {
+     "draw": 19,
+     "eta": 0.39633072961852145,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      195,
+      212,
+      240,
+      399,
+      466
+     ],
+     "eta_without_exploding": 0.35151917682160216,
+     "eta_without_first_token": 0.35151917682160216
+    }
+   ],
+   "eta": {
+    "n_draws": 20,
+    "mean": 0.5264070245162285,
+    "p05": 0.28391559001176764,
+    "p95": 0.9678908846438242,
+    "min": 0.26888405445702385,
+    "max": 1.2885664332223428
+   },
+   "eta_without_exploding": {
+    "n_draws": 20,
+    "mean": 0.3492831540861242,
+    "p05": 0.23889249866270051,
+    "p95": 0.5021155101074719,
+    "min": 0.22785640116777178,
+    "max": 0.5821954192651572
+   },
+   "eta_without_first_token": {
+    "n_draws": 20,
+    "mean": 0.35840950113724934,
+    "p05": 0.24203699285896002,
+    "p95": 0.5844094304881682,
+    "min": 0.22785640116777178,
+    "max": 0.6012876734975389
+   },
+   "share_attained_by_exploding_pct": {
+    "n_draws": 20,
+    "mean": 42.0,
+    "p05": 19.0,
+    "p95": 100.0,
+    "min": 0.0,
+    "max": 100.0
+   },
+   "share_attained_by_first_token_pct": {
+    "n_draws": 20,
+    "mean": 37.0,
+    "p05": 0.0,
+    "p95": 100.0,
+    "min": 0.0,
+    "max": 100.0
+   },
+   "n_draws_eta_at_least_1": 1,
+   "n_draws_eta_above_0.5": 9
+  },
+  "TX-G2XL-rome-T1000": {
+   "T": 1000,
+   "n_exploding": 10,
+   "n_first_token": 4,
+   "per_draw": [
+    {
+     "draw": 0,
+     "eta": 4.435219504319505,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      173,
+      240,
+      946
+     ],
+     "eta_without_exploding": 0.5008061076400279,
+     "eta_without_first_token": 0.5008061076400279
+    },
+    {
+     "draw": 1,
+     "eta": 0.7586744177770668,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      124,
+      341,
+      765,
+      844,
+      946
+     ],
+     "eta_without_exploding": 0.6012876734975389,
+     "eta_without_first_token": 0.6901578878408162
+    },
+    {
+     "draw": 2,
+     "eta": 0.8191513306641263,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 60.0,
+     "share_attained_by_first_token_pct": 60.0,
+     "detectors_at_or_above_eta": [
+      173,
+      827,
+      861,
+      946
+     ],
+     "eta_without_exploding": 0.6365430843994316,
+     "eta_without_first_token": 0.6365430843994316
+    },
+    {
+     "draw": 3,
+     "eta": 13.427296406829292,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      240,
+      266,
+      946
+     ],
+     "eta_without_exploding": 0.6349128624891469,
+     "eta_without_first_token": 0.6349128624891469
+    },
+    {
+     "draw": 4,
+     "eta": 0.7897363421168616,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 80.0,
+     "share_attained_by_first_token_pct": 60.0,
+     "detectors_at_or_above_eta": [
+      266,
+      341,
+      807,
+      946
+     ],
+     "eta_without_exploding": 0.5835211019087276,
+     "eta_without_first_token": 0.6123454964698811
+    },
+    {
+     "draw": 5,
+     "eta": 0.53286822049482,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      23,
+      112,
+      173,
+      397,
+      995
+     ],
+     "eta_without_exploding": 0.5031846968655138,
+     "eta_without_first_token": 0.5031846968655138
+    },
+    {
+     "draw": 6,
+     "eta": 0.8128914883967773,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      173,
+      294,
+      545,
+      651,
+      748
+     ],
+     "eta_without_exploding": 0.7732218670624276,
+     "eta_without_first_token": 0.7732218670624276
+    },
+    {
+     "draw": 7,
+     "eta": 0.6887650841595945,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 60.0,
+     "share_attained_by_first_token_pct": 60.0,
+     "detectors_at_or_above_eta": [
+      173,
+      266,
+      602,
+      827
+     ],
+     "eta_without_exploding": 0.33794931155092023,
+     "eta_without_first_token": 0.33794931155092023
+    },
+    {
+     "draw": 8,
+     "eta": 0.887017325495266,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 60.0,
+     "share_attained_by_first_token_pct": 60.0,
+     "detectors_at_or_above_eta": [
+      112,
+      266,
+      294
+     ],
+     "eta_without_exploding": 0.4131645066700938,
+     "eta_without_first_token": 0.4131645066700938
+    },
+    {
+     "draw": 9,
+     "eta": 0.4507842017764209,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      10,
+      266,
+      795,
+      844
+     ],
+     "eta_without_exploding": 0.3826681620513661,
+     "eta_without_first_token": 0.3826681620513661
+    },
+    {
+     "draw": 10,
+     "eta": 0.5907383435082123,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      173,
+      545,
+      603,
+      827,
+      921
+     ],
+     "eta_without_exploding": 0.5327457998129207,
+     "eta_without_first_token": 0.5327457998129207
+    },
+    {
+     "draw": 11,
+     "eta": 0.5252066805014146,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 0.0,
+     "share_attained_by_first_token_pct": 0.0,
+     "detectors_at_or_above_eta": [
+      124,
+      130,
+      399,
+      807,
+      844
+     ],
+     "eta_without_exploding": 0.5252066805014146,
+     "eta_without_first_token": 0.5252066805014146
+    },
+    {
+     "draw": 12,
+     "eta": 0.47331263256824035,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      10,
+      87,
+      266,
+      651,
+      880
+     ],
+     "eta_without_exploding": 0.41353558576731164,
+     "eta_without_first_token": 0.41353558576731164
+    },
+    {
+     "draw": 13,
+     "eta": 0.951013224192323,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      173,
+      240
+     ],
+     "eta_without_exploding": 0.44213941665042344,
+     "eta_without_first_token": 0.44213941665042344
+    },
+    {
+     "draw": 14,
+     "eta": 8.882501959753988,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      266,
+      946
+     ],
+     "eta_without_exploding": 0.6509132126842964,
+     "eta_without_first_token": 0.6509132126842964
+    },
+    {
+     "draw": 15,
+     "eta": 0.48496297938840727,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 60.0,
+     "share_attained_by_first_token_pct": 60.0,
+     "detectors_at_or_above_eta": [
+      240,
+      266,
+      603,
+      883,
+      946
+     ],
+     "eta_without_exploding": 0.31760301388903134,
+     "eta_without_first_token": 0.31760301388903134
+    },
+    {
+     "draw": 16,
+     "eta": 0.6791306780923152,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      23,
+      173,
+      545,
+      748
+     ],
+     "eta_without_exploding": 0.5566277786451546,
+     "eta_without_first_token": 0.5566277786451546
+    },
+    {
+     "draw": 17,
+     "eta": 0.7839199984976724,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 60.0,
+     "share_attained_by_first_token_pct": 60.0,
+     "detectors_at_or_above_eta": [
+      112,
+      921,
+      946
+     ],
+     "eta_without_exploding": 0.5024450786965137,
+     "eta_without_first_token": 0.5024450786965137
+    },
+    {
+     "draw": 18,
+     "eta": 0.4773506756809624,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      173,
+      385,
+      600,
+      700
+     ],
+     "eta_without_exploding": 0.3205107875502786,
+     "eta_without_first_token": 0.3205107875502786
+    },
+    {
+     "draw": 19,
+     "eta": 0.6396692916720832,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 20.0,
+     "share_attained_by_first_token_pct": 20.0,
+     "detectors_at_or_above_eta": [
+      212,
+      240,
+      466,
+      588,
+      602
+     ],
+     "eta_without_exploding": 0.5432974619264678,
+     "eta_without_first_token": 0.5432974619264678
+    }
+   ],
+   "eta": {
+    "n_draws": 20,
+    "mean": 1.9045105392942674,
+    "p05": 0.4721862110286494,
+    "p95": 9.109741682107757,
+    "min": 0.4507842017764209,
+    "max": 13.427296406829292
+   },
+   "eta_without_exploding": {
+    "n_draws": 20,
+    "mean": 0.5086142095129503,
+    "p05": 0.32036539886721627,
+    "p95": 0.657028645403203,
+    "min": 0.31760301388903134,
+    "max": 0.7732218670624276
+   },
+   "eta_without_first_token": {
+    "n_draws": 20,
+    "mean": 0.5144989399581719,
+    "p05": 0.32036539886721627,
+    "p95": 0.6943110868018968,
+    "min": 0.31760301388903134,
+    "max": 0.7732218670624276
+   },
+   "share_attained_by_exploding_pct": {
+    "n_draws": 20,
+    "mean": 52.0,
+    "p05": 19.0,
+    "p95": 100.0,
+    "min": 0.0,
+    "max": 100.0
+   },
+   "share_attained_by_first_token_pct": {
+    "n_draws": 20,
+    "mean": 50.0,
+    "p05": 19.0,
+    "p95": 100.0,
+    "min": 0.0,
+    "max": 100.0
+   },
+   "n_draws_eta_at_least_1": 3,
+   "n_draws_eta_above_0.5": 16
+  },
+  "TX-G2XL-rome-T2000": {
+   "T": 2000,
+   "n_exploding": 20,
+   "n_first_token": 8,
+   "per_draw": [
+    {
+     "draw": 0,
+     "eta": 4.925923616424512,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      173,
+      240,
+      946,
+      1416
+     ],
+     "eta_without_exploding": 0.6953754046390181,
+     "eta_without_first_token": 0.6953754046390181
+    },
+    {
+     "draw": 1,
+     "eta": 1.4548793254073928,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 80.0,
+     "detectors_at_or_above_eta": [
+      341,
+      946,
+      1508,
+      1947
+     ],
+     "eta_without_exploding": 0.7378996203693413,
+     "eta_without_first_token": 0.7586744177770668
+    },
+    {
+     "draw": 2,
+     "eta": 1.865391629482879,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      173,
+      946,
+      1416,
+      1508
+     ],
+     "eta_without_exploding": 0.765554675658977,
+     "eta_without_first_token": 0.765554675658977
+    },
+    {
+     "draw": 3,
+     "eta": 13.427296406829292,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      240,
+      266,
+      946
+     ],
+     "eta_without_exploding": 0.7057238732124875,
+     "eta_without_first_token": 0.7057238732124875
+    },
+    {
+     "draw": 4,
+     "eta": 2.460952671648542,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      266,
+      946,
+      1416,
+      1947
+     ],
+     "eta_without_exploding": 0.6123454964698811,
+     "eta_without_first_token": 0.6184350708046383
+    },
+    {
+     "draw": 5,
+     "eta": 0.6791306780923152,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      23,
+      112,
+      173,
+      1947,
+      1961
+     ],
+     "eta_without_exploding": 0.6003406904985902,
+     "eta_without_first_token": 0.6003406904985902
+    },
+    {
+     "draw": 6,
+     "eta": 0.8223346778176986,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      173,
+      294,
+      545,
+      748,
+      1508
+     ],
+     "eta_without_exploding": 0.7732218670624276,
+     "eta_without_first_token": 0.7732218670624276
+    },
+    {
+     "draw": 7,
+     "eta": 7.101721920971293,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      173,
+      266,
+      1508
+     ],
+     "eta_without_exploding": 0.5123665300317095,
+     "eta_without_first_token": 0.5123665300317095
+    },
+    {
+     "draw": 8,
+     "eta": 0.920084122435262,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 80.0,
+     "share_attained_by_first_token_pct": 80.0,
+     "detectors_at_or_above_eta": [
+      266,
+      1322,
+      1416
+     ],
+     "eta_without_exploding": 0.5558154474795858,
+     "eta_without_first_token": 0.5558154474795858
+    },
+    {
+     "draw": 9,
+     "eta": 2.6165851867873595,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      266,
+      1420
+     ],
+     "eta_without_exploding": 0.6716128053551873,
+     "eta_without_first_token": 0.6716128053551873
+    },
+    {
+     "draw": 10,
+     "eta": 0.6761772676177414,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      173,
+      545,
+      827,
+      1156,
+      1508
+     ],
+     "eta_without_exploding": 0.6708924210169319,
+     "eta_without_first_token": 0.6708924210169319
+    },
+    {
+     "draw": 11,
+     "eta": 0.7857586542278723,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      844,
+      1322,
+      1416,
+      1469,
+      1947
+     ],
+     "eta_without_exploding": 0.6368162650359823,
+     "eta_without_first_token": 0.6368162650359823
+    },
+    {
+     "draw": 12,
+     "eta": 0.7906685882781731,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 80.0,
+     "share_attained_by_first_token_pct": 80.0,
+     "detectors_at_or_above_eta": [
+      266,
+      651,
+      1416,
+      1508
+     ],
+     "eta_without_exploding": 0.5793972830318297,
+     "eta_without_first_token": 0.5793972830318297
+    },
+    {
+     "draw": 13,
+     "eta": 2.282657482776557,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      173,
+      240,
+      1947
+     ],
+     "eta_without_exploding": 0.5009466154809531,
+     "eta_without_first_token": 0.5009466154809531
+    },
+    {
+     "draw": 14,
+     "eta": 9.528295493143482,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      266,
+      946,
+      1416
+     ],
+     "eta_without_exploding": 0.7262696907606226,
+     "eta_without_first_token": 0.7262696907606226
+    },
+    {
+     "draw": 15,
+     "eta": 13.589743779768714,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      240,
+      946,
+      1420,
+      1508,
+      1947
+     ],
+     "eta_without_exploding": 0.48496297938840727,
+     "eta_without_first_token": 0.48496297938840727
+    },
+    {
+     "draw": 16,
+     "eta": 0.9100468265701629,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 80.0,
+     "share_attained_by_first_token_pct": 80.0,
+     "detectors_at_or_above_eta": [
+      1004,
+      1416,
+      1420,
+      1508
+     ],
+     "eta_without_exploding": 0.7489818144721921,
+     "eta_without_first_token": 0.7489818144721921
+    },
+    {
+     "draw": 17,
+     "eta": 9.584718800399749,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      946,
+      1508
+     ],
+     "eta_without_exploding": 0.5564990491991908,
+     "eta_without_first_token": 0.5564990491991908
+    },
+    {
+     "draw": 18,
+     "eta": 1.4318778843171316,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 100.0,
+     "share_attained_by_first_token_pct": 100.0,
+     "detectors_at_or_above_eta": [
+      173,
+      1416,
+      1420,
+      1508
+     ],
+     "eta_without_exploding": 0.3909090141985494,
+     "eta_without_first_token": 0.3909090141985494
+    },
+    {
+     "draw": 19,
+     "eta": 0.6670113423530721,
+     "n_block2_at_or_above_eta": 5,
+     "share_attained_by_exploding_pct": 40.0,
+     "share_attained_by_first_token_pct": 40.0,
+     "detectors_at_or_above_eta": [
+      240,
+      466,
+      588,
+      1219,
+      1420
+     ],
+     "eta_without_exploding": 0.6396692916720832,
+     "eta_without_first_token": 0.6396692916720832
+    }
+   ],
+   "eta": {
+    "n_draws": 20,
+    "mean": 3.82606281776746,
+    "p05": 0.675718971354508,
+    "p95": 13.435418775476263,
+    "min": 0.6670113423530721,
+    "max": 13.589743779768714
+   },
+   "eta_without_exploding": {
+    "n_draws": 20,
+    "mean": 0.6282800417516974,
+    "p05": 0.4802602811289144,
+    "p95": 0.7659380352291495,
+    "min": 0.3909090141985494,
+    "max": 0.7732218670624276
+   },
+   "eta_without_first_token": {
+    "n_draws": 20,
+    "mean": 0.6296232603388215,
+    "p05": 0.4802602811289144,
+    "p95": 0.7659380352291495,
+    "min": 0.3909090141985494,
+    "max": 0.7732218670624276
+   },
+   "share_attained_by_exploding_pct": {
+    "n_draws": 20,
+    "mean": 82.0,
+    "p05": 40.0,
+    "p95": 100.0,
+    "min": 40.0,
+    "max": 100.0
+   },
+   "share_attained_by_first_token_pct": {
+    "n_draws": 20,
+    "mean": 81.0,
+    "p05": 40.0,
+    "p95": 100.0,
+    "min": 40.0,
+    "max": 100.0
+   },
+   "n_draws_eta_at_least_1": 12,
+   "n_draws_eta_above_0.5": 20
+  }
+ }
+}

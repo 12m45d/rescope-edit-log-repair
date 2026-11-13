@@ -1,0 +1,41 @@
+{
+ "log": "TB-L100-ae-l2_3",
+ "key": "cal_runmax",
+ "draw": 1,
+ "variant": "calibration=running_max",
+ "digest": "368629e7e3903946",
+ "memo_path": true,
+ "cal": {
+  "n_capped": 0,
+  "own_not_released": 0,
+  "own_not_candidate": 0,
+  "eta": null,
+  "bound": 0.4975124378109453,
+  "n_own_keys_silenced_by_literal_rule": 0,
+  "n_edits_silenced_by_literal_rule": 0,
+  "variant": "calibration=running_max",
+  "digest": "368629e7e3903946",
+  "n": 200,
+  "draw": 1
+ },
+ "n_edit_rows": 300,
+ "n_probe_rows": 469,
+ "n_hn_rows": 1286,
+ "seconds_tf": 6.205821990966797,
+ "session": {
+  "rows": 2055,
+  "pre": 979,
+  "memo": 997,
+  "run": 79,
+  "lib": 0,
+  "forwards": 79,
+  "decodes": 0,
+  "hook_mismatch": 0
+ },
+ "assert_clean": {
+  "hook_mismatch": 0,
+  "memo_conflicts": 0,
+  "forwards": 919,
+  "rows": 18807
+ }
+}

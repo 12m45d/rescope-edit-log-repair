@@ -1,0 +1,83 @@
+{
+ "log": "TB-Q2000-ae-l2_3",
+ "note": "unseen test log: mechanics only, no result of the log is stored",
+ "peak_rss_gb_before_load": 0.477569580078125,
+ "mechanics": {
+  "load_checks_ok": true,
+  "calibration_record_ok": true,
+  "n_cached_sequences_of_the_log": 9400,
+  "calibration_rows_equal_mine": true,
+  "cpu_decisions_differing_from_naive": [
+   0,
+   37600
+  ],
+  "eta_equal_naive_1e-12": true,
+  "capped_edits_equal_naive": true,
+  "gpu_thresholds_equal_cpu_1e-12": true,
+  "gpu_calibration_rows_equal_cpu": true,
+  "n_firing_edit_sequences_run": 50,
+  "firing_sample_covers_stream_beyond_position_1000": true,
+  "sparse_ran_the_model_on_every_firing_sequence": true,
+  "hook_fired": [
+   50,
+   50
+  ],
+  "hook_top_equals_cpu_decision": [
+   50,
+   50
+  ],
+  "hook_own_flags_equal_cpu_decision": [
+   50,
+   50
+  ],
+  "logits_finite": [
+   50,
+   50
+  ],
+  "sparse_rows_equal_full_rows_firing": [
+   50,
+   50
+  ],
+  "sparse_ran_no_forward_on_silent_sequences": true,
+  "sparse_rows_equal_full_rows_silent": [
+   30,
+   30
+  ],
+  "silent_rows_not_fired": [
+   30,
+   30
+  ],
+  "H.W0_equals_checkpoint_file": true,
+  "my_replay_equals_library_rows": [
+   50,
+   50
+  ],
+  "module_weight_is_WE_after": true
+ },
+ "load": {
+  "info": {
+   "lean": true,
+   "seconds": 100.73997712135315,
+   "peak_rss_gb_before": 0.6012382507324219,
+   "peak_rss_gb": 7.959053039550781,
+   "T": 2000,
+   "reused_model_of": null
+  },
+  "checks": {
+   "probe_uids_match_records": true,
+   "collapsed_working_point": false,
+   "WE_float_minus_W0_equals_stored_composite": true,
+   "C_equals_stored_composite": true,
+   "factor_uids_match_stream": true,
+   "rollback_empty_equals_WE": true
+  },
+  "peak_rss_gb_after_load": 7.959053039550781,
+  "T": 2000,
+  "seconds": 100.96988439559937
+ },
+ "pass": true,
+ "peak_rss_gb_end": 7.959053039550781,
+ "peak_gpu_gb": 8.3949613571167,
+ "seconds": 162.8313238620758,
+ "rescope": "[redacted: local path]/02_research/code/rescope"
+}

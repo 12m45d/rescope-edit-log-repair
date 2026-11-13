@@ -1,0 +1,1318 @@
+{
+ "what": "counts of the MME capture per backbone (written by code/mme_finish.py)",
+ "n_rows": 2374,
+ "n_images": 1177,
+ "n_categories": 14,
+ "seed": 20261111,
+ "selection": {
+  "parts": {
+   "MME-C": {
+    "rows": 1188,
+    "images": 589,
+    "ref_yes": 594,
+    "ref_no": 594
+   },
+   "MME-T": {
+    "rows": 1186,
+    "images": 588,
+    "ref_yes": 593,
+    "ref_no": 593
+   }
+  },
+  "by_category": {
+   "code_reasoning": {
+    "MME-C": {
+     "rows": 20,
+     "images": 10,
+     "ref_yes": 10,
+     "ref_no": 10
+    },
+    "MME-T": {
+     "rows": 20,
+     "images": 10,
+     "ref_yes": 10,
+     "ref_no": 10
+    }
+   },
+   "artwork": {
+    "MME-C": {
+     "rows": 200,
+     "images": 100,
+     "ref_yes": 100,
+     "ref_no": 100
+    },
+    "MME-T": {
+     "rows": 200,
+     "images": 100,
+     "ref_yes": 100,
+     "ref_no": 100
+    }
+   },
+   "celebrity": {
+    "MME-C": {
+     "rows": 170,
+     "images": 85,
+     "ref_yes": 85,
+     "ref_no": 85
+    },
+    "MME-T": {
+     "rows": 170,
+     "images": 85,
+     "ref_yes": 85,
+     "ref_no": 85
+    }
+   },
+   "numerical_calculation": {
+    "MME-C": {
+     "rows": 20,
+     "images": 10,
+     "ref_yes": 10,
+     "ref_no": 10
+    },
+    "MME-T": {
+     "rows": 20,
+     "images": 10,
+     "ref_yes": 10,
+     "ref_no": 10
+    }
+   },
+   "text_translation": {
+    "MME-C": {
+     "rows": 20,
+     "images": 10,
+     "ref_yes": 10,
+     "ref_no": 10
+    },
+    "MME-T": {
+     "rows": 20,
+     "images": 10,
+     "ref_yes": 10,
+     "ref_no": 10
+    }
+   },
+   "count": {
+    "MME-C": {
+     "rows": 30,
+     "images": 15,
+     "ref_yes": 15,
+     "ref_no": 15
+    },
+    "MME-T": {
+     "rows": 30,
+     "images": 15,
+     "ref_yes": 15,
+     "ref_no": 15
+    }
+   },
+   "color": {
+    "MME-C": {
+     "rows": 30,
+     "images": 15,
+     "ref_yes": 15,
+     "ref_no": 15
+    },
+    "MME-T": {
+     "rows": 30,
+     "images": 15,
+     "ref_yes": 15,
+     "ref_no": 15
+    }
+   },
+   "commonsense_reasoning": {
+    "MME-C": {
+     "rows": 70,
+     "images": 35,
+     "ref_yes": 35,
+     "ref_no": 35
+    },
+    "MME-T": {
+     "rows": 70,
+     "images": 35,
+     "ref_yes": 35,
+     "ref_no": 35
+    }
+   },
+   "position": {
+    "MME-C": {
+     "rows": 28,
+     "images": 14,
+     "ref_yes": 14,
+     "ref_no": 14
+    },
+    "MME-T": {
+     "rows": 32,
+     "images": 16,
+     "ref_yes": 16,
+     "ref_no": 16
+    }
+   },
+   "OCR": {
+    "MME-C": {
+     "rows": 20,
+     "images": 10,
+     "ref_yes": 10,
+     "ref_no": 10
+    },
+    "MME-T": {
+     "rows": 20,
+     "images": 10,
+     "ref_yes": 10,
+     "ref_no": 10
+    }
+   },
+   "landmark": {
+    "MME-C": {
+     "rows": 200,
+     "images": 100,
+     "ref_yes": 100,
+     "ref_no": 100
+    },
+    "MME-T": {
+     "rows": 200,
+     "images": 100,
+     "ref_yes": 100,
+     "ref_no": 100
+    }
+   },
+   "scene": {
+    "MME-C": {
+     "rows": 200,
+     "images": 100,
+     "ref_yes": 100,
+     "ref_no": 100
+    },
+    "MME-T": {
+     "rows": 200,
+     "images": 100,
+     "ref_yes": 100,
+     "ref_no": 100
+    }
+   },
+   "existence": {
+    "MME-C": {
+     "rows": 32,
+     "images": 16,
+     "ref_yes": 16,
+     "ref_no": 16
+    },
+    "MME-T": {
+     "rows": 28,
+     "images": 14,
+     "ref_yes": 14,
+     "ref_no": 14
+    }
+   },
+   "posters": {
+    "MME-C": {
+     "rows": 148,
+     "images": 74,
+     "ref_yes": 74,
+     "ref_no": 74
+    },
+    "MME-T": {
+     "rows": 146,
+     "images": 73,
+     "ref_yes": 73,
+     "ref_no": 73
+    }
+   }
+  }
+ },
+ "backbones": {
+  "qwen25vl": {
+   "backbone": "qwen25vl",
+   "n_rows": 2374,
+   "n_images": 1177,
+   "n_categories": 14,
+   "all": {
+    "rows": 2374,
+    "images": 1177,
+    "valid": 2373,
+    "valid_percent": 99.96,
+    "yes": 1164,
+    "no": 1206,
+    "other": 4,
+    "valid_yes": 1164,
+    "valid_no": 1205,
+    "valid_other": 4,
+    "equal_to_reference": 2012,
+    "equal_to_reference_percent": 84.75,
+    "ref_yes": 1187,
+    "ref_no": 1187
+   },
+   "by_part": {
+    "MME-C": {
+     "rows": 1188,
+     "images": 589,
+     "valid": 1187,
+     "valid_percent": 99.92,
+     "yes": 586,
+     "no": 599,
+     "other": 3,
+     "valid_yes": 586,
+     "valid_no": 598,
+     "valid_other": 3,
+     "equal_to_reference": 1012,
+     "equal_to_reference_percent": 85.19,
+     "ref_yes": 594,
+     "ref_no": 594
+    },
+    "MME-T": {
+     "rows": 1186,
+     "images": 588,
+     "valid": 1186,
+     "valid_percent": 100.0,
+     "yes": 578,
+     "no": 607,
+     "other": 1,
+     "valid_yes": 578,
+     "valid_no": 607,
+     "valid_other": 1,
+     "equal_to_reference": 1000,
+     "equal_to_reference_percent": 84.32,
+     "ref_yes": 593,
+     "ref_no": 593
+    }
+   },
+   "by_category": {
+    "code_reasoning": {
+     "rows": 40,
+     "images": 20,
+     "valid": 40,
+     "valid_percent": 100.0,
+     "yes": 16,
+     "no": 24,
+     "other": 0,
+     "valid_yes": 16,
+     "valid_no": 24,
+     "valid_other": 0,
+     "equal_to_reference": 34,
+     "equal_to_reference_percent": 85.0,
+     "ref_yes": 20,
+     "ref_no": 20,
+     "MME-C": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     },
+     "MME-T": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     }
+    },
+    "artwork": {
+     "rows": 400,
+     "images": 200,
+     "valid": 399,
+     "valid_percent": 99.75,
+     "yes": 223,
+     "no": 177,
+     "other": 0,
+     "valid_yes": 223,
+     "valid_no": 176,
+     "valid_other": 0,
+     "equal_to_reference": 323,
+     "equal_to_reference_percent": 80.75,
+     "ref_yes": 200,
+     "ref_no": 200,
+     "MME-C": {
+      "rows": 200,
+      "images": 100,
+      "valid": 199
+     },
+     "MME-T": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     }
+    },
+    "celebrity": {
+     "rows": 340,
+     "images": 170,
+     "valid": 340,
+     "valid_percent": 100.0,
+     "yes": 193,
+     "no": 147,
+     "other": 0,
+     "valid_yes": 193,
+     "valid_no": 147,
+     "valid_other": 0,
+     "equal_to_reference": 263,
+     "equal_to_reference_percent": 77.35,
+     "ref_yes": 170,
+     "ref_no": 170,
+     "MME-C": {
+      "rows": 170,
+      "images": 85,
+      "valid": 170
+     },
+     "MME-T": {
+      "rows": 170,
+      "images": 85,
+      "valid": 170
+     }
+    },
+    "numerical_calculation": {
+     "rows": 40,
+     "images": 20,
+     "valid": 40,
+     "valid_percent": 100.0,
+     "yes": 20,
+     "no": 20,
+     "other": 0,
+     "valid_yes": 20,
+     "valid_no": 20,
+     "valid_other": 0,
+     "equal_to_reference": 30,
+     "equal_to_reference_percent": 75.0,
+     "ref_yes": 20,
+     "ref_no": 20,
+     "MME-C": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     },
+     "MME-T": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     }
+    },
+    "text_translation": {
+     "rows": 40,
+     "images": 20,
+     "valid": 40,
+     "valid_percent": 100.0,
+     "yes": 20,
+     "no": 20,
+     "other": 0,
+     "valid_yes": 20,
+     "valid_no": 20,
+     "valid_other": 0,
+     "equal_to_reference": 40,
+     "equal_to_reference_percent": 100.0,
+     "ref_yes": 20,
+     "ref_no": 20,
+     "MME-C": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     },
+     "MME-T": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     }
+    },
+    "count": {
+     "rows": 60,
+     "images": 30,
+     "valid": 60,
+     "valid_percent": 100.0,
+     "yes": 31,
+     "no": 29,
+     "other": 0,
+     "valid_yes": 31,
+     "valid_no": 29,
+     "valid_other": 0,
+     "equal_to_reference": 51,
+     "equal_to_reference_percent": 85.0,
+     "ref_yes": 30,
+     "ref_no": 30,
+     "MME-C": {
+      "rows": 30,
+      "images": 15,
+      "valid": 30
+     },
+     "MME-T": {
+      "rows": 30,
+      "images": 15,
+      "valid": 30
+     }
+    },
+    "color": {
+     "rows": 60,
+     "images": 30,
+     "valid": 60,
+     "valid_percent": 100.0,
+     "yes": 33,
+     "no": 27,
+     "other": 0,
+     "valid_yes": 33,
+     "valid_no": 27,
+     "valid_other": 0,
+     "equal_to_reference": 57,
+     "equal_to_reference_percent": 95.0,
+     "ref_yes": 30,
+     "ref_no": 30,
+     "MME-C": {
+      "rows": 30,
+      "images": 15,
+      "valid": 30
+     },
+     "MME-T": {
+      "rows": 30,
+      "images": 15,
+      "valid": 30
+     }
+    },
+    "commonsense_reasoning": {
+     "rows": 140,
+     "images": 70,
+     "valid": 140,
+     "valid_percent": 100.0,
+     "yes": 63,
+     "no": 75,
+     "other": 2,
+     "valid_yes": 63,
+     "valid_no": 75,
+     "valid_other": 2,
+     "equal_to_reference": 100,
+     "equal_to_reference_percent": 71.43,
+     "ref_yes": 70,
+     "ref_no": 70,
+     "MME-C": {
+      "rows": 70,
+      "images": 35,
+      "valid": 70
+     },
+     "MME-T": {
+      "rows": 70,
+      "images": 35,
+      "valid": 70
+     }
+    },
+    "position": {
+     "rows": 60,
+     "images": 30,
+     "valid": 60,
+     "valid_percent": 100.0,
+     "yes": 34,
+     "no": 26,
+     "other": 0,
+     "valid_yes": 34,
+     "valid_no": 26,
+     "valid_other": 0,
+     "equal_to_reference": 52,
+     "equal_to_reference_percent": 86.67,
+     "ref_yes": 30,
+     "ref_no": 30,
+     "MME-C": {
+      "rows": 28,
+      "images": 14,
+      "valid": 28
+     },
+     "MME-T": {
+      "rows": 32,
+      "images": 16,
+      "valid": 32
+     }
+    },
+    "OCR": {
+     "rows": 40,
+     "images": 20,
+     "valid": 40,
+     "valid_percent": 100.0,
+     "yes": 32,
+     "no": 8,
+     "other": 0,
+     "valid_yes": 32,
+     "valid_no": 8,
+     "valid_other": 0,
+     "equal_to_reference": 28,
+     "equal_to_reference_percent": 70.0,
+     "ref_yes": 20,
+     "ref_no": 20,
+     "MME-C": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     },
+     "MME-T": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     }
+    },
+    "landmark": {
+     "rows": 400,
+     "images": 200,
+     "valid": 400,
+     "valid_percent": 100.0,
+     "yes": 178,
+     "no": 222,
+     "other": 0,
+     "valid_yes": 178,
+     "valid_no": 222,
+     "valid_other": 0,
+     "equal_to_reference": 374,
+     "equal_to_reference_percent": 93.5,
+     "ref_yes": 200,
+     "ref_no": 200,
+     "MME-C": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     },
+     "MME-T": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     }
+    },
+    "scene": {
+     "rows": 400,
+     "images": 200,
+     "valid": 400,
+     "valid_percent": 100.0,
+     "yes": 153,
+     "no": 247,
+     "other": 0,
+     "valid_yes": 153,
+     "valid_no": 247,
+     "valid_other": 0,
+     "equal_to_reference": 335,
+     "equal_to_reference_percent": 83.75,
+     "ref_yes": 200,
+     "ref_no": 200,
+     "MME-C": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     },
+     "MME-T": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     }
+    },
+    "existence": {
+     "rows": 60,
+     "images": 30,
+     "valid": 60,
+     "valid_percent": 100.0,
+     "yes": 28,
+     "no": 30,
+     "other": 2,
+     "valid_yes": 28,
+     "valid_no": 30,
+     "valid_other": 2,
+     "equal_to_reference": 56,
+     "equal_to_reference_percent": 93.33,
+     "ref_yes": 30,
+     "ref_no": 30,
+     "MME-C": {
+      "rows": 32,
+      "images": 16,
+      "valid": 32
+     },
+     "MME-T": {
+      "rows": 28,
+      "images": 14,
+      "valid": 28
+     }
+    },
+    "posters": {
+     "rows": 294,
+     "images": 147,
+     "valid": 294,
+     "valid_percent": 100.0,
+     "yes": 140,
+     "no": 154,
+     "other": 0,
+     "valid_yes": 140,
+     "valid_no": 154,
+     "valid_other": 0,
+     "equal_to_reference": 269,
+     "equal_to_reference_percent": 91.5,
+     "ref_yes": 147,
+     "ref_no": 147,
+     "MME-C": {
+      "rows": 148,
+      "images": 74,
+      "valid": 148
+     },
+     "MME-T": {
+      "rows": 146,
+      "images": 73,
+      "valid": 146
+     }
+    }
+   },
+   "answer_strings": {
+    "Yes.": 1082,
+    "No.": 892,
+    "No": 254,
+    "yes": 82,
+    "no": 60,
+    "No, you cannot smoke here.": 2,
+    "No, there is no microwave in this image.": 1,
+    "No, there is no mouse in this image.": 1
+   },
+   "other_answers": [
+    {
+     "sid": "mme:1118",
+     "part": "MME-C",
+     "category": "commonsense_reasoning",
+     "y0_text": "No, you cannot smoke here.",
+     "long_text": "No, you cannot smoke here.",
+     "y0_valid": true,
+     "first_word": "no"
+    },
+    {
+     "sid": "mme:1119",
+     "part": "MME-C",
+     "category": "commonsense_reasoning",
+     "y0_text": "No, you cannot smoke here.",
+     "long_text": "No, you cannot smoke here.",
+     "y0_valid": true,
+     "first_word": "no"
+    },
+    {
+     "sid": "mme:2061",
+     "part": "MME-C",
+     "category": "existence",
+     "y0_text": "No, there is no microwave in this image.",
+     "long_text": "No, there is no microwave in this image.",
+     "y0_valid": true,
+     "first_word": "no"
+    },
+    {
+     "sid": "mme:2063",
+     "part": "MME-T",
+     "category": "existence",
+     "y0_text": "No, there is no mouse in this image.",
+     "long_text": "No, there is no mouse in this image.",
+     "y0_valid": true,
+     "first_word": "no"
+    }
+   ],
+   "other_by_first_word": {
+    "no": 4
+   },
+   "invalid_rows": [
+    {
+     "sid": "mme:183",
+     "part": "MME-C",
+     "category": "artwork",
+     "y0_text": "No.",
+     "reason": "w0_not_reproduced",
+     "pre_first_mismatch": 1,
+     "pre_n_tok": 2,
+     "prompt": "Does this artwork belong to the type of historical? Please answer yes or no."
+    }
+   ],
+   "invalid_reasons": {
+    "w0_not_reproduced": 1
+   },
+   "n_answer_tokens": {
+    "1": 396,
+    "2": 1974,
+    "7": 2,
+    "10": 2
+   },
+   "y0_stop": {
+    "eos": 2372,
+    "max_new": 2
+   },
+   "long_stop": {
+    "eos": 2374
+   },
+   "long_answer_equals_short_answer": 2374,
+   "y0_ids_equal_generated_ids": 2374,
+   "degenerate": {
+    "deg_empty": 0,
+    "deg_single_char": 0,
+    "deg_qmark": 0,
+    "deg_none_no": 1206
+   },
+   "deg_none_no_among_answers_no": [
+    1206,
+    1206
+   ],
+   "with_teacher_forced_key": 2374,
+   "lp_shift": {
+    "0": 2374
+   },
+   "n_decode_distinct": {
+    "1": 1850,
+    "2": 524
+   },
+   "len_prompt": {
+    "min": 293,
+    "p05": 305,
+    "median": 525,
+    "p95": 1053,
+    "max": 1074
+   },
+   "n_image_tokens": {
+    "min": 256,
+    "p05": 264,
+    "median": 486,
+    "p95": 1014,
+    "max": 1024
+   },
+   "n_text_tokens": {
+    "min": 32,
+    "p05": 35,
+    "median": 39,
+    "p95": 46,
+    "max": 58
+   },
+   "benign_pool_image_rows": {
+    "n": 1500,
+    "len_prompt": {
+     "min": 285,
+     "p05": 295,
+     "median": 993,
+     "p95": 1045,
+     "max": 1058
+    },
+    "n_image_tokens": {
+     "min": 256,
+     "p05": 266,
+     "median": 962,
+     "p95": 1014,
+     "max": 1024
+    },
+    "n_text_tokens": {
+     "min": 27,
+     "p05": 29,
+     "median": 30,
+     "p95": 33,
+     "max": 40
+    }
+   },
+   "n_rows_longer_than_the_longest_benign_image_row": 40,
+   "flags": {
+    "img_in_cache": 0,
+    "q_in_edit": 0,
+    "q_in_probe": 0,
+    "img_in_edit": 0,
+    "img_in_probe": 0,
+    "query_in_probe": 0
+   }
+  },
+  "llava": {
+   "backbone": "llava",
+   "n_rows": 2374,
+   "n_images": 1177,
+   "n_categories": 14,
+   "all": {
+    "rows": 2374,
+    "images": 1177,
+    "valid": 2374,
+    "valid_percent": 100.0,
+    "yes": 1113,
+    "no": 1261,
+    "other": 0,
+    "valid_yes": 1113,
+    "valid_no": 1261,
+    "valid_other": 0,
+    "equal_to_reference": 1784,
+    "equal_to_reference_percent": 75.15,
+    "ref_yes": 1187,
+    "ref_no": 1187
+   },
+   "by_part": {
+    "MME-C": {
+     "rows": 1188,
+     "images": 589,
+     "valid": 1188,
+     "valid_percent": 100.0,
+     "yes": 546,
+     "no": 642,
+     "other": 0,
+     "valid_yes": 546,
+     "valid_no": 642,
+     "valid_other": 0,
+     "equal_to_reference": 886,
+     "equal_to_reference_percent": 74.58,
+     "ref_yes": 594,
+     "ref_no": 594
+    },
+    "MME-T": {
+     "rows": 1186,
+     "images": 588,
+     "valid": 1186,
+     "valid_percent": 100.0,
+     "yes": 567,
+     "no": 619,
+     "other": 0,
+     "valid_yes": 567,
+     "valid_no": 619,
+     "valid_other": 0,
+     "equal_to_reference": 898,
+     "equal_to_reference_percent": 75.72,
+     "ref_yes": 593,
+     "ref_no": 593
+    }
+   },
+   "by_category": {
+    "code_reasoning": {
+     "rows": 40,
+     "images": 20,
+     "valid": 40,
+     "valid_percent": 100.0,
+     "yes": 35,
+     "no": 5,
+     "other": 0,
+     "valid_yes": 35,
+     "valid_no": 5,
+     "valid_other": 0,
+     "equal_to_reference": 19,
+     "equal_to_reference_percent": 47.5,
+     "ref_yes": 20,
+     "ref_no": 20,
+     "MME-C": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     },
+     "MME-T": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     }
+    },
+    "artwork": {
+     "rows": 400,
+     "images": 200,
+     "valid": 400,
+     "valid_percent": 100.0,
+     "yes": 197,
+     "no": 203,
+     "other": 0,
+     "valid_yes": 197,
+     "valid_no": 203,
+     "valid_other": 0,
+     "equal_to_reference": 267,
+     "equal_to_reference_percent": 66.75,
+     "ref_yes": 200,
+     "ref_no": 200,
+     "MME-C": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     },
+     "MME-T": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     }
+    },
+    "celebrity": {
+     "rows": 340,
+     "images": 170,
+     "valid": 340,
+     "valid_percent": 100.0,
+     "yes": 198,
+     "no": 142,
+     "other": 0,
+     "valid_yes": 198,
+     "valid_no": 142,
+     "valid_other": 0,
+     "equal_to_reference": 236,
+     "equal_to_reference_percent": 69.41,
+     "ref_yes": 170,
+     "ref_no": 170,
+     "MME-C": {
+      "rows": 170,
+      "images": 85,
+      "valid": 170
+     },
+     "MME-T": {
+      "rows": 170,
+      "images": 85,
+      "valid": 170
+     }
+    },
+    "numerical_calculation": {
+     "rows": 40,
+     "images": 20,
+     "valid": 40,
+     "valid_percent": 100.0,
+     "yes": 10,
+     "no": 30,
+     "other": 0,
+     "valid_yes": 10,
+     "valid_no": 30,
+     "valid_other": 0,
+     "equal_to_reference": 20,
+     "equal_to_reference_percent": 50.0,
+     "ref_yes": 20,
+     "ref_no": 20,
+     "MME-C": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     },
+     "MME-T": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     }
+    },
+    "text_translation": {
+     "rows": 40,
+     "images": 20,
+     "valid": 40,
+     "valid_percent": 100.0,
+     "yes": 7,
+     "no": 33,
+     "other": 0,
+     "valid_yes": 7,
+     "valid_no": 33,
+     "valid_other": 0,
+     "equal_to_reference": 23,
+     "equal_to_reference_percent": 57.5,
+     "ref_yes": 20,
+     "ref_no": 20,
+     "MME-C": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     },
+     "MME-T": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     }
+    },
+    "count": {
+     "rows": 60,
+     "images": 30,
+     "valid": 60,
+     "valid_percent": 100.0,
+     "yes": 14,
+     "no": 46,
+     "other": 0,
+     "valid_yes": 14,
+     "valid_no": 46,
+     "valid_other": 0,
+     "equal_to_reference": 40,
+     "equal_to_reference_percent": 66.67,
+     "ref_yes": 30,
+     "ref_no": 30,
+     "MME-C": {
+      "rows": 30,
+      "images": 15,
+      "valid": 30
+     },
+     "MME-T": {
+      "rows": 30,
+      "images": 15,
+      "valid": 30
+     }
+    },
+    "color": {
+     "rows": 60,
+     "images": 30,
+     "valid": 60,
+     "valid_percent": 100.0,
+     "yes": 30,
+     "no": 30,
+     "other": 0,
+     "valid_yes": 30,
+     "valid_no": 30,
+     "valid_other": 0,
+     "equal_to_reference": 56,
+     "equal_to_reference_percent": 93.33,
+     "ref_yes": 30,
+     "ref_no": 30,
+     "MME-C": {
+      "rows": 30,
+      "images": 15,
+      "valid": 30
+     },
+     "MME-T": {
+      "rows": 30,
+      "images": 15,
+      "valid": 30
+     }
+    },
+    "commonsense_reasoning": {
+     "rows": 140,
+     "images": 70,
+     "valid": 140,
+     "valid_percent": 100.0,
+     "yes": 95,
+     "no": 45,
+     "other": 0,
+     "valid_yes": 95,
+     "valid_no": 45,
+     "valid_other": 0,
+     "equal_to_reference": 93,
+     "equal_to_reference_percent": 66.43,
+     "ref_yes": 70,
+     "ref_no": 70,
+     "MME-C": {
+      "rows": 70,
+      "images": 35,
+      "valid": 70
+     },
+     "MME-T": {
+      "rows": 70,
+      "images": 35,
+      "valid": 70
+     }
+    },
+    "position": {
+     "rows": 60,
+     "images": 30,
+     "valid": 60,
+     "valid_percent": 100.0,
+     "yes": 44,
+     "no": 16,
+     "other": 0,
+     "valid_yes": 44,
+     "valid_no": 16,
+     "valid_other": 0,
+     "equal_to_reference": 42,
+     "equal_to_reference_percent": 70.0,
+     "ref_yes": 30,
+     "ref_no": 30,
+     "MME-C": {
+      "rows": 28,
+      "images": 14,
+      "valid": 28
+     },
+     "MME-T": {
+      "rows": 32,
+      "images": 16,
+      "valid": 32
+     }
+    },
+    "OCR": {
+     "rows": 40,
+     "images": 20,
+     "valid": 40,
+     "valid_percent": 100.0,
+     "yes": 26,
+     "no": 14,
+     "other": 0,
+     "valid_yes": 26,
+     "valid_no": 14,
+     "valid_other": 0,
+     "equal_to_reference": 30,
+     "equal_to_reference_percent": 75.0,
+     "ref_yes": 20,
+     "ref_no": 20,
+     "MME-C": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     },
+     "MME-T": {
+      "rows": 20,
+      "images": 10,
+      "valid": 20
+     }
+    },
+    "landmark": {
+     "rows": 400,
+     "images": 200,
+     "valid": 400,
+     "valid_percent": 100.0,
+     "yes": 181,
+     "no": 219,
+     "other": 0,
+     "valid_yes": 181,
+     "valid_no": 219,
+     "valid_other": 0,
+     "equal_to_reference": 335,
+     "equal_to_reference_percent": 83.75,
+     "ref_yes": 200,
+     "ref_no": 200,
+     "MME-C": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     },
+     "MME-T": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     }
+    },
+    "scene": {
+     "rows": 400,
+     "images": 200,
+     "valid": 400,
+     "valid_percent": 100.0,
+     "yes": 152,
+     "no": 248,
+     "other": 0,
+     "valid_yes": 152,
+     "valid_no": 248,
+     "valid_other": 0,
+     "equal_to_reference": 330,
+     "equal_to_reference_percent": 82.5,
+     "ref_yes": 200,
+     "ref_no": 200,
+     "MME-C": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     },
+     "MME-T": {
+      "rows": 200,
+      "images": 100,
+      "valid": 200
+     }
+    },
+    "existence": {
+     "rows": 60,
+     "images": 30,
+     "valid": 60,
+     "valid_percent": 100.0,
+     "yes": 28,
+     "no": 32,
+     "other": 0,
+     "valid_yes": 28,
+     "valid_no": 32,
+     "valid_other": 0,
+     "equal_to_reference": 58,
+     "equal_to_reference_percent": 96.67,
+     "ref_yes": 30,
+     "ref_no": 30,
+     "MME-C": {
+      "rows": 32,
+      "images": 16,
+      "valid": 32
+     },
+     "MME-T": {
+      "rows": 28,
+      "images": 14,
+      "valid": 28
+     }
+    },
+    "posters": {
+     "rows": 294,
+     "images": 147,
+     "valid": 294,
+     "valid_percent": 100.0,
+     "yes": 96,
+     "no": 198,
+     "other": 0,
+     "valid_yes": 96,
+     "valid_no": 198,
+     "valid_other": 0,
+     "equal_to_reference": 235,
+     "equal_to_reference_percent": 79.93,
+     "ref_yes": 147,
+     "ref_no": 147,
+     "MME-C": {
+      "rows": 148,
+      "images": 74,
+      "valid": 148
+     },
+     "MME-T": {
+      "rows": 146,
+      "images": 73,
+      "valid": 146
+     }
+    }
+   },
+   "answer_strings": {
+    "No.": 807,
+    "Yes.": 739,
+    "No": 454,
+    "Yes": 374
+   },
+   "other_answers": [],
+   "other_by_first_word": {},
+   "invalid_rows": [],
+   "invalid_reasons": {},
+   "n_answer_tokens": {
+    "1": 828,
+    "2": 1546
+   },
+   "y0_stop": {
+    "eos": 2374
+   },
+   "long_stop": {
+    "eos": 2374
+   },
+   "long_answer_equals_short_answer": 2374,
+   "y0_ids_equal_generated_ids": 2374,
+   "degenerate": {
+    "deg_empty": 0,
+    "deg_single_char": 0,
+    "deg_qmark": 0,
+    "deg_none_no": 1261
+   },
+   "deg_none_no_among_answers_no": [
+    1261,
+    1261
+   ],
+   "with_teacher_forced_key": 2374,
+   "lp_shift": {
+    "0": 2374
+   },
+   "n_decode_distinct": {
+    "1": 2374
+   },
+   "len_prompt": {
+    "min": 595,
+    "p05": 599,
+    "median": 603,
+    "p95": 610,
+    "max": 624
+   },
+   "n_image_tokens": {
+    "min": 576,
+    "p05": 576,
+    "median": 576,
+    "p95": 576,
+    "max": 576
+   },
+   "n_text_tokens": {
+    "min": 19,
+    "p05": 23,
+    "median": 27,
+    "p95": 34,
+    "max": 48
+   },
+   "benign_pool_image_rows": {
+    "n": 1500,
+    "len_prompt": {
+     "min": 590,
+     "p05": 592,
+     "median": 593,
+     "p95": 597,
+     "max": 603
+    },
+    "n_image_tokens": {
+     "min": 576,
+     "p05": 576,
+     "median": 576,
+     "p95": 576,
+     "max": 576
+    },
+    "n_text_tokens": {
+     "min": 14,
+     "p05": 16,
+     "median": 17,
+     "p95": 21,
+     "max": 27
+    }
+   },
+   "n_rows_longer_than_the_longest_benign_image_row": 1004,
+   "flags": {
+    "img_in_cache": 0,
+    "q_in_edit": 0,
+    "q_in_probe": 0,
+    "img_in_edit": 0,
+    "img_in_probe": 0,
+    "query_in_probe": 0
+   }
+  }
+ },
+ "verify_ok": {
+  "qwen25vl": true,
+  "llava": true
+ },
+ "time": "2026-11-11 08:16:25"
+}

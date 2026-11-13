@@ -1,0 +1,398 @@
+{
+ "log": "TX-G2XL-rome-T500",
+ "label": "deployed",
+ "info": {
+  "kind": "weight",
+  "what": "deployed weight W_E of the log"
+ },
+ "stats": {
+  "edit.request.exact": {
+   "value": 2.3333333333333335,
+   "ci_lo": 0.6666666666666666,
+   "ci_hi": 4.0,
+   "n": 300,
+   "n_units": 300
+  },
+  "edit.request.own_released": {
+   "value": null,
+   "n": 300
+  },
+  "edit.request.own_released_dec": {
+   "value": null,
+   "n": 300
+  },
+  "edit.request.exact.before": {
+   "value": 0.9345794392523364,
+   "ci_lo": 0.0,
+   "ci_hi": 2.803738317757009,
+   "n": 107,
+   "n_units": 107
+  },
+  "edit.request.own_released.before": {
+   "value": null,
+   "n": 107
+  },
+  "edit.request.own_released_dec.before": {
+   "value": null,
+   "n": 107
+  },
+  "edit.request.exact.from": {
+   "value": 3.1088082901554404,
+   "ci_lo": 1.0362694300518134,
+   "ci_hi": 5.699481865284974,
+   "n": 193,
+   "n_units": 193
+  },
+  "edit.request.own_released.from": {
+   "value": null,
+   "n": 193
+  },
+  "edit.request.own_released_dec.from": {
+   "value": null,
+   "n": 193
+  },
+  "edit.paraphrase.exact": {
+   "value": 0.6666666666666666,
+   "ci_lo": 0.16666666666666666,
+   "ci_hi": 1.3333333333333333,
+   "n": 600,
+   "n_units": 300
+  },
+  "edit.paraphrase.own_released": {
+   "value": null,
+   "n": 600
+  },
+  "edit.paraphrase.own_released_dec": {
+   "value": null,
+   "n": 600
+  },
+  "edit.paraphrase.exact.before": {
+   "value": 0.4672897196261682,
+   "ci_lo": 0.0,
+   "ci_hi": 1.4018691588785046,
+   "n": 214,
+   "n_units": 107
+  },
+  "edit.paraphrase.own_released.before": {
+   "value": null,
+   "n": 214
+  },
+  "edit.paraphrase.own_released_dec.before": {
+   "value": null,
+   "n": 214
+  },
+  "edit.paraphrase.exact.from": {
+   "value": 0.7772020725388601,
+   "ci_lo": 0.0,
+   "ci_hi": 1.8134715025906736,
+   "n": 386,
+   "n_units": 193
+  },
+  "edit.paraphrase.own_released.from": {
+   "value": null,
+   "n": 386
+  },
+  "edit.paraphrase.own_released_dec.from": {
+   "value": null,
+   "n": 386
+  },
+  "heldout.D1_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.D1_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.kept_tf": {
+   "value": 0.6555555555555556,
+   "ci_lo": 0.48888888888888893,
+   "ci_hi": 0.8333333333333334,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.first_changed_tf": {
+   "value": 99.77777777777777,
+   "ci_lo": 99.44444444444444,
+   "ci_hi": 100.0,
+   "n": 900,
+   "n_units": 300
+  },
+  "heldout.fired": {
+   "value": null,
+   "n": 900
+  },
+  "heldout.fired_dec": {
+   "value": null,
+   "n": 900
+  },
+  "heldout.clean.D1_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 879,
+   "n_units": 294
+  },
+  "heldout.clean.D1_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 879,
+   "n_units": 294
+  },
+  "heldout.clean.kept_tf": {
+   "value": 0.6712172923777019,
+   "ci_lo": 0.5011246990652559,
+   "ci_hi": 0.8513053348467651,
+   "n": 879,
+   "n_units": 294
+  },
+  "heldout.clean.first_changed_tf": {
+   "value": 99.77246871444824,
+   "ci_lo": 99.43052391799544,
+   "ci_hi": 100.0,
+   "n": 879,
+   "n_units": 294
+  },
+  "heldout.clean.fired": {
+   "value": null,
+   "n": 879
+  },
+  "heldout.clean.fired_dec": {
+   "value": null,
+   "n": 879
+  },
+  "heldout.near_scope.D1_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 21,
+   "n_units": 9
+  },
+  "heldout.near_scope.D1_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 21,
+   "n_units": 9
+  },
+  "heldout.near_scope.kept_tf": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 21,
+   "n_units": 9
+  },
+  "heldout.near_scope.first_changed_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 21,
+   "n_units": 9
+  },
+  "heldout.near_scope.fired": {
+   "value": null,
+   "n": 21
+  },
+  "heldout.near_scope.fired_dec": {
+   "value": null,
+   "n": 21
+  },
+  "neighborhood.D1_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 3000,
+   "n_units": 300
+  },
+  "neighborhood.D1_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 3000,
+   "n_units": 300
+  },
+  "neighborhood.kept_tf": {
+   "value": 0.61,
+   "ci_lo": 0.5033333333333334,
+   "ci_hi": 0.72,
+   "n": 3000,
+   "n_units": 300
+  },
+  "neighborhood.first_changed_tf": {
+   "value": 99.66666666666667,
+   "ci_lo": 99.43333333333334,
+   "ci_hi": 99.86666666666666,
+   "n": 3000,
+   "n_units": 300
+  },
+  "neighborhood.fired": {
+   "value": null,
+   "n": 3000
+  },
+  "neighborhood.fired_dec": {
+   "value": null,
+   "n": 3000
+  },
+  "neighborhood.clean.D1_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 2956,
+   "n_units": 300
+  },
+  "neighborhood.clean.D1_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 2956,
+   "n_units": 300
+  },
+  "neighborhood.clean.kept_tf": {
+   "value": 0.6123139377537213,
+   "ci_lo": 0.5062807719133166,
+   "ci_hi": 0.724938390734297,
+   "n": 2956,
+   "n_units": 300
+  },
+  "neighborhood.clean.first_changed_tf": {
+   "value": 99.6617050067659,
+   "ci_lo": 99.42409970656695,
+   "ci_hi": 99.86445387581628,
+   "n": 2956,
+   "n_units": 300
+  },
+  "neighborhood.clean.fired": {
+   "value": null,
+   "n": 2956
+  },
+  "neighborhood.clean.fired_dec": {
+   "value": null,
+   "n": 2956
+  },
+  "neighborhood.near_scope.D1_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 44,
+   "n_units": 22
+  },
+  "neighborhood.near_scope.D1_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 44,
+   "n_units": 22
+  },
+  "neighborhood.near_scope.kept_tf": {
+   "value": 0.45454545454545453,
+   "ci_lo": 0.0,
+   "ci_hi": 1.2121212121212122,
+   "n": 44,
+   "n_units": 22
+  },
+  "neighborhood.near_scope.first_changed_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 44,
+   "n_units": 22
+  },
+  "neighborhood.near_scope.fired": {
+   "value": null,
+   "n": 44
+  },
+  "neighborhood.near_scope.fired_dec": {
+   "value": null,
+   "n": 44
+  },
+  "neighborhood.before.D1_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 1070,
+   "n_units": 107
+  },
+  "neighborhood.before.D1_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 1070,
+   "n_units": 107
+  },
+  "neighborhood.before.kept_tf": {
+   "value": 0.5981308411214953,
+   "ci_lo": 0.4392523364485981,
+   "ci_hi": 0.7570093457943925,
+   "n": 1070,
+   "n_units": 107
+  },
+  "neighborhood.before.first_changed_tf": {
+   "value": 99.81308411214954,
+   "ci_lo": 99.53271028037383,
+   "ci_hi": 100.0,
+   "n": 1070,
+   "n_units": 107
+  },
+  "neighborhood.before.fired": {
+   "value": null,
+   "n": 1070
+  },
+  "neighborhood.before.fired_dec": {
+   "value": null,
+   "n": 1070
+  },
+  "neighborhood.from.D1_tf": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 1930,
+   "n_units": 193
+  },
+  "neighborhood.from.D1_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 1930,
+   "n_units": 193
+  },
+  "neighborhood.from.kept_tf": {
+   "value": 0.616580310880829,
+   "ci_lo": 0.48173575129533674,
+   "ci_hi": 0.7668393782383419,
+   "n": 1930,
+   "n_units": 193
+  },
+  "neighborhood.from.first_changed_tf": {
+   "value": 99.58549222797927,
+   "ci_lo": 99.22279792746114,
+   "ci_hi": 99.84455958549223,
+   "n": 1930,
+   "n_units": 193
+  },
+  "neighborhood.from.fired": {
+   "value": null,
+   "n": 1930
+  },
+  "neighborhood.from.fired_dec": {
+   "value": null,
+   "n": 1930
+  }
+ },
+ "n_rows": 4800,
+ "seconds": 63.52681016921997,
+ "code": {
+  "e10t": "7dbf34c01e52",
+  "rescope": "c76c4da16bd6",
+  "fx": "5b266fadd236",
+  "tx_public": "12afa5563ce4",
+  "e10t_version": "e10t-1.0 (2026-11-11)"
+ },
+ "evaluation": "every sampled prompt through the model; verifier's batches; no store"
+}

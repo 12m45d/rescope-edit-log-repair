@@ -1,0 +1,41 @@
+{
+ "available": true,
+ "log": "TB-Q2000-ae-l2_3",
+ "T": 2000,
+ "n_rows": {
+  "probe": 979,
+  "edit": 6000,
+  "hn": 1771,
+  "benign": 3000
+ },
+ "seconds_open": 0.2450408935546875,
+ "per_method": {
+  "rescope": {
+   "first_draw_s": 18.70423197746277,
+   "next_19_draws_s": 22.99817419052124
+  },
+  "cosine": {
+   "first_draw_s": 13.350388288497925,
+   "next_19_draws_s": 23.95850419998169
+  },
+  "ball": {
+   "first_draw_s": 274.7364909648895,
+   "next_19_draws_s": 49.31136178970337
+  }
+ },
+ "features_shape": [
+  50,
+  2000
+ ],
+ "peak_rss_gb": 5.385383605957031,
+ "note": "mechanics only (time and memory); no metric computed or printed",
+ "ok": true,
+ "test": "scale",
+ "seconds": 403.5088632106781,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:21:52"
+}

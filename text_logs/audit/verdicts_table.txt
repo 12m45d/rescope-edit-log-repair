@@ -1,0 +1,84 @@
+INDEPENDENT AUDIT of the E10 public text logs (ROME, public code, GPT-2 XL, CounterFact) -- rendered by make_verdicts.py from out/*.json
+written 2026-11-11 11:02:28 UTC; audit directory [redacted: local path]/02_research/experiments/09_testbed_scale/text_public/audit
+
+CHECKS
+  1_provenance                                                   PASS
+  2_condition_1_reconstruction_orientation_key_determinism       PASS
+  3_condition_2_single_edit                                      PASS
+  4_condition_3_data_traps                                       PASS
+  5_pools                                                        PASS
+  6_discipline                                                   PASS
+  7_table_of_deployed_logs                                       PASS
+
+CONDITIONS OF USE (PROTOCOL.md, section 6, E10)
+  PASS  (1) deployed weight = pre-edit weight + logged rank-one terms
+        all five logs: float32 replay bitwise equal; fp64 relative error of the update 2.7e-07, 3.1e-07, 4.1e-07, 4.8e-07, 8.3e-07; max abs entry error 6.2e-07, 6.2e-07, 2.1e-04, 3.9e-04, 8.7e-04 (2.6 to 14.2 float32 ulps at max|W_E|)
+  PASS  (2) single edits on the first 1000 records within 3 points of the published scores
+        ES 100.0 / 100.0, PS 96.7 / 96.4, NS 75.41 / 75.4 (ours / published)
+  PASS  (3) data traps of the handover
+        multi_token_decode: ok; pre_edit_continuations: ok; degenerate_continuations_counted: ok; ground_truth_vs_evaluation: ok; batched_equals_single_decode: ok; public_probability_test_padding: ok; leading_space_of_the_object: ok; sign
+
+LOGS
+  log                       T verdict class                 replay   rel err    max|E|     ES    PS    NS   req  para     D1  kept  max|dW_i|
+  TX-G2XL-rome-dev100     100 safe    development log      bitwise   2.7e-07   6.2e-07  100.0  98.0  72.9  98.0  75.5   95.4  64.7       51.9
+  TX-G2XL-rome-T100       100 safe    clean reported log   bitwise   3.1e-07   6.2e-07  100.0  98.5  66.8  97.0  75.0   93.5  69.8       20.3
+  TX-G2XL-rome-T500       500 safe    collapse log         bitwise   4.1e-07   2.1e-04   57.0  52.2  52.1   2.8   0.7  100.0   0.6    11154.8
+  TX-G2XL-rome-T1000     1000 safe    collapse log         bitwise   4.8e-07   3.9e-04   53.4  52.4  52.0   1.4   0.9  100.0   0.3    17831.6
+  TX-G2XL-rome-T2000     2000 safe    collapse log         bitwise   8.3e-07   8.7e-04   50.4  47.3  51.9   0.9   0.4  100.0   0.3    17831.6
+  replay: W_0 + logged outer products written in float32 in order = deployed weight; rel err / max|E|: fp64 sum of the terms against the deployed weight;
+  ES PS NS: public scores of the deployed model; req / para: greedy decode starts with the new object; D1 / kept: HELD-OUT prompts, 10-token continuation not reproduced / tokens kept.
+
+DETERMINISM (public code re-run by the audit's own driver from the saved states)
+  dev      100 updates re-run: left vector bitwise equal 100, right vector bitwise equal 100, solver key bitwise equal 100; max |<w,k>-1| 4.4e-16; (all 100)
+  stream   195 updates re-run: left vector bitwise equal 195, right vector bitwise equal 195, solver key bitwise equal 195; max |<w,k>-1| 6.7e-15; (0..99 (T100 complete) and 95 updates between 100 and 1999: 100-102, 173-175, 1530-1532 and random ones; 88 of them after the collapse)
+  single-edit protocol: 150 random records of the first 1000 through the public experiments/evaluate.py: 150 identical to the stored case files
+
+SINGLE-EDIT CHECK (first 1000 records; audit's arithmetic on the builder's 1000 case files / published, arXiv 2202.05262v5)
+  ES   100.00 / 100.0   diff +0.00
+  PS    96.70 /  96.4   diff +0.30
+  NS    75.41 /  75.4   diff +0.01
+
+THE REPORTED STREAM AROUND UPDATE 173 (audit's own decode; 200 HELD-OUT prompts, first 100 requests)
+   requests  |W-W0|_F      D1   kept  1st tok  first-100 exact
+        100     117.1    94.0   69.5     34.0             97.0
+        150     154.1    99.0   57.8     45.5             95.0
+        173     168.6    99.0   54.9     53.0             94.0
+        174    5905.8   100.0    4.4     97.0              1.0
+        200    5908.1   100.0    4.4     97.0              1.0
+
+DISCREPANCIES
+  1. DEVIATIONS.txt item 15 states the equivalence check of the memory fallback as '(bit for bit: not run yet)'; no result of it is stored
+     numbers: audit: the public probability test returns identical numbers with model.config.use_cache True and False in 13 record-weight pairs (records 0, 1, 147, 427, 1878, 15000 at W_0; 147, 427 at T500 and at T1000; 147, 427, 1878 at T2000); with use_cache False all 8 flagged stored case files are reproduced bitwise; record 1531 (179-token paraphrase) ran out of memory with use_cache True under a 14.5 GB reservation in 2 of 2 attempts, so for it the equivalence rests on the other records
+     effect on the logs: none
+  2. the driver files on disk are not the versions that wrote most of the logs, and the list of deviations is rendered from the files on disk
+     numbers: tp_common.py and run_stream.py were last modified 2026-11-11 06:36:20 UTC; the first process of the reported stream started 2026-11-11 05:31:42 UTC and wrote updates 0..1530; the development log finished 2026-11-11 05:31:16 UTC; the single-edit run finished 2026-11-11 06:31:26 UTC; 1531 of 2000 stream write-time files and 100 of 100 development ones lack the field the current driver writes; no earlier copy of the files is kept
+     effect on the logs: none found: the audit's own driver reproduces bitwise 100 of 100 development updates, 195 stream updates and 153 single edits, and the replay reproduces all 85 weight hashes recorded during the runs
+  3. no run log of the first process of the reported stream (updates 0..1530) exists: logs/stream.out begins with the resumed run and logs/stream_before_run_1.out holds only a cancelled queue entry (the file was presumably truncated by the first watcher attempt), so the stated cause of the interruption (out of memory in the write-time test of case 1531) is not documented by that process
+     numbers: consistent with: a pause from 2026-11-11 06:50:21 UTC to 2026-11-11 06:58:06 UTC after 1531 updates; request 1531 computed twice by the public code with 23 identical printed lines; the same out-of-memory error for that record in logs/describe_A_oom_case1531.out
+     effect on the logs: none: the audit re-ran updates 1530, 1531, 1532 from the replayed state, bitwise equal to the stored factors
+  4. logs_edit/dev/meta.json is stale
+     numbers: 'what' says records 15000 .. 15002 and T_planned = 3 (from the 3-update test run); T_done = 100 and 100 update files exist
+     effect on the logs: none
+  5. the deviation list does not say which checkpoint file is loaded (model.safetensors under transformers 4.23.1; the public stack would read pytorch_model.bin)
+     numbers: 628 tensors in both files, 0 not bitwise equal
+     effect on the logs: none
+
+BINDING RESTRICTIONS OF THE COLLAPSE LOGS (T500, T1000, T2000)
+  - (T2000) the deployed model is collapsed: update 173 ('Chicago is a twin city of' -> Istanbul, subject = first prompt token, division factor 0.0218, update norm 5902 against |W_0| = 117) takes the tokens kept on HELD-OUT prompts from 54.9 % to 4.4 % and the exact match of the first 100 requests from 94.0 % to 1.0 % (audit's own decode of the deployed prefixes 173 and 174)
+  - (T2000) 8 of 2000 updates (requests [173, 240, 266, 946, 1416, 1420, 1508, 1947]) carry 99.62 % of the summed squared update norm.  MEASURED: the norms, and the model before / after update 173.  NOT measured (a model without these updates is a repair, which the audit may not run): how much damage the other updates carry on their own
+  - (T2000) 1827 of the 2000 logged targets were computed on weights that already contain update 173: the editor's own final probability of the new object is below 0.5 on 99.0 % of them (the public code's own printouts), and 221 of 2000 requests had P(new object) > 0.5 on their own request prompt right after their own update (write-time files; 49 of 49 sampled ones re-derived identically by the audit).  Whether any replay can install the remaining targets was not tested by the builder or by the audit: report the requests before 173 separately
+  - (T2000) deployed baseline: ES / PS / NS [50.4, 47.3, 51.9] with probability differences EM / PM / NM [0.1, -0.2, -0.1] points (pre-edit model: ES / PS / NS [22.4, 25.0, 77.5]); D1 100 %; 89.1 % repetitive continuations
+  - (T2000) exact match: 17 of the 18 request hits and 16 of the 17 paraphrase hits have a target among the new objects of the first-token-subject updates, the tokens the collapsed model emits most.  Base-rate test (does the model emit such a token more often when it is the target?): on other edits' prompts with such a target, request 15 hits observed against 6.4 expected (+3.4 sd), paraphrase 14 against 12.5 (+0.4 sd); request hits with another target: 1 (pre-edit model: 6 request hits in all).  The column mixes base-rate hits with others; which of the others are retained edits was not determined
+  - (T2000) public n-gram entropy of the deployed model 503.1 (pre-edit 626.3; dev100, not collapsed, 587.2)
+
+RESIDUAL RISKS
+  - Reproducibility is established on this machine and stack only (RTX 5090, torch 2.8.0, transformers 4.23.1): the public environment (torch 1.10.2, transformers 4.15.0) cannot be installed for Python 3.11, so what the authors' stack would write bit for bit is untested; the tie to the paper is the single-edit scores (0.0 / 0.3 / 0.0 points) and the unedited-model scores.
+  - One stream, one draw of the public code's 21 random context templates (seed 0).  With another draw (2 of 21 templates equal) the single-edit factors of the same 150 records differ by 30 % (median, output-side factor) while ES / PS / NS move by 0.0 / 0.0 / -0.07 points; the variance of sequential-log metrics over template draws is unknown.
+  - The development log has no request whose subject is the first prompt token and no exploding update (base rate 80 of 21919 records).  In the library format the read-out vectors of such updates have norm up to 57.3 against a median of 0.10 (measured).  What that does to the method's scores on these logs was not measured (discipline); nothing developed on the development log has met such an update.
+  - Records are disjoint, prompt texts are not: 310 of the 1000 neighbourhood rows of the development log are also prompts of the reported stream (305 distinct texts; 42 rows of T100, 622 of T2000); 22 HELD-OUT benign prompts are neighbourhood prompts of logged records and 4 are logged requests (flags exist: use the 'clean' rows).
+  - D1 on 10-token continuations is close to its ceiling on the logs that did NOT collapse (dev100 95.4 %, T100 93.5 %; audit after 1 / 10 updates: 6.0 / 28.0 %); the share of tokens kept (64.7 / 69.8 %) and of changed first tokens (38.3 / 33.2 %) are further from their ceiling.
+  - The public n-gram entropy (metric v) did not separate the collapsed T500 / T1000 from the non-collapsed dev100: 578.6 / 587.3 against 587.2 (pre-edit 626.3), while 8 words make up 60 % of the generated words (T2000: 503.1).  For scale, the public formula on uniformly random sequences of the same length (90 word tokens) gives 539 for 5 symbols and 616 for 10.
+  - Requests that repeat a subject / a whole request prompt inside a log (5 of 5 such prompt pairs of the stream have bitwise identical solver keys and 5 different new objects): T500 2 / 0, T1000 4 / 1, T2000 21 / 5; none in dev100 and T100.
+  - Float32: at T2000 the deployed weight has entries up to 535; the exact (fp64) sum of the logged terms differs from it by up to 8.7e-04 per entry, so a replay in another precision is the deployed model only up to that round-off (float32 vs float64 forward at T1000: same argmax on 40 of 40 prompts).
+  - The registered behavioural evaluation of E10 (amendment R19 f) uses the logs with 500 and 2000 requests: both are collapse logs; the only clean reported log (T100) is registered at gate level only.
+  - Checkpoint and tokenizer were verified against the listing of hf-mirror.com (huggingface.co is not reachable from this machine).

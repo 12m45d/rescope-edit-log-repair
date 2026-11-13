@@ -1,0 +1,42 @@
+{
+ "label": "deployed",
+ "n_records": 100,
+ "case_files": "[redacted: local path]/02_research/experiments/10_final/e10_text/run/verify/out/public/TX-G2XL-rome-T100/deployed/run_000",
+ "n_use_cache_false": 0,
+ "public_summariser": {
+  "all": {
+   "n": 100,
+   "ES": 100.0,
+   "PS": 98.5,
+   "NS": 66.8,
+   "EM": 94.9,
+   "PM": 66.59,
+   "NM": 5.1
+  }
+ },
+ "own_arithmetic": {
+  "all": {
+   "n": 100,
+   "n_records_with_nonfinite_prob": 0,
+   "ES": {
+    "value": 100.0,
+    "ci_lo": 100.0,
+    "ci_hi": 100.0,
+    "n_units": 100
+   },
+   "PS": {
+    "value": 98.5,
+    "ci_lo": 96.5,
+    "ci_hi": 100.0,
+    "n_units": 100
+   },
+   "NS": {
+    "value": 66.80000000000001,
+    "ci_lo": 60.5,
+    "ci_hi": 73.20249999999999,
+    "n_units": 100
+   }
+  }
+ },
+ "seconds": 13.629079818725586
+}

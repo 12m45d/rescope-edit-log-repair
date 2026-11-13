@@ -1,0 +1,12 @@
+# everything that is not in git: unpacked release archives, public checkpoints and benchmarks, caches, the link tree
+/data/
+__pycache__/
+*.pyc
+# run logs and outputs of re-runs
+logs/*.log
+logs/*.out
+*.tmp
+# outputs of paper/scripts (regenerated numbers, table bodies, figures); the files the paper was built from are in paper/expected/
+/paper/numbers.tex
+/paper/tab_*.tex
+/paper/figs/

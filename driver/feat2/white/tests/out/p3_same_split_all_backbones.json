@@ -1,0 +1,32 @@
+{
+ "pass": true,
+ "backbones": [
+  "qwen25vl",
+  "llava",
+  "blip2"
+ ],
+ "pool_identity_sha1": {
+  "qwen25vl": "714227ddea647e6907f9e5f933573f0223186b6c",
+  "llava": "714227ddea647e6907f9e5f933573f0223186b6c",
+  "blip2": "714227ddea647e6907f9e5f933573f0223186b6c"
+ },
+ "rows_with_another_fmt_than_qwen25vl": {
+  "llava": 1500,
+  "blip2": 1500
+ },
+ "rows_with_another_q_in_edit_flag_than_qwen25vl": {
+  "llava": 156,
+  "blip2": 227
+ },
+ "note": "qwen25vl, llava, blip2: same rows (sid, uid, ptype, prompt, image, answer subset): True; same item split: True; differing fields: text format (1500/1500 rows), flags against the edit stream (156/227 rows)",
+ "test": "p3_same_split_all_backbones",
+ "group": "parts",
+ "what": "the pool holds the same rows for every backbone and the item split (and the row split) is the same",
+ "seconds": 0.4926629066467285,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "white": "f6a6201ff1e6",
+  "fx": "e9b61c12c3ee",
+  "tests": "fbb968a3758b"
+ }
+}

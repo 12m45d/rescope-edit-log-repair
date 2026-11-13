@@ -1,0 +1,58 @@
+{
+ "definition": "Verification, extra: what can be checked of the OPTIMUM-CODE numbers without running an exact solver again.\n\nusage: python v_opt_ub.py        -> verify/out/v_opt_ub.json       (CPU, seconds)\n\nThe measuring agent's optimum rows (out/opt_rows_<log>.jsonl, key 'last') store, per complaint and tolerance c, a bracket\nopt_lb <= OPT_c <= opt_ub and the best deletion set found, R_best.  Checked here with my own contributions (explicit\nvectors w_i = u_i <psi_i, k>, last prompt key from the final key cache, fp64):\n  ub_feasible   ||sum_{i not in R_best} w_i|| <= c ||D|| and |R_best| = opt_ub: the UPPER bound is a real deletion set;\n  consistent    my lower bound mu(c^2 ||D||^2 / gamma) <= opt_ub and opt_lb <= my best rule (LF, FO, BI): no bracket\n                contradicts my bounds.\nNOT checked: the LOWER bounds opt_lb (branch and bound / cutting planes of the Track C code); a certificate would need\nthe solver's proof.  The numbers 'certified optimum', 'rule / OPT' and 'bound / OPT' rest on them.\n",
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "n_rows": 107,
+   "per_tol": {
+    "0.1": {
+     "n_ub_feasible": 107,
+     "n_ub_size_equals_set": 107,
+     "n_consistent_with_my_bounds": 107,
+     "n_trackc_bracket_closed": 0,
+     "max_residual_over_tolerance": 0.999865450052982
+    },
+    "0.3": {
+     "n_ub_feasible": 107,
+     "n_ub_size_equals_set": 107,
+     "n_consistent_with_my_bounds": 107,
+     "n_trackc_bracket_closed": 10,
+     "max_residual_over_tolerance": 0.999653725505245
+    },
+    "0.5": {
+     "n_ub_feasible": 107,
+     "n_ub_size_equals_set": 107,
+     "n_consistent_with_my_bounds": 107,
+     "n_trackc_bracket_closed": 50,
+     "max_residual_over_tolerance": 0.9997884375241458
+    }
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "n_rows": 52,
+   "per_tol": {
+    "0.1": {
+     "n_ub_feasible": 52,
+     "n_ub_size_equals_set": 52,
+     "n_consistent_with_my_bounds": 52,
+     "n_trackc_bracket_closed": 0,
+     "max_residual_over_tolerance": 0.9991131759977502
+    },
+    "0.3": {
+     "n_ub_feasible": 52,
+     "n_ub_size_equals_set": 52,
+     "n_consistent_with_my_bounds": 52,
+     "n_trackc_bracket_closed": 14,
+     "max_residual_over_tolerance": 0.9986541029093229
+    },
+    "0.5": {
+     "n_ub_feasible": 52,
+     "n_ub_size_equals_set": 52,
+     "n_consistent_with_my_bounds": 52,
+     "n_trackc_bracket_closed": 38,
+     "max_residual_over_tolerance": 0.99949541497959
+    }
+   }
+  }
+ },
+ "sec": 1.5702838897705078
+}

@@ -1,0 +1,81 @@
+{
+ "log": "TB-Q100-ae-l2_3",
+ "stopped": "2026-11-11 00:48:37",
+ "reason": "started under the reading '40 minutes of wall-clock on 8 workers'; stopped when the budget was re-read as 40 minutes of CPU time (core-minutes) per log",
+ "n_processes": 9,
+ "n_workers": 8,
+ "wall_s": 714,
+ "cpu_s_workers": 5829,
+ "cpu_s_main": 2,
+ "cpu_s_total": 5831,
+ "n_rows_finished": 107,
+ "cpu_s_rows_finished": 5644.174652895002,
+ "launcher_stopped": [
+  341596
+ ],
+ "processes": [
+  {
+   "pid": 342034,
+   "ppid": 341596,
+   "cpu_s": 2,
+   "elapsed_s": 714,
+   "args": "[redacted: local path] e5_opt.py --log TB-Q100-ae-l2_3 --workers 8 --budget-min 40 --tl 10"
+  },
+  {
+   "pid": 342064,
+   "ppid": 342034,
+   "cpu_s": 729,
+   "elapsed_s": 712,
+   "args": "[redacted: local path] e5_opt.py --log TB-Q100-ae-l2_3 --workers 8 --budget-min 40 --tl 10"
+  },
+  {
+   "pid": 342065,
+   "ppid": 342034,
+   "cpu_s": 729,
+   "elapsed_s": 712,
+   "args": "[redacted: local path] e5_opt.py --log TB-Q100-ae-l2_3 --workers 8 --budget-min 40 --tl 10"
+  },
+  {
+   "pid": 342066,
+   "ppid": 342034,
+   "cpu_s": 730,
+   "elapsed_s": 712,
+   "args": "[redacted: local path] e5_opt.py --log TB-Q100-ae-l2_3 --workers 8 --budget-min 40 --tl 10"
+  },
+  {
+   "pid": 342067,
+   "ppid": 342034,
+   "cpu_s": 729,
+   "elapsed_s": 712,
+   "args": "[redacted: local path] e5_opt.py --log TB-Q100-ae-l2_3 --workers 8 --budget-min 40 --tl 10"
+  },
+  {
+   "pid": 342068,
+   "ppid": 342034,
+   "cpu_s": 725,
+   "elapsed_s": 712,
+   "args": "[redacted: local path] e5_opt.py --log TB-Q100-ae-l2_3 --workers 8 --budget-min 40 --tl 10"
+  },
+  {
+   "pid": 342069,
+   "ppid": 342034,
+   "cpu_s": 728,
+   "elapsed_s": 712,
+   "args": "[redacted: local path] e5_opt.py --log TB-Q100-ae-l2_3 --workers 8 --budget-min 40 --tl 10"
+  },
+  {
+   "pid": 342070,
+   "ppid": 342034,
+   "cpu_s": 731,
+   "elapsed_s": 712,
+   "args": "[redacted: local path] e5_opt.py --log TB-Q100-ae-l2_3 --workers 8 --budget-min 40 --tl 10"
+  },
+  {
+   "pid": 342071,
+   "ppid": 342034,
+   "cpu_s": 728,
+   "elapsed_s": 712,
+   "args": "[redacted: local path] e5_opt.py --log TB-Q100-ae-l2_3 --workers 8 --budget-min 40 --tl 10"
+  }
+ ]
+}

@@ -1,0 +1,116 @@
+{
+ "logs": {
+  "TB-Q100-ae-l2_3": {
+   "kept_gained": {
+    "rel": {
+     "n": 100,
+     "n_deployed_exact": 78,
+     "n_exact": 100,
+     "n_kept": 78,
+     "n_gained": 22,
+     "n_lost": 0,
+     "kept": 78.0,
+     "gained": 22.0
+    },
+    "tgen": {
+     "n": 100,
+     "n_deployed_exact": 9,
+     "n_exact": 57,
+     "n_kept": 9,
+     "n_gained": 48,
+     "n_lost": 0,
+     "kept": 9.0,
+     "gained": 48.0
+    },
+    "igen": {
+     "n": 100,
+     "n_deployed_exact": 22,
+     "n_exact": 69,
+     "n_kept": 21,
+     "n_gained": 48,
+     "n_lost": 1,
+     "kept": 21.0,
+     "gained": 48.0
+    }
+   },
+   "consistent_with_edit_stats": true,
+   "blocklist": {
+    "n_rows": 465,
+    "n_reported": 25,
+    "n_blocked": 25,
+    "rows_consistent": true,
+    "D1_deployed": 54.193548387096776,
+    "D1_blocklist": 50.96774193548387,
+    "D1_blocked_rows": 0.0
+   }
+  },
+  "TB-L100-ae-l2_3": {
+   "kept_gained": {
+    "rel": {
+     "n": 100,
+     "n_deployed_exact": 88,
+     "n_exact": 98,
+     "n_kept": 86,
+     "n_gained": 12,
+     "n_lost": 2,
+     "kept": 86.0,
+     "gained": 12.0
+    },
+    "tgen": {
+     "n": 100,
+     "n_deployed_exact": 29,
+     "n_exact": 47,
+     "n_kept": 24,
+     "n_gained": 23,
+     "n_lost": 5,
+     "kept": 24.0,
+     "gained": 23.0
+    },
+    "igen": {
+     "n": 100,
+     "n_deployed_exact": 66,
+     "n_exact": 95,
+     "n_kept": 65,
+     "n_gained": 30,
+     "n_lost": 1,
+     "kept": 65.0,
+     "gained": 30.0
+    }
+   },
+   "consistent_with_edit_stats": true,
+   "blocklist": {
+    "n_rows": 469,
+    "n_reported": 25,
+    "n_blocked": 25,
+    "rows_consistent": true,
+    "D1_deployed": 62.26012793176972,
+    "D1_blocklist": 58.84861407249467,
+    "D1_blocked_rows": 0.0
+   }
+  }
+ },
+ "synthetic": {
+  "identities": true,
+  "kept_ci_equals_direct_bootstrap": true,
+  "d2_plain_unchanged": true,
+  "d2_ci_equals_cluster_bootstrap": true,
+  "d2_units": 150,
+  "d2_rows": 200,
+  "grid_shape": [
+   2,
+   100
+  ],
+  "grid_rows_equal": true,
+  "grid_other_units_refused": true,
+  "missing_deployed_row_refused": true
+ },
+ "ok": true,
+ "test": "readouts",
+ "seconds": 0.09118127822875977,
+ "code": {
+  "rescope": "c76c4da16bd6",
+  "fx": "6a71f0d2cd71",
+  "fx_version": "fx-1.2 stage 2 (2026-11-11)"
+ },
+ "time": "2026-11-11 19:10:33"
+}

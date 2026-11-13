@@ -1,0 +1,104 @@
+{
+ "log": "synthetic-T10000",
+ "kind": "synthetic",
+ "T": 10000,
+ "backbone": "qwen25vl",
+ "threads": 4,
+ "synthetic": {
+  "T": 10000,
+  "backbone": "qwen25vl",
+  "reference_log": "TB-Q2000-memitw",
+  "beta": 0.9,
+  "seed": 20271111,
+  "build_s": 10.848520040512085,
+  "n_distinct_real_edits": 1987,
+  "rule": " OF T EDITS (R13; \"random factors with the row norms and the coordinate distribution of a real log\").\nReference log = the longest MEMIT-style log of the backbone (TB-Q2000-memitw / TB-L1000-memitw), T_ref real edits.\nFor synthetic edit j (seeded, numpy default_rng(SEED + T)):\n    i(j)   a real edit drawn uniformly with replacement\n    w'_j   = |w_i| * unit(BETA * unit(w_i) + sqrt(1 - BETA^2) * g_j),  g_j a standard Gaussian direction made orthogonal to w_i\n             (a real read-out vector turned by the fixed angle arccos(BETA) in a random direction; its norm is the real one)\n    s'_j   = s_i  (the real own coordinate; the synthetic solver key is DEFINED as k_i + (s_i - <w'_j, k_i>) w'_j / |w'_j|^2 and is\n             never materialised: its normalised own coordinate is 1 by construction)\n    v'_j   = the released (rebased) value of real edit i (real value norms)\nBETA = 0.9 was fixed before any timing was looked at; costs depend on T, d and m only.  The distribution of the normalised\ncoordinates of the 200 calibration keys on the synthetic detectors is recorded next to the real one (quantiles).\nThe scoped log of a synthetic log has no guard keys (the own coordinate is 1 by const"
+ },
+ "storage": {
+  "T": 10000,
+  "d_in": 11008,
+  "d_out": 2048,
+  "numbers_serving": 130590000,
+  "numbers_per_edit": 13059,
+  "numbers_guard_keys": 220160000,
+  "numbers_module": 22544384,
+  "mb_serving_fp64": 996.3226318359375,
+  "mb_serving_module_dtype": 249.08065795898438,
+  "mb_guard_keys_fp64": 1679.6875,
+  "mb_guard_keys_float32_as_cached": 839.84375,
+  "mb_module": 43.0,
+  "mb_per_edit_fp64": 0.09963226318359375,
+  "mb_per_edit_module_dtype": 0.024908065795898438,
+  "share_of_module_numbers_pct": 579.2573440906614,
+  "share_of_module_bytes_fp64_pct": 2317.0293763626455,
+  "T_at_module_size_numbers": 1726.3484187150625,
+  "T_at_module_size_bytes_fp64_store": 431.5871046787656
+ },
+ "calibration": {
+  "slim_s": 0.222601518034935,
+  "runs_s": [
+   0.2341475710272789,
+   0.22690372169017792,
+   0.22076833248138428,
+   0.22129802778363228,
+   0.222601518034935
+  ],
+  "slim_stages": {
+   "coords_s": 0.2139197438955307,
+   "rule_s": 0.008415427058935165,
+   "caps_s": 0.00023753196001052856,
+   "total_s": 0.2225727029144764,
+   "n": 200,
+   "n_edits_capped": 159,
+   "eta": 0.4830290270914556,
+   "bound": 0.04950495049504951
+  },
+  "n": 200,
+  "coordinate_quantiles_synthetic": {
+   "0.01": -0.15520563714988125,
+   "0.5": 0.0013749848023329307,
+   "0.99": 0.22535774769184655,
+   "0.999": 0.4231879005260375
+  },
+  "coordinate_quantiles_reference_log": {
+   "0.01": -0.16588286582970624,
+   "0.5": 0.0007110468233927783,
+   "0.99": 0.24751329530298236,
+   "0.999": 0.4713676648641503
+  },
+  "query_max_median_synthetic": 0.47854886296904164,
+  "query_max_median_reference_log": 0.5114202929493761
+ },
+ "least_repair": {
+  "slim_ms": {
+   "median": 14.423208311200142,
+   "p10": 13.6338721960783,
+   "p90": 16.43391400575638,
+   "mean": 14.74846564233303,
+   "n": 30
+  },
+  "n_complaints": 30,
+  "n_with_a_raised_threshold": 0
+ },
+ "revocation": {
+  "threshold_only_ms": 0.1374557614326477,
+  "rule": "threshold of the edit = +inf (one write; a new threshold vector is allocated)"
+ },
+ "gate_cpu_ms": {
+  "fp64": {
+   "median": 12.784771621227264,
+   "p10": 12.615905702114105,
+   "p90": 13.100813701748848,
+   "mean": 12.83194308479627,
+   "n": 150
+  },
+  "fp32": {
+   "median": 6.25237450003624,
+   "p10": 6.132570281624794,
+   "p90": 6.5048698335886,
+   "mean": 6.309162204464276,
+   "n": 150
+  }
+ },
+ "seconds_total": 23.96652626991272
+}

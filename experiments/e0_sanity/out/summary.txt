@@ -1,0 +1,61 @@
+E0 summary (alpha = 0.05, n = 200; Q = TB-Q100-ae-l2_3, L = TB-L100-ae-l2_3)
+
+GATE LEVEL, 20 draws: fire = % of HELD-OUT-DISJOINT rows firing, mean[5th-95th pct]; cov = % of T-Gen / I-Gen whose own edit fires (top-1);
+sil = own Rel prompts silenced before>after cap; HN any / HN own = % of HN-I / HN-Q / HN-X rows on which an edit / the row's own edit (HN-X: either of
+its two edits) fires (means)
+log  method  fire             cov T/I    sil     HN any I/Q/X  HN own I/Q/X
+Q    M1      4.65[2.56-7.13]  62.2/72.7  0.0>0   37/27/53      32/20/44
+Q    M2      4.63[4.22-5.43]  60.1/73.0  0.0>0   29/19/39      26/15/34
+Q    M3      4.72[2.94-7.57]  12.2/50.5  3.9>0   11/17/18      6/9/12
+Q    M4      3.89[2.80-4.98]  2.0/48.5   0.0>0   4/7/8         3/2/4
+Q    M5      48.17            38.0/70.0  0       100/100/100   28/23/41
+Q    M6      0.00             0.0/0.0    1       0/0/0         0/0/0
+L    M1      3.09[0.42-7.46]  43.2/90.8  0.2>0   19/38/44      7/33/39
+L    M2      3.39[2.30-4.32]  32.6/89.9  0.0>0   13/27/31      6/24/30
+L    M3      4.91[1.87-9.17]  13.2/52.1  36.8>0  18/38/39      1/21/25
+L    M4      3.07[1.27-4.05]  0.0/71.8   0.0>0   4/5/7         1/2/4
+L    M5      41.15            24.0/94.0  0       91/99/99      4/39/43
+L    M6      0.00             0.0/0.0    0       0/0/0         0/0/0
+
+BEHAVIOUR, draws [0, 1, 2] (means; M5, M6, deployed: one run): exact % Rel/T-Gen/I-Gen over 100 edits; D1 % on HELD-OUT-DISJOINT / STRICT;
+hard-negative D1 % HN-I/HN-Q/HN-X; token-level locality T-Loc*/I-Loc* on HELD-OUT-DISJOINT
+log  method    Rel/T/I    D1 disj/strict  HN D1 I/Q/X      T-Loc*/I-Loc*
+Q    M1        100/56/68  3.94/3.11       32.3/23.7/48.5   100.00/98.50
+Q    M2        100/60/72  4.80/2.84       28.8/19.2/39.7   99.97/98.07
+Q    M3        99/13/49   4.23/3.91       8.1/15.4/16.2    100.00/98.68
+Q    M4        100/3/49   4.30/1.51       4.5/6.9/9.1      100.00/98.68
+Q    M5        100/37/69  46.88/34.93     97.3/99.2/100.0  100.00/82.88
+Q    M6        99/1/0     0.00/0.00       0.0/0.0/0.0      100.00/100.00
+Q    deployed  78/9/22    54.19/54.67     76.7/77.7/86.9   92.20/92.08
+L    M1        98/38/90   3.06/2.73       20.1/36.2/42.4   99.61/97.19
+L    M2        98/34/89   4.26/4.13       13.6/26.9/30.6   99.24/97.56
+L    M3        97/12/52   4.26/4.05       21.4/37.4/37.4   100.00/94.54
+L    M4        98/2/69    2.56/0.62       3.4/4.4/5.7      100.00/96.34
+L    M5        98/22/93   41.15/28.23     90.5/97.2/97.0   100.00/52.91
+L    M6        98/2/1     0.00/0.00       0.0/0.0/0.0      100.00/100.00
+L    deployed  88/29/66   62.26/66.75     62.9/65.5/75.8   83.36/78.24
+
+REFEREE -> M1 / M2 (rows firing % / T-Gen coverage %), differences in points: MC = his 300 halves -> expectation over halves; n200 = calibration on
+all REPAIR rows -> 200 drawn; d20 = our 20 draws instead of the expectation; pool = read-out HELD-OUT -> HELD-OUT-DISJOINT; guards; top-1; positions
+log  rule       referee    this       MC          n200        d20         pool        guards      top-1       positions
+Q    two-block  5.06/67.0  4.65/62.2  -0.19/-0.2  -0.25/-3.8  +0.23/+1.5  -0.20/+0.0  +0.00/+0.0  +0.00/-2.2  +0.00/+0.0
+Q    shared     4.69/64.0  4.63/60.1  +0.00/+0.0  +0.17/-1.9  -0.06/+0.1  -0.17/+0.0  +0.00/+0.0  +0.00/-2.0  +0.00/+0.0
+L    two-block  2.77/46.7  3.09/43.2  +0.05/+0.2  +0.33/-1.7  +0.09/-0.8  -0.14/+0.0  +0.00/+0.0  +0.00/-1.2  +0.00/+0.0
+L    shared     3.64/35.0  3.39/32.6  -0.00/+0.0  -0.18/-1.8  -0.06/+0.1  -0.02/+0.0  +0.00/+0.0  +0.00/-0.6  +0.00/+0.0
+
+NOTES (Q | L)
+two-block minus shared, M1 - M2 as defined, 6000 paired draws (fire, T-Gen cov, I-Gen cov): -0.30+-0.02, +0.83+-0.10, -0.73+-0.06 | -0.47+-0.03, +11.42+-0.08, +0.48+-0.03
+  the same in the referee's setting (all REPAIR rows): +0.18, +2.77, -0.94 | -0.83, +11.94, -0.53
+fire % over 6000 draws, mean (5th-95th pct), M1 then M2: 4.40 (1.72-7.31); 4.70 (3.87-5.81) | 2.98 (0.43-7.04); 3.45 (1.92-4.69); bound 4.95 / 4.98
+referee's 300 halves vs expectation over 60000 halves (two-block fire %): 5.06 vs 4.87 (z = +3.38, 0 of 200 blocks of 300 as far) | 2.77 vs 2.81 (z = -0.70, 94 of 200 blocks of 300 as far)
+library rule on the referee's own halves, largest difference to his numbers (points): 0e+00 | 7e-15; P11 keys bitwise equal to the cache: 1279/1279 | 1288/1288
+edits capped per draw, mean: M1 0.0 (0/20 draws), M3 3.9 (17/20 draws) | M1 0.2 (4/20 draws) [edit 87: 4 draws, largest REPAIR coordinate 0.863 (probe:image:425, same question as the edit: True)], M3 36.8 (20/20 draws)
+own Rel prompts not released by the own edit after the cap (M3, mean over draws): 0.50 | 1.15
+rephrases on which ANOTHER edit fires, M1 then M2 (T-Gen / I-Gen %): 9.2 / 7.6; 5.8 / 7.2 | 7.5 / 1.6; 3.7 / 1.9
+HN-I fire % of M1 (20 draws): new same-category / new other-category / existing: 60.7 / 30.7 / 31.6 | 36.2 / 13.6 / 15.6
+D1 % among the firing HELD-OUT-DISJOINT rows, M1 - M5 (draws 0-2): 100.0 100.0 100.0 100.0 97.3 | 100.0 100.0 100.0 100.0 100.0
+(T-Gen + I-Gen) / 2 exact %, M1 - M5, deployed (draws 0-2): 62.3 66.0 30.8 26.2 53.0 15.5 | 64.3 61.5 31.8 35.7 57.5 47.5
+T-Gen / I-Gen exact % per draw 0, 1, 2: M1 57/69 52/66 60/70; M2 59/72 58/70 62/75 | M1 47/95 25/85 43/91; M2 36/90 32/89 33/89
+degenerate pre-edit answers (bare None / No etc.) among HN-I / HN-Q / HN-X rows: 0 of 588 / 0 of 591 / 0 of 99 | 188 of 590 / 185 of 597 / 27 of 99; rows with a non-finite logit: 0 | 0
+checks: naive re-implementation, decisions differing: 0 of 1656936 | 0 of 1667952; GPU hook vs CPU cache, flags differing: 0 of 101388 | 0 of 101948; deployed D1 == stored: 465/465 | 469/469; restart, rows identical: 1920/1920 | 1920/1920; all checks OK: True | True
+library rescope c76c4da16bd6: 53/53 stored test results carry this fingerprint, 53 pass

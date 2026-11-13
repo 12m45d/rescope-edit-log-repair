@@ -1,0 +1,96 @@
+{
+ "W_E_identical_to_reedit_py": true,
+ "rows": [
+  {
+   "group": "image_427",
+   "impl": "baselines/reedit.py",
+   "rep": 0,
+   "applied_dW_over_W0": 0.07717054337263107,
+   "applied_dW_over_W0_fp64": 0.07727840884732111,
+   "z_delta_over_h": 1.0637028217315674,
+   "z_nll": 0.04542626813054085,
+   "z_steps": 6,
+   "W_after_bitwise_equal_harness_same_rep": false
+  },
+  {
+   "group": "image_427",
+   "impl": "harness",
+   "rep": 0,
+   "applied_dW_over_W0": 0.0847836963501252,
+   "applied_dW_over_W0_fp64": 0.0847836963501252,
+   "z_delta_over_h": 1.1671142578125,
+   "z_nll": 0.02802625112235546,
+   "z_steps": 7
+  },
+  {
+   "group": "image_427",
+   "impl": "baselines/reedit.py",
+   "rep": 1,
+   "applied_dW_over_W0": 0.08474565297365189,
+   "applied_dW_over_W0_fp64": 0.08483802323800282,
+   "z_delta_over_h": 1.1678484678268433,
+   "z_nll": 0.027880296111106873,
+   "z_steps": 7,
+   "W_after_bitwise_equal_harness_same_rep": false
+  },
+  {
+   "group": "image_427",
+   "impl": "harness",
+   "rep": 1,
+   "applied_dW_over_W0": 0.08487557965267326,
+   "applied_dW_over_W0_fp64": 0.08487557965267326,
+   "z_delta_over_h": 1.1683751344680786,
+   "z_nll": 0.026928061619400978,
+   "z_steps": 7
+  },
+  {
+   "group": "text_191",
+   "impl": "baselines/reedit.py",
+   "rep": 0,
+   "applied_dW_over_W0": 0.09285267442464828,
+   "applied_dW_over_W0_fp64": 0.09293173339275394,
+   "z_delta_over_h": 0.9928121566772461,
+   "z_nll": 0.02834138087928295,
+   "z_steps": 6,
+   "W_after_bitwise_equal_harness_same_rep": true
+  },
+  {
+   "group": "text_191",
+   "impl": "harness",
+   "rep": 0,
+   "applied_dW_over_W0": 0.09293173339275394,
+   "applied_dW_over_W0_fp64": 0.09293173339275394,
+   "z_delta_over_h": 0.9928121566772461,
+   "z_nll": 0.02834138087928295,
+   "z_steps": 6
+  },
+  {
+   "group": "text_191",
+   "impl": "baselines/reedit.py",
+   "rep": 1,
+   "applied_dW_over_W0": 0.09285267442464828,
+   "applied_dW_over_W0_fp64": 0.09293173339275394,
+   "z_delta_over_h": 0.9928121566772461,
+   "z_nll": 0.02834138087928295,
+   "z_steps": 6,
+   "W_after_bitwise_equal_harness_same_rep": true
+  },
+  {
+   "group": "text_191",
+   "impl": "harness",
+   "rep": 1,
+   "applied_dW_over_W0": 0.09293173339275394,
+   "applied_dW_over_W0_fp64": 0.09293173339275394,
+   "z_delta_over_h": 0.9928121566772461,
+   "z_nll": 0.02834138087928295,
+   "z_steps": 6
+  }
+ ],
+ "rel_spread_applied_dW": {
+  "image_427": 0.0983090997688872,
+  "text_191": 0.0
+ },
+ "pass": true,
+ "seconds": 35.060176372528076,
+ "gpu": "NVIDIA GeForce RTX 5090"
+}

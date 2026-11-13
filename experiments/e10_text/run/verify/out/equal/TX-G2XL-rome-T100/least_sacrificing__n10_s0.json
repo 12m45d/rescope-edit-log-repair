@@ -1,0 +1,79 @@
+{
+ "log": "TX-G2XL-rome-T100",
+ "repair": "least_sacrificing",
+ "n": 10,
+ "seed": 0,
+ "meta": {
+  "form": "least_sacrificing",
+  "guards_off_start": true,
+  "n_thresholds_raised": 11,
+  "n_thresholds_lowered": 0,
+  "complaints_refused": 0,
+  "largest_complaint_margin_over_threshold_after_repair": -6.443910070819125e-08,
+  "repair_seconds": 0.009262561798095703,
+  "repair_passes": 0,
+  "logonly_record": {
+   "n_edits_capped": 0,
+   "n_own_keys_silenced_by_literal_rule": 0,
+   "allow_silence": true
+  }
+ },
+ "stats": {
+  "request.exact": {
+   "value": 96.0,
+   "ci_lo": 92.0,
+   "ci_hi": 99.0,
+   "n": 100
+  },
+  "paraphrase.exact": {
+   "value": 64.0,
+   "ci_lo": 56.0,
+   "ci_hi": 71.5,
+   "n": 200
+  },
+  "heldout.D1_tf": {
+   "value": 17.555555555555557,
+   "ci_lo": 14.333333333333334,
+   "ci_hi": 21.0,
+   "n": 900
+  },
+  "heldout.kept_tf": {
+   "value": 96.55555555555556,
+   "ci_lo": 95.5886111111111,
+   "ci_hi": 97.42222222222222,
+   "n": 900
+  },
+  "heldout.fired": {
+   "value": 54.111111111111114,
+   "ci_lo": 49.888888888888886,
+   "ci_hi": 58.22222222222222,
+   "n": 900
+  },
+  "complaints.D1_tf": {
+   "value": 10.0,
+   "ci_lo": 0.0,
+   "ci_hi": 30.0,
+   "n": 10
+  },
+  "complaints.D1_dec": {
+   "value": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0,
+   "n": 10
+  },
+  "complaints.fired": {
+   "value": 10.0,
+   "ci_lo": 0.0,
+   "ci_hi": 30.0,
+   "n": 10
+  },
+  "request.own_released_dec": {
+   "value": 100.0,
+   "ci_lo": 100.0,
+   "ci_hi": 100.0,
+   "n": 100
+  },
+  "requests_whose_own_edit_is_not_released_as_served": 0
+ },
+ "n_rows": 1210
+}

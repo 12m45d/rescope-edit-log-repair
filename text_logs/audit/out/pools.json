@@ -1,0 +1,274 @@
+{
+ "written": "2026-11-11 10:03:53 UTC",
+ "seed_protocol": 20261109,
+ "seed_in_builder_pools_json": 20261109,
+ "rule_in_builder_pools_json": "eligible = records in no log, case-id order; perm = numpy.random.default_rng(seed).permutation(len(eligible)); REPAIR = first 1000 of perm, HELD-OUT = next 1000",
+ "split": {
+  "n_records": 21919,
+  "n_logged": 2100,
+  "n_eligible": 19819,
+  "repair_equals_rederivation": true,
+  "heldout_equals_rederivation": true,
+  "n_repair": 1000,
+  "n_heldout": 1000,
+  "prompt_rows_records_equal": {
+   "repair": true,
+   "heldout": true,
+   "stream": true,
+   "dev": true
+  },
+  "other_seed_would_differ": true,
+  "first_repair_records": [
+   2012,
+   2018,
+   2031,
+   2075,
+   2079
+  ],
+  "first_heldout_records": [
+   2003,
+   2023,
+   2048,
+   2087,
+   2175
+  ]
+ },
+ "disjoint_by_record": {
+  "repair&heldout": 0,
+  "repair&stream": 0,
+  "repair&dev": 0,
+  "heldout&stream": 0,
+  "heldout&dev": 0,
+  "stream&dev": 0
+ },
+ "disjoint_by_case_id": {
+  "repair&heldout": 0,
+  "repair&stream": 0,
+  "repair&dev": 0,
+  "heldout&stream": 0,
+  "heldout&dev": 0,
+  "stream&dev": 0
+ },
+ "all_pairwise_disjoint": true,
+ "prompt_rows": {
+  "dev/neighborhood": 1000,
+  "dev/paraphrase": 200,
+  "dev/request": 100,
+  "heldout/paraphrase": 2000,
+  "heldout/request": 1000,
+  "repair/paraphrase": 2000,
+  "repair/request": 1000,
+  "stream/neighborhood": 20000,
+  "stream/paraphrase": 4000,
+  "stream/request": 2000
+ },
+ "prompt_rows_text_not_equal_dataset": 0,
+ "subject_flags": {
+  "repair": {
+   "n_records": 1000,
+   "share_subject_with_T100": 0,
+   "share_subject_with_T100_casefold": 0,
+   "share_subject_with_T500": 6,
+   "share_subject_with_T500_casefold": 6,
+   "share_subject_with_T1000": 14,
+   "share_subject_with_T1000_casefold": 14,
+   "share_subject_with_T2000": 22,
+   "share_subject_with_T2000_casefold": 22,
+   "share_subject_with_dev": 0,
+   "share_subject_with_dev_casefold": 0,
+   "builder_pools_json": {
+    "records_subject_in_stream": 22,
+    "records_subject_in_dev": 0,
+    "records_subject_in_stream_casefold": 22,
+    "records_subject_in_T100": 0,
+    "records_subject_in_T500": 6,
+    "records_subject_in_T1000": 14,
+    "records_subject_in_T2000": 22
+   },
+   "n_pool_records_flag_differs": 0,
+   "n_prompt_rows": 3000,
+   "n_prompt_rows_flag_differs": 0,
+   "flagged_records_examples": [
+    [
+     2303,
+     "Athens",
+     978
+    ],
+    [
+     4621,
+     "The Decameron",
+     861
+    ],
+    [
+     5397,
+     "Umayyad Caliphate",
+     440
+    ],
+    [
+     6332,
+     "Kenny Wheeler",
+     1032
+    ],
+    [
+     6365,
+     "EZ Basic",
+     1636
+    ],
+    [
+     6547,
+     "Karim Lala",
+     651
+    ]
+   ]
+  },
+  "heldout": {
+   "n_records": 1000,
+   "share_subject_with_T100": 2,
+   "share_subject_with_T100_casefold": 2,
+   "share_subject_with_T500": 4,
+   "share_subject_with_T500_casefold": 4,
+   "share_subject_with_T1000": 13,
+   "share_subject_with_T1000_casefold": 13,
+   "share_subject_with_T2000": 19,
+   "share_subject_with_T2000_casefold": 19,
+   "share_subject_with_dev": 1,
+   "share_subject_with_dev_casefold": 1,
+   "builder_pools_json": {
+    "records_subject_in_stream": 19,
+    "records_subject_in_dev": 1,
+    "records_subject_in_stream_casefold": 19,
+    "records_subject_in_T100": 2,
+    "records_subject_in_T500": 4,
+    "records_subject_in_T1000": 13,
+    "records_subject_in_T2000": 19
+   },
+   "n_pool_records_flag_differs": 0,
+   "n_prompt_rows": 3000,
+   "n_prompt_rows_flag_differs": 0,
+   "flagged_records_examples": [
+    [
+     2761,
+     "Mari El Republic",
+     1227
+    ],
+    [
+     3046,
+     "John Paul II",
+     799
+    ],
+    [
+     3613,
+     "Beirut",
+     70
+    ],
+    [
+     5938,
+     "Battle of France",
+     714
+    ],
+    [
+     7389,
+     "Athens",
+     978
+    ],
+    [
+     7534,
+     "Toulouse",
+     1848
+    ]
+   ]
+  }
+ },
+ "subject_flags_equal_builder_report": {
+  "repair": true,
+  "heldout": true
+ },
+ "beyond_registered_flags": {
+  "repair": {
+   "n_prompts": 3000,
+   "n_distinct_texts": 3000,
+   "text_is_in_other_pool": 1,
+   "text_is_logged_stream_request": 2,
+   "text_is_logged_stream_paraphrase": 0,
+   "text_is_logged_stream_neighborhood": 30,
+   "text_is_logged_dev_prompt": 1,
+   "prompts_mentioning_logged_subject_audit_rule": {
+    "T100": 0,
+    "T500": 42,
+    "T1000": 89,
+    "T2000": 144,
+    "dev": 8
+   },
+   "prompts_mentioning_logged_subject_builder": {
+    "T100": 0,
+    "T500": 42,
+    "T1000": 89,
+    "T2000": 144,
+    "dev": 8
+   },
+   "n_rows_mention_flag_differs_from_builder": 0,
+   "prompts_containing_logged_subject_as_substring_T2000": 170
+  },
+  "heldout": {
+   "n_prompts": 3000,
+   "n_distinct_texts": 2999,
+   "text_is_in_other_pool": 1,
+   "text_is_logged_stream_request": 4,
+   "text_is_logged_stream_paraphrase": 0,
+   "text_is_logged_stream_neighborhood": 22,
+   "text_is_logged_dev_prompt": 7,
+   "prompts_mentioning_logged_subject_audit_rule": {
+    "T100": 7,
+    "T500": 42,
+    "T1000": 95,
+    "T2000": 159,
+    "dev": 5
+   },
+   "prompts_mentioning_logged_subject_builder": {
+    "T100": 7,
+    "T500": 42,
+    "T1000": 95,
+    "T2000": 159,
+    "dev": 5
+   },
+   "n_rows_mention_flag_differs_from_builder": 0,
+   "prompts_containing_logged_subject_as_substring_T2000": 196
+  },
+  "subjects_shared_between_repair_and_heldout": 5,
+  "subjects_repeated_within": {
+   "repair": 7,
+   "heldout": 3
+  },
+  "stream_duplicate_subjects": 21,
+  "stream_and_dev_shared_subjects": 1,
+  "stream_and_dev_shared_prompt_texts": 305,
+  "neighborhood_equal_to_a_logged_request": {
+   "T100": 1,
+   "T500": 11,
+   "T1000": 41,
+   "T2000": 140
+  },
+  "neighborhood_mentioning_another_logged_subject_audit_rule": {
+   "T100": 5,
+   "T500": 79,
+   "T1000": 289,
+   "T2000": 971
+  },
+  "builder_neighborhood_equal": {
+   "T100": 1,
+   "T500": 11,
+   "T1000": 41,
+   "T2000": 140,
+   "dev": 0
+  },
+  "builder_neighborhood_mention": {
+   "T100": 5,
+   "T500": 79,
+   "T1000": 289,
+   "T2000": 971,
+   "dev": 1
+  },
+  "heldout_request_templates_also_used_by_a_logged_request": 996
+ },
+ "finished": "2026-11-11 10:03:58 UTC"
+}

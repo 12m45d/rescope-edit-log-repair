@@ -1,0 +1,123 @@
+{
+ "A_null_repair": {
+  "Q": {
+   "n_benign_keys": 100,
+   "disjoint_from_calibration": true,
+   "detectors_max_rel_diff_lib_vs_closed_form": 1.4904991050008792e-13,
+   "max_abs_coordinate_on_benign_keys_mine": 8.31463067224696e-15,
+   "max_abs_coordinate_on_benign_keys_lib": 3.1840917211862214e-13,
+   "max_own_coordinate_error_lib": 6.439293542825908e-15,
+   "lib_record": {
+    "rank_benign": 100,
+    "infeasible": [],
+    "rel_change_median": 0.12608111996876684,
+    "rel_change_max": 0.3548769087556951,
+    "n_guards_lost": 0
+   },
+   "eta_abs_diff": 1.8041124150158794e-15,
+   "capped_equal": true,
+   "n_capped": 0,
+   "n_rows": 3200,
+   "decisions_differing": 0,
+   "of_them_further_than_1e-7_from_a_threshold": 0,
+   "mechanics_only_note": "development log; ReScope-N numbers are not reported here"
+  },
+  "L": {
+   "n_benign_keys": 100,
+   "disjoint_from_calibration": true,
+   "detectors_max_rel_diff_lib_vs_closed_form": 1.283092615427019e-12,
+   "max_abs_coordinate_on_benign_keys_mine": 1.578831290292358e-14,
+   "max_abs_coordinate_on_benign_keys_lib": 2.9353140958626105e-12,
+   "max_own_coordinate_error_lib": 4.6629367034256575e-15,
+   "lib_record": {
+    "rank_benign": 100,
+    "infeasible": [],
+    "rel_change_median": 0.09334571140488557,
+    "rel_change_max": 0.32521119545805804,
+    "n_guards_lost": 0
+   },
+   "eta_abs_diff": 6.696032617270475e-14,
+   "capped_equal": true,
+   "n_capped": 0,
+   "n_rows": 3199,
+   "decisions_differing": 0,
+   "of_them_further_than_1e-7_from_a_threshold": 0,
+   "mechanics_only_note": "development log; ReScope-N numbers are not reported here"
+  }
+ },
+ "B_stored_metrics": {
+  "Q": {
+   "probe_counts_equal_mine": true,
+   "mine": {
+    "repair": {
+     "n_rows": 500,
+     "n_valid": 489,
+     "n_D1": 297,
+     "n_D2": 26
+    },
+    "heldout": {
+     "n_rows": 500,
+     "n_valid": 490,
+     "n_D1": 268,
+     "n_D2": 17
+    },
+    "heldout_disjoint": {
+     "n_rows": 475,
+     "n_valid": 465,
+     "n_D1": 252,
+     "n_D2": 17
+    }
+   },
+   "edits_exact_lib": {
+    "rel": 78.0,
+    "tgen": 9.0,
+    "igen": 23.0
+   },
+   "edits_exact_from_per_edit_file": {
+    "rel": 78.0,
+    "tgen": 9.0,
+    "igen": 23.0
+   },
+   "edits_equal": true,
+   "locality_equal_metrics_json": true,
+   "D1_rate_heldout_disjoint": 54.193548387096776
+  },
+  "L": {
+   "probe_counts_equal_mine": true,
+   "mine": {
+    "repair": {
+     "n_rows": 500,
+     "n_valid": 494,
+     "n_D1": 305,
+     "n_D2": 31
+    },
+    "heldout": {
+     "n_rows": 500,
+     "n_valid": 494,
+     "n_D1": 304,
+     "n_D2": 32
+    },
+    "heldout_disjoint": {
+     "n_rows": 475,
+     "n_valid": 469,
+     "n_D1": 292,
+     "n_D2": 31
+    }
+   },
+   "edits_exact_lib": {
+    "rel": 88.0,
+    "tgen": 28.999999999999996,
+    "igen": 66.0
+   },
+   "edits_exact_from_per_edit_file": {
+    "rel": 88.0,
+    "tgen": 28.999999999999996,
+    "igen": 66.0
+   },
+   "edits_equal": true,
+   "locality_equal_metrics_json": true,
+   "D1_rate_heldout_disjoint": 62.26012793176972
+  }
+ },
+ "pass": true
+}
