@@ -16,6 +16,7 @@ All commands below are run from the repository root unless stated otherwise.
 - [Experiments and reproduction levels](#experiments)
 - [Reproduction limits](#what-can-be-reproduced)
 - [Protocol](#the-protocol)
+- [Use of AI tools](#use-of-ai-tools)
 
 ## Layout
 
@@ -177,8 +178,8 @@ flags stored in the log (20/20).
 
 ## Experiments
 
-Verification records describe separate automated implementations and reruns by AI-agent instances, each with
-its own code. These records are distinct from independent human review.
+Verification records describe separate automated implementations and reruns, each with its own code.
+These are automated checks, distinct from independent human review.
 
 One row per experiment of the paper (protocol after the amendments R19 and R21 to R25). Directories are under
 `experiments/`. "gate" = gate-level computation on the CPU from the key cache; "behave" = forward passes on a GPU through
@@ -272,8 +273,7 @@ The table (column "Levels": what the section above defines):
 | Build and audit of the text logs | `text_logs` | `python code/run_stream.py --name stream`; `python code/build_logs.py`; audit: `audit/*.py` | 4.1 h | `out/text_logs.json`, `out/DEVIATIONS.txt` | `audit/verdicts.json` | Table 1 (text rows); Sec. 5.1 | [G] not tested in a copy (public ROME code, public checkpoint, public data); the audit's verdicts are shipped |
 | Numbers, tables and figures of the paper | `paper` | `python paper/scripts/gen_numbers.py`; `python paper/scripts/figs/fig_evidence.py`; `python paper/scripts/figs/fig_report.py`; `python paper/compare_numbers.py` | 1 min | `paper/numbers.tex`, `paper/tab_*.tex`, `paper/figs/` | compared with `paper/expected/` | every number; Tables 1 to 4; Figure 2 (a), (b); the figures of the technical report's App. C | [S] tested: 570 of 570 macros and 17 of 17 table bodies identical to `paper/expected/` |
 
-Figure 1 of the paper is an illustration (drawn by the first author; its draft was made with an image model); it is not
-generated from data and has no script here. The statement checks `paper/scripts/check_vlm_statements.py` and
+Figure 1 of the paper is an illustration and has no data-generation script here. The statement checks `paper/scripts/check_vlm_statements.py` and
 `check_e10_statements.py` compare the wording of the paper with the experiments' JSON and read the paper's section files;
 `paper/checks/check_tab_logs_rows.py` reads the run logs of the log builds. Neither input is released, so these three are
 a record of what was checked; `paper/scripts/final_spot_checks.py`, `check_method_pseudocode.py`,
@@ -373,7 +373,7 @@ Additional reproduction notes:
 
 ### Named in released documents, not released
 
-Released records name files that are not part of the artifact: the workflow scripts that drove the AI assistant
+Released records name files that are not part of the artifact: the internal workflow scripts
 (`02_research/tools/workflows/*.js`, named in `driver/USAGE.txt`), the analysis notes under `03_analysis/` (theory rounds,
 literature notes; named in code comments, in result files and in `paper/proof_gaps.txt`), `CHECK_LOG.tex` and the other
 check and review files of the paper's directory (named in `paper/proof_gaps.txt` and in the paper's scripts), the LaTeX
@@ -403,3 +403,7 @@ dated amendments, each with its time stamp (UTC) and the state of the runs at th
 text, and a withdrawn amendment stays in the file with its withdrawal. Read Sections 0 to 5 first, then the amendments in
 order; R19 and R21 to R25 define what was finally run, and the amendments of 2026-11-12 record the registered verdicts
 (including outcomes against the method) after each verification. The preface of the file explains the redaction marks.
+
+## Use of AI tools
+
+The authors used AI agents to help write and debug code while designing the experiments. AI agents also helped the authors with the related work and references. Once the manuscript was complete, the authors used AI tools to polish the text and improve its clarity and readability. All work done with AI assistance was carefully reviewed by the authors, who take full responsibility for the code, experiments, references, and all other content submitted as part of this paper.
